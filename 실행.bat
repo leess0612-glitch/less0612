@@ -1,4 +1,4 @@
 @echo off
-pip install PyQt5 Pillow
-python "%~dp0합성기.py"
+py -m pip install PyQt5 Pillow
+py "%~dp0합성기.py"
 pause
