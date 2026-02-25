@@ -3,7 +3,7 @@
 배경 제거 유틸리티 v1.0
 일반 사진에서 배경을 AI로 자동 제거하여 투명 PNG로 저장
 
-필요 패키지: pip install PyQt5 Pillow rembg
+필요 패키지: pip install PyQt5 Pillow "rembg[cpu]"
 첫 실행 시 AI 모델 자동 다운로드 (~170MB)
 """
 
@@ -17,7 +17,7 @@ from PyQt5.QtWidgets import (
     QPushButton, QLabel, QListWidget, QListWidgetItem,
     QFileDialog, QProgressBar, QMessageBox, QFrame,
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt5.QtCore import Qt, QThread, pyqtSignal, QObject
 from PyQt5.QtGui import QPixmap, QImage
 
 from PIL import Image
