@@ -22,7 +22,7 @@ from PyQt5.QtGui import QPixmap, QImage
 from PIL import Image
 
 
-MODEL_PATH  = os.path.join(os.path.expanduser('~'), '.u2net', 'u2netp.onnx')
+MODEL_PATH  = os.path.join(os.path.expanduser('~'), '.u2net', 'u2net.onnx')
 INPUT_SIZE  = 320
 IMG_EXTS    = {'.jpg', '.jpeg', '.png', '.webp', '.bmp'}
 
