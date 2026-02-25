@@ -37,9 +37,13 @@ class RemoveThread(QThread):
 
     def run(self):
         try:
-            from rembg import remove
+            from rembg import remove, new_session
+            session = new_session()
         except ImportError:
-            self.sig_error.emit('rembg 패키지가 없습니다.\npip install rembg 를 실행하세요.')
+            self.sig_error.emit('rembg 패키지가 없습니다.\npip install "rembg[cpu]" 를 실행하세요.')
+            return
+        except Exception as e:
+            self.sig_error.emit(f'rembg 초기화 오류:\n{e}')
             return
 
         total = len(self.paths)
@@ -51,7 +55,7 @@ class RemoveThread(QThread):
 
             try:
                 img    = Image.open(src_path).convert('RGBA')
-                result = remove(img)
+                result = remove(img, session=session)
 
                 # 미리보기용 (첫 번째만)
                 if first:
