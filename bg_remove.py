@@ -24,38 +24,52 @@ from PIL import Image
 
 
 # ─── GrabCut 배경 제거 ────────────────────────────────────────────────────────
+PROCESS_SIZE = 800   # GrabCut 처리용 축소 크기 (빠른 처리)
+
+
 def remove_background(pil_img: Image.Image, margin_pct: float = 0.05) -> Image.Image:
     """
     OpenCV GrabCut으로 배경 제거.
-    margin_pct: 가장자리에서 얼마나 안쪽을 피사체 영역으로 볼지 (0.0~0.3)
+    처리 속도를 위해 800px로 축소 후 GrabCut → 마스크를 원본 크기로 복원.
     """
     import cv2
 
-    img_rgb = np.array(pil_img.convert('RGB'))
+    orig_w, orig_h = pil_img.size
+
+    # 처리용 축소 (긴 쪽을 PROCESS_SIZE에 맞춤)
+    ratio     = PROCESS_SIZE / max(orig_w, orig_h)
+    small_w   = int(orig_w * ratio)
+    small_h   = int(orig_h * ratio)
+    small_img = pil_img.convert('RGB').resize((small_w, small_h), Image.BILINEAR)
+
+    img_rgb = np.array(small_img)
     img_bgr = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2BGR)
     h, w    = img_bgr.shape[:2]
 
     # 가장자리 여백 → 피사체 사각형
-    mx = max(5, int(w * margin_pct))
-    my = max(5, int(h * margin_pct))
+    mx   = max(3, int(w * margin_pct))
+    my   = max(3, int(h * margin_pct))
     rect = (mx, my, w - mx * 2, h - my * 2)
 
     mask      = np.zeros((h, w), np.uint8)
     bgd_model = np.zeros((1, 65), np.float64)
     fgd_model = np.zeros((1, 65), np.float64)
 
-    cv2.grabCut(img_bgr, mask, rect, bgd_model, fgd_model, 8, cv2.GC_INIT_WITH_RECT)
+    cv2.grabCut(img_bgr, mask, rect, bgd_model, fgd_model, 5, cv2.GC_INIT_WITH_RECT)
 
     # 0(배경확실), 2(배경추정) → 투명 / 1,3 → 불투명
     alpha = np.where((mask == 0) | (mask == 2), 0, 255).astype(np.uint8)
 
-    # 마스크 정리 (모폴로지 - 노이즈 제거)
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
+    # 마스크 정리
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
     alpha  = cv2.morphologyEx(alpha, cv2.MORPH_CLOSE, kernel, iterations=2)
-    alpha  = cv2.GaussianBlur(alpha, (5, 5), 0)
+    alpha  = cv2.GaussianBlur(alpha, (3, 3), 0)
+
+    # 마스크를 원본 크기로 복원
+    alpha_full = cv2.resize(alpha, (orig_w, orig_h), interpolation=cv2.INTER_LINEAR)
 
     result = pil_img.convert('RGBA')
-    result.putalpha(Image.fromarray(alpha))
+    result.putalpha(Image.fromarray(alpha_full))
     return result
 
 
