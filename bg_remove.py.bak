@@ -38,12 +38,20 @@ class RemoveThread(QThread):
     def run(self):
         try:
             from rembg import remove, new_session
-            session = new_session()
-        except ImportError:
-            self.sig_error.emit('rembg 패키지가 없습니다.\npip install "rembg[cpu]" 를 실행하세요.')
+        except ImportError as e:
+            self.sig_error.emit(
+                f'rembg 패키지 오류:\n{e}\n\n'
+                '실행_배경제거.bat 을 다시 실행해 패키지를 재설치하세요.'
+            )
             return
+
+        try:
+            session = new_session()
         except Exception as e:
-            self.sig_error.emit(f'rembg 초기화 오류:\n{e}')
+            self.sig_error.emit(
+                f'AI 모델 초기화 실패:\n{e}\n\n'
+                '실행_배경제거.bat 을 다시 실행해 onnxruntime 을 재설치하세요.'
+            )
             return
 
         total = len(self.paths)
@@ -52,12 +60,10 @@ class RemoveThread(QThread):
         for i, src_path in enumerate(self.paths):
             fname = os.path.splitext(os.path.basename(src_path))[0] + '.png'
             self.sig_progress.emit(int(i / total * 100), fname)
-
             try:
                 img    = Image.open(src_path).convert('RGBA')
                 result = remove(img, session=session)
 
-                # 미리보기용 (첫 번째만)
                 if first:
                     buf = io.BytesIO()
                     result.save(buf, 'PNG')
@@ -65,9 +71,9 @@ class RemoveThread(QThread):
                     first = False
 
                 result.save(os.path.join(self.out_dir, fname), 'PNG')
-
             except Exception as e:
-                print(f'[오류] {fname}: {e}')
+                self.sig_error.emit(f'이미지 처리 오류 ({fname}):\n{e}')
+                return
 
         self.sig_progress.emit(100, '완료')
         self.sig_done.emit(self.out_dir, total)
