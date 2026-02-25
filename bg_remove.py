@@ -323,7 +323,7 @@ class MainWindow(QMainWindow):
         self._refresh_btn()
 
     def _refresh_btn(self):
-        self.btn_run.setEnabled(self.lst.count() > 0 and self._out_dir is not None)
+        self.btn_run.setEnabled(self.lst.count() > 0)
 
     def _on_select(self, row):
         if row < 0:
