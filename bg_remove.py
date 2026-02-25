@@ -135,7 +135,8 @@ class RemoveThread(QThread):
                     self.sig_preview.emit(buf.getvalue())
                     first = False
 
-                result.save(os.path.join(self.out_dir, fname), 'PNG')
+                save_dir = self.out_dir if self.out_dir else os.path.dirname(src_path)
+                result.save(os.path.join(save_dir, fname), 'PNG')
             except Exception as e:
                 self.sig_error.emit(f'처리 오류 ({fname}):\n{e}')
                 return
