@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import (
     QPushButton, QLabel, QListWidget, QListWidgetItem,
     QFileDialog, QProgressBar, QMessageBox, QFrame,
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal
+from PyQt5.QtCore import Qt, QThread, pyqtSignal, QUrl
 from PyQt5.QtGui import QPixmap, QImage
 
 from PIL import Image
