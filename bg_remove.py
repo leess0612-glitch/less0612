@@ -226,7 +226,7 @@ class MainWindow(QMainWindow):
         row.addWidget(self.btn_del)
         vl.addLayout(row)
 
-        self.lbl_dir = QLabel('저장 폴더: 미선택')
+        self.lbl_dir = QLabel('저장 폴더: 원본과 같은 폴더 (기본값)')
         self.lbl_dir.setStyleSheet(
             'font-size: 10px; color: #666; border: 1px solid #ddd;'
             'border-radius: 3px; padding: 3px;'
@@ -234,8 +234,12 @@ class MainWindow(QMainWindow):
         self.lbl_dir.setWordWrap(True)
         vl.addWidget(self.lbl_dir)
 
-        self.btn_dir = self._btn('저장 폴더 선택', '#8e44ad')
-        vl.addWidget(self.btn_dir)
+        row2 = QHBoxLayout()
+        self.btn_dir   = self._btn('폴더 직접 지정', '#8e44ad')
+        self.btn_reset_dir = self._btn('기본값으로', '#7f8c8d')
+        row2.addWidget(self.btn_dir)
+        row2.addWidget(self.btn_reset_dir)
+        vl.addLayout(row2)
 
         self.btn_run = self._btn('배경 제거 시작', '#e74c3c')
         self.btn_run.setFixedHeight(46)
@@ -245,6 +249,7 @@ class MainWindow(QMainWindow):
         self.btn_add.clicked.connect(self._add_images)
         self.btn_del.clicked.connect(self._del_image)
         self.btn_dir.clicked.connect(self._select_dir)
+        self.btn_reset_dir.clicked.connect(self._reset_dir)
         self.btn_run.clicked.connect(self._run)
         return w
 
