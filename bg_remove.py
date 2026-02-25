@@ -184,11 +184,12 @@ class MainWindow(QMainWindow):
         lbl.setStyleSheet('font-weight: bold; font-size: 12px;')
         vl.addWidget(lbl)
 
-        self.lst = QListWidget()
+        self.lst = DropListWidget()
         self.lst.setStyleSheet(
             'font-size: 11px; border: 1px solid #ccc; border-radius: 4px;'
         )
         self.lst.currentRowChanged.connect(self._on_select)
+        self.lst.files_dropped.connect(self._add_paths)
         vl.addWidget(self.lst, 1)
 
         row = QHBoxLayout()
