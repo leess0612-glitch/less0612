@@ -78,11 +78,11 @@ class RemoveThread(QThread):
         # onnxruntime 확인
         try:
             import onnxruntime as ort
-        except ImportError:
-            self.sig_error.emit(
-                'onnxruntime 패키지가 없습니다.\n'
-                '실행_배경제거.bat 을 다시 실행해 설치하세요.'
-            )
+        except ImportError as e:
+            self.sig_error.emit(f'onnxruntime import 실패:\n{e}')
+            return
+        except Exception as e:
+            self.sig_error.emit(f'onnxruntime 로드 오류:\n{e}')
             return
 
         # 모델 파일 확인
