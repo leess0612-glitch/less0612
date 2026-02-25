@@ -295,6 +295,9 @@ class MainWindow(QMainWindow):
             self, '이미지 선택', '',
             'Images (*.jpg *.jpeg *.png *.webp *.bmp)',
         )
+        self._add_paths(paths)
+
+    def _add_paths(self, paths: list):
         for p in paths:
             it = QListWidgetItem(os.path.basename(p))
             it.setData(Qt.UserRole, p)
