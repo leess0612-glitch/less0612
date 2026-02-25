@@ -300,6 +300,7 @@ class MainWindow(QMainWindow):
         self.btn_del.setEnabled(False)
         self.lbl_status.setText('AI 모델 로딩 중... (첫 실행 시 다운로드)')
 
+        self.prog.setMaximum(0)   # 불확정 모드 (로딩 애니메이션)
         self._thread = RemoveThread(paths, self._out_dir)
         self._thread.sig_progress.connect(self._on_progress)
         self._thread.sig_preview.connect(self._on_preview)
