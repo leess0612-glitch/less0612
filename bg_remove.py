@@ -22,8 +22,35 @@ from PyQt5.QtGui import QPixmap, QImage
 from PIL import Image
 
 
-MODEL_PATH = os.path.join(os.path.expanduser('~'), '.u2net', 'u2netp.onnx')
+MODEL_PATH  = os.path.join(os.path.expanduser('~'), '.u2net', 'u2netp.onnx')
 INPUT_SIZE  = 320
+IMG_EXTS    = {'.jpg', '.jpeg', '.png', '.webp', '.bmp'}
+
+
+# ─── 드래그앤드랍 지원 목록 위젯 ─────────────────────────────────────────────
+class DropListWidget(QListWidget):
+    files_dropped = pyqtSignal(list)
+
+    def __init__(self):
+        super().__init__()
+        self.setAcceptDrops(True)
+
+    def dragEnterEvent(self, e):
+        if e.mimeData().hasUrls():
+            e.acceptProposedAction()
+
+    def dragMoveEvent(self, e):
+        if e.mimeData().hasUrls():
+            e.acceptProposedAction()
+
+    def dropEvent(self, e):
+        paths = []
+        for url in e.mimeData().urls():
+            p = url.toLocalFile()
+            if os.path.splitext(p)[1].lower() in IMG_EXTS:
+                paths.append(p)
+        if paths:
+            self.files_dropped.emit(paths)
 
 
 # ─── U2Net AI 배경 제거 ───────────────────────────────────────────────────────
