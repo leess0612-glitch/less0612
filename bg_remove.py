@@ -309,6 +309,7 @@ class MainWindow(QMainWindow):
         self._thread.start()
 
     def _on_progress(self, pct: int, fname: str):
+        self.prog.setMaximum(100)   # 확정 모드로 전환
         self.prog.setValue(pct)
         self.lbl_status.setText(f'처리 중: {fname}  ({pct}%)')
 
