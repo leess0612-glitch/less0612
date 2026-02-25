@@ -285,7 +285,7 @@ class MainWindow(QMainWindow):
 
         row = QHBoxLayout()
         self.pane_orig   = PreviewPane('원본')
-        self.pane_result = PreviewPane('배경 제거 결과')
+        self.pane_result = PreviewPane('배경 제거 결과', checkered=True)
         row.addWidget(self.pane_orig)
         row.addWidget(self.pane_result)
         vl.addLayout(row, 1)
