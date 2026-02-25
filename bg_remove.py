@@ -338,13 +338,16 @@ class MainWindow(QMainWindow):
     def _run(self):
         paths = [self.lst.item(i).data(Qt.UserRole) for i in range(self.lst.count())]
 
+        # 저장 폴더 미지정 시 각 원본 파일과 같은 폴더에 저장
+        out_dir = self._out_dir  # None 이면 RemoveThread에서 원본 폴더 사용
+
         self.prog.setMaximum(0)
         self.prog.setVisible(True)
         self.btn_run.setEnabled(False)
         self.btn_add.setEnabled(False)
         self.lbl_status.setText('AI 처리 중...')
 
-        self._thread = RemoveThread(paths, self._out_dir)
+        self._thread = RemoveThread(paths, out_dir)
         self._thread.sig_progress.connect(self._on_progress)
         self._thread.sig_preview.connect(self._on_preview)
         self._thread.sig_done.connect(self._on_done)
