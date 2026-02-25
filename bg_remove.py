@@ -4,7 +4,7 @@
 rembg 없이 onnxruntime + u2netp 모델 직접 사용
 
 필요 패키지: pip install PyQt5 Pillow onnxruntime
-모델 파일:   C:\Users\<이름>\.u2net\u2netp.onnx  (이미 다운로드됨)
+모델 파일:   ~/.u2net/u2netp.onnx  (모델다운로드.bat 으로 설치)
 """
 
 import sys
