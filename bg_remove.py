@@ -322,6 +322,10 @@ class MainWindow(QMainWindow):
             self.lbl_dir.setText(f'저장 폴더: {short}')
         self._refresh_btn()
 
+    def _reset_dir(self):
+        self._out_dir = None
+        self.lbl_dir.setText('저장 폴더: 원본과 같은 폴더 (기본값)')
+
     def _refresh_btn(self):
         self.btn_run.setEnabled(self.lst.count() > 0)
 
