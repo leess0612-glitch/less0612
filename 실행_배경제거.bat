@@ -1,4 +1,8 @@
 @echo off
-py -3.11 -m pip install PyQt5 Pillow opencv-python numpy
+echo [1/3] Visual C++ Runtime 설치 중...
+winget install Microsoft.VCRedist.2015+.x64 --silent --accept-package-agreements --accept-source-agreements
+echo [2/3] 패키지 설치 중...
+py -3.11 -m pip install PyQt5 Pillow numpy "onnxruntime==1.16.3"
+echo [3/3] 앱 시작...
 py -3.11 "%~dp0bg_remove.py"
 pause
