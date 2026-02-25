@@ -354,6 +354,8 @@ class MainWindow(QMainWindow):
         self.prog.setVisible(False)
         self.btn_run.setEnabled(True)
         self.btn_add.setEnabled(True)
+        self.lst.clear()                          # 완료 후 목록 자동 초기화
+        self.pane_orig.img_label.setText('—')
         self.lbl_status.setText(f'완료: {count}장 저장  →  {out_dir}')
         QMessageBox.information(
             self, '완료',
