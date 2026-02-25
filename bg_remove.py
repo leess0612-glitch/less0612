@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-배경 제거 유틸리티 v2.0
-rembg 없이 onnxruntime + u2netp 모델 직접 사용
+배경 제거 유틸리티 v3.0
+OpenCV GrabCut 방식 - 모델 다운로드 없음, DLL 문제 없음
 
-필요 패키지: pip install PyQt5 Pillow onnxruntime
-모델 파일:   ~/.u2net/u2netp.onnx  (모델다운로드.bat 으로 설치)
+필요 패키지: pip install PyQt5 Pillow opencv-python numpy
 """
 
 import sys
@@ -16,7 +15,7 @@ from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget,
     QVBoxLayout, QHBoxLayout,
     QPushButton, QLabel, QListWidget, QListWidgetItem,
-    QFileDialog, QProgressBar, QMessageBox, QFrame,
+    QFileDialog, QProgressBar, QMessageBox, QFrame, QSlider,
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap, QImage
@@ -24,41 +23,39 @@ from PyQt5.QtGui import QPixmap, QImage
 from PIL import Image
 
 
-# ─── U2Net 직접 추론 ──────────────────────────────────────────────────────────
-MODEL_PATH = os.path.join(os.path.expanduser('~'), '.u2net', 'u2netp.onnx')
-INPUT_SIZE  = 320   # u2netp 입력 크기
+# ─── GrabCut 배경 제거 ────────────────────────────────────────────────────────
+def remove_background(pil_img: Image.Image, margin_pct: float = 0.05) -> Image.Image:
+    """
+    OpenCV GrabCut으로 배경 제거.
+    margin_pct: 가장자리에서 얼마나 안쪽을 피사체 영역으로 볼지 (0.0~0.3)
+    """
+    import cv2
 
+    img_rgb = np.array(pil_img.convert('RGB'))
+    img_bgr = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2BGR)
+    h, w    = img_bgr.shape[:2]
 
-def remove_background(pil_img: Image.Image) -> Image.Image:
-    """PIL 이미지의 배경을 제거하여 투명 PNG로 반환."""
-    import onnxruntime as ort
+    # 가장자리 여백 → 피사체 사각형
+    mx = max(5, int(w * margin_pct))
+    my = max(5, int(h * margin_pct))
+    rect = (mx, my, w - mx * 2, h - my * 2)
 
-    # 세션 초기화
-    sess = ort.InferenceSession(MODEL_PATH, providers=['CPUExecutionProvider'])
+    mask      = np.zeros((h, w), np.uint8)
+    bgd_model = np.zeros((1, 65), np.float64)
+    fgd_model = np.zeros((1, 65), np.float64)
 
-    orig_w, orig_h = pil_img.size
+    cv2.grabCut(img_bgr, mask, rect, bgd_model, fgd_model, 8, cv2.GC_INIT_WITH_RECT)
 
-    # 전처리: RGB 320×320, 정규화
-    img = pil_img.convert('RGB').resize((INPUT_SIZE, INPUT_SIZE), Image.BILINEAR)
-    arr = np.array(img, dtype=np.float32) / 255.0
-    mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
-    std  = np.array([0.229, 0.224, 0.225], dtype=np.float32)
-    arr  = (arr - mean) / std
-    arr  = arr.transpose(2, 0, 1)[np.newaxis]   # (1, 3, 320, 320)
+    # 0(배경확실), 2(배경추정) → 투명 / 1,3 → 불투명
+    alpha = np.where((mask == 0) | (mask == 2), 0, 255).astype(np.uint8)
 
-    # 추론
-    input_name = sess.get_inputs()[0].name
-    outputs    = sess.run(None, {input_name: arr})
-    mask       = outputs[0][0, 0]               # (320, 320)
+    # 마스크 정리 (모폴로지 - 노이즈 제거)
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
+    alpha  = cv2.morphologyEx(alpha, cv2.MORPH_CLOSE, kernel, iterations=2)
+    alpha  = cv2.GaussianBlur(alpha, (5, 5), 0)
 
-    # 후처리: 0~1 정규화 → 원본 크기로 리사이즈
-    mask = (mask - mask.min()) / (mask.max() - mask.min() + 1e-8)
-    mask_img = Image.fromarray((mask * 255).astype(np.uint8), mode='L')
-    mask_img = mask_img.resize((orig_w, orig_h), Image.BILINEAR)
-
-    # 원본에 알파 채널 적용
     result = pil_img.convert('RGBA')
-    result.putalpha(mask_img)
+    result.putalpha(Image.fromarray(alpha))
     return result
 
 
@@ -69,28 +66,17 @@ class RemoveThread(QThread):
     sig_done     = pyqtSignal(str, int)
     sig_error    = pyqtSignal(str)
 
-    def __init__(self, paths: list, out_dir: str):
+    def __init__(self, paths: list, out_dir: str, margin: float):
         super().__init__()
         self.paths   = paths
         self.out_dir = out_dir
+        self.margin  = margin
 
     def run(self):
-        # onnxruntime 확인
         try:
-            import onnxruntime as ort
+            import cv2
         except ImportError as e:
-            self.sig_error.emit(f'onnxruntime import 실패:\n{e}')
-            return
-        except Exception as e:
-            self.sig_error.emit(f'onnxruntime 로드 오류:\n{e}')
-            return
-
-        # 모델 파일 확인
-        if not os.path.exists(MODEL_PATH):
-            self.sig_error.emit(
-                f'모델 파일이 없습니다.\n{MODEL_PATH}\n\n'
-                '모델다운로드.bat 을 먼저 실행하세요.'
-            )
+            self.sig_error.emit(f'opencv-python 패키지 오류:\n{e}\n\n실행_배경제거.bat 을 다시 실행하세요.')
             return
 
         total = len(self.paths)
@@ -102,7 +88,7 @@ class RemoveThread(QThread):
 
             try:
                 img    = Image.open(src_path).convert('RGBA')
-                result = remove_background(img)
+                result = remove_background(img, margin_pct=self.margin)
 
                 if first:
                     buf = io.BytesIO()
@@ -160,8 +146,8 @@ class MainWindow(QMainWindow):
         self._thread  = None
         self._out_dir = None
 
-        self.setWindowTitle('배경 제거 유틸리티  v2.0')
-        self.setMinimumSize(900, 580)
+        self.setWindowTitle('배경 제거 유틸리티  v3.0')
+        self.setMinimumSize(960, 600)
         self.setStyleSheet(
             "QMainWindow, QWidget { font-family: 'Malgun Gothic', Arial, sans-serif; }"
         )
@@ -178,7 +164,7 @@ class MainWindow(QMainWindow):
 
     def _build_left(self):
         w = QWidget()
-        w.setFixedWidth(240)
+        w.setFixedWidth(250)
         vl = QVBoxLayout(w)
         vl.setContentsMargins(0, 0, 0, 0)
         vl.setSpacing(6)
@@ -200,6 +186,18 @@ class MainWindow(QMainWindow):
         row.addWidget(self.btn_add)
         row.addWidget(self.btn_del)
         vl.addLayout(row)
+
+        # 여백 조절 슬라이더
+        vl.addWidget(QLabel('피사체 여백 조절 (값이 클수록 더 많이 자름):'))
+        self.sld_margin = QSlider(Qt.Horizontal)
+        self.sld_margin.setRange(1, 25)
+        self.sld_margin.setValue(5)
+        self.lbl_margin = QLabel('여백: 5%')
+        self.sld_margin.valueChanged.connect(
+            lambda v: self.lbl_margin.setText(f'여백: {v}%')
+        )
+        vl.addWidget(self.lbl_margin)
+        vl.addWidget(self.sld_margin)
 
         self.lbl_dir = QLabel('저장 폴더: 미선택')
         self.lbl_dir.setStyleSheet(
@@ -299,7 +297,8 @@ class MainWindow(QMainWindow):
         self.pane_result.img_label.setText('—')
 
     def _run(self):
-        paths = [self.lst.item(i).data(Qt.UserRole) for i in range(self.lst.count())]
+        paths  = [self.lst.item(i).data(Qt.UserRole) for i in range(self.lst.count())]
+        margin = self.sld_margin.value() / 100.0
 
         self.prog.setMaximum(0)
         self.prog.setVisible(True)
@@ -307,7 +306,7 @@ class MainWindow(QMainWindow):
         self.btn_add.setEnabled(False)
         self.lbl_status.setText('처리 중...')
 
-        self._thread = RemoveThread(paths, self._out_dir)
+        self._thread = RemoveThread(paths, self._out_dir, margin)
         self._thread.sig_progress.connect(self._on_progress)
         self._thread.sig_preview.connect(self._on_preview)
         self._thread.sig_done.connect(self._on_done)
