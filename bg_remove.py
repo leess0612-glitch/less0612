@@ -17,7 +17,7 @@ from PyQt5.QtWidgets import (
     QFileDialog, QProgressBar, QMessageBox, QFrame,
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QUrl
-from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtGui import QPixmap, QImage, QPainter, QColor
 
 from PIL import Image
 
