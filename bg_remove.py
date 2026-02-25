@@ -63,7 +63,15 @@ def remove_background(pil_img: Image.Image, margin_pct: float = 0.05) -> Image.I
     # 마스크 정리
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
     alpha  = cv2.morphologyEx(alpha, cv2.MORPH_CLOSE, kernel, iterations=2)
-    alpha  = cv2.GaussianBlur(alpha, (3, 3), 0)
+
+    # 가장 큰 연결 덩어리만 남기기 (떨어진 파편 제거)
+    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(alpha, connectivity=8)
+    if num_labels > 2:
+        largest = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+        alpha   = np.where(labels == largest, 255, 0).astype(np.uint8)
+
+    # 경계 부드럽게
+    alpha = cv2.GaussianBlur(alpha, (5, 5), 0)
 
     # 마스크를 원본 크기로 복원
     alpha_full = cv2.resize(alpha, (orig_w, orig_h), interpolation=cv2.INTER_LINEAR)
