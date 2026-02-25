@@ -46,7 +46,7 @@ class RemoveThread(QThread):
             return
 
         try:
-            session = new_session()
+            session = new_session('u2netp')   # 경량 모델 4.7MB (기본 176MB 대신)
         except Exception as e:
             self.sig_error.emit(
                 f'AI 모델 초기화 실패:\n{e}\n\n'
