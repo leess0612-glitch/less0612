@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-배경 제거 유틸리티 v1.0
-일반 사진에서 배경을 AI로 자동 제거하여 투명 PNG로 저장
+배경 제거 유틸리티 v2.0
+rembg 없이 onnxruntime + u2netp 모델 직접 사용
 
-필요 패키지: pip install PyQt5 Pillow "rembg[cpu]"
-첫 실행 시 AI 모델 자동 다운로드 (~170MB)
+필요 패키지: pip install PyQt5 Pillow onnxruntime
+모델 파일:   C:\Users\<이름>\.u2net\u2netp.onnx  (이미 다운로드됨)
 """
 
 import sys
 import os
 import io
+import numpy as np
 
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget,
@@ -17,17 +18,55 @@ from PyQt5.QtWidgets import (
     QPushButton, QLabel, QListWidget, QListWidgetItem,
     QFileDialog, QProgressBar, QMessageBox, QFrame,
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QObject
+from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap, QImage
 
 from PIL import Image
 
 
-# ─── 배경 제거 스레드 ────────────────────────────────────────────────────────────
+# ─── U2Net 직접 추론 ──────────────────────────────────────────────────────────
+MODEL_PATH = os.path.join(os.path.expanduser('~'), '.u2net', 'u2netp.onnx')
+INPUT_SIZE  = 320   # u2netp 입력 크기
+
+
+def remove_background(pil_img: Image.Image) -> Image.Image:
+    """PIL 이미지의 배경을 제거하여 투명 PNG로 반환."""
+    import onnxruntime as ort
+
+    # 세션 초기화
+    sess = ort.InferenceSession(MODEL_PATH, providers=['CPUExecutionProvider'])
+
+    orig_w, orig_h = pil_img.size
+
+    # 전처리: RGB 320×320, 정규화
+    img = pil_img.convert('RGB').resize((INPUT_SIZE, INPUT_SIZE), Image.BILINEAR)
+    arr = np.array(img, dtype=np.float32) / 255.0
+    mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+    std  = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+    arr  = (arr - mean) / std
+    arr  = arr.transpose(2, 0, 1)[np.newaxis]   # (1, 3, 320, 320)
+
+    # 추론
+    input_name = sess.get_inputs()[0].name
+    outputs    = sess.run(None, {input_name: arr})
+    mask       = outputs[0][0, 0]               # (320, 320)
+
+    # 후처리: 0~1 정규화 → 원본 크기로 리사이즈
+    mask = (mask - mask.min()) / (mask.max() - mask.min() + 1e-8)
+    mask_img = Image.fromarray((mask * 255).astype(np.uint8), mode='L')
+    mask_img = mask_img.resize((orig_w, orig_h), Image.BILINEAR)
+
+    # 원본에 알파 채널 적용
+    result = pil_img.convert('RGBA')
+    result.putalpha(mask_img)
+    return result
+
+
+# ─── 백그라운드 스레드 ────────────────────────────────────────────────────────
 class RemoveThread(QThread):
-    sig_progress = pyqtSignal(int, str)   # (진행률, 현재 파일명)
-    sig_preview  = pyqtSignal(bytes)      # 첫 번째 결과 미리보기
-    sig_done     = pyqtSignal(str, int)   # (저장 폴더, 완료 수)
+    sig_progress = pyqtSignal(int, str)
+    sig_preview  = pyqtSignal(bytes)
+    sig_done     = pyqtSignal(str, int)
     sig_error    = pyqtSignal(str)
 
     def __init__(self, paths: list, out_dir: str):
@@ -36,21 +75,21 @@ class RemoveThread(QThread):
         self.out_dir = out_dir
 
     def run(self):
+        # onnxruntime 확인
         try:
-            from rembg import remove, new_session
-        except ImportError as e:
+            import onnxruntime as ort
+        except ImportError:
             self.sig_error.emit(
-                f'rembg 패키지 오류:\n{e}\n\n'
-                '실행_배경제거.bat 을 다시 실행해 패키지를 재설치하세요.'
+                'onnxruntime 패키지가 없습니다.\n'
+                '실행_배경제거.bat 을 다시 실행해 설치하세요.'
             )
             return
 
-        try:
-            session = new_session('u2netp')   # 경량 모델 4.7MB (기본 176MB 대신)
-        except Exception as e:
+        # 모델 파일 확인
+        if not os.path.exists(MODEL_PATH):
             self.sig_error.emit(
-                f'AI 모델 초기화 실패:\n{e}\n\n'
-                '실행_배경제거.bat 을 다시 실행해 onnxruntime 을 재설치하세요.'
+                f'모델 파일이 없습니다.\n{MODEL_PATH}\n\n'
+                '모델다운로드.bat 을 먼저 실행하세요.'
             )
             return
 
@@ -60,9 +99,10 @@ class RemoveThread(QThread):
         for i, src_path in enumerate(self.paths):
             fname = os.path.splitext(os.path.basename(src_path))[0] + '.png'
             self.sig_progress.emit(int(i / total * 100), fname)
+
             try:
                 img    = Image.open(src_path).convert('RGBA')
-                result = remove(img, session=session)
+                result = remove_background(img)
 
                 if first:
                     buf = io.BytesIO()
@@ -71,15 +111,16 @@ class RemoveThread(QThread):
                     first = False
 
                 result.save(os.path.join(self.out_dir, fname), 'PNG')
+
             except Exception as e:
-                self.sig_error.emit(f'이미지 처리 오류 ({fname}):\n{e}')
+                self.sig_error.emit(f'처리 오류 ({fname}):\n{e}')
                 return
 
         self.sig_progress.emit(100, '완료')
         self.sig_done.emit(self.out_dir, total)
 
 
-# ─── 미리보기 위젯 (원본 / 결과 나란히) ────────────────────────────────────────
+# ─── 미리보기 패널 ────────────────────────────────────────────────────────────
 class PreviewPane(QFrame):
     def __init__(self, label_text: str):
         super().__init__()
@@ -93,25 +134,17 @@ class PreviewPane(QFrame):
         title.setStyleSheet('color: #888; font-size: 11px;')
         vl.addWidget(title)
 
-        self.img_label = QLabel()
+        self.img_label = QLabel('—')
         self.img_label.setAlignment(Qt.AlignCenter)
         self.img_label.setMinimumSize(340, 280)
         self.img_label.setStyleSheet('color: #555; font-size: 13px;')
-        self.img_label.setText('—')
         vl.addWidget(self.img_label, 1)
 
-    def set_image_from_path(self, path: str):
-        pix = QPixmap(path)
-        self._show(pix)
+    def set_from_path(self, path: str):
+        self._show(QPixmap(path))
 
-    def set_image_from_bytes(self, data: bytes):
-        pix = QPixmap.fromImage(QImage.fromData(data))
-        self._show(pix)
-
-    def set_image_from_pil(self, pil_img):
-        buf = io.BytesIO()
-        pil_img.save(buf, 'PNG')
-        self.set_image_from_bytes(buf.getvalue())
+    def set_from_bytes(self, data: bytes):
+        self._show(QPixmap.fromImage(QImage.fromData(data)))
 
     def _show(self, pix: QPixmap):
         self.img_label.setPixmap(
@@ -119,7 +152,7 @@ class PreviewPane(QFrame):
         )
 
 
-# ─── 메인 윈도우 ─────────────────────────────────────────────────────────────────
+# ─── 메인 윈도우 ──────────────────────────────────────────────────────────────
 class MainWindow(QMainWindow):
 
     def __init__(self):
@@ -127,21 +160,19 @@ class MainWindow(QMainWindow):
         self._thread  = None
         self._out_dir = None
 
-        self.setWindowTitle('배경 제거 유틸리티  —  AI 자동 배경 제거')
+        self.setWindowTitle('배경 제거 유틸리티  v2.0')
         self.setMinimumSize(900, 580)
         self.setStyleSheet(
             "QMainWindow, QWidget { font-family: 'Malgun Gothic', Arial, sans-serif; }"
         )
         self._build_ui()
 
-    # ── UI ───────────────────────────────────────────────────────────────────
     def _build_ui(self):
         root = QWidget()
         self.setCentralWidget(root)
         hl = QHBoxLayout(root)
         hl.setContentsMargins(10, 10, 10, 10)
         hl.setSpacing(10)
-
         hl.addWidget(self._build_left(),  0)
         hl.addWidget(self._build_right(), 1)
 
@@ -152,7 +183,6 @@ class MainWindow(QMainWindow):
         vl.setContentsMargins(0, 0, 0, 0)
         vl.setSpacing(6)
 
-        # 파일 목록
         lbl = QLabel('처리할 이미지 목록')
         lbl.setStyleSheet('font-weight: bold; font-size: 12px;')
         vl.addWidget(lbl)
@@ -164,7 +194,6 @@ class MainWindow(QMainWindow):
         self.lst.currentRowChanged.connect(self._on_select)
         vl.addWidget(self.lst, 1)
 
-        # 추가 / 제거 버튼
         row = QHBoxLayout()
         self.btn_add = self._btn('+ 이미지 추가', '#2980b9')
         self.btn_del = self._btn('- 제거',        '#7f8c8d')
@@ -172,7 +201,6 @@ class MainWindow(QMainWindow):
         row.addWidget(self.btn_del)
         vl.addLayout(row)
 
-        # 저장 폴더
         self.lbl_dir = QLabel('저장 폴더: 미선택')
         self.lbl_dir.setStyleSheet(
             'font-size: 10px; color: #666; border: 1px solid #ddd;'
@@ -184,18 +212,15 @@ class MainWindow(QMainWindow):
         self.btn_dir = self._btn('저장 폴더 선택', '#8e44ad')
         vl.addWidget(self.btn_dir)
 
-        # 실행 버튼
         self.btn_run = self._btn('배경 제거 시작', '#e74c3c')
         self.btn_run.setFixedHeight(46)
         self.btn_run.setEnabled(False)
         vl.addWidget(self.btn_run)
 
-        # 연결
         self.btn_add.clicked.connect(self._add_images)
         self.btn_del.clicked.connect(self._del_image)
         self.btn_dir.clicked.connect(self._select_dir)
         self.btn_run.clicked.connect(self._run)
-
         return w
 
     def _build_right(self):
@@ -204,7 +229,6 @@ class MainWindow(QMainWindow):
         vl.setContentsMargins(0, 0, 0, 0)
         vl.setSpacing(8)
 
-        # 미리보기 (원본 | 결과)
         row = QHBoxLayout()
         self.pane_orig   = PreviewPane('원본')
         self.pane_result = PreviewPane('배경 제거 결과')
@@ -212,28 +236,19 @@ class MainWindow(QMainWindow):
         row.addWidget(self.pane_result)
         vl.addLayout(row, 1)
 
-        # 상태 레이블
-        self.lbl_status = QLabel(
-            '이미지를 추가하고 저장 폴더를 선택한 후 [배경 제거 시작]을 눌러주세요.\n'
-            '※ 첫 실행 시 AI 모델 다운로드로 시간이 걸릴 수 있습니다.'
-        )
+        self.lbl_status = QLabel('이미지를 추가하고 저장 폴더를 선택한 후 [배경 제거 시작]을 눌러주세요.')
         self.lbl_status.setAlignment(Qt.AlignCenter)
         self.lbl_status.setStyleSheet('color: #666; font-size: 11px;')
         vl.addWidget(self.lbl_status)
 
-        # 진행 바
         self.prog = QProgressBar()
         self.prog.setVisible(False)
         self.prog.setFixedHeight(18)
         self.prog.setStyleSheet("""
-            QProgressBar {
-                border: 1px solid #ccc; border-radius: 4px;
-                text-align: center; font-size: 11px;
-            }
-            QProgressBar::chunk { background: #e74c3c; border-radius: 3px; }
+            QProgressBar { border:1px solid #ccc; border-radius:4px; text-align:center; font-size:11px; }
+            QProgressBar::chunk { background:#e74c3c; border-radius:3px; }
         """)
         vl.addWidget(self.prog)
-
         return w
 
     def _btn(self, text, color):
@@ -241,16 +256,15 @@ class MainWindow(QMainWindow):
         b.setFixedHeight(34)
         b.setStyleSheet(f"""
             QPushButton {{
-                background: {color}; color: white;
-                border: none; border-radius: 5px;
-                font-size: 12px; font-weight: bold;
+                background:{color}; color:white;
+                border:none; border-radius:5px;
+                font-size:12px; font-weight:bold;
             }}
-            QPushButton:hover    {{ background: {color}bb; }}
-            QPushButton:disabled {{ background: #bdc3c7; }}
+            QPushButton:hover    {{ background:{color}bb; }}
+            QPushButton:disabled {{ background:#bdc3c7; }}
         """)
         return b
 
-    # ── 로직 ─────────────────────────────────────────────────────────────────
     def _add_images(self):
         paths, _ = QFileDialog.getOpenFileNames(
             self, '이미지 선택', '',
@@ -260,12 +274,12 @@ class MainWindow(QMainWindow):
             it = QListWidgetItem(os.path.basename(p))
             it.setData(Qt.UserRole, p)
             self.lst.addItem(it)
-        self._refresh_run_btn()
+        self._refresh_btn()
 
     def _del_image(self):
         for it in self.lst.selectedItems():
             self.lst.takeItem(self.lst.row(it))
-        self._refresh_run_btn()
+        self._refresh_btn()
 
     def _select_dir(self):
         d = QFileDialog.getExistingDirectory(self, '저장 폴더 선택')
@@ -273,34 +287,26 @@ class MainWindow(QMainWindow):
             self._out_dir = d
             short = d if len(d) < 35 else '...' + d[-32:]
             self.lbl_dir.setText(f'저장 폴더: {short}')
-        self._refresh_run_btn()
+        self._refresh_btn()
 
-    def _refresh_run_btn(self):
-        self.btn_run.setEnabled(
-            self.lst.count() > 0 and self._out_dir is not None
-        )
+    def _refresh_btn(self):
+        self.btn_run.setEnabled(self.lst.count() > 0 and self._out_dir is not None)
 
     def _on_select(self, row):
-        """목록에서 항목 선택 시 원본 미리보기."""
         if row < 0:
             return
-        path = self.lst.item(row).data(Qt.UserRole)
-        self.pane_orig.set_image_from_path(path)
+        self.pane_orig.set_from_path(self.lst.item(row).data(Qt.UserRole))
         self.pane_result.img_label.setText('—')
 
     def _run(self):
-        paths = [
-            self.lst.item(i).data(Qt.UserRole)
-            for i in range(self.lst.count())
-        ]
+        paths = [self.lst.item(i).data(Qt.UserRole) for i in range(self.lst.count())]
+
+        self.prog.setMaximum(0)
         self.prog.setVisible(True)
-        self.prog.setValue(0)
         self.btn_run.setEnabled(False)
         self.btn_add.setEnabled(False)
-        self.btn_del.setEnabled(False)
-        self.lbl_status.setText('AI 모델 로딩 중... (첫 실행 시 다운로드)')
+        self.lbl_status.setText('처리 중...')
 
-        self.prog.setMaximum(0)   # 불확정 모드 (로딩 애니메이션)
         self._thread = RemoveThread(paths, self._out_dir)
         self._thread.sig_progress.connect(self._on_progress)
         self._thread.sig_preview.connect(self._on_preview)
@@ -309,34 +315,30 @@ class MainWindow(QMainWindow):
         self._thread.start()
 
     def _on_progress(self, pct: int, fname: str):
-        self.prog.setMaximum(100)   # 확정 모드로 전환
+        self.prog.setMaximum(100)
         self.prog.setValue(pct)
         self.lbl_status.setText(f'처리 중: {fname}  ({pct}%)')
 
     def _on_preview(self, data: bytes):
-        self.pane_result.set_image_from_bytes(data)
+        self.pane_result.set_from_bytes(data)
 
     def _on_done(self, out_dir: str, count: int):
-        self.prog.setValue(100)
         self.prog.setVisible(False)
         self.btn_run.setEnabled(True)
         self.btn_add.setEnabled(True)
-        self.btn_del.setEnabled(True)
         self.lbl_status.setText(f'완료: {count}장 저장  →  {out_dir}')
         QMessageBox.information(
             self, '완료',
-            f'{count}장의 배경이 제거되어 PNG로 저장되었습니다.\n\n저장 위치:\n{out_dir}',
+            f'{count}장이 저장되었습니다.\n\n저장 위치:\n{out_dir}',
         )
 
     def _on_error(self, msg: str):
         self.prog.setVisible(False)
         self.btn_run.setEnabled(True)
         self.btn_add.setEnabled(True)
-        self.btn_del.setEnabled(True)
         QMessageBox.critical(self, '오류', msg)
 
 
-# ─── 진입점 ──────────────────────────────────────────────────────────────────
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName('배경 제거 유틸리티')
