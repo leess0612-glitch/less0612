@@ -148,23 +148,39 @@ class RemoveThread(QThread):
 
 # ─── 미리보기 패널 ────────────────────────────────────────────────────────────
 class PreviewPane(QFrame):
-    def __init__(self, label_text: str):
+    def __init__(self, label_text: str, checkered: bool = False):
         super().__init__()
-        self.setStyleSheet('QFrame { background: #1a1a1a; border-radius: 6px; }')
+        self.checkered = checkered
+        bg = '#2a2a2a' if not checkered else '#888888'
+        self.setStyleSheet(f'QFrame {{ background: {bg}; border-radius: 6px; }}')
         vl = QVBoxLayout(self)
         vl.setContentsMargins(6, 6, 6, 6)
         vl.setSpacing(4)
 
         title = QLabel(label_text)
         title.setAlignment(Qt.AlignCenter)
-        title.setStyleSheet('color: #888; font-size: 11px;')
+        title.setStyleSheet('color: #ccc; font-size: 11px;')
         vl.addWidget(title)
 
         self.img_label = QLabel('—')
         self.img_label.setAlignment(Qt.AlignCenter)
         self.img_label.setMinimumSize(340, 280)
-        self.img_label.setStyleSheet('color: #555; font-size: 13px;')
+        self.img_label.setStyleSheet('color: #888; font-size: 13px;')
         vl.addWidget(self.img_label, 1)
+
+    def _make_checkered(self, w: int, h: int) -> QPixmap:
+        """포토샵 스타일 격자 배경 생성"""
+        tile  = 16
+        light = QColor(204, 204, 204)
+        dark  = QColor(153, 153, 153)
+        pix   = QPixmap(w, h)
+        p     = QPainter(pix)
+        for row in range(0, h, tile):
+            for col in range(0, w, tile):
+                color = light if (row // tile + col // tile) % 2 == 0 else dark
+                p.fillRect(col, row, tile, tile, color)
+        p.end()
+        return pix
 
     def set_from_path(self, path: str):
         self._show(QPixmap(path))
@@ -173,9 +189,15 @@ class PreviewPane(QFrame):
         self._show(QPixmap.fromImage(QImage.fromData(data)))
 
     def _show(self, pix: QPixmap):
-        self.img_label.setPixmap(
-            pix.scaled(self.img_label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
-        )
+        scaled = pix.scaled(self.img_label.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        if self.checkered:
+            bg = self._make_checkered(scaled.width(), scaled.height())
+            p  = QPainter(bg)
+            p.drawPixmap(0, 0, scaled)
+            p.end()
+            self.img_label.setPixmap(bg)
+        else:
+            self.img_label.setPixmap(scaled)
 
 
 # ─── 메인 윈도우 ──────────────────────────────────────────────────────────────
