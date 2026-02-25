@@ -142,7 +142,8 @@ class RemoveThread(QThread):
                 return
 
         self.sig_progress.emit(100, '완료')
-        self.sig_done.emit(self.out_dir, total)
+        final_dir = self.out_dir if self.out_dir else os.path.dirname(self.paths[-1])
+        self.sig_done.emit(final_dir, total)
 
 
 # ─── 미리보기 패널 ────────────────────────────────────────────────────────────
