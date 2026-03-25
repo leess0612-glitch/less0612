@@ -23,7 +23,7 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.10);
       padding: 40px 36px 36px;
       width: 100%;
-      max-width: 480px;
+      max-width: 460px;
     }
 
     h1 {
@@ -51,11 +51,13 @@
       margin-bottom: 20px;
     }
 
-    input[type="number"],
-    input[type="date"],
-    select {
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap input {
       width: 100%;
-      padding: 11px 14px;
+      padding: 11px 36px 11px 14px;
       border: 1.5px solid #dde1e7;
       border-radius: 8px;
       font-size: 15px;
@@ -64,27 +66,37 @@
       outline: none;
       transition: border-color 0.2s;
       background: #fafbfc;
+      text-align: right;
     }
 
-    input:focus, select:focus {
+    .input-wrap input:focus {
       border-color: #4f6ef7;
       background: #fff;
     }
 
-    .date-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .date-row input {
-      flex: 1;
-    }
-
-    .date-sep {
+    .input-unit {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
       color: #aaa;
-      font-size: 18px;
-      flex-shrink: 0;
+      pointer-events: none;
+    }
+
+    .info-box {
+      background: #f6f8ff;
+      border: 1.5px solid #d3dbff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .info-box strong {
+      color: #4f6ef7;
     }
 
     .btn-calc {
@@ -99,7 +111,6 @@
       font-family: 'Malgun Gothic', sans-serif;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
-      margin-top: 4px;
     }
 
     .btn-calc:hover { background: #3a56d4; }
@@ -120,7 +131,6 @@
       color: #4f6ef7;
       letter-spacing: 0.5px;
       margin-bottom: 16px;
-      text-transform: uppercase;
     }
 
     .result-row {
@@ -153,7 +163,7 @@
       font-size: 12px;
       color: #999;
       margin-top: 14px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     .error-msg {
@@ -181,22 +191,15 @@
     <h1>일할계산기</h1>
     <p class="subtitle">입점비 일할 계산 · 부가세 포함/미포함</p>
 
-    <div class="form-group">
-      <label>월 기준 금액 (원, 부가세 미포함)</label>
-      <input type="number" id="monthlyFee" placeholder="예: 300000" min="0" step="100">
+    <div class="info-box" id="infoBox">
+      <!-- 오늘 날짜 정보 JS로 채움 -->
     </div>
 
     <div class="form-group">
-      <label>기준 월</label>
-      <input type="month" id="baseMonth">
-    </div>
-
-    <div class="form-group">
-      <label>입점 기간</label>
-      <div class="date-row">
-        <input type="date" id="startDate">
-        <span class="date-sep">~</span>
-        <input type="date" id="endDate">
+      <label>월 기준 금액 (부가세 미포함)</label>
+      <div class="input-wrap">
+        <input type="text" id="monthlyFee" placeholder="300,000" inputmode="numeric">
+        <span class="input-unit">원</span>
       </div>
     </div>
 
@@ -207,11 +210,11 @@
       <div class="result-title">계산 결과</div>
 
       <div class="result-row">
-        <span class="result-label">기준 월 총 일수</span>
+        <span class="result-label">이번 달 총 일수</span>
         <span class="result-value" id="rTotalDays">—</span>
       </div>
       <div class="result-row">
-        <span class="result-label">적용 일수</span>
+        <span class="result-label">적용 일수 (오늘 ~ 말일)</span>
         <span class="result-value" id="rAppliedDays">—</span>
       </div>
       <div class="result-row">
@@ -228,15 +231,25 @@
   </div>
 
   <script>
-    // 오늘 날짜로 기준월 기본값 설정
     const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    document.getElementById('baseMonth').value = `${yyyy}-${mm}`;
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1; // 1-based
+    const day = today.getDate();
+    const totalDays = new Date(year, month, 0).getDate();
+    const lastDay = totalDays;
 
-    function getDaysInMonth(year, month) {
-      return new Date(year, month, 0).getDate(); // month는 1-based
-    }
+    // 안내 박스 채우기
+    document.getElementById('infoBox').innerHTML =
+      `오늘: <strong>${year}년 ${month}월 ${day}일</strong>&nbsp;&nbsp;|&nbsp;&nbsp;` +
+      `이번 달: <strong>${totalDays}일</strong><br>` +
+      `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${lastDay}일</strong> (${totalDays - day + 1}일)`;
+
+    // 금액 입력 시 자동 콤마
+    const feeInput = document.getElementById('monthlyFee');
+    feeInput.addEventListener('input', () => {
+      const raw = feeInput.value.replace(/[^0-9]/g, '');
+      feeInput.value = raw ? Number(raw).toLocaleString('ko-KR') : '';
+    });
 
     function roundTo100(n) {
       return Math.round(n / 100) * 100;
@@ -253,66 +266,35 @@
       document.getElementById('resultBox').style.display = 'none';
     }
 
-    function clearError() {
-      document.getElementById('errorMsg').style.display = 'none';
-    }
-
     function calculate() {
-      clearError();
+      document.getElementById('errorMsg').style.display = 'none';
 
-      const fee = parseFloat(document.getElementById('monthlyFee').value);
-      const baseMonth = document.getElementById('baseMonth').value; // "YYYY-MM"
-      const startVal = document.getElementById('startDate').value;
-      const endVal = document.getElementById('endDate').value;
+      const raw = feeInput.value.replace(/[^0-9]/g, '');
+      const fee = parseInt(raw, 10);
 
       if (!fee || fee <= 0) return showError('월 기준 금액을 입력해주세요.');
-      if (!baseMonth) return showError('기준 월을 선택해주세요.');
-      if (!startVal || !endVal) return showError('입점 기간을 모두 입력해주세요.');
 
-      const [byear, bmonth] = baseMonth.split('-').map(Number);
-      const totalDays = getDaysInMonth(byear, bmonth);
+      // 오늘부터 말일까지 (오늘 포함)
+      const appliedDays = totalDays - day + 1;
 
-      const start = new Date(startVal);
-      const end = new Date(endVal);
-
-      if (start > end) return showError('시작일이 종료일보다 늦을 수 없습니다.');
-
-      // 기준 월의 범위
-      const monthStart = new Date(byear, bmonth - 1, 1);
-      const monthEnd = new Date(byear, bmonth, 0);
-
-      // 교차 구간 계산
-      const clampedStart = start < monthStart ? monthStart : start;
-      const clampedEnd = end > monthEnd ? monthEnd : end;
-
-      if (clampedStart > clampedEnd) {
-        return showError('입점 기간이 기준 월 범위에 포함되지 않습니다.');
-      }
-
-      // 적용 일수 (시작일, 종료일 모두 포함)
-      const appliedDays = Math.round((clampedEnd - clampedStart) / (1000 * 60 * 60 * 24)) + 1;
-
-      // 일할 금액 계산 후 100원 단위 반올림
       const rawAmount = (fee / totalDays) * appliedDays;
       const exVat = roundTo100(rawAmount);
       const incVat = roundTo100(exVat * 1.1);
 
-      // 결과 표시
       document.getElementById('rTotalDays').textContent = `${totalDays}일`;
       document.getElementById('rAppliedDays').textContent = `${appliedDays}일`;
       document.getElementById('rExVat').textContent = fmt(exVat);
       document.getElementById('rIncVat').textContent = fmt(incVat);
 
-      const dailyRate = roundTo100(fee / totalDays);
+      const dailyRate = fee / totalDays;
       document.getElementById('rMeta').innerHTML =
-        `일 단가: ${fmt(dailyRate)} (${fmt(fee)} ÷ ${totalDays}일, 100원 단위 반올림)<br>` +
-        `계산 기간: ${clampedStart.toLocaleDateString('ko-KR')} ~ ${clampedEnd.toLocaleDateString('ko-KR')}<br>` +
-        `부가세(10%): ${fmt(incVat - exVat)}`;
+        `일 단가: ${(dailyRate).toLocaleString('ko-KR', {maximumFractionDigits: 1})}원 (${fmt(fee)} ÷ ${totalDays}일)<br>` +
+        `부가세(10%): ${fmt(incVat - exVat)}<br>` +
+        `100원 단위 반올림 적용`;
 
       document.getElementById('resultBox').style.display = 'block';
     }
 
-    // Enter 키 지원
     document.addEventListener('keydown', e => {
       if (e.key === 'Enter') calculate();
     });
