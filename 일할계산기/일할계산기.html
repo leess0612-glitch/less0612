@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일할계산기</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #f0f2f5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 40px 36px 36px;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #dde1e7;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Malgun Gothic', sans-serif;
+      color: #1a1a2e;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #fafbfc;
+    }
+
+    input:focus, select:focus {
+      border-color: #4f6ef7;
+      background: #fff;
+    }
+
+    .date-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .date-row input {
+      flex: 1;
+    }
+
+    .date-sep {
+      color: #aaa;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .btn-calc {
+      width: 100%;
+      padding: 14px;
+      background: #4f6ef7;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Malgun Gothic', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 4px;
+    }
+
+    .btn-calc:hover { background: #3a56d4; }
+    .btn-calc:active { transform: scale(0.98); }
+
+    .result-box {
+      display: none;
+      margin-top: 28px;
+      background: #f6f8ff;
+      border: 1.5px solid #d3dbff;
+      border-radius: 12px;
+      padding: 24px 22px;
+    }
+
+    .result-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4f6ef7;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #e4e8f7;
+    }
+
+    .result-row:last-child { border-bottom: none; }
+
+    .result-label {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .result-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .result-value.highlight {
+      font-size: 20px;
+      color: #4f6ef7;
+    }
+
+    .result-meta {
+      font-size: 12px;
+      color: #999;
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    .error-msg {
+      color: #e53e3e;
+      font-size: 13px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eef0ff;
+      color: #4f6ef7;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>일할계산기</h1>
+    <p class="subtitle">입점비 일할 계산 · 부가세 포함/미포함</p>
+
+    <div class="form-group">
+      <label>월 기준 금액 (원, 부가세 미포함)</label>
+      <input type="number" id="monthlyFee" placeholder="예: 300000" min="0" step="100">
+    </div>
+
+    <div class="form-group">
+      <label>기준 월</label>
+      <input type="month" id="baseMonth">
+    </div>
+
+    <div class="form-group">
+      <label>입점 기간</label>
+      <div class="date-row">
+        <input type="date" id="startDate">
+        <span class="date-sep">~</span>
+        <input type="date" id="endDate">
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">계산하기</button>
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-title">계산 결과</div>
+
+      <div class="result-row">
+        <span class="result-label">기준 월 총 일수</span>
+        <span class="result-value" id="rTotalDays">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">적용 일수</span>
+        <span class="result-value" id="rAppliedDays">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
+        <span class="result-value highlight" id="rExVat">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
+        <span class="result-value highlight" id="rIncVat">—</span>
+      </div>
+
+      <div class="result-meta" id="rMeta"></div>
+    </div>
+  </div>
+
+  <script>
+    // 오늘 날짜로 기준월 기본값 설정
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    document.getElementById('baseMonth').value = `${yyyy}-${mm}`;
+
+    function getDaysInMonth(year, month) {
+      return new Date(year, month, 0).getDate(); // month는 1-based
+    }
+
+    function roundTo100(n) {
+      return Math.round(n / 100) * 100;
+    }
+
+    function fmt(n) {
+      return n.toLocaleString('ko-KR') + '원';
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('errorMsg');
+      el.textContent = msg;
+      el.style.display = 'block';
+      document.getElementById('resultBox').style.display = 'none';
+    }
+
+    function clearError() {
+      document.getElementById('errorMsg').style.display = 'none';
+    }
+
+    function calculate() {
+      clearError();
+
+      const fee = parseFloat(document.getElementById('monthlyFee').value);
+      const baseMonth = document.getElementById('baseMonth').value; // "YYYY-MM"
+      const startVal = document.getElementById('startDate').value;
+      const endVal = document.getElementById('endDate').value;
+
+      if (!fee || fee <= 0) return showError('월 기준 금액을 입력해주세요.');
+      if (!baseMonth) return showError('기준 월을 선택해주세요.');
+      if (!startVal || !endVal) return showError('입점 기간을 모두 입력해주세요.');
+
+      const [byear, bmonth] = baseMonth.split('-').map(Number);
+      const totalDays = getDaysInMonth(byear, bmonth);
+
+      const start = new Date(startVal);
+      const end = new Date(endVal);
+
+      if (start > end) return showError('시작일이 종료일보다 늦을 수 없습니다.');
+
+      // 기준 월의 범위
+      const monthStart = new Date(byear, bmonth - 1, 1);
+      const monthEnd = new Date(byear, bmonth, 0);
+
+      // 교차 구간 계산
+      const clampedStart = start < monthStart ? monthStart : start;
+      const clampedEnd = end > monthEnd ? monthEnd : end;
+
+      if (clampedStart > clampedEnd) {
+        return showError('입점 기간이 기준 월 범위에 포함되지 않습니다.');
+      }
+
+      // 적용 일수 (시작일, 종료일 모두 포함)
+      const appliedDays = Math.round((clampedEnd - clampedStart) / (1000 * 60 * 60 * 24)) + 1;
+
+      // 일할 금액 계산 후 100원 단위 반올림
+      const rawAmount = (fee / totalDays) * appliedDays;
+      const exVat = roundTo100(rawAmount);
+      const incVat = roundTo100(exVat * 1.1);
+
+      // 결과 표시
+      document.getElementById('rTotalDays').textContent = `${totalDays}일`;
+      document.getElementById('rAppliedDays').textContent = `${appliedDays}일`;
+      document.getElementById('rExVat').textContent = fmt(exVat);
+      document.getElementById('rIncVat').textContent = fmt(incVat);
+
+      const dailyRate = roundTo100(fee / totalDays);
+      document.getElementById('rMeta').innerHTML =
+        `일 단가: ${fmt(dailyRate)} (${fmt(fee)} ÷ ${totalDays}일, 100원 단위 반올림)<br>` +
+        `계산 기간: ${clampedStart.toLocaleDateString('ko-KR')} ~ ${clampedEnd.toLocaleDateString('ko-KR')}<br>` +
+        `부가세(10%): ${fmt(incVat - exVat)}`;
+
+      document.getElementById('resultBox').style.display = 'block';
+    }
+
+    // Enter 키 지원
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>
