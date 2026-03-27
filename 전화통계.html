@@ -231,73 +231,91 @@ let currentPeriod = 'all';
 let mainChart = null;
 
 // ──────────────────────────────────────────
-// 데이터 로드 (JSONP)
+// 데이터 로드 (CSV export — 숨김/접힌 행 포함)
 // ──────────────────────────────────────────
-function loadData() {
+async function loadData() {
   document.getElementById('loading').classList.add('show');
   document.getElementById('status-msg').textContent = '';
 
-  window._gvizCb = function(data) {
-    try {
-      parseRows(data.table);
-      initConsultants();
-      render();
-      const now = new Date();
-      document.getElementById('status-msg').textContent =
-        `마지막 갱신: ${now.toLocaleDateString('ko-KR')} ${now.toLocaleTimeString('ko-KR', {hour:'2-digit',minute:'2-digit'})}`;
-    } catch(e) {
-      alert('데이터 처리 중 오류: ' + e.message);
-      console.error(e);
-    }
-    document.getElementById('loading').classList.remove('show');
-  };
-
-  const old = document.getElementById('_gviz_script');
-  if (old) old.remove();
-  const s = document.createElement('script');
-  s.id = '_gviz_script';
-  s.onerror = () => {
-    document.getElementById('loading').classList.remove('show');
-    alert('시트 데이터를 불러오지 못했습니다.\n시트 공유 설정을 확인해주세요.');
-  };
-  s.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=responseHandler:_gvizCb&gid=${GID}&t=${Date.now()}`;
-  document.head.appendChild(s);
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}&t=${Date.now()}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    parseCSVData(text);
+    initConsultants();
+    render();
+    const now = new Date();
+    document.getElementById('status-msg').textContent =
+      `마지막 갱신: ${now.toLocaleDateString('ko-KR')} ${now.toLocaleTimeString('ko-KR', {hour:'2-digit',minute:'2-digit'})}`;
+  } catch(e) {
+    alert('데이터를 불러오지 못했습니다.\n시트가 "링크 있는 사용자 공개"로 설정되어 있는지 확인해주세요.\n오류: ' + e.message);
+    console.error(e);
+  }
+  document.getElementById('loading').classList.remove('show');
 }
 
-function parseRows(table) {
-  allRows = [];
-  let lastDate = null; // 날짜가 비어있는 행은 직전 날짜를 이어받음
-  let rowIdx = 0;
-  for (const row of (table.rows || [])) {
-    rowIdx++;
-    const dateVal = row.c?.[0]?.v;
-    const phoneRaw = row.c?.[2];
-    const consultant = normalizeName(row.c?.[3]?.v || '');
-    const categoryRaw = (row.c?.[4]?.v || '').trim();
-    const statusVal = (row.c?.[5]?.v || '').trim();
+function parseCSVLine(line) {
+  const result = [];
+  let inQuote = false, field = '';
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (inQuote && line[i + 1] === '"') { field += '"'; i++; }
+      else inQuote = !inQuote;
+    } else if (c === ',' && !inQuote) {
+      result.push(field); field = '';
+    } else {
+      field += c;
+    }
+  }
+  result.push(field);
+  return result;
+}
 
-    if (dateVal) {
-      const parsed = parseGvizDate(dateVal);
+function parseDateFromCSV(v) {
+  if (!v || !v.trim()) return null;
+  // YYYY-MM-DD 또는 YYYY. M. D. 또는 YYYY/MM/DD
+  let m = v.match(/(\d{4})[.\-\/]\s*(\d{1,2})[.\-\/]\s*(\d{1,2})/);
+  if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
+  return null;
+}
+
+function parseCSVData(text) {
+  allRows = [];
+  const lines = text.split(/\r?\n/);
+  let lastDate = null;
+  let rowIdx = 0;
+
+  for (let li = 1; li < lines.length; li++) { // li=1: 헤더 건너뜀
+    const line = lines[li].trim();
+    if (!line) continue;
+    rowIdx++;
+
+    const cols = parseCSVLine(line);
+    const dateStr = cols[0] || '';
+    const phoneStr = (cols[2] || '').replace(/[^0-9]/g, '');
+    const consultant = normalizeName(cols[3] || '');
+    const categoryRaw = (cols[4] || '').trim();
+    const statusVal = (cols[5] || '').trim();
+
+    if (dateStr.trim()) {
+      const parsed = parseDateFromCSV(dateStr);
       if (parsed && !isNaN(parsed)) lastDate = parsed;
     }
     if (!lastDate) continue;
     const date = lastDate;
 
-    // '단순' 은 문의/접수 아님 → 집계 제외
+    // '단순'은 집계 제외
     if (statusVal === '단순') continue;
 
-    // 전화번호: 포맷된 값 우선, 없으면 숫자로 복원
-    let phone = '';
-    if (phoneRaw?.f) {
-      phone = phoneRaw.f.replace(/[^0-9]/g, '');
-    } else if (phoneRaw?.v != null) {
-      phone = Math.round(phoneRaw.v).toString();
-      if (phone.length === 9) phone = '0' + phone; // 10자리 복원
-      if (phone.length === 10) phone = '0' + phone; // 11자리 복원
-    }
-    // 전화번호 없으면 날짜+상담사+행번호로 고유ID 생성 (중복제거 안 됨)
+    // 전화번호 복원 (앞자리 0 누락 보정)
+    let phone = phoneStr;
+    if (phone.length === 9) phone = '0' + phone;
+    if (phone.length === 10 && !phone.startsWith('0')) phone = '0' + phone;
+
     if (!phone || phone.length < 8) {
-      if (!consultant) continue; // 번호도 상담사도 없으면 skip
+      if (!consultant) continue;
       phone = `NO_PHONE_${rowIdx}`;
     }
 
@@ -305,12 +323,6 @@ function parseRows(table) {
     const category = normalizeCategory(categoryRaw);
     allRows.push({ date, phone, consultant, category, accepted });
   }
-}
-
-function parseGvizDate(v) {
-  const m = String(v).match(/Date\((\d+),(\d+),(\d+)/);
-  if (m) return new Date(+m[1], +m[2], +m[3]);
-  return null;
 }
 
 function isAccepted(v) {
