@@ -79,7 +79,7 @@ header h1 { font-size: 20px; font-weight: 600; }
 /* 통계 카드 */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -189,15 +189,10 @@ tbody tr:hover { background: #fafcff; }
   </div>
 
   <div class="stats-grid">
-    <div class="stat-card" id="card-total">
-      <div class="label">총 전화건수</div>
-      <div class="value" id="val-total">-</div>
-      <div class="sub">원본 기준</div>
-    </div>
     <div class="stat-card" id="card-unique">
-      <div class="label">중복제거 건수</div>
+      <div class="label">총 콜수</div>
       <div class="value" id="val-unique">-</div>
-      <div class="sub">번호 기준</div>
+      <div class="sub">중복제거 기준</div>
     </div>
     <div class="stat-card" id="card-accepted">
       <div class="label">접수 건수</div>
@@ -207,7 +202,7 @@ tbody tr:hover { background: #fafcff; }
     <div class="stat-card" id="card-rate">
       <div class="label">접수율</div>
       <div class="value" id="val-rate">-</div>
-      <div class="sub">접수/중복제거</div>
+      <div class="sub">접수/총콜수</div>
     </div>
   </div>
 
@@ -427,7 +422,6 @@ function render() {
   const filtered = getFilteredRows();
   const stats = calcStats(filtered);
 
-  document.getElementById('val-total').textContent = stats.total.toLocaleString();
   document.getElementById('val-unique').textContent = stats.unique.toLocaleString();
   document.getElementById('val-accepted').textContent = stats.accepted.toLocaleString();
   document.getElementById('val-rate').textContent = stats.rate + '%';
@@ -469,17 +463,9 @@ function renderChart(groups, groupBy) {
       datasets: [
         {
           type: 'bar',
-          label: '중복제거 건수',
+          label: '총 콜수 (중복제거)',
           data: uniqueData,
           backgroundColor: 'rgba(26,115,232,0.75)',
-          yAxisID: 'y',
-          order: 2,
-        },
-        {
-          type: 'bar',
-          label: '접수 건수',
-          data: acceptedData,
-          backgroundColor: 'rgba(15,157,88,0.75)',
           yAxisID: 'y',
           order: 2,
         },
@@ -544,8 +530,7 @@ function renderTable(groups) {
   let html = `<table>
     <thead><tr>
       <th>기간</th>
-      <th>총 건수</th>
-      <th>중복제거</th>
+      <th>총 콜수</th>
       <th>접수</th>
       <th>접수율</th>
     </tr></thead><tbody>`;
@@ -555,7 +540,6 @@ function renderTable(groups) {
     const rateClass = rate >= 60 ? 'rate-high' : rate >= 30 ? 'rate-mid' : 'rate-low';
     html += `<tr>
       <td>${g.label}</td>
-      <td>${g.total}</td>
       <td>${g.unique}</td>
       <td>${g.accepted}</td>
       <td class="rate-cell ${rateClass}">${g.rate}%</td>
@@ -564,17 +548,15 @@ function renderTable(groups) {
 
   // 합계 행
   const totals = groups.reduce((acc, g) => {
-    acc.total += g.total;
     acc.unique += g.unique;
     acc.accepted += g.accepted;
     return acc;
-  }, { total:0, unique:0, accepted:0 });
+  }, { unique:0, accepted:0 });
   const totalRate = totals.unique > 0 ? (totals.accepted/totals.unique*100).toFixed(1) : '0.0';
   const rateClass = parseFloat(totalRate) >= 60 ? 'rate-high' : parseFloat(totalRate) >= 30 ? 'rate-mid' : 'rate-low';
 
   html += `</tbody><tfoot><tr style="font-weight:700;background:#f8f9fa;">
     <td>합계</td>
-    <td>${totals.total}</td>
     <td>${totals.unique}</td>
     <td>${totals.accepted}</td>
     <td class="rate-cell ${rateClass}">${totalRate}%</td>
