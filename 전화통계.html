@@ -266,15 +266,19 @@ function loadData() {
 
 function parseRows(table) {
   allRows = [];
+  let lastDate = null; // 날짜가 비어있는 행은 직전 날짜를 이어받음
   for (const row of (table.rows || [])) {
     const dateVal = row.c?.[0]?.v;
     const phoneRaw = row.c?.[2];
     const consultant = (row.c?.[3]?.v || '').trim();
     const statusVal = (row.c?.[4]?.v || '').trim();
 
-    if (!dateVal) continue;
-    const date = parseGvizDate(dateVal);
-    if (!date || isNaN(date)) continue;
+    if (dateVal) {
+      const parsed = parseGvizDate(dateVal);
+      if (parsed && !isNaN(parsed)) lastDate = parsed;
+    }
+    if (!lastDate) continue;
+    const date = lastDate;
 
     // 전화번호: 포맷된 값 우선, 없으면 숫자로 복원
     let phone = '';
