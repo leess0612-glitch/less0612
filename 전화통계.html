@@ -337,8 +337,14 @@ function normalizeName(s) {
 // ──────────────────────────────────────────
 function getFilteredRows() {
   const consultant = normalizeName(document.getElementById('consultant-sel').value);
+  const catFilter = document.getElementById('category-sel').value;
   let rows = allRows;
   if (consultant) rows = rows.filter(r => normalizeName(r.consultant) === consultant);
+  if (catFilter === '인터넷') {
+    rows = rows.filter(r => r.category === '인터넷' || r.category === '인터넷/렌탈');
+  } else if (catFilter === '렌탈') {
+    rows = rows.filter(r => r.category === '렌탈' || r.category === '인터넷/렌탈');
+  }
 
   const p = currentPeriod;
   if (p === 'all') return rows;
@@ -683,6 +689,7 @@ document.querySelectorAll('.period-tabs .tab').forEach(btn => {
   });
 });
 
+document.getElementById('category-sel').addEventListener('change', render);
 document.getElementById('consultant-sel').addEventListener('change', render);
 
 // 초기 로드
