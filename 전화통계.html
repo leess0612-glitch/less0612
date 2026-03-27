@@ -368,8 +368,9 @@ function deduplicate(rows) {
 }
 
 function calcStats(rows) {
-  const total = rows.length;
-  const accepted = rows.filter(r => r.accepted).length;
+  const deduped = deduplicate(rows);
+  const total = deduped.length;
+  const accepted = deduped.filter(r => r.accepted).length;
   const rate = total > 0 ? (accepted / total * 100).toFixed(1) : '0.0';
   return { total, accepted, rate };
 }
