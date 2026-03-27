@@ -318,6 +318,15 @@ function isAccepted(v) {
   return s === 'O' || s === 'o' || s === 'ㅇ';
 }
 
+function normalizeCategory(v) {
+  const s = v.trim();
+  if (!s) return ''; // 공란 = 이전 데이터
+  if (s === '인' || s === '인터넷') return '인터넷';
+  if (s === '렌' || s === '렌탈') return '렌탈';
+  if (s === '인렌' || s === '인터넷/렌탈' || s === '인터넷렌탈') return '인터넷/렌탈';
+  return s;
+}
+
 // 이름 정규화: 앞뒤 + 내부 공백 모두 제거
 function normalizeName(s) {
   return s.replace(/\s+/g, '');
