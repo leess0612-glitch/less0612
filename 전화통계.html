@@ -267,7 +267,7 @@ function parseRows(table) {
     rowIdx++;
     const dateVal = row.c?.[0]?.v;
     const phoneRaw = row.c?.[2];
-    const consultant = (row.c?.[3]?.v || '').trim();
+    const consultant = normalizeName(row.c?.[3]?.v || '');
     const statusVal = (row.c?.[4]?.v || '').trim();
 
     if (dateVal) {
@@ -311,13 +311,18 @@ function isAccepted(v) {
   return s === 'O' || s === 'o' || s === 'ㅇ';
 }
 
+// 이름 정규화: 앞뒤 + 내부 공백 모두 제거
+function normalizeName(s) {
+  return s.replace(/\s+/g, '');
+}
+
 // ──────────────────────────────────────────
 // 필터링 & 집계
 // ──────────────────────────────────────────
 function getFilteredRows() {
-  const consultant = document.getElementById('consultant-sel').value;
+  const consultant = normalizeName(document.getElementById('consultant-sel').value);
   let rows = allRows;
-  if (consultant) rows = rows.filter(r => r.consultant === consultant);
+  if (consultant) rows = rows.filter(r => normalizeName(r.consultant) === consultant);
 
   const p = currentPeriod;
   if (p === 'all') return rows;
