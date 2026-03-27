@@ -230,94 +230,75 @@ let currentPeriod = 'all';
 let mainChart = null;
 
 // ──────────────────────────────────────────
-// 데이터 로드 (CSV export — 숨김/접힌 행 포함)
+// 데이터 로드 (Apps Script — 접힌/숨김 행 포함)
 // ──────────────────────────────────────────
 async function loadData() {
   document.getElementById('loading').classList.add('show');
   document.getElementById('status-msg').textContent = '';
 
   try {
-    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}&t=${Date.now()}`;
-    const res = await fetch(url);
+    const res = await fetch(SCRIPT_URL);
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    const text = await res.text();
-    parseCSVData(text);
+    const data = await res.json();
+    parseScriptData(data);
     initConsultants();
     render();
     const now = new Date();
     document.getElementById('status-msg').textContent =
       `마지막 갱신: ${now.toLocaleDateString('ko-KR')} ${now.toLocaleTimeString('ko-KR', {hour:'2-digit',minute:'2-digit'})}`;
   } catch(e) {
-    alert('데이터를 불러오지 못했습니다.\n시트가 "링크 있는 사용자 공개"로 설정되어 있는지 확인해주세요.\n오류: ' + e.message);
+    alert('데이터를 불러오지 못했습니다.\n오류: ' + e.message);
     console.error(e);
   }
   document.getElementById('loading').classList.remove('show');
 }
 
-function parseCSVLine(line) {
-  const result = [];
-  let inQuote = false, field = '';
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (c === '"') {
-      if (inQuote && line[i + 1] === '"') { field += '"'; i++; }
-      else inQuote = !inQuote;
-    } else if (c === ',' && !inQuote) {
-      result.push(field); field = '';
-    } else {
-      field += c;
-    }
-  }
-  result.push(field);
-  return result;
-}
-
-function parseDateFromCSV(v) {
-  if (!v || !v.trim()) return null;
-  // YYYY-MM-DD 또는 YYYY. M. D. 또는 YYYY/MM/DD
-  let m = v.match(/(\d{4})[.\-\/]\s*(\d{1,2})[.\-\/]\s*(\d{1,2})/);
+function parseDateFromValue(v) {
+  if (v === null || v === undefined || v === '') return null;
+  if (v instanceof Date) return isNaN(v) ? null : v;
+  const s = String(v).trim();
+  if (!s) return null;
+  // ISO 형식 (Apps Script JSON 직렬화)
+  const iso = new Date(s);
+  if (!isNaN(iso)) return new Date(iso.getFullYear(), iso.getMonth(), iso.getDate());
+  // YYYY-MM-DD, YYYY. M. D. 등
+  const m = s.match(/(\d{4})[.\-\/]\s*(\d{1,2})[.\-\/]\s*(\d{1,2})/);
   if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
   return null;
 }
 
-function parseCSVData(text) {
+function parseScriptData(data) {
   allRows = [];
-  const lines = text.split(/\r?\n/);
+  if (!data || data.length < 2) return;
 
-  // A열 첫 번째 유효 날짜를 찾아 초기값으로 사용 (날짜 이전 행 소급 적용)
+  // 첫 번째 유효 날짜 찾아 초기값으로 사용 (날짜 이전 행 소급 적용)
   let firstDate = null;
-  for (let li = 1; li < lines.length; li++) {
-    const cols = parseCSVLine(lines[li].trim());
-    const d = parseDateFromCSV(cols[0] || '');
-    if (d && !isNaN(d)) { firstDate = d; break; }
+  for (let i = 1; i < data.length; i++) {
+    const d = parseDateFromValue(data[i][0]);
+    if (d) { firstDate = d; break; }
   }
 
   let lastDate = firstDate;
   let rowIdx = 0;
 
-  for (let li = 1; li < lines.length; li++) { // li=1: 헤더 건너뜀
-    const line = lines[li].trim();
-    if (!line) continue;
+  for (let i = 1; i < data.length; i++) { // i=0: 헤더 건너뜀
     rowIdx++;
+    const row = data[i];
+    const dateVal = row[0];
+    const phoneStr = String(row[2] || '').replace(/[^0-9]/g, '');
+    const consultant = normalizeName(String(row[3] || ''));
+    const categoryRaw = String(row[4] || '').trim();
+    const statusVal = String(row[5] || '').trim();
 
-    const cols = parseCSVLine(line);
-    const dateStr = cols[0] || '';
-    const phoneStr = (cols[2] || '').replace(/[^0-9]/g, '');
-    const consultant = normalizeName(cols[3] || '');
-    const categoryRaw = (cols[4] || '').trim();
-    const statusVal = (cols[5] || '').trim();
-
-    if (dateStr.trim()) {
-      const parsed = parseDateFromCSV(dateStr);
-      if (parsed && !isNaN(parsed)) lastDate = parsed;
+    if (dateVal !== '' && dateVal !== null && dateVal !== undefined) {
+      const parsed = parseDateFromValue(dateVal);
+      if (parsed) lastDate = parsed;
     }
     if (!lastDate) continue;
     const date = lastDate;
 
-    // '단순'은 집계 제외
     if (statusVal === '단순') continue;
 
-    // 전화번호 복원 (앞자리 0 누락 보정)
     let phone = phoneStr;
     if (phone.length === 9) phone = '0' + phone;
     if (phone.length === 10 && !phone.startsWith('0')) phone = '0' + phone;
