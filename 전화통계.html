@@ -273,7 +273,8 @@ function parseRows(table) {
     const dateVal = row.c?.[0]?.v;
     const phoneRaw = row.c?.[2];
     const consultant = normalizeName(row.c?.[3]?.v || '');
-    const statusVal = (row.c?.[4]?.v || '').trim();
+    const categoryRaw = (row.c?.[4]?.v || '').trim();
+    const statusVal = (row.c?.[5]?.v || '').trim();
 
     if (dateVal) {
       const parsed = parseGvizDate(dateVal);
@@ -301,7 +302,8 @@ function parseRows(table) {
     }
 
     const accepted = isAccepted(statusVal);
-    allRows.push({ date, phone, consultant, accepted });
+    const category = normalizeCategory(categoryRaw);
+    allRows.push({ date, phone, consultant, category, accepted });
   }
 }
 
