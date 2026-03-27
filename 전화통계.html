@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>전화 통계 대시보드</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Malgun Gothic', 'Segoe UI', sans-serif; background: #f0f2f5; color: #222; min-height: 100vh; }
+
+header {
+  background: #1a73e8;
+  color: white;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 { font-size: 20px; font-weight: 600; }
+#btn-refresh {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+#btn-refresh:hover { background: rgba(255,255,255,0.3); }
+#status-msg { font-size: 13px; opacity: 0.85; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+/* 필터 영역 */
+.filter-bar {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.period-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.period-tabs button {
+  padding: 7px 16px;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  color: #555;
+  transition: all 0.15s;
+}
+.period-tabs button:hover { border-color: #1a73e8; color: #1a73e8; }
+.period-tabs button.active { background: #1a73e8; border-color: #1a73e8; color: white; }
+
+.filter-selects { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.filter-selects select,
+.filter-selects input[type="date"],
+.filter-selects input[type="week"] {
+  padding: 7px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: white;
+  cursor: pointer;
+}
+.filter-selects select:focus,
+.filter-selects input:focus { outline: none; border-color: #1a73e8; }
+
+/* 통계 카드 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.stat-card .label { font-size: 13px; color: #888; margin-bottom: 8px; }
+.stat-card .value { font-size: 32px; font-weight: 700; line-height: 1; }
+.stat-card .sub { font-size: 12px; color: #aaa; margin-top: 6px; }
+
+#card-total .value { color: #1a73e8; }
+#card-unique .value { color: #0f9d58; }
+#card-accepted .value { color: #f4b400; }
+#card-rate .value { color: #db4437; }
+
+/* 차트 */
+.chart-wrap {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  position: relative;
+}
+.chart-wrap h2 { font-size: 15px; color: #555; margin-bottom: 16px; font-weight: 600; }
+.chart-wrap canvas { max-height: 320px; }
+
+/* 테이블 */
+.table-wrap {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+.table-wrap h2 { font-size: 15px; color: #555; margin-bottom: 14px; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  background: #f8f9fa;
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e8e8e8;
+}
+tbody td {
+  padding: 9px 12px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+tbody tr:hover { background: #fafcff; }
+.rate-cell { font-weight: 700; }
+.rate-high { color: #0f9d58; }
+.rate-mid { color: #f4b400; }
+.rate-low { color: #db4437; }
+
+/* 로딩 */
+#loading {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #1a73e8;
+}
+#loading.show { display: flex; }
+
+.no-data { text-align: center; color: #aaa; padding: 40px; font-size: 15px; }
+</style>
+</head>
+<body>
+
+<div id="loading" class="show">데이터 불러오는 중...</div>
+
+<header>
+  <h1>📞 전화 통계 대시보드</h1>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <span id="status-msg"></span>
+    <button id="btn-refresh" onclick="loadData()">↻ 새로고침</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="filter-bar">
+    <div class="period-tabs">
+      <button class="tab active" data-p="all">전체</button>
+      <button class="tab" data-p="year">년도별</button>
+      <button class="tab" data-p="month">월별</button>
+      <button class="tab" data-p="week">주별</button>
+      <button class="tab" data-p="day">일별</button>
+    </div>
+    <div class="filter-selects">
+      <div id="period-selector"></div>
+      <select id="consultant-sel">
+        <option value="">전체 상담사</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card" id="card-total">
+      <div class="label">총 전화건수</div>
+      <div class="value" id="val-total">-</div>
+      <div class="sub">원본 기준</div>
+    </div>
+    <div class="stat-card" id="card-unique">
+      <div class="label">중복제거 건수</div>
+      <div class="value" id="val-unique">-</div>
+      <div class="sub">번호 기준</div>
+    </div>
+    <div class="stat-card" id="card-accepted">
+      <div class="label">접수 건수</div>
+      <div class="value" id="val-accepted">-</div>
+      <div class="sub">O/ㅇ 기준</div>
+    </div>
+    <div class="stat-card" id="card-rate">
+      <div class="label">접수율</div>
+      <div class="value" id="val-rate">-</div>
+      <div class="sub">접수/중복제거</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <h2 id="chart-title">기간별 통계</h2>
+    <canvas id="mainChart"></canvas>
+  </div>
+
+  <div class="table-wrap">
+    <h2>기간별 상세</h2>
+    <div id="detail-table"></div>
+  </div>
+</div>
+
+<script>
+const SHEET_ID = '1URpDZ2ns7M7dTZ5jr7e4Pwh9wW3VinDuwiAWqbG-rKQ';
+const GID = '236619968';
+
+let allRows = [];
+let currentPeriod = 'all';
+let mainChart = null;
+
+// ──────────────────────────────────────────
+// 데이터 로드 (JSONP)
+// ──────────────────────────────────────────
+function loadData() {
+  document.getElementById('loading').classList.add('show');
+  document.getElementById('status-msg').textContent = '';
+
+  window._gvizCb = function(data) {
+    try {
+      parseRows(data.table);
+      initConsultants();
+      render();
+      const now = new Date();
+      document.getElementById('status-msg').textContent =
+        `마지막 갱신: ${now.toLocaleDateString('ko-KR')} ${now.toLocaleTimeString('ko-KR', {hour:'2-digit',minute:'2-digit'})}`;
+    } catch(e) {
+      alert('데이터 처리 중 오류: ' + e.message);
+      console.error(e);
+    }
+    document.getElementById('loading').classList.remove('show');
+  };
+
+  const old = document.getElementById('_gviz_script');
+  if (old) old.remove();
+  const s = document.createElement('script');
+  s.id = '_gviz_script';
+  s.onerror = () => {
+    document.getElementById('loading').classList.remove('show');
+    alert('시트 데이터를 불러오지 못했습니다.\n시트 공유 설정을 확인해주세요.');
+  };
+  s.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=responseHandler:_gvizCb&gid=${GID}&t=${Date.now()}`;
+  document.head.appendChild(s);
+}
+
+function parseRows(table) {
+  allRows = [];
+  for (const row of (table.rows || [])) {
+    const dateVal = row.c?.[0]?.v;
+    const phoneRaw = row.c?.[2];
+    const consultant = (row.c?.[3]?.v || '').trim();
+    const statusVal = (row.c?.[4]?.v || '').trim();
+
+    if (!dateVal) continue;
+    const date = parseGvizDate(dateVal);
+    if (!date || isNaN(date)) continue;
+
+    // 전화번호: 포맷된 값 우선, 없으면 숫자로 복원
+    let phone = '';
+    if (phoneRaw?.f) {
+      phone = phoneRaw.f.replace(/[^0-9]/g, '');
+    } else if (phoneRaw?.v != null) {
+      phone = Math.round(phoneRaw.v).toString();
+      if (phone.length === 9) phone = '0' + phone; // 10자리 복원
+      if (phone.length === 10) phone = '0' + phone; // 11자리 복원
+    }
+    if (!phone || phone.length < 8) continue;
+
+    const accepted = isAccepted(statusVal);
+    allRows.push({ date, phone, consultant, accepted });
+  }
+}
+
+function parseGvizDate(v) {
+  const m = String(v).match(/Date\((\d+),(\d+),(\d+)/);
+  if (m) return new Date(+m[1], +m[2], +m[3]);
+  return null;
+}
+
+function isAccepted(v) {
+  const s = v.trim();
+  return s === 'O' || s === 'o' || s === 'ㅇ';
+}
+
+// ──────────────────────────────────────────
+// 필터링 & 집계
+// ──────────────────────────────────────────
+function getFilteredRows() {
+  const consultant = document.getElementById('consultant-sel').value;
+  let rows = allRows;
+  if (consultant) rows = rows.filter(r => r.consultant === consultant);
+
+  const p = currentPeriod;
+  if (p === 'all') return rows;
+
+  if (p === 'year') {
+    const yr = +document.getElementById('sel-year').value;
+    return rows.filter(r => r.date.getFullYear() === yr);
+  }
+  if (p === 'month') {
+    const yr = +document.getElementById('sel-year-m').value;
+    const mo = +document.getElementById('sel-month').value;
+    return rows.filter(r => r.date.getFullYear() === yr && r.date.getMonth() + 1 === mo);
+  }
+  if (p === 'week') {
+    const wval = document.getElementById('sel-week').value; // "2026-W12"
+    if (!wval) return [];
+    const { start, end } = weekRange(wval);
+    return rows.filter(r => r.date >= start && r.date <= end);
+  }
+  if (p === 'day') {
+    const dval = document.getElementById('sel-date').value; // "2026-03-17"
+    if (!dval) return [];
+    const [yr,mo,dy] = dval.split('-').map(Number);
+    return rows.filter(r =>
+      r.date.getFullYear()===yr && r.date.getMonth()+1===mo && r.date.getDate()===dy);
+  }
+  return rows;
+}
+
+function weekRange(wval) {
+  // wval = "YYYY-Www"
+  const [yearStr, weekStr] = wval.split('-W');
+  const year = +yearStr, week = +weekStr;
+  // ISO week: week 1 = first Thursday
+  const jan4 = new Date(year, 0, 4);
+  const dayOfWeek = (jan4.getDay() + 6) % 7; // Mon=0
+  const weekStart = new Date(jan4);
+  weekStart.setDate(jan4.getDate() - dayOfWeek + (week - 1) * 7);
+  weekStart.setHours(0,0,0,0);
+  const weekEnd = new Date(weekStart);
+  weekEnd.setDate(weekStart.getDate() + 6);
+  weekEnd.setHours(23,59,59,999);
+  return { start: weekStart, end: weekEnd };
+}
+
+// 중복제거: 번호 기준, accepted는 OR
+function deduplicate(rows) {
+  const map = new Map();
+  for (const r of rows) {
+    if (!map.has(r.phone)) {
+      map.set(r.phone, { ...r });
+    } else if (r.accepted) {
+      map.get(r.phone).accepted = true;
+    }
+  }
+  return [...map.values()];
+}
+
+function calcStats(rows) {
+  const deduped = deduplicate(rows);
+  const total = rows.length;
+  const unique = deduped.length;
+  const accepted = deduped.filter(r => r.accepted).length;
+  const rate = unique > 0 ? (accepted / unique * 100).toFixed(1) : '0.0';
+  return { total, unique, accepted, rate };
+}
+
+// 그룹별 집계
+function groupRows(rows, groupBy) {
+  const map = new Map();
+
+  function key(date) {
+    if (groupBy === 'month') {
+      return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}`;
+    }
+    if (groupBy === 'day') {
+      return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+    }
+    return String(date.getFullYear());
+  }
+
+  for (const r of rows) {
+    const k = key(r.date);
+    if (!map.has(k)) map.set(k, []);
+    map.get(k).push(r);
+  }
+
+  const sorted = [...map.entries()].sort((a,b) => a[0].localeCompare(b[0]));
+  return sorted.map(([k, grpRows]) => {
+    const s = calcStats(grpRows);
+    return { label: formatLabel(k, groupBy), key: k, ...s };
+  });
+}
+
+function formatLabel(k, groupBy) {
+  if (groupBy === 'month') {
+    const [y,m] = k.split('-');
+    return `${y}년 ${+m}월`;
+  }
+  if (groupBy === 'day') {
+    const [y,m,d] = k.split('-');
+    return `${+m}/${+d}`;
+  }
+  return k + '년';
+}
+
+// ──────────────────────────────────────────
+// UI 렌더링
+// ──────────────────────────────────────────
+function render() {
+  const filtered = getFilteredRows();
+  const stats = calcStats(filtered);
+
+  document.getElementById('val-total').textContent = stats.total.toLocaleString();
+  document.getElementById('val-unique').textContent = stats.unique.toLocaleString();
+  document.getElementById('val-accepted').textContent = stats.accepted.toLocaleString();
+  document.getElementById('val-rate').textContent = stats.rate + '%';
+
+  const groupBy = getGroupBy();
+  const groups = groupRows(filtered, groupBy);
+
+  renderChart(groups, groupBy);
+  renderTable(groups);
+}
+
+function getGroupBy() {
+  if (currentPeriod === 'all' || currentPeriod === 'year') return 'month';
+  if (currentPeriod === 'month' || currentPeriod === 'week') return 'day';
+  return 'day';
+}
+
+function renderChart(groups, groupBy) {
+  const labels = groups.map(g => g.label);
+  const uniqueData = groups.map(g => g.unique);
+  const acceptedData = groups.map(g => g.accepted);
+  const rateData = groups.map(g => parseFloat(g.rate));
+
+  const ctx = document.getElementById('mainChart').getContext('2d');
+
+  if (mainChart) mainChart.destroy();
+
+  if (groups.length === 0) {
+    document.getElementById('chart-title').textContent = '기간별 통계 (데이터 없음)';
+    return;
+  }
+
+  document.getElementById('chart-title').textContent =
+    groupBy === 'month' ? '월별 통계' : groupBy === 'day' ? '일별 통계' : '연도별 통계';
+
+  mainChart = new Chart(ctx, {
+    data: {
+      labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: '중복제거 건수',
+          data: uniqueData,
+          backgroundColor: 'rgba(26,115,232,0.75)',
+          yAxisID: 'y',
+          order: 2,
+        },
+        {
+          type: 'bar',
+          label: '접수 건수',
+          data: acceptedData,
+          backgroundColor: 'rgba(15,157,88,0.75)',
+          yAxisID: 'y',
+          order: 2,
+        },
+        {
+          type: 'line',
+          label: '접수율 (%)',
+          data: rateData,
+          borderColor: '#db4437',
+          backgroundColor: 'rgba(219,68,55,0.1)',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          tension: 0.3,
+          yAxisID: 'y2',
+          order: 1,
+          fill: false,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              if (ctx.dataset.label === '접수율 (%)') return ` 접수율: ${ctx.parsed.y}%`;
+              return ` ${ctx.dataset.label}: ${ctx.parsed.y}건`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          type: 'linear',
+          position: 'left',
+          beginAtZero: true,
+          title: { display: true, text: '건수' },
+          ticks: { stepSize: 1 }
+        },
+        y2: {
+          type: 'linear',
+          position: 'right',
+          min: 0,
+          max: 100,
+          title: { display: true, text: '접수율 (%)' },
+          grid: { drawOnChartArea: false },
+          ticks: { callback: v => v + '%' }
+        }
+      }
+    }
+  });
+}
+
+function renderTable(groups) {
+  const el = document.getElementById('detail-table');
+  if (groups.length === 0) {
+    el.innerHTML = '<div class="no-data">해당 기간에 데이터가 없습니다.</div>';
+    return;
+  }
+
+  let html = `<table>
+    <thead><tr>
+      <th>기간</th>
+      <th>총 건수</th>
+      <th>중복제거</th>
+      <th>접수</th>
+      <th>접수율</th>
+    </tr></thead><tbody>`;
+
+  for (const g of groups) {
+    const rate = parseFloat(g.rate);
+    const rateClass = rate >= 60 ? 'rate-high' : rate >= 30 ? 'rate-mid' : 'rate-low';
+    html += `<tr>
+      <td>${g.label}</td>
+      <td>${g.total}</td>
+      <td>${g.unique}</td>
+      <td>${g.accepted}</td>
+      <td class="rate-cell ${rateClass}">${g.rate}%</td>
+    </tr>`;
+  }
+
+  // 합계 행
+  const totals = groups.reduce((acc, g) => {
+    acc.total += g.total;
+    acc.unique += g.unique;
+    acc.accepted += g.accepted;
+    return acc;
+  }, { total:0, unique:0, accepted:0 });
+  const totalRate = totals.unique > 0 ? (totals.accepted/totals.unique*100).toFixed(1) : '0.0';
+  const rateClass = parseFloat(totalRate) >= 60 ? 'rate-high' : parseFloat(totalRate) >= 30 ? 'rate-mid' : 'rate-low';
+
+  html += `</tbody><tfoot><tr style="font-weight:700;background:#f8f9fa;">
+    <td>합계</td>
+    <td>${totals.total}</td>
+    <td>${totals.unique}</td>
+    <td>${totals.accepted}</td>
+    <td class="rate-cell ${rateClass}">${totalRate}%</td>
+  </tr></tfoot></table>`;
+
+  el.innerHTML = html;
+}
+
+// ──────────────────────────────────────────
+// 상담사 초기화
+// ──────────────────────────────────────────
+function initConsultants() {
+  const names = [...new Set(allRows.map(r => r.consultant).filter(Boolean))].sort();
+  const sel = document.getElementById('consultant-sel');
+  sel.innerHTML = '<option value="">전체 상담사</option>';
+  names.forEach(n => {
+    const o = document.createElement('option');
+    o.value = n; o.textContent = n;
+    sel.appendChild(o);
+  });
+}
+
+// ──────────────────────────────────────────
+// 기간 선택 UI 빌드
+// ──────────────────────────────────────────
+function buildPeriodSelector(period) {
+  const el = document.getElementById('period-selector');
+  el.innerHTML = '';
+
+  const years = [...new Set(allRows.map(r => r.date.getFullYear()))].sort((a,b)=>b-a);
+  if (years.length === 0) years.push(new Date().getFullYear());
+
+  if (period === 'year') {
+    const sel = makeSelect('sel-year', years.map(y => [y, y+'년']), years[0]);
+    el.appendChild(sel);
+  }
+  else if (period === 'month') {
+    const ySel = makeSelect('sel-year-m', years.map(y => [y, y+'년']), years[0]);
+    const months = Array.from({length:12}, (_,i) => [i+1, (i+1)+'월']);
+    const mSel = makeSelect('sel-month', months, new Date().getMonth()+1);
+    el.appendChild(ySel); el.appendChild(mSel);
+  }
+  else if (period === 'week') {
+    const inp = document.createElement('input');
+    inp.type = 'week'; inp.id = 'sel-week';
+    const today = new Date();
+    inp.value = toWeekValue(today);
+    inp.addEventListener('change', render);
+    el.appendChild(inp);
+  }
+  else if (period === 'day') {
+    const inp = document.createElement('input');
+    inp.type = 'date'; inp.id = 'sel-date';
+    inp.value = toDateValue(new Date());
+    inp.addEventListener('change', render);
+    el.appendChild(inp);
+  }
+}
+
+function makeSelect(id, options, defaultVal) {
+  const sel = document.createElement('select');
+  sel.id = id;
+  for (const [val, label] of options) {
+    const o = document.createElement('option');
+    o.value = val; o.textContent = label;
+    if (val == defaultVal) o.selected = true;
+    sel.appendChild(o);
+  }
+  sel.addEventListener('change', render);
+  return sel;
+}
+
+function toWeekValue(date) {
+  const d = new Date(date);
+  d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + 3 - (d.getDay()+6)%7);
+  const week1 = new Date(d.getFullYear(), 0, 4);
+  const weekNum = 1 + Math.round(((d-week1)/86400000 - 3 + (week1.getDay()+6)%7)/7);
+  return `${d.getFullYear()}-W${String(weekNum).padStart(2,'0')}`;
+}
+
+function toDateValue(date) {
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+}
+
+// ──────────────────────────────────────────
+// 이벤트 바인딩
+// ──────────────────────────────────────────
+document.querySelectorAll('.period-tabs .tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.period-tabs .tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentPeriod = btn.dataset.p;
+    buildPeriodSelector(currentPeriod);
+    render();
+  });
+});
+
+document.getElementById('consultant-sel').addEventListener('change', render);
+
+// 초기 로드
+loadData();
+</script>
+</body>
+</html>
