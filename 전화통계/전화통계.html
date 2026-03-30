@@ -373,6 +373,15 @@ function getFilteredRows() {
     return rows.filter(r =>
       r.date.getFullYear()===yr && r.date.getMonth()+1===mo && r.date.getDate()===dy);
   }
+  if (p === 'range') {
+    const fromVal = document.getElementById('sel-range-from').value;
+    const toVal = document.getElementById('sel-range-to').value;
+    if (!fromVal || !toVal) return [];
+    const start = new Date(fromVal + 'T00:00:00');
+    const end = new Date(toVal + 'T23:59:59');
+    if (start > end) return [];
+    return rows.filter(r => r.date >= start && r.date <= end);
+  }
   return rows;
 }
 
