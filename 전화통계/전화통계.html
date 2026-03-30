@@ -650,6 +650,23 @@ function buildPeriodSelector(period) {
     inp.addEventListener('change', render);
     el.appendChild(inp);
   }
+  else if (period === 'range') {
+    const fromInp = document.createElement('input');
+    fromInp.type = 'date'; fromInp.id = 'sel-range-from';
+    fromInp.value = toDateValue(new Date(new Date().setDate(1))); // 이번달 1일
+    fromInp.addEventListener('change', render);
+
+    const sep = document.createElement('span');
+    sep.textContent = '~';
+    sep.style.cssText = 'padding:0 4px;line-height:32px;color:#555;';
+
+    const toInp = document.createElement('input');
+    toInp.type = 'date'; toInp.id = 'sel-range-to';
+    toInp.value = toDateValue(new Date());
+    toInp.addEventListener('change', render);
+
+    el.appendChild(fromInp); el.appendChild(sep); el.appendChild(toInp);
+  }
 }
 
 function makeSelect(id, options, defaultVal) {
