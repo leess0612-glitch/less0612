@@ -481,6 +481,16 @@ function render() {
 
 function getGroupBy() {
   if (currentPeriod === 'all' || currentPeriod === 'year') return 'month';
+  if (currentPeriod === 'range') {
+    // 범위가 60일 초과면 월별, 이하면 일별
+    const fromVal = document.getElementById('sel-range-from')?.value;
+    const toVal = document.getElementById('sel-range-to')?.value;
+    if (fromVal && toVal) {
+      const diff = (new Date(toVal) - new Date(fromVal)) / 86400000;
+      return diff > 60 ? 'month' : 'day';
+    }
+    return 'day';
+  }
   if (currentPeriod === 'month' || currentPeriod === 'week') return 'day';
   return 'day';
 }
