@@ -757,6 +757,47 @@ async function submitForm() {
   }
 }
 
+// Sticky form 표시 (히어로 지나면 등장, 신청폼 근처에서 숨김)
+const stickyForm = document.getElementById('stickyForm');
+const applySection = document.getElementById('apply');
+window.addEventListener('scroll', () => {
+  const heroHeight = document.querySelector('.hero').offsetHeight + 64;
+  const applyTop = applySection.getBoundingClientRect().top;
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile && window.scrollY > heroHeight && applyTop > 100) {
+    stickyForm.classList.add('visible');
+  } else {
+    stickyForm.classList.remove('visible');
+  }
+});
+
+// Sticky phone format
+document.getElementById('stickyPhone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
+  this.value = v;
+});
+
+// Sticky form submit
+async function submitStickyForm() {
+  const name = document.getElementById('stickyName').value.trim();
+  const phone = document.getElementById('stickyPhone').value.trim();
+  if (!name) { alert('이름을 입력해주세요.'); return; }
+  if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      body: JSON.stringify({ name, phone, usim: 'N', service: '미지정' })
+    });
+    document.getElementById('stickyFormContent').style.display = 'none';
+    document.getElementById('stickySuccess').style.display = 'block';
+  } catch(e) {
+    alert('오류가 발생했습니다. 1600-4670으로 문의해주세요.');
+  }
+}
+
 // Scroll animation
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
