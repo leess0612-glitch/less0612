@@ -272,6 +272,37 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 .footer-links a:hover { color: white; }
 .footer-disclaimer { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.7; }
 
+/* ===== STICKY MINI FORM ===== */
+.sticky-form {
+  position: fixed; top: 80px; right: 24px; z-index: 800;
+  width: 220px; background: white; border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15); padding: 18px 16px;
+  border-top: 4px solid var(--primary);
+  opacity: 0; transform: translateX(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.sticky-form.visible { opacity: 1; transform: translateX(0); pointer-events: all; }
+.sticky-form-title {
+  font-size: 13px; font-weight: 800; color: var(--dark);
+  margin-bottom: 12px; text-align: center; line-height: 1.4;
+}
+.sticky-form-title span { color: var(--primary); }
+.sticky-form input {
+  width: 100%; padding: 10px 12px; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 13px; font-family: 'SUIT', sans-serif;
+  outline: none; margin-bottom: 8px; transition: border-color 0.2s;
+}
+.sticky-form input:focus { border-color: var(--primary); }
+.sticky-form input::placeholder { color: #cbd5e1; }
+.sticky-form-btn {
+  width: 100%; padding: 11px; background: #ff6b00; color: white;
+  font-size: 13px; font-weight: 800; border: none; border-radius: 8px;
+  cursor: pointer; font-family: 'SUIT', sans-serif; transition: background 0.2s;
+}
+.sticky-form-btn:hover { background: #e85e00; }
+.sticky-form-success { text-align: center; padding: 8px 0; font-size: 13px; color: var(--primary); font-weight: 700; display: none; }
+
 /* ===== FLOATING ===== */
 .floating-btns { position: fixed; right: 20px; bottom: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 900; }
 .float-btn {
