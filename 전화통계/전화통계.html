@@ -288,8 +288,8 @@ function parseScriptData(data) {
     const dateVal = row[0];
     const phoneStr = String(row[2] || '').replace(/[^0-9]/g, '');
     const consultant = normalizeName(String(row[3] || ''));
-    const categoryRaw = String(row[4] || '').trim();
-    const statusVal = String(row[5] || '').trim();
+    const statusVal = String(row[4] || '').trim();
+    const categoryRaw = String(row[5] || '').trim();
 
     if (dateVal !== '' && dateVal !== null && dateVal !== undefined) {
       const parsed = parseDateFromValue(dateVal);
