@@ -671,16 +671,6 @@ function toggleService(type) {
 // FAQ
 function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
 
-// Consent
-function toggleAll(e) {
-  const checked = document.getElementById('consentAll').checked;
-  ['c1','c2','c3'].forEach(id => document.getElementById(id).checked = checked);
-}
-['c1','c2','c3'].forEach(id => {
-  document.getElementById(id).addEventListener('change', () => {
-    document.getElementById('consentAll').checked = ['c1','c2','c3'].every(i => document.getElementById(i).checked);
-  });
-});
 
 // Phone format
 document.getElementById('inputPhone').addEventListener('input', function() {
@@ -697,8 +687,8 @@ async function submitForm() {
   const phone = document.getElementById('inputPhone').value.trim();
   if (!name) { alert('이름을 입력해주세요.'); return; }
   if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
-  if (!document.getElementById('c1').checked || !document.getElementById('c2').checked) {
-    alert('필수 동의 항목에 체크해주세요.'); return;
+  if (!document.getElementById('c1').checked) {
+    alert('개인정보 수집 및 이용에 동의해주세요.'); return;
   }
   const btn = document.getElementById('submitBtn');
   btn.disabled = true; btn.textContent = '신청 중...';
