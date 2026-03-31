@@ -337,13 +337,28 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 .sticky-form {
   position: fixed; top: 80px; right: 24px; z-index: 800;
   width: 220px; background: white; border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15); padding: 18px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   border-top: 4px solid var(--primary);
   opacity: 0; transform: translateX(20px);
   transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none;
+  pointer-events: none; overflow: hidden;
 }
 .sticky-form.visible { opacity: 1; transform: translateX(0); pointer-events: all; }
+.sticky-form-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 14px; cursor: pointer; user-select: none;
+  font-size: 11px; font-weight: 700; color: var(--primary);
+  background: #f0f7ff; border-bottom: 1px solid #dbeafe;
+}
+.sticky-form-toggle:hover { background: #dbeafe; }
+.sticky-form-toggle .toggle-arrow { font-size: 9px; transition: transform 0.25s; display: inline-block; }
+.sticky-form.collapsed .toggle-arrow { transform: rotate(180deg); }
+.sticky-form-body {
+  padding: 14px 16px 16px;
+  max-height: 300px; overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.sticky-form.collapsed .sticky-form-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
 .sticky-form-title {
   font-size: 13px; font-weight: 800; color: var(--dark);
   margin-bottom: 12px; text-align: center; line-height: 1.4;
