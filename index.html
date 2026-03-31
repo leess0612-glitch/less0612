@@ -587,32 +587,9 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
           <label for="inputPhone">휴대폰 번호</label>
           <input type="tel" id="inputPhone" placeholder="휴대폰번호를 입력해주세요" maxlength="13">
         </div>
-        <div class="consent-box">
-          <div class="consent-all" onclick="toggleAll(event)">
-            <input type="checkbox" id="consentAll">
-            <label for="consentAll">전체 동의</label>
-          </div>
-          <div class="consent-item">
-            <div class="consent-left">
-              <input type="checkbox" id="c1" class="cr">
-              <span class="badge req">필수</span>
-              <label for="c1">개인정보 수집 및 활용 동의</label>
-            </div>
-          </div>
-          <div class="consent-item">
-            <div class="consent-left">
-              <input type="checkbox" id="c2" class="cr">
-              <span class="badge req">필수</span>
-              <label for="c2">개인정보 제3자 제공 동의</label>
-            </div>
-          </div>
-          <div class="consent-item">
-            <div class="consent-left">
-              <input type="checkbox" id="c3">
-              <span class="badge opt">선택</span>
-              <label for="c3">마케팅 정보 수신 동의</label>
-            </div>
-          </div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:18px;">
+          <input type="checkbox" id="c1" style="width:17px;height:17px;accent-color:var(--primary);flex-shrink:0;margin-top:2px;cursor:pointer;">
+          <label for="c1" style="font-size:13px;color:var(--gray);cursor:pointer;line-height:1.5;">개인정보 수집 및 이용에 동의합니다. <span style="color:#dc2626;font-weight:600;">(필수)</span></label>
         </div>
         <button class="form-submit" id="submitBtn" onclick="submitForm()">내 최대 지원금 무료확인</button>
       </div>
