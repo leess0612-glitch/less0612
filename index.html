@@ -895,6 +895,11 @@ async function submitForm() {
   }
 }
 
+// Sticky form 접기/펴기
+function toggleStickyForm() {
+  document.getElementById('stickyForm').classList.toggle('collapsed');
+}
+
 // Sticky form 표시 (히어로 지나면 등장, 신청폼 근처에서 숨김)
 const stickyForm = document.getElementById('stickyForm');
 const applySection = document.getElementById('apply');
