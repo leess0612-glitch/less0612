@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>당현함 | 인터넷가입 최대 지원금 당일 현금지급</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SUIT:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #1a56db;
+  --primary-dark: #1e40af;
+  --cta: #6d28d9;
+  --cta-hover: #5b21b6;
+  --accent: #f59e0b;
+  --dark: #0f172a;
+  --gray: #64748b;
+  --light-gray: #f1f5f9;
+  --white: #ffffff;
+  --border: #e2e8f0;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'SUIT', 'Noto Sans KR', sans-serif; color: var(--dark); line-height: 1.6; }
+
+/* ===== HEADER ===== */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: white; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: all 0.3s;
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 20px;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-size: 22px; font-weight: 900; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+.logo span { color: var(--cta); }
+nav { display: flex; gap: 4px; align-items: center; }
+nav a { font-size: 14px; font-weight: 500; color: var(--gray); text-decoration: none; padding: 6px 10px; border-radius: 6px; transition: all 0.2s; }
+nav a:hover { color: var(--primary); background: #eff6ff; }
+.header-phone {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--primary); color: white; padding: 8px 16px;
+  border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background 0.2s;
+}
+.header-phone:hover { background: var(--primary-dark); }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; }
+.mobile-menu {
+  display: none; position: fixed; top: 64px; left: 0; right: 0;
+  background: white; padding: 12px 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); z-index: 999;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block; padding: 13px 0; font-size: 15px; font-weight: 500;
+  color: var(--dark); text-decoration: none; border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* ===== HERO ===== */
+.hero {
+  margin-top: 64px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 60%, #2563eb 100%);
+  padding: 80px 20px 72px; text-align: center; color: white; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+}
+.hero-badge {
+  display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+  color: white; font-size: 13px; font-weight: 600; padding: 4px 16px; border-radius: 20px; margin-bottom: 20px;
+}
+.hero h1 { font-size: clamp(26px, 5vw, 52px); font-weight: 900; line-height: 1.25; margin-bottom: 16px; letter-spacing: -1px; }
+.hero h1 em { font-style: normal; color: #fcd34d; }
+.hero p { font-size: clamp(14px, 2vw, 18px); opacity: 0.9; margin-bottom: 36px; }
+.hero-cta {
+  display: inline-block; background: var(--cta); color: white;
+  font-size: 18px; font-weight: 800; padding: 16px 40px; border-radius: 12px;
+  text-decoration: none; transition: all 0.2s; box-shadow: 0 8px 24px rgba(109,40,217,0.4); letter-spacing: -0.3px;
+}
+.hero-cta:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(109,40,217,0.5); }
+.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
+.hero-stat .num { font-size: 28px; font-weight: 900; color: #fcd34d; }
+.hero-stat .label { font-size: 13px; opacity: 0.8; margin-top: 2px; }
+
+/* ===== CARRIERS ===== */
+.carriers { background: white; padding: 28px 20px; border-bottom: 1px solid var(--border); }
+.carriers-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.carriers-label { font-size: 13px; color: var(--gray); font-weight: 500; margin-right: 4px; }
+.carrier-badge { padding: 7px 18px; border-radius: 8px; font-size: 14px; font-weight: 700; border: 2px solid var(--border); color: var(--dark); }
+.carrier-kt { border-color: #e50012; color: #e50012; }
+.carrier-skt { border-color: #e0002a; color: #e0002a; }
+.carrier-lgu { border-color: #e6007e; color: #e6007e; }
+
+/* ===== COMMON SECTION ===== */
+section { padding: 72px 20px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag {
+  display: inline-block; background: #eff6ff; color: var(--primary);
+  font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+}
+.section-title { font-size: clamp(22px, 3.5vw, 36px); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; line-height: 1.3; }
+.section-title em { font-style: normal; color: var(--primary); }
+.section-sub { font-size: 16px; color: var(--gray); margin-bottom: 48px; }
+
+/* ===== BENEFITS ===== */
+.benefits { background: #f8fafc; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.benefit-card {
+  background: white; border-radius: 16px; padding: 32px 24px; text-align: center;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: transform 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); }
+.benefit-icon {
+  width: 64px; height: 64px; border-radius: 16px; background: #eff6ff;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px;
+}
+.benefit-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+.benefit-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+/* ===== PLANS ===== */
+.plans { background: white; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan-card { border: 2px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.2s; }
+.plan-card:hover { border-color: var(--primary); box-shadow: 0 8px 24px rgba(26,86,219,0.1); }
+.plan-card.featured { border-color: var(--primary); box-shadow: 0 8px 24px rgba(26,86,219,0.15); }
+.plan-header { padding: 20px 24px; background: var(--light-gray); text-align: center; }
+.plan-card.featured .plan-header { background: var(--primary); color: white; }
+.plan-carrier { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.plan-name { font-size: 13px; opacity: 0.7; }
+.plan-body { padding: 24px; }
+.plan-price { text-align: center; margin-bottom: 20px; }
+.plan-price .from { font-size: 12px; color: var(--gray); }
+.plan-price .amount { font-size: 32px; font-weight: 900; color: var(--primary); }
+.plan-price .unit { font-size: 14px; color: var(--gray); }
+.plan-features { list-style: none; }
+.plan-features li { display: flex; align-items: center; gap: 8px; font-size: 14px; padding: 6px 0; border-bottom: 1px solid var(--border); color: var(--gray); }
+.plan-features li:last-child { border-bottom: none; }
+.plan-features li::before { content: '✓'; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+.plan-cta {
+  display: block; margin-top: 20px; text-align: center; padding: 12px;
+  border-radius: 8px; background: var(--primary); color: white; font-weight: 700; text-decoration: none; transition: background 0.2s;
+}
+.plan-cta:hover { background: var(--primary-dark); }
+
+/* ===== PROCESS ===== */
+.process { background: #f8fafc; }
+.process-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin-top: 48px; flex-wrap: wrap; }
+.process-step {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  flex: 1; min-width: 130px; max-width: 200px; position: relative; padding: 0 16px;
+}
+.process-step::after { content: '→'; position: absolute; right: -8px; top: 14px; font-size: 20px; color: var(--gray); }
+.process-step:last-child::after { display: none; }
+.step-num {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--primary); color: white;
+  font-size: 20px; font-weight: 900; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px; box-shadow: 0 4px 12px rgba(26,86,219,0.3);
+}
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.step-desc { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+/* ===== REVIEWS ===== */
+.reviews { background: white; overflow: hidden; }
+.swiper { padding-bottom: 40px !important; }
+.swiper-slide { width: 280px; height: 200px; border-radius: 12px; overflow: hidden; }
+.review-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--gray); font-size: 13px; gap: 8px; border-radius: 12px;
+}
+/* 실제 후기 이미지 사용 시: .swiper-slide img { width:100%; height:100%; object-fit:cover; border-radius:12px; } */
+
+/* ===== FAQ ===== */
+.faq { background: #f8fafc; }
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item { background: white; border-radius: 12px; margin-bottom: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.faq-question {
+  padding: 20px 24px; font-size: 16px; font-weight: 600; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; user-select: none;
+}
+.faq-question:hover { color: var(--primary); }
+.faq-icon { font-size: 22px; font-weight: 300; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer-inner { padding: 0 24px 20px; font-size: 15px; color: var(--gray); line-height: 1.75; }
+
+/* ===== FORM ===== */
+.form-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%); color: white;
+}
+.form-section .section-tag { background: rgba(255,255,255,0.2); color: white; }
+.form-section .section-title { color: white; }
+.form-section .section-title em { color: #fcd34d; }
+.form-section .section-sub { color: rgba(255,255,255,0.8); }
+.form-card {
+  background: white; border-radius: 20px; padding: 40px;
+  max-width: 580px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+.form-headline { font-size: 17px; font-weight: 800; color: var(--dark); text-align: center; margin-bottom: 24px; }
+.form-headline span { color: var(--primary); }
+.service-tabs { display: flex; gap: 12px; margin-bottom: 16px; }
+.service-tab {
+  flex: 1; border: 2px solid var(--border); border-radius: 12px; padding: 14px 10px;
+  text-align: center; cursor: pointer; transition: all 0.2s; font-size: 14px; font-weight: 600;
+  color: var(--gray); background: white; user-select: none;
+}
+.service-tab.active { border-color: var(--primary); background: #eff6ff; color: var(--primary); }
+.service-tab-icon { font-size: 24px; margin-bottom: 4px; }
+.usim-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 13px 15px; background: #fffbeb; border: 1px solid #fde68a;
+  border-radius: 10px; margin-bottom: 16px; cursor: pointer;
+}
+.usim-check input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--primary); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+.usim-check label { font-size: 13px; font-weight: 500; color: #92400e; cursor: pointer; line-height: 1.5; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--gray); margin-bottom: 5px; }
+.form-group input {
+  width: 100%; padding: 13px 16px; border: 2px solid var(--border); border-radius: 10px;
+  font-size: 15px; font-family: 'SUIT', sans-serif; transition: border-color 0.2s; outline: none;
+}
+.form-group input:focus { border-color: var(--primary); }
+.form-group input::placeholder { color: #cbd5e1; }
+.consent-box { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; }
+.consent-all {
+  display: flex; align-items: center; gap: 8px; padding-bottom: 10px;
+  margin-bottom: 10px; border-bottom: 1px solid var(--border); cursor: pointer;
+}
+.consent-all label { font-size: 14px; font-weight: 700; cursor: pointer; }
+.consent-item { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; }
+.consent-left { display: flex; align-items: center; gap: 7px; }
+.consent-item input[type="checkbox"],
+.consent-all input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+.badge { font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+.badge.req { background: #fee2e2; color: #dc2626; }
+.badge.opt { background: #f1f5f9; color: var(--gray); }
+.consent-item label { font-size: 13px; color: var(--gray); cursor: pointer; }
+.form-submit {
+  width: 100%; padding: 18px; background: var(--cta); color: white;
+  font-size: 17px; font-weight: 800; border: none; border-radius: 12px; cursor: pointer;
+  transition: all 0.2s; letter-spacing: -0.3px; font-family: 'SUIT', sans-serif;
+}
+.form-submit:hover { background: var(--cta-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(109,40,217,0.4); }
+.form-submit:disabled { background: #94a3b8; transform: none; box-shadow: none; cursor: not-allowed; }
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success .s-icon { font-size: 56px; margin-bottom: 16px; }
+.form-success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.form-success p { color: var(--gray); font-size: 15px; line-height: 1.8; }
+
+/* ===== FOOTER ===== */
+footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; font-size: 13px; line-height: 1.9; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 20px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo { font-size: 20px; font-weight: 900; color: white; }
+.footer-logo span { color: #818cf8; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: white; }
+.footer-disclaimer { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.7; }
+
+/* ===== FLOATING ===== */
+.floating-btns { position: fixed; right: 20px; bottom: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 900; }
+.float-btn {
+  width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: transform 0.2s; font-size: 22px;
+}
+.float-btn:hover { transform: scale(1.1); }
+.float-phone { background: var(--primary); color: white; }
+.float-kakao { background: #fee500; color: #3a1d00; }
+
+/* ===== ANIMATION ===== */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .hamburger { display: flex; }
+  .header-phone { padding: 7px 12px; font-size: 13px; }
+  .hero { padding: 48px 20px 56px; }
+  .hero-stats { gap: 20px; }
+  .hero-stat .num { font-size: 22px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .process-steps { flex-direction: column; align-items: center; gap: 20px; }
+  .process-step::after { display: none; }
+  .form-card { padding: 24px 18px; }
+  section { padding: 52px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">당<span>현</span>함</a>
+    <nav>
+      <a href="#benefits">혜택안내</a>
+      <a href="#plans">요금제비교</a>
+      <a href="#reviews">설치후기</a>
+      <a href="#faq">자주묻는질문</a>
+      <a href="#apply" style="color:var(--primary);font-weight:700;">신청하기</a>
+    </nav>
+    <a href="tel:1600-4670" class="header-phone">
+      <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      1600-4670
+    </a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#benefits" onclick="closeMobileMenu()">혜택안내</a>
+  <a href="#plans" onclick="closeMobileMenu()">요금제비교</a>
+  <a href="#reviews" onclick="closeMobileMenu()">설치후기</a>
+  <a href="#faq" onclick="closeMobileMenu()">자주묻는질문</a>
+  <a href="#apply" onclick="closeMobileMenu()" style="color:var(--primary);font-weight:700;">신청하기 →</a>
+  <a href="tel:1600-4670" style="color:var(--primary);font-weight:700;">📞 1600-4670</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">KT · SKT · LG U+ 공식 파트너</div>
+  <h1>놓치고 있던 <em>내 최대 지원금</em><br>당현함이 알려드릴게요!</h1>
+  <p>인터넷 가입 시 최대 현금 지원, <strong>당일 지급</strong><br>KT · SKT · LG U+ 비교 후 가장 유리한 조건으로</p>
+  <a href="#apply" class="hero-cta">내 최대 지원금 무료확인 →</a>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num">12,847건</div>
+      <div class="label">누적 상담 건수</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">98.3%</div>
+      <div class="label">고객 만족도</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">평균 89만원</div>
+      <div class="label">현금 지원금</div>
+    </div>
+  </div>
+</section>
+
+<!-- CARRIERS -->
+<div class="carriers">
+  <div class="carriers-inner">
+    <span class="carriers-label">공식 파트너</span>
+    <span class="carrier-badge carrier-kt">KT</span>
+    <span class="carrier-badge carrier-skt">SKT</span>
+    <span class="carrier-badge carrier-lgu">LG U+</span>
+    <span class="carrier-badge">스카이라이프</span>
+    <span class="carrier-badge">LG헬로비전</span>
+    <span class="carrier-badge">SK브로드밴드</span>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section id="benefits" class="benefits">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">왜 당현함인가요?</span>
+    <h2 class="section-title">당현함만의 <em>3가지 특별 혜택</em></h2>
+    <p class="section-sub">다른 곳보다 혜택이 적다면 차액만큼 추가 보상해드립니다</p>
+    <div class="benefits-grid fade-up">
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>당일 현금지급</h3>
+        <p>가입 완료 후 현금으로<br>당일 바로 지급합니다<br>기다림 없이 즉시 받으세요</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📊</div>
+        <h3>3사 맞춤 비교</h3>
+        <p>KT · SKT · LG U+ 중<br>내게 가장 유리한 조건을<br>전문 상담사가 비교해드립니다</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔧</div>
+        <h3>무료 설치 완료</h3>
+        <p>설치비 0원<br>원하는 날짜에 방문 설치<br>당일 개통 가능합니다</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" class="plans">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <span class="section-tag">요금제 비교</span>
+      <h2 class="section-title">통신사별 <em>대표 요금제</em></h2>
+      <p class="section-sub">모든 요금제 가입 시 현금 지원금 별도 지급</p>
+    </div>
+    <div class="plans-grid fade-up">
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-carrier">KT</div>
+          <div class="plan-name">기가 인터넷</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price">
+            <div class="from">약정 시 월</div>
+            <span class="amount">27,500</span><span class="unit">원~</span>
+          </div>
+          <ul class="plan-features">
+            <li>최대 500Mbps</li>
+            <li>2년 약정 기준</li>
+            <li>Wi-Fi 공유기 무료 제공</li>
+            <li>당일 설치 가능</li>
+          </ul>
+          <a href="#apply" class="plan-cta">지원금 확인하기</a>
+        </div>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-header">
+          <div class="plan-carrier">SKT</div>
+          <div class="plan-name">5GX 기가 인터넷</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price">
+            <div class="from">약정 시 월</div>
+            <span class="amount">27,500</span><span class="unit">원~</span>
+          </div>
+          <ul class="plan-features">
+            <li>최대 500Mbps</li>
+            <li>2년 약정 기준</li>
+            <li>Wi-Fi 공유기 무료 제공</li>
+            <li>당일 설치 가능</li>
+          </ul>
+          <a href="#apply" class="plan-cta">지원금 확인하기</a>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">
+          <div class="plan-carrier">LG U+</div>
+          <div class="plan-name">기가 인터넷</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-price">
+            <div class="from">약정 시 월</div>
+            <span class="amount">27,500</span><span class="unit">원~</span>
+          </div>
+          <ul class="plan-features">
+            <li>최대 500Mbps</li>
+            <li>2년 약정 기준</li>
+            <li>Wi-Fi 공유기 무료 제공</li>
+            <li>당일 설치 가능</li>
+          </ul>
+          <a href="#apply" class="plan-cta">지원금 확인하기</a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:12px;color:var(--gray);">※ 요금은 약정 조건 및 결합 상품에 따라 달라질 수 있습니다. 정확한 금액은 상담 시 안내드립니다.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">가입 프로세스</span>
+    <h2 class="section-title">딱 <em>4단계</em>면 끝납니다</h2>
+    <p class="section-sub">복잡한 절차 없이 간단하게</p>
+    <div class="process-steps fade-up">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">간단 신청</div>
+        <div class="step-desc">아래 폼에<br>정보 입력<br>(30초)</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">전문 상담</div>
+        <div class="step-desc">전담 상담사<br>맞춤 요금제<br>안내</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">원하는 날 개통</div>
+        <div class="step-desc">원하는 날짜<br>방문 설치<br>완료</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">당일 현금지급</div>
+        <div class="step-desc">개통 완료 후<br>현금 당일<br>지급</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span class="section-tag">설치 후기</span>
+      <h2 class="section-title">실제 고객 <em>설치 후기</em></h2>
+      <p class="section-sub">당현함을 통해 가입한 고객님들의 생생한 후기</p>
+    </div>
+    <div class="swiper reviewSwiper">
+      <div class="swiper-wrapper">
+        <!--
+          후기 이미지 교체 방법:
+          아래 <div class="review-placeholder">...</div> 대신
+          <img src="후기이미지파일명.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+          으로 교체하세요.
+        -->
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 1</div></div>
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 2</div></div>
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 3</div></div>
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 4</div></div>
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 5</div></div>
+        <div class="swiper-slide"><div class="review-placeholder"><svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>후기 이미지 6</div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--gray);margin-top:4px;">※ 실제 설치 후기 캡처 이미지로 교체해 주세요</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px;">
+      <span class="section-tag">자주 묻는 질문</span>
+      <h2 class="section-title">궁금한 점이 <em>있으신가요?</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">정말 당일에 현금으로 지급받을 수 있나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">네, 개통이 완료되면 당일 현금(계좌이체)으로 지급해드립니다. 단, 개통 시간에 따라 익일 지급되는 경우도 있으니 상담 시 안내드립니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">별도로 가입 비용이 있나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">당현함을 통한 가입은 별도 비용이 없습니다. 오히려 통신사에 직접 가입하는 것보다 더 많은 혜택을 받으실 수 있습니다. 상담 및 비교 서비스는 모두 무료입니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">약정 기간은 얼마나 되나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">2년(24개월) 또는 3년(36개월) 약정 중 선택 가능합니다. 약정 기간이 길수록 월 요금이 저렴하고 지원금이 높아질 수 있습니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">기존 인터넷을 해지해야 하나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">기존 약정이 남아있는 경우 위약금 여부를 먼저 확인해드립니다. 약정 만료 후 가입 시 위약금 없이 전환 가능하며, 만료 전이라도 유리한 조건을 안내드립니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">설치는 얼마나 걸리나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">보통 30분~1시간 소요됩니다. 원하시는 날짜에 기사님이 방문하여 설치하며, 설치비는 무료입니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">인터넷과 가전렌탈을 함께 신청하면 혜택이 더 있나요? <span class="faq-icon">+</span></div>
+        <div class="faq-answer"><div class="faq-answer-inner">네, 함께 신청하시면 추가 결합 혜택을 드립니다. 선택하시는 상품에 따라 금액이 달라지므로 상담 시 최적의 조합을 안내드립니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="apply" class="form-section">
+  <div class="section-inner" style="text-align:center;">
+    <span class="section-tag">무료 신청</span>
+    <h2 class="section-title"><em>30초</em> 신청으로<br>내 최대 지원금 확인</h2>
+    <p class="section-sub" style="margin-bottom:36px;">상담은 무료, 부담 없이 신청하세요</p>
+    <div class="form-card">
+      <div id="formContent">
+        <p class="form-headline"><span>어떤 서비스</span>가 필요하신가요?</p>
+        <div class="service-tabs">
+          <div class="service-tab active" id="tab-internet" onclick="toggleService('internet')">
+            <div class="service-tab-icon">📡</div>인터넷
+          </div>
+          <div class="service-tab" id="tab-rental" onclick="toggleService('rental')">
+            <div class="service-tab-icon">🏠</div>가전렌탈
+          </div>
+        </div>
+        <div class="usim-check">
+          <input type="checkbox" id="usimCheck">
+          <label for="usimCheck">휴대폰 기종 변경 없이 통신사만 바꾸고 추가 현금 받기</label>
+        </div>
+        <div class="form-group">
+          <label for="inputName">이름</label>
+          <input type="text" id="inputName" placeholder="이름을 입력해주세요" maxlength="20">
+        </div>
+        <div class="form-group">
+          <label for="inputPhone">휴대폰 번호</label>
+          <input type="tel" id="inputPhone" placeholder="휴대폰번호를 입력해주세요" maxlength="13">
+        </div>
+        <div class="consent-box">
+          <div class="consent-all" onclick="toggleAll(event)">
+            <input type="checkbox" id="consentAll">
+            <label for="consentAll">전체 동의</label>
+          </div>
+          <div class="consent-item">
+            <div class="consent-left">
+              <input type="checkbox" id="c1" class="cr">
+              <span class="badge req">필수</span>
+              <label for="c1">개인정보 수집 및 활용 동의</label>
+            </div>
+          </div>
+          <div class="consent-item">
+            <div class="consent-left">
+              <input type="checkbox" id="c2" class="cr">
+              <span class="badge req">필수</span>
+              <label for="c2">개인정보 제3자 제공 동의</label>
+            </div>
+          </div>
+          <div class="consent-item">
+            <div class="consent-left">
+              <input type="checkbox" id="c3">
+              <span class="badge opt">선택</span>
+              <label for="c3">마케팅 정보 수신 동의</label>
+            </div>
+          </div>
+        </div>
+        <button class="form-submit" id="submitBtn" onclick="submitForm()">내 최대 지원금 무료확인</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="s-icon">✅</div>
+        <h3>신청이 완료되었습니다!</h3>
+        <p>담당 상담사가 빠른 시간 내에<br>연락드리겠습니다.<br><br>바로 문의하시려면<br><strong style="color:var(--primary);font-size:17px;">1600-4670</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">당<span>현</span>함</div>
+      <div class="footer-links">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">서비스이용약관</a>
+        <a href="tel:1600-4670">1600-4670</a>
+      </div>
+    </div>
+    <div class="footer-info" style="font-size:13px;">
+      <strong style="color:rgba(255,255,255,0.8);">당현함</strong> | 대표: 홍길동 | 사업자등록번호: 000-00-00000<br>
+      주소: 서울시 000 | 대표번호: 1600-4670
+    </div>
+    <div class="footer-disclaimer">
+      당현함은 KT, SKT, LG U+ 공식 파트너로서 인터넷 가입 및 가전렌탈 서비스를 제공합니다.<br>
+      제시된 요금 및 지원금은 약정 조건에 따라 변경될 수 있으며, 정확한 내용은 상담을 통해 안내드립니다.<br>
+      © 2026 당현함. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="tel:1600-4670" class="float-btn float-phone" title="전화 상담">
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+  </a>
+  <a href="https://pf.kakao.com/" class="float-btn float-kakao" title="카카오 상담">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.667 1.556 5.011 3.9 6.4L5 21l4.1-2.7c.94.2 1.91.3 2.9.3 5.523 0 10-3.477 10-7.5S17.523 3 12 3z"/></svg>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd6DgeWNujZPi1v4aOVrykT2k1DPNtDHeF2uW3_Vd4VgdtyTtWODYC5UQHCEHRW8FamQ/exec';
+
+// Swiper
+new Swiper('.reviewSwiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  loop: true,
+  autoplay: { delay: 3000, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true }
+});
+
+// Mobile menu
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+document.addEventListener('click', e => {
+  if (!e.target.closest('header') && !e.target.closest('.mobile-menu'))
+    document.getElementById('mobileMenu').classList.remove('open');
+});
+
+// Service tab (다중 선택)
+let selectedServices = new Set(['internet']);
+function toggleService(type) {
+  if (selectedServices.has(type) && selectedServices.size > 1) {
+    selectedServices.delete(type);
+  } else {
+    selectedServices.add(type);
+  }
+  document.getElementById('tab-internet').classList.toggle('active', selectedServices.has('internet'));
+  document.getElementById('tab-rental').classList.toggle('active', selectedServices.has('rental'));
+}
+
+// FAQ
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+// Consent
+function toggleAll(e) {
+  const checked = document.getElementById('consentAll').checked;
+  ['c1','c2','c3'].forEach(id => document.getElementById(id).checked = checked);
+}
+['c1','c2','c3'].forEach(id => {
+  document.getElementById(id).addEventListener('change', () => {
+    document.getElementById('consentAll').checked = ['c1','c2','c3'].every(i => document.getElementById(i).checked);
+  });
+});
+
+// Phone format
+document.getElementById('inputPhone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
+  this.value = v;
+});
+
+// Submit
+async function submitForm() {
+  const name = document.getElementById('inputName').value.trim();
+  const phone = document.getElementById('inputPhone').value.trim();
+  if (!name) { alert('이름을 입력해주세요.'); return; }
+  if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
+  if (!document.getElementById('c1').checked || !document.getElementById('c2').checked) {
+    alert('필수 동의 항목에 체크해주세요.'); return;
+  }
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = '신청 중...';
+
+  const serviceMap = { internet:'인터넷', rental:'가전렌탈' };
+  const serviceText = [...selectedServices].map(s => serviceMap[s]).join('+');
+  const usim = document.getElementById('usimCheck').checked ? 'Y' : 'N';
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      body: JSON.stringify({ name, phone, usim, service: serviceText })
+    });
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch(e) {
+    alert('오류가 발생했습니다. 잠시 후 다시 시도하거나\n1600-4670으로 직접 문의해주세요.');
+    btn.disabled = false; btn.textContent = '내 최대 지원금 무료확인';
+  }
+}
+
+// Scroll animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
