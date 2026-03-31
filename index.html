@@ -660,10 +660,10 @@ document.addEventListener('click', e => {
     document.getElementById('mobileMenu').classList.remove('open');
 });
 
-// Service tab (다중 선택)
+// Service tab (다중 선택, 재클릭 해제)
 let selectedServices = new Set(['internet']);
 function toggleService(type) {
-  if (selectedServices.has(type) && selectedServices.size > 1) {
+  if (selectedServices.has(type)) {
     selectedServices.delete(type);
   } else {
     selectedServices.add(type);
