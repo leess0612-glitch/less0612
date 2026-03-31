@@ -151,24 +151,35 @@ section { padding: 72px 20px; }
 .compare .section-title { color: white; }
 .compare .section-title em { color: #fcd34d; }
 .compare-table {
-  width: 100%; max-width: 700px; margin: 40px auto 0;
-  border-collapse: collapse; border-radius: 16px; overflow: hidden;
+  width: 100%; max-width: 720px; margin: 40px auto 0;
+  border-collapse: separate; border-spacing: 0;
+  border-radius: 20px; overflow: hidden;
 }
-.compare-table th {
-  padding: 18px 20px; font-size: 16px; font-weight: 700; text-align: center;
+.compare-table thead tr th { padding: 20px 16px; font-size: 15px; font-weight: 800; text-align: center; }
+.compare-table th.col-a { background: #1e293b; color: #475569; width: 20%; }
+.compare-table th.col-vs { background: #0f172a; color: #475569; width: 38%; font-weight: 500; font-size: 13px; }
+.compare-table th.col-us {
+  background: #2563eb; color: white; width: 42%; font-size: 20px;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.15);
+  position: relative;
 }
-.compare-table th.col-a { background: #334155; color: #94a3b8; width: 22%; }
-.compare-table th.col-vs { background: #1e293b; color: #64748b; width: 36%; font-weight: 400; font-size: 13px; }
-.compare-table th.col-us { background: var(--primary); color: white; width: 42%; font-size: 18px; }
-.compare-table td {
-  padding: 16px 20px; text-align: center; font-size: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+.compare-table th.col-us::after {
+  content: '✓ 추천'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: #ff6b00; color: white; font-size: 11px; font-weight: 800;
+  padding: 3px 10px; border-radius: 20px; white-space: nowrap;
 }
+.compare-table td { padding: 16px; text-align: center; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .compare-table tr:last-child td { border-bottom: none; }
-.compare-table td.col-a { background: #1e293b; color: #64748b; font-size: 18px; }
-.compare-table td.col-vs { background: #0f172a; color: #94a3b8; font-size: 13px; line-height: 1.5; }
-.compare-table td.col-us { background: #1e3a8a; color: white; font-weight: 700; }
-.col-us .check { font-size: 20px; color: #60a5fa; }
+.compare-table td.col-a { background: #1e293b; color: #ef4444; font-size: 20px; font-weight: 700; }
+.compare-table td.col-vs { background: #0f172a; color: #64748b; font-size: 13px; line-height: 1.6; }
+.compare-table td.col-us {
+  background: linear-gradient(180deg, #1d4ed8, #1e40af);
+  color: white; font-weight: 800; font-size: 15px;
+}
+.compare-table td.col-us .ok {
+  display: inline-block; color: #34d399; font-size: 22px; font-weight: 900; line-height: 1;
+}
+.compare-table td.col-us .ok-sub { display: block; font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 400; margin-top: 2px; }
 
 /* ===== PLANS ===== */
 .plans { background: white; }
