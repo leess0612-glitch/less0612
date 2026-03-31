@@ -689,6 +689,7 @@ document.getElementById('inputPhone').addEventListener('input', function() {
 async function submitForm() {
   const name = document.getElementById('inputName').value.trim();
   const phone = document.getElementById('inputPhone').value.trim();
+  if (selectedServices.size === 0) { alert('서비스를 하나 이상 선택해주세요.'); return; }
   if (!name) { alert('이름을 입력해주세요.'); return; }
   if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
   if (!document.getElementById('c1').checked) {
