@@ -342,22 +342,21 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 
 /* ===== STICKY MINI FORM ===== */
 .sticky-form {
-  position: fixed; top: 120px; right: 24px; z-index: 800;
-  width: 220px; background: white; border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  border-top: 4px solid var(--primary);
-  opacity: 0; transform: translateX(20px);
-  transition: opacity 0.3s, transform 0.3s;
-  pointer-events: none; overflow: visible;
+  position: fixed; top: 120px; right: 0; z-index: 800;
+  display: flex; align-items: flex-start;
+  opacity: 0;
+  transform: translateX(244px);
+  transition: opacity 0.3s, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
 }
 .sticky-form.visible { opacity: 1; transform: translateX(0); pointer-events: all; }
+.sticky-form.visible.collapsed { transform: translateX(220px); }
 .sticky-form-tab {
-  position: absolute; left: -24px; top: 28px;
-  width: 24px; height: 44px;
+  width: 24px; height: 44px; flex-shrink: 0;
   background: var(--primary);
   border-radius: 8px 0 0 8px;
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
+  cursor: pointer; margin-top: 24px;
   box-shadow: -3px 3px 10px rgba(0,0,0,0.18);
   transition: background 0.2s;
 }
@@ -367,20 +366,18 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 8px solid white;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
-/* 열려있을 때 기본: border-left 삼각형 = ▶ (오른쪽) */
-/* 접혔을 때 180도 회전 = ◀ (왼쪽) */
+/* 열려있을 때: ▶ (오른쪽) / 접혔을 때: 180도 = ◀ (왼쪽) */
 .sticky-form.collapsed .sticky-form-tab .tab-arrow { transform: rotate(180deg); }
 .sticky-form-inner {
-  border-radius: 16px; overflow: hidden;
+  width: 220px; background: white;
+  border-radius: 16px;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
-.sticky-form-body {
-  padding: 14px 16px 16px;
-  max-height: 300px; overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-.sticky-form.collapsed .sticky-form-body { max-height: 0; padding-top: 0; padding-bottom: 0; }
+.sticky-form-body { padding: 14px 16px 16px; }
 .sticky-form-title {
   font-size: 13px; font-weight: 800; color: var(--dark);
   margin-bottom: 12px; text-align: center; line-height: 1.4;
