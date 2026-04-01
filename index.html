@@ -442,6 +442,37 @@ section { padding: 72px 20px; }
 .form-success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
 .form-success p { color: var(--gray); font-size: 15px; line-height: 1.8; }
 
+/* ===== PRIVACY MODAL ===== */
+.privacy-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+  z-index: 2000; align-items: center; justify-content: center; padding: 20px;
+}
+.privacy-overlay.open { display: flex; }
+.privacy-modal {
+  background: white; border-radius: 16px; width: 100%; max-width: 640px;
+  max-height: 80vh; display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.privacy-modal-head {
+  padding: 20px 24px; border-bottom: 1px solid #e5e7eb;
+  display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+}
+.privacy-modal-head h3 { font-size: 17px; font-weight: 800; color: var(--dark); }
+.privacy-close {
+  width: 32px; height: 32px; border: none; background: #f1f5f9;
+  border-radius: 8px; cursor: pointer; font-size: 18px; color: #64748b;
+  display: flex; align-items: center; justify-content: center;
+}
+.privacy-close:hover { background: #e2e8f0; }
+.privacy-modal-body {
+  padding: 20px 24px; overflow-y: auto; font-size: 13px; color: #374151; line-height: 1.8;
+}
+.privacy-modal-body h4 { font-size: 14px; font-weight: 800; color: var(--dark); margin: 20px 0 6px; }
+.privacy-modal-body h4:first-child { margin-top: 0; }
+.privacy-modal-body table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 12px; }
+.privacy-modal-body th { background: #f8fafc; padding: 8px 10px; border: 1px solid #e5e7eb; font-weight: 700; text-align: center; }
+.privacy-modal-body td { padding: 8px 10px; border: 1px solid #e5e7eb; }
+
 /* ===== FOOTER ===== */
 footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; font-size: 13px; line-height: 1.9; }
 .footer-inner { max-width: 1100px; margin: 0 auto; }
