@@ -1002,7 +1002,7 @@ async function submitForm() {
   const phone = document.getElementById('inputPhone').value.trim();
   if (selectedServices.size === 0) { alert('서비스를 하나 이상 선택해주세요.'); return; }
   if (!name) { alert('이름을 입력해주세요.'); return; }
-  if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
+  if (!phone || phone.replace(/\D/g,'').length !== 11) { alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return; }
   if (!document.getElementById('c1').checked) {
     alert('개인정보 수집 및 이용에 동의해주세요.'); return;
   }
@@ -1059,7 +1059,7 @@ async function submitStickyForm() {
   const name = document.getElementById('stickyName').value.trim();
   const phone = document.getElementById('stickyPhone').value.trim();
   if (!name) { alert('이름을 입력해주세요.'); return; }
-  if (!phone || phone.replace(/\D/g,'').length < 10) { alert('올바른 휴대폰 번호를 입력해주세요.'); return; }
+  if (!phone || phone.replace(/\D/g,'').length !== 11) { alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return; }
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
