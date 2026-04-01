@@ -1162,6 +1162,9 @@ async function submitForm() {
 function openPrivacy() { document.getElementById('privacyOverlay').classList.add('open'); }
 function closePrivacy() { document.getElementById('privacyOverlay').classList.remove('open'); }
 function closePrivacyOutside(e) { if (e.target.id === 'privacyOverlay') closePrivacy(); }
+function openTerms() { document.getElementById('termsOverlay').classList.add('open'); }
+function closeTerms() { document.getElementById('termsOverlay').classList.remove('open'); }
+function closeTermsOutside(e) { if (e.target.id === 'termsOverlay') closeTerms(); }
 
 // Sticky form 접기/펴기
 function toggleStickyForm() {
