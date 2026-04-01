@@ -525,13 +525,16 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   .compare-table th.col-vs { padding-left: 10px; font-size: 12px; }
   .plans-grid { grid-template-columns: 1fr; }
   .process-chevrons { flex-direction: column; gap: 12px; filter: none; }
-  .process-chevron {
-    margin-left: 0 !important; margin-top: 0;
-    clip-path: none !important; border-radius: 14px !important;
-    padding: 22px 24px; display: flex; align-items: center; gap: 16px; text-align: left;
-  }
+  .process-chevron { margin-left: 0 !important; margin-top: 0; clip-path: none !important; border-radius: 14px !important; padding: 22px 24px; display: flex; align-items: center; gap: 16px; text-align: left; }
   .chevron-badge { margin-bottom: 0; flex-shrink: 0; }
   .chevron-title { margin-bottom: 2px; font-size: 18px; }
+  .process-steps-a { flex-direction: column; align-items: center; gap: 12px; }
+  .process-arrow-a { transform: rotate(90deg); }
+  .process-steps-b { flex-direction: column; align-items: center; gap: 16px; }
+  .process-steps-b::before { display: none; }
+  .process-step-b { flex-direction: row; text-align: left; gap: 16px; width: 100%; max-width: 340px; }
+  .step-num-b { margin-bottom: 0; flex-shrink: 0; }
+  .step-card-b { border-top: none; border-left: 3px solid var(--primary); border-radius: 10px; }
   .chevron-desc { font-size: 13px; }
   .form-card { padding: 24px 18px; }
   section { padding: 52px 20px; }
