@@ -231,7 +231,7 @@ section { padding: 72px 20px; }
 
 /* --- A안: 원래 카드 스타일 --- */
 .process-steps-a {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: stretch; justify-content: center;
   gap: 0; max-width: 860px; margin: 0 auto;
 }
 .process-step-a {
@@ -242,6 +242,7 @@ section { padding: 72px 20px; }
   transition: transform 0.2s;
 }
 .process-step-a:hover { transform: translateY(-4px); }
+.process-arrow-a { align-self: center; }
 .process-arrow-a {
   font-size: 28px; color: #93c5fd; font-weight: 700;
   padding: 0 12px; flex-shrink: 0;
