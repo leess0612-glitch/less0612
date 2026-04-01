@@ -456,12 +456,15 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   .compare-table td.col-vs { padding-left: 10px; font-size: 12px; }
   .compare-table th.col-vs { padding-left: 10px; font-size: 12px; }
   .plans-grid { grid-template-columns: 1fr; }
-  .process-chevrons { flex-direction: column; max-width: 320px; }
-  .process-chevron { margin-left: 0; margin-top: -22px; padding: 26px 40px 22px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 50% 100%, 0 calc(100% - 28px)) !important;
-    border-radius: 0 !important; }
-  .process-chevron:first-child { border-radius: 10px 10px 0 0 !important; margin-top: 0; }
-  .process-chevron:last-child { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important; border-radius: 0 0 10px 10px !important; }
+  .process-chevrons { flex-direction: column; gap: 12px; filter: none; }
+  .process-chevron {
+    margin-left: 0 !important; margin-top: 0;
+    clip-path: none !important; border-radius: 14px !important;
+    padding: 22px 24px; display: flex; align-items: center; gap: 16px; text-align: left;
+  }
+  .chevron-badge { margin-bottom: 0; flex-shrink: 0; }
+  .chevron-title { margin-bottom: 2px; font-size: 18px; }
+  .chevron-desc { font-size: 13px; }
   .form-card { padding: 24px 18px; }
   section { padding: 52px 20px; }
 }
