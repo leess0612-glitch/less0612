@@ -90,17 +90,23 @@ nav a:hover { color: var(--primary); background: #eff6ff; }
   border: 3px solid rgba(255,255,255,0.3);
 }
 .hero-cta:hover { background: #e85e00; transform: translateY(-3px); box-shadow: 0 14px 36px rgba(255,107,0,0.6); }
-.hero-since {
-  display: flex; align-items: center; justify-content: center;
-  gap: 14px; margin-top: 40px; flex-wrap: wrap;
+.hero-stats {
+  display: flex; justify-content: center; gap: 0;
+  margin-top: 40px; flex-wrap: wrap;
 }
-.since-badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.hero-stat {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 32px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.hero-stat:last-child { border-right: none; }
 .since-badge {
+  display: inline-block;
   background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-  color: white; font-size: 13px; font-weight: 700;
-  padding: 5px 14px; border-radius: 20px;
+  color: white; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px;
 }
-.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; }
 .hero-stat .num { font-size: 28px; font-weight: 900; color: #fcd34d; }
 .hero-stat .label { font-size: 13px; opacity: 0.8; margin-top: 2px; }
 
