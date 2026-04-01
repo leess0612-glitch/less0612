@@ -562,6 +562,38 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 .float-phone { background: var(--primary); color: white; }
 .float-kakao { background: #fee500; color: #3a1d00; }
 
+/* ===== MOBILE BOTTOM CTA ===== */
+.mobile-cta-bar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
+  padding: 10px 16px 10px;
+  background: white;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.12);
+  opacity: 0; transform: translateY(100%);
+  transition: opacity 0.3s, transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+}
+.mobile-cta-bar.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.mobile-cta-bar-inner {
+  display: flex; align-items: center; gap: 10px;
+}
+.mobile-cta-call {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  background: var(--primary); color: white; text-decoration: none;
+}
+.mobile-cta-btn {
+  flex: 1; height: 48px; background: #ff6b00; color: white;
+  font-size: 16px; font-weight: 800; border: none; border-radius: 12px;
+  cursor: pointer; font-family: 'SUIT', sans-serif;
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: block; }
+  .floating-btns { bottom: 80px; }
+}
+
 /* ===== ANIMATION ===== */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
