@@ -132,11 +132,15 @@ section { padding: 72px 20px; }
 .benefit-card.main h3 { color: white; font-size: 24px; }
 .benefit-card.main p { color: rgba(255,255,255,0.85); }
 .benefit-card.main .benefit-tag { background: rgba(255,255,255,0.2); color: white; }
-.benefit-tag {
-  display: inline-block; background: #eff6ff; color: var(--primary);
-  font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 16px;
+.benefit-top {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
 }
-.benefit-icon-lg { font-size: 52px; margin-bottom: 20px; display: block; }
+.benefit-tag {
+  display: inline-flex; align-items: center; background: #eff6ff; color: var(--primary);
+  font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+}
+.benefit-card.main .benefit-tag { background: rgba(255,255,255,0.2); color: white; }
+.benefit-icon-lg { font-size: 36px; line-height: 1; flex-shrink: 0; }
 .benefit-card h3 { font-size: 20px; font-weight: 900; margin-bottom: 10px; line-height: 1.4; }
 .benefit-card p { font-size: 14px; color: var(--gray); line-height: 1.75; }
 .benefit-guarantee {
