@@ -90,7 +90,21 @@ nav a:hover { color: var(--primary); background: #eff6ff; }
   border: 3px solid rgba(255,255,255,0.3);
 }
 .hero-cta:hover { background: #e85e00; transform: translateY(-3px); box-shadow: 0 14px 36px rgba(255,107,0,0.6); }
-.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
+.hero-since {
+  display: flex; align-items: center; justify-content: center;
+  gap: 14px; margin-top: 40px; flex-wrap: wrap;
+}
+.since-year {
+  font-size: 22px; font-weight: 900; color: #fcd34d;
+  letter-spacing: 2px; border-right: 1.5px solid rgba(255,255,255,0.25); padding-right: 14px;
+}
+.since-badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.since-badge {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  color: white; font-size: 13px; font-weight: 700;
+  padding: 5px 14px; border-radius: 20px;
+}
+.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; }
 .hero-stat .num { font-size: 28px; font-weight: 900; color: #fcd34d; }
 .hero-stat .label { font-size: 13px; opacity: 0.8; margin-top: 2px; }
 
