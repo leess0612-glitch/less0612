@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest marketing-tools --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(rm -rf marketing-tools)",
+      "Bash(printf nnnn:*)",
+      "Bash(yes)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx shadcn@latest add card input label table select dialog separator badge sheet textarea tabs -y)",
+      "Bash(npx prisma:*)",
+      "Bash(npm run:*)",
+      "Bash(ls:*)",
+      "Bash(npm ls:*)"
+    ]
+  }
+}
