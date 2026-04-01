@@ -1070,7 +1070,7 @@ async function submitStickyForm() {
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
-      body: JSON.stringify({ name, phone, usim: 'N', service: '미지정' })
+      body: JSON.stringify({ name, phone, usim: '미지정', service: '미지정' })
     });
     document.getElementById('stickyFormContent').style.display = 'none';
     document.getElementById('stickySuccess').style.display = 'block';
