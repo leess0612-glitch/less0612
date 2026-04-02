@@ -615,14 +615,15 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   pointer-events: none;
 }
 .desk-cta-bar.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.desk-cta-top { font-size: 21px; font-weight: 800; color: white; text-align: center; letter-spacing: -0.3px; }
-.desk-cta-bottom { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 640px; }
+.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 16px; }
+.desk-cta-left { display: flex; flex-direction: column; gap: 8px; }
+.desk-cta-top { font-size: 21px; font-weight: 800; color: white; text-align: left; letter-spacing: -0.3px; }
+.desk-cta-bottom { display: flex; align-items: center; gap: 10px; }
 .desk-cta-bar input {
-  flex: 1; padding: 10px 14px; border: 1.5px solid #e2e8f0;
-  border-radius: 8px; font-size: 14px; font-family: 'SUIT', sans-serif;
-  outline: none; transition: border-color 0.2s; min-width: 0;
-  background: white; color: #1e293b;
+  padding: 12px 18px; border: 1.5px solid #e2e8f0;
+  border-radius: 8px; font-size: 16px; font-family: 'SUIT', sans-serif;
+  outline: none; transition: border-color 0.2s;
+  background: white; color: #1e293b; width: 190px;
 }
 .desk-cta-bar input:focus { border-color: #1A6BFF; }
 .desk-cta-bar input::placeholder { color: #94a3b8; }
