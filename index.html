@@ -608,30 +608,31 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   display: none;
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
   background: #1d4ed8; border-top: 1.5px solid #1e40af;
-  padding: 10px 24px;
+  padding: 10px 24px 12px;
   box-shadow: 0 -4px 16px rgba(0,0,0,0.2);
   opacity: 0; transform: translateY(100%);
   transition: opacity 0.3s, transform 0.35s cubic-bezier(0.4,0,0.2,1);
   pointer-events: none;
 }
 .desk-cta-bar.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 10px; }
-.desk-cta-label { font-size: 14px; font-weight: 800; color: white; white-space: nowrap; flex-shrink: 0; }
+.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.desk-cta-top { font-size: 14px; font-weight: 800; color: white; text-align: center; letter-spacing: -0.3px; }
+.desk-cta-bottom { display: flex; align-items: center; gap: 10px; }
 .desk-cta-bar input {
-  flex: 1; padding: 10px 14px; border: 1.5px solid rgba(255,255,255,0.35);
+  flex: 1; padding: 10px 14px; border: 1.5px solid #e2e8f0;
   border-radius: 8px; font-size: 14px; font-family: 'SUIT', sans-serif;
   outline: none; transition: border-color 0.2s; min-width: 0;
-  background: rgba(255,255,255,0.15); color: white;
+  background: white; color: #1e293b;
 }
-.desk-cta-bar input:focus { border-color: white; }
-.desk-cta-bar input::placeholder { color: rgba(255,255,255,0.55); }
+.desk-cta-bar input:focus { border-color: #2563eb; }
+.desk-cta-bar input::placeholder { color: #94a3b8; }
 .desk-cta-bar-btn {
   padding: 10px 24px; background: #ff6b00; color: white;
   font-size: 14px; font-weight: 800; border: none; border-radius: 8px;
   cursor: pointer; font-family: 'SUIT', sans-serif; transition: background 0.2s; white-space: nowrap; flex-shrink: 0;
 }
 .desk-cta-bar-btn:hover { background: #e85e00; }
-.desk-cta-success { font-size: 14px; font-weight: 700; color: white; white-space: nowrap; display: none; }
+.desk-cta-success { font-size: 14px; font-weight: 700; color: white; text-align: center; display: none; }
 
 @media (min-width: 769px) {
   .desk-cta-bar { display: block; }
