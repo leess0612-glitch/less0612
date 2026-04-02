@@ -232,24 +232,24 @@ section { padding: 72px 20px; }
 .compare-table th {
   padding: 20px 16px; font-size: 16px; font-weight: 800; text-align: center;
 }
-/* 컬럼 순서: 항목(왼) | 당현함(중, 넓음) | A업체(우) */
-.compare-table th.col-vs { background: #e8edf2; color: #374151; width: 38%; font-size: 14px; font-weight: 700; text-align: center; }
-.compare-table th.col-us { background: #2563eb; color: white;   width: 48%; font-size: 22px; }
-.compare-table th.col-a  { background: #d1d9e0; color: #374151; width: 14%; font-size: 14px; }
+/* 컬럼 순서: A업체(좌, 좁음) | VS항목(중, 좁음) | 당현함(우, 넓음) */
+.compare-table th.col-a  { background: #d1d9e0; color: #374151; width: 15%; font-size: 13px; font-weight: 700; padding: 20px 8px; }
+.compare-table th.col-vs { background: #e8edf2; color: #374151; width: 25%; font-size: 13px; font-weight: 700; text-align: center; padding: 20px 10px; }
+.compare-table th.col-us { background: #2563eb; color: white;   width: 60%; font-size: 22px; }
 .compare-table td {
-  padding: 20px 16px; text-align: center;
+  padding: 18px 16px; text-align: center;
   border-top: 1px solid #d1d9e0;
   vertical-align: middle;
 }
 /* 항목명 열 */
 .compare-table td.col-vs {
-  text-align: center;
-  font-size: 15px; font-weight: 700; color: #1e293b; line-height: 1.5;
+  text-align: center; padding: 18px 10px;
+  font-size: 13px; font-weight: 700; color: #1e293b; line-height: 1.5;
 }
 .compare-table tr:nth-child(even) td.col-vs { background: #edf1f5; }
 .compare-table tr:nth-child(odd)  td.col-vs { background: #f5f7fa; }
 /* A업체 열 */
-.compare-table td.col-a { color: #4b5563; font-size: 15px; font-weight: 700; }
+.compare-table td.col-a { color: #4b5563; font-size: 13px; font-weight: 700; padding: 18px 8px; }
 .compare-table tr:nth-child(even) td.col-a { background: #e2e8ee; }
 .compare-table tr:nth-child(odd)  td.col-a { background: #edf1f5; }
 /* 당현함 열 */
