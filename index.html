@@ -701,7 +701,8 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   .cf-col-a { flex: 0 0 72px; }
   .cf-col-vs { flex: 0 0 140px; }
   .cf-col-us { flex: 0 0 150px; margin-top: -16px; margin-bottom: 0; }
-  .cf-col-us .cf-cell:last-child { padding-bottom: 6px; }
+  .cf-col-us .cf-cell:last-child { min-height: 52px; }
+  .cf-col-a .cf-cell:nth-child(6), .cf-col-vs .cf-cell:nth-child(6), .cf-col-us .cf-cell:nth-child(6) { min-height: 52px; }
   .cf-col-us .cf-head { font-size: 15px; min-height: 64px; padding: 8px 4px; }
   .cf-head { min-height: 48px; font-size: 11px; padding: 6px 4px; }
   .cf-cell { min-height: 52px; padding: 6px 4px; }
