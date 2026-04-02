@@ -841,48 +841,39 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
     <span class="section-tag">비교해보세요</span>
     <h2 class="section-title">다른 업체와 <em>직접 비교</em>해드립니다</h2>
     <div class="compare-wrap fade-up">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th class="col-a">A업체</th>
-            <th class="col-vs">VS</th>
-            <th class="col-us">당현함</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="col-a">2~3일</td>
-            <td class="col-vs">현금 사은품 입금</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">당일 지급</span><span class="ok-sub">오후 5시 30분 이전 설치건</span></div></div></td>
-          </tr>
-          <tr>
-            <td class="col-a">✕</td>
-            <td class="col-vs">상품권 → 현금 교환</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">가능</span></div></div></td>
-          </tr>
-          <tr>
-            <td class="col-a">✕</td>
-            <td class="col-vs">월 9,900원<br>저렴한 인터넷</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">가능</span><span class="ok-sub">SKB (휴대폰결합기준)</span></div></div></td>
-          </tr>
-          <tr>
-            <td class="col-a">✕</td>
-            <td class="col-vs">월 18,900원<br>저렴한 직수 정수기</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">가능</span><span class="ok-sub">교원웰스</span></div></div></td>
-          </tr>
-          <tr>
-            <td class="col-a">✕</td>
-            <td class="col-vs">전 통신사&amp;렌탈</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">가능</span></div></div></td>
-          </tr>
-          <tr>
-            <td class="col-a">✕</td>
-            <td class="col-vs">인터넷 + 유심<br>동시 변경 혜택</td>
-            <td class="col-us"><div class="ok-cell"><div class="ok-top"><span class="ok-label">가능</span></div></div></td>
-          </tr>
-        </tbody>
-        </table>
+      <div class="compare-flex">
+        <!-- A업체 -->
+        <div class="cf-col cf-col-a">
+          <div class="cf-head">A업체</div>
+          <div class="cf-cell">2~3일</div>
+          <div class="cf-cell">✕</div>
+          <div class="cf-cell">✕</div>
+          <div class="cf-cell">✕</div>
+          <div class="cf-cell">✕</div>
+          <div class="cf-cell">✕</div>
+        </div>
+        <!-- VS 항목 -->
+        <div class="cf-col cf-col-vs">
+          <div class="cf-head">VS</div>
+          <div class="cf-cell">현금 사은품 입금</div>
+          <div class="cf-cell">상품권 → 현금 교환</div>
+          <div class="cf-cell">월 9,900원<br>저렴한 인터넷</div>
+          <div class="cf-cell">월 18,900원<br>저렴한 직수 정수기</div>
+          <div class="cf-cell">전 통신사&amp;렌탈</div>
+          <div class="cf-cell">인터넷 + 유심<br>동시 변경 혜택</div>
+        </div>
+        <!-- 당현함 -->
+        <div class="cf-col cf-col-us">
+          <div class="cf-head">당현함</div>
+          <div class="cf-cell"><span class="ok-label">당일 지급</span><span class="ok-sub">오후 5시 30분 이전 설치건</span></div>
+          <div class="cf-cell"><span class="ok-label">가능</span></div>
+          <div class="cf-cell"><span class="ok-label">가능</span><span class="ok-sub">SKB (휴대폰결합기준)</span></div>
+          <div class="cf-cell"><span class="ok-label">가능</span><span class="ok-sub">교원웰스</span></div>
+          <div class="cf-cell"><span class="ok-label">가능</span></div>
+          <div class="cf-cell"><span class="ok-label">가능</span></div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
 
