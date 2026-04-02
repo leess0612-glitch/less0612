@@ -1399,7 +1399,8 @@ async function submitDeskForm() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone, usim: '미지정', service: '미지정' })
     });
-    document.querySelector('.desk-cta-layout').style.display = 'none';
+    document.querySelector('.desk-cta-top').style.display = 'none';
+    document.querySelector('.desk-cta-bottom').style.display = 'none';
     document.getElementById('deskSuccess').style.display = 'block';
   } catch(e) {
     alert('오류가 발생했습니다. 1600-4670으로 문의해주세요.');
