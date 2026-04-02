@@ -615,21 +615,25 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   pointer-events: none;
 }
 .desk-cta-bar.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.desk-cta-bar-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: center; }
+.desk-cta-layout { display: flex; align-items: stretch; gap: 12px; }
+.desk-cta-left { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .desk-cta-top { font-size: 21px; font-weight: 800; color: white; text-align: center; letter-spacing: -0.3px; }
-.desk-cta-bottom { display: flex; align-items: center; gap: 10px; }
+.desk-cta-inputs { display: flex; gap: 8px; }
 .desk-cta-bar input {
-  flex: 1; padding: 10px 14px; border: 1.5px solid #e2e8f0;
+  width: 120px; padding: 10px 12px; border: 1.5px solid #e2e8f0;
   border-radius: 8px; font-size: 14px; font-family: 'SUIT', sans-serif;
-  outline: none; transition: border-color 0.2s; min-width: 0;
+  outline: none; transition: border-color 0.2s;
   background: white; color: #1e293b;
 }
+#deskPhone { width: 158px; }
 .desk-cta-bar input:focus { border-color: #2563eb; }
 .desk-cta-bar input::placeholder { color: #94a3b8; }
 .desk-cta-bar-btn {
-  padding: 10px 24px; background: #ff6b00; color: white;
-  font-size: 14px; font-weight: 800; border: none; border-radius: 8px;
-  cursor: pointer; font-family: 'SUIT', sans-serif; transition: background 0.2s; white-space: nowrap; flex-shrink: 0;
+  padding: 0 28px; background: #ff6b00; color: white;
+  font-size: 15px; font-weight: 800; border: none; border-radius: 8px;
+  cursor: pointer; font-family: 'SUIT', sans-serif; transition: background 0.2s;
+  white-space: nowrap; align-self: stretch; display: flex; align-items: center;
 }
 .desk-cta-bar-btn:hover { background: #e85e00; }
 .desk-cta-success { font-size: 14px; font-weight: 700; color: white; text-align: center; display: none; }
