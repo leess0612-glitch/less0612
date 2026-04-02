@@ -1364,13 +1364,16 @@ window.addEventListener('scroll', () => {
 
 // Desktop bottom bar scroll
 const deskCtaBar = document.getElementById('deskCtaBar');
+const floatingBtns = document.querySelector('.floating-btns');
 window.addEventListener('scroll', () => {
   const heroHeight = document.querySelector('.hero').offsetHeight + 64;
   const applyTop = applySection.getBoundingClientRect().top;
   if (window.innerWidth > 768 && window.scrollY > heroHeight && applyTop > 100) {
     deskCtaBar.classList.add('visible');
-  } else {
+    floatingBtns.style.bottom = '80px';
+  } else if (window.innerWidth > 768) {
     deskCtaBar.classList.remove('visible');
+    floatingBtns.style.bottom = '24px';
   }
 }, { passive: true });
 
