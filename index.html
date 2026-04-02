@@ -1326,13 +1326,17 @@ async function submitStickyForm() {
 
 // Mobile bottom CTA
 const mobileCta = document.getElementById('mobileCta');
+const floatPhone = document.querySelector('.float-phone');
 window.addEventListener('scroll', () => {
   const heroHeight = document.querySelector('.hero').offsetHeight + 64;
   const applyTop = applySection.getBoundingClientRect().top;
-  if (window.innerWidth <= 768 && window.scrollY > heroHeight && applyTop > 80) {
+  const ctaVisible = window.innerWidth <= 768 && window.scrollY > heroHeight && applyTop > 80;
+  if (ctaVisible) {
     mobileCta.classList.add('visible');
+    if (floatPhone) floatPhone.style.display = 'none';
   } else {
     mobileCta.classList.remove('visible');
+    if (floatPhone) floatPhone.style.display = '';
   }
 });
 
