@@ -1230,10 +1230,14 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 <!-- DESKTOP BOTTOM CTA BAR -->
 <div class="desk-cta-bar" id="deskCtaBar">
   <div class="desk-cta-bar-inner">
-    <div class="desk-cta-top">내가 받을 수 있는 지원금은?</div>
-    <div class="desk-cta-bottom">
-      <input type="text" id="deskName" placeholder="이름">
-      <input type="tel" id="deskPhone" placeholder="휴대폰 번호">
+    <div class="desk-cta-layout">
+      <div class="desk-cta-left">
+        <div class="desk-cta-top">내가 받을 수 있는 지원금은?</div>
+        <div class="desk-cta-inputs">
+          <input type="text" id="deskName" placeholder="이름">
+          <input type="tel" id="deskPhone" placeholder="휴대폰 번호">
+        </div>
+      </div>
       <button class="desk-cta-bar-btn" onclick="submitDeskForm()">무료확인 →</button>
     </div>
     <div class="desk-cta-success" id="deskSuccess">✅ 신청 완료! 곧 연락드리겠습니다.</div>
