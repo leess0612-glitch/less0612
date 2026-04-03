@@ -731,6 +731,10 @@ function toDateValue(date) {
   return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
 }
 
+function toDateLabel(date) {
+  return `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+}
+
 // ──────────────────────────────────────────
 // 이벤트 바인딩
 // ──────────────────────────────────────────
