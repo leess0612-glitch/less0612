@@ -662,8 +662,22 @@ function buildPeriodSelector(period) {
     inp.type = 'week'; inp.id = 'sel-week';
     const today = new Date();
     inp.value = toWeekValue(today);
-    inp.addEventListener('change', render);
+
+    const rangeLabel = document.createElement('span');
+    rangeLabel.id = 'week-range-label';
+    rangeLabel.style.cssText = 'font-size:14px;color:#555;padding:0 4px;';
+
+    function updateWeekLabel(wval) {
+      if (!wval) { rangeLabel.textContent = ''; return; }
+      const { start, end } = weekRange(wval);
+      rangeLabel.textContent = `(${toDateLabel(start)} ~ ${toDateLabel(end)})`;
+    }
+
+    inp.addEventListener('change', () => { updateWeekLabel(inp.value); render(); });
+    updateWeekLabel(inp.value);
+
     el.appendChild(inp);
+    el.appendChild(rangeLabel);
   }
   else if (period === 'day') {
     const inp = document.createElement('input');
