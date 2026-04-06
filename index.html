@@ -950,8 +950,17 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 <!-- LIVE ROLLING -->
 <div class="live-section">
   <div class="live-section-inner">
-    <div class="rolling-wrap" style="flex:1;">
-      <div class="rolling-track" id="rollingTrack"></div>
+    <div class="rolling-col">
+      <div class="rolling-col-header type-complete"><span class="live-dot"></span>접수완료</div>
+      <div class="rolling-wrap">
+        <div class="rolling-track-complete" id="rollingTrackComplete"></div>
+      </div>
+    </div>
+    <div class="rolling-col">
+      <div class="rolling-col-header type-cash"><span class="live-dot" style="background:#f59e0b;"></span>현금입금완료</div>
+      <div class="rolling-wrap">
+        <div class="rolling-track-cash" id="rollingTrackCash"></div>
+      </div>
     </div>
   </div>
 </div>
