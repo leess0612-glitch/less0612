@@ -1559,31 +1559,31 @@ function toggleStickyForm() {
   document.getElementById('stickyForm').classList.toggle('collapsed');
 }
 
-// Sticky form 표시 (히어로 지나면 등장, 신청폼 근처에서 숨김)
+// 스크롤 폼 통합 트리거 (히어로 CTA 버튼이 뷰포트 밖으로 나가면 등장)
 const stickyForm = document.getElementById('stickyForm');
-const applySection = document.getElementById('apply');
-window.addEventListener('scroll', () => {
-  const heroHeight = document.querySelector('.hero').offsetHeight + 64;
-  const applyTop = applySection.getBoundingClientRect().top;
-  const isMobile = window.innerWidth <= 768;
-  if (!isMobile && window.scrollY > heroHeight && applyTop > 100) {
-    stickyForm.classList.add('visible');
-  } else {
-    stickyForm.classList.remove('visible');
-  }
-});
-
-// Desktop bottom bar scroll
 const deskCtaBar = document.getElementById('deskCtaBar');
-window.addEventListener('scroll', () => {
-  const heroHeight = document.querySelector('.hero').offsetHeight + 64;
-  const applyTop = applySection.getBoundingClientRect().top;
-  if (window.innerWidth > 768 && window.scrollY > heroHeight && applyTop > 100) {
-    deskCtaBar.classList.add('visible');
-  } else if (window.innerWidth > 768) {
+const mobileCta  = document.getElementById('mobileCta');
+const applySection = document.getElementById('apply');
+const heroCta = document.querySelector('.hero-cta');
+
+function updateScrollForms() {
+  const ctaHidden = heroCta.getBoundingClientRect().bottom <= 0;
+  const applyNear = applySection.getBoundingClientRect().top <= 100;
+  const isMobile  = window.innerWidth <= 768;
+  if (ctaHidden && !applyNear) {
+    if (isMobile) {
+      mobileCta.classList.add('visible');
+    } else {
+      stickyForm.classList.add('visible');
+      deskCtaBar.classList.add('visible');
+    }
+  } else {
+    mobileCta.classList.remove('visible');
+    stickyForm.classList.remove('visible');
     deskCtaBar.classList.remove('visible');
   }
-}, { passive: true });
+}
+window.addEventListener('scroll', updateScrollForms, { passive: true });
 
 // Desktop bar phone format
 document.getElementById('deskPhone').addEventListener('input', function() {
