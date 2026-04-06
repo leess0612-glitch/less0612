@@ -327,7 +327,7 @@ if __name__ == "__main__":
             f.write(html_out_str)
         print(f"HTML 저장: {out_html}")
 
-    print(f"\n✅ 제품 수: {len(data['products'])}개")
+    print(f"\n완료! 제품 수: {len(data['products'])}개")
     cats = {}
     for p in data['products']:
         cats[p['category']] = cats.get(p['category'], 0) + 1
