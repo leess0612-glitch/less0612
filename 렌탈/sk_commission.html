@@ -565,28 +565,11 @@ function renderDiscFilterBtns(product) {
 
 function setMgmtFilter(val) {
   state.mgmtFilter = val;
-  refreshTable();
-  updateCopyText();
+  renderMain();
 }
 function setDiscFilter(val) {
   state.discFilter = val;
-  refreshTable();
-  updateCopyText();
-}
-
-function refreshTable() {
-  const product = DB.products.find(p => p.id === state.productId);
-  if (!product) return;
-  const wrap = document.querySelector('.options-table-wrap');
-  if (wrap) wrap.innerHTML = renderOptionsTable(product);
-  // 필터 버튼 갱신
-  document.querySelectorAll('.filter-bar .filter-btn').forEach(btn => {
-    const label = btn.textContent.trim();
-    const isActive = btn.onclick.toString().includes('setMgmtFilter')
-      ? state.mgmtFilter === label
-      : state.discFilter === label;
-    btn.classList.toggle('active', isActive);
-  });
+  renderMain();
 }
 
 // ───────────────────────────────────────────
