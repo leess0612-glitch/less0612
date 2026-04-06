@@ -199,6 +199,7 @@ def parse_excel(filepath):
             current_model_code = model_code
             current_product_name = product_name
             current_category = category
+            current_mgmt_type = ""  # reset for new product
             products.append(current_product)
 
         # 현재 제품이 없으면 스킵
