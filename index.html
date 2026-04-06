@@ -803,11 +803,11 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 .ri-cash { background: #fef9c3; color: #92400e; }
 @keyframes rollUpComplete {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-1056px); }
+  100% { transform: translateY(var(--roll-c-dist, -1056px)); }
 }
 @keyframes rollUpCash {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-264px); }
+  100% { transform: translateY(var(--roll-m-dist, -1056px)); }
 }
 @media (max-width: 768px) {
   .live-section { padding: 20px 16px; }
