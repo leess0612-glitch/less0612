@@ -1378,19 +1378,9 @@ function openCafe(pcUrl, mobileUrl) {
 
 // ===== LIVE ROLLING =====
 (function() {
-  // 공휴일 목록 (연도 바뀌면 아래 holidayList 업데이트)
-  var holidayList = [
-    '2026-01-01','2026-01-28','2026-01-29','2026-01-30',
-    '2026-03-01','2026-05-05','2026-05-25','2026-06-06',
-    '2026-08-15','2026-09-24','2026-09-25','2026-09-26',
-    '2026-10-03','2026-10-09','2026-12-25'
-  ];
-  var HOLIDAYS = {};
-  holidayList.forEach(function(k){ HOLIDAYS[k]=1; });
-
   function pad(n){ return n<10?'0'+n:''+n; }
   function toKey(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
-  function isWorkday(d){ return d.getDay()!==0 && !HOLIDAYS[toKey(d)]; }
+  function isWorkday(d){ return d.getDay()!==0; }
 
   function getBizDays(n) {
     var res=[], d=new Date(); d.setHours(0,0,0,0);
