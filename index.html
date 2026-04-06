@@ -764,51 +764,50 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 }
 .live-section-inner {
   max-width: 780px; margin: 0 auto;
-  display: flex; align-items: center; gap: 20px;
+  display: flex; gap: 16px; align-items: flex-start;
 }
-.live-counter {
-  flex-shrink: 0; text-align: center;
-  background: white; border: 2px solid #bfdbfe;
-  border-radius: 14px; padding: 12px 18px; min-width: 108px;
+.rolling-col { flex: 1; }
+.rolling-col-header {
+  text-align: center; font-size: 13px; font-weight: 700;
+  padding: 8px 0; border-radius: 10px 10px 0 0;
 }
-.lc-label { font-size: 11px; color: #64748b; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 4px; }
-.lc-num { font-size: 30px; font-weight: 900; color: var(--primary); line-height: 1; }
-.lc-unit { font-size: 11px; color: #64748b; margin-top: 3px; }
+.rolling-col-header.type-complete { background: #dcfce7; color: #15803d; }
+.rolling-col-header.type-cash { background: #fef9c3; color: #92400e; }
 .live-dot {
   display: inline-block; width: 7px; height: 7px;
   background: #22c55e; border-radius: 50%;
   animation: livePulse 1.4s ease-in-out infinite;
+  margin-right: 4px; vertical-align: middle;
 }
 @keyframes livePulse {
   0%, 100% { opacity: 1; } 50% { opacity: 0.35; }
 }
 .rolling-wrap {
-  flex: 1; overflow: hidden; height: 220px;
+  overflow: hidden; height: 220px;
   background: white; border: 1px solid #dbeafe;
-  border-radius: 12px; padding: 0 14px;
+  border-top: none; border-radius: 0 0 10px 10px; padding: 0 12px;
 }
-.rolling-track { animation: rollUp 60s linear infinite; }
+.rolling-track-complete { animation: rollUpComplete 48s linear infinite; }
+.rolling-track-cash     { animation: rollUpCash 12s linear infinite; }
 .rolling-item {
   height: 44px; display: flex; align-items: center;
-  gap: 8px; border-bottom: 1px solid #f1f5f9;
+  gap: 6px; border-bottom: 1px solid #f1f5f9; overflow: hidden;
 }
 .ri-date { color: #94a3b8; font-size: 11px; flex-shrink: 0; white-space: nowrap; }
 .ri-name { color: #1e293b; font-weight: 700; font-size: 13px; flex-shrink: 0; }
 .ri-service {
   font-size: 11px; font-weight: 700;
-  padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+  padding: 2px 7px; border-radius: 999px; white-space: nowrap;
 }
 .ri-complete { background: #dcfce7; color: #15803d; }
 .ri-cash { background: #fef9c3; color: #92400e; }
-@keyframes rollUp {
+@keyframes rollUpComplete {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-1320px); }
+  100% { transform: translateY(-1056px); }
 }
-@media (max-width: 768px) {
-  .live-section-inner { flex-direction: column; gap: 10px; }
-  .live-counter { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; }
-  .lc-label { margin-bottom: 0; }
-  .lc-num { font-size: 24px; }
+@keyframes rollUpCash {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-264px); }
 }
 
 /* ===== 초소형 화면 대응 ===== */
