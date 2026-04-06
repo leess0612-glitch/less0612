@@ -3110,7 +3110,7 @@
           "totalCommission": 315900
         },
         {
-          "label": "2,000원할인 2,000원 할인",
+          "label": "2,000원할인",
           "managementType": "셀프할인",
           "contractMonths": 36,
           "contractLabel": "3년",
@@ -3125,7 +3125,7 @@
           "totalCommission": 264540
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -3140,7 +3140,7 @@
           "totalCommission": 303900
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -3155,7 +3155,7 @@
           "totalCommission": 297900
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -3240,7 +3240,7 @@
           "totalCommission": 357700
         },
         {
-          "label": "방문(2,000원할인 2,000원 할인",
+          "label": "방문(2,000원할인",
           "managementType": "방문할인",
           "contractMonths": 36,
           "contractLabel": "3년",
@@ -3255,7 +3255,7 @@
           "totalCommission": 293800
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -3270,7 +3270,7 @@
           "totalCommission": 345700
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -3285,7 +3285,7 @@
           "totalCommission": 339700
         },
         {
-          "label": "7,000원할인 7,000원 할인",
+          "label": "7,000원할인",
           "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -4845,7 +4845,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -4860,7 +4860,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -4875,7 +4875,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -4935,7 +4935,7 @@
           "totalCommission": 204000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -4950,7 +4950,7 @@
           "totalCommission": 204000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -4965,7 +4965,7 @@
           "totalCommission": 204000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5035,7 +5035,7 @@
           "totalCommission": 294000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5050,7 +5050,7 @@
           "totalCommission": 294000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5065,7 +5065,7 @@
           "totalCommission": 294000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5125,7 +5125,7 @@
           "totalCommission": 234000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5140,7 +5140,7 @@
           "totalCommission": 234000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5155,7 +5155,7 @@
           "totalCommission": 234000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5225,7 +5225,7 @@
           "totalCommission": 324000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5240,7 +5240,7 @@
           "totalCommission": 324000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5255,7 +5255,7 @@
           "totalCommission": 324000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5315,7 +5315,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5330,7 +5330,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5345,7 +5345,7 @@
           "totalCommission": 264000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5415,7 +5415,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5430,7 +5430,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5445,7 +5445,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5505,7 +5505,7 @@
           "totalCommission": 180000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5520,7 +5520,7 @@
           "totalCommission": 180000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5535,7 +5535,7 @@
           "totalCommission": 180000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5605,7 +5605,7 @@
           "totalCommission": 270000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5620,7 +5620,7 @@
           "totalCommission": 270000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5635,7 +5635,7 @@
           "totalCommission": 270000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5695,7 +5695,7 @@
           "totalCommission": 210000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5710,7 +5710,7 @@
           "totalCommission": 210000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5725,7 +5725,7 @@
           "totalCommission": 210000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5795,7 +5795,7 @@
           "totalCommission": 330000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5810,7 +5810,7 @@
           "totalCommission": 330000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5825,7 +5825,7 @@
           "totalCommission": 330000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5885,7 +5885,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -5900,7 +5900,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -5915,7 +5915,7 @@
           "totalCommission": 240000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -5985,7 +5985,7 @@
           "totalCommission": 168000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -6000,7 +6000,7 @@
           "totalCommission": 168000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -6015,7 +6015,7 @@
           "totalCommission": 168000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -6085,7 +6085,7 @@
           "totalCommission": 198000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -6100,7 +6100,7 @@
           "totalCommission": 198000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -6115,7 +6115,7 @@
           "totalCommission": 198000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -6710,7 +6710,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -6725,7 +6725,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -6740,7 +6740,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -6810,7 +6810,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -6825,7 +6825,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -6840,7 +6840,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -6910,7 +6910,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -6925,7 +6925,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -6940,7 +6940,7 @@
           "totalCommission": 109000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7010,7 +7010,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7025,7 +7025,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7040,7 +7040,7 @@
           "totalCommission": 119000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7110,7 +7110,7 @@
           "totalCommission": 125000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7125,7 +7125,7 @@
           "totalCommission": 125000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7140,7 +7140,7 @@
           "totalCommission": 125000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7210,7 +7210,7 @@
           "totalCommission": 105000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7225,7 +7225,7 @@
           "totalCommission": 105000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7240,7 +7240,7 @@
           "totalCommission": 105000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7310,7 +7310,7 @@
           "totalCommission": 113000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7325,7 +7325,7 @@
           "totalCommission": 113000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7340,7 +7340,7 @@
           "totalCommission": 113000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7410,7 +7410,7 @@
           "totalCommission": 123000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7425,7 +7425,7 @@
           "totalCommission": 123000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7440,7 +7440,7 @@
           "totalCommission": 123000
         },
         {
-          "label": "5,000원할인 5,000원 할인",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7510,7 +7510,7 @@
           "totalCommission": 81000
         },
         {
-          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7525,7 +7525,7 @@
           "totalCommission": 81000
         },
         {
-          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7540,7 +7540,7 @@
           "totalCommission": 81000
         },
         {
-          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7610,7 +7610,7 @@
           "totalCommission": 85000
         },
         {
-          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7625,7 +7625,7 @@
           "totalCommission": 85000
         },
         {
-          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7640,7 +7640,7 @@
           "totalCommission": 85000
         },
         {
-          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
@@ -7710,7 +7710,7 @@
           "totalCommission": 89000
         },
         {
-          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
@@ -7725,7 +7725,7 @@
           "totalCommission": 89000
         },
         {
-          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 72,
           "contractLabel": "6년",
@@ -7740,7 +7740,7 @@
           "totalCommission": 89000
         },
         {
-          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인 5,000원 할인",
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
           "managementType": "",
           "contractMonths": 84,
           "contractLabel": "7년",
