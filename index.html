@@ -1394,6 +1394,12 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6NFsBfLjk1XCGuuzLF5DHbwxAXPyz9HNQKJGkdh5BxFqQZ9EPg3Bl4XasN6ojTxdOGA/exec';
 
+// ===== PC/모바일 네이버 카페 링크 분기 =====
+function openCafe(pcUrl, mobileUrl) {
+  const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone|Mobile/i.test(navigator.userAgent);
+  window.open(isMobile ? mobileUrl : pcUrl, '_blank', 'noopener');
+}
+
 // ===== LIVE ROLLING =====
 (function() {
   function fmtDate(d) {
