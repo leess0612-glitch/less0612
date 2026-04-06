@@ -1447,7 +1447,7 @@ document.addEventListener('click', e => {
 });
 
 // Service tab (다중 선택, 재클릭 해제)
-let selectedServices = new Set(['water', 'rental']);
+let selectedServices = new Set(['water']);
 function toggleService(type) {
   if (selectedServices.has(type)) {
     selectedServices.delete(type);
