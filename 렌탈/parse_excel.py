@@ -131,11 +131,10 @@ def clean_option_name(col4_raw, model_code):
 
     s = s.strip(" ,()-+")
 
-    # 할인 정보 다시 붙이기 (정제 후 없어진 경우)
-    for d in discounts:
-        d_clean = d.strip("()").replace(" ","").replace("원할인","원 할인")
-        if d_clean not in s:
-            s = (s + " " + d_clean).strip()
+    # 할인 정보가 사라진 경우 다시 붙이기
+    if discounts and not any(re.search(r'[\d,]+원\s*할인', s) for _ in [1]):
+        d_clean = discounts[0].strip("()").replace("  "," ")
+        s = (s + " " + d_clean).strip()
 
     if lite:
         s = ("라이트" + (" " + s if s else "")).strip()
