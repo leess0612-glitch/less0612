@@ -1406,10 +1406,6 @@ function openCafe(pcUrl, mobileUrl) {
   const d1 = fmtDate(new Date(today.getTime() - 86400000));
   const d2 = fmtDate(new Date(today.getTime() - 172800000));
 
-  // 오늘 카운터 (날짜 시드 기반 25~45)
-  const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
-  const todayCount = 25 + (seed % 21);
-  document.getElementById('heroTodayCount').textContent = todayCount;
 
   // 30개 롤링 항목 (80%: 인터넷·인터넷TV·정수기 접수완료·현금입금완료 / 20%: 기타)
   const items = [
