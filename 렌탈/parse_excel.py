@@ -99,31 +99,47 @@ def parse_product_name_from_col2(raw):
 
 def clean_option_name(col4_raw, model_code):
     """
-    col4 제품 옵션명 정리
-    - 모델코드 앞부분 제거
-    - (3년의무) → 3년 약정
-    - 라이트시리즈 prefix 정리
+    col4 제품 옵션명 정리 → 할인 정보만 남김
     """
     s = clean(col4_raw)
-    # 라이트시리즈 prefix
+    # 라이트시리즈 prefix 처리
     lite = False
     if s.startswith("라이트시리즈"):
         lite = True
         s = s[len("라이트시리즈"):].strip()
+
+    # 할인 정보 먼저 추출 (예: "(5,000원할인)", "(1,000원 할인)")
+    discounts = re.findall(r'\([\d,]+원\s*할인\)', s)
+
     # 모델코드 제거 (앞에 붙어있는 경우)
-    if model_code and s.upper().startswith(model_code.upper()):
+    if model_code and s.upper().replace(" ","").startswith(model_code.upper().replace(" ","")):
         s = s[len(model_code):].strip()
-    # (방문) (셀프) 관리유형 제거 (col3에 이미 있음)
+
+    # 알파벳+숫자만으로 된 앞부분 코드 제거 (MAT-XXXXX, ACL16C1ASKOB 등)
+    s = re.sub(r'^[A-Z0-9,–\-\s]+(?=\(|$)', '', s).strip()
+
+    # 관리유형 제거
     s = re.sub(r'\(방문\)', '', s)
     s = re.sub(r'\(셀프\)', '', s)
-    # (3년의무) → 이미 months에서 처리
+
+    # 약정년도 제거
     s = re.sub(r'\(\d+년의무\)', '', s)
     s = re.sub(r'\(\d+년\)', '', s)
-    # 쉼표로 연결된 복수 모델코드 정리
-    s = re.sub(r'[A-Z0-9,]+ASKOB|[A-Z0-9,]+ASKZG|[A-Z0-9,]+CSKSL|[A-Z0-9,]+CSKCE|[A-Z0-9,]+ASKWH|[A-Z0-9,]+ASKCE|[A-Z0-9,]+CJDG|[A-Z0-9,]+SKPN', '', s)
+
+    # 복수 모델코드 패턴 제거 (예: ACL16C1ASKOB,ACL16C2ASKZG)
+    s = re.sub(r'[A-Z0-9]+(SK|ASK|CSK)[A-Z0-9]+(,[A-Z0-9]+(SK|ASK|CSK)[A-Z0-9]+)*', '', s)
+
     s = s.strip(" ,()-+")
+
+    # 할인 정보 다시 붙이기 (정제 후 없어진 경우)
+    for d in discounts:
+        d_clean = d.strip("()").replace(" ","").replace("원할인","원 할인")
+        if d_clean not in s:
+            s = (s + " " + d_clean).strip()
+
     if lite:
-        s = ("라이트 " + s).strip()
+        s = ("라이트" + (" " + s if s else "")).strip()
+
     return s if s else ""
 
 # ─────────────────────────────────────────────
