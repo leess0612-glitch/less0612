@@ -734,14 +734,27 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   section { padding: 52px 20px; }
 }
 
-/* ===== 폴드5 전면 등 초소형 화면 (≤360px) ===== */
+/* ===== 초소형 화면 대응 ===== */
 .fold-br { display: none; }
-@media (max-width: 360px) {
+
+/* 390px 이하: 비교표 컬럼 축소 (Fold 2~6·Flip 5/6 커버·Galaxy S) */
+@media (max-width: 390px) {
   section { padding: 52px 12px; }
   .cf-col-a  { flex: 0 0 58px; }
   .cf-col-vs { flex: 0 0 118px; }
   .cf-col-us { flex: 0 0 128px; }
+}
+
+/* 360px 이하: 텍스트 줄바꿈 활성화 (Fold 3~5·Flip 5/6 커버) */
+@media (max-width: 360px) {
   .fold-br { display: block; }
+}
+
+/* 295px 이하: Fold 1 (~290px) 초소형 */
+@media (max-width: 295px) {
+  .cf-col-a  { flex: 0 0 48px; }
+  .cf-col-vs { flex: 0 0 96px; }
+  .cf-col-us { flex: 0 0 110px; }
 }
 </style>
 </head>
