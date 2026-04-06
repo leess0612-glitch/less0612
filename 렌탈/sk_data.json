@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-06 16:03"
+    "parsedAt": "2026-04-06 16:04"
   },
   "products": [
     {
@@ -31,7 +31,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 57900,
@@ -46,7 +46,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 56900,
@@ -76,7 +76,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 50400,
@@ -91,7 +91,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 48900,
@@ -121,7 +121,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 42500,
@@ -136,7 +136,7 @@
         },
         {
           "label": "WPU-IAC425 방문",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 41000,
@@ -166,7 +166,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 53900,
@@ -181,7 +181,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 52900,
@@ -211,7 +211,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 48400,
@@ -226,7 +226,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 46900,
@@ -256,7 +256,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 40500,
@@ -271,7 +271,7 @@
         },
         {
           "label": "WPU-IAC425 셀프",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 39000,
@@ -311,7 +311,7 @@
         },
         {
           "label": "WPU-IAC414 방문",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 55900,
@@ -326,7 +326,7 @@
         },
         {
           "label": "WPU-IAC414 방문",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 54900,
@@ -356,7 +356,7 @@
         },
         {
           "label": "WPU-IAC414 방문",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 47400,
@@ -371,7 +371,7 @@
         },
         {
           "label": "WPU-IAC414 방문",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 45900,
@@ -401,7 +401,7 @@
         },
         {
           "label": "WPU-IAC414 방문 +3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 40900,
@@ -416,7 +416,7 @@
         },
         {
           "label": "WPU-IAC414 방문 +3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 39400,
@@ -446,7 +446,7 @@
         },
         {
           "label": "WPU-IAC414 셀프",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 51900,
@@ -461,7 +461,7 @@
         },
         {
           "label": "WPU-IAC414 셀프",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 50900,
@@ -491,7 +491,7 @@
         },
         {
           "label": "WPU-IAC414 셀프",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 45400,
@@ -506,7 +506,7 @@
         },
         {
           "label": "WPU-IAC414 셀프",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 43900,
@@ -536,7 +536,7 @@
         },
         {
           "label": "WPU-IAC414 셀프 +3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 40900,
@@ -551,7 +551,7 @@
         },
         {
           "label": "WPU-IAC414 셀프 +3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 39400,
@@ -646,7 +646,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 46900,
@@ -661,7 +661,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 45900,
@@ -676,7 +676,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 44900,
@@ -706,7 +706,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 37400,
@@ -721,7 +721,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 35900,
@@ -736,7 +736,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 34400,
@@ -766,7 +766,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30900,
@@ -781,7 +781,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 29400,
@@ -796,7 +796,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27900,
@@ -836,7 +836,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 43900,
@@ -851,7 +851,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 42900,
@@ -866,7 +866,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 41900,
@@ -896,7 +896,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 34400,
@@ -911,7 +911,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 32900,
@@ -926,7 +926,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 31400,
@@ -956,7 +956,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 27900,
@@ -971,7 +971,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26400,
@@ -986,7 +986,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 24900,
@@ -1026,7 +1026,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 42900,
@@ -1041,7 +1041,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 41900,
@@ -1056,7 +1056,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 40900,
@@ -1086,7 +1086,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 32400,
@@ -1101,7 +1101,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 30900,
@@ -1116,7 +1116,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 29400,
@@ -1146,7 +1146,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30000,
@@ -1161,7 +1161,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28500,
@@ -1176,7 +1176,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27000,
@@ -1206,7 +1206,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 39900,
@@ -1221,7 +1221,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 38900,
@@ -1236,7 +1236,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 37900,
@@ -1266,7 +1266,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 29400,
@@ -1281,7 +1281,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 27900,
@@ -1296,7 +1296,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 26400,
@@ -1326,7 +1326,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 27000,
@@ -1341,7 +1341,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 25500,
@@ -1356,7 +1356,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 24000,
@@ -1396,7 +1396,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 44900,
@@ -1411,7 +1411,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 43900,
@@ -1426,7 +1426,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 42900,
@@ -1456,7 +1456,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 35400,
@@ -1471,7 +1471,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 33900,
@@ -1486,7 +1486,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 32400,
@@ -1516,7 +1516,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 32000,
@@ -1531,7 +1531,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 30500,
@@ -1546,7 +1546,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 29000,
@@ -1586,7 +1586,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 41900,
@@ -1601,7 +1601,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 40900,
@@ -1616,7 +1616,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 39900,
@@ -1646,7 +1646,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 31400,
@@ -1661,7 +1661,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 29900,
@@ -1676,7 +1676,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 28400,
@@ -1706,7 +1706,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 29000,
@@ -1721,7 +1721,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 27500,
@@ -1736,7 +1736,7 @@
         },
         {
           "label": "3개월반값할인",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 26000,
@@ -1776,7 +1776,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 40900,
@@ -1791,7 +1791,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 39900,
@@ -1806,7 +1806,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 38900,
@@ -1836,7 +1836,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 33400,
@@ -1851,7 +1851,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 31900,
@@ -1866,7 +1866,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 30900,
@@ -1896,7 +1896,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 37900,
@@ -1911,7 +1911,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 36900,
@@ -1926,7 +1926,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 35900,
@@ -1956,7 +1956,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 29400,
@@ -1971,7 +1971,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 27900,
@@ -1986,7 +1986,7 @@
         },
         {
           "label": "WPUJCC 104",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 26900,
@@ -2026,7 +2026,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 15900,
@@ -2041,7 +2041,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 14900,
@@ -2056,7 +2056,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 13900,
@@ -2096,7 +2096,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 20900,
@@ -2111,7 +2111,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 19900,
@@ -2126,7 +2126,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 18900,
@@ -2156,7 +2156,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 16900,
@@ -2186,7 +2186,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 17900,
@@ -2201,7 +2201,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 16900,
@@ -2216,7 +2216,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 15900,
@@ -2246,7 +2246,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프할인+타사보상",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 13900,
@@ -2696,7 +2696,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 35900,
@@ -2711,7 +2711,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 33900,
@@ -2726,7 +2726,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 32900,
@@ -2756,7 +2756,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 28900,
@@ -2771,7 +2771,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -2786,7 +2786,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 25900,
@@ -2816,7 +2816,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 32900,
@@ -2831,7 +2831,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 30900,
@@ -2846,7 +2846,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 29900,
@@ -2876,7 +2876,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 25900,
@@ -2891,7 +2891,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 23900,
@@ -2906,7 +2906,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 22900,
@@ -2946,7 +2946,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 40900,
@@ -2961,7 +2961,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 38900,
@@ -2976,7 +2976,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 37900,
@@ -3006,7 +3006,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 33900,
@@ -3021,7 +3021,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 31900,
@@ -3036,7 +3036,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 30900,
@@ -3066,7 +3066,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 37900,
@@ -3081,7 +3081,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 35900,
@@ -3096,7 +3096,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 34900,
@@ -3126,7 +3126,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30900,
@@ -3141,7 +3141,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28900,
@@ -3156,7 +3156,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27900,
@@ -3196,7 +3196,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 37900,
@@ -3211,7 +3211,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 35900,
@@ -3226,7 +3226,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 34900,
@@ -3256,7 +3256,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30900,
@@ -3271,7 +3271,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28900,
@@ -3286,7 +3286,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27900,
@@ -3316,7 +3316,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 34900,
@@ -3331,7 +3331,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 32900,
@@ -3346,7 +3346,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 31900,
@@ -3376,7 +3376,7 @@
         },
         {
           "label": "7,000할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 27900,
@@ -3391,7 +3391,7 @@
         },
         {
           "label": "7,000할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 25900,
@@ -3406,7 +3406,7 @@
         },
         {
           "label": "7,000할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 24900,
@@ -3446,7 +3446,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 29900,
@@ -3461,7 +3461,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 26900,
@@ -3476,7 +3476,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 24900,
@@ -3491,7 +3491,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 23900,
@@ -3521,7 +3521,7 @@
         },
         {
           "label": "ACL-15C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 20900,
@@ -3536,7 +3536,7 @@
         },
         {
           "label": "ACL-15C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 19900,
@@ -3566,7 +3566,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 26900,
@@ -3581,7 +3581,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 23900,
@@ -3596,7 +3596,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 21900,
@@ -3611,7 +3611,7 @@
         },
         {
           "label": "ACL-15C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 20900,
@@ -3641,7 +3641,7 @@
         },
         {
           "label": "ACL-15C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 17900,
@@ -3656,7 +3656,7 @@
         },
         {
           "label": "ACL-15C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 16900,
@@ -3696,7 +3696,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 31900,
@@ -3711,7 +3711,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 28900,
@@ -3726,7 +3726,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -3741,7 +3741,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 25900,
@@ -3771,7 +3771,7 @@
         },
         {
           "label": "ACL-20C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 22900,
@@ -3786,7 +3786,7 @@
         },
         {
           "label": "ACL-20C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 21900,
@@ -3816,7 +3816,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 28900,
@@ -3831,7 +3831,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 25900,
@@ -3846,7 +3846,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 23900,
@@ -3861,7 +3861,7 @@
         },
         {
           "label": "ACL-20C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 22900,
@@ -3891,7 +3891,7 @@
         },
         {
           "label": "ACL-20C1A(프로모션4,000원할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 19900,
@@ -3906,7 +3906,7 @@
         },
         {
           "label": "ACL-20C1A(프로모션4,000원할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 18900,
@@ -3946,7 +3946,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 35900,
@@ -3961,7 +3961,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 32900,
@@ -3976,7 +3976,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 30900,
@@ -3991,7 +3991,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "방문",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 29900,
@@ -4021,7 +4021,7 @@
         },
         {
           "label": "ACL-25C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -4036,7 +4036,7 @@
         },
         {
           "label": "ACL-25C1A(프로모션4,000원 할인",
-          "managementType": "",
+          "managementType": "방문할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 25900,
@@ -4066,7 +4066,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 32900,
@@ -4081,7 +4081,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 29900,
@@ -4096,7 +4096,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 27900,
@@ -4111,7 +4111,7 @@
         },
         {
           "label": "ACL-25C1A",
-          "managementType": "",
+          "managementType": "셀프",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 26900,
@@ -4141,7 +4141,7 @@
         },
         {
           "label": "ACL-25C1A(프로모션3,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 23900,
@@ -4156,7 +4156,7 @@
         },
         {
           "label": "ACL-25C1A(프로모션3,000원 할인",
-          "managementType": "",
+          "managementType": "셀프할인",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 22900,
