@@ -1498,14 +1498,13 @@ async function submitForm() {
   const btn = document.getElementById('submitBtn');
   btn.disabled = true; btn.textContent = '신청 중...';
 
-  const serviceMap = { internet:'인터넷', rental:'가전렌탈' };
+  const serviceMap = { water:'정수기', rental:'가전렌탈' };
   const serviceText = [...selectedServices].map(s => serviceMap[s]).join('+');
-  const usim = document.getElementById('usimCheck').checked ? 'Y' : 'N';
 
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
-      body: JSON.stringify({ name, phone, usim, service: serviceText })
+      body: JSON.stringify({ name, phone, usim: 'N', service: serviceText })
     });
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
