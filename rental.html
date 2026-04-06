@@ -1163,18 +1163,14 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
     <p class="section-sub" style="margin-bottom:36px;">상담은 무료, 부담 없이 신청하세요</p>
     <div class="form-card">
       <div id="formContent">
-        <p class="form-headline"><span>어떤 서비스</span>가 필요하신가요? <span style="font-size:13px;color:var(--gray);font-weight:500;">(둘 다 선택 가능)</span></p>
+        <p class="form-headline"><span>어떤 렌탈 제품</span>이 필요하신가요?</p>
         <div class="service-tabs">
-          <div class="service-tab active" id="tab-internet" onclick="toggleService('internet')">
-            <div class="service-tab-icon">📡</div>인터넷
+          <div class="service-tab active" id="tab-water" onclick="toggleService('water')">
+            <div class="service-tab-icon">💧</div>정수기
           </div>
-          <div class="service-tab" id="tab-rental" onclick="toggleService('rental')">
-            <div class="service-tab-icon">🏠</div>정수기·가전렌탈
+          <div class="service-tab active" id="tab-rental" onclick="toggleService('rental')">
+            <div class="service-tab-icon">🏠</div>가전렌탈
           </div>
-        </div>
-        <div class="usim-check">
-          <input type="checkbox" id="usimCheck">
-          <label for="usimCheck">휴대폰 기종 변경 없이<br class="fold-br"> 통신사만 바꾸고 추가 현금 받기</label>
         </div>
         <div class="form-group">
           <label for="inputName">이름 <span style="font-size:11px;color:#94a3b8;font-weight:500;">(선택)</span></label>
