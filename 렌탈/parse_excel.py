@@ -300,13 +300,34 @@ if __name__ == "__main__":
     else:
         filepath = sys.argv[1]
 
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
     print(f"파싱 중: {filepath}")
     data = parse_excel(filepath)
-    outfile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sk_data.json")
-    with open(outfile, "w", encoding="utf-8") as f:
+
+    # 1) JSON 저장
+    json_out = os.path.join(base_dir, "sk_data.json")
+    with open(json_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"완료: {outfile}")
-    print(f"제품 수: {len(data['products'])}")
+    print(f"JSON 저장: {json_out}")
+
+    # 2) HTML 템플릿에 데이터 주입 → 최종 HTML 생성
+    tpl_path = os.path.join(base_dir, "sk_commission.html")
+    if os.path.exists(tpl_path):
+        with open(tpl_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        data_js = json.dumps(data, ensure_ascii=False)
+        html_out_str = html.replace("__SK_DATA__", data_js)
+
+        # 출력 파일명: sk_commission_YYMM.html
+        month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")
+        out_html = os.path.join(base_dir, f"sk_commission_{month_tag}.html")
+        with open(out_html, "w", encoding="utf-8") as f:
+            f.write(html_out_str)
+        print(f"HTML 저장: {out_html}")
+
+    print(f"\n✅ 제품 수: {len(data['products'])}개")
     cats = {}
     for p in data['products']:
         cats[p['category']] = cats.get(p['category'], 0) + 1
