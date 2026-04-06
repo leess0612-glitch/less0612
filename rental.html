@@ -1378,55 +1378,130 @@ function openCafe(pcUrl, mobileUrl) {
 
 // ===== LIVE ROLLING =====
 (function() {
-  function fmtDate(d) {
-    return (d.getMonth()+1) + '월 ' + d.getDate() + '일';
+  // 공휴일 목록 (연도 바뀌면 아래 holidayList 업데이트)
+  var holidayList = [
+    '2026-01-01','2026-01-28','2026-01-29','2026-01-30',
+    '2026-03-01','2026-05-05','2026-05-25','2026-06-06',
+    '2026-08-15','2026-09-24','2026-09-25','2026-09-26',
+    '2026-10-03','2026-10-09','2026-12-25'
+  ];
+  var HOLIDAYS = {};
+  holidayList.forEach(function(k){ HOLIDAYS[k]=1; });
+
+  function pad(n){ return n<10?'0'+n:''+n; }
+  function toKey(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function isWorkday(d){ return d.getDay()!==0 && !HOLIDAYS[toKey(d)]; }
+
+  function getBizDays(n) {
+    var res=[], d=new Date(); d.setHours(0,0,0,0);
+    while(res.length<n){ if(isWorkday(d)) res.push(new Date(d)); d.setDate(d.getDate()-1); }
+    return res;
   }
-  const today = new Date();
-  const d0 = fmtDate(today);
-  const d1 = fmtDate(new Date(today.getTime() - 86400000));
-  const d2 = fmtDate(new Date(today.getTime() - 172800000));
 
+  function fmt(d){ return (d.getMonth()+1)+'월 '+d.getDate()+'일'; }
+  function tm(t){ var p=t.split(':'); return +p[0]*60 + +p[1]; }
 
-  // 접수완료 항목 (12개, 정수기 80%)
-  const itemsComplete = [
-    [d2,'9:41','박*민','정수기 접수완료'],
-    [d2,'10:27','한*희','정수기 접수완료'],
-    [d2,'11:02','강*호','정수기 접수완료'],
-    [d2,'11:35','장*우','공기청정기 접수완료'],
-    [d1,'10:51','황*경','정수기 접수완료'],
-    [d1,'13:22','서*훈','정수기 접수완료'],
-    [d1,'14:57','남*철','정수기 접수완료'],
-    [d1,'15:28','홍*기','세탁기 접수완료'],
-    [d0,'11:52','노*란','정수기 접수완료'],
-    [d0,'13:05','하*빈','정수기 접수완료'],
-    [d0,'15:03','성*준','정수기 접수완료'],
-    [d0,'15:48','방*인','정수기 접수완료'],
+  var now=new Date(), nowMin=now.getHours()*60+now.getMinutes(), todayKey=toKey(now);
+  var biz=getBizDays(3);
+
+  function ok(idx,t){
+    if(idx>=biz.length) return false;
+    var d=biz[idx], m=tm(t);
+    if(d.getDay()===6){ if(m<540||m>=840) return false; }
+    else { if(m<540||m>=1080) return false; if(m>=750&&m<810) return false; }
+    if(toKey(d)===todayKey && m>=nowMin) return false;
+    return true;
+  }
+
+  // 접수완료 24개 [dayIdx, 시간, 이름, 서비스]
+  // dayIdx: 0=최근영업일, 1=그전, 2=전전
+  var rawC = [
+    [0,'9:08','박*민','정수기 접수완료'],
+    [0,'9:41','한*희','정수기 접수완료'],
+    [0,'10:12','강*호','정수기 접수완료'],
+    [0,'10:47','장*우','정수기 접수완료'],
+    [0,'11:05','임*아','공기청정기 접수완료'],
+    [0,'11:38','황*경','정수기 접수완료'],
+    [0,'13:42','남*철','정수기 접수완료'],
+    [0,'14:55','배*나','공기청정기 접수완료'],
+    [1,'9:23','홍*기','정수기 접수완료'],
+    [1,'9:55','전*미','정수기 접수완료'],
+    [1,'10:28','노*란','정수기 접수완료'],
+    [1,'11:02','하*빈','세탁기 접수완료'],
+    [1,'11:44','성*준','정수기 접수완료'],
+    [1,'12:15','방*인','정수기 접수완료'],
+    [1,'13:38','오*준','정수기 접수완료'],
+    [1,'15:21','서*훈','TV 접수완료'],
+    [2,'9:17','권*주','정수기 접수완료'],
+    [2,'9:49','문*성','정수기 접수완료'],
+    [2,'10:33','이*진','정수기 접수완료'],
+    [2,'11:08','조*연','정수기 접수완료'],
+    [2,'11:52','고*현','정수기 접수완료'],
+    [2,'12:07','윤*선','정수기 접수완료'],
+    [2,'14:12','심*은','정수기 접수완료'],
+    [2,'16:38','안*혜','냉장고 접수완료'],
   ];
 
-  // 현금입금완료 항목 (6개)
-  const itemsCash = [
-    [d2,'9:23','이*진','현금입금완료'],
-    [d2,'10:43','조*연','현금입금완료'],
-    [d1,'9:38','오*준','현금입금완료'],
-    [d1,'13:48','권*주','현금입금완료'],
-    [d0,'10:05','문*성','현금입금완료'],
-    [d0,'13:32','고*현','현금입금완료'],
+  // 현금입금완료 24개
+  var rawM = [
+    [0,'9:15','이*선','현금입금완료'],
+    [0,'9:52','조*준','현금입금완료'],
+    [0,'10:24','오*란','현금입금완료'],
+    [0,'10:58','권*호','현금입금완료'],
+    [0,'11:31','문*선','현금입금완료'],
+    [0,'11:48','고*준','현금입금완료'],
+    [0,'13:55','나*원','현금입금완료'],
+    [0,'15:22','차*혜','현금입금완료'],
+    [1,'9:09','도*민','현금입금완료'],
+    [1,'9:44','표*수','현금입금완료'],
+    [1,'10:19','석*아','현금입금완료'],
+    [1,'10:53','길*준','현금입금완료'],
+    [1,'11:27','옥*영','현금입금완료'],
+    [1,'12:06','봉*철','현금입금완료'],
+    [1,'14:15','탁*선','현금입금완료'],
+    [1,'16:03','계*빈','현금입금완료'],
+    [2,'9:31','노*현','현금입금완료'],
+    [2,'10:06','어*민','현금입금완료'],
+    [2,'10:41','현*빈','현금입금완료'],
+    [2,'11:15','유*영','현금입금완료'],
+    [2,'11:59','가*철','현금입금완료'],
+    [2,'13:42','라*주','현금입금완료'],
+    [2,'15:48','사*선','현금입금완료'],
+    [2,'17:11','마*준','현금입금완료'],
   ];
 
-  function buildTrack(trackEl, data, cssClass) {
-    [...data, ...data].forEach(function(it) {
-      const div = document.createElement('div');
-      div.className = 'rolling-item';
-      div.innerHTML =
-        '<span class="ri-date">' + it[0] + ' ' + it[1] + '</span>' +
-        '<span class="ri-name">' + it[2] + '</span>' +
-        '<span class="ri-service ' + cssClass + '">' + it[3] + '</span>';
-      trackEl.appendChild(div);
+  function filt(raw){
+    return raw.filter(function(it){ return ok(it[0],it[1]); })
+      .map(function(it){ return [fmt(biz[it[0]]),it[1],it[2],it[3]]; });
+  }
+
+  var itemsC=filt(rawC), itemsM=filt(rawM);
+
+  function buildTrack(el,data,cls){
+    data.concat(data).forEach(function(it){
+      var div=document.createElement('div');
+      div.className='rolling-item';
+      div.innerHTML='<span class="ri-date">'+it[0]+' '+it[1]+'</span>'+
+        '<span class="ri-name">'+it[2]+'</span>'+
+        '<span class="ri-service '+cls+'">'+it[3]+'</span>';
+      el.appendChild(div);
     });
   }
 
-  buildTrack(document.getElementById('rollingTrackComplete'), itemsComplete, 'ri-complete');
-  buildTrack(document.getElementById('rollingTrackCash'), itemsCash, 'ri-cash');
+  var ITEM_H=44;
+  var elC=document.getElementById('rollingTrackComplete');
+  var elM=document.getElementById('rollingTrackCash');
+  buildTrack(elC,itemsC,'ri-complete');
+  buildTrack(elM,itemsM,'ri-cash');
+
+  if(itemsC.length>0){
+    document.documentElement.style.setProperty('--roll-c-dist','-'+(itemsC.length*ITEM_H)+'px');
+    elC.style.animationDuration=Math.max(itemsC.length*2,8)+'s';
+  }
+  if(itemsM.length>0){
+    document.documentElement.style.setProperty('--roll-m-dist','-'+(itemsM.length*ITEM_H)+'px');
+    elM.style.animationDuration=Math.max(itemsM.length*2,8)+'s';
+  }
 })();
 
 // Swiper
