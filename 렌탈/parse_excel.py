@@ -210,14 +210,23 @@ def parse_excel(filepath):
         if col1:
             current_product["promotionNote"] = col1
 
-        # 관리유형이 특수 노트인 경우 (Basic, Lite 등) → 제품 note에 추가
+        # 관리유형 처리 (col3 값이 있으면 새 관리유형 그룹 시작)
         mgmt_type = normalize_management_type(col3)
-        special_note = ""
         if col3 and mgmt_type is None:
-            # 특수 노트
+            # 특수 노트 (Basic만운영, Lite 등)
             special_note = clean(col3).replace("\n", " ").strip()
             if special_note and special_note not in current_product.get("note",""):
                 current_product["note"] = (current_product.get("note","") + " " + special_note).strip()
+            # 관리유형은 이전 값 유지
+        elif col3 and mgmt_type:
+            # 새 관리유형 그룹
+            current_mgmt_type = mgmt_type
+        elif not col3:
+            # col3 없음 → 이전 관리유형 이어받음
+            mgmt_type = current_mgmt_type
+        # 최종 관리유형 확정
+        if mgmt_type is None:
+            mgmt_type = current_mgmt_type
 
         # 수치 데이터 유효성 확인
         try:
