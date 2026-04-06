@@ -810,6 +810,11 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   0% { transform: translateY(0); }
   100% { transform: translateY(-264px); }
 }
+@media (max-width: 768px) {
+  .live-section { padding: 20px 16px; }
+  .live-section-inner { flex-direction: column; gap: 12px; }
+  .rolling-col { width: 100%; }
+}
 
 /* ===== 초소형 화면 대응 ===== */
 .fold-br { display: none; }
