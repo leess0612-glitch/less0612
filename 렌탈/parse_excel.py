@@ -145,6 +145,7 @@ def parse_excel(filepath):
     current_product_name = ""
     current_category = ""
     current_promo = ""
+    current_mgmt_type = ""  # col3 carry-forward
 
     # 헤더는 row 6 (index 6), 데이터는 row 7부터
     DATA_START = 7
