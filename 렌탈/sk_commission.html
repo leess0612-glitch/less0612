@@ -155,6 +155,105 @@
   }
   .detail-btn:hover { background: var(--brand); color: #fff; }
 
+  /* ── 목표 마진 (헤더 내) ── */
+  .margin-setting-inline {
+    display: flex; align-items: center; gap: 6px; margin-left: auto;
+  }
+  .margin-setting-inline label { font-size: 11px; font-weight: 700; color: var(--gray-600); white-space: nowrap; }
+  .margin-input-field {
+    width: 90px; padding: 4px 8px;
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    font-size: 12px; text-align: right; outline: none; font-family: inherit;
+    background: #fff;
+  }
+  .margin-input-field:focus { border-color: var(--brand); }
+
+  /* ── 옵션 나열 테이블 ── */
+  .options-scroll-wrap {
+    max-height: 340px;
+    overflow-y: auto;
+    border-top: 1px solid var(--gray-200);
+  }
+  .options-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 12px;
+  }
+  .options-table thead th {
+    position: sticky; top: 0; z-index: 1;
+    background: var(--gray-50); padding: 8px 10px;
+    text-align: center; font-weight: 600; font-size: 11px;
+    color: var(--gray-600); border-bottom: 2px solid var(--gray-200);
+    white-space: nowrap;
+  }
+  .options-table thead th:nth-child(2),
+  .options-table thead th:nth-child(3) { text-align: left; }
+  .options-table tbody tr {
+    border-bottom: 1px solid var(--gray-100);
+    cursor: pointer; transition: background .1s;
+  }
+  .options-table tbody tr:hover { background: #f0f7ff; }
+  .options-table tbody tr.row-selected { background: #eff6ff; }
+  .options-table tbody tr.row-selected:hover { background: #dbeafe; }
+  .options-table tbody td {
+    padding: 7px 10px; vertical-align: middle;
+    text-align: center;
+  }
+  .options-table tbody td:nth-child(2),
+  .options-table tbody td:nth-child(3) { text-align: left; }
+
+  /* 토글 스위치 */
+  .toggle-checkbox {
+    appearance: none; -webkit-appearance: none;
+    width: 34px; height: 18px;
+    background: var(--gray-200);
+    border-radius: 9px;
+    position: relative;
+    cursor: pointer;
+    transition: background .2s;
+    outline: none;
+    flex-shrink: 0;
+    display: block;
+  }
+  .toggle-checkbox:checked { background: var(--brand); }
+  .toggle-checkbox::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px; left: 2px;
+    transition: left .2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  }
+  .toggle-checkbox:checked::after { left: 18px; }
+
+  .contract-cell { font-weight: 700; color: var(--brand); }
+  .fee-cell { font-weight: 700; font-size: 13px; }
+  .total-comm { font-weight: 700; color: var(--green); }
+  .mgmt-badge {
+    display: inline-block; padding: 2px 7px;
+    border-radius: 4px; font-size: 10px; font-weight: 700;
+  }
+  .mgmt-방문 { background: #dbeafe; color: #1d4ed8; }
+  .mgmt-셀프 { background: #dcfce7; color: #166534; }
+  .mgmt-무방문형 { background: #fef9c3; color: #854d0e; }
+  .mgmt-none { background: var(--gray-100); color: var(--gray-600); }
+  .mgmt-할인 { background: #fee2e2; color: #b91c1c; }
+  .mgmt-할인타사 { background: #fce7f3; color: #9d174d; }
+
+  .gift-input {
+    width: 80px; padding: 4px 6px;
+    border: 1px solid var(--gray-200); border-radius: 5px;
+    font-size: 12px; text-align: right; outline: none;
+    color: var(--accent); font-weight: 700; font-family: inherit;
+  }
+  .gift-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(224,85,0,.1); }
+  .cost-note-cell { font-size: 10px; color: var(--gray-400); margin-top: 2px; }
+
+  .margin-cell { font-weight: 700; }
+  .margin-pos { color: var(--green); }
+  .margin-neg { color: #dc2626; }
+
   /* ── 안내문 카드 강조 ── */
   .notice-card {
     border: 2px solid var(--brand);
@@ -178,7 +277,7 @@
   .copy-all-btn:active { transform: scale(.98); }
   .copy-textarea {
     width: 100%;
-    min-height: 200px;
+    min-height: 180px;
     padding: 14px;
     border: 1px solid var(--gray-200); border-radius: 6px;
     font-size: 14px; line-height: 1.8;
@@ -189,72 +288,6 @@
     outline: none;
   }
   .copy-textarea:focus { border-color: var(--brand); }
-
-  /* ── 옵션 선택기 (드롭박스) ── */
-  .option-selector { display: flex; flex-direction: column; gap: 14px; }
-  .option-dropdowns {
-    display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--gray-200);
-  }
-  .dropdown-group { display: flex; flex-direction: column; gap: 4px; }
-  .dropdown-label { font-size: 11px; font-weight: 700; color: var(--gray-600); }
-  .option-select {
-    padding: 7px 10px;
-    border: 1px solid var(--gray-200); border-radius: 6px;
-    font-size: 13px; outline: none; cursor: pointer;
-    background: #fff; min-width: 150px;
-    font-family: inherit;
-  }
-  .option-select:focus { border-color: var(--brand); box-shadow: 0 0 0 2px rgba(0,102,204,.1); }
-
-  /* ── 옵션 상세 패널 ── */
-  .option-detail {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius);
-    padding: 16px;
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .detail-row { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-  .gift-row {
-    padding-top: 14px;
-    border-top: 1px solid var(--gray-200);
-    gap: 24px;
-  }
-  .detail-item { display: flex; flex-direction: column; gap: 3px; }
-  .detail-label { font-size: 10px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: .3px; }
-  .detail-value { font-size: 16px; font-weight: 700; color: var(--gray-800); }
-  .fee-value { color: var(--brand); font-size: 20px; }
-  .comm-value { color: var(--green); font-size: 18px; }
-  .cost-note { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
-  .margin-pos { color: var(--green); }
-  .margin-neg { color: #dc2626; }
-
-  .gift-input-lg {
-    width: 110px; padding: 7px 10px;
-    border: 1.5px solid var(--accent); border-radius: 6px;
-    font-size: 15px; font-weight: 700; text-align: right; outline: none;
-    color: var(--accent); font-family: inherit;
-  }
-  .gift-input-lg:focus { box-shadow: 0 0 0 2px rgba(224,85,0,.15); }
-  .margin-setting-inline {
-    display: flex; align-items: center; gap: 6px; margin-left: auto;
-  }
-  .margin-setting-inline label { font-size: 11px; font-weight: 700; color: var(--gray-600); white-space: nowrap; }
-  .margin-input-field {
-    width: 100px; padding: 7px 8px;
-    border: 1px solid var(--gray-200); border-radius: 6px;
-    font-size: 13px; text-align: right; outline: none; font-family: inherit;
-  }
-  .margin-input-field:focus { border-color: var(--brand); }
-
-  .copy-row-btn {
-    padding: 3px 8px; border-radius: 4px;
-    background: none; border: 1px solid var(--gray-200); cursor: pointer;
-    font-size: 11px; color: var(--gray-600);
-  }
-  .copy-row-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
 
   /* ── 빈 상태 ── */
   .empty-state {
@@ -276,7 +309,6 @@
   }
   #toast.show { opacity: 1; }
 
-  /* ── 반응형 ── */
   @media (max-width: 900px) {
     .sidebar { width: 180px; min-width: 180px; }
   }
@@ -299,7 +331,6 @@
 </header>
 
 <div class="layout">
-  <!-- 사이드바: 카테고리 + 제품 목록 -->
   <div class="sidebar">
     <div class="sidebar-header">카테고리</div>
     <div class="cat-list" id="cat-list"></div>
@@ -310,7 +341,6 @@
     <div class="prod-list" id="prod-list"></div>
   </div>
 
-  <!-- 메인 -->
   <div class="main" id="main-content">
     <div class="empty-state">
       <div class="icon">📋</div>
@@ -322,26 +352,18 @@
 <div id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════
-// 데이터 (parse_excel.py 실행 시 자동 갱신)
-// ═══════════════════════════════════════════
 const DB = __SK_DATA__;
 
-// ═══════════════════════════════════════════
-// 상태
-// ═══════════════════════════════════════════
 let state = {
   category: '전체',
   productId: null,
-  selectedOptionKey: null,
+  selectedKeys: new Set(),
   targetMargin: 150000,
   giftOverrides: {},
   searchText: '',
 };
 
-// ═══════════════════════════════════════════
-// 초기화
-// ═══════════════════════════════════════════
+// ── 초기화 ──
 function init() {
   const meta = DB.metadata;
   document.getElementById('meta-info').textContent =
@@ -350,9 +372,7 @@ function init() {
   renderProductList();
 }
 
-// ═══════════════════════════════════════════
-// 카테고리
-// ═══════════════════════════════════════════
+// ── 카테고리 ──
 function getCategories() {
   const counts = { '전체': DB.products.length };
   DB.products.forEach(p => {
@@ -376,7 +396,7 @@ function renderCategoryList() {
 function selectCategory(cat) {
   state.category = cat;
   state.productId = null;
-  state.selectedOptionKey = null;
+  state.selectedKeys = new Set();
   state.searchText = '';
   document.getElementById('prod-search').value = '';
   renderCategoryList();
@@ -384,9 +404,7 @@ function selectCategory(cat) {
   renderMain();
 }
 
-// ═══════════════════════════════════════════
-// 제품 목록
-// ═══════════════════════════════════════════
+// ── 제품 목록 ──
 function getFilteredProducts() {
   return DB.products.filter(p => {
     const matchCat = state.category === '전체' || p.category === state.category;
@@ -420,14 +438,12 @@ function filterProducts() {
 
 function selectProduct(id) {
   state.productId = id;
-  state.selectedOptionKey = null;
+  state.selectedKeys = new Set();
   renderProductList();
   renderMain();
 }
 
-// ═══════════════════════════════════════════
-// 메인 영역
-// ═══════════════════════════════════════════
+// ── 메인 영역 ──
 function renderMain() {
   const el = document.getElementById('main-content');
   const product = DB.products.find(p => p.id === state.productId);
@@ -439,7 +455,7 @@ function renderMain() {
   }
 
   el.innerHTML = `
-    <!-- 제품 정보 카드 -->
+    <!-- 제품 정보 -->
     <div class="card">
       <div class="card-body">
         <div class="product-info">
@@ -452,90 +468,17 @@ function renderMain() {
               <div class="promo-text">${escHtml(product.promotionNote)}</div>
             ` : ''}
           </div>
-          <button class="detail-btn" onclick="openSkMagic('${escHtml(product.modelCode || product.name)}')">
-            🔍 SK매직 확인
-          </button>
+          <a class="detail-btn" href="https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&goodsFilterList=6&menuNo=100104" target="_blank">
+            🔗 SK매직 공홈
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- 고객 안내문 카드 (강조) -->
-    <div class="card notice-card">
-      <div class="card-header notice-header">
-        <h2>📢 고객 안내문</h2>
-        <button class="copy-all-btn" onclick="copyAll()">📋 복사</button>
-      </div>
-      <div class="card-body">
-        <textarea class="copy-textarea" id="copy-text" readonly></textarea>
-      </div>
-    </div>
-
-    <!-- 요금 & 수수료 카드 -->
+    <!-- 요금 & 수수료 -->
     <div class="card">
       <div class="card-header">
         <h2>📊 요금 &amp; 수수료</h2>
-      </div>
-      <div class="card-body">
-        ${renderOptionSelector(product)}
-      </div>
-    </div>
-  `;
-
-  updateCopyText();
-}
-
-// ═══════════════════════════════════════════
-// 옵션 선택기 (드롭박스)
-// ═══════════════════════════════════════════
-function renderOptionSelector(product) {
-  const opts = product.options;
-  if (!opts.length) return '<div class="empty-state" style="padding:24px"><p>옵션 없음</p></div>';
-
-  // 선택된 옵션 확인/초기화
-  let selectedOpt = null;
-  if (state.selectedOptionKey) {
-    selectedOpt = opts.find(o => getOptionKey(product.id, o) === state.selectedOptionKey);
-  }
-  if (!selectedOpt) {
-    selectedOpt = opts[0];
-    state.selectedOptionKey = getOptionKey(product.id, selectedOpt);
-  }
-
-  const selectedMgmt = selectedOpt.managementType || '';
-
-  // 관리방법 목록 (중복 제거, 순서 유지)
-  const seen = new Set();
-  const uniqueMgmt = [];
-  opts.forEach(o => {
-    const m = o.managementType || '';
-    if (!seen.has(m)) { seen.add(m); uniqueMgmt.push(m); }
-  });
-
-  // 선택된 관리방법에 해당하는 약정 옵션
-  const contractOpts = opts.filter(o => (o.managementType || '') === selectedMgmt);
-
-  return `
-    <div class="option-selector">
-      <div class="option-dropdowns">
-        <div class="dropdown-group">
-          <label class="dropdown-label">관리방법</label>
-          <select class="option-select" onchange="onMgmtChange(this.value)">
-            ${uniqueMgmt.map(m => `
-              <option value="${escHtml(m)}" ${m === selectedMgmt ? 'selected' : ''}>
-                ${m || '기본'}
-              </option>
-            `).join('')}
-          </select>
-        </div>
-        <div class="dropdown-group">
-          <label class="dropdown-label">약정기간</label>
-          <select class="option-select" onchange="onContractChange(this.value)">
-            ${contractOpts.map(o => {
-              const key = getOptionKey(product.id, o);
-              return `<option value="${escHtml(key)}" ${key === state.selectedOptionKey ? 'selected' : ''}>${o.contractLabel}</option>`;
-            }).join('')}
-          </select>
-        </div>
         <div class="margin-setting-inline">
           <label>목표 마진</label>
           <input type="text" class="margin-input-field" id="margin-input"
@@ -545,104 +488,121 @@ function renderOptionSelector(product) {
           <span style="color:var(--gray-600);font-size:12px">원</span>
         </div>
       </div>
-      ${renderOptionDetail(product, selectedOpt)}
-    </div>
-  `;
-}
-
-function renderOptionDetail(product, opt) {
-  const key = getOptionKey(product.id, opt);
-  const gift = getGift(opt);
-  const realCost = Math.round(gift * 1.1);
-  const margin = opt.totalCommission - realCost;
-  const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
-  const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
-
-  return `
-    <div class="option-detail">
-      <div class="detail-row">
-        <div class="detail-item">
-          <span class="detail-label">월 요금</span>
-          <span class="detail-value fee-value">${fmtNum(opt.monthlyFee)}원</span>
-        </div>
-        ${opt.visitCycle ? `
-          <div class="detail-item">
-            <span class="detail-label">방문주기</span>
-            <span class="detail-value">${opt.visitCycle}</span>
-          </div>
-        ` : ''}
-        ${opt.registrationFee ? `
-          <div class="detail-item">
-            <span class="detail-label">등록비</span>
-            <span class="detail-value">${fmtNum(opt.registrationFee)}원</span>
-          </div>
-        ` : ''}
-        <div class="detail-item">
-          <span class="detail-label">총 수수료</span>
-          <span class="detail-value comm-value">${fmtNum(opt.totalCommission)}원</span>
-        </div>
+      <div class="options-scroll-wrap">
+        ${renderOptionList(product)}
       </div>
-      <div class="detail-row gift-row">
-        <div class="detail-item">
-          <span class="detail-label">현금 사은품</span>
-          <div style="display:flex;align-items:center;gap:6px;margin-top:2px">
-            <input class="gift-input-lg" type="text"
-              value="${fmtNum(gift)}"
-              data-key="${escHtml(key)}"
-              data-total="${opt.totalCommission}"
-              onchange="updateGift(this)"
-              onblur="this.value=fmtNum(getGiftByKey(this.dataset.key, parseInt(this.dataset.total)))">
-            <span style="font-size:13px;color:var(--gray-600)">원</span>
-          </div>
-          <span class="cost-note" id="cost-note-${safeKey}">실비용 ${fmtNum(realCost)}원 (×1.1)</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">실 마진</span>
-          <span class="detail-value ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</span>
-        </div>
-        <div style="margin-left:auto;align-self:flex-end">
-          <button class="copy-row-btn" style="padding:6px 14px;font-size:12px" onclick="copyRow('${escHtml(key)}')">이 옵션 복사</button>
-        </div>
+    </div>
+
+    <!-- 고객 안내문 -->
+    <div class="card notice-card">
+      <div class="card-header notice-header">
+        <h2>📢 고객 안내문</h2>
+        <button class="copy-all-btn" onclick="copyAll()">📋 복사</button>
+      </div>
+      <div class="card-body">
+        <textarea class="copy-textarea" id="copy-text" readonly></textarea>
       </div>
     </div>
   `;
+
+  updateCopyText();
 }
 
-function onMgmtChange(mgmt) {
-  const product = DB.products.find(p => p.id === state.productId);
-  if (!product) return;
-  const firstOpt = product.options.find(o => (o.managementType || '') === mgmt);
-  if (firstOpt) state.selectedOptionKey = getOptionKey(product.id, firstOpt);
-  renderMain();
+// ── 옵션 나열 테이블 ──
+function renderOptionList(product) {
+  const opts = product.options;
+  if (!opts.length) return '<div class="empty-state" style="padding:24px"><p>옵션 없음</p></div>';
+
+  const hasMgmt = opts.some(o => o.managementType);
+  const hasVisit = opts.some(o => o.visitCycle);
+  const hasReg   = opts.some(o => o.registrationFee > 0);
+
+  const rows = opts.map(o => {
+    const key = getOptionKey(product.id, o);
+    const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
+    const isSelected = state.selectedKeys.has(key);
+    const gift = getGift(o);
+    const realCost = Math.round(gift * 1.1);
+    const margin = o.totalCommission - realCost;
+    const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
+
+    const mgmtBase = getMgmtBase(o.managementType);
+    const discLevel = getDiscLevel(o.managementType);
+    const mgmtBadgeClass = !mgmtBase ? 'mgmt-none' :
+      discLevel === '할인+타사' ? 'mgmt-할인타사' :
+      discLevel === '할인' ? 'mgmt-할인' :
+      `mgmt-${mgmtBase}`;
+
+    return `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''}">
+      <td style="width:48px;padding-left:12px">
+        <input type="checkbox" class="toggle-checkbox"
+          ${isSelected ? 'checked' : ''}
+          onchange="toggleRow('${escHtml(key)}', '${safeKey}')"
+          onclick="event.stopPropagation()">
+      </td>
+      <td class="contract-cell">${o.contractLabel}</td>
+      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${o.managementType || '-'}</span></td>` : ''}
+      <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
+      ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
+      ${hasReg   ? `<td>${o.registrationFee ? fmtNum(o.registrationFee)+'원' : '-'}</td>` : ''}
+      <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
+      <td onclick="event.stopPropagation()">
+        <input class="gift-input" type="text"
+          value="${fmtNum(gift)}"
+          data-key="${escHtml(key)}"
+          data-total="${o.totalCommission}"
+          data-safe="${safeKey}"
+          onchange="updateGift(this)"
+          onblur="this.value=fmtNum(getGiftByKey(this.dataset.key,parseInt(this.dataset.total)))">
+        <div class="cost-note-cell" id="cost-${safeKey}">×1.1 = ${fmtNum(realCost)}원</div>
+      </td>
+      <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
+    </tr>`;
+  }).join('');
+
+  return `<table class="options-table">
+    <thead><tr>
+      <th></th>
+      <th>약정</th>
+      ${hasMgmt ? '<th>관리방법</th>' : ''}
+      <th>월요금</th>
+      ${hasVisit ? '<th>방문주기</th>' : ''}
+      ${hasReg   ? '<th>등록비</th>'   : ''}
+      <th>총수수료</th>
+      <th>현금사은품</th>
+      <th>실마진</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
 }
 
-function onContractChange(key) {
-  state.selectedOptionKey = key;
-  renderMain();
+// ── 토글 ──
+function toggleRow(key, safeKey) {
+  if (state.selectedKeys.has(key)) {
+    state.selectedKeys.delete(key);
+  } else {
+    state.selectedKeys.add(key);
+  }
+  const row = document.getElementById('row-' + safeKey);
+  if (row) {
+    row.classList.toggle('row-selected', state.selectedKeys.has(key));
+    const cb = row.querySelector('.toggle-checkbox');
+    if (cb) cb.checked = state.selectedKeys.has(key);
+  }
+  updateCopyText();
 }
 
-// ═══════════════════════════════════════════
-// 사은품 자동 계산
-// ═══════════════════════════════════════════
+// ── 사은품 자동 계산 ──
 function calcAutoGift(totalCommission) {
-  // 실마진 = totalCommission - gift × 1.1 ≈ targetMargin
-  // → gift = (totalCommission - targetMargin) / 1.1
   if (totalCommission <= state.targetMargin) return 0;
-
   const raw = (totalCommission - state.targetMargin) / 1.1;
   const floorUnits = Math.floor(raw / 10000);
   const ceilUnits  = Math.ceil(raw  / 10000);
-
   const marginFloor = totalCommission - floorUnits * 10000 * 1.1;
   const marginCeil  = totalCommission - ceilUnits  * 10000 * 1.1;
-
-  // 실마진이 목표에 더 가까운 쪽 선택
   let units = Math.abs(marginFloor - state.targetMargin) <= Math.abs(marginCeil - state.targetMargin)
     ? floorUnits : ceilUnits;
-
-  // 만원 단위 자릿수가 9로 끝나면 올림 (예: 9만→10만, 19만→20만)
   if (units % 10 === 9) units += 1;
-
   return Math.max(0, units) * 10000;
 }
 
@@ -663,6 +623,7 @@ function getOptionKey(productId, option) {
 
 function updateGift(input) {
   const key = input.dataset.key;
+  const safeKey = input.dataset.safe;
   const raw = input.value.replace(/[^0-9]/g,'');
   const val = parseInt(raw) || 0;
   state.giftOverrides[key] = val;
@@ -670,15 +631,14 @@ function updateGift(input) {
   const total = parseInt(input.dataset.total);
   const realCost = Math.round(val * 1.1);
   const margin = total - realCost;
-  const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
 
   const marginEl = document.getElementById('margin-' + safeKey);
   if (marginEl) {
     marginEl.textContent = fmtNum(margin) + '원';
-    marginEl.className = 'detail-value ' + (margin >= 0 ? 'margin-pos' : 'margin-neg');
+    marginEl.className = 'margin-cell ' + (margin >= 0 ? 'margin-pos' : 'margin-neg');
   }
-  const costNote = document.getElementById('cost-note-' + safeKey);
-  if (costNote) costNote.textContent = `실비용 ${fmtNum(realCost)}원 (×1.1)`;
+  const costEl = document.getElementById('cost-' + safeKey);
+  if (costEl) costEl.textContent = `×1.1 = ${fmtNum(realCost)}원`;
 
   input.value = fmtNum(val);
   updateCopyText();
@@ -691,44 +651,49 @@ function updateMargin(val) {
   renderMain();
 }
 
-// ═══════════════════════════════════════════
-// 고객 안내문
-// ═══════════════════════════════════════════
+// ── 고객 안내문 ──
 function buildCopyText() {
   const product = DB.products.find(p => p.id === state.productId);
   if (!product) return '';
 
-  const opt = state.selectedOptionKey
-    ? product.options.find(o => getOptionKey(product.id, o) === state.selectedOptionKey)
-    : product.options[0];
-  if (!opt) return '';
-
-  const gift = getGift(opt);
-  const mgmtBase = getMgmtBase(opt.managementType);
-  const discLevel = getDiscLevel(opt.managementType);
+  const selectedOpts = product.options.filter(o =>
+    state.selectedKeys.has(getOptionKey(product.id, o))
+  );
+  if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
   const line = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
-  let text = `${line}\n`;
-  text += `[SK매직] ${product.name}\n`;
+  let text = `${line}\n[SK매직] ${product.name}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
   text += `${line}\n\n`;
 
-  if (opt.managementType) {
-    let mgmtLine = '';
-    if (mgmtBase === '방문') mgmtLine = `📍 방문 관리${opt.visitCycle ? ` (${opt.visitCycle} 주기)` : ''}`;
-    else if (mgmtBase === '셀프') mgmtLine = `📍 자가 관리`;
-    else mgmtLine = `📍 ${opt.managementType}`;
-    if (discLevel === '할인') mgmtLine += ' [할인 적용]';
-    else if (discLevel === '할인+타사') mgmtLine += ' [타사 보상 할인]';
-    text += mgmtLine + '\n';
-  }
+  // 관리방법별 그룹
+  const groups = new Map();
+  selectedOpts.forEach(o => {
+    const k = o.managementType || '';
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(o);
+  });
 
-  text += `• ${opt.contractLabel} 약정 | 월 ${fmtNum(opt.monthlyFee)}원`;
-  if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
-  text += '\n\n';
+  groups.forEach((opts, mgmt) => {
+    if (mgmt) {
+      const base = getMgmtBase(mgmt);
+      const disc = getDiscLevel(mgmt);
+      let mgmtLine = base === '방문' ? `📍 방문 관리${opts[0]?.visitCycle ? ` (${opts[0].visitCycle} 주기)` : ''}`
+        : base === '셀프' ? `📍 자가 관리`
+        : `📍 ${mgmt}`;
+      if (disc === '할인') mgmtLine += ' [할인 적용]';
+      else if (disc === '할인+타사') mgmtLine += ' [타사 보상 할인]';
+      text += mgmtLine + '\n';
+    }
+    opts.forEach(o => {
+      const gift = getGift(o);
+      text += `• ${o.contractLabel} 약정 | 월 ${fmtNum(o.monthlyFee)}원`;
+      if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
+      text += '\n';
+    });
+    text += '\n';
+  });
 
-  text += '✅ 현금사은품은 설치 후 즉시 지급됩니다\n';
-  text += '✅ 등록비 별도 / 상담 문의 주세요';
   return text.trim();
 }
 
@@ -739,30 +704,16 @@ function updateCopyText() {
 
 function copyAll() {
   const text = document.getElementById('copy-text')?.value;
-  if (!text) return;
+  if (!text || text.startsWith('(')) return;
   navigator.clipboard.writeText(text).then(() => showToast('안내문 복사 완료 ✓'))
     .catch(() => {
       const el = document.getElementById('copy-text');
-      el.select();
-      document.execCommand('copy');
+      el.select(); document.execCommand('copy');
       showToast('안내문 복사 완료 ✓');
     });
 }
 
-function copyRow(key) {
-  const product = DB.products.find(p => p.id === state.productId);
-  if (!product) return;
-  const opt = product.options.find(o => getOptionKey(product.id, o) === key);
-  if (!opt) return;
-  const gift = getGift(opt);
-  const line = `[SK매직] ${product.name} | ${opt.contractLabel} 약정 | 월 ${fmtNum(opt.monthlyFee)}원${gift > 0 ? ` | 현금사은품 ${fmtNum(gift)}원` : ''}`;
-  navigator.clipboard.writeText(line).then(() => showToast('행 복사 완료 ✓'))
-    .catch(() => showToast('복사 실패'));
-}
-
-// ═══════════════════════════════════════════
-// 유틸
-// ═══════════════════════════════════════════
+// ── 유틸 ──
 function getMgmtBase(mgmt) {
   if (!mgmt) return '';
   if (mgmt.includes('방문')) return '방문';
@@ -789,8 +740,7 @@ function escHtml(s) {
 
 function showToast(msg) {
   const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
+  el.textContent = msg; el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 2000);
 }
 
@@ -800,16 +750,8 @@ function togglePromo(el) {
   el.textContent = txt?.classList.contains('open') ? '▼ 4월 프로모션 접기' : '▶ 4월 프로모션 확인';
 }
 
-function openSkMagic(query) {
-  const url = `https://search.naver.com/search.naver?query=SK매직+${encodeURIComponent(query)}`;
-  window.open(url, '_blank');
-}
+function switchBrand(brand) {}
 
-function switchBrand(brand) {
-  // 추후 다른 브랜드 추가 시 구현
-}
-
-// 시작
 init();
 </script>
 </body>
