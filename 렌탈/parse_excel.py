@@ -245,18 +245,22 @@ def parse_excel(filepath):
 
         # 수치 데이터
         try:
-            monthly_fee = int(fee_guide) if fee_guide else 0
-            months      = int(obligation) if obligation else 0
-            base_c      = int(base_comm)  if base_comm  else 0
-            add_c       = int(add_comm)   if add_comm   else 0
-            bonus_c     = int(bonus_comm) if bonus_comm else 0
-            total_c     = int(total_comm) if total_comm else 0
-            reg         = int(reg_fee)    if reg_fee    else 0
+            monthly_fee  = int(fee_main)   if fee_main   else 0   # F열 기준
+            monthly_ref  = int(fee_guide)  if fee_guide  else 0   # G열 참고
+            months       = int(obligation) if obligation else 0
+            base_c       = int(base_comm)  if base_comm  else 0
+            add_c        = int(add_comm)   if add_comm   else 0
+            bonus_c      = int(bonus_comm) if bonus_comm else 0
+            total_c      = int(total_comm) if total_comm else 0
+            reg          = int(reg_fee)    if reg_fee    else 0
         except (ValueError, TypeError):
             continue
 
         if monthly_fee == 0 and total_c == 0:
             continue
+
+        # ★ 요금 오류 감지: F열 ≠ G열이면 경고 플래그
+        data_warning = (monthly_fee != 0 and monthly_ref != 0 and monthly_fee != monthly_ref)
 
         # ★ MAT 모델: 할인 옵션 있는 모델은 할인 옵션만 유효
         if current_category == '매트리스':
