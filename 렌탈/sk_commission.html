@@ -577,6 +577,7 @@ function renderOptionList(product) {
       discLevel === '할인+타사' ? 'mgmt-할인타사' :
       discLevel === '할인' ? 'mgmt-할인' :
       `mgmt-${mgmtBase}`;
+    const mgmtDisplay = displayMgmt(o.managementType);
 
     return `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''}">
       <td style="width:52px;padding-left:10px">
@@ -587,7 +588,7 @@ function renderOptionList(product) {
         </button>
       </td>
       <td class="contract-cell">${o.contractLabel}</td>
-      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${o.managementType || '-'}</span></td>` : ''}
+      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.dataWarning ? '<span class="warn-row-badge">⚠️ 확인</span>' : ''}</td>` : ''}
       <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
       ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
       ${hasReg   ? `<td>${o.registrationFee ? fmtNum(o.registrationFee)+'원' : '-'}</td>` : ''}
