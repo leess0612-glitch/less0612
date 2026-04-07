@@ -527,11 +527,12 @@ function renderOptionList(product) {
       `mgmt-${mgmtBase}`;
 
     return `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''}">
-      <td style="width:48px;padding-left:12px">
-        <input type="checkbox" class="toggle-checkbox"
-          ${isSelected ? 'checked' : ''}
-          onchange="toggleRow('${escHtml(key)}', '${safeKey}')"
-          onclick="event.stopPropagation()">
+      <td style="width:52px;padding-left:10px">
+        <button class="select-btn ${isSelected ? 'selected' : ''}"
+          onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
+          id="selbtn-${safeKey}">
+          ${isSelected ? '해제' : '선택'}
+        </button>
       </td>
       <td class="contract-cell">${o.contractLabel}</td>
       ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${o.managementType || '-'}</span></td>` : ''}
