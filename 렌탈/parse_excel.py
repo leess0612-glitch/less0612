@@ -320,27 +320,44 @@ def parse_excel(filepath):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        filepath = r"C:\Users\a\Documents\렌탈정책\26.04\SK 수수료표_2604v1 (1).xlsx"
+        filepath_sk = r"C:\Users\a\Documents\렌탈정책\26.04\SK 수수료표_2604v1 (1).xlsx"
+        filepath_tl = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
     else:
-        filepath = sys.argv[1]
+        filepath_sk = sys.argv[1]
+        filepath_tl = sys.argv[2] if len(sys.argv) > 2 else filepath_tl
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
-    print(f"파싱 중: {filepath}")
-    data = parse_excel(filepath)
+    # ── 에이컴즈 파싱 ──
+    print(f"[에이컴즈] 파싱 중: {filepath_sk}")
+    data = parse_excel(filepath_sk)
 
+    # ── 티엘 파싱 (경고 모델 추출) ──
+    tl_warning_models = []
+    try:
+        from parse_tl_excel import parse_tl
+        print(f"[티엘] 파싱 중: {filepath_tl}")
+        tl_data = parse_tl(filepath_tl)
+        tl_warning_models = tl_data.get("warningModels", [])
+    except Exception as e:
+        print(f"[티엘] 파싱 실패 (경고 기능 비활성화): {e}")
+
+    # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
     with open(json_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"JSON 저장: {json_out}")
 
+    # ── HTML 생성 ──
     tpl_path = os.path.join(base_dir, "sk_commission.html")
     if os.path.exists(tpl_path):
         with open(tpl_path, "r", encoding="utf-8") as f:
             html = f.read()
 
-        data_js = json.dumps(data, ensure_ascii=False)
-        html_out_str = html.replace("__SK_DATA__", data_js)
+        sk_js  = json.dumps(data, ensure_ascii=False)
+        tl_js  = json.dumps(tl_warning_models, ensure_ascii=False)
+        html_out_str = html.replace("__SK_DATA__", sk_js) \
+                           .replace("__TL_WARNINGS__", tl_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")
         out_html = os.path.join(base_dir, f"sk_commission_{month_tag}.html")
