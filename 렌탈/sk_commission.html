@@ -474,6 +474,18 @@ function selectProduct(id) {
   state.selectedKeys = new Set();
   renderProductList();
   renderMain();
+  // 경고 옵션 있으면 팝업
+  const product = DB.products.find(p => p.id === id);
+  if (product && product.options.some(o => o.dataWarning)) {
+    showWarnPopup();
+  }
+}
+
+function showWarnPopup() {
+  document.getElementById('warn-popup').classList.add('show');
+}
+function closeWarnPopup() {
+  document.getElementById('warn-popup').classList.remove('show');
 }
 
 // ── 메인 영역 ──
