@@ -171,7 +171,8 @@ def parse_excel(filepath):
         col2 = row[2]
         col3 = clean(row[3])
         col4 = clean(row[4])
-        fee_guide  = row[6]
+        fee_main   = row[5]   # F열: 실제 월요금 (기준)
+        fee_guide  = row[6]   # G열: 가이드 월요금 (참고, 오류감지용)
         obligation = row[8]
         ownership  = clean(row[9])
         reg_fee    = row[10]
