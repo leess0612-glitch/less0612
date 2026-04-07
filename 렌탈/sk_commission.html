@@ -763,6 +763,17 @@ function copyAll() {
 }
 
 // ── 유틸 ──
+// 관리방법 표시명 단축 (방문할인→방문, 셀프할인→셀프)
+function displayMgmt(mgmt) {
+  if (!mgmt) return '-';
+  return mgmt
+    .replace('방문할인+타사보상', '방문+타사')
+    .replace('셀프할인+타사보상', '셀프+타사')
+    .replace('무방문형할인', '무방문')
+    .replace('방문할인', '방문')
+    .replace('셀프할인', '셀프');
+}
+
 function getMgmtBase(mgmt) {
   if (!mgmt) return '';
   if (mgmt.includes('방문')) return '방문';
