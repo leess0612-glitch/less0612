@@ -282,6 +282,7 @@ def parse_excel(filepath):
             "contractMonths": months,
             "contractLabel": months_to_label(months) if months else "",
             "monthlyFee": monthly_fee,
+            "dataWarning": data_warning,
             "visitCycle": clean(row[7]),
             "ownershipMonths": own_months,
             "registrationFee": reg,
