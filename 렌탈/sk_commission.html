@@ -578,10 +578,12 @@ function toggleRow(key, safeKey) {
     state.selectedKeys.add(key);
   }
   const row = document.getElementById('row-' + safeKey);
-  if (row) {
-    row.classList.toggle('row-selected', state.selectedKeys.has(key));
-    const cb = row.querySelector('.toggle-checkbox');
-    if (cb) cb.checked = state.selectedKeys.has(key);
+  if (row) row.classList.toggle('row-selected', state.selectedKeys.has(key));
+  const btn = document.getElementById('selbtn-' + safeKey);
+  if (btn) {
+    const sel = state.selectedKeys.has(key);
+    btn.textContent = sel ? '해제' : '선택';
+    btn.classList.toggle('selected', sel);
   }
   updateCopyText();
 }
