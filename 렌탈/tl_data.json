@@ -1,0 +1,3248 @@
+{
+  "metadata": {
+    "source": "티엘",
+    "sheetName": "SK",
+    "sourceFile": "2026.04.06 수수료.xlsx",
+    "parsedAt": "2026-04-07 18:39"
+  },
+  "products": [
+    {
+      "modelCode": "WPU-9100CRE",
+      "name": "SK매직 언더싱크 정수기 (정수)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 100000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-GBC102S",
+      "name": "SK매직 무전원 에코 미니 정수기 Green41 (정수)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 15900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 14900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 13900,
+          "commission": 100000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-PBC204S",
+      "name": "SK매직 New 미니 정수기 (정수)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 20900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 17900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 14900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 16900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 13900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 15900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 12900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 20900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 17900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 16900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 100000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 15900,
+          "commission": 100000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JCC104SWH",
+      "name": "SK매직 초소형 직수 정수기 (냉정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 29400,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 32400,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 198000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 198000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 224300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 29610,
+          "commission": 210200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 34110,
+          "commission": 219200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 27960,
+          "commission": 183900,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 32210,
+          "commission": 192400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26320,
+          "commission": 157600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 30320,
+          "commission": 165600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 222300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 216300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 26010,
+          "commission": 255000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 24560,
+          "commission": 226200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 23120,
+          "commission": 197500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-B610F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 39900,
+          "commission": 300000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 40410,
+          "commission": 287800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35910,
+          "commission": 278800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33910,
+          "commission": 243800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38160,
+          "commission": 252300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35920,
+          "commission": 216800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 31920,
+          "commission": 208800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 300000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 300000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 32310,
+          "commission": 336200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 30510,
+          "commission": 298000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 28720,
+          "commission": 259900,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-B700F",
+      "name": "SK매직 뉴그랜드 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33210,
+          "commission": 217400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 28710,
+          "commission": 208400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 31360,
+          "commission": 190700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 27110,
+          "commission": 182200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 29520,
+          "commission": 164000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 25520,
+          "commission": 156000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 25110,
+          "commission": 251400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 23710,
+          "commission": 222800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 22320,
+          "commission": 194300,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-B710F",
+      "name": "SK매직 뉴그랜드 지하수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33900,
+          "commission": 300000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 39510,
+          "commission": 230000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35010,
+          "commission": 221000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 37310,
+          "commission": 202600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33060,
+          "commission": 194100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35120,
+          "commission": 175200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 31120,
+          "commission": 167200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 300000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 31410,
+          "commission": 276600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 29660,
+          "commission": 246600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 27920,
+          "commission": 216700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JAC104S",
+      "name": "SK매직 초소형 직수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 36900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 35000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 29000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 27500,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 28400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 26000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 39900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 38000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 32000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 30500,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 29000,
+          "commission": 290000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JAC104S(WW)",
+      "name": "SK매직X위글위글 초소형 직수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 36900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 35000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 29000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 27500,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 28400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 26000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 39900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 38000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 32000,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 30500,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 29000,
+          "commission": 290000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JAC115P",
+      "name": "SK매직 PSG 초소형 플러스 직수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 31900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 558200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 27900,
+          "commission": 538700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 586600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 26400,
+          "commission": 560600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 580600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 24900,
+          "commission": 554600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 41900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 34900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 37400,
+          "commission": 567200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 30900,
+          "commission": 547700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 598600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 29400,
+          "commission": 572600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 592600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 27900,
+          "commission": 566600,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JAC115S",
+      "name": "SK매직 25년형 초소형 플러스 직수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 31900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 558200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 27900,
+          "commission": 538700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 586600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 26400,
+          "commission": 560600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 31400,
+          "commission": 580600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 24900,
+          "commission": 554600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 41900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 34900,
+          "commission": 372500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 37400,
+          "commission": 567200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 30900,
+          "commission": 547700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 598600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 29400,
+          "commission": 572600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 34400,
+          "commission": 592600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 27900,
+          "commission": 566600,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-JAC125S",
+      "name": "SK매직 초소형 라이트 직수 정수기 (냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 34900,
+          "commission": 250000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 32000,
+          "commission": 250000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 29400,
+          "commission": 378200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 27000,
+          "commission": 371000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 401600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 25500,
+          "commission": 392000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 26400,
+          "commission": 395600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 24000,
+          "commission": 386000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 37900,
+          "commission": 250000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 35000,
+          "commission": 250000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 32400,
+          "commission": 387200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 30000,
+          "commission": 380000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 413600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 28500,
+          "commission": 404000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 29400,
+          "commission": 407600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": true,
+          "monthlyFee": 27000,
+          "commission": 398000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-TDC104",
+      "name": "SK매직 뉴슬림 플러스 정수기 컴팩트형 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 249700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 237700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-TDC10R",
+      "name": "SK매직 지하수용 뉴슬림 플러스 정수기 컴팩트형 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 220000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 220000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-TDC114",
+      "name": "SK매직 뉴나노 플러스 정수기 컴팩트형 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 153200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26910,
+          "commission": 158100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 24210,
+          "commission": 152700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 25410,
+          "commission": 138700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 22860,
+          "commission": 133600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 23920,
+          "commission": 119400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 21520,
+          "commission": 114600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 153200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 20610,
+          "commission": 186700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19460,
+          "commission": 165800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 18320,
+          "commission": 144900,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-TDF104",
+      "name": "SK매직 뉴슬림 플러스 정수기 스탠드형 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 249700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 237700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-TDF114",
+      "name": "SK매직 뉴나노 플러스 정수기 스탠드형 (냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 153200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 28710,
+          "commission": 161700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 24210,
+          "commission": 152700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 27110,
+          "commission": 142100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 22860,
+          "commission": 133600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 25520,
+          "commission": 122600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 21520,
+          "commission": 114600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 153200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 20610,
+          "commission": 186700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19460,
+          "commission": 165800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 18320,
+          "commission": 144900,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-300VA",
+      "name": "SK매직 슈퍼 공기청정기 82㎡(30평)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 49900,
+          "commission": 524700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 47900,
+          "commission": 566100,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-22P1C",
+      "name": "SK매직 올클린 디아트 펫 공기청정기 72㎡(22평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 254500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 293900,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 287900,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 284900,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 41900,
+          "commission": 300500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 33900,
+          "commission": 355700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 349700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 346700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-130Z0SKPN",
+      "name": "SK매직 X PSG 코어 공기청정기 42㎡(13평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 16900,
+          "commission": 70700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 12900,
+          "commission": 58700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 202700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 190700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-131T0CJDG",
+      "name": "SK매직 코어 360˚ 공기청정기 42㎡(13평)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 16900,
+          "commission": 67100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 12900,
+          "commission": 38700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-15C1A",
+      "name": "SK매직 올클린 공기청정기 Green 242 49㎡(15평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 181500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 178500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 157500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 17900,
+          "commission": 151500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 16900,
+          "commission": 148500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 203800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 200800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 179800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 20900,
+          "commission": 173800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 170800,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-16C",
+      "name": "SK매직 올클린 디아트 공기청정기 52㎡(16평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33900,
+          "commission": 202600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 25900,
+          "commission": 226100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 220100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 217100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 36900,
+          "commission": 239300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 274700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 268700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 25900,
+          "commission": 265700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-20C1A",
+      "name": "SK매직 올클린 공기청정기 66㎡(20평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 241400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 238400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 21900,
+          "commission": 217400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 211400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 208400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 250400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 247400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 24900,
+          "commission": 226400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 220400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 21900,
+          "commission": 217400,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-22C",
+      "name": "SK매직 올클린 디아트 공기청정기 72㎡(22평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 239400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 276100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 25900,
+          "commission": 270100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 24900,
+          "commission": 267100,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 283800,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 335700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 329700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 27900,
+          "commission": 326700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "ACL-25C1A",
+      "name": "SK매직 올클린 공기청정기 82㎡(25평)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 33900,
+          "commission": 259700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 32900,
+          "commission": 256700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 25900,
+          "commission": 235700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 229700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 226700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 36900,
+          "commission": 268700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 265700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 28900,
+          "commission": 244700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 238700,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 25900,
+          "commission": 235700,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "BID-096P",
+      "name": "SK매직 향균 비데 파워업 (저수압용)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 219500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "BID-F17D",
+      "name": "SK매직 풀스텐 스파 방수 비데",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 114500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 17900,
+          "commission": 109500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 15900,
+          "commission": 99500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 214500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 199500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "BID-F17DR54WW",
+      "name": "SK매직 X 위글위글 풀스텐 스파 비데",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 114500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 17900,
+          "commission": 109500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 15900,
+          "commission": 99500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 22900,
+          "commission": 225500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 210500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "BID-S17D",
+      "name": "SK매직 풀스텐 살균 비데",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 19900,
+          "commission": 119500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 18900,
+          "commission": 114500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 16900,
+          "commission": 104500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 24900,
+          "commission": 234500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 4,
+          "contractLabel": "4년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 229500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 21900,
+          "commission": 219500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "BID-S51DR15WH",
+      "name": "SK매직 올클린 케어 비데",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 264500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 23900,
+          "commission": 249500,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "MAT-230",
+      "name": "SK매직 워커힐 스위트 매트리스(SS/Q/K)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 44900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 39900,
+          "commission": 260000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 34900,
+          "commission": 230000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 39900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 34900,
+          "commission": 260000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 29900,
+          "commission": 230000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 36900,
+          "commission": 290000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 31900,
+          "commission": 260000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 26900,
+          "commission": 230000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "MAT-KM430RLWH",
+      "name": "SK매직 워커힐 클라우드 매트리스 K",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 48900,
+          "commission": 314000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 43900,
+          "commission": 314000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 40900,
+          "commission": 314000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "MAT-QM430RLWH",
+      "name": "SK매직 워커힐 클라우드 매트리스 Q",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 43900,
+          "commission": 284000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 284000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 35900,
+          "commission": 284000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "MAT-SM430RLWH",
+      "name": "SK매직 워커힐 클라우드 매트리스 SS",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 38900,
+          "commission": 254000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 33900,
+          "commission": 254000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 7,
+          "contractLabel": "7년",
+          "hasTasa": false,
+          "monthlyFee": 30900,
+          "commission": 254000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-IAC414S",
+      "name": "SK매직 24년형 원코크 얼음물 직수얼음 정수기 (얼음냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 51900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 46900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 45400,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 40900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 43900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 39400,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 53900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 48900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 47400,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 42900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 45900,
+          "commission": 350000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 41400,
+          "commission": 350000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-IAC425P",
+      "name": "SK매직 PSG 원코크 플러스 얼음물 정수기 (얼음냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 53900,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 45500,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 48400,
+          "commission": 620200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 40500,
+          "commission": 596500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 46900,
+          "commission": 662600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 39000,
+          "commission": 631000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 55900,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 47500,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 50400,
+          "commission": 626200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 42500,
+          "commission": 602500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 48900,
+          "commission": 670600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 41000,
+          "commission": 639000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-IAC425S",
+      "name": "SK매직 25년형 원코크 플러스 얼음물 정수기 (얼음냉온정)",
+      "options": [
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 53900,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 45500,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 48400,
+          "commission": 620200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 40500,
+          "commission": 596500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 46900,
+          "commission": 662600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "셀프관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 39000,
+          "commission": 631000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 55900,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": true,
+          "monthlyFee": 47500,
+          "commission": 412500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 50400,
+          "commission": 626200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": true,
+          "monthlyFee": 42500,
+          "commission": 602500,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": false,
+          "monthlyFee": 48900,
+          "commission": 670600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 6,
+          "contractLabel": "6년",
+          "hasTasa": true,
+          "monthlyFee": 41000,
+          "commission": 639000,
+          "dataWarning": false
+        }
+      ]
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "options": [
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 71900,
+          "commission": 291000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 64900,
+          "commission": 291000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 62910,
+          "commission": 347600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 58410,
+          "commission": 338600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 59410,
+          "commission": 289400,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 55160,
+          "commission": 280900,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 55920,
+          "commission": 252300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 3,
+          "contractLabel": "3년",
+          "hasTasa": false,
+          "monthlyFee": 51920,
+          "commission": 244300,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 61900,
+          "commission": 377000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 54900,
+          "commission": 596600,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 54900,
+          "commission": 377000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 50310,
+          "commission": 492200,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 47510,
+          "commission": 438000,
+          "dataWarning": false
+        },
+        {
+          "managementType": "방문관리",
+          "contractYears": 5,
+          "contractLabel": "5년",
+          "hasTasa": false,
+          "monthlyFee": 44720,
+          "commission": 383900,
+          "dataWarning": false
+        }
+      ]
+    }
+  ],
+  "warningModels": []
+}
