@@ -19,7 +19,6 @@ def clean(v):
     return str(v).strip().replace("\xa0", " ").replace("\u3000", " ")
 
 def clean_name(v):
-    """제품명/모델명 줄바꿈 정리"""
     s = clean(v)
     s = re.sub(r'\n+', '\n', s)
     return s.strip()
@@ -31,11 +30,9 @@ def months_to_label(m):
     return f"{m}개월"
 
 def normalize_management_type(raw):
-    """col3 값을 정규화"""
     if not raw:
         return None
     s = clean(raw).replace("\n", "").replace(" ", "")
-    # 관리유형 패턴
     patterns = [
         ("방문할인+타사보상", "방문할인+타사보상"),
         ("셀프할인+타사보상", "셀프할인+타사보상"),
@@ -47,18 +44,15 @@ def normalize_management_type(raw):
         ("무방문형", "무방문형"),
         ("타사보상", "타사보상"),
     ]
-    # 연도형 패턴 (1년(방문형) 등)
     year_mgmt = re.match(r'^(\d+)년\(?(방문형|셀프형|무방문형)\)?$', s)
     if year_mgmt:
         return s
     for keyword, label in patterns:
         if keyword in s:
             return label
-    # 관리유형이 아닌 것 (Basic, Lite, 법인 등)
     return None
 
 def detect_category(model_code, product_name, row_index):
-    """모델코드/제품명으로 카테고리 추론"""
     m = (model_code + product_name).upper()
     if any(x in m for x in ["WPU", "정수기", "언더싱크", "그랜드정수기", "뉴랜드정수기", "뉴슬림정수기"]):
         return "정수기"
@@ -73,65 +67,42 @@ def detect_category(model_code, product_name, row_index):
     return "기타"
 
 def parse_product_name_from_col2(raw):
-    """
-    col2에서 모델코드와 제품명 분리.
-    보통 첫 줄이 모델코드, 이후가 제품명.
-    """
     if not raw:
         return "", ""
     parts = [p.strip() for p in str(raw).replace("\xa0"," ").split("\n") if p.strip()]
     if not parts:
         return "", ""
-    # 첫 줄이 알파벳+숫자로 시작하면 모델코드
     first = parts[0]
     model_code = ""
     name_parts = []
-    # 모델코드 패턴: 대문자/숫자 포함, 공백 없는 짧은 문자열
     if re.match(r'^[A-Z0-9\-]+$', first.replace(" ","").upper()) and len(first) < 30:
         model_code = first.strip()
         name_parts = parts[1:]
     else:
-        # 모델코드가 없을 수도 있음
         name_parts = parts
     name = " ".join(name_parts).strip()
-    # 괄호 안 색상/옵션 정보 제거 (제품명 정리)
     return model_code, name
 
 def clean_option_name(col4_raw, model_code):
-    """
-    col4 제품 옵션명 정리 → 할인 정보만 남김
-    """
     s = clean(col4_raw)
-    # 라이트시리즈 prefix 처리
     lite = False
     if s.startswith("라이트시리즈"):
         lite = True
         s = s[len("라이트시리즈"):].strip()
 
-    # 할인 정보 먼저 추출 (예: "(5,000원할인)", "(1,000원 할인)")
     discounts = re.findall(r'\([\d,]+원\s*할인\)', s)
 
-    # 모델코드 제거 (앞에 붙어있는 경우)
     if model_code and s.upper().replace(" ","").startswith(model_code.upper().replace(" ","")):
         s = s[len(model_code):].strip()
 
-    # 알파벳+숫자만으로 된 앞부분 코드 제거 (MAT-XXXXX, ACL16C1ASKOB 등)
     s = re.sub(r'^[A-Z0-9,–\-\s]+(?=\(|$)', '', s).strip()
-
-    # 관리유형 제거
     s = re.sub(r'\(방문\)', '', s)
     s = re.sub(r'\(셀프\)', '', s)
-
-    # 약정년도 제거
     s = re.sub(r'\(\d+년의무\)', '', s)
     s = re.sub(r'\(\d+년\)', '', s)
-
-    # 복수 모델코드 패턴 제거 (예: ACL16C1ASKOB,ACL16C2ASKZG)
     s = re.sub(r'[A-Z0-9]+(SK|ASK|CSK)[A-Z0-9]+(,[A-Z0-9]+(SK|ASK|CSK)[A-Z0-9]+)*', '', s)
-
     s = s.strip(" ,()-+")
 
-    # 할인 정보가 사라진 경우 다시 붙이기
     if discounts and not any(re.search(r'[\d,]+원\s*할인', s) for _ in [1]):
         d_clean = discounts[0].strip("()").replace("  "," ")
         s = (s + " " + d_clean).strip()
@@ -142,64 +113,95 @@ def clean_option_name(col4_raw, model_code):
     return s if s else ""
 
 # ─────────────────────────────────────────────
+# 단종 모델 목록
+# ─────────────────────────────────────────────
+DISCONTINUED_MODELS = {'KM720R', 'QM720R', 'MAT-KM720R', 'MAT-QM720R'}
+
+# D열 기본 관리유형 (할인 없음) → 제외 대상
+BASIC_MGMT_EXCLUDE = {'방문', '셀프', '무방문형'}
+
+# ─────────────────────────────────────────────
 # 메인 파서
 # ─────────────────────────────────────────────
 
 def parse_excel(filepath):
     wb = openpyxl.load_workbook(filepath, data_only=True)
     ws = wb.worksheets[0]
-
-    # 시트명에서 월 정보 추출
     sheet_title = ws.title.strip()
-
     rows = list(ws.iter_rows(values_only=True))
 
+    DATA_START = 7
+
+    # ── 1차 스캔: MAT 모델별 할인 옵션 존재 여부 확인 ──
+    # 할인 옵션이 있는 MAT 모델은 할인 옵션만 유효 데이터로 처리
+    mat_has_discount = {}  # model_code(upper) → bool
+    scan_model = None
+    scan_is_mat = False
+
+    for row in rows[DATA_START:]:
+        col2 = row[2]
+        col4 = row[4]
+
+        if col2 is not None and str(col2).strip():
+            model_code, _ = parse_product_name_from_col2(col2)
+            scan_model = model_code.upper() if model_code else None
+            scan_is_mat = bool(scan_model and scan_model.startswith('MAT'))
+            if scan_is_mat and scan_model and scan_model not in mat_has_discount:
+                mat_has_discount[scan_model] = False
+
+        if scan_is_mat and scan_model and col4:
+            if '할인' in str(col4):
+                mat_has_discount[scan_model] = True
+
+    print(f"MAT 할인 스캔 결과: {sum(1 for v in mat_has_discount.values() if v)}개 모델에 할인 옵션 존재")
+
+    # ── 2차 처리: 메인 파싱 ──
     products = []
     current_product = None
     current_model_code = ""
     current_product_name = ""
     current_category = ""
-    current_promo = ""
-    current_mgmt_type = ""  # col3 carry-forward
-
-    # 헤더는 row 6 (index 6), 데이터는 row 7부터
-    DATA_START = 7
+    current_mgmt_type = ""
 
     for i, row in enumerate(rows):
         if i < DATA_START:
             continue
 
-        col1 = clean(row[1])   # 프로모션 정보
-        col2 = row[2]           # 모델코드+제품명 (raw)
-        col3 = clean(row[3])   # 관리방법
-        col4 = clean(row[4])   # 제품 옵션명
-        fee_guide = row[6]     # 가이드 월 요금 (col F)
-        obligation = row[8]    # 의무개월 수
-        ownership = clean(row[9])  # 소유권
-        reg_fee = row[10]      # 등록비
-        base_comm = row[11]    # 기본 수수료
-        add_cnt = row[12]      # 장려 횟수
-        add_comm = row[13]     # 장려1 금액
-        bonus_comm = row[14]   # 장려2 금액
-        total_comm = row[15]   # 총 수수료
+        col1 = clean(row[1])
+        col2 = row[2]
+        col3 = clean(row[3])
+        col4 = clean(row[4])
+        fee_guide  = row[6]
+        obligation = row[8]
+        ownership  = clean(row[9])
+        reg_fee    = row[10]
+        base_comm  = row[11]
+        add_cnt    = row[12]
+        add_comm   = row[13]
+        bonus_comm = row[14]
+        total_comm = row[15]
 
-        # 새 제품 그룹 시작 여부
+        # 새 제품 그룹 시작
         if col2 is not None and str(col2).strip():
             model_code, product_name = parse_product_name_from_col2(col2)
-            if not model_code and product_name:
-                # 모델코드 없음, 전체가 제품명
-                model_code = ""
-            # 카테고리 추론
             category = detect_category(model_code, product_name, i)
-            # 특수 카테고리 (구독/선결제/일시불은 스킵)
-            if "구독" in (model_code+product_name) or \
-               "선결제" in (model_code+product_name) or \
-               "일시불" in (model_code+product_name) or \
-               "멤버쉽" in (model_code+product_name):
+
+            # 구독/선결제/일시불/멤버쉽 섹션 스킵
+            if any(k in (model_code + product_name) for k in ["구독", "선결제", "일시불", "멤버쉽"]):
                 current_product = None
                 current_model_code = ""
                 current_product_name = ""
                 current_category = category
+                continue
+
+            # ★ 단종 제품 제외
+            model_upper = model_code.upper()
+            if model_upper in DISCONTINUED_MODELS or any(d in model_upper for d in ['KM720R', 'QM720R']):
+                current_product = None
+                current_model_code = ""
+                current_product_name = ""
+                current_category = category
+                print(f"  단종 제외: {model_code}")
                 continue
 
             current_product = {
@@ -214,54 +216,56 @@ def parse_excel(filepath):
             current_model_code = model_code
             current_product_name = product_name
             current_category = category
-            current_mgmt_type = ""  # reset for new product
+            current_mgmt_type = ""
             products.append(current_product)
 
-        # 현재 제품이 없으면 스킵
         if current_product is None:
             continue
 
-        # 프로모션 정보 업데이트
         if col1:
             current_product["promotionNote"] = col1
 
-        # 관리유형 처리 (col3 값이 있으면 새 관리유형 그룹 시작)
+        # 관리유형 처리
         mgmt_type = normalize_management_type(col3)
         if col3 and mgmt_type is None:
-            # 특수 노트 (Basic만운영, Lite 등)
             special_note = clean(col3).replace("\n", " ").strip()
             if special_note and special_note not in current_product.get("note",""):
                 current_product["note"] = (current_product.get("note","") + " " + special_note).strip()
-            # 관리유형은 이전 값 유지
         elif col3 and mgmt_type:
-            # 새 관리유형 그룹
             current_mgmt_type = mgmt_type
         elif not col3:
-            # col3 없음 → 이전 관리유형 이어받음
             mgmt_type = current_mgmt_type
-        # 최종 관리유형 확정
         if mgmt_type is None:
             mgmt_type = current_mgmt_type
 
-        # 수치 데이터 유효성 확인
+        # ★ D열 "방문"/"셀프" 기본(할인 없음) 행 제외
+        if mgmt_type in BASIC_MGMT_EXCLUDE:
+            continue
+
+        # 수치 데이터
         try:
             monthly_fee = int(fee_guide) if fee_guide else 0
-            months = int(obligation) if obligation else 0
-            base_c = int(base_comm) if base_comm else 0
-            add_c = int(add_comm) if add_comm else 0
-            bonus_c = int(bonus_comm) if bonus_comm else 0
-            total_c = int(total_comm) if total_comm else 0
-            reg = int(reg_fee) if reg_fee else 0
+            months      = int(obligation) if obligation else 0
+            base_c      = int(base_comm)  if base_comm  else 0
+            add_c       = int(add_comm)   if add_comm   else 0
+            bonus_c     = int(bonus_comm) if bonus_comm else 0
+            total_c     = int(total_comm) if total_comm else 0
+            reg         = int(reg_fee)    if reg_fee    else 0
         except (ValueError, TypeError):
             continue
 
         if monthly_fee == 0 and total_c == 0:
             continue
 
-        # 옵션 이름 정리
+        # ★ MAT 모델: 할인 옵션 있는 모델은 할인 옵션만 유효
+        if current_category == '매트리스':
+            mat_key = current_model_code.upper()
+            if mat_key in mat_has_discount and mat_has_discount[mat_key]:
+                if '할인' not in col4:
+                    continue
+
         option_label = clean_option_name(col4, current_model_code)
 
-        # 소유권 개월수 추출
         own_months = 0
         own_match = re.search(r'(\d+)', ownership)
         if own_match:
@@ -310,7 +314,6 @@ def parse_excel(filepath):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        # 기본 경로 사용
         filepath = r"C:\Users\a\Documents\렌탈정책\26.04\SK 수수료표_2604v1 (1).xlsx"
     else:
         filepath = sys.argv[1]
@@ -320,13 +323,11 @@ if __name__ == "__main__":
     print(f"파싱 중: {filepath}")
     data = parse_excel(filepath)
 
-    # 1) JSON 저장
     json_out = os.path.join(base_dir, "sk_data.json")
     with open(json_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"JSON 저장: {json_out}")
 
-    # 2) HTML 템플릿에 데이터 주입 → 최종 HTML 생성
     tpl_path = os.path.join(base_dir, "sk_commission.html")
     if os.path.exists(tpl_path):
         with open(tpl_path, "r", encoding="utf-8") as f:
@@ -335,7 +336,6 @@ if __name__ == "__main__":
         data_js = json.dumps(data, ensure_ascii=False)
         html_out_str = html.replace("__SK_DATA__", data_js)
 
-        # 출력 파일명: sk_commission_YYMM.html
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")
         out_html = os.path.join(base_dir, f"sk_commission_{month_tag}.html")
         with open(out_html, "w", encoding="utf-8") as f:
