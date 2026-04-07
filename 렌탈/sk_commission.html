@@ -487,7 +487,16 @@ function selectProduct(id) {
   }
 }
 
-function showWarnPopup() {
+function showWarnPopup(skWarn, tlWarn) {
+  let sources = [];
+  if (skWarn) sources.push('에이컴즈 (F열 ≠ G열)');
+  if (tlWarn) sources.push('티엘 (J열 ≠ K열)');
+  const msgEl = document.querySelector('#warn-popup .warn-msg');
+  if (msgEl) {
+    msgEl.innerHTML = `요금이 틀릴 가능성이 있으니<br>엑셀파일 확인 후 안내하세요.<br>
+      <small style="color:#b45309;font-weight:600">${sources.join(' / ')}</small><br>
+      <small style="color:var(--gray-400)">(⚠️ 표시된 항목)</small>`;
+  }
   document.getElementById('warn-popup').classList.add('show');
 }
 function closeWarnPopup() {
