@@ -155,91 +155,99 @@
   }
   .detail-btn:hover { background: var(--brand); color: #fff; }
 
-  /* ── 필터 바 ── */
-  .filter-bar {
-    display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
-    padding: 10px 16px;
-    background: var(--gray-50);
+  /* ── 안내문 카드 강조 ── */
+  .notice-card {
+    border: 2px solid var(--brand);
+    box-shadow: 0 4px 16px rgba(0,102,204,.15);
+  }
+  .notice-header {
+    background: var(--brand) !important;
+    border-bottom: none !important;
+    padding: 12px 16px !important;
+  }
+  .notice-header h2 { color: #fff; font-size: 15px; font-weight: 700; }
+  .copy-all-btn {
+    margin-left: auto;
+    padding: 6px 16px;
+    background: rgba(255,255,255,.2); color: #fff;
+    border: 1px solid rgba(255,255,255,.5); border-radius: 6px; cursor: pointer;
+    font-size: 12px; font-weight: 700;
+    transition: background .15s;
+  }
+  .copy-all-btn:hover { background: rgba(255,255,255,.35); }
+  .copy-all-btn:active { transform: scale(.98); }
+  .copy-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 14px;
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    font-size: 14px; line-height: 1.8;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    resize: vertical;
+    background: #fff;
+    color: var(--gray-800);
+    outline: none;
+  }
+  .copy-textarea:focus { border-color: var(--brand); }
+
+  /* ── 옵션 선택기 (드롭박스) ── */
+  .option-selector { display: flex; flex-direction: column; gap: 14px; }
+  .option-dropdowns {
+    display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap;
+    padding-bottom: 14px;
     border-bottom: 1px solid var(--gray-200);
   }
-  .filter-label { font-size: 11px; color: var(--gray-600); font-weight: 600; }
-  .filter-btn {
-    padding: 4px 12px; border-radius: 16px; cursor: pointer;
-    border: 1px solid var(--gray-200); background: #fff;
-    font-size: 12px; color: var(--gray-600);
-  }
-  .filter-btn:hover { border-color: var(--brand); color: var(--brand); }
-  .filter-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); font-weight: 700; }
-  .filter-sep { color: var(--gray-200); margin: 0 4px; }
-
-  /* ── 마진 설정 ── */
-  .margin-setting {
-    display: flex; align-items: center; gap: 8px;
-    margin-left: auto;
-    font-size: 12px;
-  }
-  .margin-setting label { color: var(--gray-600); white-space: nowrap; }
-  .margin-setting input {
-    width: 90px; padding: 4px 8px;
+  .dropdown-group { display: flex; flex-direction: column; gap: 4px; }
+  .dropdown-label { font-size: 11px; font-weight: 700; color: var(--gray-600); }
+  .option-select {
+    padding: 7px 10px;
     border: 1px solid var(--gray-200); border-radius: 6px;
-    font-size: 12px; text-align: right; outline: none;
+    font-size: 13px; outline: none; cursor: pointer;
+    background: #fff; min-width: 150px;
+    font-family: inherit;
   }
-  .margin-setting input:focus { border-color: var(--brand); }
+  .option-select:focus { border-color: var(--brand); box-shadow: 0 0 0 2px rgba(0,102,204,.1); }
 
-  /* ── 옵션 테이블 ── */
-  .options-table-wrap { overflow-x: auto; }
-  table {
-    width: 100%; border-collapse: collapse;
-    font-size: 12px;
+  /* ── 옵션 상세 패널 ── */
+  .option-detail {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex; flex-direction: column; gap: 12px;
   }
-  thead th {
-    background: var(--gray-50); padding: 8px 10px;
-    text-align: center; font-weight: 600; font-size: 11px;
-    color: var(--gray-600); border-bottom: 2px solid var(--gray-200);
-    white-space: nowrap;
+  .detail-row { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .gift-row {
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-200);
+    gap: 24px;
   }
-  thead th:first-child { text-align: left; }
-  tbody tr { border-bottom: 1px solid var(--gray-100); }
-  tbody tr:hover { background: #f0f7ff; }
-  tbody td {
-    padding: 7px 10px; vertical-align: middle;
-    text-align: center;
-  }
-  tbody td:first-child { text-align: left; }
-  .mgmt-cell {
-    display: flex; align-items: center; gap: 6px;
-  }
-  .mgmt-badge {
-    display: inline-block; padding: 2px 7px;
-    border-radius: 4px; font-size: 10px; font-weight: 700;
-  }
-  .mgmt-방문 { background: #dbeafe; color: #1d4ed8; }
-  .mgmt-셀프 { background: #dcfce7; color: #166534; }
-  .mgmt-무방문형 { background: #fef9c3; color: #854d0e; }
-  .mgmt-none { background: var(--gray-100); color: var(--gray-600); }
-  .mgmt-할인 { background: #fee2e2; color: #b91c1c; }
-  .mgmt-할인타사 { background: #fce7f3; color: #9d174d; }
-
-  .contract-cell { font-weight: 700; color: var(--brand); }
-  .fee-cell { font-weight: 700; font-size: 13px; }
-  .comm-cell { color: var(--gray-600); }
-  .total-comm { font-weight: 700; color: var(--green); }
-
-  .gift-cell {
-    display: flex; align-items: center; gap: 4px;
-  }
-  .gift-input {
-    width: 90px; padding: 4px 6px;
-    border: 1px solid var(--gray-200); border-radius: 5px;
-    font-size: 12px; text-align: right; outline: none;
-    color: var(--accent); font-weight: 700;
-  }
-  .gift-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(224,85,0,.1); }
-  .gift-warn { color: #dc2626; font-size: 10px; }
-
-  .margin-cell { font-weight: 700; }
+  .detail-item { display: flex; flex-direction: column; gap: 3px; }
+  .detail-label { font-size: 10px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: .3px; }
+  .detail-value { font-size: 16px; font-weight: 700; color: var(--gray-800); }
+  .fee-value { color: var(--brand); font-size: 20px; }
+  .comm-value { color: var(--green); font-size: 18px; }
+  .cost-note { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
   .margin-pos { color: var(--green); }
   .margin-neg { color: #dc2626; }
+
+  .gift-input-lg {
+    width: 110px; padding: 7px 10px;
+    border: 1.5px solid var(--accent); border-radius: 6px;
+    font-size: 15px; font-weight: 700; text-align: right; outline: none;
+    color: var(--accent); font-family: inherit;
+  }
+  .gift-input-lg:focus { box-shadow: 0 0 0 2px rgba(224,85,0,.15); }
+  .margin-setting-inline {
+    display: flex; align-items: center; gap: 6px; margin-left: auto;
+  }
+  .margin-setting-inline label { font-size: 11px; font-weight: 700; color: var(--gray-600); white-space: nowrap; }
+  .margin-input-field {
+    width: 100px; padding: 7px 8px;
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    font-size: 13px; text-align: right; outline: none; font-family: inherit;
+  }
+  .margin-input-field:focus { border-color: var(--brand); }
 
   .copy-row-btn {
     padding: 3px 8px; border-radius: 4px;
@@ -247,35 +255,6 @@
     font-size: 11px; color: var(--gray-600);
   }
   .copy-row-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
-
-  /* ── 안내문 카드 ── */
-  .copy-header {
-    display: flex; align-items: center; gap: 8px;
-  }
-  .copy-header h2 { font-size: 14px; font-weight: 700; }
-  .copy-all-btn {
-    margin-left: auto;
-    padding: 6px 16px;
-    background: var(--brand); color: #fff;
-    border: none; border-radius: 6px; cursor: pointer;
-    font-size: 12px; font-weight: 700;
-  }
-  .copy-all-btn:hover { background: #0055b3; }
-  .copy-all-btn:active { transform: scale(.98); }
-
-  .copy-textarea {
-    width: 100%;
-    min-height: 160px;
-    padding: 12px;
-    border: 1px solid var(--gray-200); border-radius: 6px;
-    font-size: 13px; line-height: 1.7;
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-    resize: vertical;
-    background: var(--gray-50);
-    color: var(--gray-800);
-    outline: none;
-  }
-  .copy-textarea:focus { border-color: var(--brand); background: #fff; }
 
   /* ── 빈 상태 ── */
   .empty-state {
@@ -354,10 +333,9 @@ const DB = __SK_DATA__;
 let state = {
   category: '전체',
   productId: null,
-  mgmtFilter: '전체',   // 방문 | 셀프 | 전체
-  discFilter: '전체',   // 전체 | 기본 | 할인 | 할인+타사
+  selectedOptionKey: null,
   targetMargin: 150000,
-  giftOverrides: {},    // optionKey → amount
+  giftOverrides: {},
   searchText: '',
 };
 
@@ -373,7 +351,7 @@ function init() {
 }
 
 // ═══════════════════════════════════════════
-// 카테고리 렌더링
+// 카테고리
 // ═══════════════════════════════════════════
 function getCategories() {
   const counts = { '전체': DB.products.length };
@@ -398,6 +376,7 @@ function renderCategoryList() {
 function selectCategory(cat) {
   state.category = cat;
   state.productId = null;
+  state.selectedOptionKey = null;
   state.searchText = '';
   document.getElementById('prod-search').value = '';
   renderCategoryList();
@@ -406,7 +385,7 @@ function selectCategory(cat) {
 }
 
 // ═══════════════════════════════════════════
-// 제품 목록 렌더링
+// 제품 목록
 // ═══════════════════════════════════════════
 function getFilteredProducts() {
   return DB.products.filter(p => {
@@ -441,14 +420,13 @@ function filterProducts() {
 
 function selectProduct(id) {
   state.productId = id;
-  state.mgmtFilter = '전체';
-  state.discFilter = '전체';
+  state.selectedOptionKey = null;
   renderProductList();
   renderMain();
 }
 
 // ═══════════════════════════════════════════
-// 메인 영역 렌더링
+// 메인 영역
 // ═══════════════════════════════════════════
 function renderMain() {
   const el = document.getElementById('main-content');
@@ -459,10 +437,6 @@ function renderMain() {
     </div>`;
     return;
   }
-
-  // 관리유형 목록 수집
-  const mgmtTypes = [...new Set(product.options.map(o => getMgmtBase(o.managementType)))].filter(Boolean);
-  const hasMgmt = mgmtTypes.length > 0;
 
   el.innerHTML = `
     <!-- 제품 정보 카드 -->
@@ -485,42 +459,24 @@ function renderMain() {
       </div>
     </div>
 
-    <!-- 옵션 테이블 카드 -->
-    <div class="card">
-      <div class="card-header">
-        <h2>📊 요금 & 수수료</h2>
-      </div>
-      <!-- 필터 -->
-      <div class="filter-bar">
-        ${hasMgmt ? `
-          <span class="filter-label">관리</span>
-          ${renderMgmtFilterBtns(mgmtTypes)}
-          <span class="filter-sep">|</span>
-          <span class="filter-label">조건</span>
-          ${renderDiscFilterBtns(product)}
-        ` : ''}
-        <div class="margin-setting">
-          <label>목표 마진:</label>
-          <input type="text" id="margin-input"
-            value="${fmtNum(state.targetMargin)}"
-            onchange="updateMargin(this.value)"
-            onblur="this.value=fmtNum(state.targetMargin)">
-          <span style="color:var(--gray-600)">원</span>
-        </div>
-      </div>
-      <div class="options-table-wrap">
-        ${renderOptionsTable(product)}
-      </div>
-    </div>
-
-    <!-- 고객 안내문 카드 -->
-    <div class="card">
-      <div class="card-header copy-header">
-        <h2>📄 고객 안내문</h2>
-        <button class="copy-all-btn" onclick="copyAll()">📋 전체 복사</button>
+    <!-- 고객 안내문 카드 (강조) -->
+    <div class="card notice-card">
+      <div class="card-header notice-header">
+        <h2>📢 고객 안내문</h2>
+        <button class="copy-all-btn" onclick="copyAll()">📋 복사</button>
       </div>
       <div class="card-body">
         <textarea class="copy-textarea" id="copy-text" readonly></textarea>
+      </div>
+    </div>
+
+    <!-- 요금 & 수수료 카드 -->
+    <div class="card">
+      <div class="card-header">
+        <h2>📊 요금 &amp; 수수료</h2>
+      </div>
+      <div class="card-body">
+        ${renderOptionSelector(product)}
       </div>
     </div>
   `;
@@ -528,155 +484,181 @@ function renderMain() {
   updateCopyText();
 }
 
-// ───────────────────────────────────────────
-// 관리유형 필터 버튼
-// ───────────────────────────────────────────
-function getMgmtBase(mgmt) {
-  if (!mgmt) return '';
-  if (mgmt.includes('방문')) return '방문';
-  if (mgmt.includes('셀프')) return '셀프';
-  if (mgmt.includes('무방문형')) return '무방문형';
-  return mgmt;
-}
+// ═══════════════════════════════════════════
+// 옵션 선택기 (드롭박스)
+// ═══════════════════════════════════════════
+function renderOptionSelector(product) {
+  const opts = product.options;
+  if (!opts.length) return '<div class="empty-state" style="padding:24px"><p>옵션 없음</p></div>';
 
-function getDiscLevel(mgmt) {
-  if (!mgmt) return '기본';
-  if (mgmt.includes('+타사보상') || mgmt.includes('타사보상')) return '할인+타사';
-  if (mgmt.includes('할인')) return '할인';
-  return '기본';
-}
+  // 선택된 옵션 확인/초기화
+  let selectedOpt = null;
+  if (state.selectedOptionKey) {
+    selectedOpt = opts.find(o => getOptionKey(product.id, o) === state.selectedOptionKey);
+  }
+  if (!selectedOpt) {
+    selectedOpt = opts[0];
+    state.selectedOptionKey = getOptionKey(product.id, selectedOpt);
+  }
 
-function renderMgmtFilterBtns(mgmtTypes) {
-  const btns = ['전체', ...mgmtTypes];
-  return btns.map(t => `
-    <button class="filter-btn ${state.mgmtFilter === t ? 'active' : ''}"
-      onclick="setMgmtFilter('${t}')">${t}</button>
-  `).join('');
-}
+  const selectedMgmt = selectedOpt.managementType || '';
 
-function renderDiscFilterBtns(product) {
-  const levels = [...new Set(product.options.map(o => getDiscLevel(o.managementType)))];
-  const btns = ['전체', ...levels.sort()];
-  return btns.map(t => `
-    <button class="filter-btn ${state.discFilter === t ? 'active' : ''}"
-      onclick="setDiscFilter('${t}')">${t}</button>
-  `).join('');
-}
-
-function setMgmtFilter(val) {
-  state.mgmtFilter = val;
-  renderMain();
-}
-function setDiscFilter(val) {
-  state.discFilter = val;
-  renderMain();
-}
-
-// ───────────────────────────────────────────
-// 옵션 테이블 렌더링
-// ───────────────────────────────────────────
-function getVisibleOptions(product) {
-  return product.options.filter(o => {
-    const base = getMgmtBase(o.managementType);
-    const disc = getDiscLevel(o.managementType);
-    const matchMgmt = state.mgmtFilter === '전체' || base === state.mgmtFilter || (!base && state.mgmtFilter === '전체');
-    const matchDisc = state.discFilter === '전체' || disc === state.discFilter;
-    return matchMgmt && matchDisc;
+  // 관리방법 목록 (중복 제거, 순서 유지)
+  const seen = new Set();
+  const uniqueMgmt = [];
+  opts.forEach(o => {
+    const m = o.managementType || '';
+    if (!seen.has(m)) { seen.add(m); uniqueMgmt.push(m); }
   });
+
+  // 선택된 관리방법에 해당하는 약정 옵션
+  const contractOpts = opts.filter(o => (o.managementType || '') === selectedMgmt);
+
+  return `
+    <div class="option-selector">
+      <div class="option-dropdowns">
+        <div class="dropdown-group">
+          <label class="dropdown-label">관리방법</label>
+          <select class="option-select" onchange="onMgmtChange(this.value)">
+            ${uniqueMgmt.map(m => `
+              <option value="${escHtml(m)}" ${m === selectedMgmt ? 'selected' : ''}>
+                ${m || '기본'}
+              </option>
+            `).join('')}
+          </select>
+        </div>
+        <div class="dropdown-group">
+          <label class="dropdown-label">약정기간</label>
+          <select class="option-select" onchange="onContractChange(this.value)">
+            ${contractOpts.map(o => {
+              const key = getOptionKey(product.id, o);
+              return `<option value="${escHtml(key)}" ${key === state.selectedOptionKey ? 'selected' : ''}>${o.contractLabel}</option>`;
+            }).join('')}
+          </select>
+        </div>
+        <div class="margin-setting-inline">
+          <label>목표 마진</label>
+          <input type="text" class="margin-input-field" id="margin-input"
+            value="${fmtNum(state.targetMargin)}"
+            onchange="updateMargin(this.value)"
+            onblur="this.value=fmtNum(state.targetMargin)">
+          <span style="color:var(--gray-600);font-size:12px">원</span>
+        </div>
+      </div>
+      ${renderOptionDetail(product, selectedOpt)}
+    </div>
+  `;
 }
 
-function getOptionKey(productId, option) {
-  return `${productId}__${option.managementType}__${option.contractMonths}__${option.monthlyFee}`;
+function renderOptionDetail(product, opt) {
+  const key = getOptionKey(product.id, opt);
+  const gift = getGift(opt);
+  const realCost = Math.round(gift * 1.1);
+  const margin = opt.totalCommission - realCost;
+  const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
+  const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
+
+  return `
+    <div class="option-detail">
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-label">월 요금</span>
+          <span class="detail-value fee-value">${fmtNum(opt.monthlyFee)}원</span>
+        </div>
+        ${opt.visitCycle ? `
+          <div class="detail-item">
+            <span class="detail-label">방문주기</span>
+            <span class="detail-value">${opt.visitCycle}</span>
+          </div>
+        ` : ''}
+        ${opt.registrationFee ? `
+          <div class="detail-item">
+            <span class="detail-label">등록비</span>
+            <span class="detail-value">${fmtNum(opt.registrationFee)}원</span>
+          </div>
+        ` : ''}
+        <div class="detail-item">
+          <span class="detail-label">총 수수료</span>
+          <span class="detail-value comm-value">${fmtNum(opt.totalCommission)}원</span>
+        </div>
+      </div>
+      <div class="detail-row gift-row">
+        <div class="detail-item">
+          <span class="detail-label">현금 사은품</span>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:2px">
+            <input class="gift-input-lg" type="text"
+              value="${fmtNum(gift)}"
+              data-key="${escHtml(key)}"
+              data-total="${opt.totalCommission}"
+              onchange="updateGift(this)"
+              onblur="this.value=fmtNum(getGiftByKey(this.dataset.key, parseInt(this.dataset.total)))">
+            <span style="font-size:13px;color:var(--gray-600)">원</span>
+          </div>
+          <span class="cost-note" id="cost-note-${safeKey}">실비용 ${fmtNum(realCost)}원 (×1.1)</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">실 마진</span>
+          <span class="detail-value ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</span>
+        </div>
+        <div style="margin-left:auto;align-self:flex-end">
+          <button class="copy-row-btn" style="padding:6px 14px;font-size:12px" onclick="copyRow('${escHtml(key)}')">이 옵션 복사</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function onMgmtChange(mgmt) {
+  const product = DB.products.find(p => p.id === state.productId);
+  if (!product) return;
+  const firstOpt = product.options.find(o => (o.managementType || '') === mgmt);
+  if (firstOpt) state.selectedOptionKey = getOptionKey(product.id, firstOpt);
+  renderMain();
+}
+
+function onContractChange(key) {
+  state.selectedOptionKey = key;
+  renderMain();
+}
+
+// ═══════════════════════════════════════════
+// 사은품 자동 계산
+// ═══════════════════════════════════════════
+function calcAutoGift(totalCommission) {
+  // 실마진 = totalCommission - gift × 1.1 ≈ targetMargin
+  // → gift = (totalCommission - targetMargin) / 1.1
+  if (totalCommission <= state.targetMargin) return 0;
+
+  const raw = (totalCommission - state.targetMargin) / 1.1;
+  const floorUnits = Math.floor(raw / 10000);
+  const ceilUnits  = Math.ceil(raw  / 10000);
+
+  const marginFloor = totalCommission - floorUnits * 10000 * 1.1;
+  const marginCeil  = totalCommission - ceilUnits  * 10000 * 1.1;
+
+  // 실마진이 목표에 더 가까운 쪽 선택
+  let units = Math.abs(marginFloor - state.targetMargin) <= Math.abs(marginCeil - state.targetMargin)
+    ? floorUnits : ceilUnits;
+
+  // 만원 단위 자릿수가 9로 끝나면 올림 (예: 9만→10만, 19만→20만)
+  if (units % 10 === 9) units += 1;
+
+  return Math.max(0, units) * 10000;
 }
 
 function getGift(option) {
   const key = getOptionKey(state.productId, option);
   if (state.giftOverrides[key] !== undefined) return state.giftOverrides[key];
-  return Math.max(0, option.totalCommission - state.targetMargin);
-}
-
-function renderOptionsTable(product) {
-  const opts = getVisibleOptions(product);
-  if (!opts.length) {
-    return '<div class="empty-state" style="padding:24px"><p>해당 조건의 옵션이 없습니다</p></div>';
-  }
-
-  const hasMgmt = opts.some(o => o.managementType);
-  const hasVisit = opts.some(o => o.visitCycle);
-  const hasReg = opts.some(o => o.registrationFee > 0);
-  // 한국어 포함 라벨이 있을 때만 variant 컬럼 표시 (비데 라이트시리즈 등)
-  const hasVariant = !hasMgmt && opts.some(o => o.label && /[가-힣]/.test(o.label));
-
-  return `<table>
-    <thead><tr>
-      ${hasMgmt ? '<th>관리유형</th>' : ''}
-      ${hasVariant ? '<th>시리즈</th>' : ''}
-      <th>약정</th>
-      <th>월 요금</th>
-      ${hasVisit ? '<th>방문주기</th>' : ''}
-      ${hasReg ? '<th>등록비</th>' : ''}
-      <th>총 수수료</th>
-      <th>현금 사은품</th>
-      <th>마진</th>
-      <th></th>
-    </tr></thead>
-    <tbody>
-      ${opts.map(o => renderOptionRow(o, hasMgmt, hasVisit, hasReg, hasVariant)).join('')}
-    </tbody>
-  </table>`;
-}
-
-function renderOptionRow(o, hasMgmt, hasVisit, hasReg, hasVariant) {
-  const key = getOptionKey(state.productId, o);
-  const gift = getGift(o);
-  const margin = o.totalCommission - gift;
-  const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
-
-  const mgmtBase = getMgmtBase(o.managementType);
-  const discLevel = getDiscLevel(o.managementType);
-  const mgmtBadgeClass = !mgmtBase ? 'mgmt-none' :
-    discLevel === '할인+타사' ? 'mgmt-할인타사' :
-    discLevel === '할인' ? 'mgmt-할인' :
-    `mgmt-${mgmtBase}`;
-  const mgmtLabel = o.managementType || '-';
-
-  // 할인 레이블 (관리유형 옆에) - 한글 아닌 코드는 제외
-  const extraLabel = o.label && !/^[A-Z0-9\-–]+$/.test(o.label) ? o.label : '';
-  // variant 컬럼용
-  const variantLabel = hasVariant ? (o.label && /[가-힣]/.test(o.label) ? o.label : '일반') : '';
-
-  const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
-
-  return `<tr>
-    ${hasMgmt ? `<td>
-      <span class="mgmt-badge ${mgmtBadgeClass}">${mgmtLabel}</span>
-      ${extraLabel ? `<small style="color:var(--accent);font-size:10px;margin-left:3px">${extraLabel}</small>` : ''}
-    </td>` : ''}
-    ${hasVariant ? `<td><span style="font-size:11px;font-weight:600;color:var(--gray-600)">${variantLabel}</span></td>` : ''}
-    <td class="contract-cell">${o.contractLabel}</td>
-    <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
-    ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
-    ${hasReg ? `<td class="comm-cell">${o.registrationFee ? fmtNum(o.registrationFee)+'원' : '-'}</td>` : ''}
-    <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
-    <td>
-      <div class="gift-cell">
-        <input class="gift-input" type="text"
-          value="${fmtNum(gift)}"
-          data-key="${escHtml(key)}"
-          data-total="${o.totalCommission}"
-          onchange="updateGift(this)"
-          onblur="this.value=fmtNum(getGiftByKey(this.dataset.key, parseInt(this.dataset.total)))">
-        <span style="font-size:11px;color:var(--gray-400)">원</span>
-      </div>
-    </td>
-    <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
-    <td><button class="copy-row-btn" onclick="copyRow('${escHtml(key)}')">복사</button></td>
-  </tr>`;
+  return calcAutoGift(option.totalCommission);
 }
 
 function getGiftByKey(key, total) {
   if (state.giftOverrides[key] !== undefined) return state.giftOverrides[key];
-  return Math.max(0, total - state.targetMargin);
+  return calcAutoGift(total);
+}
+
+function getOptionKey(productId, option) {
+  return `${productId}__${option.managementType}__${option.contractMonths}__${option.monthlyFee}`;
 }
 
 function updateGift(input) {
@@ -684,14 +666,20 @@ function updateGift(input) {
   const raw = input.value.replace(/[^0-9]/g,'');
   const val = parseInt(raw) || 0;
   state.giftOverrides[key] = val;
+
   const total = parseInt(input.dataset.total);
-  const margin = total - val;
+  const realCost = Math.round(val * 1.1);
+  const margin = total - realCost;
   const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
+
   const marginEl = document.getElementById('margin-' + safeKey);
   if (marginEl) {
     marginEl.textContent = fmtNum(margin) + '원';
-    marginEl.className = 'margin-cell ' + (margin >= 0 ? 'margin-pos' : 'margin-neg');
+    marginEl.className = 'detail-value ' + (margin >= 0 ? 'margin-pos' : 'margin-neg');
   }
+  const costNote = document.getElementById('cost-note-' + safeKey);
+  if (costNote) costNote.textContent = `실비용 ${fmtNum(realCost)}원 (×1.1)`;
+
   input.value = fmtNum(val);
   updateCopyText();
 }
@@ -699,27 +687,25 @@ function updateGift(input) {
 function updateMargin(val) {
   const raw = val.replace(/[^0-9]/g,'');
   state.targetMargin = parseInt(raw) || 0;
-  state.giftOverrides = {}; // 마진 변경 시 재계산
+  state.giftOverrides = {};
   renderMain();
 }
 
-// ───────────────────────────────────────────
-// 고객 안내문 생성
-// ───────────────────────────────────────────
+// ═══════════════════════════════════════════
+// 고객 안내문
+// ═══════════════════════════════════════════
 function buildCopyText() {
   const product = DB.products.find(p => p.id === state.productId);
   if (!product) return '';
 
-  const opts = getVisibleOptions(product);
-  if (!opts.length) return '';
+  const opt = state.selectedOptionKey
+    ? product.options.find(o => getOptionKey(product.id, o) === state.selectedOptionKey)
+    : product.options[0];
+  if (!opt) return '';
 
-  // 관리유형별 그룹
-  const groups = {};
-  opts.forEach(o => {
-    const gk = o.managementType || '기본';
-    if (!groups[gk]) groups[gk] = [];
-    groups[gk].push(o);
-  });
+  const gift = getGift(opt);
+  const mgmtBase = getMgmtBase(opt.managementType);
+  const discLevel = getDiscLevel(opt.managementType);
 
   const line = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
   let text = `${line}\n`;
@@ -727,30 +713,19 @@ function buildCopyText() {
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
   text += `${line}\n\n`;
 
-  Object.entries(groups).forEach(([mgmt, options]) => {
-    const mgmtBase = getMgmtBase(mgmt);
-    const discLevel = getDiscLevel(mgmt);
+  if (opt.managementType) {
+    let mgmtLine = '';
+    if (mgmtBase === '방문') mgmtLine = `📍 방문 관리${opt.visitCycle ? ` (${opt.visitCycle} 주기)` : ''}`;
+    else if (mgmtBase === '셀프') mgmtLine = `📍 자가 관리`;
+    else mgmtLine = `📍 ${opt.managementType}`;
+    if (discLevel === '할인') mgmtLine += ' [할인 적용]';
+    else if (discLevel === '할인+타사') mgmtLine += ' [타사 보상 할인]';
+    text += mgmtLine + '\n';
+  }
 
-    // 관리 타입 표시
-    if (mgmt && mgmt !== '기본') {
-      const visitCycle = options[0]?.visitCycle;
-      let mgmtLine = '';
-      if (mgmtBase === '방문') mgmtLine = `📍 방문 관리${visitCycle ? ` (${visitCycle} 주기)` : ''}`;
-      else if (mgmtBase === '셀프') mgmtLine = `📍 자가 관리`;
-      else mgmtLine = `📍 ${mgmt}`;
-      if (discLevel === '할인') mgmtLine += ' [할인 적용]';
-      else if (discLevel === '할인+타사') mgmtLine += ' [타사 보상 할인]';
-      text += mgmtLine + '\n';
-    }
-
-    options.forEach(o => {
-      const gift = getGift(o);
-      text += `• ${o.contractLabel} 약정 | 월 ${fmtNum(o.monthlyFee)}원`;
-      if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
-      text += '\n';
-    });
-    text += '\n';
-  });
+  text += `• ${opt.contractLabel} 약정 | 월 ${fmtNum(opt.monthlyFee)}원`;
+  if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
+  text += '\n\n';
 
   text += '✅ 현금사은품은 설치 후 즉시 지급됩니다\n';
   text += '✅ 등록비 별도 / 상담 문의 주세요';
@@ -767,7 +742,6 @@ function copyAll() {
   if (!text) return;
   navigator.clipboard.writeText(text).then(() => showToast('안내문 복사 완료 ✓'))
     .catch(() => {
-      // 폴백
       const el = document.getElementById('copy-text');
       el.select();
       document.execCommand('copy');
@@ -778,20 +752,32 @@ function copyAll() {
 function copyRow(key) {
   const product = DB.products.find(p => p.id === state.productId);
   if (!product) return;
-
-  const opts = product.options;
-  const opt = opts.find(o => getOptionKey(state.productId, o) === key);
+  const opt = product.options.find(o => getOptionKey(product.id, o) === key);
   if (!opt) return;
-
   const gift = getGift(opt);
   const line = `[SK매직] ${product.name} | ${opt.contractLabel} 약정 | 월 ${fmtNum(opt.monthlyFee)}원${gift > 0 ? ` | 현금사은품 ${fmtNum(gift)}원` : ''}`;
   navigator.clipboard.writeText(line).then(() => showToast('행 복사 완료 ✓'))
     .catch(() => showToast('복사 실패'));
 }
 
-// ───────────────────────────────────────────
+// ═══════════════════════════════════════════
 // 유틸
-// ───────────────────────────────────────────
+// ═══════════════════════════════════════════
+function getMgmtBase(mgmt) {
+  if (!mgmt) return '';
+  if (mgmt.includes('방문')) return '방문';
+  if (mgmt.includes('셀프')) return '셀프';
+  if (mgmt.includes('무방문형')) return '무방문형';
+  return mgmt;
+}
+
+function getDiscLevel(mgmt) {
+  if (!mgmt) return '기본';
+  if (mgmt.includes('+타사보상') || mgmt.includes('타사보상')) return '할인+타사';
+  if (mgmt.includes('할인')) return '할인';
+  return '기본';
+}
+
 function fmtNum(n) {
   if (n === null || n === undefined) return '0';
   return Math.round(n).toLocaleString('ko-KR');
