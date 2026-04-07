@@ -475,10 +475,15 @@ function selectProduct(id) {
   state.selectedKeys = new Set();
   renderProductList();
   renderMain();
-  // 경고 옵션 있으면 팝업
+  // 에이컴즈 F≠G 또는 티엘 J≠K 경고 있으면 팝업
   const product = DB.products.find(p => p.id === id);
-  if (product && product.options.some(o => o.dataWarning)) {
-    showWarnPopup();
+  if (product) {
+    const skWarn = product.options.some(o => o.dataWarning);
+    const modelNorm = (product.modelCode || '').replace(/\s+/g,'').toUpperCase();
+    const tlWarn = TL_WARNINGS.some(w => w.replace(/\s+/g,'').toUpperCase() === modelNorm);
+    if (skWarn || tlWarn) {
+      showWarnPopup(skWarn, tlWarn);
+    }
   }
 }
 
