@@ -318,13 +318,62 @@ def parse_excel(filepath):
     }
 
 
+# ─────────────────────────────────────────────
+# 접수처 비교 헬퍼
+# ─────────────────────────────────────────────
+
+def _norm_model(code):
+    return re.sub(r'[\-\s]', '', str(code)).upper()
+
+def _tl_lookup_key(model_code, tl_mgmt, years, has_tasa, is_package):
+    return f"{_norm_model(model_code)}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
+
+def _tl_model_variants(code):
+    """에이컴즈 모델코드 → 티엘 매칭용 변형 목록 (MAT TSM→SM 등)"""
+    norm = _norm_model(code)
+    variants = [norm]
+    # MAT-TSM… → MAT-SM… (에이컴즈 Twin-spring SS 코드 처리)
+    mat_t = re.match(r'^(MAT)T(.+)$', norm)
+    if mat_t:
+        variants.append(f"MAT{mat_t.group(2)}")
+    return variants
+
+def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months, ak_commission, is_package=False):
+    if "방문" in mgmt_type:
+        tl_mgmt = "방문관리"
+    elif "셀프" in mgmt_type:
+        tl_mgmt = "셀프관리"
+    else:
+        return None
+
+    years = contract_months // 12
+    has_tasa = "타사보상" in mgmt_type
+
+    tl_commission = None
+    for model_key in _tl_model_variants(model_code):
+        key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
+        if key in tl_lookup:
+            tl_commission = tl_lookup[key]
+            break
+
+    if tl_commission is None:
+        return None  # 티엘에 대응 없음
+
+    if ak_commission > tl_commission:
+        return "에이컴즈"
+    elif tl_commission > ak_commission:
+        return "티엘"
+    else:
+        return "동일"
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         filepath_sk = r"C:\Users\a\Documents\렌탈정책\26.04\SK 수수료표_2604v1 (1).xlsx"
         filepath_tl = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
     else:
         filepath_sk = sys.argv[1]
-        filepath_tl = sys.argv[2] if len(sys.argv) > 2 else filepath_tl
+        filepath_tl = sys.argv[2] if len(sys.argv) > 2 else r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -332,15 +381,61 @@ if __name__ == "__main__":
     print(f"[에이컴즈] 파싱 중: {filepath_sk}")
     data = parse_excel(filepath_sk)
 
-    # ── 티엘 파싱 (경고 모델 추출) ──
+    # ── 티엘 파싱 ──
     tl_warning_models = []
+    tl_lookup = {}
     try:
         from parse_tl_excel import parse_tl
         print(f"[티엘] 파싱 중: {filepath_tl}")
         tl_data = parse_tl(filepath_tl)
         tl_warning_models = tl_data.get("warningModels", [])
+        tl_lookup = tl_data.get("optionLookup", {})
     except Exception as e:
-        print(f"[티엘] 파싱 실패 (경고 기능 비활성화): {e}")
+        print(f"[티엘] 파싱 실패: {e}")
+
+    # ── 접수처 비교 + 패키지 옵션 생성 ──
+    for product in data["products"]:
+        model_code = product.get("modelCode", "")
+        regular_opts = list(product["options"])
+        package_opts = []
+        seen_pkg = set()
+
+        for opt in regular_opts:
+            mgmt = opt.get("managementType", "")
+            months = opt.get("contractMonths", 0)
+            total_c = opt.get("totalCommission", 0)
+
+            # 접수처 비교
+            opt["recommendedOffice"] = compute_recommended_office(
+                tl_lookup, model_code, mgmt, months, total_c, is_package=False
+            )
+
+            # 패키지 옵션 생성 (타사보상 제외, 중복 방지)
+            if "타사보상" in mgmt:
+                continue
+            pkg_key = f"{mgmt}_{months}"
+            if pkg_key in seen_pkg:
+                continue
+            seen_pkg.add(pkg_key)
+
+            base_c  = opt.get("baseCommission", 0)
+            add_c   = opt.get("additionalCommission", 0)
+            bonus_c = opt.get("bonusCommission", 0)
+            pkg_commission = round(base_c * 0.75) + add_c + bonus_c
+            if pkg_commission <= 0:
+                continue
+
+            pkg_opt = dict(opt)
+            pkg_opt["managementType"] = mgmt + "_패키지"
+            pkg_opt["monthlyFee"] = max(0, opt["monthlyFee"] - 2000)
+            pkg_opt["totalCommission"] = pkg_commission
+            pkg_opt["isPackage"] = True
+            pkg_opt["recommendedOffice"] = compute_recommended_office(
+                tl_lookup, model_code, mgmt, months, pkg_commission, is_package=True
+            )
+            package_opts.append(pkg_opt)
+
+        product["options"] = regular_opts + package_opts
 
     # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
