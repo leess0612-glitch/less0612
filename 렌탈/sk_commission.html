@@ -575,7 +575,6 @@ function renderOptionList(product) {
 
   const hasMgmt = opts.some(o => o.managementType);
   const hasVisit = opts.some(o => o.visitCycle);
-  const hasReg   = opts.some(o => o.registrationFee > 0);
 
   const rows = opts.map(o => {
     const key = getOptionKey(product.id, o);
