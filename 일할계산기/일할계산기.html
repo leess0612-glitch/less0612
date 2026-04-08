@@ -244,11 +244,9 @@
       `이번 달: <strong>${totalDays}일</strong><br>` +
       `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${lastDay}일</strong> (${totalDays - day + 1}일)`;
 
-    // 금액 입력 시 자동 콤마
     const feeInput = document.getElementById('monthlyFee');
     feeInput.addEventListener('input', () => {
-      const raw = feeInput.value.replace(/[^0-9]/g, '');
-      feeInput.value = raw ? Number(raw).toLocaleString('ko-KR') : '';
+      feeInput.value = feeInput.value.replace(/[^0-9]/g, '');
     });
 
     function roundTo100(n) {
