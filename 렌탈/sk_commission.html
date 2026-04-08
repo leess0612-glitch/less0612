@@ -616,6 +616,7 @@ function renderOptionList(product) {
         <div class="cost-note-cell" id="cost-${safeKey}">×1.1 = ${fmtNum(realCost)}원</div>
       </td>
       <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
+      <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
     </tr>`;
   }).join('');
 
