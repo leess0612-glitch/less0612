@@ -605,8 +605,6 @@ function renderOptionList(product) {
       ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.dataWarning ? '<span class="warn-row-badge">⚠️ 확인</span>' : ''}</td>` : ''}
       <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
       ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
-      ${hasReg   ? `<td>${o.registrationFee ? fmtNum(o.registrationFee)+'원' : '-'}</td>` : ''}
-      <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
       <td onclick="event.stopPropagation()">
         <input class="gift-input" type="text"
           value="${fmtNum(gift)}"
