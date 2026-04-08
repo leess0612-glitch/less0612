@@ -23,7 +23,7 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.10);
       padding: 40px 36px 36px;
       width: 100%;
-      max-width: 460px;
+      max-width: 500px;
     }
 
     h1 {
@@ -36,52 +36,7 @@
     .subtitle {
       font-size: 13px;
       color: #888;
-      margin-bottom: 32px;
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #444;
-      margin-bottom: 6px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .input-wrap {
-      position: relative;
-    }
-
-    .input-wrap input {
-      width: 100%;
-      padding: 11px 36px 11px 14px;
-      border: 1.5px solid #dde1e7;
-      border-radius: 8px;
-      font-size: 15px;
-      font-family: 'Malgun Gothic', sans-serif;
-      color: #1a1a2e;
-      outline: none;
-      transition: border-color 0.2s;
-      background: #fafbfc;
-      text-align: right;
-    }
-
-    .input-wrap input:focus {
-      border-color: #4f6ef7;
-      background: #fff;
-    }
-
-    .input-unit {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 13px;
-      color: #aaa;
-      pointer-events: none;
+      margin-bottom: 24px;
     }
 
     .info-box {
@@ -92,85 +47,110 @@
       font-size: 13px;
       color: #555;
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    .info-box strong {
-      color: #4f6ef7;
+    .info-box strong { color: #4f6ef7; }
+
+    /* 지역 선택 버튼 */
+    .region-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 10px;
     }
 
-    .btn-calc {
-      width: 100%;
-      padding: 14px;
+    .region-btns {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .btn-region {
+      flex: 1;
+      padding: 12px 6px;
+      border: 1.5px solid #dde1e7;
+      border-radius: 10px;
+      background: #fafbfc;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Malgun Gothic', sans-serif;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .btn-region:hover { border-color: #4f6ef7; color: #4f6ef7; background: #f0f3ff; }
+
+    .btn-region.active {
+      border-color: #4f6ef7;
       background: #4f6ef7;
       color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: 'Malgun Gothic', sans-serif;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
     }
 
-    .btn-calc:hover { background: #3a56d4; }
-    .btn-calc:active { transform: scale(0.98); }
-
-    .result-box {
+    /* 결과 전체 영역 */
+    .results-wrap {
       display: none;
-      margin-top: 28px;
+    }
+
+    .period-info {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* 카페 카드 */
+    .cafe-card {
       background: #f6f8ff;
       border: 1.5px solid #d3dbff;
       border-radius: 12px;
-      padding: 24px 22px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
     }
 
-    .result-title {
-      font-size: 12px;
+    .cafe-card:last-child { margin-bottom: 0; }
+
+    .cafe-name {
+      font-size: 15px;
       font-weight: 700;
-      color: #4f6ef7;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .cafe-base {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 14px;
     }
 
     .result-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
+      padding: 8px 0;
       border-bottom: 1px solid #e4e8f7;
     }
 
-    .result-row:last-child { border-bottom: none; }
+    .result-row:last-of-type { border-bottom: none; }
 
     .result-label {
       font-size: 13px;
       color: #666;
     }
 
+    .result-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .result-value {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
-      color: #1a1a2e;
-    }
-
-    .result-value.highlight {
-      font-size: 20px;
       color: #4f6ef7;
-    }
-
-    .result-meta {
-      font-size: 12px;
-      color: #999;
-      margin-top: 14px;
-      line-height: 1.8;
-    }
-
-    .error-msg {
-      color: #e53e3e;
-      font-size: 13px;
-      margin-top: 10px;
-      display: none;
     }
 
     .badge {
@@ -198,8 +178,17 @@
       transition: background 0.15s;
       white-space: nowrap;
     }
+
     .btn-copy:hover { background: #d3dbff; }
     .btn-copy.copied { background: #d4f7e0; color: #2a7a4f; border-color: #a8e6c3; }
+
+    .calc-note {
+      font-size: 11px;
+      color: #bbb;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
@@ -207,69 +196,103 @@
     <h1>일할계산기</h1>
     <p class="subtitle">입점비 일할 계산 · 부가세 포함/미포함</p>
 
-    <div class="info-box" id="infoBox">
-      <!-- 오늘 날짜 정보 JS로 채움 -->
+    <div class="info-box" id="infoBox"></div>
+
+    <div class="region-label">지역 선택</div>
+    <div class="region-btns">
+      <button class="btn-region" onclick="selectRegion('seoul')">서울</button>
+      <button class="btn-region" onclick="selectRegion('gyeonggi')">경기·광역시</button>
+      <button class="btn-region" onclick="selectRegion('other')">기타지방</button>
     </div>
 
-    <div class="form-group">
-      <label>월 기준 금액 (부가세 미포함, 만원 단위)</label>
-      <div class="input-wrap">
-        <input type="text" id="monthlyFee" placeholder="" inputmode="numeric">
-        <span class="input-unit">만원</span>
-      </div>
-    </div>
+    <div class="results-wrap" id="resultsWrap">
+      <div class="period-info" id="periodInfo"></div>
 
-    <button class="btn-calc" onclick="calculate()">계산하기</button>
-    <div class="error-msg" id="errorMsg"></div>
-
-    <div class="result-box" id="resultBox">
-      <div class="result-title">계산 결과</div>
-
-      <div class="result-row">
-        <span class="result-label">이번 달 총 일수</span>
-        <span class="result-value" id="rTotalDays">—</span>
-      </div>
-      <div class="result-row">
-        <span class="result-label">적용 일수 (오늘 ~ 말일)</span>
-        <span class="result-value" id="rAppliedDays">—</span>
-      </div>
-      <div class="result-row">
-        <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-        <span style="display:flex;align-items:center;gap:8px;">
-          <span class="result-value highlight" id="rExVat">—</span>
-          <button class="btn-copy" onclick="copyValue('rExVat')" id="copyExVat">복사</button>
-        </span>
-      </div>
-      <div class="result-row">
-        <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-        <span style="display:flex;align-items:center;gap:8px;">
-          <span class="result-value highlight" id="rIncVat">—</span>
-          <button class="btn-copy" onclick="copyValue('rIncVat')" id="copyIncVat">복사</button>
-        </span>
+      <!-- 성지똑똑 -->
+      <div class="cafe-card">
+        <div class="cafe-name">성지똑똑</div>
+        <div class="cafe-base" id="base-sj"></div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="sj-ex">—</span>
+            <button class="btn-copy" id="copy-sj-ex" onclick="copyVal('sj-ex', 'copy-sj-ex')">복사</button>
+          </span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="sj-inc">—</span>
+            <button class="btn-copy" id="copy-sj-inc" onclick="copyVal('sj-inc', 'copy-sj-inc')">복사</button>
+          </span>
+        </div>
       </div>
 
-      <div class="result-meta" id="rMeta"></div>
+      <!-- 좌표동맹 -->
+      <div class="cafe-card">
+        <div class="cafe-name">좌표동맹</div>
+        <div class="cafe-base" id="base-jw"></div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="jw-ex">—</span>
+            <button class="btn-copy" id="copy-jw-ex" onclick="copyVal('jw-ex', 'copy-jw-ex')">복사</button>
+          </span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="jw-inc">—</span>
+            <button class="btn-copy" id="copy-jw-inc" onclick="copyVal('jw-inc', 'copy-jw-inc')">복사</button>
+          </span>
+        </div>
+      </div>
+
+      <!-- 컴백폰 -->
+      <div class="cafe-card">
+        <div class="cafe-name">컴백폰</div>
+        <div class="cafe-base" id="base-cb"></div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="cb-ex">—</span>
+            <button class="btn-copy" id="copy-cb-ex" onclick="copyVal('cb-ex', 'copy-cb-ex')">복사</button>
+          </span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
+          <span class="result-right">
+            <span class="result-value" id="cb-inc">—</span>
+            <button class="btn-copy" id="copy-cb-inc" onclick="copyVal('cb-inc', 'copy-cb-inc')">복사</button>
+          </span>
+        </div>
+      </div>
+
+      <div class="calc-note" id="calcNote"></div>
     </div>
   </div>
 
   <script>
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth() + 1; // 1-based
+    const month = today.getMonth() + 1;
     const day = today.getDate();
     const totalDays = new Date(year, month, 0).getDate();
-    const lastDay = totalDays;
+    const appliedDays = totalDays - day + 1;
 
-    // 안내 박스 채우기
     document.getElementById('infoBox').innerHTML =
       `오늘: <strong>${year}년 ${month}월 ${day}일</strong>&nbsp;&nbsp;|&nbsp;&nbsp;` +
       `이번 달: <strong>${totalDays}일</strong><br>` +
-      `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${lastDay}일</strong> (${totalDays - day + 1}일)`;
+      `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${totalDays}일</strong> (${appliedDays}일)`;
 
-    const feeInput = document.getElementById('monthlyFee');
-    feeInput.addEventListener('input', () => {
-      feeInput.value = feeInput.value.replace(/[^0-9]/g, '');
-    });
+    // 카페별 지역별 월 기준 금액 (만원)
+    const FEES = {
+      sj: { seoul: 30, gyeonggi: 25, other: 17 },  // 성지똑똑
+      jw: { seoul: 10, gyeonggi: 7,  other: 5  },  // 좌표동맹
+      cb: { seoul: 8,  gyeonggi: 5,  other: 3  },  // 컴백폰
+    };
+
+    const REGION_LABEL = { seoul: '서울', gyeonggi: '경기·광역시', other: '기타지방' };
 
     function roundTo1000(n) {
       return Math.round(n / 1000) * 1000;
@@ -279,60 +302,53 @@
       return n.toLocaleString('ko-KR') + '원';
     }
 
-    function showError(msg) {
-      const el = document.getElementById('errorMsg');
-      el.textContent = msg;
-      el.style.display = 'block';
-      document.getElementById('resultBox').style.display = 'none';
+    function calcDaily(feeMan) {
+      const fee = feeMan * 10000;
+      const exVat = roundTo1000((fee / totalDays) * appliedDays);
+      const incVat = Math.round(exVat * 1.1);
+      return { exVat, incVat, fee };
     }
 
-    function calculate() {
-      document.getElementById('errorMsg').style.display = 'none';
+    function selectRegion(region) {
+      // 버튼 활성화
+      document.querySelectorAll('.btn-region').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
 
-      const raw = feeInput.value.replace(/[^0-9]/g, '');
-      const inputVal = parseInt(raw, 10);
+      const label = REGION_LABEL[region];
 
-      if (!inputVal || inputVal <= 0) return showError('월 기준 금액을 입력해주세요.');
+      // 각 카페 계산 및 표시
+      const cafes = [
+        { key: 'sj', exId: 'sj-ex', incId: 'sj-inc', baseId: 'base-sj' },
+        { key: 'jw', exId: 'jw-ex', incId: 'jw-inc', baseId: 'base-jw' },
+        { key: 'cb', exId: 'cb-ex', incId: 'cb-inc', baseId: 'base-cb' },
+      ];
 
-      const fee = inputVal * 10000; // 만원 단위 → 원 변환
+      cafes.forEach(({ key, exId, incId, baseId }) => {
+        const feeMan = FEES[key][region];
+        const { exVat, incVat, fee } = calcDaily(feeMan);
+        document.getElementById(exId).textContent = fmt(exVat);
+        document.getElementById(incId).textContent = fmt(incVat);
+        document.getElementById(baseId).textContent = `월 기준 ${feeMan}만원 (${fmt(fee)}) · 부가세 미포함`;
+      });
 
-      // 오늘부터 말일까지 (오늘 포함)
-      const appliedDays = totalDays - day + 1;
+      document.getElementById('periodInfo').textContent =
+        `${label} · ${month}월 ${day}일 ~ ${totalDays}일 (${appliedDays}일 / 총 ${totalDays}일)`;
 
-      const rawAmount = (fee / totalDays) * appliedDays;
-      const exVat = roundTo1000(rawAmount);         // 부가세 미포함 기준 1,000원 단위 반올림 (100의 자리에서 반올림)
-      const incVat = Math.round(exVat * 1.1);      // VAT 포함은 exVat 기준으로만 계산
-
-      document.getElementById('rTotalDays').textContent = `${totalDays}일`;
-      document.getElementById('rAppliedDays').textContent = `${appliedDays}일`;
-      document.getElementById('rExVat').textContent = fmt(exVat);
-      document.getElementById('rIncVat').textContent = fmt(incVat);
-
-      const dailyRate = fee / totalDays;
-      document.getElementById('rMeta').innerHTML =
-        `월 기준: ${fmt(fee)} (입력값 ${inputVal}만원)<br>` +
-        `일 단가: ${(dailyRate).toLocaleString('ko-KR', {maximumFractionDigits: 1})}원 (${fmt(fee)} ÷ ${totalDays}일)<br>` +
-        `부가세(10%): ${fmt(incVat - exVat)}<br>` +
+      document.getElementById('calcNote').innerHTML =
         `VAT 미포함 기준 1,000원 단위 반올림 적용 (100의 자리에서 반올림)`;
 
-      document.getElementById('resultBox').style.display = 'block';
+      document.getElementById('resultsWrap').style.display = 'block';
     }
 
-    function copyValue(id) {
-      const el = document.getElementById(id);
-      const numOnly = el.textContent.replace('원', '').trim();
-      navigator.clipboard.writeText(numOnly).then(() => {
-        const btnId = id === 'rExVat' ? 'copyExVat' : 'copyIncVat';
+    function copyVal(valId, btnId) {
+      const text = document.getElementById(valId).textContent.replace('원', '').trim();
+      navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById(btnId);
         btn.textContent = '복사됨';
         btn.classList.add('copied');
         setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
       });
     }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Enter') calculate();
-    });
   </script>
 </body>
 </html>
