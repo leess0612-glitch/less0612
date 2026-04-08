@@ -768,7 +768,7 @@ function renderMain() {
             ${product.note ? `<span class="note">⚠️ ${product.note}</span>` : ''}
             ${product.promotionNote ? `
               <div class="promo-toggle" onclick="togglePromo(this)">▶ 4월 프로모션 확인</div>
-              <div class="promo-text">${escHtml(product.promotionNote)}</div>
+              <div class="promo-text">${escHtml(product.promotionNote).replace(/\n/g,'<br>')}</div>
             ` : ''}
           </div>
           <a class="detail-btn" href="https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&goodsFilterList=6&menuNo=100104" target="_blank">
