@@ -1079,11 +1079,9 @@ function buildCopyText() {
     if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
     text += '\n';
 
-    // 해당 옵션에 맞는 프로모션
+    // 해당 옵션에 맞는 프로모션 (각각 별줄)
     const promos = getMatchingPromos(o, product.promotionNote);
-    if (promos.length) {
-      text += `🎁 ${promos.join(' / ')}\n`;
-    }
+    promos.forEach(p => { text += `🎁 ${p}\n`; });
 
     text += '\n';
   });
