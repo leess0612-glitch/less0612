@@ -725,37 +725,33 @@ function buildCopyText() {
   );
   if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
-  const line = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
-  let text = `${line}\n[SK매직] ${product.name}\n`;
+  let text = `[SK매직] ${product.name}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
-  text += `${line}\n\n`;
+  text += '\n';
 
-  // 관리방법별 그룹
-  const groups = new Map();
   selectedOpts.forEach(o => {
-    const k = o.managementType || '';
-    if (!groups.has(k)) groups.set(k, []);
-    groups.get(k).push(o);
-  });
+    const base = getMgmtBase(o.managementType);
+    const disc = getDiscLevel(o.managementType);
+    const gift = getGift(o);
 
-  groups.forEach((opts, mgmt) => {
-    if (mgmt) {
-      const base = getMgmtBase(mgmt);
-      const disc = getDiscLevel(mgmt);
-      let mgmtLine = base === '방문' ? `📍 방문 관리${opts[0]?.visitCycle ? ` (${opts[0].visitCycle} 주기)` : ''}`
-        : base === '셀프' ? `📍 자가 관리`
-        : `📍 ${mgmt}`;
-      if (disc === '할인') mgmtLine += ' [할인 적용]';
-      else if (disc === '할인+타사') mgmtLine += ' [타사 보상 할인]';
-      text += mgmtLine + '\n';
-    }
-    opts.forEach(o => {
-      const gift = getGift(o);
-      text += `• ${o.contractLabel} 약정 | 월 ${fmtNum(o.monthlyFee)}원`;
-      if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
-      text += '\n';
-    });
-    text += '\n';
+    // 관리방식 레이블
+    let mgmtLabel = base === '방문' ? '방문 관리'
+      : base === '셀프' ? '자가 관리'
+      : (o.managementType || '');
+
+    // 방문주기
+    const cycleStr = o.visitCycle ? ` (${o.visitCycle} 주기)` : '';
+
+    // 타사보상만 표기 (할인 적용 문구 제거)
+    const tasaStr = disc === '할인+타사' ? ' | 타사보상' : '';
+
+    // 📍 관리방식 | 약정 | (방문주기) | 타사보상
+    text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${cycleStr}${tasaStr}\n`;
+
+    // 요금 | 사은품
+    text += `월 ${fmtNum(o.monthlyFee)}원`;
+    if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
+    text += '\n\n';
   });
 
   return text.trim();
