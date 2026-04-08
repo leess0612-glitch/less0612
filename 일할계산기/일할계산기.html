@@ -320,7 +320,7 @@
 
     function copyValue(id) {
       const el = document.getElementById(id);
-      const numOnly = el.textContent.replace(/[^0-9]/g, '');
+      const numOnly = el.textContent.replace('원', '').trim();
       navigator.clipboard.writeText(numOnly).then(() => {
         const btnId = id === 'rExVat' ? 'copyExVat' : 'copyIncVat';
         const btn = document.getElementById(btnId);
