@@ -465,6 +465,14 @@
     <h1>🏠 렌탈 수수료 조회 시스템</h1>
     <div class="meta" id="meta-info">데이터 로딩 중...</div>
   </div>
+  <div class="header-search-wrap">
+    <input type="text" id="header-search" class="header-search-input"
+      placeholder="🔍 전체 제품 검색 (모델명·제품명)..."
+      oninput="headerSearchInput()"
+      onblur="hideHeaderDropdown()"
+      autocomplete="off">
+    <div class="header-search-dropdown" id="header-search-dropdown"></div>
+  </div>
   <div class="brand-tabs">
     <div class="brand-tab active" onclick="switchBrand('sk')">SK매직</div>
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">LG전자</div>
