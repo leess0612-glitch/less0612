@@ -268,16 +268,18 @@
       document.getElementById('errorMsg').style.display = 'none';
 
       const raw = feeInput.value.replace(/[^0-9]/g, '');
-      const fee = parseInt(raw, 10);
+      const inputVal = parseInt(raw, 10);
 
-      if (!fee || fee <= 0) return showError('월 기준 금액을 입력해주세요.');
+      if (!inputVal || inputVal <= 0) return showError('월 기준 금액을 입력해주세요.');
+
+      const fee = inputVal * 10000; // 만원 단위 → 원 변환
 
       // 오늘부터 말일까지 (오늘 포함)
       const appliedDays = totalDays - day + 1;
 
       const rawAmount = (fee / totalDays) * appliedDays;
-      const exVat = roundTo100(rawAmount);
-      const incVat = roundTo100(exVat * 1.1);
+      const exVat = roundTo100(rawAmount);         // 부가세 미포함 기준 100원 단위 반올림
+      const incVat = Math.round(exVat * 1.1);      // VAT 포함은 exVat 기준으로만 계산
 
       document.getElementById('rTotalDays').textContent = `${totalDays}일`;
       document.getElementById('rAppliedDays').textContent = `${appliedDays}일`;
