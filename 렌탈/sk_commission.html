@@ -429,7 +429,12 @@
   }
   .qa-brand-title::before { content: ''; flex: 0 0 3px; height: 14px; background: var(--brand); border-radius: 2px; }
   .qa-brand-title::after  { content: ''; flex: 1; height: 1px; background: var(--gray-200); }
-  .qa-types { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+  .qa-primary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }
+  .qa-secondary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+  .qa-section-header {
+    font-size: 10px; font-weight: 700; color: var(--gray-400);
+    letter-spacing: .5px; margin: 12px 0 8px; text-transform: uppercase;
+  }
   .qa-type-label {
     font-size: 11px; font-weight: 700; color: var(--gray-500, #6b7280);
     padding: 5px 0 6px; margin-bottom: 8px;
