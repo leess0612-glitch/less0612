@@ -604,6 +604,14 @@ function renderOptionList(product) {
   const hasVisit = opts.some(o => o.visitCycle);
   const hasOffice = opts.some(o => o.recommendedOffice !== undefined);
 
+  // 관리방법 그룹 번호 매핑 (순서대로 0, 1, 2... → 짝수=음영)
+  const mgmtGroupMap = {};
+  let groupCounter = 0;
+  opts.forEach(o => {
+    const mt = o.managementType || '';
+    if (!(mt in mgmtGroupMap)) mgmtGroupMap[mt] = groupCounter++;
+  });
+
   let rowsHtml = '';
   let pkgSepAdded = false;
 
