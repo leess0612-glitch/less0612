@@ -708,7 +708,8 @@ function renderQuickAccess() {
   ];
 
   const SECONDARY_GROUPS = [
-    { type: '정수전용', filter: null },
+    { type: '정수전용',
+      filter: p => p.category === '정수기' && p.name.includes('에코미니') },
     { type: '스탠드',
       filter: p => p.category === '정수기' && p.name.includes('스탠드') },
     { type: '저수조 탁상형',
