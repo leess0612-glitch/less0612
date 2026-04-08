@@ -638,14 +638,105 @@ function closeWarnPopup() {
   document.getElementById('warn-popup').classList.remove('show');
 }
 
+// ── 헤더 전체 검색 ──
+function headerSearchInput() {
+  const val = document.getElementById('header-search').value.trim();
+  const dd = document.getElementById('header-search-dropdown');
+  if (!val) { dd.classList.remove('open'); dd.innerHTML = ''; return; }
+
+  // 현재 SK매직 DB 검색 (추후 브랜드 추가 시 allProducts에 합산)
+  const allProducts = DB.products.map(p => ({ ...p, brandLabel: 'SK매직' }));
+
+  const lower = val.toLowerCase();
+  const results = allProducts.filter(p =>
+    p.name.includes(val) ||
+    (p.modelCode || '').toLowerCase().includes(lower)
+  ).slice(0, 14);
+
+  if (!results.length) {
+    dd.innerHTML = '<div class="hsd-item" style="color:var(--gray-400);cursor:default">검색 결과 없음</div>';
+    dd.classList.add('open');
+    return;
+  }
+
+  dd.innerHTML = results.map(p => `
+    <div class="hsd-item" onmousedown="selectProductFromHeader('${p.id}')">
+      <div class="hsd-brand">[${p.brandLabel}] ${p.category}</div>
+      <div class="hsd-name">${p.name}</div>
+      <div class="hsd-model">${p.modelCode || ''}</div>
+    </div>
+  `).join('');
+  dd.classList.add('open');
+}
+
+function hideHeaderDropdown() {
+  setTimeout(() => {
+    const dd = document.getElementById('header-search-dropdown');
+    if (dd) { dd.classList.remove('open'); }
+  }, 160);
+}
+
+function selectProductFromHeader(id) {
+  document.getElementById('header-search').value = '';
+  const dd = document.getElementById('header-search-dropdown');
+  if (dd) { dd.classList.remove('open'); dd.innerHTML = ''; }
+  state.category = '전체';
+  state.searchText = '';
+  document.getElementById('prod-search').value = '';
+  renderCategoryList();
+  renderProductList();
+  selectProduct(id);
+  setTimeout(() => {
+    const active = document.querySelector('.prod-item.active');
+    if (active) active.scrollIntoView({ block: 'nearest' });
+  }, 60);
+}
+
+// ── 빠른 바로가기 패널 ──
+function renderQuickAccess() {
+  const TYPE_GROUPS = [
+    { type: '얼음정수기', primary: true,
+      filter: p => p.category === '정수기' && p.name.includes('원코크') && p.name.includes('플러스') },
+    { type: '냉온정수기', primary: true,
+      filter: p => p.category === '정수기' && p.name.includes('초소형') && p.name.includes('플러스') },
+    { type: '정수전용', primary: false, filter: null },
+    { type: '스탠드',   primary: false, filter: null },
+  ];
+
+  const typeHtml = TYPE_GROUPS.map(g => {
+    const prods = g.filter ? DB.products.filter(g.filter) : [];
+    const labelClass = g.primary ? 'qa-type-label primary' : 'qa-type-label';
+    const star = g.primary ? ' ★' : '';
+    const btnHtml = prods.length
+      ? prods.map(p => `
+          <button class="qa-prod-btn ${g.primary ? 'primary-prod' : ''}"
+            onclick="selectProduct('${p.id}')">
+            ${p.name}
+            <div class="qa-model">${p.modelCode || ''}</div>
+          </button>
+        `).join('')
+      : `<div class="qa-empty">준비 중</div>`;
+    return `<div class="qa-type-col">
+      <div class="${labelClass}">${g.type}${star}</div>
+      ${btnHtml}
+    </div>`;
+  }).join('');
+
+  return `<div class="quick-access">
+    <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
+    <div class="qa-brand-section">
+      <div class="qa-brand-title">SK매직 · 정수기 바로가기</div>
+      <div class="qa-types">${typeHtml}</div>
+    </div>
+  </div>`;
+}
+
 // ── 메인 영역 ──
 function renderMain() {
   const el = document.getElementById('main-content');
   const product = DB.products.find(p => p.id === state.productId);
   if (!product) {
-    el.innerHTML = `<div class="empty-state">
-      <div class="icon">📋</div><p>좌측에서 제품을 선택하세요</p>
-    </div>`;
+    el.innerHTML = renderQuickAccess();
     return;
   }
 
