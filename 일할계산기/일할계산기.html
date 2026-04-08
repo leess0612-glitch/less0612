@@ -219,11 +219,17 @@
       </div>
       <div class="result-row">
         <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-        <span class="result-value highlight" id="rExVat">—</span>
+        <span style="display:flex;align-items:center;gap:8px;">
+          <span class="result-value highlight" id="rExVat">—</span>
+          <button class="btn-copy" onclick="copyValue('rExVat')" id="copyExVat">복사</button>
+        </span>
       </div>
       <div class="result-row">
         <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-        <span class="result-value highlight" id="rIncVat">—</span>
+        <span style="display:flex;align-items:center;gap:8px;">
+          <span class="result-value highlight" id="rIncVat">—</span>
+          <button class="btn-copy" onclick="copyValue('rIncVat')" id="copyIncVat">복사</button>
+        </span>
       </div>
 
       <div class="result-meta" id="rMeta"></div>
