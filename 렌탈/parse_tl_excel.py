@@ -100,11 +100,8 @@ def parse_tl(filepath):
         if monthly_fee == 0 and commission == 0:
             continue
 
-        # ★ 요금 오류 감지: H열 비어있는데 J ≠ K
-        h_empty = (col_h is None or clean(col_h) == "" or col_h == 0)
-        data_warning = h_empty and fee_ref != 0 and monthly_fee != fee_ref
-        if data_warning:
-            warning_models.add(normalize_model_code(current_model_code))
+        # ★ K열은 반값할인가이므로 비교 무의미 → 티엘 dataWarning 없음
+        data_warning = False
 
         # lookup 등록 (패키지/비패키지 모두)
         lookup_key = (f"{normalize_model_code(current_model_code)}"
