@@ -318,6 +318,18 @@
       document.getElementById('resultBox').style.display = 'block';
     }
 
+    function copyValue(id) {
+      const el = document.getElementById(id);
+      const numOnly = el.textContent.replace(/[^0-9]/g, '');
+      navigator.clipboard.writeText(numOnly).then(() => {
+        const btnId = id === 'rExVat' ? 'copyExVat' : 'copyIncVat';
+        const btn = document.getElementById(btnId);
+        btn.textContent = '복사됨';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+      });
+    }
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Enter') calculate();
     });
