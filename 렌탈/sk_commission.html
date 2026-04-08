@@ -790,15 +790,25 @@ function copyAll() {
 }
 
 // ── 유틸 ──
-// 관리방법 표시명 단축 (방문할인→방문, 셀프할인→셀프)
+// 관리방법 표시명 단축
 function displayMgmt(mgmt) {
   if (!mgmt) return '-';
   return mgmt
+    .replace('방문할인+타사보상_패키지', '방문+타사+패키지')
+    .replace('셀프할인+타사보상_패키지', '셀프+타사+패키지')
     .replace('방문할인+타사보상', '방문+타사')
     .replace('셀프할인+타사보상', '셀프+타사')
+    .replace('무방문형할인_패키지', '무방문+패키지')
     .replace('무방문형할인', '무방문')
+    .replace('방문할인_패키지', '방문+패키지')
+    .replace('셀프할인_패키지', '셀프+패키지')
     .replace('방문할인', '방문')
     .replace('셀프할인', '셀프');
+}
+
+function officeBadge(office) {
+  if (!office) return '<span class="office-none">-</span>';
+  return `<span class="office-badge office-${office}">${office}</span>`;
 }
 
 function getMgmtBase(mgmt) {
