@@ -773,7 +773,6 @@ function renderMain() {
             <div class="name" style="margin-top:${product.modelCode ? '6px':'0'}">${product.name}</div>
             ${product.note ? `<span class="note">⚠️ ${product.note}</span>` : ''}
             ${product.promotionNote ? `
-              <div class="promo-toggle" onclick="togglePromo(this)">▶ 4월 프로모션 확인</div>
               <div class="promo-text">
                 <div class="info-chips">${
                   product.promotionNote.split(/\n{2,}/)
@@ -1151,11 +1150,6 @@ function showToast(msg) {
   setTimeout(() => el.classList.remove('show'), 2000);
 }
 
-function togglePromo(el) {
-  const txt = el.nextElementSibling;
-  if (txt) txt.classList.toggle('open');
-  el.textContent = txt?.classList.contains('open') ? '▼ 4월 프로모션 접기' : '▶ 4월 프로모션 확인';
-}
 
 function switchBrand(brand) {}
 
