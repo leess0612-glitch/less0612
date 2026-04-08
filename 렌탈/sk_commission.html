@@ -635,13 +635,17 @@ function renderOptionList(product) {
     const mgmtDisplay = displayMgmt(o.managementType);
     const totalColspan = 1 + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1 + (hasOffice?1:0);
 
+    const groupIdx = mgmtGroupMap[o.managementType || ''] ?? 0;
+    const shadeClass = (groupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
+
     // 패키지 구분선
     if (isPkg && !pkgSepAdded) {
       pkgSepAdded = true;
+      const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
       rowsHtml += `<tr class="pkg-sep"><td colspan="${totalColspan}">── 패키지 (동일 브랜드 2개 이상) ──</td></tr>`;
     }
 
-    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${isPkg ? 'package-row' : ''}">
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${isPkg ? 'package-row' : ''} ${shadeClass}">
       <td style="width:52px;padding-left:10px">
         <button class="select-btn ${isSelected ? 'selected' : ''}"
           onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
@@ -649,6 +653,7 @@ function renderOptionList(product) {
           ${isSelected ? '해제' : '선택'}
         </button>
       </td>
+      ${hasOffice ? `<td>${officeBadge(o.recommendedOffice)}</td>` : ''}
       <td class="contract-cell">${o.contractLabel}</td>
       ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.dataWarning ? '<span class="warn-row-badge">⚠️ 확인</span>' : ''}</td>` : ''}
       <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
@@ -665,21 +670,20 @@ function renderOptionList(product) {
       </td>
       <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
       <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
-      ${hasOffice ? `<td>${officeBadge(o.recommendedOffice)}</td>` : ''}
     </tr>`;
   });
 
   return `<table class="options-table">
     <thead><tr>
       <th></th>
+      ${hasOffice ? '<th>접수처</th>' : ''}
       <th>약정</th>
       ${hasMgmt ? '<th>관리방법</th>' : ''}
       <th>월요금</th>
       ${hasVisit ? '<th>방문주기</th>' : ''}
-      <th>현금사은품</th>
+      <th>현금사은품(수정가능)</th>
       <th>실마진</th>
       <th>총수수료</th>
-      ${hasOffice ? '<th>접수처</th>' : ''}
     </tr></thead>
     <tbody>${rowsHtml}</tbody>
   </table>`;
