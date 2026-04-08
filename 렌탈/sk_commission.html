@@ -644,11 +644,17 @@ function renderOptionList(product) {
     const groupIdx = mgmtGroupMap[o.managementType || ''] ?? 0;
     const shadeClass = (groupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
 
-    // 패키지 구분선
+    // 패키지 구분선 + 주의사항
     if (isPkg && !pkgSepAdded) {
       pkgSepAdded = true;
       const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
-      rowsHtml += `<tr class="pkg-sep"><td colspan="${totalColspan}">── 패키지 (동일 브랜드 2개 이상) ──</td></tr>`;
+      const pkgNote = PKG_NOTES[product.category] || '';
+      rowsHtml += `<tr class="pkg-sep">
+        <td colspan="${totalColspan}">
+          ── 패키지 (동일 브랜드 2개 이상) ──
+          ${pkgNote ? `<span class="pkg-note">${pkgNote}</span>` : ''}
+        </td>
+      </tr>`;
     }
 
     rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${isPkg ? 'package-row' : ''} ${shadeClass}">
