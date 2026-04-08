@@ -1008,6 +1008,28 @@ function updateMargin(val) {
   renderMain();
 }
 
+// ── 프로모션 매칭 ──
+function getMatchingPromos(option, promotionNote) {
+  if (!promotionNote) return [];
+  const years = option.contractMonths / 12;
+  const hasTasa = (option.managementType || '').includes('타사보상');
+
+  return promotionNote.split(/\n{2,}/)
+    .map(s => s.trim().replace(/\n/g, ' '))
+    .filter(s => s)
+    .filter(chip => {
+      const isTasaChip = chip.includes('타사보상');
+      // 타사보상 칩: 타사보상 옵션에만
+      if (isTasaChip) return hasTasa;
+      // 년수 매칭
+      if (chip.includes('6,7년') || chip.includes('6·7년')) return years === 6 || years === 7;
+      if (/5년\s*이상/.test(chip)) return years >= 5;
+      const nums = (chip.match(/(\d+)년/g) || []).map(y => parseInt(y));
+      if (nums.length) return nums.includes(years);
+      return true; // 년수 언급 없으면 전체 적용
+    });
+}
+
 // ── 고객 안내문 ──
 function buildCopyText() {
   const product = DB.products.find(p => p.id === state.productId);
@@ -1035,7 +1057,7 @@ function buildCopyText() {
     // 방문주기
     const cycleStr = o.visitCycle ? ` (${o.visitCycle} 주기)` : '';
 
-    // 타사보상만 표기 (할인 적용 문구 제거)
+    // 타사보상만 표기
     const tasaStr = disc === '할인+타사' ? ' | 타사보상' : '';
 
     // 📍 관리방식 | 약정 | (방문주기) | 타사보상
@@ -1044,7 +1066,15 @@ function buildCopyText() {
     // 요금 | 사은품
     text += `월 ${fmtNum(o.monthlyFee)}원`;
     if (gift > 0) text += ` | 현금사은품 ${fmtNum(gift)}원`;
-    text += '\n\n';
+    text += '\n';
+
+    // 해당 옵션에 맞는 프로모션
+    const promos = getMatchingPromos(o, product.promotionNote);
+    if (promos.length) {
+      text += `🎁 ${promos.join(' / ')}\n`;
+    }
+
+    text += '\n';
   });
 
   return text.trim();
