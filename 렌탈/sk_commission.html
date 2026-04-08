@@ -1014,20 +1014,31 @@ function getMatchingPromos(option, promotionNote) {
   const years = option.contractMonths / 12;
   const hasTasa = (option.managementType || '').includes('타사보상');
 
-  return promotionNote.split(/\n{2,}/)
+  const chips = promotionNote.split(/\n{2,}/)
     .map(s => s.trim().replace(/\n/g, ' '))
-    .filter(s => s)
-    .filter(chip => {
-      const isTasaChip = chip.includes('타사보상');
-      // 타사보상 칩: 타사보상 옵션에만
-      if (isTasaChip) return hasTasa;
-      // 년수 매칭
-      if (chip.includes('6,7년') || chip.includes('6·7년')) return years === 6 || years === 7;
-      if (/5년\s*이상/.test(chip)) return years >= 5;
-      const nums = (chip.match(/(\d+)년/g) || []).map(y => parseInt(y));
-      if (nums.length) return nums.includes(years);
-      return true; // 년수 언급 없으면 전체 적용
-    });
+    .filter(s => s);
+
+  return chips.filter(chip => {
+    const isTasaChip = chip.includes('타사보상');
+
+    // 타사보상 옵션: 타사보상 칩만 허용 (일반 반값할인과 중복 불가)
+    if (hasTasa) {
+      if (!isTasaChip) return false;
+    } else {
+      // 일반 옵션: 타사보상 칩 제외
+      if (isTasaChip) return false;
+    }
+
+    // 년수 매칭
+    if (chip.includes('6,7년') || chip.includes('6·7년')) return years === 6 || years === 7;
+    if (/\d+년\s*이상/.test(chip)) {
+      const min = parseInt(chip.match(/(\d+)년\s*이상/)[1]);
+      return years >= min;
+    }
+    const nums = (chip.match(/(\d+)년/g) || []).map(y => parseInt(y));
+    if (nums.length) return nums.includes(years);
+    return true;
+  });
 }
 
 // ── 고객 안내문 ──
