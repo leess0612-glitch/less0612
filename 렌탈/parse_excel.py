@@ -244,9 +244,11 @@ def parse_excel(filepath):
         if mgmt_type is None:
             mgmt_type = current_mgmt_type
 
-        # ★ D열 "방문"/"셀프" 기본(할인 없음) 행 제외
+        # ★ D열 "방문"/"셀프" 기본 행 제외
+        # 단, 해당 모델에 할인 옵션이 없으면 기본 행도 유효 데이터로 포함
         if mgmt_type in BASIC_MGMT_EXCLUDE:
-            continue
+            if model_has_discount.get(current_model_code.upper(), True):
+                continue
 
         # 수치 데이터
         try:
