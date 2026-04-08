@@ -594,11 +594,16 @@ function renderOptionList(product) {
 
   const hasMgmt = opts.some(o => o.managementType);
   const hasVisit = opts.some(o => o.visitCycle);
+  const hasOffice = opts.some(o => o.recommendedOffice !== undefined);
 
-  const rows = opts.map(o => {
+  let rowsHtml = '';
+  let pkgSepAdded = false;
+
+  opts.forEach(o => {
     const key = getOptionKey(product.id, o);
     const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
     const isSelected = state.selectedKeys.has(key);
+    const isPkg = !!o.isPackage;
     const gift = getGift(o);
     const realCost = Math.round(gift * 1.1);
     const margin = o.totalCommission - realCost;
@@ -606,13 +611,21 @@ function renderOptionList(product) {
 
     const mgmtBase = getMgmtBase(o.managementType);
     const discLevel = getDiscLevel(o.managementType);
-    const mgmtBadgeClass = !mgmtBase ? 'mgmt-none' :
+    const mgmtBadgeClass = isPkg ? 'mgmt-패키지' :
+      !mgmtBase ? 'mgmt-none' :
       discLevel === '할인+타사' ? 'mgmt-할인타사' :
       discLevel === '할인' ? 'mgmt-할인' :
       `mgmt-${mgmtBase}`;
     const mgmtDisplay = displayMgmt(o.managementType);
+    const totalColspan = 1 + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1 + (hasOffice?1:0);
 
-    return `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''}">
+    // 패키지 구분선
+    if (isPkg && !pkgSepAdded) {
+      pkgSepAdded = true;
+      rowsHtml += `<tr class="pkg-sep"><td colspan="${totalColspan}">── 패키지 (동일 브랜드 2개 이상) ──</td></tr>`;
+    }
+
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${isPkg ? 'package-row' : ''}">
       <td style="width:52px;padding-left:10px">
         <button class="select-btn ${isSelected ? 'selected' : ''}"
           onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
@@ -636,8 +649,9 @@ function renderOptionList(product) {
       </td>
       <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
       <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
+      ${hasOffice ? `<td>${officeBadge(o.recommendedOffice)}</td>` : ''}
     </tr>`;
-  }).join('');
+  });
 
   return `<table class="options-table">
     <thead><tr>
@@ -649,8 +663,9 @@ function renderOptionList(product) {
       <th>현금사은품</th>
       <th>실마진</th>
       <th>총수수료</th>
+      ${hasOffice ? '<th>접수처</th>' : ''}
     </tr></thead>
-    <tbody>${rows}</tbody>
+    <tbody>${rowsHtml}</tbody>
   </table>`;
 }
 
