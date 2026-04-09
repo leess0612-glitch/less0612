@@ -446,6 +446,12 @@ if __name__ == "__main__":
 
         product["options"] = regular_opts + package_opts
 
+        # 관리주기 정보 (TL G열 기준)
+        for mv in _tl_model_variants(model_code):
+            if mv in tl_visit_cycle:
+                product["visitCycleInfo"] = tl_visit_cycle[mv]
+                break
+
     # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
     with open(json_out, "w", encoding="utf-8") as f:
