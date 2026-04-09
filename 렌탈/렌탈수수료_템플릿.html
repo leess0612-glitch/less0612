@@ -769,6 +769,7 @@ function getFilteredProducts() {
     const matchCat = state.category === '전체' || p.category === state.category;
     const matchSearch = !state.searchText ||
       p.name.includes(state.searchText) ||
+      getDisplayName(p).includes(state.searchText) ||
       p.modelCode.toLowerCase().includes(state.searchText.toLowerCase());
     return matchCat && matchSearch;
   });
@@ -1375,6 +1376,29 @@ function getTagOptions() {
 
 function saveTagOptions(opts) {
   localStorage.setItem(TAG_OPT_KEY, JSON.stringify(opts));
+}
+
+function getCustomNames() {
+  try {
+    const s = localStorage.getItem(CUSTOM_NAME_KEY);
+    return s ? JSON.parse(s) : {};
+  } catch { return {}; }
+}
+
+function saveCustomName(id, name) {
+  const all = getCustomNames();
+  all[id] = name;
+  localStorage.setItem(CUSTOM_NAME_KEY, JSON.stringify(all));
+}
+
+function stripColorVariants(name) {
+  // 괄호 안에 쉼표가 있으면 색상 목록으로 간주하여 제거
+  return name.replace(/\([^)]*,[^)]*\)/g, '').trim();
+}
+
+function getDisplayName(p) {
+  const customs = getCustomNames();
+  return customs[p.id] || stripColorVariants(p.name);
 }
 
 function getProductTags() {
