@@ -933,7 +933,7 @@ function renderQuickAccess() {
           return `
           <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
-            <span class="qa-brand-tag">${getBrandTag()}</span> ${p.name}
+            <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
             ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
           </button>`;
         }).join('')
@@ -971,7 +971,7 @@ function renderMain() {
         <div class="product-info">
           <div>
             ${product.modelCode ? `<span class="model-badge">${product.modelCode}</span>` : ''}
-            <div class="name" style="margin-top:${product.modelCode ? '6px':'0'}">${product.name}</div>
+            <div class="name" style="margin-top:${product.modelCode ? '6px':'0'}">${escHtml(getDisplayName(product))}</div>
             ${product.note ? `<span class="note">⚠️ ${product.note}</span>` : ''}
             ${product.promotionNote ? `
               <div class="promo-text">
@@ -1245,7 +1245,7 @@ function buildCopyText() {
   );
   if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
-  let text = `[SK매직] ${product.name}\n`;
+  let text = `[SK매직] ${getDisplayName(product)}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
   text += '\n';
 
