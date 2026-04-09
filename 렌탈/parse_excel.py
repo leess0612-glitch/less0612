@@ -418,14 +418,26 @@ def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months
         tl_mgmt = "방문관리"
     elif "셀프" in mgmt_type:
         tl_mgmt = "셀프관리"
+    elif mgmt_type == "관리없음":
+        tl_mgmt = "관리없음"
     else:
         return None
 
     years = contract_months // 12
     has_tasa = "타사보상" in mgmt_type
 
+    # MAT 사이즈 추출 (사이즈별 수수료가 다를 수 있음)
+    size = _get_mat_size(model_code)
+
     tl_commission = None
     for model_key in _tl_model_variants(model_code):
+        # 1차: 사이즈 포함 키 조회
+        if size:
+            key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}|{size}"
+            if key in tl_lookup:
+                tl_commission = tl_lookup[key]
+                break
+        # 2차: 사이즈 없는 키 조회 (fallback)
         key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
         if key in tl_lookup:
             tl_commission = tl_lookup[key]
