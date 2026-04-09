@@ -469,6 +469,128 @@
   .qa-min-price { font-size: 10px; color: var(--gray-400); margin-top: 3px; }
   .qa-prod-btn:hover .qa-min-price { color: inherit; opacity: .7; }
   .qa-empty { font-size: 11px; color: var(--gray-400); text-align: center; padding: 12px 0; }
+
+  /* ── 태그 관리 탭 ── */
+  .tag-mgr-tab {
+    padding: 4px 12px; border-radius: 16px; cursor: pointer;
+    background: rgba(255,255,255,.15); color: #fff; font-size: 12px;
+    border: 1px solid rgba(255,255,255,.3); margin-left: 8px;
+  }
+  .tag-mgr-tab:hover { background: rgba(255,255,255,.25); }
+  .tag-mgr-tab.active { background: #fff; color: var(--brand); font-weight: 700; }
+
+  /* ── 태그 관리 페이지 ── */
+  #tag-mgr-page {
+    display: none; flex: 1; overflow-y: auto; padding: 20px 24px;
+    background: var(--gray-100);
+  }
+  #tag-mgr-page.visible { display: block; }
+  .tmgr-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .tmgr-title { font-size: 16px; font-weight: 700; color: var(--gray-800); }
+  .tmgr-opt-btn {
+    padding: 6px 14px; font-size: 12px; font-weight: 700;
+    border: 1px solid var(--brand); color: var(--brand);
+    background: #fff; border-radius: 6px; cursor: pointer; font-family: inherit;
+  }
+  .tmgr-opt-btn:hover { background: var(--brand); color: #fff; }
+  .tmgr-table { width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .tmgr-table th {
+    background: var(--gray-50); padding: 9px 12px; font-size: 11px;
+    font-weight: 700; color: var(--gray-600); text-align: left;
+    border-bottom: 2px solid var(--gray-200); white-space: nowrap;
+  }
+  .tmgr-table td {
+    padding: 7px 10px; border-bottom: 1px solid var(--gray-100);
+    vertical-align: middle; font-size: 12px;
+  }
+  .tmgr-table tr:last-child td { border-bottom: none; }
+  .tmgr-table tr:hover td { background: #f8faff; }
+  .tmgr-prod-name { font-weight: 600; color: var(--gray-800); }
+  .tmgr-select {
+    padding: 4px 6px; border: 1px solid var(--gray-200); border-radius: 5px;
+    font-size: 12px; font-family: inherit; outline: none; background: #fff;
+    color: var(--gray-800); cursor: pointer; min-width: 70px;
+  }
+  .tmgr-select:focus { border-color: var(--brand); }
+  .tmgr-saved { font-size: 10px; color: var(--green); font-weight: 700; }
+  .tmgr-unsaved { font-size: 10px; color: var(--gray-400); }
+
+  /* 다중선택 드롭다운 */
+  .multi-wrap { position: relative; display: inline-block; }
+  .multi-btn {
+    padding: 4px 8px; border: 1px solid var(--gray-200); border-radius: 5px;
+    font-size: 12px; font-family: inherit; background: #fff; cursor: pointer;
+    min-width: 120px; text-align: left; display: flex; align-items: center;
+    justify-content: space-between; gap: 4px; color: var(--gray-800);
+  }
+  .multi-btn:focus, .multi-btn.open { border-color: var(--brand); outline: none; }
+  .multi-btn .arrow { font-size: 9px; color: var(--gray-400); flex-shrink: 0; }
+  .multi-dropdown {
+    display: none; position: absolute; top: calc(100% + 3px); left: 0;
+    background: #fff; border: 1px solid var(--gray-200); border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.12); z-index: 100; min-width: 140px;
+    padding: 4px 0;
+  }
+  .multi-dropdown.open { display: block; }
+  .multi-opt {
+    display: flex; align-items: center; gap: 7px;
+    padding: 6px 12px; cursor: pointer; font-size: 12px;
+  }
+  .multi-opt:hover { background: var(--brand-light); }
+  .multi-opt input[type=checkbox] { cursor: pointer; }
+
+  /* ── 항목값 관리 모달 ── */
+  #opt-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,.45); z-index: 2000;
+    align-items: center; justify-content: center;
+  }
+  #opt-modal.show { display: flex; }
+  .opt-modal-box {
+    background: #fff; border-radius: 10px; padding: 24px 28px;
+    width: 420px; max-width: 95vw; max-height: 80vh; overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,.2);
+  }
+  .opt-modal-title { font-size: 15px; font-weight: 700; margin-bottom: 18px; color: var(--gray-800); }
+  .opt-group { margin-bottom: 18px; }
+  .opt-group-label {
+    font-size: 11px; font-weight: 700; color: var(--gray-600);
+    text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px;
+  }
+  .opt-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .opt-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--brand-light); color: var(--brand);
+    border: 1px solid #93c5fd; border-radius: 14px;
+    padding: 3px 10px; font-size: 12px; font-weight: 600;
+  }
+  .opt-chip-del {
+    cursor: pointer; font-size: 14px; line-height: 1;
+    color: var(--brand); opacity: .6;
+  }
+  .opt-chip-del:hover { opacity: 1; }
+  .opt-add-row { display: flex; gap: 6px; }
+  .opt-add-input {
+    flex: 1; padding: 5px 8px; border: 1px solid var(--gray-200);
+    border-radius: 5px; font-size: 12px; font-family: inherit; outline: none;
+  }
+  .opt-add-input:focus { border-color: var(--brand); }
+  .opt-add-btn {
+    padding: 5px 12px; background: var(--brand); color: #fff;
+    border: none; border-radius: 5px; cursor: pointer; font-size: 12px;
+    font-family: inherit; font-weight: 700;
+  }
+  .opt-modal-close {
+    display: block; width: 100%; padding: 9px;
+    background: var(--gray-100); border: none; border-radius: 6px;
+    font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 6px;
+    font-family: inherit; color: var(--gray-600);
+  }
+  .opt-modal-close:hover { background: var(--gray-200); }
 </style>
 </head>
 <body>
