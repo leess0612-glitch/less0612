@@ -576,6 +576,17 @@ function renderCategoryList() {
   `).join('');
 }
 
+function goHome() {
+  state.productId = null;
+  state.selectedKeys = new Set();
+  state.category = '전체';
+  state.searchText = '';
+  document.getElementById('prod-search').value = '';
+  renderCategoryList();
+  renderProductList();
+  renderMain();
+}
+
 function selectCategory(cat) {
   state.category = cat;
   state.productId = null;
