@@ -615,9 +615,10 @@
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">쿠쿠</div>
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">청호</div>
   </div>
+  <div class="tag-mgr-tab" id="tag-mgr-tab" onclick="toggleTagMgr()">⚙ 태그 관리</div>
 </header>
 
-<div class="layout">
+<div class="layout" id="main-layout">
   <div class="sidebar">
     <div class="sidebar-header">카테고리</div>
     <div class="cat-list" id="cat-list"></div>
@@ -633,6 +634,35 @@
       <div class="icon">📋</div>
       <p>좌측에서 제품을 선택하세요</p>
     </div>
+  </div>
+</div>
+
+<!-- 태그 관리 페이지 -->
+<div id="tag-mgr-page">
+  <div class="tmgr-header">
+    <div class="tmgr-title">⚙ 제품 태그 관리 <span style="font-size:12px;font-weight:400;color:var(--gray-400)">— 정수기</span></div>
+    <button class="tmgr-opt-btn" onclick="openOptModal()">항목값 관리</button>
+  </div>
+  <table class="tmgr-table" id="tmgr-table">
+    <thead>
+      <tr>
+        <th>제품명</th>
+        <th>급수방식</th>
+        <th>기능</th>
+        <th>형태</th>
+        <th>상태</th>
+      </tr>
+    </thead>
+    <tbody id="tmgr-tbody"></tbody>
+  </table>
+</div>
+
+<!-- 항목값 관리 모달 -->
+<div id="opt-modal">
+  <div class="opt-modal-box">
+    <div class="opt-modal-title">항목값 관리</div>
+    <div id="opt-modal-body"></div>
+    <button class="opt-modal-close" onclick="closeOptModal()">닫기</button>
   </div>
 </div>
 
