@@ -604,9 +604,9 @@ if __name__ == "__main__":
                 base_name = re.sub(r'\s*\(하프/스탠드\)\s*', '', pname).strip()
                 p_copy["name"] = base_name + (" 하프형" if i == 0 else " 스탠드형")
 
-            # D열이 비어있던 제품만 관리방식 "방문관리" 고정
-            # (D열 있는 공기청정기/비데 등은 기존 managementType 유지)
-            if info["d_empty"]:
+            # D열이 비어있던 비MAT 제품만 관리방식 "방문관리" 고정
+            # MAT 제품은 H열로 관리방식 이미 결정됨 → 덮어쓰지 않음
+            if info["d_empty"] and p_copy.get("category") != "매트리스":
                 for opt in p_copy["options"]:
                     opt["managementType"] = "방문관리"
 
