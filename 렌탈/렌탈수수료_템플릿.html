@@ -1521,6 +1521,32 @@ function onTagChange(prodId, field, value) {
   updateRowStatus(prodId);
 }
 
+function editProdName(prodId) {
+  const btn  = document.getElementById('tmgr-edit-btn-' + prodId);
+  const disp = document.getElementById('tmgr-name-disp-' + prodId);
+  const inp  = document.getElementById('tmgr-name-inp-' + prodId);
+  if (!btn || !disp || !inp) return;
+  if (btn.textContent === '수정') {
+    disp.style.display = 'none';
+    inp.style.display = 'block';
+    inp.focus();
+    inp.select();
+    btn.textContent = '저장';
+  } else {
+    const newName = inp.value.trim();
+    if (newName) {
+      saveCustomName(prodId, newName);
+      disp.querySelector('.tmgr-name-text').textContent = newName;
+      inp.value = newName;
+      renderProductList();
+    }
+    inp.style.display = 'none';
+    disp.style.display = '';
+    btn.textContent = '수정';
+    updateRowStatus(prodId);
+  }
+}
+
 function updateRowStatus(prodId) {
   const el = document.getElementById(`tmgr-status-${prodId}`);
   if (el) { el.textContent = '● 저장됨'; el.className = 'tmgr-saved'; }
