@@ -400,19 +400,35 @@ def _get_mat_size(model_code):
 
 def extract_e_model_codes(e_val):
     """E열 값에서 모델코드 추출.
+    - 라이트시리즈 prefix 제거
     - (N년의무/의문) 등 괄호 제거
     - 공백/하이픈 정규화
     - * → C형, F형 두 개 반환
+    - 공백/슬래시로 구분된 복수 코드 처리
     """
     if not e_val:
         return []
-    base = re.split(r'\(', e_val)[0].strip()
-    norm = re.sub(r'[\-\s]', '', base).upper()
-    if not norm:
-        return []
-    if '*' in norm:
-        return [norm.replace('*', 'C'), norm.replace('*', 'F')]
-    return [norm]
+    # 라이트시리즈 prefix 제거 (셀프관리 표시용 텍스트)
+    s = e_val
+    if s.startswith("라이트시리즈"):
+        s = s[len("라이트시리즈"):].strip()
+    # 괄호 앞부분만 사용
+    base = re.split(r'\(', s)[0].strip()
+    # en dash → 일반 hyphen
+    base = base.replace('\u2013', '-').replace('\u2014', '-')
+    # 슬래시로 분리된 복수 코드 처리 (MAT-SF520RKIV/MAT-SF530RKBE 등)
+    parts = [p.strip() for p in base.split('/') if p.strip()]
+    results = []
+    for part in parts:
+        norm = re.sub(r'[\-\s]', '', part).upper()
+        if not norm or len(norm) < 4:
+            continue
+        if '*' in norm:
+            results.append(norm.replace('*', 'C'))
+            results.append(norm.replace('*', 'F'))
+        else:
+            results.append(norm)
+    return results
 
 def tl_match_model(norm_code, tl_known_models):
     """정규화된 에이컴즈 E열 모델코드를 TL 모델코드로 매핑.
