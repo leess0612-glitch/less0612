@@ -304,15 +304,15 @@ def parse_excel(filepath):
     # 빈 옵션 제품 제거
     products = [p for p in products if p["options"]]
 
-    # 중복 id 처리
-    seen_ids = {}
+    # 중복 id 처리: 같은 모델코드면 options 합치기
+    merged = {}
     for p in products:
-        base_id = p["id"]
-        if base_id in seen_ids:
-            seen_ids[base_id] += 1
-            p["id"] = f"{base_id}_{seen_ids[base_id]}"
+        pid = p["id"]
+        if pid in merged:
+            merged[pid]["options"].extend(p["options"])
         else:
-            seen_ids[base_id] = 1
+            merged[pid] = p
+    products = list(merged.values())
 
     return {
         "metadata": {
