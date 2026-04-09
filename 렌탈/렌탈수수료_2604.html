@@ -1459,7 +1459,8 @@ document.addEventListener('click', e => {
 });
 
 function onMultiChange(prodId, field, uid) {
-  const checks = document.querySelectorAll(`#dd-${uid} input[type=checkbox]`);
+  const ddEl = document.getElementById(`dd-${uid}`);
+  const checks = ddEl ? ddEl.querySelectorAll('input[type=checkbox]') : [];
   const selected = Array.from(checks).filter(c=>c.checked).map(c=>c.value);
   document.getElementById(`lbl-${uid}`).textContent = selected.length ? selected.join(', ') : '선택';
   saveProductTag(prodId, field, selected);
