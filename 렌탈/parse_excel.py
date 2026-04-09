@@ -461,7 +461,7 @@ if __name__ == "__main__":
         html_out_str = html.replace("__SK_DATA__", sk_js) \
                            .replace("__TL_WARNINGS__", tl_js)
 
-        month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")
+        month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
         out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
         with open(out_html, "w", encoding="utf-8") as f:
             f.write(html_out_str)
