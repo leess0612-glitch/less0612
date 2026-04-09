@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-09 11:42"
+    "parsedAt": "2026-04-09 14:02"
   },
   "products": [
     {
@@ -326,7 +326,8 @@
           "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월필터발송,12개월방문"
     },
     {
       "id": "WPUIAC414",
@@ -745,7 +746,8 @@
           "recommendedOffice": null,
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "2개월 관리"
     },
     {
       "id": "WPUJAC115",
@@ -2463,7 +2465,8 @@
           "recommendedOffice": null,
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월필터발송,12개월방문"
     },
     {
       "id": "WPUPBC204S",
@@ -2541,7 +2544,8 @@
           "totalCommission": 110000,
           "recommendedOffice": "에이컴즈"
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월필터발송,12개월방문"
     },
     {
       "id": "언더싱크정수기",
@@ -3681,7 +3685,8 @@
           "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월필터발송,12개월방문"
     },
     {
       "id": "ACL22P",
@@ -4261,7 +4266,8 @@
           "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월필터발송,12개월방문"
     },
     {
       "id": "올클린공기청정기(",
@@ -5091,7 +5097,8 @@
           "recommendedOffice": null,
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "필터증정, 12개월 방문"
     },
     {
       "id": "BIDF17D",
@@ -5275,7 +5282,8 @@
           "recommendedOffice": null,
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "필터증정, 12개월 방문"
     },
     {
       "id": "풀스텐스파비데",
