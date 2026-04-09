@@ -336,14 +336,48 @@ def _tl_lookup_key(model_code, tl_mgmt, years, has_tasa, is_package):
     return f"{_norm_model(model_code)}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
 
 def _tl_model_variants(code):
-    """에이컴즈 모델코드 → 티엘 매칭용 변형 목록 (MAT TSM→SM 등)"""
+    """에이컴즈 모델코드 → 티엘 매칭용 변형 목록
+
+    MAT 사이즈 매핑 패턴:
+      MAT[KQS]M[숫자]...  → strip [KQS]M  (워커힐 스위트/스탠다드: SM730→730)
+      MAT[KQS][비M문자]... → strip [KQS]   (에코휴/헤드보드: SD011→D011, SH510→H510)
+      MAT-TSM...           → MAT-SM...     (오타 수정)
+    """
     norm = _norm_model(code)
     variants = [norm]
-    # MAT-TSM… → MAT-SM… (에이컴즈 Twin-spring SS 코드 처리)
-    mat_t = re.match(r'^(MAT)T(.+)$', norm)
+
+    # MAT-TSM… → MAT-SM… (에이컴즈 오타 수정)
+    mat_t = re.match(r'^MATT([^T].*)$', norm)
     if mat_t:
-        variants.append(f"MAT{mat_t.group(2)}")
+        variants.append(f"MAT{mat_t.group(1)}")
+
+    # MAT + size(KQS) + M + 숫자... → strip size and M (워커힐 스위트/스탠다드)
+    mat_sm = re.match(r'^MAT([KQS])M(\d.*)$', norm)
+    if mat_sm:
+        stripped = f"MAT{mat_sm.group(2)}"
+        if stripped not in variants:
+            variants.append(stripped)
+
+    # MAT + size(KQS) + 비M문자... → strip size only (에코휴/헤드보드/파운데이션)
+    mat_sl = re.match(r'^MAT([KQS])([A-LN-Z].*)$', norm)  # M 제외
+    if mat_sl:
+        stripped = f"MAT{mat_sl.group(2)}"
+        if stripped not in variants:
+            variants.append(stripped)
+
     return variants
+
+
+def _get_mat_size(model_code):
+    """에이컴즈 MAT 모델코드에서 사이즈 추출 (K/Q/SS)"""
+    norm = _norm_model(model_code)
+    # en dash 정규화
+    norm = norm.replace('\u2013', '').replace('\u2014', '')
+    m = re.match(r'^MAT([KQS])', norm)
+    if m:
+        letter = m.group(1)
+        return {'K': 'K', 'Q': 'Q', 'S': 'SS'}[letter]
+    return ""
 
 def extract_e_model_codes(e_val):
     """E열 값에서 모델코드 추출.
