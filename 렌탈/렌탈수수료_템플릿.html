@@ -1235,6 +1235,32 @@ function getMatchingPromos(option, promotionNote) {
   });
 }
 
+// ── 관리주기 포맷 (TL G열 기준) ──
+function formatVisitCycle(raw) {
+  if (!raw) return '';
+  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  return parts.map(part => {
+    // N개월 필터발송 → N개월마다 필터발송
+    const filterMatch = part.match(/(\d+)\s*개월\s*필터발송/);
+    if (filterMatch) return `${filterMatch[1]}개월마다 필터발송`;
+
+    // 필터증정
+    if (part.replace(/\s/g, '').includes('필터증정')) return '필터 증정';
+
+    // N개월 관리/방문 → (N<12: N개월마다, N>=12: N/12년마다) 방문관리
+    const mgmtMatch = part.match(/(\d+)\s*개월\s*(관리|방문)/);
+    if (mgmtMatch) {
+      const months = parseInt(mgmtMatch[1]);
+      if (months < 12) return `${months}개월마다 방문관리`;
+      const years = months / 12;
+      const yStr = Number.isInteger(years) ? String(years) : String(Math.round(years * 10) / 10);
+      return `${yStr}년마다 방문관리`;
+    }
+
+    return part;
+  }).filter(Boolean).join(' / ');
+}
+
 // ── 고객 안내문 ──
 function buildCopyText() {
   const product = DB.products.find(p => p.id === state.productId);
