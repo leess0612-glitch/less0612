@@ -1528,6 +1528,14 @@ document.addEventListener('click', e => {
   }
 });
 
+// 태그 관리 페이지 스크롤 시 드롭다운 닫기 (fixed 위치가 버튼에서 떨어지므로)
+document.getElementById('tag-mgr-page').addEventListener('scroll', () => {
+  document.querySelectorAll('.multi-dropdown.open').forEach(el => {
+    el.classList.remove('open');
+    el.previousElementSibling.classList.remove('open');
+  });
+}, { passive: true });
+
 function onMultiChange(prodId, field, uid) {
   const ddEl = document.getElementById(`dd-${uid}`);
   const checks = ddEl ? ddEl.querySelectorAll('input[type=checkbox]') : [];
