@@ -755,7 +755,7 @@ function renderQuickAccess() {
           return `
           <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
-            <span class="qa-brand-tag">SK</span> ${p.name}
+            <span class="qa-brand-tag">${getBrandTag()}</span> ${p.name}
             ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
           </button>`;
         }).join('')
