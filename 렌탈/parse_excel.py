@@ -115,7 +115,7 @@ def clean_option_name(col4_raw, model_code):
 # ─────────────────────────────────────────────
 # 단종 모델 목록
 # ─────────────────────────────────────────────
-DISCONTINUED_MODELS = {'KM720R', 'QM720R', 'MAT-KM720R', 'MAT-QM720R'}
+DISCONTINUED_MODELS = set()  # 현재 단종 모델 없음 (KM720R/QM720R은 TL 미취급이나 단종 아님)
 
 # D열 기본 관리유형 (할인 없음) → 제외 대상
 BASIC_MGMT_EXCLUDE = {'방문', '셀프', '무방문형'}
