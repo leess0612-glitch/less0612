@@ -543,10 +543,10 @@
   .multi-btn:focus, .multi-btn.open { border-color: var(--brand); outline: none; }
   .multi-btn .arrow { font-size: 9px; color: var(--gray-400); flex-shrink: 0; }
   .multi-dropdown {
-    display: none; position: absolute; top: calc(100% + 3px); left: 0;
+    display: none; position: fixed;
     background: #fff; border: 1px solid var(--gray-200); border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(0,0,0,.12); z-index: 100; min-width: 140px;
-    padding: 4px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,.12); z-index: 999; min-width: 140px;
+    padding: 4px 0; max-height: 220px; overflow-y: auto;
   }
   .multi-dropdown.open { display: block; }
   .multi-opt {
