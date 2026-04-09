@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-09 11:33"
+    "parsedAt": "2026-04-09 11:42"
   },
   "products": [
     {
@@ -6147,7 +6147,7 @@
           "recommendedOffice": null
         },
         {
-          "label": "",
+          "label": "5,000원할인",
           "managementType": "",
           "contractMonths": 60,
           "contractLabel": "5년",
