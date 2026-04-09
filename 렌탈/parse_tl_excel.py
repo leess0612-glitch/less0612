@@ -42,6 +42,8 @@ def parse_tl(filepath):
     # 접수처 비교용 lookup: key → commission
     # key = "{normalized_model}|{mgmt}|{years}|{tasa}|{package}"
     option_lookup = {}
+    # 관리주기 lookup: normalized_model → G열 원본값
+    visit_cycle_lookup = {}
 
     current_model_code = ""
     current_product_name = ""
@@ -54,6 +56,7 @@ def parse_tl(filepath):
         col_c = clean(row[2])
         col_e = clean(row[4])
         col_f = clean(row[5])
+        col_g = clean(row[6])
         col_h = row[7]
         col_j = row[9]
         col_k = row[10]
@@ -61,6 +64,9 @@ def parse_tl(filepath):
 
         if col_b:
             current_model_code = col_b
+            # G열 관리주기 저장 (B열이 있는 행에만 G열 존재, 해당없음 제외)
+            if col_g and col_g != '해당없음' and '+' not in col_b:
+                visit_cycle_lookup[normalize_model_code(col_b)] = col_g
         if col_c:
             current_product_name = col_c
 
