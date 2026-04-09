@@ -202,7 +202,7 @@ def parse_excel(filepath):
 
             # ★ 단종 제품 제외
             model_upper = model_code.upper()
-            if model_upper in DISCONTINUED_MODELS or any(d in model_upper for d in ['KM720R', 'QM720R']):
+            if model_upper in DISCONTINUED_MODELS:
                 current_product = None
                 current_model_code = ""
                 current_product_name = ""
