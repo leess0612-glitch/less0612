@@ -854,7 +854,7 @@ function headerSearchInput() {
   dd.innerHTML = results.map(p => `
     <div class="hsd-item" onmousedown="selectProductFromHeader('${p.id}')">
       <div class="hsd-brand">[${p.brandLabel}] ${p.category}</div>
-      <div class="hsd-name">${p.name}</div>
+      <div class="hsd-name">${escHtml(getDisplayName(p))}</div>
       <div class="hsd-model">${p.modelCode || ''}</div>
     </div>
   `).join('');
