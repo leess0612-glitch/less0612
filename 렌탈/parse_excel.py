@@ -244,6 +244,25 @@ def parse_excel(filepath):
         if mgmt_type is None:
             mgmt_type = current_mgmt_type
 
+        # ★ E열 "라이트시리즈" → 셀프관리 강제
+        # (비데/공기청정기에서 D열이 없거나 Lite로 표기된 경우 사용)
+        if "라이트시리즈" in col4:
+            mgmt_type = "셀프관리"
+            current_mgmt_type = "셀프관리"
+        # ★ 비데/공기청정기에서 D열 비어있고 라이트시리즈 아니면 방문관리
+        elif current_category in ("비데", "공기청정기") and not col3 and current_model_code:
+            mgmt_type = "방문관리"
+            current_mgmt_type = "방문관리"
+
+        # ★ MAT 제품: D열 없음 → H열(visitCycle)로 관리방식 결정
+        # H열 '없음' = 관리없음(셀프형), H열 '4개월' 등 = 방문관리
+        if current_category == "매트리스" and not col3:
+            visit_cycle_raw = clean(row[7]) if row[7] is not None else ""
+            if visit_cycle_raw == "없음" or visit_cycle_raw == "":
+                mgmt_type = "관리없음"
+            else:
+                mgmt_type = "방문관리"
+
         # ★ D열 "방문"/"셀프" 기본 행 제외
         # 단, 해당 모델에 할인 옵션이 없으면 기본 행도 유효 데이터로 포함
         if mgmt_type in BASIC_MGMT_EXCLUDE:
