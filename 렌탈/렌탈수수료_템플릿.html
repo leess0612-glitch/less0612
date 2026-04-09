@@ -1285,14 +1285,15 @@ function buildCopyText() {
       : base === '셀프' ? '자가 관리'
       : (o.managementType || '');
 
-    // 방문주기
-    const cycleStr = o.visitCycle ? ` (${o.visitCycle} 주기)` : '';
-
     // 타사보상만 표기
     const tasaStr = disc === '할인+타사' ? ' | 타사보상' : '';
 
-    // 📍 관리방식 | 약정 | (방문주기) | 타사보상
-    text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${cycleStr}${tasaStr}\n`;
+    // 📍 관리방식 | 약정 | 타사보상
+    text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${tasaStr}\n`;
+
+    // 관리주기 (TL G열 기준)
+    const cycleFormatted = formatVisitCycle(product.visitCycleInfo || '');
+    if (cycleFormatted) text += `관리주기: ${cycleFormatted}\n`;
 
     // 요금 | 사은품
     text += `월 ${fmtNum(o.monthlyFee)}원`;
