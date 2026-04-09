@@ -1491,10 +1491,31 @@ function toggleMulti(uid) {
   document.querySelectorAll('.multi-dropdown.open').forEach(el => {
     if (el.id !== `dd-${uid}`) { el.classList.remove('open'); el.previousElementSibling.classList.remove('open'); }
   });
-  const dd = document.getElementById(`dd-${uid}`);
+  const dd  = document.getElementById(`dd-${uid}`);
   const btn = dd.previousElementSibling;
-  dd.classList.toggle('open');
-  btn.classList.toggle('open');
+  const isOpen = dd.classList.contains('open');
+
+  if (!isOpen) {
+    const rect = btn.getBoundingClientRect();
+    // 위치 먼저 설정 후 off-screen에서 높이 측정
+    dd.style.left   = rect.left + 'px';
+    dd.style.top    = (rect.bottom + 3) + 'px';
+    dd.style.bottom = '';
+    dd.style.visibility = 'hidden';
+    dd.style.display    = 'block';
+    const ddH = dd.offsetHeight;
+    dd.style.visibility = '';
+    dd.style.display    = '';
+
+    // 화면 하단 여백 부족하면 위로 펼치기
+    if (rect.bottom + 3 + ddH > window.innerHeight - 8) {
+      dd.style.top    = Math.max(8, rect.top - ddH - 3) + 'px';
+      dd.style.bottom = '';
+    }
+  }
+
+  dd.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
 }
 
 // 외부 클릭 시 드롭다운 닫기
