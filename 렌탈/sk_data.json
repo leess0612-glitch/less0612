@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-09 14:55"
+    "parsedAt": "2026-04-10 08:56"
   },
   "products": [
     {
@@ -3646,6 +3646,57 @@
       "note": "",
       "options": [
         {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 35900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 107700,
+          "bonusCommission": 0,
+          "totalCommission": 305700,
+          "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 33900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 101700,
+          "bonusCommission": 0,
+          "totalCommission": 299700,
+          "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 32900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 98700,
+          "bonusCommission": 0,
+          "totalCommission": 296700,
+          "recommendedOffice": "에이컴즈"
+        },
+        {
           "label": "2,000원 할인",
           "managementType": "방문할인",
           "contractMonths": 36,
@@ -3664,7 +3715,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 28900,
@@ -3681,7 +3732,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -3698,7 +3749,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 25900,
@@ -3712,6 +3763,57 @@
           "bonusCommission": 0,
           "totalCommission": 275700,
           "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 32900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 158400,
+          "additionalCount": 3,
+          "additionalCommission": 98700,
+          "bonusCommission": 0,
+          "totalCommission": 257100,
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 30900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 158400,
+          "additionalCount": 3,
+          "additionalCommission": 92700,
+          "bonusCommission": 0,
+          "totalCommission": 251100,
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 29900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 158400,
+          "additionalCount": 3,
+          "additionalCommission": 89700,
+          "bonusCommission": 0,
+          "totalCommission": 248100,
+          "recommendedOffice": "티엘"
         },
         {
           "label": "2,000원 할인",
@@ -3732,7 +3834,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 25900,
@@ -3745,11 +3847,11 @@
           "additionalCommission": 77700,
           "bonusCommission": 0,
           "totalCommission": 236100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "7,000원 할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 23900,
@@ -3762,11 +3864,11 @@
           "additionalCommission": 71700,
           "bonusCommission": 0,
           "totalCommission": 230100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "7,000원 할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 22900,
@@ -3779,7 +3881,61 @@
           "additionalCommission": 68700,
           "bonusCommission": 0,
           "totalCommission": 227100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 33900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 107700,
+          "bonusCommission": 0,
+          "totalCommission": 256200,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 31900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 101700,
+          "bonusCommission": 0,
+          "totalCommission": 250200,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 30900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 198000,
+          "additionalCount": 3,
+          "additionalCommission": 98700,
+          "bonusCommission": 0,
+          "totalCommission": 247200,
+          "recommendedOffice": "티엘",
+          "isPackage": true
         },
         {
           "label": "2,000원 할인",
@@ -3800,60 +3956,6 @@
           "isPackage": true
         },
         {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 26900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 198000,
-          "additionalCount": 3,
-          "additionalCommission": 86700,
-          "bonusCommission": 0,
-          "totalCommission": 235200,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 24900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 198000,
-          "additionalCount": 3,
-          "additionalCommission": 80700,
-          "bonusCommission": 0,
-          "totalCommission": 229200,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 23900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 198000,
-          "additionalCount": 3,
-          "additionalCommission": 77700,
-          "bonusCommission": 0,
-          "totalCommission": 226200,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
           "label": "2,000원 할인",
           "managementType": "셀프할인_패키지",
           "contractMonths": 36,
@@ -3870,60 +3972,6 @@
           "totalCommission": 184860,
           "recommendedOffice": "티엘",
           "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 23900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 158400,
-          "additionalCount": 3,
-          "additionalCommission": 77700,
-          "bonusCommission": 0,
-          "totalCommission": 196500,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 21900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 158400,
-          "additionalCount": 3,
-          "additionalCommission": 71700,
-          "bonusCommission": 0,
-          "totalCommission": 190500,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 20900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 158400,
-          "additionalCount": 3,
-          "additionalCommission": 68700,
-          "bonusCommission": 0,
-          "totalCommission": 187500,
-          "recommendedOffice": "티엘",
-          "isPackage": true
         }
       ],
       "visitCycleInfo": "4개월필터발송,12개월방문"
@@ -3936,6 +3984,57 @@
       "promotionNote": "",
       "note": "",
       "options": [
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 40900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 122700,
+          "bonusCommission": 0,
+          "totalCommission": 386700,
+          "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 38900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 116700,
+          "bonusCommission": 0,
+          "totalCommission": 380700,
+          "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 37900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 113700,
+          "bonusCommission": 0,
+          "totalCommission": 377700,
+          "recommendedOffice": null
+        },
         {
           "label": "2,000원 할인",
           "managementType": "방문할인",
@@ -3955,7 +4054,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 33900,
@@ -3972,7 +4071,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 31900,
@@ -3989,7 +4088,7 @@
         },
         {
           "label": "7,000원 할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 30900,
@@ -4002,6 +4101,57 @@
           "additionalCommission": 92700,
           "bonusCommission": 0,
           "totalCommission": 356700,
+          "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 37900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 211200,
+          "additionalCount": 3,
+          "additionalCommission": 113700,
+          "bonusCommission": 0,
+          "totalCommission": 324900,
+          "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 35900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 211200,
+          "additionalCount": 3,
+          "additionalCommission": 107700,
+          "bonusCommission": 0,
+          "totalCommission": 318900,
+          "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 34900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 211200,
+          "additionalCount": 3,
+          "additionalCommission": 104700,
+          "bonusCommission": 0,
+          "totalCommission": 315900,
           "recommendedOffice": null
         },
         {
@@ -4023,7 +4173,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30900,
@@ -4040,7 +4190,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28900,
@@ -4057,7 +4207,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27900,
@@ -4071,6 +4221,60 @@
           "bonusCommission": 0,
           "totalCommission": 294900,
           "recommendedOffice": null
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 38900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 122700,
+          "bonusCommission": 0,
+          "totalCommission": 320700,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 36900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 116700,
+          "bonusCommission": 0,
+          "totalCommission": 314700,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 35900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 264000,
+          "additionalCount": 3,
+          "additionalCommission": 113700,
+          "bonusCommission": 0,
+          "totalCommission": 311700,
+          "recommendedOffice": null,
+          "isPackage": true
         },
         {
           "label": "2,000원 할인",
@@ -4091,60 +4295,6 @@
           "isPackage": true
         },
         {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 31900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 264000,
-          "additionalCount": 3,
-          "additionalCommission": 101700,
-          "bonusCommission": 0,
-          "totalCommission": 299700,
-          "recommendedOffice": null,
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 29900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 264000,
-          "additionalCount": 3,
-          "additionalCommission": 95700,
-          "bonusCommission": 0,
-          "totalCommission": 293700,
-          "recommendedOffice": null,
-          "isPackage": true
-        },
-        {
-          "label": "7,000원 할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 28900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 264000,
-          "additionalCount": 3,
-          "additionalCommission": 92700,
-          "bonusCommission": 0,
-          "totalCommission": 290700,
-          "recommendedOffice": null,
-          "isPackage": true
-        },
-        {
           "label": "2,000원할인",
           "managementType": "셀프할인_패키지",
           "contractMonths": 36,
@@ -4161,60 +4311,6 @@
           "totalCommission": 227580,
           "recommendedOffice": null,
           "isPackage": true
-        },
-        {
-          "label": "7,000원할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 28900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 211200,
-          "additionalCount": 3,
-          "additionalCommission": 92700,
-          "bonusCommission": 0,
-          "totalCommission": 251100,
-          "recommendedOffice": null,
-          "isPackage": true
-        },
-        {
-          "label": "7,000원할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 26900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 211200,
-          "additionalCount": 3,
-          "additionalCommission": 86700,
-          "bonusCommission": 0,
-          "totalCommission": 245100,
-          "recommendedOffice": null,
-          "isPackage": true
-        },
-        {
-          "label": "7,000원할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 25900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 211200,
-          "additionalCount": 3,
-          "additionalCommission": 83700,
-          "bonusCommission": 0,
-          "totalCommission": 242100,
-          "recommendedOffice": null,
-          "isPackage": true
         }
       ]
     },
@@ -4226,6 +4322,57 @@
       "promotionNote": "",
       "note": "",
       "options": [
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 37900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 113700,
+          "bonusCommission": 0,
+          "totalCommission": 366700,
+          "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 35900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 107700,
+          "bonusCommission": 0,
+          "totalCommission": 360700,
+          "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 34900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 104700,
+          "bonusCommission": 0,
+          "totalCommission": 357700,
+          "recommendedOffice": "에이컴즈"
+        },
         {
           "label": "방문(2,000원할인",
           "managementType": "방문할인",
@@ -4245,7 +4392,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 30900,
@@ -4262,7 +4409,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28900,
@@ -4279,7 +4426,7 @@
         },
         {
           "label": "7,000원할인",
-          "managementType": "방문할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 27900,
@@ -4293,6 +4440,57 @@
           "bonusCommission": 0,
           "totalCommission": 336700,
           "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 34900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 202400,
+          "additionalCount": 3,
+          "additionalCommission": 104700,
+          "bonusCommission": 0,
+          "totalCommission": 307100,
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 32900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 202400,
+          "additionalCount": 3,
+          "additionalCommission": 98700,
+          "bonusCommission": 0,
+          "totalCommission": 301100,
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 31900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 202400,
+          "additionalCount": 3,
+          "additionalCommission": 95700,
+          "bonusCommission": 0,
+          "totalCommission": 298100,
+          "recommendedOffice": "티엘"
         },
         {
           "label": "2,000할인",
@@ -4313,7 +4511,7 @@
         },
         {
           "label": "7,000할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 27900,
@@ -4326,11 +4524,11 @@
           "additionalCommission": 83700,
           "bonusCommission": 0,
           "totalCommission": 286100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "7,000할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 25900,
@@ -4343,11 +4541,11 @@
           "additionalCommission": 77700,
           "bonusCommission": 0,
           "totalCommission": 280100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "7,000할인",
-          "managementType": "셀프할인",
+          "managementType": "방문관리",
           "contractMonths": 84,
           "contractLabel": "7년",
           "monthlyFee": 24900,
@@ -4360,7 +4558,61 @@
           "additionalCommission": 74700,
           "bonusCommission": 0,
           "totalCommission": 277100,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 35900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 113700,
+          "bonusCommission": 0,
+          "totalCommission": 303450,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 33900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 107700,
+          "bonusCommission": 0,
+          "totalCommission": 297450,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 32900,
+          "dataWarning": false,
+          "visitCycle": "4개월",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 253000,
+          "additionalCount": 3,
+          "additionalCommission": 104700,
+          "bonusCommission": 0,
+          "totalCommission": 294450,
+          "recommendedOffice": "티엘",
+          "isPackage": true
         },
         {
           "label": "방문(2,000원할인",
@@ -4381,60 +4633,6 @@
           "isPackage": true
         },
         {
-          "label": "7,000원할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 28900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 253000,
-          "additionalCount": 3,
-          "additionalCommission": 92700,
-          "bonusCommission": 0,
-          "totalCommission": 282450,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 26900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 253000,
-          "additionalCount": 3,
-          "additionalCommission": 86700,
-          "bonusCommission": 0,
-          "totalCommission": 276450,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000원할인",
-          "managementType": "방문할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 25900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 253000,
-          "additionalCount": 3,
-          "additionalCommission": 83700,
-          "bonusCommission": 0,
-          "totalCommission": 273450,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
           "label": "2,000할인",
           "managementType": "셀프할인_패키지",
           "contractMonths": 36,
@@ -4449,60 +4647,6 @@
           "additionalCommission": 107700,
           "bonusCommission": 0,
           "totalCommission": 213960,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 25900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 60,
-          "registrationFee": 100000,
-          "baseCommission": 202400,
-          "additionalCount": 3,
-          "additionalCommission": 83700,
-          "bonusCommission": 0,
-          "totalCommission": 235500,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 23900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 72,
-          "registrationFee": 100000,
-          "baseCommission": 202400,
-          "additionalCount": 3,
-          "additionalCommission": 77700,
-          "bonusCommission": 0,
-          "totalCommission": 229500,
-          "recommendedOffice": "티엘",
-          "isPackage": true
-        },
-        {
-          "label": "7,000할인",
-          "managementType": "셀프할인_패키지",
-          "contractMonths": 84,
-          "contractLabel": "7년",
-          "monthlyFee": 22900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 84,
-          "registrationFee": 100000,
-          "baseCommission": 202400,
-          "additionalCount": 3,
-          "additionalCommission": 74700,
-          "bonusCommission": 0,
-          "totalCommission": 226500,
           "recommendedOffice": "티엘",
           "isPackage": true
         }
@@ -4990,7 +5134,7 @@
       "options": [
         {
           "label": "라이트시리즈",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -5003,11 +5147,11 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 80700,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 12900,
@@ -5020,11 +5164,11 @@
           "additionalCommission": 38700,
           "bonusCommission": 0,
           "totalCommission": 68700,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -5037,12 +5181,12 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 73200,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 10900,
@@ -5055,7 +5199,7 @@
           "additionalCommission": 38700,
           "bonusCommission": 0,
           "totalCommission": 61200,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
@@ -5071,7 +5215,7 @@
       "options": [
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -5088,7 +5232,7 @@
         },
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 14900,
@@ -5105,7 +5249,7 @@
         },
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 12900,
@@ -5122,7 +5266,7 @@
         },
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -5140,7 +5284,7 @@
         },
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 12900,
@@ -5158,7 +5302,7 @@
         },
         {
           "label": "ACL131T0CJDG 라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 10900,
@@ -5187,7 +5331,7 @@
       "options": [
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 24900,
@@ -5200,11 +5344,11 @@
           "additionalCommission": 124500,
           "bonusCommission": 0,
           "totalCommission": 244500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 21900,
@@ -5217,11 +5361,11 @@
           "additionalCommission": 109500,
           "bonusCommission": 0,
           "totalCommission": 229500,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 20900,
@@ -5234,11 +5378,11 @@
           "additionalCommission": 104500,
           "bonusCommission": 0,
           "totalCommission": 224500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 19900,
@@ -5251,11 +5395,11 @@
           "additionalCommission": 99500,
           "bonusCommission": 0,
           "totalCommission": 129500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 16900,
@@ -5268,11 +5412,11 @@
           "additionalCommission": 84500,
           "bonusCommission": 0,
           "totalCommission": 114500,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 15900,
@@ -5285,11 +5429,11 @@
           "additionalCommission": 79500,
           "bonusCommission": 0,
           "totalCommission": 109500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 22900,
@@ -5302,12 +5446,12 @@
           "additionalCommission": 124500,
           "bonusCommission": 0,
           "totalCommission": 214500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 19900,
@@ -5320,12 +5464,12 @@
           "additionalCommission": 109500,
           "bonusCommission": 0,
           "totalCommission": 199500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 18900,
@@ -5338,7 +5482,61 @@
           "additionalCommission": 104500,
           "bonusCommission": 0,
           "totalCommission": 194500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "라이트",
+          "managementType": "셀프관리_패키지",
+          "contractMonths": 36,
+          "contractLabel": "3년",
+          "monthlyFee": 17900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 30000,
+          "additionalCount": 5,
+          "additionalCommission": 99500,
+          "bonusCommission": 0,
+          "totalCommission": 122000,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "라이트",
+          "managementType": "셀프관리_패키지",
+          "contractMonths": 48,
+          "contractLabel": "4년",
+          "monthlyFee": 14900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 30000,
+          "additionalCount": 5,
+          "additionalCommission": 84500,
+          "bonusCommission": 0,
+          "totalCommission": 107000,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "라이트",
+          "managementType": "셀프관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 13900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 30000,
+          "additionalCount": 5,
+          "additionalCommission": 79500,
+          "bonusCommission": 0,
+          "totalCommission": 102000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
@@ -5354,7 +5552,7 @@
       "options": [
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 22900,
@@ -5367,11 +5565,11 @@
           "additionalCommission": 114500,
           "bonusCommission": 0,
           "totalCommission": 224500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 19900,
@@ -5384,11 +5582,11 @@
           "additionalCommission": 99500,
           "bonusCommission": 0,
           "totalCommission": 209500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 18900,
@@ -5405,7 +5603,7 @@
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 18900,
@@ -5418,11 +5616,11 @@
           "additionalCommission": 94500,
           "bonusCommission": 0,
           "totalCommission": 124500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 17900,
@@ -5435,11 +5633,11 @@
           "additionalCommission": 89500,
           "bonusCommission": 0,
           "totalCommission": 119500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 16900,
@@ -5452,11 +5650,11 @@
           "additionalCommission": 84500,
           "bonusCommission": 0,
           "totalCommission": 114500,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 20900,
@@ -5469,12 +5667,12 @@
           "additionalCommission": 114500,
           "bonusCommission": 0,
           "totalCommission": 197000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 17900,
@@ -5487,12 +5685,12 @@
           "additionalCommission": 99500,
           "bonusCommission": 0,
           "totalCommission": 182000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 16900,
@@ -5510,7 +5708,25 @@
         },
         {
           "label": "라이트",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
+          "contractMonths": 36,
+          "contractLabel": "3년",
+          "monthlyFee": 16900,
+          "dataWarning": false,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 30000,
+          "additionalCount": 5,
+          "additionalCommission": 94500,
+          "bonusCommission": 0,
+          "totalCommission": 117000,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "라이트",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 15900,
@@ -5523,7 +5739,25 @@
           "additionalCommission": 89500,
           "bonusCommission": 0,
           "totalCommission": 112000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
+          "isPackage": true
+        },
+        {
+          "label": "라이트",
+          "managementType": "셀프관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 14900,
+          "dataWarning": true,
+          "visitCycle": "12개월",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 30000,
+          "additionalCount": 5,
+          "additionalCommission": 84500,
+          "bonusCommission": 0,
+          "totalCommission": 107000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
@@ -5706,7 +5940,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 23900,
@@ -5741,7 +5975,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 21900,
@@ -5806,8 +6040,8 @@
       "visitCycleInfo": "4개월 관리"
     },
     {
-      "id": "MAT–QM720R",
-      "modelCode": "MAT–QM720R",
+      "id": "MATQM720R",
+      "modelCode": "MATQM720R",
       "name": "워커힐 엠버서더 스위트_퀸",
       "category": "매트리스",
       "promotionNote": "매트리스",
@@ -5972,8 +6206,8 @@
       ]
     },
     {
-      "id": "MATTSM430RLWH",
-      "modelCode": "MATTSM430RLWH",
+      "id": "MATSM430RLWH",
+      "modelCode": "MAT-SM430RLWH",
       "name": "워커힐클라우드-슈퍼싱글",
       "category": "매트리스",
       "promotionNote": "",
@@ -6779,8 +7013,8 @@
       "visitCycleInfo": "4개월관리"
     },
     {
-      "id": "MATSM230RSBR",
-      "modelCode": "MATSM230RSBR",
+      "id": "MAT230",
+      "modelCode": "MAT-230",
       "name": "워커힐 스위트 슈퍼싱글",
       "category": "매트리스",
       "promotionNote": "",
@@ -6801,7 +7035,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -6818,7 +7052,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -6835,7 +7069,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6852,7 +7086,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6869,7 +7103,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6886,7 +7120,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -6903,7 +7137,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -6920,7 +7154,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -6937,7 +7171,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6954,7 +7188,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6971,7 +7205,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -6988,7 +7222,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7005,7 +7239,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7023,7 +7257,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7041,14 +7275,15 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 180000,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월관리"
     },
     {
-      "id": "MATQM230RSBR",
-      "modelCode": "MATQM230RSBR",
+      "id": "MAT230",
+      "modelCode": "MAT-230",
       "name": "워커힐 스위트 퀸",
       "category": "매트리스",
       "promotionNote": "",
@@ -7069,7 +7304,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7086,7 +7321,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7103,7 +7338,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7120,7 +7355,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7137,7 +7372,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7154,7 +7389,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 270000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7171,7 +7406,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7188,7 +7423,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7205,7 +7440,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7222,7 +7457,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7239,7 +7474,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7256,7 +7491,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 210000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7273,7 +7508,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 202500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7291,7 +7526,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 202500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7309,14 +7544,15 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 202500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월관리"
     },
     {
-      "id": "MATKM230RSBR",
-      "modelCode": "MATKM230RSBR",
+      "id": "MAT230",
+      "modelCode": "MAT-230",
       "name": "워커힐 스위트 킹",
       "category": "매트리스",
       "promotionNote": "",
@@ -7337,7 +7573,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -7354,7 +7590,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -7371,7 +7607,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -7388,7 +7624,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -7405,7 +7641,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -7422,7 +7658,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 330000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -7439,7 +7675,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7456,7 +7692,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7473,7 +7709,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7490,7 +7726,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7507,7 +7743,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "5,000원할인",
@@ -7524,7 +7760,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 240000,
-          "recommendedOffice": null
+          "recommendedOffice": "티엘"
         },
         {
           "label": "",
@@ -7541,7 +7777,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 247500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7559,7 +7795,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 247500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -7577,14 +7813,15 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 247500,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
-      ]
+      ],
+      "visitCycleInfo": "4개월관리"
     },
     {
-      "id": "MATSM730RZOM",
-      "modelCode": "MATSM730RZOM",
+      "id": "MAT730",
+      "modelCode": "MAT-730",
       "name": "워커힐 스탠다드 슈퍼싱글",
       "category": "매트리스",
       "promotionNote": "",
@@ -7749,8 +7986,8 @@
       ]
     },
     {
-      "id": "MATQM730RZOM",
-      "modelCode": "MATQM730RZOM",
+      "id": "MAT730",
+      "modelCode": "MAT-730",
       "name": "워커힐 스탠다드 퀸",
       "category": "매트리스",
       "promotionNote": "",
@@ -7915,8 +8152,8 @@
       ]
     },
     {
-      "id": "MAT–SD011",
-      "modelCode": "MAT–SD011",
+      "id": "MATD011",
+      "modelCode": "MAT-D011",
       "name": "에코휴 파운데이션_슈퍼싱글",
       "category": "매트리스",
       "promotionNote": "",
@@ -8132,8 +8369,8 @@
       ]
     },
     {
-      "id": "MAT–SH511",
-      "modelCode": "MAT–SH511",
+      "id": "MATH511",
+      "modelCode": "MAT-H511",
       "name": "에코휴 헤드보드패브릭_슈퍼싱글",
       "category": "매트리스",
       "promotionNote": "",
@@ -8349,8 +8586,8 @@
       ]
     },
     {
-      "id": "MAT–QH651",
-      "modelCode": "MAT–QH651",
+      "id": "MATH651",
+      "modelCode": "MAT-H651",
       "name": "에코휴 오크우드 헤드보드 _퀸",
       "category": "매트리스",
       "promotionNote": "",
@@ -8464,8 +8701,8 @@
       ]
     },
     {
-      "id": "MATSH510RKWH",
-      "modelCode": "MATSH510RKWH",
+      "id": "MATH510",
+      "modelCode": "MAT-H510",
       "name": "수납형 프레임 헤드 [슈퍼싱글]",
       "category": "기타",
       "promotionNote": "수납형\n프레임",
@@ -8732,8 +8969,8 @@
       ]
     },
     {
-      "id": "MATSH520RKIV",
-      "modelCode": "MATSH520RKIV",
+      "id": "MATH520",
+      "modelCode": "MAT-H520",
       "name": "패브릭 /PVC 레더헤드보드 [슈퍼싱글]",
       "category": "매트리스",
       "promotionNote": "패브릭/PVC 레더\n프레임",
@@ -9102,8 +9339,8 @@
       ]
     },
     {
-      "id": "MATSH530RKBE",
-      "modelCode": "MATSH530RKBE",
+      "id": "MATH530",
+      "modelCode": "MAT-H530",
       "name": "PVC 레더 헤드보드 [슈퍼싱글]",
       "category": "매트리스",
       "promotionNote": "PVC 레더\n프레임",
@@ -9472,9 +9709,9 @@
       ]
     },
     {
-      "id": "MATSF520RKIV/MATSF530RKBE",
-      "modelCode": "MATSF520RKIV/MATSF530RKBE",
-      "name": "패브릭/PVC레더 파운데이션 [슈퍼싱글]",
+      "id": "MATF520",
+      "modelCode": "MAT-F520",
+      "name": "패브릭/PVC레더 파운데이션 [슈퍼싱글] 하프형",
       "category": "매트리스",
       "promotionNote": "파운데이션",
       "note": "",
@@ -9740,9 +9977,443 @@
       ]
     },
     {
-      "id": "MATKF520RKIV/MATKF530RKBE",
-      "modelCode": "MATKF520RKIV/MATKF530RKBE",
-      "name": "패브릭/PVC레더파운데이션 [킹]",
+      "id": "MATF530",
+      "modelCode": "MAT-F530",
+      "name": "패브릭/PVC레더 파운데이션 [슈퍼싱글] 스탠드형",
+      "category": "매트리스",
+      "promotionNote": "파운데이션",
+      "note": "",
+      "options": [
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 17900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 16900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 15900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 12900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 11900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 10900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 81000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 18900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 17900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 16900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 13900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 12900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-QF520RKIV/MAT-QF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 11900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 85000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 85000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 15900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 60750,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 14900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 60750,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "MAT-SF520RKIV/MAT-SF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 13900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 81000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 60750,
+          "recommendedOffice": null,
+          "isPackage": true
+        }
+      ]
+    },
+    {
+      "id": "MATF520",
+      "modelCode": "MAT-F520",
+      "name": "패브릭/PVC레더파운데이션 [킹] 하프형",
+      "category": "매트리스",
+      "promotionNote": "",
+      "note": "",
+      "options": [
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 19900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 18900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 17900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 14900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 13900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE(5,000원할인",
+          "managementType": "방문관리",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 12900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 89000,
+          "recommendedOffice": null
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 60,
+          "contractLabel": "5년",
+          "monthlyFee": 17900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 60,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 66750,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 72,
+          "contractLabel": "6년",
+          "monthlyFee": 16900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 72,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 66750,
+          "recommendedOffice": null,
+          "isPackage": true
+        },
+        {
+          "label": "MAT-KF520RKIV/MAT-KF530RKBE",
+          "managementType": "방문관리_패키지",
+          "contractMonths": 84,
+          "contractLabel": "7년",
+          "monthlyFee": 15900,
+          "dataWarning": false,
+          "visitCycle": "없음",
+          "ownershipMonths": 84,
+          "registrationFee": 100000,
+          "baseCommission": 89000,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 66750,
+          "recommendedOffice": null,
+          "isPackage": true
+        }
+      ]
+    },
+    {
+      "id": "MATF530",
+      "modelCode": "MAT-F530",
+      "name": "패브릭/PVC레더파운데이션 [킹] 스탠드형",
       "category": "매트리스",
       "promotionNote": "",
       "note": "",
