@@ -91,6 +91,8 @@ def parse_tl(filepath):
             mgmt = "방문관리"
         elif "셀프" in col_e_s:
             mgmt = "셀프관리"
+        elif "관리없음" in col_e_s:
+            mgmt = "관리없음"
         else:
             continue
 
@@ -100,6 +102,10 @@ def parse_tl(filepath):
             continue
         contract_years = int(year_match.group(1))
         has_tasa = "_타사보상" in col_f
+
+        # 사이즈 추출 (MAT 제품 F열: 5년약정_K, 5년약정_Q, 5년약정_SS 등)
+        size_m = re.search(r'_(K|Q|SS)(?:_|$)', col_f)
+        size = size_m.group(1) if size_m else ""
 
         # 수치
         try:
@@ -116,9 +122,18 @@ def parse_tl(filepath):
         data_warning = False
 
         # lookup 등록 (패키지/비패키지 모두)
-        lookup_key = (f"{normalize_model_code(current_model_code)}"
-                      f"|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}")
+        # 사이즈 있으면 키에 포함 (MAT 사이즈별 수수료 구분)
+        norm_code = normalize_model_code(current_model_code)
+        if size:
+            lookup_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}|{size}"
+        else:
+            lookup_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}"
         option_lookup[lookup_key] = commission
+        # 사이즈 없는 fallback 키도 함께 등록 (사이즈 무관 조회용)
+        if size:
+            fallback_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}"
+            if fallback_key not in option_lookup:
+                option_lookup[fallback_key] = commission
 
         # 제품 목록 (패키지 행은 products에 저장하지 않음 - lookup용으로만 사용)
         if not is_package:
@@ -138,6 +153,7 @@ def parse_tl(filepath):
                 "contractYears": contract_years,
                 "contractLabel": f"{contract_years}년",
                 "hasTasa": has_tasa,
+                "size": size,
                 "monthlyFee": monthly_fee,
                 "commission": commission,
                 "dataWarning": data_warning,
