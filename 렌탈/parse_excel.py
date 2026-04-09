@@ -391,12 +391,14 @@ if __name__ == "__main__":
     # ── 티엘 파싱 ──
     tl_warning_models = []
     tl_lookup = {}
+    tl_visit_cycle = {}
     try:
         from parse_tl_excel import parse_tl
         print(f"[티엘] 파싱 중: {filepath_tl}")
         tl_data = parse_tl(filepath_tl)
         tl_warning_models = tl_data.get("warningModels", [])
         tl_lookup = tl_data.get("optionLookup", {})
+        tl_visit_cycle = tl_data.get("visitCycleLookup", {})
     except Exception as e:
         print(f"[티엘] 파싱 실패: {e}")
 
