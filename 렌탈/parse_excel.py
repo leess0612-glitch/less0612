@@ -462,20 +462,26 @@ if __name__ == "__main__":
     _rows = list(_ws.iter_rows(values_only=True))
     DATA_START_IDX = 7
 
-    # C열 없는 제품: 제품명 → [E열 첫 번째 값] 매핑
-    _no_model_e_map = {}   # product_name → [norm_code, ...]  (이미 TL 매핑된)
+    # C열 없는 제품: 제품명 → {'codes': [...], 'd_empty': bool} 매핑
+    # d_empty=True: 제품 헤더 행에 D열도 비어있음 → 관리방식 상속 오염 → "방문관리" 강제
+    _no_model_e_map = {}
     _cur_no_name = None
     for _row in _rows[DATA_START_IDX:]:
         _c2 = _row[2]
+        _c3 = _row[3]   # D열
         _c4 = _row[4]
         if _c2 is not None and str(_c2).strip():
             _mc, _pname = parse_product_name_from_col2(_c2)
             if not _mc and _pname:
                 _cur_no_name = _pname
                 _e_val = clean(_c4) if _c4 else ""
+                _d_val = clean(_c3) if _c3 else ""
                 _raw_codes = extract_e_model_codes(_e_val)
                 _matched = [tl_match_model(c, tl_known_models) for c in _raw_codes]
-                _no_model_e_map[_cur_no_name] = _matched
+                _no_model_e_map[_cur_no_name] = {
+                    "codes": _matched,
+                    "d_empty": not _d_val,  # 헤더행 D열이 비어있으면 관리방식 상속 오염
+                }
             else:
                 _cur_no_name = None
 
@@ -487,13 +493,13 @@ if __name__ == "__main__":
             continue
 
         pname = product.get("name", "")
-        codes = _no_model_e_map.get(pname, [])
+        info = _no_model_e_map.get(pname)
 
-        if not codes:
-            # 매핑 실패 → 그대로 유지
+        if not info or not info["codes"]:
             final_products.append(product)
             continue
 
+        codes = info["codes"]
         for i, norm_code in enumerate(codes):
             display_code = tl_model_display.get(norm_code, norm_code)
             p_copy = dict(product)
@@ -506,12 +512,17 @@ if __name__ == "__main__":
                 base_name = re.sub(r'\s*\(하프/스탠드\)\s*', '', pname).strip()
                 p_copy["name"] = base_name + (" 하프형" if i == 0 else " 스탠드형")
 
-            # D열 없는 제품 → 관리방식 "방문관리" 고정 (TL 확인됨)
-            for opt in p_copy["options"]:
-                opt["managementType"] = "방문관리"
+            # D열이 비어있던 제품만 관리방식 "방문관리" 고정
+            # (D열 있는 공기청정기/비데 등은 기존 managementType 유지)
+            if info["d_empty"]:
+                for opt in p_copy["options"]:
+                    opt["managementType"] = "방문관리"
 
             final_products.append(p_copy)
-        print(f"  [E열 정규화] {pname} → {[tl_model_display.get(c,c) for c in codes]}")
+        try:
+            print(f"  [E열 정규화] {pname} -> {[tl_model_display.get(c,c) for c in codes]}")
+        except UnicodeEncodeError:
+            print(f"  [E열 정규화] -> {[tl_model_display.get(c,c) for c in codes]}")
 
     data["products"] = final_products
 
