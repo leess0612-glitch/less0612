@@ -151,6 +151,7 @@ def parse_tl(filepath):
         "products": products,
         "warningModels": sorted(warning_models),
         "optionLookup": option_lookup,
+        "visitCycleLookup": visit_cycle_lookup,
     }
 
 
