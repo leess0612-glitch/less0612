@@ -66,9 +66,13 @@ def parse_tl(filepath):
 
         if col_b:
             current_model_code = col_b
+            norm = normalize_model_code(col_b)
             # G열 관리주기 저장 (B열이 있는 행에만 G열 존재, 해당없음 제외)
             if col_g and col_g != '해당없음' and '+' not in col_b:
-                visit_cycle_lookup[normalize_model_code(col_b)] = col_g
+                visit_cycle_lookup[norm] = col_g
+            # 모델코드 원본 표기 저장
+            if '+' not in col_b:
+                model_display_map[norm] = col_b
         if col_c:
             current_product_name = col_c
 
