@@ -1447,7 +1447,17 @@ function renderTagMgr() {
     const 형태Multi = makeMultiSelect(p.id, '형태', opts.형태, tag.형태 || []);
 
     return `<tr id="tmgr-row-${p.id}">
-      <td class="tmgr-prod-name">${escHtml(p.name)}</td>
+      <td class="tmgr-prod-name">
+        <div id="tmgr-name-disp-${escHtml(p.id)}" class="tmgr-name-disp">
+          <div class="tmgr-name-text">${escHtml(getDisplayName(p))}</div>
+          <div class="tmgr-name-model">${escHtml(p.modelCode || '')}</div>
+        </div>
+        <input class="tmgr-name-input" id="tmgr-name-inp-${escHtml(p.id)}"
+               style="display:none" value="${escHtml(getDisplayName(p))}"
+               onkeydown="if(event.key==='Enter')editProdName('${escHtml(p.id)}')">
+        <button class="tmgr-edit-btn" id="tmgr-edit-btn-${escHtml(p.id)}"
+                onclick="editProdName('${escHtml(p.id)}')">수정</button>
+      </td>
       <td>${급수Sel}</td>
       <td>${기능Multi}</td>
       <td>${형태Multi}</td>
