@@ -724,17 +724,29 @@ function renderQuickAccess() {
       filter: p => p.category === '정수기' && p.name.includes('RO') },
   ];
 
+  function getMinPrice(p) {
+    if (!p.options || !p.options.length) return null;
+    const filtered = p.options.filter(o => !o.managementType.includes('_패키지') && !o.managementType.includes('타사보상'));
+    if (!filtered.length) return null;
+    const min = filtered.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
+    const mgmt = min.managementType.includes('방문') ? '방문' : min.managementType.includes('셀프') ? '셀프' : '';
+    const contract = min.contractLabel || '';
+    return `${(min.monthlyFee).toLocaleString('ko-KR')}원 (${contract}${mgmt ? '·' + mgmt : ''})`;
+  }
+
   function makeCol(g, primary) {
     const prods = g.filter ? DB.products.filter(g.filter) : [];
     const labelClass = primary ? 'qa-type-label primary' : 'qa-type-label';
     const btnHtml = prods.length
-      ? prods.map(p => `
+      ? prods.map(p => {
+          const minPrice = !primary ? getMinPrice(p) : null;
+          return `
           <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
-            ${p.name}
-            <div class="qa-model">${p.modelCode || ''}</div>
-          </button>
-        `).join('')
+            <span class="qa-brand-tag">SK</span> ${p.name}
+            ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
+          </button>`;
+        }).join('')
       : `<div class="qa-empty">준비 중</div>`;
     return `<div class="qa-type-col"><div class="${labelClass}">${g.type}</div>${btnHtml}</div>`;
   }
