@@ -435,6 +435,7 @@ def tl_match_model(norm_code, tl_known_models):
     - 정확히 일치: 그대로 사용
     - TL 코드가 더 긴 경우 (에이컴즈 truncated): TL 코드 사용
     - 에이컴즈 코드가 더 긴 경우 (후행 색상코드): TL 코드로 트리밍
+    - MAT 사이즈 제거 후 재시도
     """
     if norm_code in tl_known_models:
         return norm_code
@@ -446,6 +447,16 @@ def tl_match_model(norm_code, tl_known_models):
     matched = [tl for tl in tl_known_models if norm_code.startswith(tl)]
     if matched:
         return max(matched, key=len)
+    # MAT 사이즈 제거 후 재시도
+    for stripped in _tl_model_variants(norm_code)[1:]:  # 첫 번째는 원본
+        if stripped in tl_known_models:
+            return stripped
+        for tl in sorted(tl_known_models, key=len):
+            if tl.startswith(stripped) and len(tl) > len(stripped):
+                return tl
+        matched2 = [tl for tl in tl_known_models if stripped.startswith(tl)]
+        if matched2:
+            return max(matched2, key=len)
     return norm_code
 
 def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months, ak_commission, is_package=False):
