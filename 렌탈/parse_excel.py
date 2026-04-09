@@ -520,9 +520,9 @@ if __name__ == "__main__":
 
             final_products.append(p_copy)
         try:
-            print(f"  [E열 정규화] {pname} -> {[tl_model_display.get(c,c) for c in codes]}")
-        except UnicodeEncodeError:
-            print(f"  [E열 정규화] -> {[tl_model_display.get(c,c) for c in codes]}")
+            codes_disp = [tl_model_display.get(c, c) for c in codes]
+            msg = f"  [E열 정규화] {pname} -> {codes_disp}"
+            print(msg.encode('cp949', errors='replace').decode('cp949'))
 
     data["products"] = final_products
 
