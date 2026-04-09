@@ -451,7 +451,7 @@ if __name__ == "__main__":
     print(f"JSON 저장: {json_out}")
 
     # ── HTML 생성 ──
-    tpl_path = os.path.join(base_dir, "sk_commission.html")
+    tpl_path = os.path.join(base_dir, "렌탈수수료_템플릿.html")
     if os.path.exists(tpl_path):
         with open(tpl_path, "r", encoding="utf-8") as f:
             html = f.read()
