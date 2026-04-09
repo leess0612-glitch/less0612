@@ -1339,6 +1339,215 @@ function showToast(msg) {
 
 function switchBrand(brand) {}
 
+// ══════════════════════════════════════════
+// ── 태그 관리 ──
+// ══════════════════════════════════════════
+
+const TAG_OPT_KEY  = 'rental_tag_options';
+const TAG_DATA_KEY = 'rental_product_tags';
+
+const DEFAULT_TAG_OPTIONS = {
+  급수: ['직수', '저수조'],
+  기능: ['냉정', '온정', '얼음', '냉온정', '정수전용', 'RO'],
+  형태: ['탁상형', '스탠드형', '언더싱크'],
+};
+
+function getTagOptions() {
+  try {
+    const s = localStorage.getItem(TAG_OPT_KEY);
+    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(DEFAULT_TAG_OPTIONS));
+  } catch { return JSON.parse(JSON.stringify(DEFAULT_TAG_OPTIONS)); }
+}
+
+function saveTagOptions(opts) {
+  localStorage.setItem(TAG_OPT_KEY, JSON.stringify(opts));
+}
+
+function getProductTags() {
+  try {
+    const s = localStorage.getItem(TAG_DATA_KEY);
+    return s ? JSON.parse(s) : {};
+  } catch { return {}; }
+}
+
+function saveProductTag(id, field, value) {
+  const all = getProductTags();
+  if (!all[id]) all[id] = {};
+  all[id][field] = value;
+  localStorage.setItem(TAG_DATA_KEY, JSON.stringify(all));
+}
+
+// ── 탭 전환 ──
+let tagMgrOpen = false;
+function toggleTagMgr() {
+  tagMgrOpen = !tagMgrOpen;
+  document.getElementById('main-layout').style.display = tagMgrOpen ? 'none' : 'flex';
+  document.getElementById('tag-mgr-page').classList.toggle('visible', tagMgrOpen);
+  document.getElementById('tag-mgr-tab').classList.toggle('active', tagMgrOpen);
+  if (tagMgrOpen) renderTagMgr();
+}
+
+// ── 태그 관리 테이블 렌더 ──
+function renderTagMgr() {
+  const prods = DB.products.filter(p => p.category === '정수기');
+  const allTags = getProductTags();
+  const opts = getTagOptions();
+  const tbody = document.getElementById('tmgr-tbody');
+
+  tbody.innerHTML = prods.map(p => {
+    const tag = allTags[p.id] || {};
+    const saved = !!allTags[p.id];
+
+    const 급수Sel = `
+      <select class="tmgr-select" onchange="onTagChange('${p.id}','급수',this.value)">
+        <option value="">선택</option>
+        ${opts.급수.map(v => `<option value="${v}" ${tag.급수===v?'selected':''}>${v}</option>`).join('')}
+      </select>`;
+
+    const 기능Multi = makeMultiSelect(p.id, '기능', opts.기능, tag.기능 || []);
+    const 형태Multi = makeMultiSelect(p.id, '형태', opts.형태, tag.형태 || []);
+
+    return `<tr id="tmgr-row-${p.id}">
+      <td class="tmgr-prod-name">${escHtml(p.name)}</td>
+      <td>${급수Sel}</td>
+      <td>${기능Multi}</td>
+      <td>${형태Multi}</td>
+      <td id="tmgr-status-${p.id}" class="${saved?'tmgr-saved':'tmgr-unsaved'}">${saved?'● 저장됨':'○ 미저장'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function makeMultiSelect(prodId, field, options, selected) {
+  const uid = `ms-${prodId}-${field}`;
+  const label = selected.length ? selected.join(', ') : '선택';
+  return `
+    <div class="multi-wrap" id="wrap-${uid}">
+      <button class="multi-btn" onclick="toggleMulti('${uid}')">
+        <span id="lbl-${uid}">${escHtml(label)}</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="multi-dropdown" id="dd-${uid}">
+        ${options.map(v => `
+          <label class="multi-opt">
+            <input type="checkbox" value="${v}" ${selected.includes(v)?'checked':''}
+              onchange="onMultiChange('${prodId}','${field}','${uid}')">
+            ${escHtml(v)}
+          </label>`).join('')}
+      </div>
+    </div>`;
+}
+
+function toggleMulti(uid) {
+  // 다른 드롭다운 닫기
+  document.querySelectorAll('.multi-dropdown.open').forEach(el => {
+    if (el.id !== `dd-${uid}`) { el.classList.remove('open'); el.previousElementSibling.classList.remove('open'); }
+  });
+  const dd = document.getElementById(`dd-${uid}`);
+  const btn = dd.previousElementSibling;
+  dd.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// 외부 클릭 시 드롭다운 닫기
+document.addEventListener('click', e => {
+  if (!e.target.closest('.multi-wrap')) {
+    document.querySelectorAll('.multi-dropdown.open').forEach(el => {
+      el.classList.remove('open');
+      el.previousElementSibling.classList.remove('open');
+    });
+  }
+});
+
+function onMultiChange(prodId, field, uid) {
+  const checks = document.querySelectorAll(`#dd-${uid} input[type=checkbox]`);
+  const selected = Array.from(checks).filter(c=>c.checked).map(c=>c.value);
+  document.getElementById(`lbl-${uid}`).textContent = selected.length ? selected.join(', ') : '선택';
+  saveProductTag(prodId, field, selected);
+  updateRowStatus(prodId);
+}
+
+function onTagChange(prodId, field, value) {
+  saveProductTag(prodId, field, value);
+  updateRowStatus(prodId);
+}
+
+function updateRowStatus(prodId) {
+  const el = document.getElementById(`tmgr-status-${prodId}`);
+  if (el) { el.textContent = '● 저장됨'; el.className = 'tmgr-saved'; }
+}
+
+// ── 항목값 관리 모달 ──
+function openOptModal() {
+  renderOptModal();
+  document.getElementById('opt-modal').classList.add('show');
+}
+function closeOptModal() {
+  document.getElementById('opt-modal').classList.remove('show');
+  renderTagMgr(); // 옵션 변경 후 테이블 갱신
+}
+
+function renderOptModal() {
+  const opts = getTagOptions();
+  const body = document.getElementById('opt-modal-body');
+  body.innerHTML = Object.keys(opts).map(field => `
+    <div class="opt-group">
+      <div class="opt-group-label">${field}</div>
+      <div class="opt-chips" id="chips-${field}">
+        ${opts[field].map(v => `
+          <span class="opt-chip">
+            ${escHtml(v)}
+            <span class="opt-chip-del" onclick="delTagOption('${field}','${escHtml(v)}')">×</span>
+          </span>`).join('')}
+      </div>
+      <div class="opt-add-row">
+        <input class="opt-add-input" id="opt-input-${field}" placeholder="새 항목 입력"
+          onkeydown="if(event.key==='Enter') addTagOption('${field}')">
+        <button class="opt-add-btn" onclick="addTagOption('${field}')">추가</button>
+      </div>
+    </div>`).join('');
+}
+
+function addTagOption(field) {
+  const input = document.getElementById(`opt-input-${field}`);
+  const val = input.value.trim();
+  if (!val) return;
+  const opts = getTagOptions();
+  if (opts[field].includes(val)) { input.value=''; return; }
+  opts[field].push(val);
+  saveTagOptions(opts);
+  input.value = '';
+  renderOptModal();
+}
+
+function delTagOption(field, val) {
+  // 해당 항목이 사용 중인지 확인
+  const allTags = getProductTags();
+  const usedBy = Object.entries(allTags).filter(([, t]) => {
+    if (field === '급수') return t.급수 === val;
+    return Array.isArray(t[field]) && t[field].includes(val);
+  }).map(([id]) => id);
+
+  if (usedBy.length > 0) {
+    const names = usedBy.map(id => {
+      const p = DB.products.find(p => p.id === id);
+      return p ? p.name : id;
+    });
+    if (!confirm(`"${val}"이(가) ${names.length}개 제품에 사용 중입니다.\n삭제하면 해당 제품의 태그에서도 제거됩니다. 계속하시겠습니까?`)) return;
+    // 사용 중인 태그 제거
+    usedBy.forEach(id => {
+      const t = allTags[id];
+      if (field === '급수' && t.급수 === val) t.급수 = '';
+      else if (Array.isArray(t[field])) t[field] = t[field].filter(v => v !== val);
+    });
+    localStorage.setItem(TAG_DATA_KEY, JSON.stringify(allTags));
+  }
+
+  const opts = getTagOptions();
+  opts[field] = opts[field].filter(v => v !== val);
+  saveTagOptions(opts);
+  renderOptModal();
+}
+
 init();
 </script>
 </body>
