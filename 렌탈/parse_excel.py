@@ -418,14 +418,12 @@ if __name__ == "__main__":
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # ── 에이컴즈 파싱 ──
-    print(f"[에이컴즈] 파싱 중: {filepath_sk}")
-    data = parse_excel(filepath_sk)
-
-    # ── 티엘 파싱 ──
+    # ── 티엘 파싱 (에이컴즈보다 먼저 — 모델코드 정규화에 TL 사용) ──
     tl_warning_models = []
     tl_lookup = {}
     tl_visit_cycle = {}
+    tl_model_display = {}
+    tl_known_models = set()
     try:
         from parse_tl_excel import parse_tl
         print(f"[티엘] 파싱 중: {filepath_tl}")
@@ -433,8 +431,89 @@ if __name__ == "__main__":
         tl_warning_models = tl_data.get("warningModels", [])
         tl_lookup = tl_data.get("optionLookup", {})
         tl_visit_cycle = tl_data.get("visitCycleLookup", {})
+        tl_model_display = tl_data.get("modelDisplayMap", {})
+        tl_known_models = set(k.split('|')[0] for k in tl_lookup.keys())
     except Exception as e:
         print(f"[티엘] 파싱 실패: {e}")
+
+    # ── 에이컴즈 파싱 ──
+    print(f"[에이컴즈] 파싱 중: {filepath_sk}")
+    data = parse_excel(filepath_sk)
+
+    # ── E열 모델코드 정규화 (C열 모델코드 없는 제품) ──
+    # WPUTD*114 → C형(하프), F형(스탠드) 두 제품으로 분리
+    normalized_products = []
+    for product in data["products"]:
+        if product.get("modelCode"):
+            normalized_products.append(product)
+            continue
+
+        # C열 모델코드 없는 제품: E열 option label에서 모델코드 추출
+        # 첫 번째 옵션의 label이 E열 원본에서 파생됨
+        # parse_excel에서 이미 clean_option_name 처리됨 → 원본 E열 필요
+        # → 제품명을 기반으로 별도 Excel 재스캔
+        # (간소화: products에 _raw_e 저장 방식 대신, 제품명→모델코드 매핑 사전 구축)
+        normalized_products.append(product)
+
+    # E열 원본값 재스캔으로 모델코드 추출
+    import openpyxl as _openpyxl
+    _wb = _openpyxl.load_workbook(filepath_sk, data_only=True)
+    _ws = _wb.worksheets[0]
+    _rows = list(_ws.iter_rows(values_only=True))
+    DATA_START_IDX = 7
+
+    # C열 없는 제품: 제품명 → [E열 첫 번째 값] 매핑
+    _no_model_e_map = {}   # product_name → [norm_code, ...]  (이미 TL 매핑된)
+    _cur_no_name = None
+    for _row in _rows[DATA_START_IDX:]:
+        _c2 = _row[2]
+        _c4 = _row[4]
+        if _c2 is not None and str(_c2).strip():
+            _mc, _pname = parse_product_name_from_col2(_c2)
+            if not _mc and _pname:
+                _cur_no_name = _pname
+                _e_val = clean(_c4) if _c4 else ""
+                _raw_codes = extract_e_model_codes(_e_val)
+                _matched = [tl_match_model(c, tl_known_models) for c in _raw_codes]
+                _no_model_e_map[_cur_no_name] = _matched
+            else:
+                _cur_no_name = None
+
+    # 모델코드 없는 제품에 모델코드 적용 + * 분리
+    final_products = []
+    for product in data["products"]:
+        if product.get("modelCode"):
+            final_products.append(product)
+            continue
+
+        pname = product.get("name", "")
+        codes = _no_model_e_map.get(pname, [])
+
+        if not codes:
+            # 매핑 실패 → 그대로 유지
+            final_products.append(product)
+            continue
+
+        for i, norm_code in enumerate(codes):
+            display_code = tl_model_display.get(norm_code, norm_code)
+            p_copy = dict(product)
+            p_copy["options"] = [dict(o) for o in product["options"]]
+            p_copy["modelCode"] = display_code
+            p_copy["id"] = norm_code
+
+            # 제품명에서 (하프/스탠드) 제거 후 형태 suffix 추가
+            if len(codes) == 2:
+                base_name = re.sub(r'\s*\(하프/스탠드\)\s*', '', pname).strip()
+                p_copy["name"] = base_name + (" 하프형" if i == 0 else " 스탠드형")
+
+            # D열 없는 제품 → 관리방식 "방문관리" 고정 (TL 확인됨)
+            for opt in p_copy["options"]:
+                opt["managementType"] = "방문관리"
+
+            final_products.append(p_copy)
+        print(f"  [E열 정규화] {pname} → {[tl_model_display.get(c,c) for c in codes]}")
+
+    data["products"] = final_products
 
     # ── 접수처 비교 + 패키지 옵션 생성 ──
     for product in data["products"]:
