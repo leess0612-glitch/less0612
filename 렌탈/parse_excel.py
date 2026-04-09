@@ -345,6 +345,40 @@ def _tl_model_variants(code):
         variants.append(f"MAT{mat_t.group(2)}")
     return variants
 
+def extract_e_model_codes(e_val):
+    """E열 값에서 모델코드 추출.
+    - (N년의무/의문) 등 괄호 제거
+    - 공백/하이픈 정규화
+    - * → C형, F형 두 개 반환
+    """
+    if not e_val:
+        return []
+    base = re.split(r'\(', e_val)[0].strip()
+    norm = re.sub(r'[\-\s]', '', base).upper()
+    if not norm:
+        return []
+    if '*' in norm:
+        return [norm.replace('*', 'C'), norm.replace('*', 'F')]
+    return [norm]
+
+def tl_match_model(norm_code, tl_known_models):
+    """정규화된 에이컴즈 E열 모델코드를 TL 모델코드로 매핑.
+    - 정확히 일치: 그대로 사용
+    - TL 코드가 더 긴 경우 (에이컴즈 truncated): TL 코드 사용
+    - 에이컴즈 코드가 더 긴 경우 (후행 색상코드): TL 코드로 트리밍
+    """
+    if norm_code in tl_known_models:
+        return norm_code
+    # TL이 더 긴 경우 (짧은 TL 코드부터 확인)
+    for tl in sorted(tl_known_models, key=len):
+        if tl.startswith(norm_code) and len(tl) > len(norm_code):
+            return tl
+    # 에이컴즈가 더 긴 경우 (긴 TL 코드부터 확인하여 가장 긴 prefix 매칭)
+    matched = [tl for tl in tl_known_models if norm_code.startswith(tl)]
+    if matched:
+        return max(matched, key=len)
+    return norm_code
+
 def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months, ak_commission, is_package=False):
     if "방문" in mgmt_type:
         tl_mgmt = "방문관리"
