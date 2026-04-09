@@ -462,7 +462,7 @@ if __name__ == "__main__":
                            .replace("__TL_WARNINGS__", tl_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")
-        out_html = os.path.join(base_dir, f"sk_commission_{month_tag}.html")
+        out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
         with open(out_html, "w", encoding="utf-8") as f:
             f.write(html_out_str)
         print(f"HTML 저장: {out_html}")
