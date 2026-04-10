@@ -516,6 +516,7 @@ if __name__ == "__main__":
     tl_visit_cycle = {}
     tl_model_display = {}
     tl_known_models = set()
+    tl_data = {"products": []}
     try:
         from parse_tl_excel import parse_tl
         print(f"[티엘] 파싱 중: {filepath_tl}")
