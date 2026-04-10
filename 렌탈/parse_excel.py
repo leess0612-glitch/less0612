@@ -747,8 +747,10 @@ if __name__ == "__main__":
 
         sk_js  = json.dumps(data, ensure_ascii=False)
         tl_js  = json.dumps(tl_warning_models, ensure_ascii=False)
+        cm_js  = json.dumps(code_mismatches, ensure_ascii=False)
         html_out_str = html.replace("__SK_DATA__", sk_js) \
-                           .replace("__TL_WARNINGS__", tl_js)
+                           .replace("__TL_WARNINGS__", tl_js) \
+                           .replace("__CODE_MISMATCHES__", cm_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
         out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
