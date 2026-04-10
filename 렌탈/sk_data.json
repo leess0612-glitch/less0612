@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-10 09:09"
+    "parsedAt": "2026-04-10 09:10"
   },
   "products": [
     {
@@ -11507,86 +11507,6 @@
       "name": "뉴슬림정수기 RO (하프)",
       "akCode": "WPUTDC10RRNW",
       "tlCode": "WPU-TDC10R"
-    },
-    {
-      "name": "워커힐클라우드-슈퍼싱글",
-      "akCode": "MATTSM430RLWH",
-      "tlCode": "MAT-SM430RLWH"
-    },
-    {
-      "name": "워커힐 스위트 슈퍼싱글",
-      "akCode": "MATSM230RSBR",
-      "tlCode": "MAT-230"
-    },
-    {
-      "name": "워커힐 스위트 퀸",
-      "akCode": "MATQM230RSBR",
-      "tlCode": "MAT-230"
-    },
-    {
-      "name": "워커힐 스위트 킹",
-      "akCode": "MATKM230RSBR",
-      "tlCode": "MAT-230"
-    },
-    {
-      "name": "워커힐 스탠다드 슈퍼싱글",
-      "akCode": "MATSM730RZOM",
-      "tlCode": "MAT-730"
-    },
-    {
-      "name": "워커힐 스탠다드 퀸",
-      "akCode": "MATQM730RZOM",
-      "tlCode": "MAT-730"
-    },
-    {
-      "name": "에코휴 파운데이션_슈퍼싱글",
-      "akCode": "MATSD011",
-      "tlCode": "MAT-D011"
-    },
-    {
-      "name": "에코휴 헤드보드패브릭_슈퍼싱글",
-      "akCode": "MATSH511",
-      "tlCode": "MAT-H511"
-    },
-    {
-      "name": "에코휴 오크우드 헤드보드 _퀸",
-      "akCode": "MATQH651",
-      "tlCode": "MAT-H651"
-    },
-    {
-      "name": "수납형 프레임 헤드 [슈퍼싱글]",
-      "akCode": "MATSH510RKWH",
-      "tlCode": "MAT-H510"
-    },
-    {
-      "name": "패브릭 /PVC 레더헤드보드 [슈퍼싱",
-      "akCode": "MATSH520RKIV",
-      "tlCode": "MAT-H520"
-    },
-    {
-      "name": "PVC 레더 헤드보드 [슈퍼싱글]",
-      "akCode": "MATSH530RKBE",
-      "tlCode": "MAT-H530"
-    },
-    {
-      "name": "패브릭/PVC레더 파운데이션 [슈퍼싱",
-      "akCode": "MATSF520RKIV",
-      "tlCode": "MAT-F520"
-    },
-    {
-      "name": "패브릭/PVC레더 파운데이션 [슈퍼싱",
-      "akCode": "MATSF530RKBE",
-      "tlCode": "MAT-F530"
-    },
-    {
-      "name": "패브릭/PVC레더파운데이션 [킹] 하",
-      "akCode": "MATKF520RKIV",
-      "tlCode": "MAT-F520"
-    },
-    {
-      "name": "패브릭/PVC레더파운데이션 [킹] 스",
-      "akCode": "MATKF530RKBE",
-      "tlCode": "MAT-F530"
     }
   ]
 }
