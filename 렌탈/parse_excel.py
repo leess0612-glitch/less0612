@@ -351,6 +351,13 @@ def parse_excel(filepath):
 def _norm_model(code):
     return re.sub(r'[\-\s]', '', str(code)).upper()
 
+def _fmt_code_display(norm):
+    """정규화된 모델코드를 읽기 쉬운 형식으로 변환 (WPU1234 → WPU-1234)"""
+    m = re.match(r'^(WPU|ACL|BID|MAT)(.+)$', norm)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}"
+    return norm
+
 def _tl_lookup_key(model_code, tl_mgmt, years, has_tasa, is_package):
     return f"{_norm_model(model_code)}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
 
