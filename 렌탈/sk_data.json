@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-10 09:07"
+    "parsedAt": "2026-04-10 09:09"
   },
   "products": [
     {
@@ -11507,16 +11507,6 @@
       "name": "뉴슬림정수기 RO (하프)",
       "akCode": "WPUTDC10RRNW",
       "tlCode": "WPU-TDC10R"
-    },
-    {
-      "name": "PSG 코어 공기청정기",
-      "akCode": "ACL130Z0SKPN라이트시리즈",
-      "tlCode": "ACL-130Z0SKPN"
-    },
-    {
-      "name": "코어360 공기청정기(13평형)",
-      "akCode": "ACL131T0CJDG라이트시리즈",
-      "tlCode": "ACL-131T0CJDG"
     },
     {
       "name": "워커힐클라우드-슈퍼싱글",
