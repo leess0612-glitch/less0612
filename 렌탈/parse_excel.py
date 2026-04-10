@@ -580,6 +580,8 @@ if __name__ == "__main__":
 
     # 모델코드 없는 제품에 모델코드 적용 + * 분리
     final_products = []
+    code_mismatches = []  # 에이컴즈 ↔ 티엘 코드 상이 목록
+
     for product in data["products"]:
         if product.get("modelCode"):
             final_products.append(product)
@@ -593,6 +595,7 @@ if __name__ == "__main__":
             continue
 
         codes = info["codes"]
+        raw_codes = info.get("raw_codes", codes)
         for i, norm_code in enumerate(codes):
             display_code = tl_model_display.get(norm_code, norm_code)
             p_copy = dict(product)
@@ -612,11 +615,26 @@ if __name__ == "__main__":
                     opt["managementType"] = "방문관리"
 
             final_products.append(p_copy)
+
+            # 코드 상이 감지: AK 원본 코드 ≠ TL 매칭 코드
+            if i < len(raw_codes):
+                raw = raw_codes[i]
+                if raw != norm_code and raw != _norm_model(display_code):
+                    # 짧은 AK 코드가 TL 긴 코드의 prefix인 경우 → 알림 대상
+                    ak_disp = tl_model_display.get(raw, raw)
+                    if ak_disp != display_code:
+                        code_mismatches.append({
+                            "name": p_copy["name"][:20],
+                            "akCode": ak_disp,
+                            "tlCode": display_code,
+                        })
+
         codes_disp = [tl_model_display.get(c, c) for c in codes]
         msg = f"  [E열 정규화] {pname} -> {codes_disp}"
         print(msg.encode('cp949', errors='replace').decode('cp949'))
 
     data["products"] = final_products
+    data["codeMismatches"] = code_mismatches
 
     # ── 접수처 비교 + 패키지 옵션 생성 ──
     for product in data["products"]:
