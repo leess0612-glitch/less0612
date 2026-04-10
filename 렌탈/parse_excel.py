@@ -420,6 +420,8 @@ def extract_e_model_codes(e_val):
     parts = [p.strip() for p in base.split('/') if p.strip()]
     results = []
     for part in parts:
+        # 라이트시리즈 제거 (모델코드 뒤에 붙는 경우: "ACL130Z0SKPN 라이트시리즈")
+        part = re.sub(r'\s*라이트시리즈\s*', '', part).strip()
         norm = re.sub(r'[\-\s]', '', part).upper()
         if not norm or len(norm) < 4:
             continue
