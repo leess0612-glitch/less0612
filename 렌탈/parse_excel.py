@@ -683,11 +683,20 @@ if __name__ == "__main__":
 
         # ── TL 전용 관리방식 보완 ──
         # AK에 없는 관리방식이 TL에 있으면 TL 데이터로 합성 옵션 추가
+        def _mgmt_base_key(mgmt):
+            if "방문" in mgmt: return "방문"
+            if "셀프" in mgmt: return "셀프"
+            if "관리없음" in mgmt: return "관리없음"
+            return mgmt
+
         ak_mgmt_years = set(
-            (o["managementType"].replace("_패키지",""), o["contractMonths"] // 12)
+            (_mgmt_base_key(o["managementType"]), o["contractMonths"] // 12)
             for o in product["options"]
             if not o.get("isPackage") and not o.get("source")
         )
+        # 이미 추가된 TL보완 옵션 중복 방지
+        tl_added = set()
+
         # TL product 데이터에서 해당 모델 찾기
         tl_products_data = tl_data.get("products", [])
         for mv in _tl_model_variants(model_code):
@@ -698,11 +707,17 @@ if __name__ == "__main__":
             for tl_prod in tl_prods:
                 for tl_opt in tl_prod.get("options", []):
                     tl_mgmt = tl_opt["managementType"]
+                    tl_mgmt_base = _mgmt_base_key(tl_mgmt)
                     tl_years = tl_opt["contractYears"]
                     tl_months = tl_years * 12
+                    dedup_key = (tl_mgmt, tl_years)
                     # AK에 이미 있는 관리방식+약정이면 스킵
-                    if (tl_mgmt, tl_years) in ak_mgmt_years:
+                    if (tl_mgmt_base, tl_years) in ak_mgmt_years:
                         continue
+                    # 이미 추가된 TL보완 중복 스킵
+                    if dedup_key in tl_added:
+                        continue
+                    tl_added.add(dedup_key)
                     # AK에 없는 TL 옵션 → 합성
                     syn_opt = {
                         "label": f"{tl_years}년",
