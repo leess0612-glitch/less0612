@@ -328,14 +328,26 @@
     letter-spacing: 0;
   }
 
-  /* ── 경고 팝업 ── */
-  #warn-popup {
+  /* ── 팝업 공통 ── */
+  #warn-popup, #code-mismatch-popup {
     display: none;
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,.45); z-index: 1000;
     align-items: center; justify-content: center;
   }
-  #warn-popup.show { display: flex; }
+  #warn-popup.show, #code-mismatch-popup.show { display: flex; }
+  #code-mismatch-popup .warn-msg {
+    font-size: 12px; text-align: left; max-height: 240px; overflow-y: auto;
+  }
+  #code-mismatch-popup .warn-msg table {
+    width: 100%; border-collapse: collapse; margin-top: 8px;
+  }
+  #code-mismatch-popup .warn-msg td {
+    padding: 3px 6px; border-bottom: 1px solid var(--gray-200); font-size: 11px;
+  }
+  #code-mismatch-popup .warn-msg td:first-child { color: var(--gray-600); width: 40%; }
+  #code-mismatch-popup .warn-msg td:nth-child(2) { color: #1d4ed8; font-weight: 600; }
+  #code-mismatch-popup .warn-msg td:nth-child(3) { color: #166534; font-weight: 600; }
   .warn-box {
     background: #fff; border-radius: 10px;
     padding: 28px 32px; max-width: 400px; width: 90%;
