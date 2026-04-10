@@ -1136,7 +1136,7 @@ function renderOptionList(product) {
       </td>
       ${hasOffice ? `<td>${officeBadge(o.recommendedOffice)}</td>` : ''}
       <td class="contract-cell">${o.contractLabel}</td>
-      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.dataWarning ? '<span class="warn-row-badge">⚠️ 5년이후 요금다름</span>' : ''}</td>` : ''}
+      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.source === 'TL' ? '<span class="mgmt-tl-only">티엘전용</span>' : ''}${o.dataWarning ? '<span class="warn-row-badge">⚠️ 5년이후 요금다름</span>' : ''}</td>` : ''}
       <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
       ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
       <td onclick="event.stopPropagation()">
