@@ -743,6 +743,26 @@ function init() {
   renderCategoryList();
   renderProductList();
   renderMain(); // 빠른 바로가기 패널 초기 렌더
+
+  // 접수처 모델명 상이 팝업 (세션당 1회)
+  if (CODE_MISMATCHES && CODE_MISMATCHES.length > 0 && !sessionStorage.getItem('codeMismatchShown')) {
+    sessionStorage.setItem('codeMismatchShown', '1');
+    showCodeMismatchPopup();
+  }
+}
+
+function showCodeMismatchPopup() {
+  const rows = CODE_MISMATCHES.map(m =>
+    `<tr><td>${escHtml(m.name)}</td><td>에이컴즈: ${escHtml(m.akCode)}</td><td>티엘: ${escHtml(m.tlCode)}</td></tr>`
+  ).join('');
+  const msg = document.getElementById('code-mismatch-msg');
+  msg.innerHTML = `에이컴즈와 티엘의 모델코드가 다른 제품입니다.<br>접수 시 각 접수처 코드를 확인하세요.<br>
+    <table>${rows}</table>`;
+  document.getElementById('code-mismatch-popup').classList.add('show');
+}
+
+function closeCodeMismatchPopup() {
+  document.getElementById('code-mismatch-popup').classList.remove('show');
 }
 
 // ── 카테고리 ──
