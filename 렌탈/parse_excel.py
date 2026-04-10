@@ -620,10 +620,10 @@ if __name__ == "__main__":
             final_products.append(p_copy)
 
             # 코드 상이 감지: AK 원본 코드 ≠ TL 매칭 코드
-            if i < len(raw_codes):
+            # MAT 제품은 시스템적 패턴(사이즈코드 차이)이므로 팝업 제외
+            if i < len(raw_codes) and not norm_code.startswith('MAT'):
                 raw = raw_codes[i]
                 if raw != norm_code and raw != _norm_model(display_code):
-                    # 짧은 AK 코드가 TL 긴 코드의 prefix인 경우 → 알림 대상
                     ak_disp = tl_model_display.get(raw, raw)
                     if ak_disp != display_code:
                         code_mismatches.append({
