@@ -554,7 +554,7 @@ if __name__ == "__main__":
     _rows = list(_ws.iter_rows(values_only=True))
     DATA_START_IDX = 7
 
-    # C열 없는 제품: 제품명 → {'codes': [...], 'd_empty': bool} 매핑
+    # C열 없는 제품: 제품명 → {'codes': [...], 'raw_codes': [...], 'd_empty': bool} 매핑
     # d_empty=True: 제품 헤더 행에 D열도 비어있음 → 관리방식 상속 오염 → "방문관리" 강제
     _no_model_e_map = {}
     _cur_no_name = None
@@ -572,7 +572,8 @@ if __name__ == "__main__":
                 _matched = [tl_match_model(c, tl_known_models) for c in _raw_codes]
                 _no_model_e_map[_cur_no_name] = {
                     "codes": _matched,
-                    "d_empty": not _d_val,  # 헤더행 D열이 비어있으면 관리방식 상속 오염
+                    "raw_codes": _raw_codes,  # AK 원본 코드 (정규화 후)
+                    "d_empty": not _d_val,
                 }
             else:
                 _cur_no_name = None
