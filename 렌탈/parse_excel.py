@@ -680,6 +680,53 @@ if __name__ == "__main__":
 
         product["options"] = regular_opts + package_opts
 
+        # ── TL 전용 관리방식 보완 ──
+        # AK에 없는 관리방식이 TL에 있으면 TL 데이터로 합성 옵션 추가
+        ak_mgmt_years = set(
+            (o["managementType"].replace("_패키지",""), o["contractMonths"] // 12)
+            for o in product["options"]
+            if not o.get("isPackage") and not o.get("source")
+        )
+        # TL product 데이터에서 해당 모델 찾기
+        tl_products_data = tl_data.get("products", [])
+        for mv in _tl_model_variants(model_code):
+            tl_prods = [p for p in tl_products_data
+                        if _norm_model(p["modelCode"]) == mv or
+                        _norm_model(p["modelCode"]).startswith(mv) or
+                        mv.startswith(_norm_model(p["modelCode"]))]
+            for tl_prod in tl_prods:
+                for tl_opt in tl_prod.get("options", []):
+                    tl_mgmt = tl_opt["managementType"]
+                    tl_years = tl_opt["contractYears"]
+                    tl_months = tl_years * 12
+                    # AK에 이미 있는 관리방식+약정이면 스킵
+                    if (tl_mgmt, tl_years) in ak_mgmt_years:
+                        continue
+                    # AK에 없는 TL 옵션 → 합성
+                    syn_opt = {
+                        "label": f"{tl_years}년",
+                        "managementType": tl_mgmt,
+                        "contractMonths": tl_months,
+                        "contractLabel": f"{tl_years}년",
+                        "monthlyFee": tl_opt["monthlyFee"],
+                        "dataWarning": False,
+                        "visitCycle": "",
+                        "ownershipMonths": 0,
+                        "registrationFee": 0,
+                        "baseCommission": 0,
+                        "additionalCount": 0,
+                        "additionalCommission": 0,
+                        "bonusCommission": 0,
+                        "totalCommission": tl_opt["commission"],
+                        "recommendedOffice": "티엘",
+                        "source": "TL",
+                    }
+                    product["options"].append(syn_opt)
+                    msg = f"  [TL보완] {model_code} +{tl_mgmt} {tl_years}년"
+                    print(msg.encode('cp949', errors='replace').decode('cp949'))
+            if tl_prods:
+                break
+
         # 관리주기 정보 (TL G열 기준)
         for mv in _tl_model_variants(model_code):
             if mv in tl_visit_cycle:
