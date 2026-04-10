@@ -683,6 +683,16 @@
 
 <div id="toast"></div>
 
+<!-- 모델코드 상이 안내 팝업 (페이지 로드 1회) -->
+<div id="code-mismatch-popup">
+  <div class="warn-box" style="max-width:420px">
+    <div class="warn-icon" style="font-size:28px">📋</div>
+    <div class="warn-title" style="color:#1d4ed8">접수처별 모델명 상이 확인 필요</div>
+    <div class="warn-msg" id="code-mismatch-msg"></div>
+    <button onclick="closeCodeMismatchPopup()" style="background:var(--brand)">확인</button>
+  </div>
+</div>
+
 <!-- 요금 경고 팝업 -->
 <div id="warn-popup">
   <div class="warn-box">
