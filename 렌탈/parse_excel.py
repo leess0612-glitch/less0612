@@ -631,11 +631,10 @@ if __name__ == "__main__":
             if i < len(raw_codes) and not norm_code.startswith('MAT'):
                 raw = raw_codes[i]
                 if raw != norm_code and raw != _norm_model(display_code):
-                    ak_disp = tl_model_display.get(raw, raw)
-                    if ak_disp != display_code:
+                    if display_code and _fmt_code_display(raw) != display_code:
                         code_mismatches.append({
                             "name": p_copy["name"][:20],
-                            "akCode": ak_disp,
+                            "akCode": _fmt_code_display(raw),
                             "tlCode": display_code,
                         })
 
