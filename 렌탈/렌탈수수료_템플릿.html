@@ -811,6 +811,13 @@ function init() {
     sessionStorage.setItem('codeMismatchShown', '1');
     showCodeMismatchPopup();
   }
+
+  // 정규화 이슈 팝업 (오늘 처음 열었을 때만)
+  const todayStr = new Date().toISOString().slice(0,10);
+  const skipDay = localStorage.getItem('normIssuesSkipDay');
+  if (NORM_ISSUES && NORM_ISSUES.length > 0 && skipDay !== todayStr) {
+    showNormIssuesPopup();
+  }
 }
 
 function showCodeMismatchPopup() {
