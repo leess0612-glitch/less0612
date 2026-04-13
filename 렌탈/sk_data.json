@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-14 08:43"
+    "parsedAt": "2026-04-14 08:48"
   },
   "products": [
     {
@@ -9578,7 +9578,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "",
@@ -9595,7 +9595,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "",
@@ -9612,7 +9612,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "5,000원할인",
@@ -9629,7 +9629,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "5,000원할인",
@@ -9646,7 +9646,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "5,000원할인",
@@ -9663,7 +9663,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 109000,
-          "recommendedOffice": null
+          "recommendedOffice": "동일"
         },
         {
           "label": "",
@@ -9680,7 +9680,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -9697,7 +9697,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -9714,7 +9714,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -9731,7 +9731,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -9748,7 +9748,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "5,000원할인",
@@ -9765,7 +9765,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 119000,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "",
@@ -9782,7 +9782,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 81750,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -9800,7 +9800,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 81750,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -9818,7 +9818,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 81750,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -9875,8 +9875,7 @@
           "recommendedOffice": "티엘",
           "source": "TL"
         }
-      ],
-      "oneSideOnly": "AK"
+      ]
     },
     {
       "id": "MATH520",
@@ -11532,14 +11531,6 @@
       "type": "AK_ONLY",
       "modelCode": "MATQM720R",
       "name": "워커힐 엠버서더 스위트_퀸",
-      "akDetail": "방문관리 5년; 방문관리 6년; 방문관리 7년",
-      "tlDetail": "티엘 파일에 해당 제품 없음",
-      "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
-    },
-    {
-      "type": "AK_ONLY",
-      "modelCode": "MAT-H510",
-      "name": "수납형 프레임 헤드 [슈퍼싱글]",
       "akDetail": "방문관리 5년; 방문관리 6년; 방문관리 7년",
       "tlDetail": "티엘 파일에 해당 제품 없음",
       "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
