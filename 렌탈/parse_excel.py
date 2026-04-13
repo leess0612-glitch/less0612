@@ -491,20 +491,23 @@ def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months
         "에이컴즈" | "티엘" | "동일" | None(TL 매칭 없음)
     """
     # ── 관리방식 → TL 관리방식 매핑 (복수 후보 허용) ──
-    # 관리없음 = MAT 자가관리 = TL 셀프관리
-    # 빈 mgmt_type = 관리방식 불명 → 방문/셀프 모두 시도
+    # MAT 헤드보드/파운데이션은 AK에서 방문관리로 파싱되더라도
+    # TL에서 관리없음으로 등록된 경우가 있어 양쪽 모두 시도
+    is_mat = _norm_model(model_code).startswith('MAT')
+
     if not mgmt_type:
-        tl_mgmts = ["방문관리", "셀프관리"]
+        tl_mgmts = ["방문관리", "셀프관리", "관리없음"]
     elif "방문" in mgmt_type:
-        tl_mgmts = ["방문관리"]
+        # MAT 제품은 관리없음도 fallback 시도 (헤드보드/파운데이션 AK↔TL 불일치)
+        tl_mgmts = ["방문관리", "관리없음"] if is_mat else ["방문관리"]
     elif "셀프" in mgmt_type:
-        tl_mgmts = ["셀프관리"]
+        tl_mgmts = ["셀프관리", "관리없음"]
     elif mgmt_type == "관리없음":
-        tl_mgmts = ["셀프관리", "관리없음"]  # MAT 관리없음 = TL 셀프관리
+        tl_mgmts = ["관리없음", "셀프관리"]
     elif "무방문형" in mgmt_type:
         tl_mgmts = ["셀프관리", "방문관리"]
     else:
-        tl_mgmts = ["방문관리", "셀프관리"]  # fallback: 모두 시도
+        tl_mgmts = ["방문관리", "셀프관리", "관리없음"]  # fallback: 모두 시도
 
     years = contract_months // 12
     has_tasa = "타사보상" in (mgmt_type or "")
