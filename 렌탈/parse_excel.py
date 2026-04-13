@@ -468,34 +468,68 @@ def tl_match_model(norm_code, tl_known_models):
             return max(matched2, key=len)
     return norm_code
 
-def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months, ak_commission, is_package=False):
-    if "방문" in mgmt_type:
-        tl_mgmt = "방문관리"
+def _extend_model_variants_with_prefix(base_variants, tl_known_models):
+    """base_variants 에 prefix 매칭으로 찾은 TL 모델코드도 추가"""
+    extended = list(base_variants)
+    for variant in base_variants:
+        # TL 코드가 더 긴 경우 (AK가 prefix)
+        for tl in sorted(tl_known_models, key=len):
+            if tl.startswith(variant) and tl not in extended:
+                extended.append(tl)
+        # AK 코드가 더 긴 경우 (TL이 prefix)
+        for tl in sorted(tl_known_models, key=len, reverse=True):
+            if variant.startswith(tl) and tl not in extended:
+                extended.append(tl)
+    return extended
+
+
+def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months,
+                                ak_commission, is_package=False, tl_known_models=None):
+    """에이컴즈 옵션 하나에 대해 접수처 추천을 반환.
+
+    Returns:
+        "에이컴즈" | "티엘" | "동일" | None(TL 매칭 없음)
+    """
+    # ── 관리방식 → TL 관리방식 매핑 (복수 후보 허용) ──
+    # 관리없음 = MAT 자가관리 = TL 셀프관리
+    # 빈 mgmt_type = 관리방식 불명 → 방문/셀프 모두 시도
+    if not mgmt_type:
+        tl_mgmts = ["방문관리", "셀프관리"]
+    elif "방문" in mgmt_type:
+        tl_mgmts = ["방문관리"]
     elif "셀프" in mgmt_type:
-        tl_mgmt = "셀프관리"
+        tl_mgmts = ["셀프관리"]
     elif mgmt_type == "관리없음":
-        tl_mgmt = "관리없음"
+        tl_mgmts = ["셀프관리", "관리없음"]  # MAT 관리없음 = TL 셀프관리
+    elif "무방문형" in mgmt_type:
+        tl_mgmts = ["셀프관리", "방문관리"]
     else:
-        return None
+        tl_mgmts = ["방문관리", "셀프관리"]  # fallback: 모두 시도
 
     years = contract_months // 12
-    has_tasa = "타사보상" in mgmt_type
-
-    # MAT 사이즈 추출 (사이즈별 수수료가 다를 수 있음)
+    has_tasa = "타사보상" in (mgmt_type or "")
     size = _get_mat_size(model_code)
 
+    # ── 모델코드 변형 목록 (MAT 사이즈 제거 + prefix 매칭) ──
+    base_variants = _tl_model_variants(model_code)
+    if tl_known_models:
+        model_keys = _extend_model_variants_with_prefix(base_variants, tl_known_models)
+    else:
+        model_keys = base_variants
+
     tl_commission = None
-    for model_key in _tl_model_variants(model_code):
-        # 1차: 사이즈 포함 키 조회
-        if size:
-            key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}|{size}"
+    for model_key in model_keys:
+        for tl_mgmt in tl_mgmts:
+            if size:
+                key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}|{size}"
+                if key in tl_lookup:
+                    tl_commission = tl_lookup[key]
+                    break
+            key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
             if key in tl_lookup:
                 tl_commission = tl_lookup[key]
                 break
-        # 2차: 사이즈 없는 키 조회 (fallback)
-        key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|{int(is_package)}"
-        if key in tl_lookup:
-            tl_commission = tl_lookup[key]
+        if tl_commission is not None:
             break
 
     if tl_commission is None:
