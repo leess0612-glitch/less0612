@@ -680,6 +680,14 @@ if __name__ == "__main__":
     data["codeMismatches"] = code_mismatches
 
     # ── 접수처 비교 + 패키지 옵션 생성 ──
+    def _mgmt_base_key(mgmt):
+        if "방문" in mgmt: return "방문"
+        if "셀프" in mgmt: return "셀프"
+        if "관리없음" in mgmt: return "관리없음"
+        return mgmt
+
+    normalization_issues = []  # [{type, modelCode, name, akDetail, tlDetail, reason}]
+
     for product in data["products"]:
         model_code = product.get("modelCode", "")
         regular_opts = list(product["options"])
@@ -691,9 +699,10 @@ if __name__ == "__main__":
             months = opt.get("contractMonths", 0)
             total_c = opt.get("totalCommission", 0)
 
-            # 접수처 비교
+            # 접수처 비교 (tl_known_models 전달 → prefix 매칭 활성화)
             opt["recommendedOffice"] = compute_recommended_office(
-                tl_lookup, model_code, mgmt, months, total_c, is_package=False
+                tl_lookup, model_code, mgmt, months, total_c,
+                is_package=False, tl_known_models=tl_known_models
             )
 
             # 패키지 옵션 생성 (타사보상 제외, 중복 방지)
@@ -717,7 +726,8 @@ if __name__ == "__main__":
             pkg_opt["totalCommission"] = pkg_commission
             pkg_opt["isPackage"] = True
             pkg_opt["recommendedOffice"] = compute_recommended_office(
-                tl_lookup, model_code, mgmt, months, pkg_commission, is_package=True
+                tl_lookup, model_code, mgmt, months, pkg_commission,
+                is_package=True, tl_known_models=tl_known_models
             )
             package_opts.append(pkg_opt)
 
@@ -725,12 +735,6 @@ if __name__ == "__main__":
 
         # ── TL 전용 관리방식 보완 ──
         # AK에 없는 관리방식이 TL에 있으면 TL 데이터로 합성 옵션 추가
-        def _mgmt_base_key(mgmt):
-            if "방문" in mgmt: return "방문"
-            if "셀프" in mgmt: return "셀프"
-            if "관리없음" in mgmt: return "관리없음"
-            return mgmt
-
         ak_mgmt_years = set(
             (_mgmt_base_key(o["managementType"]), o["contractMonths"] // 12)
             for o in product["options"]
@@ -739,57 +743,112 @@ if __name__ == "__main__":
         # 이미 추가된 TL보완 옵션 중복 방지
         tl_added = set()
 
-        # TL product 데이터에서 해당 모델 찾기
+        # TL product 데이터에서 해당 모델 찾기 (prefix 매칭 포함)
         tl_products_data = tl_data.get("products", [])
-        for mv in _tl_model_variants(model_code):
+        base_mvs = _tl_model_variants(model_code)
+        if tl_known_models:
+            all_mvs = _extend_model_variants_with_prefix(base_mvs, tl_known_models)
+        else:
+            all_mvs = base_mvs
+
+        tl_prods_found = []
+        for mv in all_mvs:
             tl_prods = [p for p in tl_products_data
                         if _norm_model(p["modelCode"]) == mv or
                         _norm_model(p["modelCode"]).startswith(mv) or
                         mv.startswith(_norm_model(p["modelCode"]))]
-            for tl_prod in tl_prods:
-                for tl_opt in tl_prod.get("options", []):
-                    tl_mgmt = tl_opt["managementType"]
-                    tl_mgmt_base = _mgmt_base_key(tl_mgmt)
-                    tl_years = tl_opt["contractYears"]
-                    tl_months = tl_years * 12
-                    dedup_key = (tl_mgmt, tl_years)
-                    # AK에 이미 있는 관리방식+약정이면 스킵
-                    if (tl_mgmt_base, tl_years) in ak_mgmt_years:
-                        continue
-                    # 이미 추가된 TL보완 중복 스킵
-                    if dedup_key in tl_added:
-                        continue
-                    tl_added.add(dedup_key)
-                    # AK에 없는 TL 옵션 → 합성
-                    syn_opt = {
-                        "label": f"{tl_years}년",
-                        "managementType": tl_mgmt,
-                        "contractMonths": tl_months,
-                        "contractLabel": f"{tl_years}년",
-                        "monthlyFee": tl_opt["monthlyFee"],
-                        "dataWarning": False,
-                        "visitCycle": "",
-                        "ownershipMonths": 0,
-                        "registrationFee": 0,
-                        "baseCommission": 0,
-                        "additionalCount": 0,
-                        "additionalCommission": 0,
-                        "bonusCommission": 0,
-                        "totalCommission": tl_opt["commission"],
-                        "recommendedOffice": "티엘",
-                        "source": "TL",
-                    }
-                    product["options"].append(syn_opt)
-                    msg = f"  [TL보완] {model_code} +{tl_mgmt} {tl_years}년"
-                    print(msg.encode('cp949', errors='replace').decode('cp949'))
             if tl_prods:
+                tl_prods_found = tl_prods
                 break
 
+        for tl_prod in tl_prods_found:
+            for tl_opt in tl_prod.get("options", []):
+                tl_mgmt = tl_opt["managementType"]
+                tl_mgmt_base = _mgmt_base_key(tl_mgmt)
+                tl_years = tl_opt["contractYears"]
+                tl_months = tl_years * 12
+                dedup_key = (tl_mgmt, tl_years)
+                # AK에 이미 있는 관리방식+약정이면 스킵
+                if (tl_mgmt_base, tl_years) in ak_mgmt_years:
+                    continue
+                # 이미 추가된 TL보완 중복 스킵
+                if dedup_key in tl_added:
+                    continue
+                tl_added.add(dedup_key)
+                # AK에 없는 TL 옵션 → 합성
+                syn_opt = {
+                    "label": f"{tl_years}년",
+                    "managementType": tl_mgmt,
+                    "contractMonths": tl_months,
+                    "contractLabel": f"{tl_years}년",
+                    "monthlyFee": tl_opt["monthlyFee"],
+                    "dataWarning": False,
+                    "visitCycle": "",
+                    "ownershipMonths": 0,
+                    "registrationFee": 0,
+                    "baseCommission": 0,
+                    "additionalCount": 0,
+                    "additionalCommission": 0,
+                    "bonusCommission": 0,
+                    "totalCommission": tl_opt["commission"],
+                    "recommendedOffice": "티엘",
+                    "source": "TL",
+                }
+                product["options"].append(syn_opt)
+                msg = f"  [TL보완] {model_code} +{tl_mgmt} {tl_years}년"
+                print(msg.encode('cp949', errors='replace').decode('cp949'))
+
         # 관리주기 정보 (TL G열 기준)
-        for mv in _tl_model_variants(model_code):
+        for mv in all_mvs:
             if mv in tl_visit_cycle:
                 product["visitCycleInfo"] = tl_visit_cycle[mv]
                 break
+
+        # ── 한쪽에만 있음(oneSideOnly) 판정 ──
+        # non-패키지, non-TL보완 옵션 중 TL 매칭된 게 하나도 없으면 AK만 있는 제품
+        regular_non_src = [o for o in product["options"]
+                           if not o.get("isPackage") and not o.get("source")]
+        matched_any = any(o.get("recommendedOffice") is not None for o in regular_non_src)
+        if regular_non_src and not matched_any:
+            product["oneSideOnly"] = "AK"
+            # 정규화 이슈 기록
+            ak_summary = "; ".join(
+                f"{o.get('managementType','?')} {o.get('contractMonths',0)//12}년"
+                for o in regular_non_src[:3]
+            )
+            normalization_issues.append({
+                "type": "AK_ONLY",
+                "modelCode": model_code,
+                "name": product.get("name", ""),
+                "akDetail": ak_summary,
+                "tlDetail": "티엘 파일에 해당 제품 없음",
+                "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
+            })
+
+    # ── 정규화 이슈 추가: 남은 관리방식 미매칭 옵션(제품 일부만 매칭 실패) ──
+    for product in data["products"]:
+        if product.get("oneSideOnly"):
+            continue  # 이미 위에서 처리됨
+        regular_non_src = [o for o in product["options"]
+                           if not o.get("isPackage") and not o.get("source")]
+        unmatched = [o for o in regular_non_src if o.get("recommendedOffice") is None]
+        matched = [o for o in regular_non_src if o.get("recommendedOffice") is not None]
+        if unmatched and matched:
+            # 일부 옵션만 매칭됨 → 부분 이슈로 기록
+            ak_unmatched_summary = "; ".join(
+                f"{o.get('managementType','?')} {o.get('contractMonths',0)//12}년"
+                for o in unmatched[:3]
+            )
+            normalization_issues.append({
+                "type": "PARTIAL",
+                "modelCode": product.get("modelCode",""),
+                "name": product.get("name",""),
+                "akDetail": f"매칭 실패: {ak_unmatched_summary}",
+                "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+                "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+            })
+
+    data["normalizationIssues"] = normalization_issues
 
     # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
@@ -797,18 +856,22 @@ if __name__ == "__main__":
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"JSON 저장: {json_out}")
 
+    print(f"정규화 이슈: {len(normalization_issues)}건 (AK만: {sum(1 for x in normalization_issues if x['type']=='AK_ONLY')}건, 부분: {sum(1 for x in normalization_issues if x['type']=='PARTIAL')}건)")
+
     # ── HTML 생성 ──
     tpl_path = os.path.join(base_dir, "렌탈수수료_템플릿.html")
     if os.path.exists(tpl_path):
         with open(tpl_path, "r", encoding="utf-8") as f:
             html = f.read()
 
-        sk_js  = json.dumps(data, ensure_ascii=False)
-        tl_js  = json.dumps(tl_warning_models, ensure_ascii=False)
-        cm_js  = json.dumps(code_mismatches, ensure_ascii=False)
+        sk_js   = json.dumps(data, ensure_ascii=False)
+        tl_js   = json.dumps(tl_warning_models, ensure_ascii=False)
+        cm_js   = json.dumps(code_mismatches, ensure_ascii=False)
+        ni_js   = json.dumps(normalization_issues, ensure_ascii=False)
         html_out_str = html.replace("__SK_DATA__", sk_js) \
                            .replace("__TL_WARNINGS__", tl_js) \
-                           .replace("__CODE_MISMATCHES__", cm_js)
+                           .replace("__CODE_MISMATCHES__", cm_js) \
+                           .replace("__NORM_ISSUES__", ni_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
         out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
