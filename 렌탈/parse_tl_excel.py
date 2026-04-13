@@ -159,8 +159,85 @@ def parse_tl(filepath):
                 "dataWarning": data_warning,
             })
 
+    # ── WW / PSG(P↔S) 변형 병합 ──
+    # 동일 수수료·요금이면 색상/협업 변형으로 간주 → products 목록에서 제거
+    # (optionLookup 항목은 유지 — AK에서 해당 코드로 조회 가능하도록)
+    merged_variants = []   # [{"removed": code, "mergedInto": code, "reason": str}]
+
+    def _opts_equal(opts_a, opts_b):
+        """옵션 리스트 수수료·요금 비교 (순서 무관)"""
+        if len(opts_a) != len(opts_b):
+            return False
+        key_fn = lambda o: (o["managementType"], o["contractYears"], o.get("hasTasa",False), o.get("size",""))
+        a_map = {key_fn(o): (o["monthlyFee"], o["commission"]) for o in opts_a}
+        b_map = {key_fn(o): (o["monthlyFee"], o["commission"]) for o in opts_b}
+        return a_map == b_map
+
+    # 1) WW 변형 감지 : "(WW)" 괄호형 또는 모델코드 끝이 WW
+    to_remove = []
+    for p in products:
+        mc = p["modelCode"]
+        norm_mc = normalize_model_code(mc)
+        if "(WW)" in mc:
+            base_mc = mc.replace("(WW)", "").strip()
+        elif norm_mc.endswith("WW") and len(norm_mc) > 4:
+            # 끝 WW 제거 후 base 탐색 (짧은 코드부터 매칭)
+            base_mc = None
+            for cand in sorted([p2["modelCode"] for p2 in products], key=len):
+                cand_norm = normalize_model_code(cand)
+                if cand_norm != norm_mc and norm_mc.startswith(cand_norm) and not normalize_model_code(cand).endswith("WW"):
+                    base_mc = cand
+                    break
+            if base_mc is None:
+                continue
+        else:
+            continue
+
+        base = next((x for x in products if x["modelCode"] == base_mc), None)
+        if base is None:
+            # base_mc에 정확히 일치하는 제품이 없으면 prefix 탐색
+            base = next((x for x in products
+                         if normalize_model_code(mc).startswith(normalize_model_code(x["modelCode"]))
+                         and not normalize_model_code(x["modelCode"]).endswith("WW")
+                         and x is not p), None)
+        if base and _opts_equal(p["options"], base["options"]):
+            to_remove.append(p)
+            # lookup 별칭 등록: WW 코드도 base 코드와 동일 커미션으로 이미 등록돼 있으므로 추가 작업 불필요
+            merged_variants.append({
+                "removed": mc, "mergedInto": base["modelCode"],
+                "reason": "위글위글(WW) 색상 변형 — 수수료 동일"
+            })
+            msg = f"  [WW병합] {mc} → {base['modelCode']}"
+            print(msg.encode('cp949', errors='replace').decode('cp949'))
+
+    for p in to_remove:
+        products.remove(p)
+
+    # 2) PSG(P 접미사) 변형 감지 : P↔S 쌍, 동일 수수료이면 P 제거
+    to_remove_psg = []
+    for p in products:
+        mc = p["modelCode"]
+        norm_mc = normalize_model_code(mc)
+        if not norm_mc.endswith("P"):
+            continue
+        # 같은 prefix + S 모델 탐색
+        s_mc_norm = norm_mc[:-1] + "S"
+        base_s = next((x for x in products if normalize_model_code(x["modelCode"]) == s_mc_norm), None)
+        if base_s and _opts_equal(p["options"], base_s["options"]):
+            to_remove_psg.append(p)
+            # lookup 별칭: P코드 → S코드 값으로 이미 각각 등록돼 있음
+            merged_variants.append({
+                "removed": mc, "mergedInto": base_s["modelCode"],
+                "reason": "PSG 협업 변형 — 수수료 동일"
+            })
+            msg = f"  [PSG병합] {mc} → {base_s['modelCode']}"
+            print(msg.encode('cp949', errors='replace').decode('cp949'))
+
+    for p in to_remove_psg:
+        products.remove(p)
+
     warn_count = len(warning_models)
-    print(f"[티엘] 파싱 완료: {len(products)}개 제품, "
+    print(f"[티엘] 파싱 완료: {len(products)}개 제품 (병합 {len(merged_variants)}개), "
           f"J≠K 경고 {warn_count}개: {sorted(warning_models) if warn_count else '없음'}")
 
     return {
@@ -175,6 +252,7 @@ def parse_tl(filepath):
         "optionLookup": option_lookup,
         "visitCycleLookup": visit_cycle_lookup,
         "modelDisplayMap": model_display_map,
+        "mergedVariants": merged_variants,
     }
 
 
