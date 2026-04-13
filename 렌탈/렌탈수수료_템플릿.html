@@ -724,6 +724,38 @@
 
 <div id="toast"></div>
 
+<!-- 정규화 이슈 팝업 (오늘 다시 보지 않기 지원) -->
+<div id="norm-issues-popup">
+  <div class="warn-box">
+    <div class="warn-icon" style="font-size:26px;margin-bottom:8px">⚠️</div>
+    <div class="warn-title" style="font-size:14px;color:#b91c1c;margin-bottom:6px">수수료 파일 정규화 미완료 항목</div>
+    <div style="font-size:12px;color:var(--gray-600);margin-bottom:8px">
+      에이컴즈↔티엘 간 자동 매칭이 완전히 되지 않은 제품입니다.<br>
+      해당 제품 선택 시 수수료 파일 원본을 반드시 확인하세요.
+    </div>
+    <div style="max-height:260px;overflow-y:auto">
+      <table class="ni-table">
+        <thead><tr><th>제품명</th><th>에이컴즈 상태</th><th>티엘 상태</th></tr></thead>
+        <tbody id="norm-issues-tbody"></tbody>
+      </table>
+    </div>
+    <div class="ni-footer">
+      <button class="ni-skip-today" onclick="normIssuesSkipToday()">오늘 다시 보지 않기</button>
+      <button class="ni-ok-btn" onclick="closeNormIssuesPopup()">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- 한쪽에만 있음 경고 팝업 -->
+<div id="one-side-popup">
+  <div class="warn-box">
+    <div class="warn-icon">📋</div>
+    <div class="warn-title" id="one-side-title" style="color:#b91c1c">에이컴즈에만 있는 제품</div>
+    <div class="warn-msg" id="one-side-msg"></div>
+    <button onclick="closeOneSidePopup()">확인</button>
+  </div>
+</div>
+
 <!-- 모델코드 상이 안내 팝업 (페이지 로드 1회) -->
 <div id="code-mismatch-popup">
   <div class="warn-box" style="max-width:420px">
