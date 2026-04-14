@@ -813,6 +813,12 @@ function init() {
     showCodeMismatchPopup();
   }
 
+  // 매칭확인 버튼: NORM_ISSUES 없으면 숨김
+  const normTab = document.getElementById('norm-issues-tab');
+  if (!NORM_ISSUES || NORM_ISSUES.length === 0) {
+    if (normTab) normTab.style.display = 'none';
+  }
+
   // 정규화 이슈 팝업 (오늘 처음 열었을 때만)
   const todayStr = new Date().toISOString().slice(0,10);
   const skipDay = localStorage.getItem('normIssuesSkipDay');
