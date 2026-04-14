@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-14 10:15"
+    "parsedAt": "2026-04-14 10:18"
   },
   "products": [
     {
@@ -11486,38 +11486,7 @@
       ]
     }
   ],
-  "codeMismatches": [
-    {
-      "name": "언더싱크 정수기   ☆",
-      "akCode": "WPU-9100C",
-      "tlCode": "WPU-9100CRE"
-    },
-    {
-      "name": "뉴슬림정수기 NANO 하프형",
-      "akCode": "WPU-TDC114RNW",
-      "tlCode": "WPU-TDC114"
-    },
-    {
-      "name": "뉴슬림정수기 NANO 스탠드형",
-      "akCode": "WPU-TDF114RNW",
-      "tlCode": "WPU-TDF114"
-    },
-    {
-      "name": "뉴슬림정수기 UF 하프형",
-      "akCode": "WPU-TDC104RNW",
-      "tlCode": "WPU-TDC104"
-    },
-    {
-      "name": "뉴슬림정수기 UF 스탠드형",
-      "akCode": "WPU-TDF104RNW",
-      "tlCode": "WPU-TDF104"
-    },
-    {
-      "name": "뉴슬림정수기 RO (하프)",
-      "akCode": "WPU-TDC10RRNW",
-      "tlCode": "WPU-TDC10R"
-    }
-  ],
+  "codeMismatches": [],
   "normalizationIssues": [
     {
       "type": "AK_ONLY",
