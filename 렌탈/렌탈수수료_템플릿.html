@@ -807,24 +807,27 @@ function init() {
   renderProductList();
   renderMain(); // 빠른 바로가기 패널 초기 렌더
 
-  // 접수처 모델명 상이 팝업 (세션당 1회)
-  if (CODE_MISMATCHES && CODE_MISMATCHES.length > 0 && !sessionStorage.getItem('codeMismatchShown')) {
-    sessionStorage.setItem('codeMismatchShown', '1');
-    showCodeMismatchPopup();
-  }
-
   // 매칭확인 버튼: NORM_ISSUES 없으면 숨김
   const normTab = document.getElementById('norm-issues-tab');
   if (!NORM_ISSUES || NORM_ISSUES.length === 0) {
     if (normTab) normTab.style.display = 'none';
   }
 
-  // 정규화 이슈 팝업 (오늘 처음 열었을 때만)
+  // 팝업 체인: 접수처 모델명 상이 팝업 → (닫힌 후) 정규화 이슈 팝업
+  // code-mismatch는 세션당 1회, norm-issues는 매 페이지 로드마다 (오늘 다시 보지 않기 누른 경우 제외)
   const todayStr = new Date().toISOString().slice(0,10);
   const skipDay = localStorage.getItem('normIssuesSkipDay');
-  if (NORM_ISSUES && NORM_ISSUES.length > 0 && skipDay !== todayStr) {
+  const shouldShowNorm = NORM_ISSUES && NORM_ISSUES.length > 0 && skipDay !== todayStr;
+
+  if (CODE_MISMATCHES && CODE_MISMATCHES.length > 0 && !sessionStorage.getItem('codeMismatchShown')) {
+    sessionStorage.setItem('codeMismatchShown', '1');
+    showCodeMismatchPopup();
+    // norm-issues는 code-mismatch 닫힐 때 체인으로 표시
+  } else if (shouldShowNorm) {
     showNormIssuesPopup();
   }
+  // shouldShowNorm 플래그를 전역에 저장 (closeCodeMismatchPopup에서 사용)
+  window._shouldShowNormAfterClose = shouldShowNorm;
 }
 
 function showCodeMismatchPopup() {
