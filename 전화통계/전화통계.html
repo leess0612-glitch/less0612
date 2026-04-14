@@ -768,6 +768,139 @@ document.getElementById('consultant-sel').addEventListener('change', render);
 
 // 초기 로드
 loadData();
+
+// ──────────────────────────────────────────
+// 엑셀 내보내기 (ExcelJS — 테이블 + 차트 이미지)
+// ──────────────────────────────────────────
+async function exportExcel() {
+  const btn = document.getElementById('btn-export');
+  const filtered = getFilteredRows();
+  const groupBy = getGroupBy();
+  const groups = groupRows(filtered, groupBy);
+
+  if (groups.length === 0) {
+    alert('내보낼 데이터가 없습니다.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '저장 중...';
+
+  try {
+    const wb = new ExcelJS.Workbook();
+    const ws = wb.addWorksheet('전화통계');
+
+    // ── 제목 행 ──
+    const titleLabel = document.getElementById('chart-title').textContent || '전화통계';
+    const consultantSel = document.getElementById('consultant-sel');
+    const categorySel = document.getElementById('category-sel');
+    const consultantText = consultantSel.options[consultantSel.selectedIndex].text;
+    const categoryText = categorySel.options[categorySel.selectedIndex].text;
+    const subtitle = [consultantText, categoryText].filter(t => !t.startsWith('전체')).join(' / ') || '전체';
+
+    ws.mergeCells('A1:D1');
+    const titleCell = ws.getCell('A1');
+    titleCell.value = `${titleLabel} [${subtitle}]`;
+    titleCell.font = { bold: true, size: 14 };
+    titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+    ws.getRow(1).height = 28;
+
+    ws.addRow([]); // 빈 행
+
+    // ── 헤더 ──
+    const headerRow = ws.addRow(['기간', '총 콜수', '접수', '접수율']);
+    headerRow.font = { bold: true };
+    headerRow.eachCell(cell => {
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A73E8' } };
+      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      cell.alignment = { horizontal: 'center', vertical: 'middle' };
+      cell.border = {
+        bottom: { style: 'thin', color: { argb: 'FFCCCCCC' } }
+      };
+    });
+    ws.getRow(headerRow.number).height = 22;
+
+    // ── 데이터 행 ──
+    for (const g of groups) {
+      const rate = parseFloat(g.rate);
+      const row = ws.addRow([g.label, g.total, g.accepted, g.rate + '%']);
+      row.getCell(1).alignment = { horizontal: 'center' };
+      row.getCell(2).alignment = { horizontal: 'center' };
+      row.getCell(3).alignment = { horizontal: 'center' };
+      const rateCell = row.getCell(4);
+      rateCell.alignment = { horizontal: 'center' };
+      rateCell.font = {
+        bold: true,
+        color: { argb: rate >= 60 ? 'FF0F9D58' : rate >= 30 ? 'FFF4B400' : 'FFDB4437' }
+      };
+      row.eachCell(cell => {
+        cell.border = { bottom: { style: 'thin', color: { argb: 'FFF0F0F0' } } };
+      });
+    }
+
+    // ── 합계 행 ──
+    const totals = groups.reduce((acc, g) => {
+      acc.total += g.total;
+      acc.accepted += g.accepted;
+      return acc;
+    }, { total: 0, accepted: 0 });
+    const totalRate = totals.total > 0 ? (totals.accepted / totals.total * 100).toFixed(1) : '0.0';
+    const sumRow = ws.addRow(['합계', totals.total, totals.accepted, totalRate + '%']);
+    sumRow.font = { bold: true };
+    sumRow.eachCell(cell => {
+      cell.alignment = { horizontal: 'center' };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8F9FA' } };
+      cell.border = { top: { style: 'medium', color: { argb: 'FFE8E8E8' } } };
+    });
+
+    // ── 열 너비 ──
+    ws.getColumn(1).width = 18;
+    ws.getColumn(2).width = 12;
+    ws.getColumn(3).width = 12;
+    ws.getColumn(4).width = 12;
+
+    // ── 차트 이미지 삽입 ──
+    if (mainChart) {
+      const chartBase64 = mainChart.toBase64Image('image/png', 1.0);
+      const base64Data = chartBase64.replace(/^data:image\/png;base64,/, '');
+
+      const imageId = wb.addImage({ base64: base64Data, extension: 'png' });
+
+      // 테이블 끝 행 다음에 여백 두고 이미지 삽입
+      const imgStartRow = sumRow.number + 2;
+      ws.addImage(imageId, {
+        tl: { col: 0, row: imgStartRow - 1 },
+        ext: { width: 640, height: 320 }
+      });
+
+      // 이미지가 들어갈 행 높이 확보
+      for (let i = imgStartRow; i < imgStartRow + 18; i++) {
+        ws.getRow(i).height = 18;
+      }
+    }
+
+    // ── 다운로드 ──
+    const buffer = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buffer], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const now = new Date();
+    const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}`;
+    a.href = url;
+    a.download = `전화통계_${dateStr}.xlsx`;
+    a.click();
+    URL.revokeObjectURL(url);
+
+  } catch(e) {
+    alert('엑셀 저장 중 오류가 발생했습니다.\n' + e.message);
+    console.error(e);
+  }
+
+  btn.disabled = false;
+  btn.textContent = '⬇ 엑셀 저장';
+}
 </script>
 </body>
 </html>
