@@ -1698,6 +1698,37 @@ function updateScrollForms() {
 }
 window.addEventListener('scroll', updateScrollForms, { passive: true });
 
+// Hero inline form phone format
+document.getElementById('heroPhone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
+  this.value = v;
+});
+
+// Hero inline form submit
+async function submitHeroForm() {
+  const phone = document.getElementById('heroPhone').value.trim();
+  if (!phone || phone.replace(/\D/g,'').length !== 11) {
+    alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return;
+  }
+  const btn = document.getElementById('heroSubmitBtn');
+  btn.disabled = true; btn.textContent = '신청 중...';
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      body: JSON.stringify({ name: '', phone, usim: '미지정', service: '미지정' })
+    });
+    document.getElementById('heroFormRow').style.display = 'none';
+    document.querySelector('.hero-form-label').style.display = 'none';
+    document.getElementById('heroSuccess').style.display = 'block';
+  } catch(e) {
+    alert('오류가 발생했습니다. 1600-4670으로 직접 문의해주세요.');
+    btn.disabled = false; btn.textContent = '무료 확인 →';
+  }
+}
+
 // Desktop bar phone format
 document.getElementById('deskPhone').addEventListener('input', function() {
   let v = this.value.replace(/\D/g,'');
