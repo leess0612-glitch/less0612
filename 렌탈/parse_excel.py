@@ -665,15 +665,25 @@ if __name__ == "__main__":
 
             # 코드 상이 감지: AK 원본 코드 ≠ TL 매칭 코드
             # MAT 제품은 시스템적 패턴(사이즈코드 차이)이므로 팝업 제외
+            # RNW(AK 접미사) / RE(TL 접미사) 는 알려진 버전 패턴이므로 제외
             if i < len(raw_codes) and not norm_code.startswith('MAT'):
                 raw = raw_codes[i]
                 if raw != norm_code and raw != _norm_model(display_code):
                     if display_code and _fmt_code_display(raw) != display_code:
-                        code_mismatches.append({
-                            "name": p_copy["name"][:20],
-                            "akCode": _fmt_code_display(raw),
-                            "tlCode": display_code,
-                        })
+                        ak_n = _norm_model(_fmt_code_display(raw))
+                        tl_n = _norm_model(display_code)
+                        # 알려진 접미사 패턴: AK에 RNW, TL에 RE
+                        is_known_suffix = (
+                            ak_n.endswith('RNW') and ak_n[:-3] == tl_n
+                        ) or (
+                            tl_n.endswith('RE') and tl_n[:-2] == ak_n
+                        )
+                        if not is_known_suffix:
+                            code_mismatches.append({
+                                "name": p_copy["name"][:20],
+                                "akCode": _fmt_code_display(raw),
+                                "tlCode": display_code,
+                            })
 
         codes_disp = [tl_model_display.get(c, c) for c in codes]
         msg = f"  [E열 정규화] {pname} -> {codes_disp}"
