@@ -813,9 +813,8 @@ function init() {
     if (normTab) normTab.style.display = 'none';
   }
 
-  // 접수처 모델명 상이 팝업 (세션당 1회)
-  if (CODE_MISMATCHES && CODE_MISMATCHES.length > 0 && !sessionStorage.getItem('codeMismatchShown')) {
-    sessionStorage.setItem('codeMismatchShown', '1');
+  // 접수처 모델명 상이 팝업 (매 페이지 로드마다)
+  if (CODE_MISMATCHES && CODE_MISMATCHES.length > 0) {
     showCodeMismatchPopup();
   }
 
