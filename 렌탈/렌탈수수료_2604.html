@@ -1409,7 +1409,7 @@ function formatVisitCycle(raw) {
     if (filterMatch) return `${filterMatch[1]}개월마다 필터발송`;
 
     // 필터증정
-    if (part.replace(/\s/g, '').includes('필터증정')) return '필터 증정';
+    if (part.replace(/\s/g, '').includes('필터증정')) return '매년 필터 일괄제공';
 
     // N개월 관리/방문 → (N<12: N개월마다, N>=12: N/12년마다) 방문관리
     const mgmtMatch = part.match(/(\d+)\s*개월\s*(관리|방문)/);
