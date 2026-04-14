@@ -1625,17 +1625,36 @@ async function submitForm() {
   const serviceText = [...selectedServices].map(s => serviceMap[s]).join('+');
   const usim = document.getElementById('usimCheck').checked ? 'Y' : 'N';
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
   try {
     await fetch(SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
+      method: 'POST', mode: 'no-cors', signal: controller.signal,
       body: JSON.stringify({ name, phone, usim, service: serviceText })
     });
+    clearTimeout(timeout);
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   } catch(e) {
+    clearTimeout(timeout);
     alert('오류가 발생했습니다. 잠시 후 다시 시도하거나\n1600-4670으로 직접 문의해주세요.');
     btn.disabled = false; btn.textContent = '내 최대 지원금 무료확인';
   }
+}
+
+function resetForm() {
+  document.getElementById('formContent').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+  document.getElementById('inputName').value = '';
+  document.getElementById('inputPhone').value = '';
+  document.getElementById('usimCheck').checked = false;
+  document.getElementById('c1').checked = false;
+  selectedServices = new Set(['internet']);
+  document.getElementById('tab-internet').classList.add('active');
+  document.getElementById('tab-rental').classList.remove('active');
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = false; btn.textContent = '내 최대 지원금 무료확인';
 }
 
 // 개인정보처리방침 모달
