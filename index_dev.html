@@ -168,6 +168,42 @@ section { padding: 72px 20px; }
 .ict-cert-title { font-size: 18px; font-weight: 800; color: #111827; line-height: 1.3; }
 .ict-cert-sub { font-size: 14px; color: #6b7280; margin-top: 4px; line-height: 1.6; }
 
+/* ===== TRUST SECTION ===== */
+.trust-section { background: #f8fafc; }
+.trust-worry { text-align: center; margin-bottom: 20px; }
+.trust-news-img { width: 100%; max-width: 720px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); margin-top: 24px; display: block; margin-left: auto; margin-right: auto; }
+.trust-solution { margin: 32px 0; }
+.trust-solution-inner {
+  background: linear-gradient(135deg, #0C2880 0%, #1461F0 100%);
+  border-radius: 20px; padding: 40px 48px; text-align: center; color: white;
+  max-width: 720px; margin: 0 auto;
+}
+.trust-sol-badge {
+  display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+  color: white; font-size: 13px; font-weight: 700; padding: 4px 16px; border-radius: 20px; margin-bottom: 16px;
+}
+.trust-sol-title { font-size: clamp(18px, 2.5vw, 26px); font-weight: 800; color: white; margin-bottom: 16px; letter-spacing: -0.5px; }
+.trust-sol-desc { font-size: clamp(15px, 1.8vw, 18px); color: rgba(255,255,255,0.9); line-height: 1.8; margin-bottom: 16px; }
+.trust-sol-desc strong { color: #fee500; }
+.trust-sol-notice { font-size: 15px; color: rgba(255,255,255,0.75); }
+.trust-sol-notice strong { color: white; font-weight: 800; }
+.trust-cert { text-align: center; margin-top: 20px; }
+.trust-cert-labels {
+  display: flex; gap: 24px; justify-content: center; margin: 28px auto 20px;
+  max-width: 720px;
+}
+.trust-cert-label-item {
+  flex: 1; background: white; border-radius: 14px; padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); text-align: center;
+}
+.trust-cert-label-item strong { font-size: 17px; font-weight: 800; color: var(--dark); display: block; margin-bottom: 8px; }
+.trust-cert-label-item p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+.trust-cert-img { width: 100%; max-width: 720px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); display: block; margin: 0 auto; }
+@media (max-width: 768px) {
+  .trust-solution-inner { padding: 28px 24px; }
+  .trust-cert-labels { flex-direction: column; gap: 12px; max-width: 100%; }
+}
+
 /* ===== BENEFITS ===== */
 .benefits { background: #f8fafc; }
 .benefits-grid {
