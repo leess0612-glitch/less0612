@@ -839,11 +839,6 @@ function showCodeMismatchPopup() {
 
 function closeCodeMismatchPopup() {
   document.getElementById('code-mismatch-popup').classList.remove('show');
-  // 팝업 체인: code-mismatch 닫힌 후 norm-issues 팝업 표시
-  if (window._shouldShowNormAfterClose) {
-    window._shouldShowNormAfterClose = false;
-    showNormIssuesPopup();
-  }
 }
 
 // ── 카테고리 ──
