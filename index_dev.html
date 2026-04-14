@@ -1586,90 +1586,23 @@ function openTerms() { document.getElementById('termsOverlay').classList.add('op
 function closeTerms() { document.getElementById('termsOverlay').classList.remove('open'); }
 function closeTermsOutside(e) { if (e.target.id === 'termsOverlay') closeTerms(); }
 
-// Sticky form 접기/펴기
-function toggleStickyForm() {
-  document.getElementById('stickyForm').classList.toggle('collapsed');
-}
-
-// 스크롤 폼 통합 트리거 (히어로 CTA 버튼이 뷰포트 밖으로 나가면 등장)
-const stickyForm = document.getElementById('stickyForm');
+// 스크롤 트리거 — 히어로 폼이 뷰포트 밖으로 나가면 CTA 바 등장
 const deskCtaBar = document.getElementById('deskCtaBar');
 const mobileCta  = document.getElementById('mobileCta');
-const applySection = document.getElementById('apply');
-const heroCta = document.querySelector('.hero-form-wrap');
+const heroFormWrap = document.querySelector('.hero-form-wrap');
 
 function updateScrollForms() {
-  const ctaHidden = heroCta.getBoundingClientRect().bottom <= 0;
-  const applyNear = applySection.getBoundingClientRect().top <= 100;
-  const isMobile  = window.innerWidth <= 768;
-  if (ctaHidden && !applyNear) {
-    if (isMobile) {
-      mobileCta.classList.add('visible');
-    } else {
-      stickyForm.classList.add('visible');
-      deskCtaBar.classList.add('visible');
-    }
+  const heroGone = heroFormWrap ? heroFormWrap.getBoundingClientRect().bottom <= 0 : true;
+  const isMobile = window.innerWidth <= 768;
+  if (heroGone) {
+    if (isMobile) { mobileCta.classList.add('visible'); }
+    else { deskCtaBar.classList.add('visible'); }
   } else {
     mobileCta.classList.remove('visible');
-    stickyForm.classList.remove('visible');
     deskCtaBar.classList.remove('visible');
   }
 }
 window.addEventListener('scroll', updateScrollForms, { passive: true });
-
-// Desktop bar phone format
-document.getElementById('deskPhone').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g,'');
-  if (v.length > 11) v = v.slice(0,11);
-  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
-  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
-  this.value = v;
-});
-
-// Desktop bar submit
-async function submitDeskForm() {
-  const name = document.getElementById('deskName').value.trim();
-  const phone = document.getElementById('deskPhone').value.trim();
-  if (!phone || phone.replace(/\D/g,'').length !== 11) { alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return; }
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, usim: '미지정', service: '미지정' })
-    });
-    document.querySelector('.desk-cta-top').style.display = 'none';
-    document.querySelector('.desk-cta-bottom').style.display = 'none';
-    document.getElementById('deskSuccess').style.display = 'block';
-  } catch(e) {
-    alert('오류가 발생했습니다. 1600-4670으로 문의해주세요.');
-  }
-}
-
-// Sticky phone format
-document.getElementById('stickyPhone').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g,'');
-  if (v.length > 11) v = v.slice(0,11);
-  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
-  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
-  this.value = v;
-});
-
-// Sticky form submit
-async function submitStickyForm() {
-  const name = document.getElementById('stickyName').value.trim();
-  const phone = document.getElementById('stickyPhone').value.trim();
-  if (!phone || phone.replace(/\D/g,'').length !== 11) { alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return; }
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      body: JSON.stringify({ name, phone, usim: '미지정', service: '미지정' })
-    });
-    document.getElementById('stickyFormContent').style.display = 'none';
-    document.getElementById('stickySuccess').style.display = 'block';
-  } catch(e) {
-    alert('오류가 발생했습니다. 1600-4670으로 문의해주세요.');
-  }
-}
 
 
 // Scroll animation
