@@ -753,52 +753,6 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   letter-spacing: -0.3px;
 }
 
-/* ===== HERO INLINE FORM ===== */
-.hero-inline-form { display: flex; flex-direction: column; align-items: center; }
-.hero-form-card {
-  background: rgba(255,255,255,0.13);
-  border: 1.5px solid rgba(255,255,255,0.28);
-  border-radius: 20px; padding: 26px 28px;
-  backdrop-filter: blur(8px);
-  width: 100%; max-width: 480px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-}
-.hero-form-label {
-  font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.88);
-  margin-bottom: 14px; text-align: center; line-height: 1.5;
-}
-.hero-form-label strong { color: #fee500; font-weight: 800; }
-.hero-form-row { display: flex; gap: 8px; }
-.hero-form-input {
-  flex: 1; padding: 14px 16px; border-radius: 12px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.96);
-  font-size: 16px; font-weight: 600; color: #0f172a;
-  font-family: 'SUIT', sans-serif; outline: none; transition: border 0.2s;
-}
-.hero-form-input:focus { border-color: #fee500; box-shadow: 0 0 0 3px rgba(254,229,0,0.2); }
-.hero-form-input::placeholder { color: #94a3b8; font-weight: 400; }
-.hero-form-btn {
-  padding: 14px 22px; border-radius: 12px; border: none; cursor: pointer;
-  background: #ff6b00; color: white; font-size: 16px; font-weight: 900;
-  white-space: nowrap; box-shadow: 0 6px 20px rgba(255,107,0,0.5);
-  transition: all 0.2s; letter-spacing: -0.3px; font-family: 'SUIT', sans-serif;
-}
-.hero-form-btn:hover { background: #e85e00; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,107,0,0.6); }
-.hero-form-btn:disabled { opacity: 0.7; transform: none; cursor: not-allowed; }
-.hero-form-success {
-  font-size: 15px; font-weight: 700; color: #fee500;
-  text-align: center; padding: 6px 0;
-}
-.hero-sub-text {
-  margin-top: 14px; margin-bottom: 0; font-size: 15px; color: rgba(255,255,255,0.75);
-}
-@media (max-width: 480px) {
-  .hero-form-card { padding: 20px 18px; }
-  .hero-form-row { flex-direction: column; gap: 10px; }
-  .hero-form-btn { width: 100%; padding: 15px; font-size: 17px; }
-}
-
 /* ===== URGENCY ===== */
 .hero-urgency {
   margin-top: 14px; margin-bottom: 0;
@@ -929,18 +883,9 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   <div class="hero-cash-badge">💰 최대 143만원 현금 당일입금</div>
   <h1>놓치고 있던<br class="mob-br"> <em>내 최대 지원금</em><br>당현함이<br class="fold-br"> 알려드릴게요!</h1>
   <p>인터넷가입·정수기·가전렌탈 시 최대 현금 지원, <strong>당일 지급</strong><br>모든 상품 비교 후 가장 유리한 조건으로 안내해드립니다</p>
-  <div class="hero-inline-form hero-cta">
-    <div class="hero-form-card">
-      <p class="hero-form-label">📱 전화번호만 입력하면 <strong>3분 안에</strong> 금액 알려드려요</p>
-      <div class="hero-form-row" id="heroFormRow">
-        <input type="tel" id="heroPhone" placeholder="010-0000-0000" class="hero-form-input">
-        <button onclick="submitHeroForm()" class="hero-form-btn" id="heroSubmitBtn">무료 확인 →</button>
-      </div>
-      <div class="hero-form-success" id="heroSuccess" style="display:none;">✅ 신청 완료! 담당자가 곧 연락드립니다.</div>
-    </div>
-    <p class="hero-sub-text">타업체보다 적다면? <strong style="color:#FFF200;">차액을 보상해드립니다.</strong></p>
-    <p class="hero-urgency">⏰ 오늘 오후 5:30 이전 설치 시 당일 입금</p>
-  </div>
+  <a href="#apply" class="hero-cta">내 최대 지원금<br class="fold-br"> 무료확인 →</a>
+  <p style="margin-top:10px;margin-bottom:0;font-size:15px;color:rgba(255,255,255,0.75);">타업체보다 적다면? <strong style="color:#FFF200;">차액을 보상해드립니다.</strong></p>
+  <p class="hero-urgency">⏰ 오늘 오후 5:30 이전 설치 시 당일 입금</p>
   <div class="hero-stats" style="margin-top:112px;">
     <div class="hero-stat">
       <span class="since-badge">📅 SINCE 2012</span>
@@ -1415,7 +1360,7 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
 <!-- MOBILE BOTTOM CTA -->
 <div class="mobile-cta-bar" id="mobileCta">
   <div class="mobile-cta-bar-inner">
-    <button class="mobile-cta-btn" onclick="location.href='#apply'">📱 전화번호 입력 → 3분 안에 금액 확인</button>
+    <button class="mobile-cta-btn" onclick="location.href='#apply'">내 최대 지원금 무료확인 →</button>
   </div>
 </div>
 
@@ -1680,7 +1625,7 @@ const applySection = document.getElementById('apply');
 const heroCta = document.querySelector('.hero-cta');
 
 function updateScrollForms() {
-  const ctaHidden = heroCta ? heroCta.getBoundingClientRect().bottom <= 0 : true;
+  const ctaHidden = heroCta.getBoundingClientRect().bottom <= 0;
   const applyNear = applySection.getBoundingClientRect().top <= 100;
   const isMobile  = window.innerWidth <= 768;
   if (ctaHidden && !applyNear) {
@@ -1697,37 +1642,6 @@ function updateScrollForms() {
   }
 }
 window.addEventListener('scroll', updateScrollForms, { passive: true });
-
-// Hero inline form phone format
-document.getElementById('heroPhone').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g,'');
-  if (v.length > 11) v = v.slice(0,11);
-  if (v.length >= 8) v = v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
-  else if (v.length >= 4) v = v.slice(0,3)+'-'+v.slice(3);
-  this.value = v;
-});
-
-// Hero inline form submit
-async function submitHeroForm() {
-  const phone = document.getElementById('heroPhone').value.trim();
-  if (!phone || phone.replace(/\D/g,'').length !== 11) {
-    alert('휴대폰 번호 11자리를 정확히 입력해주세요.\n(예: 010-1234-5678)'); return;
-  }
-  const btn = document.getElementById('heroSubmitBtn');
-  btn.disabled = true; btn.textContent = '신청 중...';
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST', mode: 'no-cors',
-      body: JSON.stringify({ name: '', phone, usim: '미지정', service: '미지정' })
-    });
-    document.getElementById('heroFormRow').style.display = 'none';
-    document.querySelector('.hero-form-label').style.display = 'none';
-    document.getElementById('heroSuccess').style.display = 'block';
-  } catch(e) {
-    alert('오류가 발생했습니다. 1600-4670으로 직접 문의해주세요.');
-    btn.disabled = false; btn.textContent = '무료 확인 →';
-  }
-}
 
 // Desktop bar phone format
 document.getElementById('deskPhone').addEventListener('input', function() {
