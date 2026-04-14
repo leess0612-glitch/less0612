@@ -1680,7 +1680,7 @@ const applySection = document.getElementById('apply');
 const heroCta = document.querySelector('.hero-cta');
 
 function updateScrollForms() {
-  const ctaHidden = heroCta.getBoundingClientRect().bottom <= 0;
+  const ctaHidden = heroCta ? heroCta.getBoundingClientRect().bottom <= 0 : true;
   const applyNear = applySection.getBoundingClientRect().top <= 100;
   const isMobile  = window.innerWidth <= 768;
   if (ctaHidden && !applyNear) {
