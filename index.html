@@ -921,9 +921,16 @@ footer { background: #0f172a; color: rgba(255,255,255,0.6); padding: 40px 20px; 
   <div class="hero-cash-badge">💰 최대 143만원 현금 당일입금</div>
   <h1>놓치고 있던<br class="mob-br"> <em>내 최대 지원금</em><br>당현함이<br class="fold-br"> 알려드릴게요!</h1>
   <p>인터넷가입·정수기·가전렌탈 시 최대 현금 지원, <strong>당일 지급</strong><br>모든 상품 비교 후 가장 유리한 조건으로 안내해드립니다</p>
-  <a href="#apply" class="hero-cta">내 최대 지원금<br class="fold-br"> 무료확인 →</a>
-  <p style="margin-top:10px;margin-bottom:0;font-size:15px;color:rgba(255,255,255,0.75);">타업체보다 적다면? <strong style="color:#FFF200;">차액을 보상해드립니다.</strong></p>
-  <p class="hero-urgency">⏰ 오늘 오후 5:30 이전 설치 시 당일 입금</p>
+  <div class="hero-inline-form hero-cta">
+    <p class="hero-inline-label">📱 전화번호만 입력하면 <strong>3분 안에</strong> 금액 알려드려요</p>
+    <div class="hero-form-row">
+      <input type="tel" id="heroPhone" placeholder="010-0000-0000" class="hero-form-input">
+      <button onclick="submitHeroForm()" class="hero-form-btn" id="heroSubmitBtn">무료 확인 →</button>
+    </div>
+    <div class="hero-form-success" id="heroSuccess" style="display:none;">✅ 신청 완료! 담당자가 곧 연락드립니다.</div>
+    <p class="hero-sub-text">타업체보다 적다면? <strong style="color:#FFF200;">차액을 보상해드립니다.</strong></p>
+    <p class="hero-urgency">⏰ 오늘 오후 5:30 이전 설치 시 당일 입금</p>
+  </div>
   <div class="hero-stats" style="margin-top:112px;">
     <div class="hero-stat">
       <span class="since-badge">📅 SINCE 2012</span>
