@@ -874,7 +874,7 @@ if __name__ == "__main__":
             ak_referenced_tl.add(v)
 
     for tl_product in tl_data.get("products", []):
-        tl_norm = normalize_model_code(tl_product["modelCode"])
+        tl_norm = _norm_model(tl_product["modelCode"])
         if tl_norm in ak_referenced_tl:
             continue
         # TL 전용 제품 — products에 추가
