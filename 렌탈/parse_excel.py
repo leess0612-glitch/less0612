@@ -256,13 +256,13 @@ def parse_excel(filepath):
         if mgmt_type is None:
             mgmt_type = current_mgmt_type
 
-        # ★ E열 "라이트시리즈" → 셀프관리 강제
-        # (비데/공기청정기에서 D열이 없거나 Lite로 표기된 경우 사용)
-        if "라이트시리즈" in col4:
+        # ★ E열 "라이트시리즈" → 비데에서만 셀프관리 강제
+        # (공기청정기의 "라이트시리즈"는 제품 시리즈명 — 방문관리)
+        if "라이트시리즈" in col4 and current_category == "비데":
             mgmt_type = "셀프관리"
             current_mgmt_type = "셀프관리"
-        # ★ 비데/공기청정기에서 D열 비어있고 라이트시리즈 아니면 방문관리
-        elif current_category in ("비데", "공기청정기") and not col3 and current_model_code:
+        # ★ 비데/공기청정기에서 D열 비어있거나 관리방식 아닌 값이면 방문관리
+        elif current_category in ("비데", "공기청정기") and (not col3 or normalize_management_type(col3) is None) and current_model_code:
             mgmt_type = "방문관리"
             current_mgmt_type = "방문관리"
 
