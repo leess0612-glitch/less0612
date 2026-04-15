@@ -858,6 +858,9 @@ if __name__ == "__main__":
                            if not o.get("isPackage") and not o.get("source")]
         unmatched = [o for o in regular_non_src if o.get("recommendedOffice") is None]
         matched = [o for o in regular_non_src if o.get("recommendedOffice") is not None]
+        # 부분미매칭 옵션에 akOnlyOption 플래그 추가 → HTML 뱃지 표시용
+        for o in unmatched:
+            o["akOnlyOption"] = True
         if unmatched and matched:
             # 일부 옵션만 매칭됨 → 부분 이슈로 기록
             ak_unmatched_summary = "; ".join(
