@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-15 16:27"
+    "parsedAt": "2026-04-15 16:47"
   },
   "products": [
     {
@@ -2781,7 +2781,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2951,7 +2952,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 310000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -3121,7 +3123,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "3년의문",
@@ -3273,7 +3276,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 310000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "3년의문",
@@ -3425,7 +3429,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 163000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "WPUTD*114RNW",
@@ -3541,7 +3546,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 163000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "WPUTD*114RNW",
@@ -3657,7 +3663,8 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 244700,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "WPUTD*104RNW",
@@ -3773,7 +3780,8 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 244700,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "WPUTD*104RNW",
@@ -3889,7 +3897,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -6707,7 +6716,8 @@
           "additionalCommission": 44700,
           "bonusCommission": 0,
           "totalCommission": 74700,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "라이트시리즈",
@@ -7061,7 +7071,8 @@
           "additionalCommission": 94500,
           "bonusCommission": 0,
           "totalCommission": 204500,
-          "recommendedOffice": null
+          "recommendedOffice": null,
+          "akOnlyOption": true
         },
         {
           "label": "라이트",
