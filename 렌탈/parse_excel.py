@@ -195,6 +195,11 @@ def parse_excel(filepath):
         # 새 제품 그룹 시작
         if col2 is not None and str(col2).strip():
             model_code, product_name = parse_product_name_from_col2(col2)
+            # C열에 모델코드 없으면 같은 행 E열에서 추출
+            if not model_code and col4:
+                _e_codes = extract_e_model_codes(col4)
+                if _e_codes:
+                    model_code = _e_codes[0]
             category = detect_category(model_code, product_name, i)
 
             # 구독/선결제/일시불/멤버쉽 섹션 스킵
