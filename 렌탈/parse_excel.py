@@ -861,6 +861,62 @@ if __name__ == "__main__":
                 "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
             })
 
+    # ── TL 전용 제품 감지 ──
+    # AK 제품이 참조한 TL 모델코드 수집
+    ak_referenced_tl = set()
+    for product in data["products"]:
+        mc = product.get("modelCode", "")
+        if not mc:
+            continue
+        variants = _tl_model_variants(mc)
+        extended = _extend_model_variants_with_prefix(variants, tl_known_models)
+        for v in extended:
+            ak_referenced_tl.add(v)
+
+    for tl_product in tl_data.get("products", []):
+        tl_norm = normalize_model_code(tl_product["modelCode"])
+        if tl_norm in ak_referenced_tl:
+            continue
+        # TL 전용 제품 — products에 추가
+        tl_only_entry = {
+            "modelCode": tl_product["modelCode"],
+            "name": tl_product["name"],
+            "category": detect_category(tl_product["modelCode"], tl_product["name"], -1),
+            "oneSideOnly": "TL",
+            "options": [],
+        }
+        for tl_opt in tl_product["options"]:
+            tl_years = tl_opt["contractYears"]
+            tl_only_entry["options"].append({
+                "label": f"{tl_years}년",
+                "managementType": tl_opt["managementType"],
+                "contractMonths": tl_years * 12,
+                "contractYears": tl_years,
+                "hasTasa": tl_opt.get("hasTasa", False),
+                "monthlyFee": tl_opt["monthlyFee"],
+                "baseCommission": 0,
+                "bonusCommission1": 0,
+                "bonusCommission2": 0,
+                "totalCommission": tl_opt["commission"],
+                "recommendedOffice": "티엘",
+                "source": "TL",
+                "dataWarning": False,
+            })
+        data["products"].append(tl_only_entry)
+        normalization_issues.append({
+            "type": "TL_ONLY",
+            "modelCode": tl_product["modelCode"],
+            "name": tl_product["name"],
+            "akDetail": "에이컴즈 파일에 해당 제품 없음",
+            "tlDetail": "; ".join(
+                f"{o['managementType']} {o['contractYears']}년"
+                for o in tl_product["options"][:3]
+            ),
+            "reason": "티엘 수수료 파일에만 존재 — 에이컴즈에서 해당 제품 미확인",
+        })
+        msg = f"  [TL전용] {tl_product['modelCode']} — {tl_product['name']}"
+        print(msg.encode('cp949', errors='replace').decode('cp949'))
+
     data["normalizationIssues"] = normalization_issues
 
     # ── JSON 저장 ──
