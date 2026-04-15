@@ -196,8 +196,9 @@ def parse_excel(filepath):
         # 새 제품 그룹 시작
         if col2 is not None and str(col2).strip():
             model_code, product_name = parse_product_name_from_col2(col2)
-            # C열에 모델코드 없으면 같은 행 E열에서 추출 (* 있으면 제외 — 별도 분리 로직이 처리)
-            if not model_code and col4 and '*' not in str(col4):
+            # C열에 모델코드 없으면 같은 행 E열에서 추출
+            # * 또는 / 있으면 제외 — 복수 코드는 별도 분리 로직(_no_model_e_map)이 처리
+            if not model_code and col4 and '*' not in str(col4) and '/' not in str(col4):
                 _e_codes = extract_e_model_codes(col4)
                 if _e_codes:
                     model_code = _e_codes[0]
