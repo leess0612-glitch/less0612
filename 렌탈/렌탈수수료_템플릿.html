@@ -958,10 +958,28 @@ function showOneSidePopup(side, productName) {
   const titleEl = document.getElementById('one-side-title');
   const msgEl   = document.getElementById('one-side-msg');
   const name    = escHtml(productName);
-  titleEl.textContent = '수수료비교 매칭 실패 제품';
-  msgEl.innerHTML = `<strong>${name}</strong><br><br>
-    수수료비교 매칭 실패제품입니다.<br>
-    <span style="color:#b91c1c;font-weight:700">양쪽 원본 파일 확인 필수</span>`;
+  let title, msg;
+  if (side === 'AK') {
+    title = '에이컴즈에만 존재하는 제품';
+    msg = `<strong>${name}</strong><br><br>
+      에이컴즈 파일에만 확인된 제품입니다.<br>
+      <span style="color:#b91c1c;font-weight:700">티엘 파일 확인 필요</span><br>
+      <span style="color:#6b7280;font-size:12px">아래 수수료는 에이컴즈 기준입니다.</span>`;
+  } else if (side === 'TL') {
+    title = '티엘에만 존재하는 제품';
+    msg = `<strong>${name}</strong><br><br>
+      티엘 파일에만 확인된 제품입니다.<br>
+      <span style="color:#b91c1c;font-weight:700">에이컴즈 파일 확인 필요</span><br>
+      <span style="color:#6b7280;font-size:12px">아래 수수료는 티엘 기준입니다.</span>`;
+  } else {
+    title = '일부 약정만 에이컴즈에 존재';
+    msg = `<strong>${name}</strong><br><br>
+      일부 약정 또는 관리방식이 에이컴즈에만 있습니다.<br>
+      <span style="color:#b91c1c;font-weight:700">티엘 파일 확인 필요</span><br>
+      <span style="color:#6b7280;font-size:12px">해당 약정은 에이컴즈 기준으로만 표시됩니다.</span>`;
+  }
+  titleEl.textContent = title;
+  msgEl.innerHTML = msg;
   document.getElementById('one-side-popup').classList.add('show');
 }
 function closeOneSidePopup() {
