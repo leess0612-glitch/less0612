@@ -933,13 +933,14 @@ function selectProduct(id) {
 
     // 부분미매칭 경고 (일부 약정만 한쪽에 존재)
     if (!product.oneSideOnly) {
-      const hasPartial = (DB.normalizationIssues || []).some(
-        issue => issue.type === 'PARTIAL' &&
-          (issue.modelCode || '').replace(/[-\s]/g,'').toUpperCase() ===
-          (product.modelCode || '').replace(/[-\s]/g,'').toUpperCase()
-      );
-      if (hasPartial) {
-        showOneSidePopup('PARTIAL', product.name || product.modelCode);
+      const hasAkOnly = product.options.some(o => o.akOnlyOption);
+      const hasTlOnly = product.options.some(o => o.source === 'TL');
+      if (hasAkOnly && hasTlOnly) {
+        showOneSidePopup('BOTH', product.name || product.modelCode);
+      } else if (hasAkOnly) {
+        showOneSidePopup('PARTIAL_AK', product.name || product.modelCode);
+      } else if (hasTlOnly) {
+        showOneSidePopup('PARTIAL_TL', product.name || product.modelCode);
       }
     }
 
