@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-15 14:00"
+    "parsedAt": "2026-04-15 16:13"
   },
   "products": [
     {
@@ -6560,7 +6560,7 @@
       "options": [
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리",
+          "managementType": "방문관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -6573,11 +6573,11 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 80700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 12900,
@@ -6590,11 +6590,11 @@
           "additionalCommission": 38700,
           "bonusCommission": 0,
           "totalCommission": 68700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "티엘"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -6612,7 +6612,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 10900,
@@ -6630,10 +6630,10 @@
         },
         {
           "label": "3년",
-          "managementType": "방문관리",
+          "managementType": "셀프관리",
           "contractMonths": 36,
           "contractLabel": "3년",
-          "monthlyFee": 26900,
+          "monthlyFee": 16900,
           "dataWarning": false,
           "visitCycle": "",
           "ownershipMonths": 0,
@@ -6642,16 +6642,16 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 202700,
+          "totalCommission": 70700,
           "recommendedOffice": "티엘",
           "source": "TL"
         },
         {
           "label": "5년",
-          "managementType": "방문관리",
+          "managementType": "셀프관리",
           "contractMonths": 60,
           "contractLabel": "5년",
-          "monthlyFee": 22900,
+          "monthlyFee": 12900,
           "dataWarning": false,
           "visitCycle": "",
           "ownershipMonths": 0,
@@ -6660,7 +6660,7 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 190700,
+          "totalCommission": 58700,
           "recommendedOffice": "티엘",
           "source": "TL"
         }
@@ -6677,7 +6677,7 @@
       "options": [
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리",
+          "managementType": "방문관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -6690,11 +6690,11 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 80700,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리",
+          "managementType": "방문관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 14900,
@@ -6711,7 +6711,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리",
+          "managementType": "방문관리",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 12900,
@@ -6724,11 +6724,11 @@
           "additionalCommission": 38700,
           "bonusCommission": 0,
           "totalCommission": 68700,
-          "recommendedOffice": null
+          "recommendedOffice": "에이컴즈"
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -6741,12 +6741,12 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 73200,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 12900,
@@ -6764,7 +6764,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "셀프관리_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 60,
           "contractLabel": "5년",
           "monthlyFee": 10900,
@@ -6777,48 +6777,11 @@
           "additionalCommission": 38700,
           "bonusCommission": 0,
           "totalCommission": 61200,
-          "recommendedOffice": null,
+          "recommendedOffice": "티엘",
           "isPackage": true
-        },
-        {
-          "label": "3년",
-          "managementType": "방문관리",
-          "contractMonths": 36,
-          "contractLabel": "3년",
-          "monthlyFee": 16900,
-          "dataWarning": false,
-          "visitCycle": "",
-          "ownershipMonths": 0,
-          "registrationFee": 0,
-          "baseCommission": 0,
-          "additionalCount": 0,
-          "additionalCommission": 0,
-          "bonusCommission": 0,
-          "totalCommission": 67100,
-          "recommendedOffice": "티엘",
-          "source": "TL"
-        },
-        {
-          "label": "5년",
-          "managementType": "방문관리",
-          "contractMonths": 60,
-          "contractLabel": "5년",
-          "monthlyFee": 12900,
-          "dataWarning": false,
-          "visitCycle": "",
-          "ownershipMonths": 0,
-          "registrationFee": 0,
-          "baseCommission": 0,
-          "additionalCount": 0,
-          "additionalCommission": 0,
-          "bonusCommission": 0,
-          "totalCommission": 38700,
-          "recommendedOffice": "티엘",
-          "source": "TL"
         }
       ],
-      "visitCycleInfo": "12개월 방문",
-      "oneSideOnly": "AK"
+      "visitCycleInfo": "12개월 방문"
     },
     {
       "id": "BIDS17D",
@@ -7458,7 +7421,7 @@
       "options": [
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 26900,
@@ -7492,7 +7455,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 24900,
@@ -7525,24 +7488,6 @@
           "totalCommission": 224500,
           "recommendedOffice": "티엘",
           "isPackage": true
-        },
-        {
-          "label": "3년",
-          "managementType": "방문관리",
-          "contractMonths": 36,
-          "contractLabel": "3년",
-          "monthlyFee": 26900,
-          "dataWarning": false,
-          "visitCycle": "",
-          "ownershipMonths": 0,
-          "registrationFee": 0,
-          "baseCommission": 0,
-          "additionalCount": 0,
-          "additionalCommission": 0,
-          "bonusCommission": 0,
-          "totalCommission": 264500,
-          "recommendedOffice": "티엘",
-          "source": "TL"
         }
       ],
       "visitCycleInfo": "4개월관리"
@@ -11979,14 +11924,6 @@
   "normalizationIssues": [
     {
       "type": "AK_ONLY",
-      "modelCode": "ACL131T0CJDG",
-      "name": "코어360 공기청정기(13평형)",
-      "akDetail": "셀프관리 3년; 셀프관리 4년; 셀프관리 5년",
-      "tlDetail": "티엘 파일에 해당 제품 없음",
-      "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
-    },
-    {
-      "type": "AK_ONLY",
       "modelCode": "MATQM720R",
       "name": "워커힐 엠버서더 스위트_퀸",
       "akDetail": "방문관리 5년; 방문관리 6년; 방문관리 7년",
@@ -12070,6 +12007,14 @@
       "modelCode": "WPUTDC10RRNW",
       "name": "뉴슬림정수기 RO (하프)",
       "akDetail": "매칭 실패:  6년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "ACL131T0CJDG",
+      "name": "코어360 공기청정기(13평형)",
+      "akDetail": "매칭 실패: 방문관리 4년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
