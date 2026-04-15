@@ -923,18 +923,33 @@ function selectProduct(id) {
   renderMain();
   const product = DB.products.find(p => p.id === id);
   if (product) {
-    // 한쪽에만 있음 경고 (최우선)
+    // 한쪽에만 있음 경고 → 팝업 표시 후 수수료표는 정상 표시
     if (product.oneSideOnly === 'AK') {
       showOneSidePopup('AK', product.name || product.modelCode);
-      return;
+    } else if (product.oneSideOnly === 'TL') {
+      showOneSidePopup('TL', product.name || product.modelCode);
+    }
+
+    // 부분미매칭 경고 (일부 약정만 한쪽에 존재)
+    if (!product.oneSideOnly) {
+      const hasPartial = (DB.normalizationIssues || []).some(
+        issue => issue.type === 'PARTIAL' &&
+          (issue.modelCode || '').replace(/[-\s]/g,'').toUpperCase() ===
+          (product.modelCode || '').replace(/[-\s]/g,'').toUpperCase()
+      );
+      if (hasPartial) {
+        showOneSidePopup('PARTIAL', product.name || product.modelCode);
+      }
     }
 
     // 에이컴즈 F≠G 또는 티엘 J≠K 경고
-    const skWarn = product.options.some(o => o.dataWarning);
-    const modelNorm = (product.modelCode || '').replace(/\s+/g,'').toUpperCase();
-    const tlWarn = TL_WARNINGS.some(w => w.replace(/\s+/g,'').toUpperCase() === modelNorm);
-    if (skWarn || tlWarn) {
-      showWarnPopup(skWarn, tlWarn);
+    if (!product.oneSideOnly) {
+      const skWarn = product.options.some(o => o.dataWarning);
+      const modelNorm = (product.modelCode || '').replace(/\s+/g,'').toUpperCase();
+      const tlWarn = TL_WARNINGS.some(w => w.replace(/\s+/g,'').toUpperCase() === modelNorm);
+      if (skWarn || tlWarn) {
+        showWarnPopup(skWarn, tlWarn);
+      }
     }
   }
 }
