@@ -928,6 +928,12 @@ function selectProduct(id) {
   renderMain();
   const product = DB.products.find(p => p.id === id);
   if (product) {
+    // LG 팝업 예외 처리
+    if (currentBrand === 'lg') {
+      const popupOpt = product.options.find(o => o.lgPopup);
+      if (popupOpt) showLgPopup(product.modelCode, popupOpt.lgPopup);
+      return;
+    }
     // 한쪽에만 있음 경고 → 팝업 표시 후 수수료표는 정상 표시
     if (product.oneSideOnly === 'AK') {
       showOneSidePopup('AK', product.name || product.modelCode);
