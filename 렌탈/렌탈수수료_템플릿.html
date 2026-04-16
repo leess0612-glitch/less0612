@@ -1638,7 +1638,8 @@ function transformLgData(raw) {
         contractLabel:    `${o.contractYears}년`,
         managementType:   manageDisplay,
         lgCombineType:    o.combineType,
-        isPackage:        o.combineType === '결합',
+        isPackage:        false,         // LG는 패키지 없음
+        lgCombine:        o.combineType === '결합',
         monthlyFee:       o.monthlyFee || 0,
         visitCycle:       o.manageCycle || null,
         totalCommission:  (o.commission && (o.commission.ak || o.commission.tl)) || 0,
