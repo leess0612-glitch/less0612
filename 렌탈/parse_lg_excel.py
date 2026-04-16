@@ -327,6 +327,35 @@ def parse_lg(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
     }
 
 
+def inject_lg_into_html(data, base_dir):
+    """
+    렌탈수수료_*.html (가장 최신) 에서 __LG_DATA__ 플레이스홀더를 LG JSON으로 대체한다.
+    """
+    import glob as glob_mod
+
+    # 가장 최신 출력 HTML 탐색 (렌탈수수료_2604.html 등)
+    pattern = os.path.join(base_dir, '렌탈수수료_[0-9]*.html')
+    candidates = sorted(glob_mod.glob(pattern))
+    if not candidates:
+        print('⚠️  렌탈수수료_*.html 파일을 찾지 못했습니다. parse_excel.py 를 먼저 실행하세요.')
+        return
+
+    target = candidates[-1]  # 가장 최신 파일
+    with open(target, 'r', encoding='utf-8') as f:
+        html = f.read()
+
+    if '__LG_DATA__' not in html:
+        print(f'⚠️  {os.path.basename(target)} 에 __LG_DATA__ 플레이스홀더가 없습니다.')
+        return
+
+    lg_js = json.dumps(data, ensure_ascii=False)
+    html_out = html.replace('__LG_DATA__', lg_js)
+
+    with open(target, 'w', encoding='utf-8') as f:
+        f.write(html_out)
+    print(f'HTML 주입 완료: {target}')
+
+
 if __name__ == '__main__':
     import sys
     ac = sys.argv[1] if len(sys.argv) > 1 else AC_PATH
@@ -340,3 +369,5 @@ if __name__ == '__main__':
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f'\nJSON 저장: {out}')
     print(f'완료! 제품 수: {len(data["products"])}개')
+
+    inject_lg_into_html(data, base_dir)
