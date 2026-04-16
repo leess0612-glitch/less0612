@@ -668,7 +668,7 @@
   </div>
   <div class="brand-tabs">
     <div class="brand-tab active" onclick="switchBrand('sk')">SK매직</div>
-    <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">LG전자</div>
+    <div class="brand-tab" onclick="switchBrand('lg')">LG전자</div>
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">코웨이</div>
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">쿠쿠</div>
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">청호</div>
@@ -780,7 +780,7 @@
 </div>
 
 <script>
-const DB = __SK_DATA__;
+let DB = __SK_DATA__;
 const CODE_MISMATCHES = __CODE_MISMATCHES__;
 const NORM_ISSUES = __NORM_ISSUES__;
 
