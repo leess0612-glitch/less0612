@@ -1056,15 +1056,8 @@ function headerSearchInput() {
   const dd = document.getElementById('header-search-dropdown');
   if (!val) { dd.classList.remove('open'); dd.innerHTML = ''; return; }
 
-  // 현재 활성 DB 검색 + 상대 브랜드 DB 병합
-  const SK_DB_RAW = DB; // 이미 const가 아님 — 현재 활성 DB
-  const lgTransformed = LG_RAW ? transformLgData(LG_RAW) : null;
-  const skProducts = currentBrand === 'sk' ? DB.products : [];
-  const lgProducts = lgTransformed ? lgTransformed.products : [];
-  const allProducts = [
-    ...skProducts.map(p => ({ ...p, brandLabel: 'SK매직' })),
-    ...lgProducts.map(p => ({ ...p, brandLabel: 'LG전자' })),
-  ];
+  // 현재 활성 DB 검색
+  const allProducts = DB.products.map(p => ({ ...p, brandLabel: DB.metadata?.brand || 'SK매직' }));
 
   const lower = val.toLowerCase();
   const results = allProducts.filter(p =>
