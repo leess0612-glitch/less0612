@@ -1485,7 +1485,8 @@ function buildCopyText() {
   );
   if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
-  let text = `[SK매직] ${getDisplayName(product)}\n`;
+  const brandLabel = currentBrand === 'lg' ? 'LG전자' : 'SK매직';
+  let text = `[${brandLabel}] ${getDisplayName(product)}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
   text += '\n';
 
