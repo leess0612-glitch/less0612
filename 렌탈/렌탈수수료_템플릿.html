@@ -1289,18 +1289,24 @@ function renderOptionList(product) {
     const groupIdx = mgmtGroupMap[o.managementType || ''] ?? 0;
     const shadeClass = (groupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
 
-    // 패키지/결합 구분선
+    // 패키지 구분선 (SK)
     if (isPkg && !pkgSepAdded) {
       pkgSepAdded = true;
       const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
-      const isLg = currentBrand === 'lg';
-      const sepText = isLg ? '── 결합 할인 적용 ──' : '── 패키지 (동일 브랜드 2개 이상) ──';
-      const pkgNote = isLg ? '' : (PKG_NOTES[product.category] || '');
+      const pkgNote = PKG_NOTES[product.category] || '';
       rowsHtml += `<tr class="pkg-sep">
         <td colspan="${totalColspan}">
-          ${sepText}
+          ── 패키지 (동일 브랜드 2개 이상) ──
           ${pkgNote ? `<span class="pkg-note">${pkgNote}</span>` : ''}
         </td>
+      </tr>`;
+    }
+    // 결합 구분선 (LG)
+    if (isLgCombine && !pkgSepAdded) {
+      pkgSepAdded = true;
+      const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
+      rowsHtml += `<tr class="pkg-sep">
+        <td colspan="${totalColspan}">── 결합 할인 적용 ──</td>
       </tr>`;
     }
 
