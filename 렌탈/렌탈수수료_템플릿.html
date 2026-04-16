@@ -1609,7 +1609,106 @@ function showToast(msg) {
 }
 
 
-function switchBrand(brand) {}
+// ── LG 데이터 변환 ──
+let _LG_DB_CACHE = null;
+function getLgDb() {
+  if (!_LG_DB_CACHE) _LG_DB_CACHE = transformLgData(LG_RAW);
+  return _LG_DB_CACHE;
+}
+
+function transformLgData(raw) {
+  if (!raw || !raw.products) return { metadata: {}, products: [] };
+  const products = raw.products.map(p => {
+    // 단품 먼저, 결합 나중 / 각 그룹 내 약정 내림차순
+    const sorted = [...p.options].sort((a, b) => {
+      if (a.combineType !== b.combineType)
+        return a.combineType === '단품' ? -1 : 1;
+      if (b.contractYears !== a.contractYears)
+        return b.contractYears - a.contractYears;
+      return (a.manageType || '').localeCompare(b.manageType || '');
+    });
+
+    const options = sorted.map(o => {
+      const manageDisplay = o.manageType === '방문관리'
+        ? `방문관리(${o.manageCycle})`
+        : '자가관리';
+      return {
+        contractMonths:   o.contractYears * 12,
+        contractLabel:    `${o.contractYears}년`,
+        managementType:   manageDisplay,
+        lgCombineType:    o.combineType,
+        isPackage:        o.combineType === '결합',
+        monthlyFee:       o.monthlyFee || 0,
+        visitCycle:       o.manageCycle || null,
+        totalCommission:  (o.commission && (o.commission.ak || o.commission.tl)) || 0,
+        recommendedOffice: o.recommendedOffice || null,
+        lgPopup:          o.popup || null,
+        promo:            o.promo || {},
+      };
+    });
+
+    return {
+      id:        p.id,
+      modelCode: p.modelCode,
+      name:      p.lineup || p.modelCode,
+      category:  '정수기',
+      options,
+    };
+  });
+
+  return {
+    metadata: {
+      brand:      raw.metadata.brand || 'LG전자',
+      sheetTitle: '정수기 (에이컴즈·티엘)',
+      parsedAt:   raw.metadata.parsedAt || '',
+    },
+    products,
+  };
+}
+
+function showLgPopup(productName, msg) {
+  const titleEl = document.getElementById('one-side-title');
+  const msgEl   = document.getElementById('one-side-msg');
+  titleEl.textContent = '접수처 확인 필요';
+  msgEl.innerHTML = `<strong>${escHtml(productName)}</strong><br><br>
+    ${escHtml(msg).replace(/\n/g, '<br>')}`;
+  document.getElementById('one-side-popup').classList.add('show');
+}
+
+function switchBrand(brand) {
+  if (brand === currentBrand) return;
+  currentBrand = brand;
+
+  if (brand === 'lg') {
+    DB = getLgDb();
+  } else {
+    DB = __SK_DATA__;
+  }
+
+  // 탭 active 클래스 갱신
+  document.querySelectorAll('.brand-tab').forEach(el => {
+    const isActive = (brand === 'sk' && el.textContent.includes('SK')) ||
+                     (brand === 'lg' && el.textContent.includes('LG'));
+    el.classList.toggle('active', isActive);
+  });
+
+  // 메타 정보 갱신
+  const meta = DB.metadata;
+  document.getElementById('meta-info').textContent =
+    `${meta.brand} ${meta.sheetTitle || ''} · 파싱: ${meta.parsedAt}`;
+
+  // 상태 초기화 후 재렌더
+  state.category = '전체';
+  state.productId = null;
+  state.selectedKeys = new Set();
+  state.searchText = '';
+  const prodSearch = document.getElementById('prod-search');
+  if (prodSearch) prodSearch.value = '';
+
+  renderCategoryList();
+  renderProductList();
+  renderMain();
+}
 
 // ══════════════════════════════════════════
 // ── 태그 관리 ──
