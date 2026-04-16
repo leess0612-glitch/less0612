@@ -1310,7 +1310,7 @@ function renderOptionList(product) {
       </tr>`;
     }
 
-    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${isPkg ? 'package-row' : ''} ${shadeClass}">
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${(isPkg || isLgCombine) ? 'package-row' : ''} ${shadeClass}">
       <td style="width:52px;padding-left:10px">
         <button class="select-btn ${isSelected ? 'selected' : ''}"
           onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
