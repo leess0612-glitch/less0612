@@ -1497,8 +1497,11 @@ function buildCopyText() {
 
     // 관리방식 레이블
     let mgmtLabel = base === '방문' ? '방문 관리'
+      : base === '자가' ? '자가 관리'
       : base === '셀프' ? '자가 관리'
       : (o.managementType || '');
+
+    if (currentBrand === 'lg' && o.lgCombineType) mgmtLabel += ` | ${o.lgCombineType}`;
 
     // 타사보상만 표기
     const tasaStr = disc === '할인+타사' ? ' | 타사보상' : '';
@@ -1506,8 +1509,10 @@ function buildCopyText() {
     // 📍 관리방식 | 약정 | 타사보상
     text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${tasaStr}\n`;
 
-    // 관리주기 (TL G열 기준)
-    const cycleFormatted = formatVisitCycle(product.visitCycleInfo || '');
+    // 관리주기 (방문관리 시)
+    const cycleFormatted = currentBrand === 'lg'
+      ? (o.visitCycle ? `${o.visitCycle}마다 방문관리` : '')
+      : formatVisitCycle(product.visitCycleInfo || '');
     if (cycleFormatted) text += `관리주기: ${cycleFormatted}\n`;
 
     // 요금 | 사은품
