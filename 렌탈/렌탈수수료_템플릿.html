@@ -1384,7 +1384,8 @@ function getGiftByKey(key, total) {
 }
 
 function getOptionKey(productId, option) {
-  return `${productId}__${option.managementType}__${option.contractMonths}__${option.monthlyFee}`;
+  const base = `${productId}__${option.managementType}__${option.contractMonths}__${option.monthlyFee}`;
+  return option.lgCombineType ? `${base}__${option.lgCombineType}` : base;
 }
 
 function updateGift(input) {
@@ -1567,7 +1568,7 @@ function officeBadge(office) {
 function getMgmtBase(mgmt) {
   if (!mgmt) return '';
   if (mgmt.includes('방문')) return '방문';
-  if (mgmt.includes('셀프')) return '셀프';
+  if (mgmt.includes('셀프') || mgmt.includes('자가')) return '자가';
   if (mgmt.includes('무방문형')) return '무방문형';
   if (mgmt.includes('관리없음')) return '관리없음';
   return mgmt;
