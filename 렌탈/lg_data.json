@@ -6,7 +6,7 @@
       "ak": "★LG 26년 04월 구독전문점 수수료안내_0401.xlsx",
       "tl": "2026.04.09 수수료.xlsx"
     },
-    "parsedAt": "2026-04-16 16:23"
+    "parsedAt": "2026-04-16 16:27"
   },
   "products": [
     {
@@ -566,8 +566,8 @@
       ]
     },
     {
-      "id": "WD325A",
-      "modelCode": "WD325A",
+      "id": "WD325AS",
+      "modelCode": "WD325AS",
       "lineup": "상하좌우",
       "spec": "냉/정",
       "options": [
@@ -726,8 +726,8 @@
       ]
     },
     {
-      "id": "WD520A",
-      "modelCode": "WD520A",
+      "id": "WD520ACB",
+      "modelCode": "WD520ACB",
       "lineup": "맞춤출수Lite",
       "spec": "냉/온/정",
       "options": [
@@ -886,8 +886,8 @@
       ]
     },
     {
-      "id": "WD520V",
-      "modelCode": "WD520V",
+      "id": "WD520VC",
+      "modelCode": "WD520VC",
       "lineup": "맞춤Lite(초고온수)",
       "spec": "냉/온/정",
       "options": [
@@ -1046,8 +1046,8 @@
       ]
     },
     {
-      "id": "WD523A",
-      "modelCode": "WD523A",
+      "id": "WD523ACB",
+      "modelCode": "WD523ACB",
       "lineup": "맞춤출수",
       "spec": "냉/온/정",
       "options": [
@@ -1208,6 +1208,242 @@
     {
       "id": "WD523V",
       "modelCode": "WD523V",
+      "lineup": "맞춤출수(초고온수)",
+      "spec": "냉/온/정",
+      "options": [
+        {
+          "contractYears": 4,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 40900,
+          "commission": {
+            "ak": 227400,
+            "tl": 227400
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": null,
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 4,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 43900,
+          "commission": {
+            "ak": 205800,
+            "tl": 205800
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": null,
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 4,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 37900,
+          "commission": {
+            "ak": 210600,
+            "tl": 210600
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": null,
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 4,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 40900,
+          "commission": {
+            "ak": 191700,
+            "tl": 191700
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": null,
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 35900,
+          "commission": {
+            "ak": 380100,
+            "tl": 380100
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 38900,
+          "commission": {
+            "ak": 369400,
+            "tl": 369400
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 32900,
+          "commission": {
+            "ak": 348200,
+            "tl": 348200
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 35900,
+          "commission": {
+            "ak": 340900,
+            "tl": 340900
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 32900,
+          "commission": {
+            "ak": 421800,
+            "tl": 421800
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 35900,
+          "commission": {
+            "ak": 412600,
+            "tl": 412600
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "결합",
+          "combineDiscount": 3000,
+          "monthlyFee": 29900,
+          "commission": {
+            "ak": 383200,
+            "tl": 383200
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "단품",
+          "combineDiscount": 3000,
+          "monthlyFee": 32900,
+          "commission": {
+            "ak": 378100,
+            "tl": 378100
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "WD523VC",
+      "modelCode": "WD523VC",
       "lineup": "맞춤출수(초고온수)",
       "spec": "냉/온/정",
       "options": [
@@ -2552,6 +2788,166 @@
       "spec": "냉/온/정",
       "options": [
         {
+          "contractYears": 5,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "결합",
+          "combineDiscount": 4000,
+          "monthlyFee": 35900,
+          "commission": {
+            "ak": 372200,
+            "tl": 372200
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "단품",
+          "combineDiscount": 4000,
+          "monthlyFee": 39900,
+          "commission": {
+            "ak": 365800,
+            "tl": 365800
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "결합",
+          "combineDiscount": 4000,
+          "monthlyFee": 32900,
+          "commission": {
+            "ak": 341100,
+            "tl": 341100
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 5,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "단품",
+          "combineDiscount": 4000,
+          "monthlyFee": 36900,
+          "commission": {
+            "ak": 338300,
+            "tl": 338300
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "결합",
+          "combineDiscount": 4000,
+          "monthlyFee": 32900,
+          "commission": {
+            "ak": 409300,
+            "tl": 409300
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "방문관리",
+          "manageCycle": "6개월",
+          "combineType": "단품",
+          "combineDiscount": 4000,
+          "monthlyFee": 36900,
+          "commission": {
+            "ak": 405900,
+            "tl": 405900
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "결합",
+          "combineDiscount": 4000,
+          "monthlyFee": 29900,
+          "commission": {
+            "ak": 372100,
+            "tl": 372100
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        },
+        {
+          "contractYears": 6,
+          "manageType": "자가관리",
+          "manageCycle": null,
+          "combineType": "단품",
+          "combineDiscount": 4000,
+          "monthlyFee": 33900,
+          "commission": {
+            "ak": 372900,
+            "tl": 372900
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "promo": {
+            "monthlyDiscount": null,
+            "tasa": "1만원/월",
+            "modelDiscount": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "WU523AS",
+      "modelCode": "WU523AS",
+      "lineup": "빌트인",
+      "spec": "냉/온/정",
+      "options": [
+        {
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "6개월",
@@ -2782,8 +3178,8 @@
       ]
     },
     {
-      "id": "WU823A",
-      "modelCode": "WU823A",
+      "id": "WU823AS",
+      "modelCode": "WU823AS",
       "lineup": "듀얼",
       "spec": "냉/정",
       "options": [
