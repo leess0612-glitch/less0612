@@ -55,22 +55,28 @@ def normalize_model_code(raw):
     """
     LG E열 모델코드 정규화.
 
+    핵심 원칙:
+      엑셀에서 같은 행에 묶인 경우(괄호 / 슬래시 / 콤마)만 동일 제품으로 간주하여 base 코드 추출.
+      별도 행으로 분리된 standalone 모델은 수수료가 다를 수 있으므로 코드 그대로 유지.
+
     규칙:
       1. 개행(\\n) 이후 색상명 한글 제거
-      2. 콤마(,) 이후 병기 모델 제거  ← 수수료 동일한 변형 (예: WU923A(...)B, AS)
-      3. 괄호 안 색상코드 제거: (C/W/N/B) 등
-      4. W[단일자][3자리숫자](SH|[단일자]) 패턴으로 모델코드 추출
-         - SH 는 모델 고유 suffix → 유지  (WS511SH, WS513SH)
-         - 단일 대문자 색상코드 → 제거   (WU923AB → WU923A, WU823AS → WU823A)
+      2. 콤마(,) 이후 병기 모델 제거  ← 수수료 동일 변형이 콤마로 병기됨
+      3. 괄호 (C/W/N/B) 또는 슬래시 WD525AHB/ACB/AGB/AS 형태
+         → 명시적 색상 변형이 있는 경우에만 base 코드 추출
+         → W[단일자][3자리숫자](SH|[단일자]) 패턴 적용
+      4. standalone (괄호/슬래시 없음) → 코드 그대로 반환
+         → WU523AS, WD523VC, WS511SH 등 별도 제품으로 유지
 
     예시:
-      WD722R(K/H/E)\\n블랙/화이트/베이지  → WD722R
-      WU923A(C/W/N/B)B, AS\\n베이지...    → WU923A
-      WU823AS\\n실버                      → WU823A
-      WU523A(C/W)B\\n베이지/화이트         → WU523A
-      WD525AHB/ACB/AGB/AS\\n베이지/그린/실버 → WD525A
-      WS511SH\\n화이트                    → WS511SH  (SH 유지)
-      WS513SH\\n화이트                    → WS513SH  (SH 유지)
+      WD722R(K/H/E)              → WD722R   (괄호 제거 후 base 추출)
+      WU923A(C/W/N/B)B, AS       → WU923A   (콤마+괄호 → base 추출)
+      WU523A(C/W)B               → WU523A   (괄호 → base 추출)
+      WD525AHB/ACB/AGB/AS        → WD525A   (슬래시 변형 → 첫 파트 base 추출)
+      WU523AS  (별도 행)          → WU523AS  (standalone → 유지)
+      WU823AS  (별도 행)          → WU823AS  (standalone → 유지)
+      WD523VC  (별도 행)          → WD523VC  (standalone → 유지)
+      WS511SH  (별도 행)          → WS511SH  (standalone → 유지)
     """
     if not raw:
         return ''
@@ -78,13 +84,25 @@ def normalize_model_code(raw):
     first_line = raw.split('\n')[0].strip()
     # 2. 콤마 이후 제거
     first_part = first_line.split(',')[0].strip()
-    # 3. 괄호 안 대문자/슬래시 패턴 제거: (C/W/N/B) 등
-    cleaned = re.sub(r'\([A-Z/]+\)', '', first_part).replace(' ', '')
-    # 4. 모델코드 추출: W + 단일자 + 3자리숫자 + (SH | 단일자)
-    m = re.match(r'^(W[A-Z]\d{3}(?:SH|[A-Z]))', cleaned)
-    if m:
-        return m.group(1)
-    return cleaned
+
+    has_parens = bool(re.search(r'\([A-Z/]+\)', first_part))
+    has_slash  = '/' in first_part and not has_parens
+
+    if has_parens:
+        # 3a. 괄호 안 색상코드 제거 후 base 추출
+        cleaned = re.sub(r'\([A-Z/]+\)', '', first_part).replace(' ', '')
+        m = re.match(r'^(W[A-Z]\d{3}(?:SH|[A-Z]))', cleaned)
+        return m.group(1) if m else cleaned
+
+    elif has_slash:
+        # 3b. 슬래시 색상 변형: 첫 번째 파트에서 base 추출
+        first_slash = first_part.split('/')[0].strip()
+        m = re.match(r'^(W[A-Z]\d{3}(?:SH|[A-Z]))', first_slash)
+        return m.group(1) if m else first_slash
+
+    else:
+        # 4. standalone → 코드 그대로 (색상 suffix 제거 안 함)
+        return first_part.replace(' ', '')
 
 
 def normalize_manage(j_val):
