@@ -425,7 +425,8 @@ def parse_lg_air(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
                      if o['commission']['tl'] and not o['commission']['ak'])
     diff_count = sum(1 for p in products for o in p['options']
                      if o['recommendedOffice'] not in ('동일', None))
-    popup_count = sum(1 for p in products for o in p['options'] if o.get('popup'))
+    popup_count   = sum(1 for p in products for o in p['options'] if o.get('popup'))
+    warning_count = sum(1 for p in products for o in p['options'] if o.get('dataWarning'))
 
     print(f'\n에이컴즈 행수:  {len(ac_data)}개')
     print(f'티엘     행수:  {len(tl_data)}개')
@@ -435,6 +436,7 @@ def parse_lg_air(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
     print(f'티엘 전용:     {tl_only}건')
     print(f'수수료 차이:   {diff_count}건')
     print(f'팝업 예외:     {popup_count}건')
+    print(f'데이터 경고:   {warning_count}건')
 
     data = {
         'metadata': {
