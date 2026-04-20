@@ -363,6 +363,7 @@ def build_products(ac_data, tl_data):
         products.append({
             'id':          model_code,
             'modelCode':   model_code,
+            'displayCode': display_model_code(model_code),
             'lineup':      sample.get('lineup', model_code),
             'productType': sample.get('productType', '공기청정기'),
             'options':     options,
