@@ -76,11 +76,12 @@ def to_int(v):
 
 
 def normalize_model_code(raw):
-    """모델코드에서 .AKOR / .AKOR2 / .AKORR 등 suffix 제거."""
+    """모델코드에서 .AKOR / .AKOR2 / .AKORR 등 suffix 제거 후 별칭 적용."""
     s = clean(raw)
     if not s:
         return ''
-    return s.split('.')[0].strip()
+    base = s.split('.')[0].strip()
+    return MODEL_ALIASES.get(base, base)
 
 
 def get_lineup_display(lineup, model_code):
