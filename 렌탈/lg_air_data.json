@@ -2,7 +2,7 @@
   "metadata": {
     "brand": "LG전자",
     "category": "공청기·제습기",
-    "parsedAt": "2026-04-20",
+    "parsedAt": "2026-04-21",
     "extraFee": {
       "ak": 100000,
       "tl": 100000
@@ -12,6 +12,7 @@
     {
       "id": "AS065CWHA",
       "modelCode": "AS065CWHA",
+      "displayCode": "AS065",
       "lineup": "25년 에어로캣타워(V펫필터)",
       "productType": "공기청정기",
       "options": [
@@ -380,6 +381,7 @@
     {
       "id": "AS065PWHA",
       "modelCode": "AS065PWHA",
+      "displayCode": "AS065",
       "lineup": "25년 에어로퍼니처(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -748,6 +750,7 @@
     {
       "id": "AS065SWHA",
       "modelCode": "AS065SWHA",
+      "displayCode": "AS065",
       "lineup": "25년 에어로스피커(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -1116,6 +1119,7 @@
     {
       "id": "AS155GWDL",
       "modelCode": "AS155GWDL",
+      "displayCode": "AS155",
       "lineup": "25년 에어로부스터(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -1484,6 +1488,7 @@
     {
       "id": "AS185LGAA",
       "modelCode": "AS185LGAA",
+      "displayCode": "AS185",
       "lineup": "월핏 그릴",
       "productType": "공기청정기",
       "options": [
@@ -1852,6 +1857,7 @@
     {
       "id": "AS192DSFAM",
       "modelCode": "AS192DSFAM",
+      "displayCode": "AS192",
       "lineup": "360알파 1단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -2220,6 +2226,7 @@
     {
       "id": "AS195DWWAM",
       "modelCode": "AS195DWWAM",
+      "displayCode": "AS195",
       "lineup": "25년360플러스1단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -2828,6 +2835,7 @@
     {
       "id": "AS206NGHAM",
       "modelCode": "AS206NGHAM",
+      "displayCode": "AS206",
       "lineup": "26년360알파AI+ (M5필터)",
       "productType": "공기청정기",
       "options": [
@@ -3421,6 +3429,7 @@
     {
       "id": "AS206NSHAM",
       "modelCode": "AS206NSHAM",
+      "displayCode": "AS206",
       "lineup": "26년360알파AI+ (M5필터)",
       "productType": "공기청정기",
       "options": [
@@ -4029,6 +4038,7 @@
     {
       "id": "AS235DWSAM",
       "modelCode": "AS235DWSAM",
+      "displayCode": "AS235",
       "lineup": "25년360플러스2단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -4637,6 +4647,7 @@
     {
       "id": "AS285DWWAM",
       "modelCode": "AS285DWWAM",
+      "displayCode": "AS285",
       "lineup": "25년360플러스2단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -5245,6 +5256,7 @@
     {
       "id": "AS305DWWAM",
       "modelCode": "AS305DWWAM",
+      "displayCode": "AS305",
       "lineup": "25년360플러스2단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -5853,6 +5865,7 @@
     {
       "id": "AS322DSFAM",
       "modelCode": "AS322DSFAM",
+      "displayCode": "AS322",
       "lineup": "360알파 2단(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -6221,6 +6234,7 @@
     {
       "id": "AS336NSLCM",
       "modelCode": "AS336NSLCM",
+      "displayCode": "AS336",
       "lineup": "26년360알파AI+ (M5필터)",
       "productType": "공기청정기",
       "options": [
@@ -6829,6 +6843,7 @@
     {
       "id": "AS356NGMAM",
       "modelCode": "AS356NGMAM",
+      "displayCode": "AS356",
       "lineup": "26년360알파AI+ (M7필터)",
       "productType": "공기청정기",
       "options": [
@@ -7437,6 +7452,7 @@
     {
       "id": "AS405BWRR",
       "modelCode": "AS405BWRR",
+      "displayCode": "AS405",
       "lineup": "25년형 스탠드 공청기",
       "productType": "공기청정기",
       "options": [
@@ -7685,6 +7701,7 @@
     {
       "id": "DQ185MWGAWS",
       "modelCode": "DQ185MWGAWS",
+      "displayCode": "DQ185",
       "lineup": "오브제컬렉션 제습기 18L",
       "productType": "제습기",
       "options": [
@@ -8053,6 +8070,7 @@
     {
       "id": "DQ235MEGAWS",
       "modelCode": "DQ235MEGAWS",
+      "displayCode": "DQ235",
       "lineup": "오브제컬렉션 제습기 23L",
       "productType": "제습기",
       "options": [
@@ -8421,6 +8439,7 @@
     {
       "id": "DQ235MWGAWS",
       "modelCode": "DQ235MWGAWS",
+      "displayCode": "DQ235",
       "lineup": "오브제컬렉션 제습기 23L",
       "productType": "제습기",
       "options": [
@@ -8789,6 +8808,7 @@
     {
       "id": "FS065PSJCM",
       "modelCode": "FS065PSJCM",
+      "displayCode": "FS065",
       "lineup": "25년 에어로타워 온풍(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -9157,6 +9177,7 @@
     {
       "id": "FS065PSKAM",
       "modelCode": "FS065PSKAM",
+      "displayCode": "FS065",
       "lineup": "25년 에어로타워 온풍(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -9525,6 +9546,7 @@
     {
       "id": "HY505RWLAHM",
       "modelCode": "HY505RWLAHM",
+      "displayCode": "HY505",
       "lineup": "25년형 하이드로타워 에센셜 (가습기)",
       "productType": "하이드로에센셜",
       "options": [
@@ -10448,6 +10470,7 @@
     {
       "id": "HY705RSUABM",
       "modelCode": "HY705RSUABM",
+      "displayCode": "HY705",
       "lineup": "25년형 하이드로타워 (가습기)",
       "productType": "하이드로타워",
       "options": [
