@@ -947,6 +947,17 @@ document.getElementById('btn-memo').addEventListener('click', () => {
     `📝 주간 메모 — ${toDateLabel(start)} ~ ${toDateLabel(end)}`;
   document.getElementById('memo-text-인터넷').value = loadMemo(wval, '인터넷');
   document.getElementById('memo-text-렌탈').value = loadMemo(wval, '렌탈');
+
+  // 구분 선택값에 따라 탭 자동 전환
+  const catSel = document.getElementById('category-sel').value;
+  const activeTab = catSel === '렌탈' ? '렌탈' : '인터넷';
+  document.querySelectorAll('.memo-tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === activeTab);
+  });
+  document.querySelectorAll('.memo-pane').forEach(p => {
+    p.classList.toggle('active', p.id === 'memo-pane-' + activeTab);
+  });
+
   document.getElementById('memo-overlay').classList.add('show');
 });
 
