@@ -171,6 +171,106 @@ tbody tr:hover { background: #fafcff; }
 }
 #btn-export:hover { background: #0b8a4b; }
 #btn-export:disabled { background: #999; cursor: not-allowed; }
+
+/* 메모 버튼 */
+#btn-memo {
+  background: #7c4dff;
+  border: none;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  display: none;
+  position: relative;
+}
+#btn-memo:hover { background: #6a3de8; }
+#btn-memo .memo-dot {
+  position: absolute;
+  top: -3px; right: -3px;
+  width: 9px; height: 9px;
+  background: #ff5252;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  display: none;
+}
+
+/* 메모 모달 */
+#memo-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+#memo-overlay.show { display: flex; }
+#memo-modal {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 28px 22px;
+  width: 480px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+#memo-modal h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+.memo-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.memo-tab-btn {
+  padding: 6px 18px;
+  border: 1.5px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  color: #555;
+  transition: all 0.15s;
+}
+.memo-tab-btn.active { background: #7c4dff; border-color: #7c4dff; color: white; }
+.memo-pane { display: none; }
+.memo-pane.active { display: block; }
+.memo-pane textarea {
+  width: 100%;
+  min-height: 140px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  color: #333;
+  line-height: 1.6;
+}
+.memo-pane textarea:focus { outline: none; border-color: #7c4dff; }
+.memo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.memo-actions button {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+#btn-memo-cancel { background: #f0f0f0; color: #555; }
+#btn-memo-cancel:hover { background: #e0e0e0; }
+#btn-memo-save { background: #7c4dff; color: white; }
+#btn-memo-save:hover { background: #6a3de8; }
 </style>
 </head>
 <body>
