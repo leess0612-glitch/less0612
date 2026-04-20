@@ -348,13 +348,13 @@ def inject_into_html(data, base_dir, placeholder='__LG_AIR_DATA__'):
     pattern = os.path.join(base_dir, '렌탈수수료_[0-9]*.html')
     candidates = sorted(glob_mod.glob(pattern))
     if not candidates:
-        print('⚠️  렌탈수수료_*.html 파일을 찾지 못했습니다. parse_excel.py를 먼저 실행하세요.')
+        print('[경고] 렌탈수수료_*.html 파일을 찾지 못했습니다. parse_excel.py를 먼저 실행하세요.')
         return
     target = candidates[-1]
     with open(target, 'r', encoding='utf-8') as f:
         html = f.read()
     if placeholder not in html:
-        print(f'⚠️  {os.path.basename(target)} 에 {placeholder} 플레이스홀더가 없습니다.')
+        print(f'[경고] {os.path.basename(target)} 에 {placeholder} 플레이스홀더가 없습니다.')
         return
     html_out = html.replace(placeholder, json.dumps(data, ensure_ascii=False))
     with open(target, 'w', encoding='utf-8') as f:
