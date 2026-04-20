@@ -265,6 +265,12 @@ def build_products(ac_data, tl_data):
         mc = key[0]
         model_groups.setdefault(mc, set()).add(key)
 
+    # 모델코드별 에이컴즈·티엘 존재 여부 사전 계산
+    # 양쪽에 모두 있는 모델만 dataWarning 대상
+    model_has_ac = {mc for key in ac_data for mc in [key[0]]}
+    model_has_tl = {mc for key in tl_data for mc in [key[0]]}
+    model_in_both = model_has_ac & model_has_tl
+
     products = []
 
     for model_code in sorted(model_groups):
