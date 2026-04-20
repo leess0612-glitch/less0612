@@ -10343,914 +10343,10 @@
           "combineType": "단품",
           "monthlyFee": 70900,
           "commission": {
-            "ak": null,
-            "tl": 355200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 59900,
-          "commission": {
-            "ak": null,
-            "tl": 387500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 58100,
-          "commission": {
-            "ak": null,
-            "tl": 458900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 52900,
-          "commission": {
-            "ak": null,
-            "tl": 417400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 51300,
-          "commission": {
-            "ak": null,
-            "tl": 487800
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 46400,
-          "commission": {
-            "ak": null,
-            "tl": 514100
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 31500,
-          "commission": {
-            "ak": null,
-            "tl": 444900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 45500,
-          "commission": {
-            "ak": null,
-            "tl": 507600
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 85900,
-          "commission": {
-            "ak": null,
-            "tl": 409200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 74900,
-          "commission": {
-            "ak": null,
-            "tl": 459500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 72600,
-          "commission": {
-            "ak": null,
-            "tl": 528500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 67900,
-          "commission": {
-            "ak": null,
-            "tl": 507400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 65800,
-          "commission": {
-            "ak": null,
-            "tl": 574800
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 61000,
-          "commission": {
-            "ak": null,
-            "tl": 619200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 41400,
-          "commission": {
-            "ak": null,
-            "tl": 552800
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 59700,
-          "commission": {
-            "ak": null,
-            "tl": 609900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 75900,
-          "commission": {
-            "ak": null,
-            "tl": 373200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 64900,
-          "commission": {
-            "ak": null,
-            "tl": 411500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 62900,
-          "commission": {
-            "ak": null,
-            "tl": 481900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 57900,
-          "commission": {
-            "ak": null,
-            "tl": 447400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 56100,
-          "commission": {
-            "ak": null,
-            "tl": 516600
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 51300,
-          "commission": {
-            "ak": null,
-            "tl": 549400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 34800,
-          "commission": {
-            "ak": null,
-            "tl": 480900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 50200,
-          "commission": {
-            "ak": null,
-            "tl": 541500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 65900,
-          "commission": {
-            "ak": null,
-            "tl": 337200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 54900,
-          "commission": {
-            "ak": null,
-            "tl": 363500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 53200,
-          "commission": {
-            "ak": null,
-            "tl": 435300
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 47900,
-          "commission": {
-            "ak": null,
-            "tl": 387400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 46400,
-          "commission": {
-            "ak": null,
-            "tl": 458400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 41600,
-          "commission": {
-            "ak": null,
-            "tl": 479500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 28200,
-          "commission": {
-            "ak": null,
-            "tl": 408900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 40700,
-          "commission": {
-            "ak": null,
-            "tl": 473000
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 70900,
-          "commission": {
-            "ak": null,
-            "tl": 355200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 59900,
-          "commission": {
-            "ak": null,
-            "tl": 387500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 58100,
-          "commission": {
-            "ak": null,
-            "tl": 458900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 52900,
-          "commission": {
-            "ak": null,
-            "tl": 417400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 51300,
-          "commission": {
-            "ak": null,
-            "tl": 487800
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 46400,
-          "commission": {
-            "ak": null,
-            "tl": 514100
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 31500,
-          "commission": {
-            "ak": null,
-            "tl": 444900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 45500,
-          "commission": {
-            "ak": null,
-            "tl": 507600
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 60900,
-          "commission": {
-            "ak": null,
-            "tl": 319200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 49900,
-          "commission": {
-            "ak": null,
-            "tl": 339500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 48400,
-          "commission": {
-            "ak": null,
-            "tl": 412300
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 42900,
-          "commission": {
-            "ak": null,
-            "tl": 357400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 41600,
-          "commission": {
-            "ak": null,
-            "tl": 429600
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 36700,
-          "commission": {
-            "ak": null,
-            "tl": 444200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 24900,
-          "commission": {
-            "ak": null,
-            "tl": 372900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 36000,
-          "commission": {
-            "ak": null,
-            "tl": 439200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 75900,
-          "commission": {
-            "ak": null,
-            "tl": 373200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 64900,
-          "commission": {
-            "ak": null,
-            "tl": 411500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 62900,
-          "commission": {
-            "ak": null,
-            "tl": 481900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 57900,
-          "commission": {
-            "ak": null,
-            "tl": 447400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 56100,
-          "commission": {
-            "ak": null,
-            "tl": 516600
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 51300,
-          "commission": {
-            "ak": null,
-            "tl": 549400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 34800,
-          "commission": {
-            "ak": null,
-            "tl": 480900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 3개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 50200,
-          "commission": {
-            "ak": null,
-            "tl": 541500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 65900,
-          "commission": {
-            "ak": null,
-            "tl": 337200
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 54900,
-          "commission": {
-            "ak": null,
-            "tl": 363500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 53200,
-          "commission": {
-            "ak": null,
-            "tl": 435300
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 47900,
-          "commission": {
-            "ak": null,
-            "tl": 387400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 46400,
-          "commission": {
-            "ak": null,
-            "tl": 458400
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 41600,
-          "commission": {
-            "ak": null,
-            "tl": 479500
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 28200,
-          "commission": {
-            "ak": null,
-            "tl": 408900
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        },
-        {
-          "visitCycle": "자가관리",
-          "serviceType": "정수필터 6개월",
-          "serviceDesc": null,
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 40700,
-          "commission": {
-            "ak": null,
-            "tl": 473000
-          },
-          "recommendedOffice": "티엘",
-          "popup": null
-        }
-      ]
-    },
-    {
-      "id": "HY705RSUBM",
-      "modelCode": "HY705RSUBM",
-      "lineup": "25년형 하이드로타워 (가습기)",
-      "productType": "하이드로타워",
-      "options": [
-        {
-          "visitCycle": 3,
-          "serviceType": "정수필터 12개월",
-          "serviceDesc": null,
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 70900,
-          "commission": {
             "ak": 355200,
-            "tl": null
+            "tl": 355200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11262,9 +10358,9 @@
           "monthlyFee": 59900,
           "commission": {
             "ak": 387500,
-            "tl": null
+            "tl": 387500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11276,9 +10372,9 @@
           "monthlyFee": 58100,
           "commission": {
             "ak": 458900,
-            "tl": null
+            "tl": 458900
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11290,9 +10386,9 @@
           "monthlyFee": 52900,
           "commission": {
             "ak": 417400,
-            "tl": null
+            "tl": 417400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11304,9 +10400,9 @@
           "monthlyFee": 51300,
           "commission": {
             "ak": 487800,
-            "tl": null
+            "tl": 487800
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11318,9 +10414,23 @@
           "monthlyFee": 46400,
           "commission": {
             "ak": 514100,
-            "tl": null
+            "tl": 514100
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": 3,
+          "serviceType": "정수필터 12개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 31500,
+          "commission": {
+            "ak": 444900,
+            "tl": 444900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11332,9 +10442,9 @@
           "monthlyFee": 45500,
           "commission": {
             "ak": 507600,
-            "tl": null
+            "tl": 507600
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11346,9 +10456,9 @@
           "monthlyFee": 85900,
           "commission": {
             "ak": 409200,
-            "tl": null
+            "tl": 409200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11360,9 +10470,9 @@
           "monthlyFee": 74900,
           "commission": {
             "ak": 459500,
-            "tl": null
+            "tl": 459500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11374,9 +10484,9 @@
           "monthlyFee": 72600,
           "commission": {
             "ak": 528500,
-            "tl": null
+            "tl": 528500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11388,9 +10498,9 @@
           "monthlyFee": 67900,
           "commission": {
             "ak": 507400,
-            "tl": null
+            "tl": 507400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11402,9 +10512,9 @@
           "monthlyFee": 65800,
           "commission": {
             "ak": 574800,
-            "tl": null
+            "tl": 574800
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11416,9 +10526,23 @@
           "monthlyFee": 61000,
           "commission": {
             "ak": 619200,
-            "tl": null
+            "tl": 619200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": 3,
+          "serviceType": "정수필터 3개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 41400,
+          "commission": {
+            "ak": 552800,
+            "tl": 552800
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11430,9 +10554,9 @@
           "monthlyFee": 59700,
           "commission": {
             "ak": 609900,
-            "tl": null
+            "tl": 609900
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11444,9 +10568,9 @@
           "monthlyFee": 75900,
           "commission": {
             "ak": 373200,
-            "tl": null
+            "tl": 373200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11458,9 +10582,9 @@
           "monthlyFee": 64900,
           "commission": {
             "ak": 411500,
-            "tl": null
+            "tl": 411500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11472,9 +10596,9 @@
           "monthlyFee": 62900,
           "commission": {
             "ak": 481900,
-            "tl": null
+            "tl": 481900
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11486,9 +10610,9 @@
           "monthlyFee": 57900,
           "commission": {
             "ak": 447400,
-            "tl": null
+            "tl": 447400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11500,9 +10624,9 @@
           "monthlyFee": 56100,
           "commission": {
             "ak": 516600,
-            "tl": null
+            "tl": 516600
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11514,9 +10638,23 @@
           "monthlyFee": 51300,
           "commission": {
             "ak": 549400,
-            "tl": null
+            "tl": 549400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": 3,
+          "serviceType": "정수필터 6개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 34800,
+          "commission": {
+            "ak": 480900,
+            "tl": 480900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11528,9 +10666,9 @@
           "monthlyFee": 50200,
           "commission": {
             "ak": 541500,
-            "tl": null
+            "tl": 541500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11542,9 +10680,9 @@
           "monthlyFee": 65900,
           "commission": {
             "ak": 337200,
-            "tl": null
+            "tl": 337200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11556,9 +10694,9 @@
           "monthlyFee": 54900,
           "commission": {
             "ak": 363500,
-            "tl": null
+            "tl": 363500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11570,9 +10708,9 @@
           "monthlyFee": 53200,
           "commission": {
             "ak": 435300,
-            "tl": null
+            "tl": 435300
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11584,9 +10722,9 @@
           "monthlyFee": 47900,
           "commission": {
             "ak": 387400,
-            "tl": null
+            "tl": 387400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11598,9 +10736,9 @@
           "monthlyFee": 46400,
           "commission": {
             "ak": 458400,
-            "tl": null
+            "tl": 458400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11612,9 +10750,23 @@
           "monthlyFee": 41600,
           "commission": {
             "ak": 479500,
-            "tl": null
+            "tl": 479500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": 6,
+          "serviceType": "정수필터 12개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 28200,
+          "commission": {
+            "ak": 408900,
+            "tl": 408900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11626,9 +10778,9 @@
           "monthlyFee": 40700,
           "commission": {
             "ak": 473000,
-            "tl": null
+            "tl": 473000
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11640,9 +10792,9 @@
           "monthlyFee": 70900,
           "commission": {
             "ak": 355200,
-            "tl": null
+            "tl": 355200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11654,9 +10806,9 @@
           "monthlyFee": 59900,
           "commission": {
             "ak": 387500,
-            "tl": null
+            "tl": 387500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11668,9 +10820,9 @@
           "monthlyFee": 58100,
           "commission": {
             "ak": 458900,
-            "tl": null
+            "tl": 458900
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11682,9 +10834,9 @@
           "monthlyFee": 52900,
           "commission": {
             "ak": 417400,
-            "tl": null
+            "tl": 417400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11696,9 +10848,9 @@
           "monthlyFee": 51300,
           "commission": {
             "ak": 487800,
-            "tl": null
+            "tl": 487800
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11710,9 +10862,23 @@
           "monthlyFee": 46400,
           "commission": {
             "ak": 514100,
-            "tl": null
+            "tl": 514100
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": 6,
+          "serviceType": "정수필터 6개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 31500,
+          "commission": {
+            "ak": 444900,
+            "tl": 444900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11724,9 +10890,9 @@
           "monthlyFee": 45500,
           "commission": {
             "ak": 507600,
-            "tl": null
+            "tl": 507600
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11738,9 +10904,9 @@
           "monthlyFee": 60900,
           "commission": {
             "ak": 319200,
-            "tl": null
+            "tl": 319200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11752,9 +10918,9 @@
           "monthlyFee": 49900,
           "commission": {
             "ak": 339500,
-            "tl": null
+            "tl": 339500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11766,9 +10932,9 @@
           "monthlyFee": 48400,
           "commission": {
             "ak": 412300,
-            "tl": null
+            "tl": 412300
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11780,9 +10946,9 @@
           "monthlyFee": 42900,
           "commission": {
             "ak": 357400,
-            "tl": null
+            "tl": 357400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11794,9 +10960,9 @@
           "monthlyFee": 41600,
           "commission": {
             "ak": 429600,
-            "tl": null
+            "tl": 429600
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11808,9 +10974,23 @@
           "monthlyFee": 36700,
           "commission": {
             "ak": 444200,
-            "tl": null
+            "tl": 444200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": "자가관리",
+          "serviceType": "정수필터 12개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 24900,
+          "commission": {
+            "ak": 372900,
+            "tl": 372900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11822,9 +11002,9 @@
           "monthlyFee": 36000,
           "commission": {
             "ak": 439200,
-            "tl": null
+            "tl": 439200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11836,9 +11016,9 @@
           "monthlyFee": 75900,
           "commission": {
             "ak": 373200,
-            "tl": null
+            "tl": 373200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11850,9 +11030,9 @@
           "monthlyFee": 64900,
           "commission": {
             "ak": 411500,
-            "tl": null
+            "tl": 411500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11864,9 +11044,9 @@
           "monthlyFee": 62900,
           "commission": {
             "ak": 481900,
-            "tl": null
+            "tl": 481900
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11878,9 +11058,9 @@
           "monthlyFee": 57900,
           "commission": {
             "ak": 447400,
-            "tl": null
+            "tl": 447400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11892,9 +11072,9 @@
           "monthlyFee": 56100,
           "commission": {
             "ak": 516600,
-            "tl": null
+            "tl": 516600
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11906,9 +11086,23 @@
           "monthlyFee": 51300,
           "commission": {
             "ak": 549400,
-            "tl": null
+            "tl": 549400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": "자가관리",
+          "serviceType": "정수필터 3개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 34800,
+          "commission": {
+            "ak": 480900,
+            "tl": 480900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11920,9 +11114,9 @@
           "monthlyFee": 50200,
           "commission": {
             "ak": 541500,
-            "tl": null
+            "tl": 541500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11934,9 +11128,9 @@
           "monthlyFee": 65900,
           "commission": {
             "ak": 337200,
-            "tl": null
+            "tl": 337200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11948,9 +11142,9 @@
           "monthlyFee": 54900,
           "commission": {
             "ak": 363500,
-            "tl": null
+            "tl": 363500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11962,9 +11156,9 @@
           "monthlyFee": 53200,
           "commission": {
             "ak": 435300,
-            "tl": null
+            "tl": 435300
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11976,9 +11170,9 @@
           "monthlyFee": 47900,
           "commission": {
             "ak": 387400,
-            "tl": null
+            "tl": 387400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -11990,9 +11184,9 @@
           "monthlyFee": 46400,
           "commission": {
             "ak": 458400,
-            "tl": null
+            "tl": 458400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -12004,9 +11198,23 @@
           "monthlyFee": 41600,
           "commission": {
             "ak": 479500,
-            "tl": null
+            "tl": 479500
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
+          "popup": null
+        },
+        {
+          "visitCycle": "자가관리",
+          "serviceType": "정수필터 6개월",
+          "serviceDesc": null,
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 28200,
+          "commission": {
+            "ak": 408900,
+            "tl": 408900
+          },
+          "recommendedOffice": "동일",
           "popup": null
         },
         {
@@ -12018,9 +11226,9 @@
           "monthlyFee": 40700,
           "commission": {
             "ak": 473000,
-            "tl": null
+            "tl": 473000
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null
         }
       ]
