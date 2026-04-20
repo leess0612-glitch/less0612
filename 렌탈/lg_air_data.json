@@ -27,7 +27,8 @@
             "tl": 301200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -41,7 +42,8 @@
             "tl": 329900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -55,7 +57,8 @@
             "tl": 402700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -69,7 +72,8 @@
             "tl": 357400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -83,7 +87,8 @@
             "tl": 429600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -97,7 +102,8 @@
             "tl": 451400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -111,7 +117,8 @@
             "tl": 380100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -125,7 +132,8 @@
             "tl": 445700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -139,7 +147,8 @@
             "tl": 283200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -153,7 +162,8 @@
             "tl": 305900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -167,7 +177,8 @@
             "tl": 379600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -181,7 +192,8 @@
             "tl": 327400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -195,7 +207,8 @@
             "tl": 400200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -209,7 +222,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -223,7 +237,8 @@
             "tl": 344100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -237,7 +252,8 @@
             "tl": 411800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -251,7 +267,8 @@
             "tl": 272400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -265,7 +282,8 @@
             "tl": 291500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -279,7 +297,8 @@
             "tl": 365700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -293,7 +312,8 @@
             "tl": 309400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -307,7 +327,8 @@
             "tl": 382800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -321,7 +342,8 @@
             "tl": 395300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -335,7 +357,8 @@
             "tl": 322500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -349,7 +372,8 @@
             "tl": 390900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -371,7 +395,8 @@
             "tl": 240100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -385,7 +410,8 @@
             "tl": 262700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -399,7 +425,8 @@
             "tl": 337400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -413,7 +440,8 @@
             "tl": 285400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -427,7 +455,8 @@
             "tl": 359400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -441,7 +470,8 @@
             "tl": 381600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -455,7 +485,8 @@
             "tl": 308000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -469,7 +500,8 @@
             "tl": 377200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -483,7 +515,8 @@
             "tl": 222100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -497,7 +530,8 @@
             "tl": 238800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -511,7 +545,8 @@
             "tl": 314400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -525,7 +560,8 @@
             "tl": 255400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -539,7 +575,8 @@
             "tl": 330600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -553,7 +590,8 @@
             "tl": 346300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -567,7 +605,8 @@
             "tl": 272000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -581,7 +620,8 @@
             "tl": 343400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -595,7 +635,8 @@
             "tl": 211300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -609,7 +650,8 @@
             "tl": 224400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -623,7 +665,8 @@
             "tl": 300500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -637,7 +680,8 @@
             "tl": 237400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -651,7 +695,8 @@
             "tl": 313200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -665,7 +710,8 @@
             "tl": 325500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -679,7 +725,8 @@
             "tl": 250400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -693,7 +740,8 @@
             "tl": 322600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -715,7 +763,8 @@
             "tl": 272400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -729,7 +778,8 @@
             "tl": 296300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -743,7 +793,8 @@
             "tl": 370000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -757,7 +808,8 @@
             "tl": 321400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -771,7 +823,8 @@
             "tl": 394200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -785,7 +838,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -799,7 +853,8 @@
             "tl": 344100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -813,7 +868,8 @@
             "tl": 411800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -827,7 +883,8 @@
             "tl": 254400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -841,7 +898,8 @@
             "tl": 272300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -855,7 +913,8 @@
             "tl": 347000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -869,7 +928,8 @@
             "tl": 291400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -883,7 +943,8 @@
             "tl": 365400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -897,7 +958,8 @@
             "tl": 381600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -911,7 +973,8 @@
             "tl": 308000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -925,7 +988,8 @@
             "tl": 377200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -939,7 +1003,8 @@
             "tl": 243700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -953,7 +1018,8 @@
             "tl": 257900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -967,7 +1033,8 @@
             "tl": 333100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -981,7 +1048,8 @@
             "tl": 273400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -995,7 +1063,8 @@
             "tl": 348000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1009,7 +1078,8 @@
             "tl": 360700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1023,7 +1093,8 @@
             "tl": 286400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1037,7 +1108,8 @@
             "tl": 357100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -1059,7 +1131,8 @@
             "tl": 261600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1073,7 +1146,8 @@
             "tl": 286700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1087,7 +1161,8 @@
             "tl": 360900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1101,7 +1176,8 @@
             "tl": 309400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1115,7 +1191,8 @@
             "tl": 382800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1129,7 +1206,8 @@
             "tl": 402500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1143,7 +1221,8 @@
             "tl": 329700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1157,7 +1236,8 @@
             "tl": 398100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1171,7 +1251,8 @@
             "tl": 243700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1185,7 +1266,8 @@
             "tl": 262700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1199,7 +1281,8 @@
             "tl": 337400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1213,7 +1296,8 @@
             "tl": 279400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1227,7 +1311,8 @@
             "tl": 354000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1241,7 +1326,8 @@
             "tl": 367200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1255,7 +1341,8 @@
             "tl": 293600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1269,7 +1356,8 @@
             "tl": 363600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1283,7 +1371,8 @@
             "tl": 232900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1297,7 +1386,8 @@
             "tl": 248400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1311,7 +1401,8 @@
             "tl": 323600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1325,7 +1416,8 @@
             "tl": 261400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1339,7 +1431,8 @@
             "tl": 336000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1353,7 +1446,8 @@
             "tl": 346300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1367,7 +1461,8 @@
             "tl": 272000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1381,7 +1476,8 @@
             "tl": 343400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -1403,7 +1499,8 @@
             "tl": 276000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1417,7 +1514,8 @@
             "tl": 301100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1431,7 +1529,8 @@
             "tl": 374800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1445,7 +1544,8 @@
             "tl": 327400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1459,7 +1559,8 @@
             "tl": 400200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1473,7 +1574,8 @@
             "tl": 423300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1487,7 +1589,8 @@
             "tl": 351300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1501,7 +1604,8 @@
             "tl": 418300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1515,7 +1619,8 @@
             "tl": 258000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1529,7 +1634,8 @@
             "tl": 277100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1543,7 +1649,8 @@
             "tl": 351300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1557,7 +1664,8 @@
             "tl": 297400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1571,7 +1679,8 @@
             "tl": 371400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1585,7 +1694,8 @@
             "tl": 388800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1599,7 +1709,8 @@
             "tl": 315300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1613,7 +1724,8 @@
             "tl": 384400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1627,7 +1739,8 @@
             "tl": 247300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1641,7 +1754,8 @@
             "tl": 262700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1655,7 +1769,8 @@
             "tl": 337400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1669,7 +1784,8 @@
             "tl": 279400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1683,7 +1799,8 @@
             "tl": 354000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1697,7 +1814,8 @@
             "tl": 367200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1711,7 +1829,8 @@
             "tl": 293600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -1725,7 +1844,8 @@
             "tl": 363600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -1747,7 +1867,8 @@
             "tl": 308400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1761,7 +1882,8 @@
             "tl": 334700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1775,7 +1897,8 @@
             "tl": 407500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1789,7 +1912,8 @@
             "tl": 357400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1803,7 +1927,8 @@
             "tl": 429600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1817,7 +1942,8 @@
             "tl": 451400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1831,7 +1957,8 @@
             "tl": 380100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -1845,7 +1972,8 @@
             "tl": 445700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1859,7 +1987,8 @@
             "tl": 290400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1873,7 +2002,8 @@
             "tl": 310700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1887,7 +2017,8 @@
             "tl": 384000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1901,7 +2032,8 @@
             "tl": 327400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1915,7 +2047,8 @@
             "tl": 400200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1929,7 +2062,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1943,7 +2077,8 @@
             "tl": 344100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -1957,7 +2092,8 @@
             "tl": 411800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -1971,7 +2107,8 @@
             "tl": 272400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -1985,7 +2122,8 @@
             "tl": 286700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -1999,7 +2137,8 @@
             "tl": 360900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2013,7 +2152,8 @@
             "tl": 297400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2027,7 +2167,8 @@
             "tl": 371400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2041,7 +2182,8 @@
             "tl": 381600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2055,7 +2197,8 @@
             "tl": 308000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2069,7 +2212,8 @@
             "tl": 377200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -2091,7 +2235,8 @@
             "tl": 283200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2105,7 +2250,8 @@
             "tl": 305900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2119,7 +2265,8 @@
             "tl": 379600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2133,7 +2280,8 @@
             "tl": 333400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2147,7 +2295,8 @@
             "tl": 406200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2161,7 +2310,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2175,7 +2325,8 @@
             "tl": 358500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2189,7 +2340,8 @@
             "tl": 425500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2203,7 +2355,8 @@
             "tl": 286800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2217,7 +2370,8 @@
             "tl": 310700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2231,7 +2385,8 @@
             "tl": 384000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2245,7 +2400,8 @@
             "tl": 339400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2259,7 +2415,8 @@
             "tl": 412200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2273,7 +2430,8 @@
             "tl": 437000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2287,7 +2445,8 @@
             "tl": 365700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2301,7 +2460,8 @@
             "tl": 432000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2315,7 +2475,8 @@
             "tl": 265200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2329,7 +2490,8 @@
             "tl": 281900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2343,7 +2505,8 @@
             "tl": 356100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2357,7 +2520,8 @@
             "tl": 303400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2371,7 +2535,8 @@
             "tl": 376800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2385,7 +2550,8 @@
             "tl": 395300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2399,7 +2565,8 @@
             "tl": 322500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2413,7 +2580,8 @@
             "tl": 390900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2427,7 +2595,8 @@
             "tl": 268800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2441,7 +2610,8 @@
             "tl": 286700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2455,7 +2625,8 @@
             "tl": 360900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2469,7 +2640,8 @@
             "tl": 309400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2483,7 +2655,8 @@
             "tl": 382800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2497,7 +2670,8 @@
             "tl": 402500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2511,7 +2685,8 @@
             "tl": 329700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2525,7 +2700,8 @@
             "tl": 398100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2539,7 +2715,8 @@
             "tl": 247300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2553,7 +2730,8 @@
             "tl": 257900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2567,7 +2745,8 @@
             "tl": 333100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2581,7 +2760,8 @@
             "tl": 273400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2595,7 +2775,8 @@
             "tl": 348000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2609,7 +2790,8 @@
             "tl": 360700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2623,7 +2805,8 @@
             "tl": 286400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -2637,7 +2820,8 @@
             "tl": 357100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -2659,7 +2843,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2673,7 +2858,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2687,7 +2873,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2701,7 +2888,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2715,7 +2903,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2729,7 +2918,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2743,7 +2933,8 @@
             "tl": null
           },
           "recommendedOffice": "에이컴즈",
-          "popup": null
+          "popup": null,
+          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
         },
         {
           "visitCycle": 3,
@@ -2757,7 +2948,8 @@
             "tl": 369600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2771,7 +2963,8 @@
             "tl": 401900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2785,7 +2978,8 @@
             "tl": 472800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2799,7 +2993,8 @@
             "tl": 435400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2813,7 +3008,8 @@
             "tl": 505200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2827,7 +3023,8 @@
             "tl": 535000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2841,7 +3038,8 @@
             "tl": 466500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2855,7 +3053,8 @@
             "tl": 527800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2869,7 +3068,8 @@
             "tl": 344400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2883,7 +3083,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2897,7 +3098,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2911,7 +3113,8 @@
             "tl": 393400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2925,7 +3128,8 @@
             "tl": 464400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2939,7 +3143,8 @@
             "tl": 486000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2953,7 +3158,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2967,7 +3173,8 @@
             "tl": 480200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2981,7 +3188,8 @@
             "tl": 351600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -2995,7 +3203,8 @@
             "tl": 377900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3009,7 +3218,8 @@
             "tl": 449300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3023,7 +3233,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3037,7 +3248,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3051,7 +3263,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3065,7 +3278,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3079,7 +3293,8 @@
             "tl": 493900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3093,7 +3308,8 @@
             "tl": 326400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3107,7 +3323,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3121,7 +3338,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3135,7 +3353,8 @@
             "tl": 363400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3149,7 +3368,8 @@
             "tl": 435000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3163,7 +3383,8 @@
             "tl": 451400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3177,7 +3398,8 @@
             "tl": 380100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3191,7 +3413,8 @@
             "tl": 445700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -3213,7 +3436,8 @@
             "tl": 362400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3227,7 +3451,8 @@
             "tl": 392300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3241,7 +3466,8 @@
             "tl": 463200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3255,7 +3481,8 @@
             "tl": 423400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3269,7 +3496,8 @@
             "tl": 493200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3283,7 +3511,8 @@
             "tl": 521300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3297,7 +3526,8 @@
             "tl": 452100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3311,7 +3541,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3325,7 +3556,8 @@
             "tl": 369600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3339,7 +3571,8 @@
             "tl": 401900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3353,7 +3586,8 @@
             "tl": 472800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3367,7 +3601,8 @@
             "tl": 435400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3381,7 +3616,8 @@
             "tl": 505200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3395,7 +3631,8 @@
             "tl": 535000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3409,7 +3646,8 @@
             "tl": 466500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3423,7 +3661,8 @@
             "tl": 527800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3437,7 +3676,8 @@
             "tl": 344400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3451,7 +3691,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3465,7 +3706,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3479,7 +3721,8 @@
             "tl": 393400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3493,7 +3736,8 @@
             "tl": 464400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3507,7 +3751,8 @@
             "tl": 486000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3521,7 +3766,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3535,7 +3781,8 @@
             "tl": 480200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3549,7 +3796,8 @@
             "tl": 351600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3563,7 +3811,8 @@
             "tl": 377900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3577,7 +3826,8 @@
             "tl": 449300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3591,7 +3841,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3605,7 +3856,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3619,7 +3871,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3633,7 +3886,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -3647,7 +3901,8 @@
             "tl": 493900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3661,7 +3916,8 @@
             "tl": 326400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3675,7 +3931,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3689,7 +3946,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3703,7 +3961,8 @@
             "tl": 363400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3717,7 +3976,8 @@
             "tl": 435000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3731,7 +3991,8 @@
             "tl": 451400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3745,7 +4006,8 @@
             "tl": 380100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -3759,7 +4021,8 @@
             "tl": 445700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -3781,7 +4044,8 @@
             "tl": 337200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3795,7 +4059,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3809,7 +4074,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3823,7 +4089,8 @@
             "tl": 399400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3837,7 +4104,8 @@
             "tl": 470400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3851,7 +4119,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3865,7 +4134,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3879,7 +4149,8 @@
             "tl": 493900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3893,7 +4164,8 @@
             "tl": 340800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3907,7 +4179,8 @@
             "tl": 373100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3921,7 +4194,8 @@
             "tl": 444500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3935,7 +4209,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3949,7 +4224,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3963,7 +4239,8 @@
             "tl": 506900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3977,7 +4254,8 @@
             "tl": 437700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3991,7 +4269,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4005,7 +4284,8 @@
             "tl": 319200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4019,7 +4299,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4033,7 +4314,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4047,7 +4329,8 @@
             "tl": 369400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4061,7 +4344,8 @@
             "tl": 441000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4075,7 +4359,8 @@
             "tl": 465100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4089,7 +4374,8 @@
             "tl": 394500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4103,7 +4389,8 @@
             "tl": 459400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4117,7 +4404,8 @@
             "tl": 322800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4131,7 +4419,8 @@
             "tl": 349100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4145,7 +4434,8 @@
             "tl": 421400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4159,7 +4449,8 @@
             "tl": 375400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4173,7 +4464,8 @@
             "tl": 447000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4187,7 +4479,8 @@
             "tl": 472300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4201,7 +4494,8 @@
             "tl": 401700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4215,7 +4509,8 @@
             "tl": 466600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4229,7 +4524,8 @@
             "tl": 301200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4243,7 +4539,8 @@
             "tl": 320300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4257,7 +4554,8 @@
             "tl": 393600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4271,7 +4569,8 @@
             "tl": 339400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4285,7 +4584,8 @@
             "tl": 412200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4299,7 +4599,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4313,7 +4614,8 @@
             "tl": 358500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4327,7 +4629,8 @@
             "tl": 425500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -4349,7 +4652,8 @@
             "tl": 326400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4363,7 +4667,8 @@
             "tl": 358700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4377,7 +4682,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4391,7 +4697,8 @@
             "tl": 387400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4405,7 +4712,8 @@
             "tl": 458400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4419,7 +4727,8 @@
             "tl": 493200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4433,7 +4742,8 @@
             "tl": 423300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4447,7 +4757,8 @@
             "tl": 486700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4461,7 +4772,8 @@
             "tl": 330000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4475,7 +4787,8 @@
             "tl": 363500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4489,7 +4802,8 @@
             "tl": 435300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4503,7 +4817,8 @@
             "tl": 393400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4517,7 +4832,8 @@
             "tl": 464400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4531,7 +4847,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4545,7 +4862,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4559,7 +4877,8 @@
             "tl": 493900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4573,7 +4892,8 @@
             "tl": 308400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4587,7 +4907,8 @@
             "tl": 334700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4601,7 +4922,8 @@
             "tl": 407500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4615,7 +4937,8 @@
             "tl": 357400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4629,7 +4952,8 @@
             "tl": 429600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4643,7 +4967,8 @@
             "tl": 458600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4657,7 +4982,8 @@
             "tl": 387300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4671,7 +4997,8 @@
             "tl": 452900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4685,7 +5012,8 @@
             "tl": 312000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4699,7 +5027,8 @@
             "tl": 339500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4713,7 +5042,8 @@
             "tl": 412300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4727,7 +5057,8 @@
             "tl": 363400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4741,7 +5072,8 @@
             "tl": 435000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4755,7 +5087,8 @@
             "tl": 465100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4769,7 +5102,8 @@
             "tl": 394500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -4783,7 +5117,8 @@
             "tl": 459400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4797,7 +5132,8 @@
             "tl": 290400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4811,7 +5147,8 @@
             "tl": 310700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4825,7 +5162,8 @@
             "tl": 384000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4839,7 +5177,8 @@
             "tl": 327400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4853,7 +5192,8 @@
             "tl": 400200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4867,7 +5207,8 @@
             "tl": 423300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4881,7 +5222,8 @@
             "tl": 351300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -4895,7 +5237,8 @@
             "tl": 418300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -4917,7 +5260,8 @@
             "tl": 340800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4931,7 +5275,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4945,7 +5290,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4959,7 +5305,8 @@
             "tl": 399400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4973,7 +5320,8 @@
             "tl": 470400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -4987,7 +5335,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5001,7 +5350,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5015,7 +5365,8 @@
             "tl": 493900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5029,7 +5380,8 @@
             "tl": 344400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5043,7 +5395,8 @@
             "tl": 373100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5057,7 +5410,8 @@
             "tl": 444500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5071,7 +5425,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5085,7 +5440,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5099,7 +5455,8 @@
             "tl": 506900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5113,7 +5470,8 @@
             "tl": 437700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5127,7 +5485,8 @@
             "tl": 500400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5141,7 +5500,8 @@
             "tl": 322800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5155,7 +5515,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5169,7 +5530,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5183,7 +5545,8 @@
             "tl": 369400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5197,7 +5560,8 @@
             "tl": 441000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5211,7 +5575,8 @@
             "tl": 465100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5225,7 +5590,8 @@
             "tl": 394500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5239,7 +5605,8 @@
             "tl": 459400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5253,7 +5620,8 @@
             "tl": 326400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5267,7 +5635,8 @@
             "tl": 349100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5281,7 +5650,8 @@
             "tl": 421400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5295,7 +5665,8 @@
             "tl": 375400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5309,7 +5680,8 @@
             "tl": 447000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5323,7 +5695,8 @@
             "tl": 472300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5337,7 +5710,8 @@
             "tl": 401700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5351,7 +5725,8 @@
             "tl": 466600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5365,7 +5740,8 @@
             "tl": 304800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5379,7 +5755,8 @@
             "tl": 320300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5393,7 +5770,8 @@
             "tl": 393600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5407,7 +5785,8 @@
             "tl": 339400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5421,7 +5800,8 @@
             "tl": 412200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5435,7 +5815,8 @@
             "tl": 430500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5449,7 +5830,8 @@
             "tl": 358500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5463,7 +5845,8 @@
             "tl": 425500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -5485,7 +5868,8 @@
             "tl": 358800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5499,7 +5883,8 @@
             "tl": 392300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5513,7 +5898,8 @@
             "tl": 463200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5527,7 +5913,8 @@
             "tl": 423400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5541,7 +5928,8 @@
             "tl": 493200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5555,7 +5943,8 @@
             "tl": 521300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5569,7 +5958,8 @@
             "tl": 452100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5583,7 +5973,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5597,7 +5988,8 @@
             "tl": 340800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5611,7 +6003,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5625,7 +6018,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5639,7 +6033,8 @@
             "tl": 393400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5653,7 +6048,8 @@
             "tl": 464400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5667,7 +6063,8 @@
             "tl": 486000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5681,7 +6078,8 @@
             "tl": 416100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -5695,7 +6093,8 @@
             "tl": 480200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5709,7 +6108,8 @@
             "tl": 322800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5723,7 +6123,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5737,7 +6138,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5751,7 +6153,8 @@
             "tl": 363400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5765,7 +6168,8 @@
             "tl": 435000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5779,7 +6183,8 @@
             "tl": 451400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5793,7 +6198,8 @@
             "tl": 380100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -5807,7 +6213,8 @@
             "tl": 445700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -5829,7 +6236,8 @@
             "tl": 391200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5843,7 +6251,8 @@
             "tl": 430700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5857,7 +6266,8 @@
             "tl": 500600
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5871,7 +6281,8 @@
             "tl": 471400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5885,7 +6296,8 @@
             "tl": 540000
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5899,7 +6311,8 @@
             "tl": 576800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5913,7 +6326,8 @@
             "tl": 509700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5927,7 +6341,8 @@
             "tl": 568800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5941,7 +6356,8 @@
             "tl": 398400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5955,7 +6371,8 @@
             "tl": 440300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5969,7 +6386,8 @@
             "tl": 509800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5983,7 +6401,8 @@
             "tl": 483400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -5997,7 +6416,8 @@
             "tl": 551400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6011,7 +6431,8 @@
             "tl": 591200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6025,7 +6446,8 @@
             "tl": 524100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6039,7 +6461,8 @@
             "tl": 582500
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6053,7 +6476,8 @@
             "tl": 373200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6067,7 +6491,8 @@
             "tl": 406700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6081,7 +6506,8 @@
             "tl": 477100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6095,7 +6521,8 @@
             "tl": 441400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6109,7 +6536,8 @@
             "tl": 510600
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6123,7 +6551,8 @@
             "tl": 542200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6137,7 +6566,8 @@
             "tl": 473700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6151,7 +6581,8 @@
             "tl": 535000
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6165,7 +6596,8 @@
             "tl": 380400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6179,7 +6611,8 @@
             "tl": 416300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6193,7 +6626,8 @@
             "tl": 486700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6207,7 +6641,8 @@
             "tl": 453400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6221,7 +6656,8 @@
             "tl": 522600
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6235,7 +6671,8 @@
             "tl": 555900
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6249,7 +6686,8 @@
             "tl": 488100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6263,7 +6701,8 @@
             "tl": 548700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6277,7 +6716,8 @@
             "tl": 355200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6291,7 +6731,8 @@
             "tl": 382700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6305,7 +6746,8 @@
             "tl": 454100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6319,7 +6761,8 @@
             "tl": 411400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6333,7 +6776,8 @@
             "tl": 481800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6347,7 +6791,8 @@
             "tl": 506900
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6361,7 +6806,8 @@
             "tl": 437700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6375,7 +6821,8 @@
             "tl": 500400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         }
       ]
     },
@@ -6397,7 +6844,8 @@
             "tl": 463300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6411,7 +6859,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6425,7 +6874,8 @@
             "tl": 575100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6439,7 +6889,8 @@
             "tl": 549400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6453,7 +6904,8 @@
             "tl": 615600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6467,7 +6919,8 @@
             "tl": 660900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6481,7 +6934,8 @@
             "tl": 596000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6495,7 +6949,8 @@
             "tl": 650800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6509,7 +6964,8 @@
             "tl": 470500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6523,7 +6979,8 @@
             "tl": 517200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6537,7 +6994,8 @@
             "tl": 584200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6551,7 +7009,8 @@
             "tl": 561400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6565,7 +7024,8 @@
             "tl": 627000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6579,7 +7039,8 @@
             "tl": 674600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6593,7 +7054,8 @@
             "tl": 610500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6607,7 +7069,8 @@
             "tl": 664500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6621,7 +7084,8 @@
             "tl": 445300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6635,7 +7099,8 @@
             "tl": 483500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6649,7 +7114,8 @@
             "tl": 552000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6663,7 +7129,8 @@
             "tl": 519400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6677,7 +7144,8 @@
             "tl": 586800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6691,7 +7159,8 @@
             "tl": 625700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6705,7 +7174,8 @@
             "tl": 560000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6719,7 +7189,8 @@
             "tl": 617100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6733,7 +7204,8 @@
             "tl": 452500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6747,7 +7219,8 @@
             "tl": 493200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6761,7 +7234,8 @@
             "tl": 561100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6775,7 +7249,8 @@
             "tl": 531400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6789,7 +7264,8 @@
             "tl": 598200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6803,7 +7279,8 @@
             "tl": 640000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6817,7 +7294,8 @@
             "tl": 574400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -6831,7 +7309,8 @@
             "tl": 630700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6845,7 +7324,8 @@
             "tl": 427200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6859,7 +7339,8 @@
             "tl": 459500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6873,7 +7354,8 @@
             "tl": 528500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6887,7 +7369,8 @@
             "tl": 489400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6901,7 +7384,8 @@
             "tl": 557400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6915,7 +7399,8 @@
             "tl": 591200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6929,7 +7414,8 @@
             "tl": 524100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -6943,7 +7429,8 @@
             "tl": 582500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -6965,7 +7452,8 @@
             "tl": 463300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6979,7 +7467,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -6993,7 +7482,8 @@
             "tl": 575100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7007,7 +7497,8 @@
             "tl": 549400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7021,7 +7512,8 @@
             "tl": 615600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7035,7 +7527,8 @@
             "tl": 660900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7049,7 +7542,8 @@
             "tl": 596000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7063,7 +7557,8 @@
             "tl": 650800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7077,7 +7572,8 @@
             "tl": 470500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7091,7 +7587,8 @@
             "tl": 517200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7105,7 +7602,8 @@
             "tl": 584200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7119,7 +7617,8 @@
             "tl": 561400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7133,7 +7632,8 @@
             "tl": 627000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7147,7 +7647,8 @@
             "tl": 674600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7161,7 +7662,8 @@
             "tl": 610500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7175,7 +7677,8 @@
             "tl": 664500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7189,7 +7692,8 @@
             "tl": 445300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7203,7 +7707,8 @@
             "tl": 483500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7217,7 +7722,8 @@
             "tl": 552000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7231,7 +7737,8 @@
             "tl": 519400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7245,7 +7752,8 @@
             "tl": 586800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7259,7 +7767,8 @@
             "tl": 625700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7273,7 +7782,8 @@
             "tl": 560000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7287,7 +7797,8 @@
             "tl": 617100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7301,7 +7812,8 @@
             "tl": 452500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7315,7 +7827,8 @@
             "tl": 493200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7329,7 +7842,8 @@
             "tl": 561100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7343,7 +7857,8 @@
             "tl": 531400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7357,7 +7872,8 @@
             "tl": 598200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7371,7 +7887,8 @@
             "tl": 640000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7385,7 +7902,8 @@
             "tl": 574400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7399,7 +7917,8 @@
             "tl": 630700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7413,7 +7932,8 @@
             "tl": 427200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7427,7 +7947,8 @@
             "tl": 459500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7441,7 +7962,8 @@
             "tl": 528500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7455,7 +7977,8 @@
             "tl": 489400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7469,7 +7992,8 @@
             "tl": 557400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7483,7 +8007,8 @@
             "tl": 591200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7497,7 +8022,8 @@
             "tl": 524100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -7511,7 +8037,8 @@
             "tl": 582500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -7533,7 +8060,8 @@
             "tl": 474100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7547,7 +8075,8 @@
             "tl": 522000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7561,7 +8090,8 @@
             "tl": 589000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7575,7 +8105,8 @@
             "tl": 567400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7589,7 +8120,8 @@
             "tl": 633000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7603,7 +8135,8 @@
             "tl": 681800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7617,7 +8150,8 @@
             "tl": 617700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7631,7 +8165,8 @@
             "tl": 671700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7645,7 +8180,8 @@
             "tl": 456100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7659,7 +8195,8 @@
             "tl": 498000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7673,7 +8210,8 @@
             "tl": 565900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7687,7 +8225,8 @@
             "tl": 537400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7701,7 +8240,8 @@
             "tl": 604200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7715,7 +8255,8 @@
             "tl": 646500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7729,7 +8270,8 @@
             "tl": 581600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7743,7 +8285,8 @@
             "tl": 637200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -7765,7 +8308,8 @@
             "tl": 247300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7779,7 +8323,8 @@
             "tl": 267500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7793,7 +8338,8 @@
             "tl": 342200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7807,7 +8353,8 @@
             "tl": 285400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7821,7 +8368,8 @@
             "tl": 359400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7835,7 +8383,8 @@
             "tl": 374400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7849,7 +8398,8 @@
             "tl": 300800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -7863,7 +8413,8 @@
             "tl": 370800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7877,7 +8428,8 @@
             "tl": 229300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7891,7 +8443,8 @@
             "tl": 243600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7905,7 +8458,8 @@
             "tl": 319200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7919,7 +8473,8 @@
             "tl": 255400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7933,7 +8488,8 @@
             "tl": 330600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7947,7 +8503,8 @@
             "tl": 339800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7961,7 +8518,8 @@
             "tl": 264800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -7975,7 +8533,8 @@
             "tl": 336200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -7989,7 +8548,8 @@
             "tl": 222100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8003,7 +8563,8 @@
             "tl": 234000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8017,7 +8578,8 @@
             "tl": 309600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8031,7 +8593,8 @@
             "tl": 243400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8045,7 +8608,8 @@
             "tl": 318600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8059,7 +8623,8 @@
             "tl": 325500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8073,7 +8638,8 @@
             "tl": 250400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8087,7 +8653,8 @@
             "tl": 322600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -8109,7 +8676,8 @@
             "tl": 265200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8123,7 +8691,8 @@
             "tl": 281900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8137,7 +8706,8 @@
             "tl": 356100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8151,7 +8721,8 @@
             "tl": 303400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8165,7 +8736,8 @@
             "tl": 376800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8179,7 +8751,8 @@
             "tl": 395300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8193,7 +8766,8 @@
             "tl": 322500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8207,7 +8781,8 @@
             "tl": 390900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8221,7 +8796,8 @@
             "tl": 247300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8235,7 +8811,8 @@
             "tl": 257900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8249,7 +8826,8 @@
             "tl": 333100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8263,7 +8841,8 @@
             "tl": 273400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8277,7 +8856,8 @@
             "tl": 348000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8291,7 +8871,8 @@
             "tl": 360700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8305,7 +8886,8 @@
             "tl": 286400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8319,7 +8901,8 @@
             "tl": 357100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8333,7 +8916,8 @@
             "tl": 240100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8347,7 +8931,8 @@
             "tl": 248400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8361,7 +8946,8 @@
             "tl": 323600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8375,7 +8961,8 @@
             "tl": 261400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8389,7 +8976,8 @@
             "tl": 336000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8403,7 +8991,8 @@
             "tl": 346300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8417,7 +9006,8 @@
             "tl": 272000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8431,7 +9021,8 @@
             "tl": 343400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -8453,7 +9044,8 @@
             "tl": 265200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8467,7 +9059,8 @@
             "tl": 281900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8481,7 +9074,8 @@
             "tl": 356100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8495,7 +9089,8 @@
             "tl": 303400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8509,7 +9104,8 @@
             "tl": 376800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8523,7 +9119,8 @@
             "tl": 395300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8537,7 +9134,8 @@
             "tl": 322500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8551,7 +9149,8 @@
             "tl": 390900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8565,7 +9164,8 @@
             "tl": 247300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8579,7 +9179,8 @@
             "tl": 257900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8593,7 +9194,8 @@
             "tl": 333100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8607,7 +9209,8 @@
             "tl": 273400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8621,7 +9224,8 @@
             "tl": 348000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8635,7 +9239,8 @@
             "tl": 360700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8649,7 +9254,8 @@
             "tl": 286400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8663,7 +9269,8 @@
             "tl": 357100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8677,7 +9284,8 @@
             "tl": 240100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8691,7 +9299,8 @@
             "tl": 248400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8705,7 +9314,8 @@
             "tl": 323600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8719,7 +9329,8 @@
             "tl": 261400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8733,7 +9344,8 @@
             "tl": 336000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8747,7 +9359,8 @@
             "tl": 346300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8761,7 +9374,8 @@
             "tl": 272000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 12,
@@ -8775,7 +9389,8 @@
             "tl": 343400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -8797,7 +9412,8 @@
             "tl": 279600
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8811,7 +9427,8 @@
             "tl": 301100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8825,7 +9442,8 @@
             "tl": 374800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8839,7 +9457,8 @@
             "tl": 327400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8853,7 +9472,8 @@
             "tl": 400200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8867,7 +9487,8 @@
             "tl": 423300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8881,7 +9502,8 @@
             "tl": 351300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -8895,7 +9517,8 @@
             "tl": 418300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8909,7 +9532,8 @@
             "tl": 261600
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8923,7 +9547,8 @@
             "tl": 277100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8937,7 +9562,8 @@
             "tl": 351300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8951,7 +9577,8 @@
             "tl": 297400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8965,7 +9592,8 @@
             "tl": 371400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8979,7 +9607,8 @@
             "tl": 388800
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -8993,7 +9622,8 @@
             "tl": 315300
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9007,7 +9637,8 @@
             "tl": 384400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9021,7 +9652,8 @@
             "tl": 243700
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9035,7 +9667,8 @@
             "tl": 253100
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9049,7 +9682,8 @@
             "tl": 328400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9063,7 +9697,8 @@
             "tl": 267400
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9077,7 +9712,8 @@
             "tl": 342000
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9091,7 +9727,8 @@
             "tl": 353500
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9105,7 +9742,8 @@
             "tl": 279200
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9119,7 +9757,8 @@
             "tl": 349900
           },
           "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요"
+          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "dataWarning": null
         }
       ]
     },
@@ -9141,7 +9780,8 @@
             "tl": 297600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9155,7 +9795,8 @@
             "tl": 320300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9169,7 +9810,8 @@
             "tl": 393600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9183,7 +9825,8 @@
             "tl": 345400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9197,7 +9840,8 @@
             "tl": 417600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9211,7 +9855,8 @@
             "tl": 437000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9225,7 +9870,8 @@
             "tl": 365700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9239,7 +9885,8 @@
             "tl": 432000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9253,7 +9900,8 @@
             "tl": 279600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9267,7 +9915,8 @@
             "tl": 296300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9281,7 +9930,8 @@
             "tl": 370000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9295,7 +9945,8 @@
             "tl": 315400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9309,7 +9960,8 @@
             "tl": 388800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9323,7 +9975,8 @@
             "tl": 402500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9337,7 +9990,8 @@
             "tl": 329700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9351,7 +10005,8 @@
             "tl": 398100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9365,7 +10020,8 @@
             "tl": 261600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9379,7 +10035,8 @@
             "tl": 272300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9393,7 +10050,8 @@
             "tl": 347000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9407,7 +10065,8 @@
             "tl": 285400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9421,7 +10080,8 @@
             "tl": 359400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9435,7 +10095,8 @@
             "tl": 367200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9449,7 +10110,8 @@
             "tl": 293600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -9463,7 +10125,8 @@
             "tl": 363600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -9485,7 +10148,8 @@
             "tl": 312000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9499,7 +10163,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9513,7 +10178,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9527,7 +10193,8 @@
             "tl": 375400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9541,7 +10208,8 @@
             "tl": 447000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9555,7 +10223,8 @@
             "tl": 479500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9569,7 +10238,8 @@
             "tl": 408900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9583,7 +10253,8 @@
             "tl": 473000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9597,7 +10268,8 @@
             "tl": 366000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9611,7 +10283,8 @@
             "tl": 416300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9625,7 +10298,8 @@
             "tl": 486700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9639,7 +10313,8 @@
             "tl": 465400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9653,7 +10328,8 @@
             "tl": 534000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9667,7 +10343,8 @@
             "tl": 584000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9681,7 +10358,8 @@
             "tl": 576000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9695,7 +10373,8 @@
             "tl": 330000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9709,7 +10388,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9723,7 +10403,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9737,7 +10418,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9751,7 +10433,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9765,7 +10448,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -9779,7 +10463,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9793,7 +10478,8 @@
             "tl": 294000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9807,7 +10493,8 @@
             "tl": 320300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9821,7 +10508,8 @@
             "tl": 393600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9835,7 +10523,8 @@
             "tl": 345400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9849,7 +10538,8 @@
             "tl": 417600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9863,7 +10553,8 @@
             "tl": 444200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9877,7 +10568,8 @@
             "tl": 372900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9891,7 +10583,8 @@
             "tl": 439200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9905,7 +10598,8 @@
             "tl": 312000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9919,7 +10613,8 @@
             "tl": 344300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9933,7 +10628,8 @@
             "tl": 416600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9947,7 +10643,8 @@
             "tl": 375400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9961,7 +10658,8 @@
             "tl": 447000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9975,7 +10673,8 @@
             "tl": 479500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -9989,7 +10688,8 @@
             "tl": 408900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10003,7 +10703,8 @@
             "tl": 473000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10017,7 +10718,8 @@
             "tl": 276000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10031,7 +10733,8 @@
             "tl": 296300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10045,7 +10748,8 @@
             "tl": 370000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10059,7 +10763,8 @@
             "tl": 315400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10073,7 +10778,8 @@
             "tl": 388800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10087,7 +10793,8 @@
             "tl": 409700
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10101,7 +10808,8 @@
             "tl": 336900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10115,7 +10823,8 @@
             "tl": 404600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10129,7 +10838,8 @@
             "tl": 330000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10143,7 +10853,8 @@
             "tl": 368300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10157,7 +10868,8 @@
             "tl": 440100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10171,7 +10883,8 @@
             "tl": 405400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10185,7 +10898,8 @@
             "tl": 475800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10199,7 +10913,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10213,7 +10928,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10227,7 +10943,8 @@
             "tl": 294000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10241,7 +10958,8 @@
             "tl": 320300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10255,7 +10973,8 @@
             "tl": 393600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10269,7 +10988,8 @@
             "tl": 345400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10283,7 +11003,8 @@
             "tl": 417600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10297,7 +11018,8 @@
             "tl": 444200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10311,7 +11033,8 @@
             "tl": 372900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10325,7 +11048,8 @@
             "tl": 439200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     },
@@ -10347,7 +11071,8 @@
             "tl": 355200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10361,7 +11086,8 @@
             "tl": 387500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10375,7 +11101,8 @@
             "tl": 458900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10389,7 +11116,8 @@
             "tl": 417400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10403,7 +11131,8 @@
             "tl": 487800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10417,7 +11146,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10431,7 +11161,8 @@
             "tl": 444900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10445,7 +11176,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10459,7 +11191,8 @@
             "tl": 409200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10473,7 +11206,8 @@
             "tl": 459500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10487,7 +11221,8 @@
             "tl": 528500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10501,7 +11236,8 @@
             "tl": 507400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10515,7 +11251,8 @@
             "tl": 574800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10529,7 +11266,8 @@
             "tl": 619200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10543,7 +11281,8 @@
             "tl": 552800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10557,7 +11296,8 @@
             "tl": 609900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10571,7 +11311,8 @@
             "tl": 373200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10585,7 +11326,8 @@
             "tl": 411500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10599,7 +11341,8 @@
             "tl": 481900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10613,7 +11356,8 @@
             "tl": 447400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10627,7 +11371,8 @@
             "tl": 516600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10641,7 +11386,8 @@
             "tl": 549400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10655,7 +11401,8 @@
             "tl": 480900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -10669,7 +11416,8 @@
             "tl": 541500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10683,7 +11431,8 @@
             "tl": 337200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10697,7 +11446,8 @@
             "tl": 363500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10711,7 +11461,8 @@
             "tl": 435300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10725,7 +11476,8 @@
             "tl": 387400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10739,7 +11491,8 @@
             "tl": 458400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10753,7 +11506,8 @@
             "tl": 479500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10767,7 +11521,8 @@
             "tl": 408900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10781,7 +11536,8 @@
             "tl": 473000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10795,7 +11551,8 @@
             "tl": 355200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10809,7 +11566,8 @@
             "tl": 387500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10823,7 +11581,8 @@
             "tl": 458900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10837,7 +11596,8 @@
             "tl": 417400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10851,7 +11611,8 @@
             "tl": 487800
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10865,7 +11626,8 @@
             "tl": 514100
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10879,7 +11641,8 @@
             "tl": 444900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 6,
@@ -10893,7 +11656,8 @@
             "tl": 507600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10907,7 +11671,8 @@
             "tl": 319200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10921,7 +11686,8 @@
             "tl": 339500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10935,7 +11701,8 @@
             "tl": 412300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10949,7 +11716,8 @@
             "tl": 357400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10963,7 +11731,8 @@
             "tl": 429600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10977,7 +11746,8 @@
             "tl": 444200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -10991,7 +11761,8 @@
             "tl": 372900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11005,7 +11776,8 @@
             "tl": 439200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11019,7 +11791,8 @@
             "tl": 373200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11033,7 +11806,8 @@
             "tl": 411500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11047,7 +11821,8 @@
             "tl": 481900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11061,7 +11836,8 @@
             "tl": 447400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11075,7 +11851,8 @@
             "tl": 516600
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11089,7 +11866,8 @@
             "tl": 549400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11103,7 +11881,8 @@
             "tl": 480900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11117,7 +11896,8 @@
             "tl": 541500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11131,7 +11911,8 @@
             "tl": 337200
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11145,7 +11926,8 @@
             "tl": 363500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11159,7 +11941,8 @@
             "tl": 435300
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11173,7 +11956,8 @@
             "tl": 387400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11187,7 +11971,8 @@
             "tl": 458400
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11201,7 +11986,8 @@
             "tl": 479500
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11215,7 +12001,8 @@
             "tl": 408900
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": "자가관리",
@@ -11229,7 +12016,8 @@
             "tl": 473000
           },
           "recommendedOffice": "동일",
-          "popup": null
+          "popup": null,
+          "dataWarning": null
         }
       ]
     }
