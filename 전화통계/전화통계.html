@@ -277,6 +277,27 @@ tbody tr:hover { background: #fafcff; }
 
 <div id="loading" class="show">데이터 불러오는 중...</div>
 
+<!-- 메모 모달 -->
+<div id="memo-overlay">
+  <div id="memo-modal">
+    <h3 id="memo-modal-title">📝 주간 메모</h3>
+    <div class="memo-tabs">
+      <button class="memo-tab-btn active" data-cat="인터넷">🌐 인터넷</button>
+      <button class="memo-tab-btn" data-cat="렌탈">🏠 렌탈</button>
+    </div>
+    <div class="memo-pane active" id="memo-pane-인터넷">
+      <textarea id="memo-text-인터넷" placeholder="이 주의 인터넷 관련 메모를 입력하세요..."></textarea>
+    </div>
+    <div class="memo-pane" id="memo-pane-렌탈">
+      <textarea id="memo-text-렌탈" placeholder="이 주의 렌탈 관련 메모를 입력하세요..."></textarea>
+    </div>
+    <div class="memo-actions">
+      <button id="btn-memo-cancel">닫기</button>
+      <button id="btn-memo-save">저장</button>
+    </div>
+  </div>
+</div>
+
 <header>
   <h1>📞 전화 통계 대시보드</h1>
   <div style="display:flex;align-items:center;gap:16px;">
@@ -298,6 +319,7 @@ tbody tr:hover { background: #fafcff; }
     </div>
     <div class="filter-selects">
       <div id="period-selector"></div>
+      <button id="btn-memo">📝 메모<span class="memo-dot"></span></button>
       <select id="category-sel">
         <option value="">전체 구분</option>
         <option value="인터넷">인터넷</option>
