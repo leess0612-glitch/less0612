@@ -155,7 +155,7 @@ def scan_columns(ws):
 
     for key in EXPECTED_KEYS:
         if key not in found_fee_keys:
-            warnings.append(f'⚠️  월요금 열 누락: {key[0]}개월 {key[1]}')
+            warnings.append(f'[경고] 월요금 열 누락: {key[0]}개월 {key[1]}')
         if key not in found_comm_keys:
             warnings.append(f'⚠️  수수료 열 누락: {key[0]}개월 {key[1]}')
 
