@@ -241,8 +241,8 @@ def build_products(ac_data, tl_data):
             tl_row = tl_data.get(key)
             row    = ac_row or tl_row
 
-            ak_fee     = ac_row['commission'] if ac_row else 0
-            tl_fee     = tl_row['commission'] if tl_row else 0
+            ak_fee     = (ac_row['commission'] + EXTRA_FEE_AK) if ac_row else 0
+            tl_fee     = (tl_row['commission'] + EXTRA_FEE_TL) if tl_row else 0
             ak_monthly = ac_row['monthlyFee'] if ac_row else 0
             tl_monthly = tl_row['monthlyFee'] if tl_row else 0
 
