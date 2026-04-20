@@ -320,12 +320,21 @@ def build_products(ac_data, tl_data):
                 else:
                     recommended = None
 
-                # 팝업 결정
+                # 팝업 결정 (비즈니스 규칙 — 의도된 한쪽 전용)
                 popup = None
                 if model_code in POPUP_TL_ONLY and not ac_row:
                     popup = POPUP_TL_ONLY[model_code]
                 elif model_code in POPUP_AK_ONLY and not tl_row:
                     popup = POPUP_AK_ONLY[model_code]
+
+                # dataWarning — 양쪽 파일에 모두 있는 모델인데 특정 옵션만 누락
+                # (비즈니스 규칙이 아닌 데이터 입력 오류 의심)
+                data_warning = None
+                if model_code in model_in_both and popup is None:
+                    if ac_fee_val > 0 and not tl_fee_val:
+                        data_warning = '티엘 수수료 누락 — 직접확인필요'
+                    elif tl_fee_val > 0 and not ac_fee_val:
+                        data_warning = '에이컴즈 수수료 누락 — 직접확인필요'
 
                 options.append({
                     'visitCycle':        visit_cycle,
@@ -340,6 +349,7 @@ def build_products(ac_data, tl_data):
                     },
                     'recommendedOffice': recommended,
                     'popup':             popup,
+                    'dataWarning':       data_warning,
                 })
 
         products.append({
