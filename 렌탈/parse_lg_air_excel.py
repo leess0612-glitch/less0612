@@ -261,7 +261,10 @@ def build_products(ac_data, tl_data):
     products = []
 
     for model_code in sorted(model_groups):
-        keys = sorted(model_groups[model_code])
+        def sort_key(k):
+            vc = k[1]
+            return (k[0], 999 if isinstance(vc, str) else vc, k[2])
+        keys = sorted(model_groups[model_code], key=sort_key)
         sample = (ac_data.get(keys[0]) or tl_data.get(keys[0], {}))
 
         options = []
