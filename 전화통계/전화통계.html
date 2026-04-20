@@ -810,7 +810,7 @@ function buildPeriodSelector(period) {
       rangeLabel.textContent = `(${toDateLabel(start)} ~ ${toDateLabel(end)})`;
     }
 
-    inp.addEventListener('change', () => { updateWeekLabel(inp.value); render(); });
+    inp.addEventListener('change', () => { updateWeekLabel(inp.value); updateMemoDot(); render(); });
     updateWeekLabel(inp.value);
 
     el.appendChild(inp);
@@ -881,6 +881,7 @@ document.querySelectorAll('.period-tabs .tab').forEach(btn => {
     btn.classList.add('active');
     currentPeriod = btn.dataset.p;
     buildPeriodSelector(currentPeriod);
+    syncMemoButton();
     render();
   });
 });
