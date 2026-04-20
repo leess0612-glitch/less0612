@@ -85,6 +85,13 @@ def normalize_model_code(raw):
     return MODEL_ALIASES.get(base, base)
 
 
+def display_model_code(model_code):
+    """표기용 모델코드: 숫자 뒤 알파벳 제거 (색상코드 제외).
+    예) AS356NGMAM → AS356 / HY705RSUABM → HY705"""
+    m = re.match(r'^([A-Za-z]+\d+)', model_code)
+    return m.group(1) if m else model_code
+
+
 def get_lineup_display(lineup, model_code):
     """하이드로타워(HY*)는 (가습기) 병기."""
     if model_code.startswith(HUMIDIFIER_PREFIX):
