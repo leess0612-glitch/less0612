@@ -26,6 +26,11 @@ DATA_ROW  = 4   # 1-indexed 데이터 시작 행 (양쪽 동일)
 AC_FEE_COL = 21  # U열
 TL_FEE_COL = 14  # N열
 
+# 렌탈주관사(LG전자) 별도 수수료 — 매달 확인 후 수정
+# 에이컴즈·티엘 각각 다를 수 있음
+EXTRA_FEE_AK = 100000
+EXTRA_FEE_TL = 100000
+
 # 팝업 예외: (정규화 모델코드, 결합여부) → 팝업 메시지
 # WS511SH / WS513SH 결합 → 티엘 미운영
 POPUP_EXCEPTIONS = {
