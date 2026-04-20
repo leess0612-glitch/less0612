@@ -40,6 +40,12 @@ SERVICE_TYPE_DESC = {
     '기본케어':    '방문관리 없음',
 }
 
+# 모델코드 별칭 — 에이컴즈·티엘 파일 간 코드 표기 불일치 처리
+# 값: 두 파일 모두 이 코드로 통일
+MODEL_ALIASES = {
+    'HY705RSUBM':  'HY705RSUABM',  # 에이컴즈 RSUBM → 티엘 RSUABM
+}
+
 # 팝업 예외: {정규화모델코드: 메시지}
 # 티엘에만 있는 제품 → 에이컴즈 접수 불가
 POPUP_TL_ONLY = {
