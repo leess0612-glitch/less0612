@@ -457,6 +457,27 @@ def parse_lg_air(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
     print(f'팝업 예외:     {popup_count}건')
     print(f'데이터 경고:   {warning_count}건')
 
+    # 정규화 이슈 수집: 헤더 경고 + 한쪽 전용 수수료
+    norm_issues = []
+    for w in ac_warnings:
+        if '[경고]' in w:
+            norm_issues.append({
+                'type': 'HEADER_WARNING',
+                'name': '[에이컴즈 파일 헤더 변경]',
+                'modelCode': '',
+                'akDetail': w,
+                'tlDetail': '',
+            })
+    for w in tl_warnings:
+        if '[경고]' in w:
+            norm_issues.append({
+                'type': 'HEADER_WARNING',
+                'name': '[티엘 파일 헤더 변경]',
+                'modelCode': '',
+                'akDetail': '',
+                'tlDetail': w,
+            })
+
     data = {
         'metadata': {
             'brand':    'LG전자',
@@ -464,6 +485,7 @@ def parse_lg_air(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
             'parsedAt': datetime.now().strftime('%Y-%m-%d'),
             'extraFee': {'ak': EXTRA_FEE_AK, 'tl': EXTRA_FEE_TL},
         },
+        'normalizationIssues': norm_issues,
         'products': products,
     }
 
