@@ -1091,7 +1091,7 @@ function closeOneSidePopup() {
 
 function showNormIssuesPopup() {
   const tbody = document.getElementById('norm-issues-tbody');
-  tbody.innerHTML = NORM_ISSUES.map(issue => {
+  tbody.innerHTML = ACTIVE_NORM_ISSUES.map(issue => {
     const typeLabel = issue.type === 'AK_ONLY'
       ? '<span class="ni-type-ak">AK만</span>'
       : '<span class="ni-type-partial">일부불일치</span>';
