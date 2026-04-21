@@ -1914,14 +1914,7 @@ function renderAirOptionArea(product) {
     // 접수처 + 경고 셀
     const officeCellContent = officeBadge(o.recommendedOffice) + warnCell;
 
-    // 수수료: ak/tl 개별 표기 (동일하면 단일, 다르면 둘 다)
-    let commHtml;
-    if (o.commissionAk && o.commissionTl && o.commissionAk !== o.commissionTl) {
-      commHtml = `<span class="air-comm-ak">에이컴즈 ${fmtNum(o.commissionAk)}</span><br>
-                  <span class="air-comm-tl">티엘 ${fmtNum(o.commissionTl)}</span>`;
-    } else {
-      commHtml = `<strong class="total-comm">${fmtNum(o.totalCommission)}원</strong>`;
-    }
+    const commHtml = `<strong class="total-comm">${fmtNum(o.totalCommission)}원</strong>`;
 
     rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${o.combineType !== '단품' ? 'package-row' : ''}">
       <td style="width:52px;padding-left:10px">
