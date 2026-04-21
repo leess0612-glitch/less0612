@@ -1907,8 +1907,8 @@ function renderAirOptionArea(product) {
       const label = o.combineType === '신규결합' ? '── 신규결합 할인 적용 ──'
                   : o.combineType === '기존결합' ? '── 기존결합 할인 적용 ──'
                   : '── 단품 ──';
-      const labelStyle = isCombineLabel ? ' style="font-size:15px;font-weight:700;color:#dc2626"' : '';
-      rowsHtml += `<tr class="pkg-sep"><td colspan="8"${labelStyle}>${label}</td></tr>`;
+      const labelClass = isCombineLabel ? ' class="sep-highlight"' : '';
+      rowsHtml += `<tr class="pkg-sep"><td colspan="8"${labelClass}>${label}</td></tr>`;
     }
     prevCombine = o.combineType;
 
