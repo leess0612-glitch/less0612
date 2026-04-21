@@ -1197,6 +1197,11 @@ function getBrandTag() {
 
 // ── 빠른 바로가기 패널 ──
 function renderQuickAccess() {
+  if (currentBrand === 'lg') return renderQuickAccessLg();
+  return renderQuickAccessSk();
+}
+
+function renderQuickAccessSk() {
   const PRIMARY_GROUPS = [
     { type: '얼음정수기 ★',
       filter: p => p.category === '정수기' && p.name.includes('원코크') && p.name.includes('플러스') },
@@ -1217,7 +1222,7 @@ function renderQuickAccess() {
 
   function getMinPrice(p) {
     if (!p.options || !p.options.length) return null;
-    const filtered = p.options.filter(o => !o.managementType.includes('_패키지') && !o.managementType.includes('타사보상'));
+    const filtered = p.options.filter(o => (o.managementType||'') && !o.managementType.includes('_패키지') && !o.managementType.includes('타사보상'));
     if (!filtered.length) return null;
     const min = filtered.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
     const mgmt = min.managementType.includes('방문') ? '방문' : min.managementType.includes('셀프') ? '셀프' : '';
@@ -1231,8 +1236,7 @@ function renderQuickAccess() {
     const btnHtml = prods.length
       ? prods.map(p => {
           const minPrice = !primary ? getMinPrice(p) : null;
-          return `
-          <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
+          return `<button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
             <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
             ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
@@ -1253,6 +1257,80 @@ function renderQuickAccess() {
       <div class="qa-section-header">기타 제품</div>
       <div class="qa-secondary-grid">${secondaryHtml}</div>
     </div>
+  </div>`;
+}
+
+function renderQuickAccessLg() {
+  const allTags = getProductTags();
+  const brandTag = getBrandTag();
+
+  function getMinPrice(p) {
+    if (!p.options || !p.options.length) return null;
+    // 공청기 계열: visitCycle 기반
+    if (p.isAirProduct) {
+      const min = p.options.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
+      return `${(min.monthlyFee).toLocaleString('ko-KR')}원`;
+    }
+    const filtered = p.options.filter(o => !o.lgCombine);
+    if (!filtered.length) return null;
+    const min = filtered.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
+    return `${(min.monthlyFee).toLocaleString('ko-KR')}원 (${min.contractLabel})`;
+  }
+
+  function makeBtn(p) {
+    const minPrice = getMinPrice(p);
+    return `<button class="qa-prod-btn" onclick="selectProduct('${p.id}')">
+      <span class="qa-brand-tag">${brandTag}</span> ${escHtml(getDisplayName(p))}
+      ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
+    </button>`;
+  }
+
+  function makeCol(label, prods) {
+    const btnHtml = prods.length
+      ? prods.map(makeBtn).join('')
+      : `<div class="qa-empty">준비 중</div>`;
+    return `<div class="qa-type-col"><div class="qa-type-label">${label}</div>${btnHtml}</div>`;
+  }
+
+  // ── 정수기: 태그 기능별 그룹 ──
+  const waterProds = DB.products.filter(p => p.category === '정수기');
+  const opts = getTagOptions();
+  const funcGroups = (opts.기능 || []).map(func => {
+    const prods = waterProds.filter(p => (allTags[p.id] || {}).기능 === func);
+    return { label: func, prods };
+  }).filter(g => g.prods.length > 0);
+
+  // 태그 없는 정수기 (미분류)
+  const taggedIds = new Set(waterProds.filter(p => (allTags[p.id] || {}).기능).map(p => p.id));
+  const untagged = waterProds.filter(p => !taggedIds.has(p.id));
+
+  const waterHtml = [
+    ...funcGroups.map(g => makeCol(g.label, g.prods)),
+    ...(untagged.length ? [makeCol('미분류', untagged)] : []),
+  ].join('');
+
+  // ── 공청기 / 제습기 / 가습기 ──
+  const airCats = ['공기청정기', '제습기', '가습기'];
+  const airHtml = airCats.map(cat => {
+    const prods = DB.products.filter(p => p.category === cat);
+    return makeCol(cat, prods);
+  }).join('');
+
+  const hasWater = waterProds.length > 0;
+  const hasAir   = DB.products.some(p => p.isAirProduct);
+
+  return `<div class="quick-access">
+    <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
+    ${hasWater ? `
+    <div class="qa-brand-section">
+      <div class="qa-section-header">정수기</div>
+      <div class="qa-secondary-grid">${waterHtml}</div>
+    </div>` : ''}
+    ${hasAir ? `
+    <div class="qa-brand-section">
+      <div class="qa-section-header">공청기 · 제습기 · 가습기</div>
+      <div class="qa-secondary-grid">${airHtml}</div>
+    </div>` : ''}
   </div>`;
 }
 
