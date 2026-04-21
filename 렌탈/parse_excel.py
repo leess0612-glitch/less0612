@@ -941,6 +941,13 @@ if __name__ == "__main__":
 
     data["normalizationIssues"] = normalization_issues
 
+    # ── 옵션 약정 오름차순 정렬 (일반→패키지, 각 그룹 내 contractMonths 오름차순) ──
+    for product in data["products"]:
+        product["options"].sort(key=lambda o: (
+            1 if o.get("isPackage") else 0,
+            o.get("contractMonths", 0)
+        ))
+
     # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
     with open(json_out, "w", encoding="utf-8") as f:
