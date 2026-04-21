@@ -2027,6 +2027,12 @@ function switchBrand(brand) {
   const prodSearch = document.getElementById('prod-search');
   if (prodSearch) prodSearch.value = '';
 
+  // NORM_ISSUES 탭: SK 전용 — LG/LG공청기 전환 시 숨김
+  const normTab = document.getElementById('norm-issues-tab');
+  if (normTab) {
+    normTab.style.display = (brand === 'sk' && NORM_ISSUES && NORM_ISSUES.length > 0) ? '' : 'none';
+  }
+
   renderCategoryList();
   renderProductList();
   renderMain();
