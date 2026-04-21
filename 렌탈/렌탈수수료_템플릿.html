@@ -1358,8 +1358,7 @@ function renderOptionList(product) {
 
     const mgmtBase = getMgmtBase(o.managementType);
     const discLevel = getDiscLevel(o.managementType);
-    const mgmtBadgeClass = isPkg ? 'mgmt-패키지' :
-      !mgmtBase ? 'mgmt-none' :
+    const mgmtBadgeClass = !mgmtBase ? (isPkg ? 'mgmt-패키지' : 'mgmt-none') :
       discLevel === '할인+타사' ? `mgmt-${mgmtBase}-할인타사` :
       discLevel === '할인' ? `mgmt-${mgmtBase}-할인` :
       `mgmt-${mgmtBase}`;
