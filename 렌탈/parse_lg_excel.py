@@ -168,6 +168,13 @@ def parse_sheet_rows(rows, fee_col):
     반환: {(약정년수, 모델코드, 관리주기_or_자가, 결합여부): row_info}
     """
     result = {}
+    # carry-forward: 병합 셀 없는 파일(AK)에서 모델명이 첫 행에만 있을 때 대비
+    _last_model_raw = None
+    _last_lineup    = None
+    _last_spec      = None
+    _last_promo_f   = None
+    _last_promo_h   = None
+
     for row in rows:
         year        = to_int(row.get(1))   # A열: 약정년수
         lineup      = clean(row.get(3))    # C열: 라인업
@@ -181,6 +188,20 @@ def parse_sheet_rows(rows, fee_col):
         comb_disc   = to_int(row.get(12))  # L열: 결합할인가
         monthly_fee = to_int(row.get(13))  # M열: 렌탈료
         commission  = to_int(row.get(fee_col))  # 수수료
+
+        # 새 모델 블록 시작이면 carry 갱신, 아니면 이전 값 유지
+        if model_raw:
+            _last_model_raw = model_raw
+            _last_lineup    = lineup
+            _last_spec      = spec
+            _last_promo_f   = promo_f
+            _last_promo_h   = promo_h
+        else:
+            model_raw = _last_model_raw
+            lineup    = _last_lineup
+            spec      = _last_spec
+            promo_f   = _last_promo_f
+            promo_h   = _last_promo_h
 
         if not model_raw or year == 0:
             continue
