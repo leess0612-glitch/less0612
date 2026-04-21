@@ -12,7 +12,7 @@
     {
       "id": "AS065CWHA",
       "modelCode": "AS065CWHA",
-      "displayCode": "AS065",
+      "displayCode": "AS065CWHA",
       "lineup": "25년 에어로캣타워(V펫필터)",
       "productType": "공기청정기",
       "options": [
@@ -381,7 +381,7 @@
     {
       "id": "AS065PWHA",
       "modelCode": "AS065PWHA",
-      "displayCode": "AS065",
+      "displayCode": "AS065PWHA",
       "lineup": "25년 에어로퍼니처(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -750,7 +750,7 @@
     {
       "id": "AS065SWHA",
       "modelCode": "AS065SWHA",
-      "displayCode": "AS065",
+      "displayCode": "AS065SWHA",
       "lineup": "25년 에어로스피커(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -2835,7 +2835,7 @@
     {
       "id": "AS206NGHAM",
       "modelCode": "AS206NGHAM",
-      "displayCode": "AS206",
+      "displayCode": "AS206NGHAM",
       "lineup": "26년360알파AI+ (M5필터)",
       "productType": "공기청정기",
       "options": [
@@ -2848,11 +2848,11 @@
           "monthlyFee": 72900,
           "commission": {
             "ak": 362400,
-            "tl": null
+            "tl": 362400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2863,11 +2863,11 @@
           "monthlyFee": 60900,
           "commission": {
             "ak": 392300,
-            "tl": null
+            "tl": 392300
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2878,11 +2878,11 @@
           "monthlyFee": 59000,
           "commission": {
             "ak": 463200,
-            "tl": null
+            "tl": 463200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2893,11 +2893,11 @@
           "monthlyFee": 53900,
           "commission": {
             "ak": 423400,
-            "tl": null
+            "tl": 423400
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2908,11 +2908,11 @@
           "monthlyFee": 52200,
           "commission": {
             "ak": 493200,
-            "tl": null
+            "tl": 493200
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2923,11 +2923,26 @@
           "monthlyFee": 47400,
           "commission": {
             "ak": 521300,
-            "tl": null
+            "tl": 521300
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
+        },
+        {
+          "visitCycle": 3,
+          "serviceType": "라이트플러스",
+          "serviceDesc": "기본 세척 케어서비스, 제품 성능 점검, 필터 클리닝 및 교체, 무상 A/S 제공",
+          "contractMonths": 72,
+          "combineType": "단품",
+          "monthlyFee": 32200,
+          "commission": {
+            "ak": 452100,
+            "tl": 452100
+          },
+          "recommendedOffice": "동일",
+          "popup": null,
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -2938,11 +2953,11 @@
           "monthlyFee": 46400,
           "commission": {
             "ak": 514100,
-            "tl": null
+            "tl": 514100
           },
-          "recommendedOffice": "에이컴즈",
+          "recommendedOffice": "동일",
           "popup": null,
-          "dataWarning": "티엘 수수료 누락 — 직접확인필요"
+          "dataWarning": null
         },
         {
           "visitCycle": 3,
@@ -3429,7 +3444,7 @@
     {
       "id": "AS206NSHAM",
       "modelCode": "AS206NSHAM",
-      "displayCode": "AS206",
+      "displayCode": "AS206NSHAM",
       "lineup": "26년360알파AI+ (M5필터)",
       "productType": "공기청정기",
       "options": [
@@ -8437,378 +8452,9 @@
       ]
     },
     {
-      "id": "DQ235MWGAWS",
-      "modelCode": "DQ235MWGAWS",
-      "displayCode": "DQ235",
-      "lineup": "오브제컬렉션 제습기 23L",
-      "productType": "제습기",
-      "options": [
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 45900,
-          "commission": {
-            "ak": 265200,
-            "tl": 265200
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 37900,
-          "commission": {
-            "ak": 281900,
-            "tl": 281900
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 36700,
-          "commission": {
-            "ak": 356100,
-            "tl": 356100
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 33900,
-          "commission": {
-            "ak": 303400,
-            "tl": 303400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 32800,
-          "commission": {
-            "ak": 376800,
-            "tl": 376800
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 29900,
-          "commission": {
-            "ak": 395300,
-            "tl": 395300
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 20300,
-          "commission": {
-            "ak": 322500,
-            "tl": 322500
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 3,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 29300,
-          "commission": {
-            "ak": 390900,
-            "tl": 390900
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 40900,
-          "commission": {
-            "ak": 247300,
-            "tl": 247300
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 32900,
-          "commission": {
-            "ak": 257900,
-            "tl": 257900
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 31900,
-          "commission": {
-            "ak": 333100,
-            "tl": 333100
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 28900,
-          "commission": {
-            "ak": 273400,
-            "tl": 273400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 28000,
-          "commission": {
-            "ak": 348000,
-            "tl": 348000
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 25100,
-          "commission": {
-            "ak": 360700,
-            "tl": 360700
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 17000,
-          "commission": {
-            "ak": 286400,
-            "tl": 286400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 6,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 24600,
-          "commission": {
-            "ak": 357100,
-            "tl": 357100
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 36,
-          "combineType": "단품",
-          "monthlyFee": 38900,
-          "commission": {
-            "ak": 240100,
-            "tl": 240100
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "단품",
-          "monthlyFee": 30900,
-          "commission": {
-            "ak": 248400,
-            "tl": 248400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 48,
-          "combineType": "신규결합",
-          "monthlyFee": 29900,
-          "commission": {
-            "ak": 323600,
-            "tl": 323600
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "단품",
-          "monthlyFee": 26900,
-          "commission": {
-            "ak": 261400,
-            "tl": 261400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 60,
-          "combineType": "신규결합",
-          "monthlyFee": 26000,
-          "commission": {
-            "ak": 336000,
-            "tl": 336000
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "기존결합",
-          "monthlyFee": 23100,
-          "commission": {
-            "ak": 346300,
-            "tl": 346300
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "단품",
-          "monthlyFee": 15700,
-          "commission": {
-            "ak": 272000,
-            "tl": 272000
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        },
-        {
-          "visitCycle": 12,
-          "serviceType": "기본케어",
-          "serviceDesc": "방문관리 없음",
-          "contractMonths": 72,
-          "combineType": "신규결합",
-          "monthlyFee": 22700,
-          "commission": {
-            "ak": 343400,
-            "tl": 343400
-          },
-          "recommendedOffice": "동일",
-          "popup": null,
-          "dataWarning": null
-        }
-      ]
-    },
-    {
       "id": "FS065PSJCM",
       "modelCode": "FS065PSJCM",
-      "displayCode": "FS065",
+      "displayCode": "FS065PSJCM",
       "lineup": "25년 에어로타워 온풍(V필터)",
       "productType": "공기청정기",
       "options": [
@@ -9177,7 +8823,7 @@
     {
       "id": "FS065PSKAM",
       "modelCode": "FS065PSKAM",
-      "displayCode": "FS065",
+      "displayCode": "FS065PSKAM",
       "lineup": "25년 에어로타워 온풍(V필터)",
       "productType": "공기청정기",
       "options": [
