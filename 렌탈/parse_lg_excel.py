@@ -346,6 +346,29 @@ def parse_lg(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
     print(f'티엘 전용:     {tl_only}건')
     print(f'수수료 차이:   {diff_count}건')
 
+    # 정규화 이슈 수집 (한쪽에만 수수료 있는 옵션)
+    norm_issues = []
+    for p in products:
+        for o in p['options']:
+            ak = o['commission']['ak']
+            tl = o['commission']['tl']
+            if ak and not tl:
+                norm_issues.append({
+                    'type':      'AK_ONLY',
+                    'name':      p.get('lineup') or p['modelCode'],
+                    'modelCode': p['modelCode'],
+                    'akDetail':  f'{o["contractYears"]}년 {o["manageType"]} — 에이컴즈만 수수료 있음',
+                    'tlDetail':  '티엘 수수료 없음',
+                })
+            elif tl and not ak:
+                norm_issues.append({
+                    'type':      'TL_ONLY',
+                    'name':      p.get('lineup') or p['modelCode'],
+                    'modelCode': p['modelCode'],
+                    'akDetail':  '에이컴즈 수수료 없음',
+                    'tlDetail':  f'{o["contractYears"]}년 {o["manageType"]} — 티엘만 수수료 있음',
+                })
+
     return {
         'metadata': {
             'brand':    'LG전자',
@@ -356,6 +379,7 @@ def parse_lg(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
             },
             'parsedAt': datetime.now().strftime('%Y-%m-%d %H:%M'),
         },
+        'normalizationIssues': norm_issues,
         'products': products,
     }
 
