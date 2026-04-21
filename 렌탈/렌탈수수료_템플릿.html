@@ -1807,9 +1807,16 @@ function transformLgAirData(raw) {
   const vcOrder = v => (v === '자가관리' ? 9999 : Number(v));
 
   const products = raw.products.map(p => {
+    const airTasaGroup = o => {
+      const mgmt = o.managementType || o.serviceType || '';
+      if (mgmt.includes('타사보상')) return 1;
+      return 0;
+    };
     const options = [...p.options].sort((a, b) => {
       if (vcOrder(a.visitCycle) !== vcOrder(b.visitCycle)) return vcOrder(a.visitCycle) - vcOrder(b.visitCycle);
       if (a.serviceType !== b.serviceType) return (a.serviceType||'').localeCompare(b.serviceType||'');
+      const ta = airTasaGroup(a), tb = airTasaGroup(b);
+      if (ta !== tb) return ta - tb;
       if (a.contractMonths !== b.contractMonths) return a.contractMonths - b.contractMonths;
       return (ctOrder[a.combineType]??9) - (ctOrder[b.combineType]??9);
     }).map(o => {
