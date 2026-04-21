@@ -1777,10 +1777,11 @@ function transformLgData(raw) {
     });
 
     return {
-      id:        p.id,
-      modelCode: p.modelCode,
-      name:      p.lineup || p.modelCode,
-      category:  '정수기',
+      id:           p.id,
+      modelCode:    p.modelCode,
+      name:         p.lineup || p.modelCode,
+      category:     '정수기',
+      isAirProduct: false,
       options,
     };
   });
@@ -1793,6 +1794,24 @@ function transformLgData(raw) {
     },
     products,
   };
+}
+
+// ── LG 통합 DB (정수기 + 공청기·제습기·가습기) ──
+let _LG_MERGED_CACHE = null;
+function getLgMergedDb() {
+  if (!_LG_MERGED_CACHE) {
+    const wDb  = getLgDb();
+    const airDb = getLgAirDb();
+    _LG_MERGED_CACHE = {
+      metadata: {
+        brand:      'LG전자',
+        sheetTitle: '정수기·공청기·제습기·가습기',
+        parsedAt:   wDb.metadata.parsedAt || airDb.metadata.parsedAt,
+      },
+      products: [...wDb.products, ...airDb.products],
+    };
+  }
+  return _LG_MERGED_CACHE;
 }
 
 function showLgPopup(productName, msg) {
