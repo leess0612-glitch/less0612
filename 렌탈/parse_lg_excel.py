@@ -247,7 +247,6 @@ def build_products(ac_data, tl_data):
             tl_monthly = tl_row['monthlyFee'] if tl_row else 0
 
             # 접수처 추천
-            # LG정수기는 AK/TL 수수료가 동일 — AK 엑셀에 없는 조합도 '동일' 처리
             if ak_fee > 0 and tl_fee > 0:
                 if ak_fee > tl_fee:
                     recommended = '에이컴즈'
@@ -258,7 +257,7 @@ def build_products(ac_data, tl_data):
             elif ak_fee > 0:
                 recommended = '에이컴즈'
             elif tl_fee > 0:
-                recommended = '동일'  # TL만 있어도 동일 수수료로 처리
+                recommended = '티엘'
             else:
                 recommended = None
 
