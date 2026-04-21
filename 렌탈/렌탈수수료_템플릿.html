@@ -953,7 +953,7 @@ function renderProductList() {
     <div class="prod-item ${p.id === state.productId ? 'active' : ''}"
       onclick="selectProduct('${p.id}')">
       <div>${escHtml(getDisplayName(p))}</div>
-      <div class="model">${p.modelCode || ''}</div>
+      <div class="model">${p.displayCode || p.modelCode || ''}</div>
     </div>
   `).join('');
 }
