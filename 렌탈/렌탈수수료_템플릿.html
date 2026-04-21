@@ -1304,7 +1304,7 @@ function renderMain() {
           <span style="color:var(--gray-600);font-size:12px">원</span>
         </div>
       </div>
-      ${currentBrand === 'lg-air'
+      ${product.isAirProduct
         ? renderAirOptionArea(product)
         : `<div class="options-scroll-wrap">${renderOptionList(product)}</div>`
       }
@@ -1591,8 +1591,8 @@ function buildCopyText() {
   );
   if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
-  // LG 공청기 안내문
-  if (currentBrand === 'lg-air') {
+  // LG 공청기 계열 안내문
+  if (product.isAirProduct) {
     let text = `[LG전자] ${getDisplayName(product)}\n`;
     if (product.displayCode) text += `모델: ${product.displayCode}\n`;
     text += '\n';
