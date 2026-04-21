@@ -1856,12 +1856,16 @@ function transformLgAirData(raw) {
       };
     });
 
+    const rawType = p.productType || '공기청정기';
+    const category = (rawType === '하이드로에센셜' || rawType === '하이드로타워') ? '가습기'
+                   : rawType;
     return {
       id:          p.id,
       modelCode:   p.modelCode,
       displayCode: p.displayCode || p.modelCode,
       name:        p.lineup || p.modelCode,
-      category:    p.productType || '공기청정기',
+      category,
+      isAirProduct: true,
       options,
     };
   });
@@ -1869,7 +1873,7 @@ function transformLgAirData(raw) {
   return {
     metadata: {
       brand:      (raw.metadata && raw.metadata.brand) || 'LG전자',
-      sheetTitle: '공청기·제습기 (에이컴즈·티엘)',
+      sheetTitle: '공청기·제습기·가습기 (에이컴즈·티엘)',
       parsedAt:   (raw.metadata && raw.metadata.parsedAt) || '',
     },
     products,
