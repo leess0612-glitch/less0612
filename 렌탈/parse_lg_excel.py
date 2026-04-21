@@ -168,12 +168,13 @@ def parse_sheet_rows(rows, fee_col):
     반환: {(약정년수, 모델코드, 관리주기_or_자가, 결합여부): row_info}
     """
     result = {}
-    # carry-forward: 병합 셀 없는 파일(AK)에서 모델명이 첫 행에만 있을 때 대비
+    # carry-forward: 병합 셀 없는 파일(AK)에서 값이 첫 행에만 있을 때 대비
     _last_model_raw = None
     _last_lineup    = None
     _last_spec      = None
     _last_promo_f   = None
     _last_promo_h   = None
+    _last_j_val     = None
 
     for row in rows:
         year        = to_int(row.get(1))   # A열: 약정년수
@@ -202,6 +203,12 @@ def parse_sheet_rows(rows, fee_col):
             spec      = _last_spec
             promo_f   = _last_promo_f
             promo_h   = _last_promo_h
+
+        # j_val: 관리주기도 carry-forward (결합 행은 J열이 비어 있는 경우 있음)
+        if j_val is not None:
+            _last_j_val = j_val
+        else:
+            j_val = _last_j_val
 
         if not model_raw or year == 0:
             continue
