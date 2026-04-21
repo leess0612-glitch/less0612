@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-21 14:42"
+    "parsedAt": "2026-04-21 14:46"
   },
   "products": [
     {
@@ -1116,7 +1116,7 @@
           "additionalCount": 3,
           "additionalCommission": 112200,
           "bonusCommission": 165000,
-          "totalCommission": 557000,
+          "totalCommission": 556900,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
