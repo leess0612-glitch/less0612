@@ -1917,6 +1917,14 @@ function renderAirOptionArea(product) {
   const curDesc = visibleOpts[0]?.serviceDesc || null;
   const isNoVisit = curSvc === '기본케어';
 
+  // 약정 그룹 번호 매핑 (짝수=음영)
+  const airContractGroupMap = {};
+  let airContractGroupCounter = 0;
+  visibleOpts.forEach(o => {
+    const cm = o.contractMonths ?? '';
+    if (!(cm in airContractGroupMap)) airContractGroupMap[cm] = airContractGroupCounter++;
+  });
+
   // 결합 구분선 삽입용
   let prevCombine = null;
   let rowsHtml = '';
@@ -1930,6 +1938,8 @@ function renderAirOptionArea(product) {
     const realCost = Math.round(gift * 1.1);
     const margin = o.totalCommission - realCost;
     const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
+    const airGroupIdx = airContractGroupMap[o.contractMonths ?? ''] ?? 0;
+    const airShadeClass = (airGroupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
 
     // 타사보상 구분선 (LG 공청기)
     const airIsTasa = o.combineType === '단품' && !!(o.serviceType && o.serviceType.includes('타사보상'));
