@@ -2072,9 +2072,7 @@ function switchBrand(brand) {
   currentBrand = brand;
 
   if (brand === 'lg') {
-    DB = getLgDb();
-  } else if (brand === 'lg-air') {
-    DB = getLgAirDb();
+    DB = getLgMergedDb();
   } else {
     DB = _SK_DB;
   }
@@ -2082,9 +2080,8 @@ function switchBrand(brand) {
   // 탭 active 클래스 갱신
   document.querySelectorAll('.brand-tab').forEach(el => {
     const txt = el.textContent.trim();
-    const isActive = (brand === 'sk'     && txt === 'SK매직') ||
-                     (brand === 'lg'     && txt === 'LG전자') ||
-                     (brand === 'lg-air' && txt === 'LG공청기');
+    const isActive = (brand === 'sk' && txt === 'SK매직') ||
+                     (brand === 'lg' && txt === 'LG전자');
     el.classList.toggle('active', isActive);
   });
 
