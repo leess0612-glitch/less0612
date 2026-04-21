@@ -1766,6 +1766,225 @@ function showLgPopup(productName, msg) {
   document.getElementById('one-side-popup').classList.add('show');
 }
 
+// ── LG 공청기·제습기 데이터 변환 ──
+let _LG_AIR_DB_CACHE = null;
+function getLgAirDb() {
+  if (!_LG_AIR_DB_CACHE) _LG_AIR_DB_CACHE = transformLgAirData(LG_AIR_RAW);
+  return _LG_AIR_DB_CACHE;
+}
+
+function transformLgAirData(raw) {
+  if (!raw || !raw.products) return { metadata: {}, products: [] };
+  const ctOrder = { '단품': 0, '신규결합': 1, '기존결합': 2 };
+  const vcOrder = v => (v === '자가관리' ? 9999 : Number(v));
+
+  const products = raw.products.map(p => {
+    const options = [...p.options].sort((a, b) => {
+      if (vcOrder(a.visitCycle) !== vcOrder(b.visitCycle)) return vcOrder(a.visitCycle) - vcOrder(b.visitCycle);
+      if (a.serviceType !== b.serviceType) return (a.serviceType||'').localeCompare(b.serviceType||'');
+      if (a.contractMonths !== b.contractMonths) return a.contractMonths - b.contractMonths;
+      return (ctOrder[a.combineType]??9) - (ctOrder[b.combineType]??9);
+    }).map(o => {
+      const ak = o.commission ? (o.commission.ak || 0) : 0;
+      const tl = o.commission ? (o.commission.tl || 0) : 0;
+      const totalCommission = o.recommendedOffice === '에이컴즈' ? ak
+                            : o.recommendedOffice === '티엘'    ? tl
+                            : o.recommendedOffice === '동일'    ? ak
+                            : Math.max(ak, tl, 0);
+      return {
+        visitCycle:       o.visitCycle,
+        serviceType:      o.serviceType,
+        serviceDesc:      o.serviceDesc || null,
+        contractMonths:   o.contractMonths,
+        contractLabel:    `${o.contractMonths}개월`,
+        combineType:      o.combineType,
+        monthlyFee:       o.monthlyFee || 0,
+        totalCommission,
+        commissionAk:     ak || null,
+        commissionTl:     tl || null,
+        recommendedOffice: o.recommendedOffice || null,
+        lgAirPopup:       o.popup || null,
+        lgAirDataWarning: o.dataWarning || null,
+        isPackage:        false,
+        lgCombine:        false,
+      };
+    });
+
+    return {
+      id:          p.id,
+      modelCode:   p.modelCode,
+      displayCode: p.displayCode || p.modelCode,
+      name:        p.lineup || p.modelCode,
+      category:    p.productType || '공기청정기',
+      options,
+    };
+  });
+
+  return {
+    metadata: {
+      brand:      (raw.metadata && raw.metadata.brand) || 'LG전자',
+      sheetTitle: '공청기·제습기 (에이컴즈·티엘)',
+      parsedAt:   (raw.metadata && raw.metadata.parsedAt) || '',
+    },
+    products,
+  };
+}
+
+// ── LG 공청기 필터 선택 ──
+function selectAirFilter(vc, svc) {
+  state.lgAirVisitCycle  = vc  !== undefined ? vc  : state.lgAirVisitCycle;
+  state.lgAirServiceType = svc !== undefined ? svc : state.lgAirServiceType;
+  // 선택한 vc에서 이전 svc가 없으면 첫 번째로 초기화
+  const product = DB.products.find(p => p.id === state.productId);
+  if (product) {
+    const available = [...new Set(
+      product.options.filter(o => String(o.visitCycle) === String(state.lgAirVisitCycle)).map(o => o.serviceType)
+    )];
+    if (!available.includes(state.lgAirServiceType)) state.lgAirServiceType = available[0] ?? null;
+  }
+  // 옵션 영역만 교체 (전체 재렌더 없이)
+  const el = document.getElementById('air-option-area');
+  if (el && product) el.outerHTML = renderAirOptionArea(product);
+  updateCopyText();
+}
+
+// ── LG 공청기 옵션 영역 렌더 ──
+function renderAirOptionArea(product) {
+  const opts = product.options;
+  if (!opts.length) return '<div id="air-option-area"><div class="empty-state" style="padding:24px"><p>옵션 없음</p></div></div>';
+
+  const vcOrder = v => (v === '자가관리' ? 9999 : Number(v));
+  const vcAll = [...new Set(opts.map(o => o.visitCycle))].sort((a,b) => vcOrder(a)-vcOrder(b));
+  const curVc  = state.lgAirVisitCycle  ?? vcAll[0];
+  const filteredBySvc = opts.filter(o => String(o.visitCycle) === String(curVc));
+  const svcAll = [...new Set(filteredBySvc.map(o => o.serviceType))];
+  const curSvc = svcAll.includes(state.lgAirServiceType) ? state.lgAirServiceType : svcAll[0];
+
+  // 서비스 타입 버튼 라벨
+  const vcLabel = vc => vc === '자가관리' ? '자가관리' : `방문 ${vc}개월`;
+
+  // 표기할 옵션
+  const visibleOpts = filteredBySvc.filter(o => o.serviceType === curSvc);
+
+  // 결합유형 구분선 필요 여부
+  const hasNewCombine = visibleOpts.some(o => o.combineType === '신규결합');
+  const hasOldCombine = visibleOpts.some(o => o.combineType === '기존결합');
+
+  // 서비스 설명
+  const curDesc = visibleOpts[0]?.serviceDesc || null;
+  const isNoVisit = curSvc === '기본케어';
+
+  // 결합 구분선 삽입용
+  let prevCombine = null;
+  let rowsHtml = '';
+
+  visibleOpts.forEach(o => {
+    const key = getOptionKey(product.id, o);
+    const safeKey = key.replace(/[^a-zA-Z0-9]/g,'_');
+    const isSelected = state.selectedKeys.has(key);
+    const gift = getGift(o);
+    const realCost = Math.round(gift * 1.1);
+    const margin = o.totalCommission - realCost;
+    const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
+
+    // 결합유형 구분선
+    if (o.combineType !== prevCombine && prevCombine !== null) {
+      const label = o.combineType === '신규결합' ? '── 신규결합 할인 적용 ──'
+                  : o.combineType === '기존결합' ? '── 기존결합 할인 적용 ──'
+                  : '── 단품 ──';
+      rowsHtml += `<tr class="pkg-sep"><td colspan="8">${label}</td></tr>`;
+    }
+    prevCombine = o.combineType;
+
+    const combineCell = o.combineType !== '단품'
+      ? `<span class="combine-badge">${o.combineType}</span>` : '';
+
+    const warnCell = o.lgAirDataWarning
+      ? `<span class="data-warn-badge" title="${escHtml(o.lgAirDataWarning)}">직접확인필요</span>` : '';
+
+    // 접수처 + 경고 셀
+    const officeCellContent = officeBadge(o.recommendedOffice) + warnCell;
+
+    // 수수료: ak/tl 개별 표기 (동일하면 단일, 다르면 둘 다)
+    let commHtml;
+    if (o.commissionAk && o.commissionTl && o.commissionAk !== o.commissionTl) {
+      commHtml = `<span class="air-comm-ak">에이컴즈 ${fmtNum(o.commissionAk)}</span><br>
+                  <span class="air-comm-tl">티엘 ${fmtNum(o.commissionTl)}</span>`;
+    } else {
+      commHtml = `<strong class="total-comm">${fmtNum(o.totalCommission)}원</strong>`;
+    }
+
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${o.combineType !== '단품' ? 'package-row' : ''}">
+      <td style="width:52px;padding-left:10px">
+        <button class="select-btn ${isSelected ? 'selected' : ''}"
+          onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
+          id="selbtn-${safeKey}">${isSelected ? '해제' : '선택'}</button>
+      </td>
+      <td>${officeCellContent}</td>
+      <td class="contract-cell">${o.contractLabel}</td>
+      <td>${combineCell}</td>
+      <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
+      <td>${commHtml}</td>
+      <td onclick="event.stopPropagation()">
+        <input class="gift-input" type="text"
+          value="${fmtNum(gift)}"
+          data-key="${escHtml(key)}"
+          data-total="${o.totalCommission}"
+          data-safe="${safeKey}"
+          onchange="updateGift(this)"
+          onblur="this.value=fmtNum(getGiftByKey(this.dataset.key,parseInt(this.dataset.total)))">
+        <div class="cost-note-cell" id="cost-${safeKey}">×1.1 = ${fmtNum(realCost)}원</div>
+      </td>
+      <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
+    </tr>`;
+  });
+
+  const tableHtml = `<div class="options-scroll-wrap">
+    <table class="options-table">
+      <thead><tr>
+        <th></th>
+        <th>접수처</th>
+        <th>약정</th>
+        <th>결합</th>
+        <th>월요금</th>
+        <th>수수료</th>
+        <th>현금사은품(수정가능)</th>
+        <th>실마진</th>
+      </tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+  </div>`;
+
+  // 서비스 타입 설명
+  const descHtml = isNoVisit
+    ? `<div class="air-svc-desc"><span class="air-novisit-badge">방문관리 없음</span></div>`
+    : (curDesc ? `<div class="air-svc-desc">${escHtml(curDesc)}</div>` : '');
+
+  // 필터 버튼들
+  const vcBtns = vcAll.map(vc =>
+    `<button class="air-vc-btn ${String(vc) === String(curVc) ? 'active' : ''}"
+      onclick="selectAirFilter('${vc}', undefined)">${vcLabel(vc)}</button>`
+  ).join('');
+
+  const svcBtns = svcAll.map(svc =>
+    `<button class="air-svc-btn ${svc === curSvc ? 'active' : ''}"
+      onclick="selectAirFilter(undefined, '${svc}')">${svc}</button>`
+  ).join('');
+
+  return `<div id="air-option-area">
+    <div class="air-filter-wrap">
+      <div class="air-filter-row">
+        <span class="air-filter-label">방문주기</span>${vcBtns}
+      </div>
+      <div class="air-filter-row">
+        <span class="air-filter-label">서비스</span>${svcBtns}
+      </div>
+    </div>
+    ${descHtml}
+    ${tableHtml}
+  </div>`;
+}
+
 function switchBrand(brand) {
   if (brand === currentBrand) return;
   currentBrand = brand;
