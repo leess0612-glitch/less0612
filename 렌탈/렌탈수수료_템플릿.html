@@ -1375,7 +1375,7 @@ function renderOptionList(product) {
       pkgSepAdded = true;
       const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
       rowsHtml += `<tr class="pkg-sep">
-        <td colspan="${totalColspan}">── 결합 할인 적용 ──</td>
+        <td colspan="${totalColspan}" style="font-size:15px;font-weight:700;color:#dc2626">── 결합 할인 적용 ──</td>
       </tr>`;
     }
 
