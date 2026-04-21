@@ -1362,8 +1362,8 @@ function renderOptionList(product) {
     const discLevel = getDiscLevel(o.managementType);
     const mgmtBadgeClass = isPkg ? 'mgmt-패키지' :
       !mgmtBase ? 'mgmt-none' :
-      discLevel === '할인+타사' ? 'mgmt-할인타사' :
-      discLevel === '할인' ? 'mgmt-할인' :
+      discLevel === '할인+타사' ? `mgmt-${mgmtBase}-할인타사` :
+      discLevel === '할인' ? `mgmt-${mgmtBase}-할인` :
       `mgmt-${mgmtBase}`;
     const mgmtDisplay = displayMgmt(o.managementType);
     const totalColspan = 1 + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1 + (hasOffice?1:0);
