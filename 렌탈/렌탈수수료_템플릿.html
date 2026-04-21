@@ -1924,6 +1924,13 @@ function renderAirOptionArea(product) {
     const margin = o.totalCommission - realCost;
     const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
 
+    // 타사보상 구분선 (LG 공청기)
+    const airIsTasa = o.combineType === '단품' && !!(o.serviceType && o.serviceType.includes('타사보상'));
+    if (airIsTasa && !airTasaSepAdded) {
+      airTasaSepAdded = true;
+      rowsHtml += `<tr class="pkg-sep"><td colspan="8" class="sep-highlight">── 타사보상 ──</td></tr>`;
+    }
+
     // 결합유형 구분선
     if (o.combineType !== prevCombine && prevCombine !== null) {
       const isCombineLabel = o.combineType === '신규결합' || o.combineType === '기존결합';
