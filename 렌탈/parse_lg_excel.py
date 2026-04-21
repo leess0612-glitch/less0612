@@ -406,7 +406,9 @@ def inject_lg_into_html(data, base_dir):
         return
 
     lg_js = json.dumps(data, ensure_ascii=False)
+    norm_js = json.dumps(data.get('normalizationIssues', []), ensure_ascii=False)
     html_out = html.replace('__LG_DATA__', lg_js)
+    html_out = html_out.replace('__LG_WATER_NORM_ISSUES__', norm_js)
 
     with open(target, 'w', encoding='utf-8') as f:
         f.write(html_out)
