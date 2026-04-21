@@ -915,7 +915,7 @@ function getCategories() {
 function renderCategoryList() {
   const el = document.getElementById('cat-list');
   const cats = getCategories();
-  const order = ['전체', '정수기', '공기청정기', '비데', '매트리스', '기타'];
+  const order = ['전체', '정수기', '공기청정기', '제습기', '가습기', '비데', '매트리스', '기타'];
   el.innerHTML = order.filter(c => cats[c]).map(c => `
     <button class="cat-btn ${state.category === c ? 'active' : ''}"
       onclick="selectCategory('${c}')">
@@ -1609,7 +1609,7 @@ function buildCopyText() {
     return text.trim();
   }
 
-  const brandLabel = currentBrand === 'lg' ? 'LG전자' : 'SK매직';
+  const brandLabel = currentBrand === 'lg' ? 'LG전자' : 'SK매직';  // LG공청기는 isAirProduct 분기에서 처리
   let text = `[${brandLabel}] ${getDisplayName(product)}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
   text += '\n';
