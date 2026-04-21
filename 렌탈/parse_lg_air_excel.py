@@ -398,7 +398,9 @@ def inject_into_html(data, base_dir, placeholder='__LG_AIR_DATA__'):
     if placeholder not in html:
         print(f'[경고] {os.path.basename(target)} 에 {placeholder} 플레이스홀더가 없습니다.')
         return
+    norm_js = json.dumps(data.get('normalizationIssues', []), ensure_ascii=False)
     html_out = html.replace(placeholder, json.dumps(data, ensure_ascii=False))
+    html_out = html_out.replace('__LG_AIR_NORM_ISSUES__', norm_js)
     with open(target, 'w', encoding='utf-8') as f:
         f.write(html_out)
     print(f'HTML 주입 완료: {target}')
