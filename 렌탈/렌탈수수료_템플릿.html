@@ -1459,6 +1459,9 @@ function getGiftByKey(key, total) {
 }
 
 function getOptionKey(productId, option) {
+  if (currentBrand === 'lg-air') {
+    return `${productId}__${option.visitCycle}__${option.serviceType}__${option.contractMonths}__${option.combineType}`;
+  }
   const base = `${productId}__${option.managementType}__${option.contractMonths}__${option.monthlyFee}`;
   return option.lgCombineType ? `${base}__${option.lgCombineType}` : base;
 }
