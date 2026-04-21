@@ -346,18 +346,26 @@ def parse_lg(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
     print(f'티엘 전용:     {tl_only}건')
     print(f'수수료 차이:   {diff_count}건')
 
-    # 정규화 이슈 수집 (한쪽에만 수수료 있는 옵션)
+    # 정규화 이슈 수집 (한쪽에만 수수료 있는 옵션, 팝업 예외 제외, 중복 제거)
     norm_issues = []
+    _seen = set()
     for p in products:
+        # 팝업 예외 제품은 이미 개별 팝업으로 안내 → norm_issues 제외
+        if any(o.get('popup') for o in p['options']):
+            continue
         for o in p['options']:
             ak = o['commission']['ak']
             tl = o['commission']['tl']
+            dedup_key = (p['modelCode'], o['contractYears'], o['manageType'], o.get('combineType',''))
+            if dedup_key in _seen:
+                continue
+            _seen.add(dedup_key)
             if ak and not tl:
                 norm_issues.append({
                     'type':      'AK_ONLY',
                     'name':      p.get('lineup') or p['modelCode'],
                     'modelCode': p['modelCode'],
-                    'akDetail':  f'{o["contractYears"]}년 {o["manageType"]} — 에이컴즈만 수수료 있음',
+                    'akDetail':  f'{o["contractYears"]}년 {o["manageType"]} {o.get("combineType","")} — 에이컴즈만 수수료 있음'.strip(),
                     'tlDetail':  '티엘 수수료 없음',
                 })
             elif tl and not ak:
@@ -366,7 +374,7 @@ def parse_lg(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
                     'name':      p.get('lineup') or p['modelCode'],
                     'modelCode': p['modelCode'],
                     'akDetail':  '에이컴즈 수수료 없음',
-                    'tlDetail':  f'{o["contractYears"]}년 {o["manageType"]} — 티엘만 수수료 있음',
+                    'tlDetail':  f'{o["contractYears"]}년 {o["manageType"]} {o.get("combineType","")} — 티엘만 수수료 있음'.strip(),
                 })
 
     return {
