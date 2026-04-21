@@ -649,6 +649,44 @@
     font-family: inherit; color: var(--gray-600);
   }
   .opt-modal-close:hover { background: var(--gray-200); }
+
+  /* ── LG 공청기·제습기 서비스타입 필터 ── */
+  .air-filter-wrap {
+    padding: 10px 16px 8px;
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .air-filter-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+  .air-filter-label { font-size: 10px; font-weight: 700; color: var(--gray-400); min-width: 48px; letter-spacing: .3px; }
+  .air-vc-btn, .air-svc-btn {
+    padding: 3px 10px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--gray-200); background: var(--gray-50);
+    color: var(--gray-600); font-size: 12px; font-family: inherit;
+    white-space: nowrap; transition: background .12s, color .12s;
+  }
+  .air-vc-btn:hover, .air-svc-btn:hover { border-color: var(--brand); color: var(--brand); }
+  .air-vc-btn.active { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 700; }
+  .air-svc-btn.active { background: #0f5ba5; border-color: #0f5ba5; color: #fff; font-weight: 700; }
+  .air-svc-desc {
+    padding: 6px 12px; font-size: 11px; color: var(--gray-600); line-height: 1.5;
+    background: #f0f6ff; border: 1px solid #bfdbfe; border-radius: 5px; margin: 2px 0 4px;
+  }
+  .air-novisit-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    background: #f3f4f6; color: #6b7280; border: 1px solid var(--gray-200);
+  }
+  .combine-badge {
+    display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700;
+    background: #ede9fe; color: #6d28d9; white-space: nowrap;
+  }
+  .data-warn-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    color: #b45309; background: #fef3c7; border: 1px solid #fcd34d;
+    border-radius: 3px; padding: 1px 4px; margin-left: 4px; vertical-align: middle;
+    white-space: nowrap;
+  }
+  .air-comm-ak { color: #1d4ed8; font-size: 11px; }
+  .air-comm-tl { color: #166534; font-size: 11px; }
 </style>
 </head>
 <body>
