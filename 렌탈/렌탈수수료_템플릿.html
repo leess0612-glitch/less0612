@@ -830,6 +830,7 @@ const PKG_NOTES = {
 };
 const TL_WARNINGS = __TL_WARNINGS__; // 티엘 J≠K 경고 모델코드 목록
 const LG_RAW = __LG_DATA__;
+const LG_AIR_RAW = __LG_AIR_DATA__;
 
 let currentBrand = 'sk';
 
@@ -840,6 +841,8 @@ let state = {
   targetMargin: 150000,
   giftOverrides: {},
   searchText: '',
+  lgAirVisitCycle: null,
+  lgAirServiceType: null,
 };
 
 // ── 초기화 ──
