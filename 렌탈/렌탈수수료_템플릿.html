@@ -966,10 +966,29 @@ function filterProducts() {
 function selectProduct(id) {
   state.productId = id;
   state.selectedKeys = new Set();
+
+  // LG공청기: 필터 초기화 (renderMain 전에 설정)
+  if (currentBrand === 'lg-air') {
+    const prod = DB.products.find(p => p.id === id);
+    if (prod && prod.options.length) {
+      const vcOrder = v => (v === '자가관리' ? 9999 : Number(v));
+      const vcTypes = [...new Set(prod.options.map(o => o.visitCycle))].sort((a,b) => vcOrder(a)-vcOrder(b));
+      const svcTypes = [...new Set(prod.options.filter(o => o.visitCycle === vcTypes[0]).map(o => o.serviceType))];
+      state.lgAirVisitCycle = vcTypes[0] ?? null;
+      state.lgAirServiceType = svcTypes[0] ?? null;
+    }
+  }
+
   renderProductList();
   renderMain();
   const product = DB.products.find(p => p.id === id);
   if (product) {
+    // LG공청기 팝업 처리
+    if (currentBrand === 'lg-air') {
+      const popupOpt = product.options.find(o => o.lgAirPopup);
+      if (popupOpt) showLgPopup(product.displayCode || product.modelCode, popupOpt.lgAirPopup);
+      return;
+    }
     // LG 팝업 예외 처리
     if (currentBrand === 'lg') {
       const popupOpt = product.options.find(o => o.lgPopup);
