@@ -887,7 +887,7 @@ function init() {
 
   // 정규화 이슈 팝업 (매 페이지 로드마다 표시, 오늘 다시 보지 않기 누른 경우만 제외)
   const todayStr = new Date().toISOString().slice(0,10);
-  const skipDay = localStorage.getItem('normIssuesSkipDay');
+  const skipDay = localStorage.getItem('normIssuesSkipDay_sk');
   if (NORM_ISSUES && NORM_ISSUES.length > 0 && skipDay !== todayStr) {
     showNormIssuesPopup();
   }
