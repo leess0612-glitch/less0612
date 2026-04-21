@@ -1109,7 +1109,8 @@ function closeNormIssuesPopup() {
 }
 function normIssuesSkipToday() {
   const todayStr = new Date().toISOString().slice(0,10);
-  localStorage.setItem('normIssuesSkipDay', todayStr);
+  const key = currentBrand === 'lg' ? 'normIssuesSkipDay_lg' : 'normIssuesSkipDay_sk';
+  localStorage.setItem(key, todayStr);
   closeNormIssuesPopup();
 }
 
