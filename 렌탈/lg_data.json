@@ -6,8 +6,94 @@
       "ak": "★LG 26년 04월 구독전문점 수수료안내_0401.xlsx",
       "tl": "2026.04.09 수수료.xlsx"
     },
-    "parsedAt": "2026-04-21 14:55"
+    "parsedAt": "2026-04-21 15:08"
   },
+  "normalizationIssues": [
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "4년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "4년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "5년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "5년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "6년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "WS511SH",
+      "modelCode": "WS511SH",
+      "akDetail": "6년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "4년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "4년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "5년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "5년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "6년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    },
+    {
+      "type": "AK_ONLY",
+      "name": "스탠드",
+      "modelCode": "WS513SH",
+      "akDetail": "6년 방문관리 — 에이컴즈만 수수료 있음",
+      "tlDetail": "티엘 수수료 없음"
+    }
+  ],
   "products": [
     {
       "id": "WD120M",
