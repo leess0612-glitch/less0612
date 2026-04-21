@@ -1369,7 +1369,7 @@ function renderOptionList(product) {
       const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
       const pkgNote = PKG_NOTES[product.category] || '';
       rowsHtml += `<tr class="pkg-sep">
-        <td colspan="${totalColspan}">
+        <td colspan="${totalColspan}" class="sep-highlight">
           ── 패키지 (동일 브랜드 2개 이상) ──
           ${pkgNote ? `<span class="pkg-note">${pkgNote}</span>` : ''}
         </td>
@@ -1380,7 +1380,7 @@ function renderOptionList(product) {
       pkgSepAdded = true;
       const totalColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
       rowsHtml += `<tr class="pkg-sep">
-        <td colspan="${totalColspan}" style="font-size:15px;font-weight:700;color:#dc2626">── 결합 할인 적용 ──</td>
+        <td colspan="${totalColspan}" class="sep-highlight">── 결합 할인 적용 ──</td>
       </tr>`;
     }
 
