@@ -1368,7 +1368,7 @@ function renderOptionList(product) {
     const mgmtDisplay = displayMgmt(o.managementType);
     const totalColspan = 1 + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1 + (hasOffice?1:0);
 
-    const groupIdx = mgmtGroupMap[o.managementType || ''] ?? 0;
+    const groupIdx = contractGroupMap[o.contractMonths ?? ''] ?? 0;
     const shadeClass = (groupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
 
     // 타사보상 구분선
