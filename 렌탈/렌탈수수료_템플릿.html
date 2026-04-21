@@ -1970,7 +1970,7 @@ function renderAirOptionArea(product) {
 
     const commHtml = `<strong class="total-comm">${fmtNum(o.totalCommission)}원</strong>`;
 
-    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${o.combineType !== '단품' ? 'package-row' : ''}">
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${o.combineType !== '단품' ? 'package-row' : ''} ${airShadeClass}">
       <td style="width:52px;padding-left:10px">
         <button class="select-btn ${isSelected ? 'selected' : ''}"
           onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
