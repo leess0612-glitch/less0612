@@ -1898,10 +1898,12 @@ function renderAirOptionArea(product) {
 
     // 결합유형 구분선
     if (o.combineType !== prevCombine && prevCombine !== null) {
+      const isCombineLabel = o.combineType === '신규결합' || o.combineType === '기존결합';
       const label = o.combineType === '신규결합' ? '── 신규결합 할인 적용 ──'
                   : o.combineType === '기존결합' ? '── 기존결합 할인 적용 ──'
                   : '── 단품 ──';
-      rowsHtml += `<tr class="pkg-sep"><td colspan="8">${label}</td></tr>`;
+      const labelStyle = isCombineLabel ? ' style="font-size:15px;font-weight:700;color:#dc2626"' : '';
+      rowsHtml += `<tr class="pkg-sep"><td colspan="8"${labelStyle}>${label}</td></tr>`;
     }
     prevCombine = o.combineType;
 
