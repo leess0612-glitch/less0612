@@ -1731,10 +1731,16 @@ function getLgDb() {
 function transformLgData(raw) {
   if (!raw || !raw.products) return { metadata: {}, products: [] };
   const products = raw.products.map(p => {
-    // 단품 먼저, 결합 나중 / 각 그룹 내 약정 내림차순
+    // 신규→타사보상→결합, 각 그룹 내 약정 오름차순
+    const lgTasaGroup = o => {
+      const mgmt = o.manageType || '';
+      if (o.combineType !== '단품') return 2;
+      if (mgmt.includes('타사보상')) return 1;
+      return 0;
+    };
     const sorted = [...p.options].sort((a, b) => {
-      if (a.combineType !== b.combineType)
-        return a.combineType === '단품' ? -1 : 1;
+      const ga = lgTasaGroup(a), gb = lgTasaGroup(b);
+      if (ga !== gb) return ga - gb;
       if (a.contractYears !== b.contractYears)
         return a.contractYears - b.contractYears;
       return (a.manageType || '').localeCompare(b.manageType || '');
