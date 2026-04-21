@@ -1242,7 +1242,15 @@ function renderMain() {
   const el = document.getElementById('main-content');
   const product = DB.products.find(p => p.id === state.productId);
   if (!product) {
-    el.innerHTML = renderQuickAccess();
+    if (currentBrand === 'lg-air') {
+      el.innerHTML = `<div class="empty-state" style="padding:60px 0">
+        <div class="icon">🌬️</div>
+        <p style="font-size:14px;font-weight:700;margin-bottom:6px">LG 공청기·제습기 수수료 조회</p>
+        <p>좌측 목록에서 제품을 선택하세요.</p>
+      </div>`;
+    } else {
+      el.innerHTML = renderQuickAccess();
+    }
     return;
   }
 
