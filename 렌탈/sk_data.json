@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-21 13:45"
+    "parsedAt": "2026-04-21 13:48"
   },
   "products": [
     {
@@ -1372,7 +1372,7 @@
           "additionalCount": 3,
           "additionalCommission": 140700,
           "bonusCommission": 165000,
-          "totalCommission": 556900,
+          "totalCommission": 557000,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
@@ -7092,7 +7092,7 @@
       "options": [
         {
           "label": "라이트시리즈",
-          "managementType": "방문관리",
+          "managementType": "",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -7122,6 +7122,24 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 70700,
+          "recommendedOffice": "티엘",
+          "source": "TL"
+        },
+        {
+          "label": "3년",
+          "managementType": "방문관리",
+          "contractMonths": 36,
+          "contractLabel": "3년",
+          "monthlyFee": 26900,
+          "dataWarning": false,
+          "visitCycle": "",
+          "ownershipMonths": 0,
+          "registrationFee": 0,
+          "baseCommission": 0,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 202700,
           "recommendedOffice": "티엘",
           "source": "TL"
         },
@@ -7162,7 +7180,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "방문관리_패키지",
+          "managementType": "_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -7209,7 +7227,7 @@
       "options": [
         {
           "label": "라이트시리즈",
-          "managementType": "방문관리",
+          "managementType": "",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 16900,
@@ -7223,6 +7241,24 @@
           "bonusCommission": 0,
           "totalCommission": 80700,
           "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "3년",
+          "managementType": "방문관리",
+          "contractMonths": 36,
+          "contractLabel": "3년",
+          "monthlyFee": 16900,
+          "dataWarning": false,
+          "visitCycle": "",
+          "ownershipMonths": 0,
+          "registrationFee": 0,
+          "baseCommission": 0,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 67100,
+          "recommendedOffice": "티엘",
+          "source": "TL"
         },
         {
           "label": "라이트시리즈",
@@ -7261,7 +7297,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "방문관리_패키지",
+          "managementType": "_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 14900,
@@ -7955,7 +7991,7 @@
       "options": [
         {
           "label": "",
-          "managementType": "방문관리",
+          "managementType": "",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 26900,
@@ -7969,6 +8005,24 @@
           "bonusCommission": 0,
           "totalCommission": 274500,
           "recommendedOffice": "에이컴즈"
+        },
+        {
+          "label": "3년",
+          "managementType": "방문관리",
+          "contractMonths": 36,
+          "contractLabel": "3년",
+          "monthlyFee": 26900,
+          "dataWarning": false,
+          "visitCycle": "",
+          "ownershipMonths": 0,
+          "registrationFee": 0,
+          "baseCommission": 0,
+          "additionalCount": 0,
+          "additionalCommission": 0,
+          "bonusCommission": 0,
+          "totalCommission": 264500,
+          "recommendedOffice": "티엘",
+          "source": "TL"
         },
         {
           "label": "",
@@ -7989,7 +8043,7 @@
         },
         {
           "label": "",
-          "managementType": "방문관리_패키지",
+          "managementType": "_패키지",
           "contractMonths": 36,
           "contractLabel": "3년",
           "monthlyFee": 24900,
