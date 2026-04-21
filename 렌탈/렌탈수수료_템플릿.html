@@ -1721,8 +1721,8 @@ function transformLgData(raw) {
     const sorted = [...p.options].sort((a, b) => {
       if (a.combineType !== b.combineType)
         return a.combineType === '단품' ? -1 : 1;
-      if (b.contractYears !== a.contractYears)
-        return b.contractYears - a.contractYears;
+      if (a.contractYears !== b.contractYears)
+        return a.contractYears - b.contractYears;
       return (a.manageType || '').localeCompare(b.manageType || '');
     });
 
@@ -1739,7 +1739,7 @@ function transformLgData(raw) {
         lgCombine:        o.combineType === '결합',
         monthlyFee:       o.monthlyFee || 0,
         visitCycle:       o.manageCycle || null,
-        totalCommission:  (o.commission && (o.commission.ak || o.commission.tl)) || 0,
+        totalCommission:  Math.max((o.commission && o.commission.ak) || 0, (o.commission && o.commission.tl) || 0),
         recommendedOffice: o.recommendedOffice || null,
         lgPopup:          o.popup || null,
         promo:            o.promo || {},
