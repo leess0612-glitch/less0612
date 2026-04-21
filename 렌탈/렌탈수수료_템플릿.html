@@ -1772,14 +1772,18 @@ function switchBrand(brand) {
 
   if (brand === 'lg') {
     DB = getLgDb();
+  } else if (brand === 'lg-air') {
+    DB = getLgAirDb();
   } else {
     DB = _SK_DB;
   }
 
   // 탭 active 클래스 갱신
   document.querySelectorAll('.brand-tab').forEach(el => {
-    const isActive = (brand === 'sk' && el.textContent.includes('SK')) ||
-                     (brand === 'lg' && el.textContent.includes('LG'));
+    const txt = el.textContent.trim();
+    const isActive = (brand === 'sk'     && txt === 'SK매직') ||
+                     (brand === 'lg'     && txt === 'LG전자') ||
+                     (brand === 'lg-air' && txt === 'LG공청기');
     el.classList.toggle('active', isActive);
   });
 
