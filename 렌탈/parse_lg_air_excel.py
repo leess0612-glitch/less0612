@@ -45,6 +45,7 @@ SERVICE_TYPE_DESC = {
 MODEL_ALIASES = {
     'HY705RSUBM':  'HY705RSUABM',  # 에이컴즈 RSUBM → 티엘 RSUABM
     'AS356NSMAM':  'AS356NGMAM',   # 색상 차이(동일 수수료) → NGMAM으로 통일
+    'DQ235MWGAWS': 'DQ235MEGAWS',  # 색상 차이(동일 수수료) → MEGAWS로 통일
 }
 
 # 팝업 예외: {정규화모델코드: 메시지}
