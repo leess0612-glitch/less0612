@@ -1291,46 +1291,21 @@ function renderQuickAccessLg() {
     return `<div class="qa-type-col"><div class="${labelClass}">${label}</div>${btnHtml}</div>`;
   }
 
-  // ── 정수기 주요 제품 ──
-  const LG_WATER_PRIMARY = [
-    // { label: '라벨', filter: p => p.category === '정수기' && ... }
+  const LG_ITEMS = [
+    { label: '정수전용',   filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD120M') },
+    { label: '냉온정',     filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD523V') },
+    { label: '얼음정수기', filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD722R') },
+    { label: '스탠드',     filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WS511SH') },
   ];
 
-  // ── 정수기 기타 제품 ──
-  const LG_WATER_SECONDARY = [
-    // { label: '라벨', filter: p => p.category === '정수기' && ... }
-  ];
-
-  // ── 공청기·제습기·가습기 ──
-  const LG_AIR_GROUPS = [
-    // { label: '라벨', filter: p => p.isAirProduct && ... }
-  ];
-
-  const primaryHtml   = LG_WATER_PRIMARY.map(g => makeCol(g.label, g.filter, true)).join('');
-  const secondaryHtml = LG_WATER_SECONDARY.map(g => makeCol(g.label, g.filter)).join('');
-  const airHtml       = LG_AIR_GROUPS.map(g => makeCol(g.label, g.filter)).join('');
-
-  const hasPrimary   = LG_WATER_PRIMARY.length > 0;
-  const hasSecondary = LG_WATER_SECONDARY.length > 0;
-  const hasAir       = LG_AIR_GROUPS.length > 0;
+  const itemsHtml = LG_ITEMS.map(g => makeCol(g.label, g.filter, true)).join('');
 
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
-    ${hasPrimary ? `
     <div class="qa-brand-section">
       <div class="qa-section-header">주요 판매 제품</div>
-      <div class="qa-primary-grid">${primaryHtml}</div>
-    </div>` : ''}
-    ${hasSecondary ? `
-    <div class="qa-brand-section">
-      <div class="qa-section-header">정수기</div>
-      <div class="qa-secondary-grid">${secondaryHtml}</div>
-    </div>` : ''}
-    ${hasAir ? `
-    <div class="qa-brand-section">
-      <div class="qa-section-header">공청기 · 제습기 · 가습기</div>
-      <div class="qa-secondary-grid">${airHtml}</div>
-    </div>` : ''}
+      <div class="qa-primary-grid">${itemsHtml}</div>
+    </div>
   </div>`;
 }
 
