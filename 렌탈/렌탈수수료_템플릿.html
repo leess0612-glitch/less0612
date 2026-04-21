@@ -1563,6 +1563,24 @@ function buildCopyText() {
   );
   if (!selectedOpts.length) return '(항목을 선택하면 여기에 표시됩니다)';
 
+  // LG 공청기 안내문
+  if (currentBrand === 'lg-air') {
+    let text = `[LG전자] ${getDisplayName(product)}\n`;
+    if (product.displayCode) text += `모델: ${product.displayCode}\n`;
+    text += '\n';
+    selectedOpts.forEach(o => {
+      const vcLabel = o.visitCycle === '자가관리' ? '자가관리' : `방문${o.visitCycle}개월`;
+      text += `📍 ${vcLabel} | ${o.serviceType} | ${o.contractLabel} 약정`;
+      if (o.combineType !== '단품') text += ` (${o.combineType})`;
+      text += '\n';
+      text += `월 ${fmtNum(o.monthlyFee)}원\n`;
+      const gift = getGift(o);
+      if (gift > 0) text += `현금사은품 ${fmtNum(gift)}원\n`;
+      text += '\n';
+    });
+    return text.trim();
+  }
+
   const brandLabel = currentBrand === 'lg' ? 'LG전자' : 'SK매직';
   let text = `[${brandLabel}] ${getDisplayName(product)}\n`;
   if (product.modelCode) text += `모델: ${product.modelCode}\n`;
