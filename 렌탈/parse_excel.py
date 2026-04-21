@@ -548,14 +548,14 @@ def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months
             break
 
     if tl_commission is None:
-        return None  # 티엘에 대응 없음
+        return {'office': None, 'tlCommission': None}
 
     if ak_commission > tl_commission:
-        return "에이컴즈"
+        return {'office': '에이컴즈', 'tlCommission': tl_commission}
     elif tl_commission > ak_commission:
-        return "티엘"
+        return {'office': '티엘', 'tlCommission': tl_commission}
     else:
-        return "동일"
+        return {'office': '동일', 'tlCommission': tl_commission}
 
 
 if __name__ == "__main__":
