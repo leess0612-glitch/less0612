@@ -175,9 +175,16 @@
   .margin-input-field:focus { border-color: var(--brand); }
 
   /* ── 옵션 나열 테이블 ── */
+  .options-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
   .options-scroll-wrap {
-    max-height: calc(100vh - 380px);
-    min-height: 120px;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     border-top: 1px solid var(--gray-200);
   }
@@ -1291,7 +1298,7 @@ function renderMain() {
     </div>
 
     <!-- 요금 & 수수료 -->
-    <div class="card">
+    <div class="card options-card">
       <div class="card-header">
         <h2>📊 요금 &amp; 수수료</h2>
         <div class="margin-setting-inline">
