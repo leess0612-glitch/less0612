@@ -1252,7 +1252,7 @@ function renderMain() {
       <div class="card-body">
         <div class="product-info">
           <div>
-            ${product.modelCode ? `<span class="model-badge">${product.modelCode}</span>` : ''}
+            ${(product.displayCode || product.modelCode) ? `<span class="model-badge">${escHtml(product.displayCode || product.modelCode)}</span>` : ''}
             <div class="name" style="margin-top:${product.modelCode ? '6px':'0'}">${escHtml(getDisplayName(product))}</div>
             ${product.note ? `<span class="note">⚠️ ${product.note}</span>` : ''}
             ${product.promotionNote ? `
