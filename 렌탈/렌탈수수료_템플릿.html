@@ -1292,13 +1292,22 @@ function renderQuickAccessLg() {
     return `<div class="qa-type-col"><div class="qa-type-label">${label}</div>${btnHtml}</div>`;
   }
 
-  // ── 정수기: 태그 기능별 그룹 ──
+  // ── 정수기: 실제 저장된 기능 태그값 기준으로 그룹화 ──
   const waterProds = DB.products.filter(p => p.category === '정수기');
+
+  // opts 순서를 우선하되, 실제 존재하는 값만 그룹으로 만들기
   const opts = getTagOptions();
-  const funcGroups = (opts.기능 || []).map(func => {
-    const prods = waterProds.filter(p => (allTags[p.id] || {}).기능 === func);
-    return { label: func, prods };
-  }).filter(g => g.prods.length > 0);
+  const optsOrder = opts.기능 || [];
+  const usedFuncs = [...new Set(waterProds.map(p => (allTags[p.id] || {}).기능).filter(Boolean))];
+  // opts 순서 → 나머지 순서로 정렬
+  const orderedFuncs = [
+    ...optsOrder.filter(f => usedFuncs.includes(f)),
+    ...usedFuncs.filter(f => !optsOrder.includes(f)),
+  ];
+  const funcGroups = orderedFuncs.map(func => ({
+    label: func,
+    prods: waterProds.filter(p => (allTags[p.id] || {}).기능 === func),
+  }));
 
   // 태그 없는 정수기 (미분류)
   const taggedIds = new Set(waterProds.filter(p => (allTags[p.id] || {}).기능).map(p => p.id));
