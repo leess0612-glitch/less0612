@@ -370,6 +370,14 @@ def build_products(ac_data, tl_data):
             'options':     options,
         })
 
+    # displayCode 충돌 체크: 같은 displayCode가 2개 이상이면 수수료가 다른 별개 제품
+    # → 풀 모델코드를 그대로 사용
+    from collections import Counter
+    dc_counts = Counter(p['displayCode'] for p in products)
+    for p in products:
+        if dc_counts[p['displayCode']] > 1:
+            p['displayCode'] = p['modelCode']
+
     return products
 
 
