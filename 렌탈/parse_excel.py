@@ -725,10 +725,14 @@ if __name__ == "__main__":
             total_c = opt.get("totalCommission", 0)
 
             # 접수처 비교 (tl_known_models 전달 → prefix 매칭 활성화)
-            opt["recommendedOffice"] = compute_recommended_office(
+            _office_result = compute_recommended_office(
                 tl_lookup, model_code, mgmt, months, total_c,
                 is_package=False, tl_known_models=tl_known_models
             )
+            opt["recommendedOffice"] = _office_result['office']
+            # TL 수수료가 더 높으면 totalCommission을 TL 값으로 업데이트
+            if _office_result['tlCommission'] is not None and _office_result['tlCommission'] > total_c:
+                opt["totalCommission"] = _office_result['tlCommission']
 
             # 패키지 옵션 생성 (타사보상 제외, 중복 방지)
             if "타사보상" in mgmt:
@@ -750,10 +754,13 @@ if __name__ == "__main__":
             pkg_opt["monthlyFee"] = max(0, opt["monthlyFee"] - 2000)
             pkg_opt["totalCommission"] = pkg_commission
             pkg_opt["isPackage"] = True
-            pkg_opt["recommendedOffice"] = compute_recommended_office(
+            _pkg_office_result = compute_recommended_office(
                 tl_lookup, model_code, mgmt, months, pkg_commission,
                 is_package=True, tl_known_models=tl_known_models
             )
+            pkg_opt["recommendedOffice"] = _pkg_office_result['office']
+            if _pkg_office_result['tlCommission'] is not None and _pkg_office_result['tlCommission'] > pkg_commission:
+                pkg_opt["totalCommission"] = _pkg_office_result['tlCommission']
             package_opts.append(pkg_opt)
 
         product["options"] = regular_opts + package_opts
