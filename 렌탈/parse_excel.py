@@ -942,12 +942,16 @@ if __name__ == "__main__":
 
     data["normalizationIssues"] = normalization_issues
 
-    # ── 옵션 약정 오름차순 정렬 (일반→패키지, 각 그룹 내 contractMonths 오름차순) ──
+    # ── 옵션 약정 오름차순 정렬 (신규→타사보상→패키지, 각 그룹 내 contractMonths 오름차순) ──
+    def _sort_key(o):
+        is_pkg = o.get("isPackage", False)
+        mgmt = o.get("managementType") or ""
+        is_tasa = "타사보상" in mgmt
+        group = 2 if is_pkg else (1 if is_tasa else 0)
+        return (group, o.get("contractMonths", 0))
+
     for product in data["products"]:
-        product["options"].sort(key=lambda o: (
-            1 if o.get("isPackage") else 0,
-            o.get("contractMonths", 0)
-        ))
+        product["options"].sort(key=_sort_key)
 
     # ── JSON 저장 ──
     json_out = os.path.join(base_dir, "sk_data.json")
