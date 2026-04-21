@@ -2099,10 +2099,23 @@ function switchBrand(brand) {
   const prodSearch = document.getElementById('prod-search');
   if (prodSearch) prodSearch.value = '';
 
-  // NORM_ISSUES 탭: SK 전용 — LG/LG공청기 전환 시 숨김
+  // ACTIVE_NORM_ISSUES 갱신 및 탭 표시
+  if (brand === 'lg') {
+    ACTIVE_NORM_ISSUES = [...(LG_WATER_NORM_ISSUES || []), ...(LG_AIR_NORM_ISSUES || [])];
+  } else {
+    ACTIVE_NORM_ISSUES = NORM_ISSUES || [];
+  }
   const normTab = document.getElementById('norm-issues-tab');
   if (normTab) {
-    normTab.style.display = (brand === 'sk' && NORM_ISSUES && NORM_ISSUES.length > 0) ? '' : 'none';
+    normTab.style.display = ACTIVE_NORM_ISSUES.length > 0 ? '' : 'none';
+  }
+  // 이슈 있으면 팝업 자동 표시 (오늘 다시 보지 않기 무시)
+  if (ACTIVE_NORM_ISSUES.length > 0) {
+    const skipKey = brand === 'lg' ? 'normIssuesSkipDay_lg' : 'normIssuesSkipDay_sk';
+    const todayStr = new Date().toISOString().slice(0,10);
+    if (localStorage.getItem(skipKey) !== todayStr) {
+      showNormIssuesPopup();
+    }
   }
 
   renderCategoryList();
