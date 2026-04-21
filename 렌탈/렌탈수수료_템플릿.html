@@ -1913,6 +1913,7 @@ function renderAirOptionArea(product) {
   // 결합 구분선 삽입용
   let prevCombine = null;
   let rowsHtml = '';
+  let airTasaSepAdded = false;
 
   visibleOpts.forEach(o => {
     const key = getOptionKey(product.id, o);
