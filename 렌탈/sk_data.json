@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-22 17:53"
+    "parsedAt": "2026-04-22 17:59"
   },
   "products": [
     {
@@ -63,7 +63,8 @@
           "additionalCommission": 151200,
           "bonusCommission": 125000,
           "totalCommission": 636200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC425 셀프",
@@ -80,7 +81,8 @@
           "additionalCommission": 145200,
           "bonusCommission": 125000,
           "totalCommission": 630200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC425 방문",
@@ -97,7 +99,8 @@
           "additionalCommission": 195600,
           "bonusCommission": 125000,
           "totalCommission": 680600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC425 셀프",
@@ -114,7 +117,8 @@
           "additionalCommission": 187600,
           "bonusCommission": 125000,
           "totalCommission": 672600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC425 방문",
@@ -386,7 +390,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 셀프",
@@ -403,7 +408,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 방문",
@@ -420,7 +426,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 셀프",
@@ -437,7 +444,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 방문",
@@ -488,7 +496,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 셀프 +3개월반값할인",
@@ -505,7 +514,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 방문 +3개월반값할인",
@@ -522,7 +532,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 셀프 +3개월반값할인",
@@ -539,7 +550,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 360000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "WPU-IAC414 방문",
@@ -807,7 +819,8 @@
           "additionalCommission": 112200,
           "bonusCommission": 165000,
           "totalCommission": 577200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -824,7 +837,8 @@
           "additionalCommission": 103200,
           "bonusCommission": 165000,
           "totalCommission": 568200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -841,7 +855,8 @@
           "additionalCommission": 143600,
           "bonusCommission": 165000,
           "totalCommission": 608600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -858,7 +873,8 @@
           "additionalCommission": 131600,
           "bonusCommission": 165000,
           "totalCommission": 596600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -875,7 +891,8 @@
           "additionalCommission": 137600,
           "bonusCommission": 165000,
           "totalCommission": 602600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -892,7 +909,8 @@
           "additionalCommission": 125600,
           "bonusCommission": 165000,
           "totalCommission": 590600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1080,7 +1098,7 @@
           "additionalCount": 3,
           "additionalCommission": 112200,
           "bonusCommission": 165000,
-          "totalCommission": 556900,
+          "totalCommission": 557000,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
@@ -1234,7 +1252,8 @@
           "additionalCommission": 97200,
           "bonusCommission": 80000,
           "totalCommission": 397200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1251,7 +1270,8 @@
           "additionalCommission": 88200,
           "bonusCommission": 80000,
           "totalCommission": 388200,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1268,7 +1288,8 @@
           "additionalCommission": 123600,
           "bonusCommission": 80000,
           "totalCommission": 423600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1285,7 +1306,8 @@
           "additionalCommission": 111600,
           "bonusCommission": 80000,
           "totalCommission": 411600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1302,7 +1324,8 @@
           "additionalCommission": 117600,
           "bonusCommission": 80000,
           "totalCommission": 417600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1319,7 +1342,8 @@
           "additionalCommission": 105600,
           "bonusCommission": 80000,
           "totalCommission": 405600,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1370,7 +1394,8 @@
           "additionalCommission": 90000,
           "bonusCommission": 80000,
           "totalCommission": 390000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1387,7 +1412,8 @@
           "additionalCommission": 81000,
           "bonusCommission": 80000,
           "totalCommission": 381000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1404,7 +1430,8 @@
           "additionalCommission": 114000,
           "bonusCommission": 80000,
           "totalCommission": 414000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1421,7 +1448,8 @@
           "additionalCommission": 102000,
           "bonusCommission": 80000,
           "totalCommission": 402000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1438,7 +1466,8 @@
           "additionalCommission": 108000,
           "bonusCommission": 80000,
           "totalCommission": 408000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1455,7 +1484,8 @@
           "additionalCommission": 96000,
           "bonusCommission": 80000,
           "totalCommission": 396000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1661,7 +1691,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1678,7 +1709,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1695,7 +1727,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1712,7 +1745,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1729,7 +1763,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1746,7 +1781,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -1797,7 +1833,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1814,7 +1851,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1831,7 +1869,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1848,7 +1887,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1865,7 +1905,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "3개월반값할인",
@@ -1882,7 +1923,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 300000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2088,7 +2130,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2105,7 +2148,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2122,7 +2166,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2139,7 +2184,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2156,7 +2202,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -2173,7 +2220,8 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 208000,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -3135,8 +3183,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 286300,
-          "recommendedOffice": "티엘",
+          "totalCommission": 232500,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -3153,8 +3201,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 278300,
-          "recommendedOffice": "티엘",
+          "totalCommission": 232500,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -4734,7 +4782,7 @@
           "additionalCommission": 68700,
           "bonusCommission": 0,
           "totalCommission": 189800,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4751,7 +4799,7 @@
           "additionalCommission": 59700,
           "bonusCommission": 0,
           "totalCommission": 167500,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4768,7 +4816,7 @@
           "additionalCommission": 62700,
           "bonusCommission": 0,
           "totalCommission": 183800,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4785,7 +4833,7 @@
           "additionalCommission": 53700,
           "bonusCommission": 0,
           "totalCommission": 161500,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4802,7 +4850,7 @@
           "additionalCommission": 59700,
           "bonusCommission": 0,
           "totalCommission": 180800,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4819,7 +4867,7 @@
           "additionalCommission": 50700,
           "bonusCommission": 0,
           "totalCommission": 158500,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -4930,7 +4978,8 @@
           "isPackage": true
         }
       ],
-      "visitCycleInfo": "4개월필터발송,12개월방문"
+      "visitCycleInfo": "4개월필터발송,12개월방문",
+      "oneSideOnly": "AK"
     },
     {
       "id": "ACL20C1A",
@@ -5027,7 +5076,7 @@
           "additionalCommission": 74700,
           "bonusCommission": 0,
           "totalCommission": 236400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원할인",
@@ -5044,7 +5093,7 @@
           "additionalCommission": 65700,
           "bonusCommission": 0,
           "totalCommission": 227400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5061,7 +5110,7 @@
           "additionalCommission": 68700,
           "bonusCommission": 0,
           "totalCommission": 230400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원할인",
@@ -5078,7 +5127,7 @@
           "additionalCommission": 59700,
           "bonusCommission": 0,
           "totalCommission": 221400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5095,7 +5144,7 @@
           "additionalCommission": 65700,
           "bonusCommission": 0,
           "totalCommission": 227400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원할인",
@@ -5112,7 +5161,7 @@
           "additionalCommission": 56700,
           "bonusCommission": 0,
           "totalCommission": 218400,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5223,7 +5272,8 @@
           "isPackage": true
         }
       ],
-      "visitCycleInfo": "4개월필터발송,12개월방문"
+      "visitCycleInfo": "4개월필터발송,12개월방문",
+      "oneSideOnly": "AK"
     },
     {
       "id": "ACL25C1A",
@@ -5320,7 +5370,7 @@
           "additionalCommission": 86700,
           "bonusCommission": 0,
           "totalCommission": 254700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션3,000원 할인",
@@ -5337,7 +5387,7 @@
           "additionalCommission": 77700,
           "bonusCommission": 0,
           "totalCommission": 245700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5354,7 +5404,7 @@
           "additionalCommission": 80700,
           "bonusCommission": 0,
           "totalCommission": 248700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션3,000원 할인",
@@ -5371,7 +5421,7 @@
           "additionalCommission": 71700,
           "bonusCommission": 0,
           "totalCommission": 239700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5388,7 +5438,7 @@
           "additionalCommission": 77700,
           "bonusCommission": 0,
           "totalCommission": 245700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션3,000원 할인",
@@ -5405,7 +5455,7 @@
           "additionalCommission": 68700,
           "bonusCommission": 0,
           "totalCommission": 236700,
-          "recommendedOffice": "에이컴즈"
+          "recommendedOffice": null
         },
         {
           "label": "프로모션4,000원 할인",
@@ -5516,7 +5566,8 @@
           "isPackage": true
         }
       ],
-      "visitCycleInfo": "4개월필터발송,12개월방문"
+      "visitCycleInfo": "4개월필터발송,12개월방문",
+      "oneSideOnly": "AK"
     },
     {
       "id": "ACL300VA",
@@ -6522,7 +6573,9 @@
           "additionalCommission": 119500,
           "bonusCommission": 0,
           "totalCommission": 259500,
-          "recommendedOffice": "에이컴즈"
+          "_mgmt_inferred": true,
+          "recommendedOffice": "에이컴즈",
+          "akOnlyOption": true
         },
         {
           "label": "",
@@ -6557,6 +6610,7 @@
           "additionalCommission": 119500,
           "bonusCommission": 0,
           "totalCommission": 270200,
+          "_mgmt_inferred": true,
           "recommendedOffice": "티엘",
           "isPackage": true
         }
@@ -11061,42 +11115,12 @@
           "managementType": "셀프관리",
           "contractMonths": 60,
           "contractYears": 5,
-          "hasTasa": false,
-          "monthlyFee": 19950,
-          "baseCommission": 0,
-          "bonusCommission1": 0,
-          "bonusCommission2": 0,
-          "totalCommission": 642200,
-          "recommendedOffice": "티엘",
-          "source": "TL",
-          "dataWarning": false
-        },
-        {
-          "label": "5년",
-          "managementType": "셀프관리",
-          "contractMonths": 60,
-          "contractYears": 5,
           "hasTasa": true,
           "monthlyFee": 36900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
           "totalCommission": 633200,
-          "recommendedOffice": "티엘",
-          "source": "TL",
-          "dataWarning": false
-        },
-        {
-          "label": "5년",
-          "managementType": "방문관리",
-          "contractMonths": 60,
-          "contractYears": 5,
-          "hasTasa": false,
-          "monthlyFee": 21450,
-          "baseCommission": 0,
-          "bonusCommission1": 0,
-          "bonusCommission2": 0,
-          "totalCommission": 651200,
           "recommendedOffice": "티엘",
           "source": "TL",
           "dataWarning": false
@@ -11121,42 +11145,12 @@
           "managementType": "셀프관리",
           "contractMonths": 72,
           "contractYears": 6,
-          "hasTasa": false,
-          "monthlyFee": 19450,
-          "baseCommission": 0,
-          "bonusCommission1": 0,
-          "bonusCommission2": 0,
-          "totalCommission": 678100,
-          "recommendedOffice": "티엘",
-          "source": "TL",
-          "dataWarning": false
-        },
-        {
-          "label": "6년",
-          "managementType": "셀프관리",
-          "contractMonths": 72,
-          "contractYears": 6,
           "hasTasa": true,
           "monthlyFee": 35900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
           "totalCommission": 666100,
-          "recommendedOffice": "티엘",
-          "source": "TL",
-          "dataWarning": false
-        },
-        {
-          "label": "6년",
-          "managementType": "방문관리",
-          "contractMonths": 72,
-          "contractYears": 6,
-          "hasTasa": false,
-          "monthlyFee": 20950,
-          "baseCommission": 0,
-          "bonusCommission1": 0,
-          "bonusCommission2": 0,
-          "totalCommission": 690100,
           "recommendedOffice": "티엘",
           "source": "TL",
           "dataWarning": false
@@ -11183,6 +11177,30 @@
   "normalizationIssues": [
     {
       "type": "AK_ONLY",
+      "modelCode": "ACL15C1A",
+      "name": "올클린 공기청정기(15평형) ACL-15C ACL15C1ASKWH SK:방문형",
+      "akDetail": "방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 제품 없음",
+      "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
+    },
+    {
+      "type": "AK_ONLY",
+      "modelCode": "ACL20C1A",
+      "name": "올클린 공기청정기(20평형) ACL-20C ACL20U1CSKCE",
+      "akDetail": "방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 제품 없음",
+      "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
+    },
+    {
+      "type": "AK_ONLY",
+      "modelCode": "ACL25C1A",
+      "name": "올클린 공기청정기(25평형) ACL-25C ACL25C1ASKCE",
+      "akDetail": "방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 제품 없음",
+      "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
+    },
+    {
+      "type": "AK_ONLY",
       "modelCode": "MATQM720R",
       "name": "워커힐 엠버서더 스위트_퀸",
       "akDetail": "방문관리 5년; 방문관리 6년; 방문관리 7년",
@@ -11196,6 +11214,54 @@
       "akDetail": "방문관리 5년; 방문관리 6년; 방문관리 7년",
       "tlDetail": "티엘 파일에 해당 제품 없음",
       "reason": "AK 수수료 파일에만 존재 — 티엘 파일에서 동일 모델 미확인"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUIAC425S",
+      "name": "원코크 플러스 얼음물 정수기",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 셀프할인 5년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUIAC414",
+      "name": "원코크 얼음물 정수기",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 방문할인+타사보상 5년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUJAC115",
+      "name": "초소형 플러스 직수 냉온정수기",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUJAC125",
+      "name": "초소형 라이트 직수냉온정수기",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUJAC104",
+      "name": "초소형 직수 냉온정수기 (화이트,핑크,블루, 메탈릭 그레이,위글위글)",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "WPUJCC104",
+      "name": "초소형 직수 냉정수기",
+      "akDetail": "매칭 실패: 방문할인 5년; 방문할인 6년; 방문할인 7년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
     {
       "type": "PARTIAL",
@@ -11266,6 +11332,14 @@
       "modelCode": "ACL131T0CJDG",
       "name": "코어360 공기청정기(13평형)",
       "akDetail": "매칭 실패: 방문관리 4년",
+      "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
+      "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
+    },
+    {
+      "type": "PARTIAL",
+      "modelCode": "BIDS51D",
+      "name": "올 클린 케어 비데",
+      "akDetail": "매칭 실패: 방문관리 5년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
