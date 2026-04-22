@@ -1513,7 +1513,7 @@ function renderOptionList(product) {
       </td>
       ${hasOffice ? `<td>${officeBadge(o.recommendedOffice)}</td>` : ''}
       <td class="contract-cell">${o.contractLabel}</td>
-      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.isBizOnly ? '<span class="biz-only-badge">사업자전용</span>' : (o.source === 'TL' ? '<span class="confirm-needed-badge">확인필요</span>' : (o.akOnlyOption ? '<span class="confirm-needed-badge">확인필요</span>' : ''))}${o.dataWarning ? '<span class="warn-row-badge">⚠️ 5년이후 요금다름</span>' : ''}</td>` : ''}
+      ${hasMgmt ? `<td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span>${o.isBizOnly ? `<span class="biz-only-badge">사업자전용</span><span style="font-size:9px;color:#1e40af;margin-left:3px">${o.bizDiscount}할인${o.obligation ? ' · 의무'+o.obligation : ''}</span>` : (o.source === 'TL' ? '<span class="confirm-needed-badge">확인필요</span>' : (o.akOnlyOption ? '<span class="confirm-needed-badge">확인필요</span>' : ''))}${o.dataWarning ? '<span class="warn-row-badge">⚠️ 5년이후 요금다름</span>' : ''}</td>` : ''}
       <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
       ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
       <td onclick="event.stopPropagation()">
