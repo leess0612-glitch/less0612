@@ -46,6 +46,8 @@ def parse_tl(filepath):
     visit_cycle_lookup = {}
     # 모델코드 표기 lookup: normalized_model → TL 원본 표기 (WPU-B600F 형식)
     model_display_map = {}
+    # 사업자전용 옵션 목록
+    biz_options = []
 
     current_model_code = ""
     current_product_name = ""
