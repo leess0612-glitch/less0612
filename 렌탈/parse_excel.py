@@ -845,7 +845,7 @@ if __name__ == "__main__":
                 tl_lookup, model_code, mgmt, months, pkg_commission,
                 is_package=True, tl_known_models=tl_known_models
             )
-            # 패키지는 AK 데이터 기반 생성 → TL 매칭 없으면 에이컴즈
+            # TL 패키지 or 일반 수수료 비교 후 결정, 둘 다 없으면 에이컴즈
             pkg_opt["recommendedOffice"] = _pkg_office_result['office'] or '에이컴즈'
             if _pkg_office_result['tlCommission'] is not None and _pkg_office_result['tlCommission'] > pkg_commission:
                 pkg_opt["totalCommission"] = _pkg_office_result['tlCommission']
