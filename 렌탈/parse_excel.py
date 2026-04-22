@@ -548,6 +548,23 @@ def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months
         if tl_commission is not None:
             break
 
+    # 패키지 lookup 실패 시 TL 일반 수수료로 fallback 비교
+    # (TL 엑셀에 패키지 행이 없으므로 일반 수수료 = TL 패키지 수수료)
+    if tl_commission is None and is_package:
+        for model_key in model_keys:
+            for tl_mgmt in tl_mgmts:
+                if size:
+                    key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|0|{size}"
+                    if key in tl_lookup:
+                        tl_commission = tl_lookup[key]
+                        break
+                key = f"{model_key}|{tl_mgmt}|{years}|{int(has_tasa)}|0"
+                if key in tl_lookup:
+                    tl_commission = tl_lookup[key]
+                    break
+            if tl_commission is not None:
+                break
+
     if tl_commission is None:
         return {'office': None, 'tlCommission': None}
 
