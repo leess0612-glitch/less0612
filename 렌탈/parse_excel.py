@@ -1054,11 +1054,18 @@ if __name__ == "__main__":
 
     # ── 옵션 약정 오름차순 정렬 (신규→타사보상→패키지, 각 그룹 내 contractMonths 오름차순) ──
     def _sort_key(o):
+        is_biz = o.get("isBizOnly", False)
         is_pkg = o.get("isPackage", False)
         mgmt = o.get("managementType") or ""
         is_tasa = "타사보상" in mgmt
-        group = 2 if is_pkg else (1 if is_tasa else 0)
-        return (group, o.get("contractMonths", 0))
+        # 그룹: 0=일반, 1=타사보상, 2=패키지, 3=사업자전용
+        group = 3 if is_biz else (2 if is_pkg else (1 if is_tasa else 0))
+        disc = o.get("bizDiscount", "0%").replace("%", "")
+        try:
+            disc_int = int(disc)
+        except ValueError:
+            disc_int = 0
+        return (group, o.get("contractMonths", 0), disc_int)
 
     for product in data["products"]:
         product["options"].sort(key=_sort_key)
