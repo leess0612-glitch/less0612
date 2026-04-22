@@ -562,7 +562,7 @@ def compute_recommended_office(tl_lookup, model_code, mgmt_type, contract_months
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         filepath_sk = r"C:\Users\a\Documents\렌탈정책\26.04\SK 수수료표_2604v1 (1).xlsx"
-        filepath_tl = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
+        filepath_tl = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.21 수수료.xlsx"
     else:
         filepath_sk = sys.argv[1]
         filepath_tl = sys.argv[2] if len(sys.argv) > 2 else r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
