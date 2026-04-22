@@ -83,9 +83,10 @@ def parse_tl(filepath):
         if "+" in current_model_code:
             continue
 
-        # 사업자전용 할인 행 제외 (H열에 '사업자' 포함)
+        # H열에 값 있으면 특수 조건 행 (사업자전용/반값프로모/할인 등) → 제외
+        # 기본 수수료 행은 항상 H열이 비어 있음
         col_h_s = clean(col_h)
-        if '사업자' in col_h_s:
+        if col_h_s:
             continue
 
         # 패키지 감지: "_패키지"(언더스코어) 또는 " 패키지"(공백) 모두 처리
