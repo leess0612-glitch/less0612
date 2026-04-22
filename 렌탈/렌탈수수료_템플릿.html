@@ -1473,6 +1473,14 @@ function renderOptionList(product) {
       rowsHtml += `<tr class="pkg-sep"><td colspan="${tasaColspan}" class="sep-highlight">── 타사보상 ──</td></tr>`;
     }
 
+    // 사업자전용 구분선
+    const isBiz = !!o.isBizOnly;
+    if (isBiz && !bizSepAdded) {
+      bizSepAdded = true;
+      const bizColspan = 2 + (hasOffice?1:0) + 1 + (hasMgmt?1:0) + 1 + (hasVisit?1:0) + 1 + 1 + 1;
+      rowsHtml += `<tr class="pkg-sep"><td colspan="${bizColspan}" class="sep-highlight">── 사업자전용 약정 (티엘) ──</td></tr>`;
+    }
+
     // 패키지 구분선 (SK)
     if (isPkg && !pkgSepAdded) {
       pkgSepAdded = true;
