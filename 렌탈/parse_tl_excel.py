@@ -83,7 +83,13 @@ def parse_tl(filepath):
         if "+" in current_model_code:
             continue
 
-        is_package = "_패키지" in col_f
+        # 사업자전용 할인 행 제외 (H열에 '사업자' 포함)
+        col_h_s = clean(col_h)
+        if '사업자' in col_h_s:
+            continue
+
+        # 패키지 감지: "_패키지"(언더스코어) 또는 " 패키지"(공백) 모두 처리
+        is_package = "_패키지" in col_f or bool(re.search(r'\s패키지', col_f))
 
         # 관리구분
         col_e_s = col_e.replace(" ", "")
