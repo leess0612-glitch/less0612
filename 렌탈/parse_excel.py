@@ -1088,10 +1088,39 @@ if __name__ == "__main__":
         tl_js   = json.dumps(tl_warning_models, ensure_ascii=False)
         cm_js   = json.dumps(code_mismatches, ensure_ascii=False)
         ni_js   = json.dumps(normalization_issues, ensure_ascii=False)
+
+        # LG 데이터 로드 (lg_data.json, lg_air_data.json)
+        lg_json_path     = os.path.join(base_dir, "lg_data.json")
+        lg_air_json_path = os.path.join(base_dir, "lg_air_data.json")
+        lg_js     = "{}"
+        lg_air_js = "{}"
+        lg_water_norm_js = "[]"
+        lg_air_norm_js   = "[]"
+        if os.path.exists(lg_json_path):
+            with open(lg_json_path, "r", encoding="utf-8") as f:
+                lg_raw = json.load(f)
+            lg_js = json.dumps(lg_raw, ensure_ascii=False)
+            lg_water_norm_js = json.dumps(lg_raw.get("normalizationIssues", []), ensure_ascii=False)
+            print(f"LG 정수기 데이터 로드: {len(lg_raw.get('products', []))}개 제품")
+        else:
+            print(f"[경고] LG 정수기 JSON 없음: {lg_json_path}")
+        if os.path.exists(lg_air_json_path):
+            with open(lg_air_json_path, "r", encoding="utf-8") as f:
+                lg_air_raw = json.load(f)
+            lg_air_js = json.dumps(lg_air_raw, ensure_ascii=False)
+            lg_air_norm_js = json.dumps(lg_air_raw.get("normalizationIssues", []), ensure_ascii=False)
+            print(f"LG 공청기 데이터 로드: {len(lg_air_raw.get('products', []))}개 제품")
+        else:
+            print(f"[경고] LG 공청기 JSON 없음: {lg_air_json_path}")
+
         html_out_str = html.replace("__SK_DATA__", sk_js) \
                            .replace("__TL_WARNINGS__", tl_js) \
                            .replace("__CODE_MISMATCHES__", cm_js) \
-                           .replace("__NORM_ISSUES__", ni_js)
+                           .replace("__NORM_ISSUES__", ni_js) \
+                           .replace("__LG_DATA__", lg_js) \
+                           .replace("__LG_AIR_DATA__", lg_air_js) \
+                           .replace("__LG_WATER_NORM_ISSUES__", lg_water_norm_js) \
+                           .replace("__LG_AIR_NORM_ISSUES__", lg_air_norm_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
         out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
