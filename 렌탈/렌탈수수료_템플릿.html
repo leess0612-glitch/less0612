@@ -1093,6 +1093,8 @@ function showNormIssuesPopup() {
   tbody.innerHTML = ACTIVE_NORM_ISSUES.map(issue => {
     const typeLabel = issue.type === 'AK_ONLY'
       ? '<span class="ni-type-ak">AK만</span>'
+      : issue.type === 'MISSING_MGMT'
+      ? '<span class="ni-type-missing">관리방법없음</span>'
       : '<span class="ni-type-partial">일부불일치</span>';
     return `<tr>
       <td>${typeLabel} ${escHtml((issue.name||'').slice(0,16))}<br>
