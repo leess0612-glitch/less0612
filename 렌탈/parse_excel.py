@@ -746,6 +746,21 @@ if __name__ == "__main__":
                     if opt.get("managementType"):
                         break
 
+        # ── 1b. TL 교차참조 후에도 빈 경우 → 동일 제품 내 sibling 옵션에서 추론 ──
+        # (예: 6년 AK 전용 약정 — TL에 없어서 못 채웠을 때)
+        filled_mgmt_types = [
+            o.get("managementType") for o in regular_opts
+            if o.get("managementType") and not o.get("isPackage") and not o.get("source")
+        ]
+        if filled_mgmt_types:
+            # 동일 제품의 채워진 관리방법 중 가장 많은 것 사용
+            from collections import Counter
+            dominant_mgmt = Counter(filled_mgmt_types).most_common(1)[0][0]
+            for opt in regular_opts:
+                if opt.get("managementType") == "" and not opt.get("isPackage") and not opt.get("source"):
+                    opt["managementType"] = dominant_mgmt
+                    opt["_mgmt_inferred"] = True
+
         # ── 2. 빈 visitCycle → 동일 제품 AK 옵션에서 보완 ──
         for opt in regular_opts:
             if not opt.get("visitCycle") and "방문" in (opt.get("managementType") or ""):
