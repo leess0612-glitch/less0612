@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-22 17:44"
+    "parsedAt": "2026-04-22 17:48"
   },
   "products": [
     {
@@ -1080,7 +1080,7 @@
           "additionalCount": 3,
           "additionalCommission": 112200,
           "bonusCommission": 165000,
-          "totalCommission": 556900,
+          "totalCommission": 557000,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
@@ -2412,8 +2412,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 82500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 100000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -2430,8 +2430,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 82500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 100000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -2448,8 +2448,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 82500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 100000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -2466,8 +2466,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 82500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 100000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
@@ -2663,8 +2663,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 82500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 100000,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
@@ -2781,8 +2781,8 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 172500,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 197500,
+          "recommendedOffice": "티엘",
           "isPackage": true
         },
         {
@@ -5557,8 +5557,8 @@
           "additionalCount": 3,
           "additionalCommission": 149700,
           "bonusCommission": 0,
-          "totalCommission": 438450,
-          "recommendedOffice": "에이컴즈",
+          "totalCommission": 566100,
+          "recommendedOffice": "티엘",
           "isPackage": true
         }
       ],
