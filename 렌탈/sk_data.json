@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-22 17:39"
+    "parsedAt": "2026-04-22 17:44"
   },
   "products": [
     {
@@ -2413,7 +2413,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 82500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -2431,7 +2431,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 82500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -2449,7 +2449,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 82500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -2467,7 +2467,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 82500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -2664,7 +2664,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 82500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -2764,7 +2764,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 172500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -2782,7 +2782,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 172500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -2801,7 +2801,7 @@
           "bonusCommission": 0,
           "totalCommission": 172500,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -2938,7 +2938,7 @@
           "bonusCommission": 0,
           "totalCommission": 232500,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3173,7 +3173,7 @@
           "bonusCommission": 0,
           "totalCommission": 232500,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3290,7 +3290,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 122250,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3407,7 +3407,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 122250,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3524,7 +3524,7 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 222700,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3641,7 +3641,7 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 222700,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -3760,7 +3760,7 @@
           "bonusCommission": 0,
           "totalCommission": 172500,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -5558,7 +5558,7 @@
           "additionalCommission": 149700,
           "bonusCommission": 0,
           "totalCommission": 438450,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -5776,7 +5776,7 @@
           "bonusCommission": 0,
           "totalCommission": 67200,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -6701,7 +6701,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 220500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -6719,7 +6719,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 220500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -6737,7 +6737,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 220500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
@@ -6817,7 +6817,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 244500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -6835,7 +6835,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 244500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         },
         {
@@ -6853,7 +6853,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 244500,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "isPackage": true
         }
       ],
