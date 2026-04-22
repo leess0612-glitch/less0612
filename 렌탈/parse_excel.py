@@ -927,6 +927,7 @@ if __name__ == "__main__":
         # 부분미매칭 옵션에 akOnlyOption 플래그 추가 → HTML 뱃지 표시용
         for o in unmatched:
             o["akOnlyOption"] = True
+            o["recommendedOffice"] = "에이컴즈"  # AK만 있으면 접수처는 에이컴즈
         if unmatched and matched:
             # 일부 옵션만 매칭됨 → 부분 이슈로 기록
             ak_unmatched_summary = "; ".join(
