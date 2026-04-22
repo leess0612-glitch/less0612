@@ -1290,15 +1290,24 @@ function renderQuickAccessLg() {
       filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WS511SH') },
   ];
 
-  function getMinPrice(p) {
-    if (!p.options || !p.options.length) return null;
-    const filtered = p.options.filter(o => !o.lgCombine && !(o.lgCombineType));
-    if (!filtered.length) return null;
-    const min = filtered.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
-    const manageType = min.manageType || '';
-    const mgmt = manageType.includes('방문') ? '방문' : manageType.includes('셀프') ? '셀프' : '';
-    const contract = min.contractLabel || '';
-    return `${min.monthlyFee.toLocaleString('ko-KR')}원 (${contract}${mgmt ? '·' + mgmt : ''})`;
+  function getPrices5yr(p) {
+    if (!p.options || !p.options.length) return { 방문: null, 셀프: null };
+    const opts = p.options.filter(o => o.contractYears === 5 && !o.lgCombine);
+    const bOpts = opts.filter(o => (o.manageType || '').includes('방문'));
+    const sOpts = opts.filter(o => !(o.manageType || '').includes('방문'));
+    const bMin = bOpts.length ? bOpts.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b) : null;
+    const sMin = sOpts.length ? sOpts.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b) : null;
+    return { 방문: bMin ? bMin.monthlyFee : null, 셀프: sMin ? sMin.monthlyFee : null };
+  }
+
+  function priceHtml(p) {
+    const { 방문, 셀프 } = getPrices5yr(p);
+    if (!방문 && !셀프) return '';
+    const fmt = v => v.toLocaleString('ko-KR') + '원';
+    const parts = [];
+    if (방문) parts.push(`방문 ${fmt(방문)}`);
+    if (셀프) parts.push(`셀프 ${fmt(셀프)}`);
+    return `<div class="qa-min-price">5년 · ${parts.join(' / ')}</div>`;
   }
 
   function makeCol(g, primary) {
@@ -1306,11 +1315,11 @@ function renderQuickAccessLg() {
     const labelClass = primary ? 'qa-type-label primary' : 'qa-type-label';
     const btnHtml = prods.length
       ? prods.map(p => {
-          const minPrice = !primary ? getMinPrice(p) : null;
           return `<button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
             <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
-            ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
+            ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
+            ${priceHtml(p)}
           </button>`;
         }).join('')
       : `<div class="qa-empty">준비 중</div>`;
