@@ -17,8 +17,8 @@ from datetime import datetime
 # 경로 / 상수
 # ─────────────────────────────────────────────
 
-AC_PATH  = r'C:\Users\a\Documents\렌탈정책\26.04\★LG 26년 04월 구독전문점 수수료안내_0401.xlsx'
-TL_PATH  = r'C:\Users\a\Documents\렌탈정책\26.04\2026.04.09 수수료.xlsx'
+AC_PATH  = r'C:\Users\a\Documents\렌탈정책\26.04\LG 26년 04월 구독전문점 정책안내_0420.xlsx'
+TL_PATH  = r'C:\Users\a\Documents\렌탈정책\26.04\2026.04.21 수수료.xlsx'
 AC_SHEET = '5)공기청정기'
 TL_SHEET = 'LG청정+제습'
 DATA_ROW = 5   # 1-indexed 데이터 시작 행
