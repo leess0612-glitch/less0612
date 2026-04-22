@@ -83,11 +83,14 @@ def parse_tl(filepath):
         if "+" in current_model_code:
             continue
 
-        # H열에 값 있으면 특수 조건 행 (사업자전용/반값프로모/할인 등) → 제외
-        # 기본 수수료 행은 항상 H열이 비어 있음
+        # H열 처리:
+        # - '사업자전용': 항상 제외 (사업자 전용 특별 할인, 일반 판매와 무관)
+        # - '반값' 등 프로모션: H=None 기본 행이 없는 경우에만 fallback으로 사용
+        #   → 아래 lookup 등록 시 이미 키가 있으면 덮어쓰지 않음으로 처리
         col_h_s = clean(col_h)
-        if col_h_s:
+        if '사업자' in col_h_s:
             continue
+        is_promo_row = bool(col_h_s)  # 반값 등 프로모션 행 여부
 
         # 패키지 감지: "_패키지"(언더스코어) 또는 " 패키지"(공백) 모두 처리
         is_package = "_패키지" in col_f or bool(re.search(r'\s패키지', col_f))
