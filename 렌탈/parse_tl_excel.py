@@ -85,14 +85,9 @@ def parse_tl(filepath):
         if "+" in current_model_code:
             continue
 
-        # H열 처리:
-        # - '사업자전용': 항상 제외 (사업자 전용 특별 할인, 일반 판매와 무관)
-        # - '반값' 등 프로모션: H=None 기본 행이 없는 경우에만 fallback으로 사용
-        #   → 아래 lookup 등록 시 이미 키가 있으면 덮어쓰지 않음으로 처리
         col_h_s = clean(col_h)
-        if '사업자' in col_h_s:
-            continue
-        is_promo_row = bool(col_h_s)  # 반값 등 프로모션 행 여부
+        is_biz_row = '사업자' in col_h_s
+        is_promo_row = bool(col_h_s) and not is_biz_row  # 반값 등
 
         # 패키지 감지: "_패키지"(언더스코어) 또는 " 패키지"(공백) 모두 처리
         is_package = "_패키지" in col_f or bool(re.search(r'\s패키지', col_f))
@@ -128,6 +123,29 @@ def parse_tl(filepath):
             continue
 
         if monthly_fee == 0 and commission == 0:
+            continue
+
+        # 사업자전용 행 → biz_options에 수집 후 일반 처리 스킵
+        if is_biz_row:
+            disc_m = re.search(r'(\d+)%할인', col_f)
+            if not disc_m:
+                continue
+            disc_pct = int(disc_m.group(1))
+            obligation = clean(row[8]) if len(row) > 8 and row[8] else ''
+            norm_code = normalize_model_code(current_model_code)
+            biz_options.append({
+                "modelCode":      current_model_code,
+                "normCode":       norm_code,
+                "name":           current_product_name,
+                "managementType": mgmt,
+                "contractYears":  contract_years,
+                "contractLabel":  f"{contract_years}년",
+                "discountPct":    disc_pct,
+                "obligation":     obligation,
+                "monthlyFee":     monthly_fee,
+                "commission":     commission,
+                "visitCycle":     visit_cycle_lookup.get(norm_code, ""),
+            })
             continue
 
         # ★ K열은 반값할인가이므로 비교 무의미 → 티엘 dataWarning 없음
