@@ -1261,50 +1261,57 @@ function renderQuickAccessSk() {
 }
 
 function renderQuickAccessLg() {
-  const brandTag = getBrandTag();
+  const PRIMARY_GROUPS = [
+    { type: '얼음정수기 ★',
+      filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD722R') },
+    { type: '냉온정수기 ★',
+      filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD523V') },
+  ];
+
+  const SECONDARY_GROUPS = [
+    { type: '정수전용',
+      filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD120M') },
+    { type: '스탠드',
+      filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WS511SH') },
+  ];
 
   function getMinPrice(p) {
     if (!p.options || !p.options.length) return null;
-    if (p.isAirProduct) {
-      const min = p.options.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
-      return `${min.monthlyFee.toLocaleString('ko-KR')}원`;
-    }
-    const filtered = p.options.filter(o => !o.lgCombine);
+    const filtered = p.options.filter(o => !o.lgCombine && !(o.lgCombineType));
     if (!filtered.length) return null;
     const min = filtered.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b);
-    return `${min.monthlyFee.toLocaleString('ko-KR')}원 (${min.contractLabel})`;
+    const manageType = min.manageType || '';
+    const mgmt = manageType.includes('방문') ? '방문' : manageType.includes('셀프') ? '셀프' : '';
+    const contract = min.contractLabel || '';
+    return `${min.monthlyFee.toLocaleString('ko-KR')}원 (${contract}${mgmt ? '·' + mgmt : ''})`;
   }
 
-  function makeCol(label, filter, primary = false) {
-    const prods = DB.products.filter(filter);
+  function makeCol(g, primary) {
+    const prods = g.filter ? DB.products.filter(g.filter) : [];
     const labelClass = primary ? 'qa-type-label primary' : 'qa-type-label';
     const btnHtml = prods.length
       ? prods.map(p => {
-          const minPrice = getMinPrice(p);
+          const minPrice = !primary ? getMinPrice(p) : null;
           return `<button class="qa-prod-btn ${primary ? 'primary-prod' : ''}"
             onclick="selectProduct('${p.id}')">
-            <span class="qa-brand-tag">${brandTag}</span> ${escHtml(getDisplayName(p))}
+            <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
             ${minPrice ? `<div class="qa-min-price">${minPrice}</div>` : ''}
           </button>`;
         }).join('')
       : `<div class="qa-empty">준비 중</div>`;
-    return `<div class="qa-type-col"><div class="${labelClass}">${label}</div>${btnHtml}</div>`;
+    return `<div class="qa-type-col"><div class="${labelClass}">${g.type}</div>${btnHtml}</div>`;
   }
 
-  const LG_ITEMS = [
-    { label: '정수전용',   filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD120M') },
-    { label: '냉온정',     filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD523V') },
-    { label: '얼음정수기', filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WD722R') },
-    { label: '스탠드',     filter: p => !p.isAirProduct && p.modelCode && p.modelCode.includes('WS511SH') },
-  ];
-
-  const itemsHtml = LG_ITEMS.map(g => makeCol(g.label, g.filter, true)).join('');
+  const primaryHtml   = PRIMARY_GROUPS.map(g => makeCol(g, true)).join('');
+  const secondaryHtml = SECONDARY_GROUPS.map(g => makeCol(g, false)).join('');
 
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
     <div class="qa-brand-section">
       <div class="qa-section-header">주요 판매 제품</div>
-      <div class="qa-primary-grid">${itemsHtml}</div>
+      <div class="qa-primary-grid">${primaryHtml}</div>
+      <div class="qa-section-header">기타 제품</div>
+      <div class="qa-secondary-grid">${secondaryHtml}</div>
     </div>
   </div>`;
 }
