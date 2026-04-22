@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-22 17:19"
+    "parsedAt": "2026-04-22 17:39"
   },
   "products": [
     {
@@ -1080,7 +1080,7 @@
           "additionalCount": 3,
           "additionalCommission": 112200,
           "bonusCommission": 165000,
-          "totalCommission": 557000,
+          "totalCommission": 556900,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
@@ -2746,7 +2746,7 @@
           "bonusCommission": 0,
           "totalCommission": 230000,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -2883,7 +2883,7 @@
           "bonusCommission": 0,
           "totalCommission": 310000,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3118,7 +3118,7 @@
           "bonusCommission": 0,
           "totalCommission": 310000,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3236,7 +3236,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 163000,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3353,7 +3353,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 163000,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3470,7 +3470,7 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 244700,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3587,7 +3587,7 @@
           "additionalCommission": 56700,
           "bonusCommission": 100000,
           "totalCommission": 244700,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -3705,7 +3705,7 @@
           "bonusCommission": 0,
           "totalCommission": 230000,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
@@ -5722,7 +5722,7 @@
           "bonusCommission": 0,
           "totalCommission": 74700,
           "_mgmt_inferred": true,
-          "recommendedOffice": null,
+          "recommendedOffice": "에이컴즈",
           "akOnlyOption": true
         },
         {
