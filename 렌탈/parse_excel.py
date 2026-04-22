@@ -809,6 +809,13 @@ if __name__ == "__main__":
                     continue
                 tl_added.add(dedup_key)
                 # AK에 없는 TL 옵션 → 합성
+                # visitCycle: AK 옵션 중 동일 관리방식 기반 것에서 참조
+                ak_visit = next(
+                    (o.get("visitCycle", "") for o in product["options"]
+                     if _mgmt_base_key(o.get("managementType", "")) == tl_mgmt_base
+                     and o.get("visitCycle")),
+                    ""
+                )
                 syn_opt = {
                     "label": f"{tl_years}년",
                     "managementType": tl_mgmt,
@@ -816,7 +823,7 @@ if __name__ == "__main__":
                     "contractLabel": f"{tl_years}년",
                     "monthlyFee": tl_opt["monthlyFee"],
                     "dataWarning": False,
-                    "visitCycle": "",
+                    "visitCycle": ak_visit,
                     "ownershipMonths": 0,
                     "registrationFee": 0,
                     "baseCommission": 0,
