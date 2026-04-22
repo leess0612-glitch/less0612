@@ -1294,9 +1294,10 @@ function renderQuickAccessLg() {
 
   function getPrices5yr(p) {
     if (!p.options || !p.options.length) return { 방문: null, 셀프: null };
-    const opts = p.options.filter(o => o.contractYears === 5 && !o.lgCombine);
-    const bOpts = opts.filter(o => (o.manageType || '').includes('방문'));
-    const sOpts = opts.filter(o => !(o.manageType || '').includes('방문'));
+    // transformLgData 이후: contractMonths(숫자), managementType(문자열), lgCombine(bool)
+    const opts = p.options.filter(o => o.contractMonths === 60 && !o.lgCombine);
+    const bOpts = opts.filter(o => (o.managementType || '').includes('방문'));
+    const sOpts = opts.filter(o => !(o.managementType || '').includes('방문'));
     const bMin = bOpts.length ? bOpts.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b) : null;
     const sMin = sOpts.length ? sOpts.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b) : null;
     return { 방문: bMin ? bMin.monthlyFee : null, 셀프: sMin ? sMin.monthlyFee : null };
