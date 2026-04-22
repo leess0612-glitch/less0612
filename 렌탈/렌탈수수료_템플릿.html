@@ -1244,7 +1244,7 @@ function renderQuickAccessSk() {
     const parts = [];
     if (방문) parts.push(`방문 ${fmt(방문)}`);
     if (셀프) parts.push(`셀프 ${fmt(셀프)}`);
-    return `<div class="qa-min-price">5년 · ${parts.join(' / ')}</div>`;
+    return `<div class="qa-min-price">5년<br>${parts.join('<br>')}</div>`;
   }
 
   function makeCol(g, primary) {
@@ -1310,7 +1310,7 @@ function renderQuickAccessLg() {
     const parts = [];
     if (방문) parts.push(`방문 ${fmt(방문)}`);
     if (셀프) parts.push(`셀프 ${fmt(셀프)}`);
-    return `<div class="qa-min-price">5년 · ${parts.join(' / ')}</div>`;
+    return `<div class="qa-min-price">5년<br>${parts.join('<br>')}</div>`;
   }
 
   function makeCol(g, primary) {
