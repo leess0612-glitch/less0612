@@ -5653,11 +5653,11 @@
           "combineType": "단품",
           "monthlyFee": 80900,
           "commission": {
-            "ak": null,
+            "ak": 391200,
             "tl": 391200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5668,11 +5668,11 @@
           "combineType": "단품",
           "monthlyFee": 68900,
           "commission": {
-            "ak": null,
+            "ak": 430700,
             "tl": 430700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5683,11 +5683,11 @@
           "combineType": "신규결합",
           "monthlyFee": 66800,
           "commission": {
-            "ak": null,
+            "ak": 500600,
             "tl": 500600
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5698,11 +5698,11 @@
           "combineType": "단품",
           "monthlyFee": 61900,
           "commission": {
-            "ak": null,
+            "ak": 471400,
             "tl": 471400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5713,11 +5713,11 @@
           "combineType": "신규결합",
           "monthlyFee": 60000,
           "commission": {
-            "ak": null,
+            "ak": 540000,
             "tl": 540000
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5728,11 +5728,11 @@
           "combineType": "기존결합",
           "monthlyFee": 55100,
           "commission": {
-            "ak": null,
+            "ak": 576800,
             "tl": 576800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5743,11 +5743,11 @@
           "combineType": "단품",
           "monthlyFee": 37500,
           "commission": {
-            "ak": null,
+            "ak": 509700,
             "tl": 509700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5758,11 +5758,11 @@
           "combineType": "신규결합",
           "monthlyFee": 54000,
           "commission": {
-            "ak": null,
+            "ak": 568800,
             "tl": 568800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5773,11 +5773,11 @@
           "combineType": "단품",
           "monthlyFee": 82900,
           "commission": {
-            "ak": null,
+            "ak": 398400,
             "tl": 398400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5788,11 +5788,11 @@
           "combineType": "단품",
           "monthlyFee": 70900,
           "commission": {
-            "ak": null,
+            "ak": 440300,
             "tl": 440300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5803,11 +5803,11 @@
           "combineType": "신규결합",
           "monthlyFee": 68700,
           "commission": {
-            "ak": null,
+            "ak": 509800,
             "tl": 509800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5818,11 +5818,11 @@
           "combineType": "단품",
           "monthlyFee": 63900,
           "commission": {
-            "ak": null,
+            "ak": 483400,
             "tl": 483400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5833,11 +5833,11 @@
           "combineType": "신규결합",
           "monthlyFee": 61900,
           "commission": {
-            "ak": null,
+            "ak": 551400,
             "tl": 551400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5848,11 +5848,11 @@
           "combineType": "기존결합",
           "monthlyFee": 57100,
           "commission": {
-            "ak": null,
+            "ak": 591200,
             "tl": 591200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5863,11 +5863,11 @@
           "combineType": "단품",
           "monthlyFee": 38800,
           "commission": {
-            "ak": null,
+            "ak": 524100,
             "tl": 524100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5878,11 +5878,11 @@
           "combineType": "신규결합",
           "monthlyFee": 55900,
           "commission": {
-            "ak": null,
+            "ak": 582500,
             "tl": 582500
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5893,11 +5893,11 @@
           "combineType": "단품",
           "monthlyFee": 75900,
           "commission": {
-            "ak": null,
+            "ak": 373200,
             "tl": 373200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5908,11 +5908,11 @@
           "combineType": "단품",
           "monthlyFee": 63900,
           "commission": {
-            "ak": null,
+            "ak": 406700,
             "tl": 406700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5923,11 +5923,11 @@
           "combineType": "신규결합",
           "monthlyFee": 61900,
           "commission": {
-            "ak": null,
+            "ak": 477100,
             "tl": 477100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5938,11 +5938,11 @@
           "combineType": "단품",
           "monthlyFee": 56900,
           "commission": {
-            "ak": null,
+            "ak": 441400,
             "tl": 441400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5953,11 +5953,11 @@
           "combineType": "신규결합",
           "monthlyFee": 55100,
           "commission": {
-            "ak": null,
+            "ak": 510600,
             "tl": 510600
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5968,11 +5968,11 @@
           "combineType": "기존결합",
           "monthlyFee": 50300,
           "commission": {
-            "ak": null,
+            "ak": 542200,
             "tl": 542200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5983,11 +5983,11 @@
           "combineType": "단품",
           "monthlyFee": 34200,
           "commission": {
-            "ak": null,
+            "ak": 473700,
             "tl": 473700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -5998,11 +5998,11 @@
           "combineType": "신규결합",
           "monthlyFee": 49300,
           "commission": {
-            "ak": null,
+            "ak": 535000,
             "tl": 535000
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6013,11 +6013,11 @@
           "combineType": "단품",
           "monthlyFee": 77900,
           "commission": {
-            "ak": null,
+            "ak": 380400,
             "tl": 380400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6028,11 +6028,11 @@
           "combineType": "단품",
           "monthlyFee": 65900,
           "commission": {
-            "ak": null,
+            "ak": 416300,
             "tl": 416300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6043,11 +6043,11 @@
           "combineType": "신규결합",
           "monthlyFee": 63900,
           "commission": {
-            "ak": null,
+            "ak": 486700,
             "tl": 486700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6058,11 +6058,11 @@
           "combineType": "단품",
           "monthlyFee": 58900,
           "commission": {
-            "ak": null,
+            "ak": 453400,
             "tl": 453400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6073,11 +6073,11 @@
           "combineType": "신규결합",
           "monthlyFee": 57100,
           "commission": {
-            "ak": null,
+            "ak": 522600,
             "tl": 522600
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6088,11 +6088,11 @@
           "combineType": "기존결합",
           "monthlyFee": 52200,
           "commission": {
-            "ak": null,
+            "ak": 555900,
             "tl": 555900
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6103,11 +6103,11 @@
           "combineType": "단품",
           "monthlyFee": 35500,
           "commission": {
-            "ak": null,
+            "ak": 488100,
             "tl": 488100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6118,11 +6118,11 @@
           "combineType": "신규결합",
           "monthlyFee": 51200,
           "commission": {
-            "ak": null,
+            "ak": 548700,
             "tl": 548700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6133,11 +6133,11 @@
           "combineType": "단품",
           "monthlyFee": 70900,
           "commission": {
-            "ak": null,
+            "ak": 355200,
             "tl": 355200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6148,11 +6148,11 @@
           "combineType": "단품",
           "monthlyFee": 58900,
           "commission": {
-            "ak": null,
+            "ak": 382700,
             "tl": 382700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6163,11 +6163,11 @@
           "combineType": "신규결합",
           "monthlyFee": 57100,
           "commission": {
-            "ak": null,
+            "ak": 454100,
             "tl": 454100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6178,11 +6178,11 @@
           "combineType": "단품",
           "monthlyFee": 51900,
           "commission": {
-            "ak": null,
+            "ak": 411400,
             "tl": 411400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6193,11 +6193,11 @@
           "combineType": "신규결합",
           "monthlyFee": 50300,
           "commission": {
-            "ak": null,
+            "ak": 481800,
             "tl": 481800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6208,11 +6208,11 @@
           "combineType": "기존결합",
           "monthlyFee": 45400,
           "commission": {
-            "ak": null,
+            "ak": 506900,
             "tl": 506900
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6223,11 +6223,11 @@
           "combineType": "단품",
           "monthlyFee": 30900,
           "commission": {
-            "ak": null,
+            "ak": 437700,
             "tl": 437700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -6238,11 +6238,11 @@
           "combineType": "신규결합",
           "monthlyFee": 44500,
           "commission": {
-            "ak": null,
+            "ak": 500400,
             "tl": 500400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         }
       ]
@@ -7858,11 +7858,11 @@
           "combineType": "단품",
           "monthlyFee": 49900,
           "commission": {
-            "ak": null,
+            "ak": 279600,
             "tl": 279600
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7873,11 +7873,11 @@
           "combineType": "단품",
           "monthlyFee": 41900,
           "commission": {
-            "ak": null,
+            "ak": 301100,
             "tl": 301100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7888,11 +7888,11 @@
           "combineType": "신규결합",
           "monthlyFee": 40600,
           "commission": {
-            "ak": null,
+            "ak": 374800,
             "tl": 374800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7903,11 +7903,11 @@
           "combineType": "단품",
           "monthlyFee": 37900,
           "commission": {
-            "ak": null,
+            "ak": 327400,
             "tl": 327400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7918,11 +7918,11 @@
           "combineType": "신규결합",
           "monthlyFee": 36700,
           "commission": {
-            "ak": null,
+            "ak": 400200,
             "tl": 400200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7933,11 +7933,11 @@
           "combineType": "기존결합",
           "monthlyFee": 33800,
           "commission": {
-            "ak": null,
+            "ak": 423300,
             "tl": 423300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7948,11 +7948,11 @@
           "combineType": "단품",
           "monthlyFee": 23000,
           "commission": {
-            "ak": null,
+            "ak": 351300,
             "tl": 351300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7963,11 +7963,11 @@
           "combineType": "신규결합",
           "monthlyFee": 33100,
           "commission": {
-            "ak": null,
+            "ak": 418300,
             "tl": 418300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7978,11 +7978,11 @@
           "combineType": "단품",
           "monthlyFee": 44900,
           "commission": {
-            "ak": null,
+            "ak": 261600,
             "tl": 261600
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -7993,11 +7993,11 @@
           "combineType": "단품",
           "monthlyFee": 36900,
           "commission": {
-            "ak": null,
+            "ak": 277100,
             "tl": 277100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8008,11 +8008,11 @@
           "combineType": "신규결합",
           "monthlyFee": 35700,
           "commission": {
-            "ak": null,
+            "ak": 351300,
             "tl": 351300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8023,11 +8023,11 @@
           "combineType": "단품",
           "monthlyFee": 32900,
           "commission": {
-            "ak": null,
+            "ak": 297400,
             "tl": 297400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8038,11 +8038,11 @@
           "combineType": "신규결합",
           "monthlyFee": 31900,
           "commission": {
-            "ak": null,
+            "ak": 371400,
             "tl": 371400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8053,11 +8053,11 @@
           "combineType": "기존결합",
           "monthlyFee": 29000,
           "commission": {
-            "ak": null,
+            "ak": 388800,
             "tl": 388800
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8068,11 +8068,11 @@
           "combineType": "단품",
           "monthlyFee": 19700,
           "commission": {
-            "ak": null,
+            "ak": 315300,
             "tl": 315300
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8083,11 +8083,11 @@
           "combineType": "신규결합",
           "monthlyFee": 28400,
           "commission": {
-            "ak": null,
+            "ak": 384400,
             "tl": 384400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8098,11 +8098,11 @@
           "combineType": "단품",
           "monthlyFee": 39900,
           "commission": {
-            "ak": null,
+            "ak": 243700,
             "tl": 243700
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8113,11 +8113,11 @@
           "combineType": "단품",
           "monthlyFee": 31900,
           "commission": {
-            "ak": null,
+            "ak": 253100,
             "tl": 253100
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8128,11 +8128,11 @@
           "combineType": "신규결합",
           "monthlyFee": 30900,
           "commission": {
-            "ak": null,
+            "ak": 328400,
             "tl": 328400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8143,11 +8143,11 @@
           "combineType": "단품",
           "monthlyFee": 27900,
           "commission": {
-            "ak": null,
+            "ak": 267400,
             "tl": 267400
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8158,11 +8158,11 @@
           "combineType": "신규결합",
           "monthlyFee": 27000,
           "commission": {
-            "ak": null,
+            "ak": 342000,
             "tl": 342000
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8173,11 +8173,11 @@
           "combineType": "기존결합",
           "monthlyFee": 24100,
           "commission": {
-            "ak": null,
+            "ak": 353500,
             "tl": 353500
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8188,11 +8188,11 @@
           "combineType": "단품",
           "monthlyFee": 16400,
           "commission": {
-            "ak": null,
+            "ak": 279200,
             "tl": 279200
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         },
         {
@@ -8203,11 +8203,11 @@
           "combineType": "신규결합",
           "monthlyFee": 23600,
           "commission": {
-            "ak": null,
+            "ak": 349900,
             "tl": 349900
           },
-          "recommendedOffice": "티엘",
-          "popup": "에이컴즈 접수 불가 — 티엘로만 접수 가능\n확인 필요",
+          "recommendedOffice": "동일",
+          "popup": null,
           "dataWarning": null
         }
       ]
