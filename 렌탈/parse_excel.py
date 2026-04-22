@@ -720,6 +720,60 @@ if __name__ == "__main__":
         package_opts = []
         seen_pkg = set()
 
+        # ── 0. TL 제품 미리 찾기 (이후 전 단계에서 공통 사용) ──
+        tl_products_data = tl_data.get("products", [])
+        base_mvs = _tl_model_variants(model_code)
+        all_mvs = _extend_model_variants_with_prefix(base_mvs, tl_known_models) if tl_known_models else base_mvs
+        tl_prods_found = []
+        for mv in all_mvs:
+            tl_prods = [p for p in tl_products_data
+                        if _norm_model(p["modelCode"]) == mv or
+                        _norm_model(p["modelCode"]).startswith(mv) or
+                        mv.startswith(_norm_model(p["modelCode"]))]
+            if tl_prods:
+                tl_prods_found = tl_prods
+                break
+
+        # ── 1. AK 빈 managementType → TL 교차참조로 보완 ──
+        # 에이컴즈 D열에 관리방법이 없는 경우 TL 파일의 동일 약정 옵션에서 가져옴
+        for opt in regular_opts:
+            if opt.get("managementType") == "" and not opt.get("isPackage") and not opt.get("source"):
+                for tl_prod in tl_prods_found:
+                    for tl_opt in tl_prod.get("options", []):
+                        if tl_opt["contractYears"] * 12 == opt["contractMonths"]:
+                            opt["managementType"] = tl_opt["managementType"]
+                            break
+                    if opt.get("managementType"):
+                        break
+
+        # ── 2. 빈 visitCycle → 동일 제품 AK 옵션에서 보완 ──
+        for opt in regular_opts:
+            if not opt.get("visitCycle") and "방문" in (opt.get("managementType") or ""):
+                visit = next(
+                    (o.get("visitCycle", "") for o in regular_opts
+                     if o.get("visitCycle") and "방문" in (o.get("managementType") or "")),
+                    ""
+                )
+                if visit:
+                    opt["visitCycle"] = visit
+
+        # ── 3. 여전히 빈 managementType → 정규화 경고 ──
+        missing_mgmt_opts = [o for o in regular_opts if not o.get("managementType") and not o.get("isPackage")]
+        if missing_mgmt_opts:
+            for o in missing_mgmt_opts:
+                o["missingMgmt"] = True
+            normalization_issues.append({
+                "type": "MISSING_MGMT",
+                "modelCode": model_code,
+                "name": product.get("name", ""),
+                "akDetail": "; ".join(
+                    f'{o.get("contractLabel", "?")} 관리방법없음'
+                    for o in missing_mgmt_opts[:3]
+                ),
+                "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
+                "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
+            })
+
         for opt in regular_opts:
             mgmt = opt.get("managementType", "")
             months = opt.get("contractMonths", 0)
@@ -775,24 +829,6 @@ if __name__ == "__main__":
         )
         # 이미 추가된 TL보완 옵션 중복 방지
         tl_added = set()
-
-        # TL product 데이터에서 해당 모델 찾기 (prefix 매칭 포함)
-        tl_products_data = tl_data.get("products", [])
-        base_mvs = _tl_model_variants(model_code)
-        if tl_known_models:
-            all_mvs = _extend_model_variants_with_prefix(base_mvs, tl_known_models)
-        else:
-            all_mvs = base_mvs
-
-        tl_prods_found = []
-        for mv in all_mvs:
-            tl_prods = [p for p in tl_products_data
-                        if _norm_model(p["modelCode"]) == mv or
-                        _norm_model(p["modelCode"]).startswith(mv) or
-                        mv.startswith(_norm_model(p["modelCode"]))]
-            if tl_prods:
-                tl_prods_found = tl_prods
-                break
 
         for tl_prod in tl_prods_found:
             for tl_opt in tl_prod.get("options", []):
