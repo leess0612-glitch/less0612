@@ -271,6 +271,7 @@ def parse_tl(filepath):
     warn_count = len(warning_models)
     print(f"[티엘] 파싱 완료: {len(products)}개 제품 (병합 {len(merged_variants)}개), "
           f"J≠K 경고 {warn_count}개: {sorted(warning_models) if warn_count else '없음'}")
+    print(f"[티엘] 사업자전용 옵션: {len(biz_options)}개")
 
     return {
         "metadata": {
@@ -285,6 +286,7 @@ def parse_tl(filepath):
         "visitCycleLookup": visit_cycle_lookup,
         "modelDisplayMap": model_display_map,
         "mergedVariants": merged_variants,
+        "bizOptions": biz_options,
     }
 
 
