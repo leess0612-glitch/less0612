@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-22 16:32"
+    "parsedAt": "2026-04-22 16:33"
   },
   "products": [
     {
@@ -2732,7 +2732,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 27900,
@@ -2745,7 +2745,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -2787,7 +2787,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 25900,
@@ -2800,7 +2800,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 172500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -2869,7 +2869,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 34900,
@@ -2882,7 +2882,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 310000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -2924,7 +2924,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 32900,
@@ -2937,7 +2937,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 232500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -2988,7 +2988,7 @@
         },
         {
           "label": "6년의문",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -3001,7 +3001,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -3043,7 +3043,7 @@
         },
         {
           "label": "6년의문",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 24900,
@@ -3056,7 +3056,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 172500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -3107,7 +3107,7 @@
         },
         {
           "label": "6년의문",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 28900,
@@ -3120,7 +3120,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 310000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -3162,7 +3162,7 @@
         },
         {
           "label": "6년의문",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -3175,7 +3175,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 232500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -3694,7 +3694,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 26900,
@@ -3707,7 +3707,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 230000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -3749,7 +3749,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 24900,
@@ -3762,7 +3762,7 @@
           "additionalCommission": 0,
           "bonusCommission": 0,
           "totalCommission": 172500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -5711,7 +5711,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "",
+          "managementType": "방문관리",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 14900,
@@ -5724,7 +5724,7 @@
           "additionalCommission": 44700,
           "bonusCommission": 0,
           "totalCommission": 74700,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -5765,7 +5765,7 @@
         },
         {
           "label": "라이트시리즈",
-          "managementType": "_패키지",
+          "managementType": "방문관리_패키지",
           "contractMonths": 48,
           "contractLabel": "4년",
           "monthlyFee": 12900,
@@ -5778,7 +5778,7 @@
           "additionalCommission": 44700,
           "bonusCommission": 0,
           "totalCommission": 67200,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         },
@@ -6155,7 +6155,7 @@
         },
         {
           "label": "",
-          "managementType": "",
+          "managementType": "셀프관리",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 18900,
@@ -6168,7 +6168,7 @@
           "additionalCommission": 94500,
           "bonusCommission": 0,
           "totalCommission": 204500,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "akOnlyOption": true
         },
@@ -6228,7 +6228,7 @@
         },
         {
           "label": "",
-          "managementType": "_패키지",
+          "managementType": "셀프관리_패키지",
           "contractMonths": 72,
           "contractLabel": "6년",
           "monthlyFee": 16900,
@@ -6241,7 +6241,7 @@
           "additionalCommission": 94500,
           "bonusCommission": 0,
           "totalCommission": 177000,
-          "missingMgmt": true,
+          "_mgmt_inferred": true,
           "recommendedOffice": null,
           "isPackage": true
         }
@@ -10946,62 +10946,6 @@
   "codeMismatches": [],
   "normalizationIssues": [
     {
-      "type": "MISSING_MGMT",
-      "modelCode": "WPUB600F",
-      "name": "그랜드정수기(NANO)",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "WPUB610F",
-      "name": "그랜드정수기(RO)",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "WPUB700F",
-      "name": "뉴랜드정수기(NANO)",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "WPUB710F",
-      "name": "뉴랜드정수기(RO)",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "WPUTDC10RRNW",
-      "name": "뉴슬림정수기 RO (하프)",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "ACL131T0CJDG",
-      "name": "코어360 공기청정기(13평형)",
-      "akDetail": "4년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
-      "type": "MISSING_MGMT",
-      "modelCode": "BIDF17D",
-      "name": "풀스텐 스파 비데",
-      "akDetail": "6년 관리방법없음",
-      "tlDetail": "에이컴즈·티엘 모두 관리방법 확인 불가",
-      "reason": "관리방법을 특정할 수 없는 옵션 — 수동 확인 필요"
-    },
-    {
       "type": "AK_ONLY",
       "modelCode": "MATQM720R",
       "name": "워커힐 엠버서더 스위트_퀸",
@@ -11021,7 +10965,7 @@
       "type": "PARTIAL",
       "modelCode": "WPUB600F",
       "name": "그랜드정수기(NANO)",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 방문관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11029,7 +10973,7 @@
       "type": "PARTIAL",
       "modelCode": "WPUB610F",
       "name": "그랜드정수기(RO)",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 방문관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11037,7 +10981,7 @@
       "type": "PARTIAL",
       "modelCode": "WPUB700F",
       "name": "뉴랜드정수기(NANO)",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 방문관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11045,7 +10989,7 @@
       "type": "PARTIAL",
       "modelCode": "WPUB710F",
       "name": "뉴랜드정수기(RO)",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 방문관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11085,7 +11029,7 @@
       "type": "PARTIAL",
       "modelCode": "WPUTDC10RRNW",
       "name": "뉴슬림정수기 RO (하프)",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 방문관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11093,7 +11037,7 @@
       "type": "PARTIAL",
       "modelCode": "ACL131T0CJDG",
       "name": "코어360 공기청정기(13평형)",
-      "akDetail": "매칭 실패:  4년",
+      "akDetail": "매칭 실패: 방문관리 4년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     },
@@ -11101,7 +11045,7 @@
       "type": "PARTIAL",
       "modelCode": "BIDF17D",
       "name": "풀스텐 스파 비데",
-      "akDetail": "매칭 실패:  6년",
+      "akDetail": "매칭 실패: 셀프관리 6년",
       "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
       "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
     }
