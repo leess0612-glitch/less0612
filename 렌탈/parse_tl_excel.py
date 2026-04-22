@@ -138,7 +138,9 @@ def parse_tl(filepath):
             lookup_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}|{size}"
         else:
             lookup_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}"
-        option_lookup[lookup_key] = commission
+        # 프로모션 행(반값 등)은 H=None 기본 행이 없는 경우에만 fallback으로 등록
+        if not is_promo_row or lookup_key not in option_lookup:
+            option_lookup[lookup_key] = commission
         # 사이즈 없는 fallback 키도 함께 등록 (사이즈 무관 조회용)
         if size:
             fallback_key = f"{norm_code}|{mgmt}|{contract_years}|{int(has_tasa)}|{int(is_package)}"
