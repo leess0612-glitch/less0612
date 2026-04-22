@@ -1017,6 +1017,39 @@ if __name__ == "__main__":
         msg = f"  [TL전용] {tl_product['modelCode']} — {tl_product['name']}"
         print(msg.encode('cp949', errors='replace').decode('cp949'))
 
+    # ── TL 사업자전용 옵션 주입 ──
+    tl_biz = tl_data.get("bizOptions", [])
+    if tl_biz:
+        for product in data["products"]:
+            mc_norm = _norm_model(product.get("modelCode", ""))
+            base_mvs = _tl_model_variants(product.get("modelCode", ""))
+            all_mvs_biz = _extend_model_variants_with_prefix(base_mvs, tl_known_models) if tl_known_models else base_mvs
+            for biz in tl_biz:
+                if biz["normCode"] not in all_mvs_biz and _norm_model(biz["modelCode"]) not in all_mvs_biz:
+                    continue
+                visit = biz.get("visitCycle") or ""
+                if not visit:
+                    visit = product.get("visitCycleInfo", "")
+                product["options"].append({
+                    "label":            f"{biz['contractYears']}년",
+                    "managementType":   biz["managementType"],
+                    "contractMonths":   biz["contractYears"] * 12,
+                    "contractLabel":    biz["contractLabel"],
+                    "monthlyFee":       biz["monthlyFee"],
+                    "totalCommission":  biz["commission"],
+                    "recommendedOffice": "티엘",
+                    "source":           "TL",
+                    "isBizOnly":        True,
+                    "bizDiscount":      f"{biz['discountPct']}%",
+                    "obligation":       biz.get("obligation", ""),
+                    "visitCycle":       visit,
+                    "isPackage":        False,
+                    "dataWarning":      False,
+                    "baseCommission":   0,
+                    "bonusCommission":  0,
+                    "registrationFee":  0,
+                })
+
     data["normalizationIssues"] = normalization_issues
 
     # ── 옵션 약정 오름차순 정렬 (신규→타사보상→패키지, 각 그룹 내 contractMonths 오름차순) ──
