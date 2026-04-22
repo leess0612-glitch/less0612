@@ -3,17 +3,17 @@
     "brand": "LG전자",
     "category": "정수기",
     "sourceFiles": {
-      "ak": "★LG 26년 04월 구독전문점 수수료안내_0401.xlsx",
-      "tl": "2026.04.09 수수료.xlsx"
+      "ak": "★LG 26년 04월 구독전문점 수수료안내_0408.xlsx",
+      "tl": "2026.04.21 수수료.xlsx"
     },
-    "parsedAt": "2026-04-22 16:33"
+    "parsedAt": "2026-04-22 17:19"
   },
   "normalizationIssues": [],
   "products": [
     {
       "id": "WD120M",
       "modelCode": "WD120M",
-      "lineup": "",
+      "lineup": "라이트온",
       "spec": "정수전용",
       "options": [
         {
@@ -21,7 +21,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 22900,
           "commission": {
             "ak": 337500,
@@ -31,7 +31,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -40,7 +40,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 24900,
           "commission": {
             "ak": 328300,
@@ -50,7 +50,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -59,7 +59,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 19900,
           "commission": {
             "ak": 306400,
@@ -69,7 +69,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -78,7 +78,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 21900,
           "commission": {
             "ak": 300800,
@@ -88,7 +88,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -97,7 +97,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 19900,
           "commission": {
             "ak": 347600,
@@ -107,7 +107,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -116,7 +116,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 21900,
           "commission": {
             "ak": 341000,
@@ -126,7 +126,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -135,7 +135,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 16900,
           "commission": {
             "ak": 310300,
@@ -145,7 +145,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -181,7 +181,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 25900,
           "commission": {
             "ak": 368500,
@@ -191,7 +191,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -200,7 +200,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 27900,
           "commission": {
             "ak": 355800,
@@ -210,7 +210,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -219,7 +219,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 22900,
           "commission": {
             "ak": 337500,
@@ -229,7 +229,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -238,7 +238,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 24900,
           "commission": {
             "ak": 328300,
@@ -248,7 +248,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -257,7 +257,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 22900,
           "commission": {
             "ak": 384900,
@@ -267,7 +267,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -276,7 +276,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 24900,
           "commission": {
             "ak": 374000,
@@ -286,7 +286,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -295,7 +295,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 19900,
           "commission": {
             "ak": 347600,
@@ -305,7 +305,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "5천원/월",
             "modelDiscount": null
           }
         },
@@ -341,7 +341,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 305100,
@@ -360,7 +360,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 287100,
@@ -379,7 +379,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 33900,
           "commission": {
             "ak": 288300,
@@ -398,7 +398,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 273000,
@@ -417,7 +417,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 437500,
@@ -427,7 +427,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -436,7 +436,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 34900,
           "commission": {
             "ak": 431300,
@@ -446,7 +446,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -455,7 +455,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 28900,
           "commission": {
             "ak": 405600,
@@ -465,7 +465,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -474,7 +474,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 402900,
@@ -484,7 +484,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -493,7 +493,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 28900,
           "commission": {
             "ak": 470300,
@@ -503,7 +503,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -512,7 +512,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 466600,
@@ -522,7 +522,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -531,7 +531,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 25900,
           "commission": {
             "ak": 431700,
@@ -541,7 +541,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -569,7 +569,7 @@
     {
       "id": "WD325AS",
       "modelCode": "WD325AS",
-      "lineup": "",
+      "lineup": "상하좌우",
       "spec": "냉/정",
       "options": [
         {
@@ -577,7 +577,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 434800,
@@ -596,7 +596,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 428900,
@@ -615,7 +615,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 26900,
           "commission": {
             "ak": 334000,
@@ -634,7 +634,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 324300,
@@ -653,7 +653,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 26900,
           "commission": {
             "ak": 461400,
@@ -672,7 +672,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 458700,
@@ -691,7 +691,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 23900,
           "commission": {
             "ak": 349600,
@@ -737,7 +737,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 418300,
@@ -747,7 +747,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -756,7 +756,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 33900,
           "commission": {
             "ak": 399800,
@@ -766,7 +766,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -775,7 +775,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 28900,
           "commission": {
             "ak": 387100,
@@ -785,7 +785,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -794,7 +794,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 30900,
           "commission": {
             "ak": 372300,
@@ -804,7 +804,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -813,7 +813,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 28900,
           "commission": {
             "ak": 447200,
@@ -823,7 +823,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -832,7 +832,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 30900,
           "commission": {
             "ak": 429000,
@@ -842,7 +842,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -851,7 +851,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 25900,
           "commission": {
             "ak": 409800,
@@ -861,7 +861,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "6천원/월"
           }
         },
@@ -897,7 +897,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 441100,
@@ -907,7 +907,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -916,7 +916,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 34900,
           "commission": {
             "ak": 419900,
@@ -926,7 +926,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -935,7 +935,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 410000,
@@ -945,7 +945,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -954,7 +954,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 392400,
@@ -964,7 +964,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -973,7 +973,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 472100,
@@ -983,7 +983,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -992,7 +992,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 450900,
@@ -1002,7 +1002,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1011,7 +1011,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 26900,
           "commission": {
             "ak": 434700,
@@ -1021,7 +1021,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1057,7 +1057,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 563800,
@@ -1067,7 +1067,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1076,7 +1076,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 554800,
@@ -1086,7 +1086,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1095,7 +1095,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 530200,
@@ -1105,7 +1105,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1114,7 +1114,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 524800,
@@ -1124,7 +1124,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1133,7 +1133,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 597200,
@@ -1143,7 +1143,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1152,7 +1152,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 590600,
@@ -1162,7 +1162,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1171,7 +1171,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 26900,
           "commission": {
             "ak": 556900,
@@ -1181,7 +1181,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "2천원/월"
           }
         },
@@ -1217,7 +1217,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 327400,
@@ -1236,7 +1236,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 43900,
           "commission": {
             "ak": 305800,
@@ -1255,7 +1255,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 310600,
@@ -1274,7 +1274,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 291700,
@@ -1293,7 +1293,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 480100,
@@ -1303,7 +1303,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1312,7 +1312,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 38900,
           "commission": {
             "ak": 469400,
@@ -1322,7 +1322,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1331,7 +1331,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 448200,
@@ -1341,7 +1341,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1350,7 +1350,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 440900,
@@ -1360,7 +1360,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1369,7 +1369,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 521800,
@@ -1379,7 +1379,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1388,7 +1388,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 512600,
@@ -1398,7 +1398,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1407,7 +1407,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 483200,
@@ -1417,7 +1417,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1453,7 +1453,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 427400,
@@ -1472,7 +1472,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 43900,
           "commission": {
             "ak": 405800,
@@ -1491,7 +1491,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 410600,
@@ -1510,7 +1510,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 391700,
@@ -1529,7 +1529,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 580100,
@@ -1539,7 +1539,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1548,7 +1548,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 38900,
           "commission": {
             "ak": 569400,
@@ -1558,7 +1558,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1567,7 +1567,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 548200,
@@ -1577,7 +1577,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1586,7 +1586,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 540900,
@@ -1596,7 +1596,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1605,7 +1605,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 621800,
@@ -1615,7 +1615,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1624,7 +1624,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 612600,
@@ -1634,7 +1634,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1643,7 +1643,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 583200,
@@ -1653,7 +1653,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1689,7 +1689,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 42900,
           "commission": {
             "ak": 338600,
@@ -1708,7 +1708,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 45900,
           "commission": {
             "ak": 315200,
@@ -1727,7 +1727,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 321800,
@@ -1746,7 +1746,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 42900,
           "commission": {
             "ak": 301100,
@@ -1765,7 +1765,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 501400,
@@ -1775,7 +1775,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1784,7 +1784,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 488400,
@@ -1794,7 +1794,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1803,7 +1803,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 34900,
           "commission": {
             "ak": 469500,
@@ -1813,7 +1813,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1822,7 +1822,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 459900,
@@ -1832,7 +1832,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1841,7 +1841,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 34900,
           "commission": {
             "ak": 547700,
@@ -1851,7 +1851,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1860,7 +1860,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 535700,
@@ -1870,7 +1870,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1879,7 +1879,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 31900,
           "commission": {
             "ak": 508900,
@@ -1889,7 +1889,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -1925,7 +1925,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 468400,
@@ -1944,7 +1944,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 458900,
@@ -1963,7 +1963,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 331400,
@@ -1982,7 +1982,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 322000,
@@ -2001,7 +2001,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 501800,
@@ -2020,7 +2020,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 494600,
@@ -2039,7 +2039,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 26900,
           "commission": {
             "ak": 354800,
@@ -2085,7 +2085,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 60900,
           "commission": {
             "ak": 570000,
@@ -2104,7 +2104,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 65900,
           "commission": {
             "ak": 550000,
@@ -2123,7 +2123,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 58900,
           "commission": {
             "ak": 570000,
@@ -2142,7 +2142,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 63900,
           "commission": {
             "ak": 550000,
@@ -2161,7 +2161,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 52900,
           "commission": {
             "ak": 670000,
@@ -2171,7 +2171,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2180,7 +2180,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 57900,
           "commission": {
             "ak": 650000,
@@ -2190,7 +2190,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2199,7 +2199,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 50900,
           "commission": {
             "ak": 670000,
@@ -2209,7 +2209,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2218,7 +2218,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 55900,
           "commission": {
             "ak": 650000,
@@ -2228,7 +2228,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2237,7 +2237,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 48900,
           "commission": {
             "ak": 670000,
@@ -2247,7 +2247,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2256,7 +2256,7 @@
           "manageType": "방문관리",
           "manageCycle": "4개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 53900,
           "commission": {
             "ak": 650000,
@@ -2266,7 +2266,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2275,7 +2275,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 5000,
           "monthlyFee": 46900,
           "commission": {
             "ak": 670000,
@@ -2285,7 +2285,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "2만원/월",
             "modelDiscount": null
           }
         },
@@ -2313,34 +2313,15 @@
     {
       "id": "WS511SH",
       "modelCode": "WS511SH",
-      "lineup": "",
-      "spec": "",
+      "lineup": "스탠드",
+      "spec": "냉/온/정",
       "options": [
         {
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 36600,
-          "commission": {
-            "ak": 318200,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 4,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 38600,
           "commission": {
             "ak": 293100,
@@ -2358,27 +2339,8 @@
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 31200,
-          "commission": {
-            "ak": 286000,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 4,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 33200,
           "commission": {
             "ak": 266100,
@@ -2396,27 +2358,8 @@
           "contractYears": 5,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 32100,
-          "commission": {
-            "ak": 285600,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 5,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 34100,
           "commission": {
             "ak": 256300,
@@ -2434,27 +2377,8 @@
           "contractYears": 5,
           "manageType": "방문관리",
           "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 26700,
-          "commission": {
-            "ak": 254400,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 5,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 28700,
           "commission": {
             "ak": 231600,
@@ -2472,27 +2396,8 @@
           "contractYears": 6,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 29400,
-          "commission": {
-            "ak": 304000,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 6,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 2000,
           "monthlyFee": 31400,
           "commission": {
             "ak": 272700,
@@ -2500,25 +2405,6 @@
           },
           "recommendedOffice": "동일",
           "popup": null,
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 6,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 24000,
-          "commission": {
-            "ak": 266600,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
           "promo": {
             "monthlyDiscount": null,
             "tasa": null,
@@ -2556,27 +2442,8 @@
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 47300,
-          "commission": {
-            "ak": 382000,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 4,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 50300,
           "commission": {
             "ak": 351600,
@@ -2594,27 +2461,8 @@
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 41900,
-          "commission": {
-            "ak": 349800,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 4,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 44900,
           "commission": {
             "ak": 324600,
@@ -2632,27 +2480,8 @@
           "contractYears": 5,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 42800,
-          "commission": {
-            "ak": 347600,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 5,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 45800,
           "commission": {
             "ak": 309900,
@@ -2670,27 +2499,8 @@
           "contractYears": 5,
           "manageType": "방문관리",
           "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 37400,
-          "commission": {
-            "ak": 316300,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 5,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 40400,
           "commission": {
             "ak": 285200,
@@ -2708,27 +2518,8 @@
           "contractYears": 6,
           "manageType": "방문관리",
           "manageCycle": "3개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 40100,
-          "commission": {
-            "ak": 378300,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 6,
-          "manageType": "방문관리",
-          "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 3000,
           "monthlyFee": 43100,
           "commission": {
             "ak": 337100,
@@ -2736,25 +2527,6 @@
           },
           "recommendedOffice": "동일",
           "popup": null,
-          "promo": {
-            "monthlyDiscount": null,
-            "tasa": null,
-            "modelDiscount": null
-          }
-        },
-        {
-          "contractYears": 6,
-          "manageType": "방문관리",
-          "manageCycle": "6개월",
-          "combineType": "결합",
-          "combineDiscount": 0,
-          "monthlyFee": 34700,
-          "commission": {
-            "ak": 340900,
-            "tl": null
-          },
-          "recommendedOffice": "에이컴즈",
-          "popup": "티엘 결합 접수 불가 — 에이컴즈로만 접수 가능\n확인 필요",
           "promo": {
             "monthlyDiscount": null,
             "tasa": null,
@@ -2793,7 +2565,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 472200,
@@ -2803,7 +2575,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2812,7 +2584,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 465800,
@@ -2822,7 +2594,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2831,7 +2603,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 441100,
@@ -2841,7 +2613,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2850,7 +2622,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 438300,
@@ -2860,7 +2632,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2869,7 +2641,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 509300,
@@ -2879,7 +2651,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2888,7 +2660,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 505900,
@@ -2898,7 +2670,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2907,7 +2679,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 472100,
@@ -2917,7 +2689,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -2945,15 +2717,15 @@
     {
       "id": "WU523AS",
       "modelCode": "WU523AS",
-      "lineup": "",
-      "spec": "",
+      "lineup": "빌트인",
+      "spec": "냉/온/정",
       "options": [
         {
           "contractYears": 4,
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 329000,
@@ -2972,7 +2744,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 44900,
           "commission": {
             "ak": 312100,
@@ -2991,7 +2763,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 37900,
           "commission": {
             "ak": 311100,
@@ -3010,7 +2782,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 41900,
           "commission": {
             "ak": 297100,
@@ -3029,7 +2801,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 451500,
@@ -3039,7 +2811,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3048,7 +2820,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 447400,
@@ -3058,7 +2830,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3067,7 +2839,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 420400,
@@ -3077,7 +2849,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3086,7 +2858,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 419900,
@@ -3096,7 +2868,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3105,7 +2877,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 488600,
@@ -3115,7 +2887,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3124,7 +2896,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 36900,
           "commission": {
             "ak": 487600,
@@ -3134,7 +2906,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3143,7 +2915,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 29900,
           "commission": {
             "ak": 451300,
@@ -3153,7 +2925,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": null,
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": "1만원/월"
           }
         },
@@ -3181,7 +2953,7 @@
     {
       "id": "WU823AS",
       "modelCode": "WU823AS",
-      "lineup": "",
+      "lineup": "듀얼",
       "spec": "냉/정",
       "options": [
         {
@@ -3189,7 +2961,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 327100,
@@ -3208,7 +2980,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 44900,
           "commission": {
             "ak": 310500,
@@ -3227,7 +2999,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 479500,
@@ -3237,7 +3009,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3246,7 +3018,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 478800,
@@ -3256,7 +3028,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3265,7 +3037,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 521300,
@@ -3275,7 +3047,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3311,7 +3083,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 43900,
           "commission": {
             "ak": 343900,
@@ -3330,7 +3102,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 47900,
           "commission": {
             "ak": 324600,
@@ -3349,7 +3121,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 40900,
           "commission": {
             "ak": 327100,
@@ -3368,7 +3140,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 44900,
           "commission": {
             "ak": 310500,
@@ -3387,7 +3159,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 38900,
           "commission": {
             "ak": 511400,
@@ -3397,7 +3169,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3406,7 +3178,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 42900,
           "commission": {
             "ak": 507400,
@@ -3416,7 +3188,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3425,7 +3197,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 479500,
@@ -3435,7 +3207,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3444,7 +3216,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 478800,
@@ -3454,7 +3226,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3463,7 +3235,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 35900,
           "commission": {
             "ak": 560000,
@@ -3473,7 +3245,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3482,7 +3254,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 39900,
           "commission": {
             "ak": 558600,
@@ -3492,7 +3264,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
@@ -3501,7 +3273,7 @@
           "manageType": "자가관리",
           "manageCycle": null,
           "combineType": "결합",
-          "combineDiscount": 0,
+          "combineDiscount": 4000,
           "monthlyFee": 32900,
           "commission": {
             "ak": 521300,
@@ -3511,7 +3283,7 @@
           "popup": null,
           "promo": {
             "monthlyDiscount": "6개월 반값 할인 (2~7회차 월요금 할인)",
-            "tasa": null,
+            "tasa": "1만원/월",
             "modelDiscount": null
           }
         },
