@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-23 17:59"
+    "parsedAt": "2026-04-23 18:03"
   },
   "products": [
     {
@@ -1251,7 +1251,7 @@
           "additionalCount": 3,
           "additionalCommission": 112200,
           "bonusCommission": 165000,
-          "totalCommission": 557000,
+          "totalCommission": 556900,
           "recommendedOffice": "티엘",
           "isPackage": true
         },
@@ -12534,6 +12534,7 @@
       "name": "SK매직 투워터 직수 정수기 (냉온정)",
       "category": "정수기",
       "oneSideOnly": "TL",
+      "visitCycleInfo": "4개월필터발송,12개월관리",
       "options": [
         {
           "label": "3년",
@@ -12548,7 +12549,8 @@
           "totalCommission": 440000,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "3년",
@@ -12563,7 +12565,8 @@
           "totalCommission": 440000,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "3년",
@@ -12578,7 +12581,8 @@
           "totalCommission": 440000,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         },
         {
           "label": "3년",
@@ -12593,7 +12597,8 @@
           "totalCommission": 440000,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         },
         {
           "label": "5년",
@@ -12608,7 +12613,8 @@
           "totalCommission": 642200,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "5년",
@@ -12623,7 +12629,8 @@
           "totalCommission": 633200,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "5년",
@@ -12638,7 +12645,8 @@
           "totalCommission": 651200,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         },
         {
           "label": "5년",
@@ -12653,7 +12661,8 @@
           "totalCommission": 642200,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         },
         {
           "label": "6년",
@@ -12668,7 +12677,8 @@
           "totalCommission": 678100,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "6년",
@@ -12683,7 +12693,8 @@
           "totalCommission": 666100,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": ""
         },
         {
           "label": "6년",
@@ -12698,7 +12709,8 @@
           "totalCommission": 690100,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         },
         {
           "label": "6년",
@@ -12713,7 +12725,8 @@
           "totalCommission": 678100,
           "recommendedOffice": "티엘",
           "source": "TL",
-          "dataWarning": false
+          "dataWarning": false,
+          "visitCycle": "4개월"
         }
       ]
     }
