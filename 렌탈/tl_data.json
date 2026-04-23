@@ -3,7 +3,7 @@
     "source": "티엘",
     "sheetName": "SK",
     "sourceFile": "2026.04.06 수수료.xlsx",
-    "parsedAt": "2026-04-10 08:58"
+    "parsedAt": "2026-04-23 17:57"
   },
   "products": [
     {
@@ -316,76 +316,6 @@
         },
         {
           "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 30900,
-          "commission": 224300,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 29610,
-          "commission": 210200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 34110,
-          "commission": 219200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 27960,
-          "commission": 183900,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 32210,
-          "commission": 192400,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 26320,
-          "commission": 157600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 30320,
-          "commission": 165600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
           "contractYears": 4,
           "contractLabel": "4년",
           "hasTasa": false,
@@ -396,62 +326,12 @@
         },
         {
           "managementType": "방문관리",
-          "contractYears": 4,
-          "contractLabel": "4년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 29900,
-          "commission": 222300,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
           "contractYears": 5,
           "contractLabel": "5년",
           "hasTasa": false,
           "size": "",
           "monthlyFee": 28900,
           "commission": 220000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 26900,
-          "commission": 216300,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 26010,
-          "commission": 255000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 24560,
-          "commission": 226200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 23120,
-          "commission": 197500,
           "dataWarning": false
         }
       ]
@@ -976,338 +856,6 @@
           "size": "",
           "monthlyFee": 29000,
           "commission": 290000,
-          "dataWarning": false
-        }
-      ]
-    },
-    {
-      "modelCode": "WPU-JAC104S(WW)",
-      "name": "SK매직X위글위글 초소형 직수 정수기 (냉온정)",
-      "options": [
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 36900,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 35000,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 31400,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 29000,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 29900,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 27500,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 28400,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 26000,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 39900,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 38000,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 34400,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 32000,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 32900,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 30500,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 31400,
-          "commission": 290000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 29000,
-          "commission": 290000,
-          "dataWarning": false
-        }
-      ]
-    },
-    {
-      "modelCode": "WPU-JAC115P",
-      "name": "SK매직 PSG 초소형 플러스 직수 정수기 (냉온정)",
-      "options": [
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 38900,
-          "commission": 372500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 31900,
-          "commission": 372500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 34400,
-          "commission": 558200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 27900,
-          "commission": 538700,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 32900,
-          "commission": 586600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 26400,
-          "commission": 560600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 31400,
-          "commission": 580600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 24900,
-          "commission": 554600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 41900,
-          "commission": 372500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 34900,
-          "commission": 372500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 37400,
-          "commission": 567200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 30900,
-          "commission": 547700,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 35900,
-          "commission": 598600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 29400,
-          "commission": 572600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 34400,
-          "commission": 592600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 7,
-          "contractLabel": "7년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 27900,
-          "commission": 566600,
           "dataWarning": false
         }
       ]
@@ -1966,16 +1514,6 @@
           "size": "",
           "monthlyFee": 49900,
           "commission": 524700,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 47900,
-          "commission": 566100,
           "dataWarning": false
         }
       ]
@@ -4133,132 +3671,6 @@
       ]
     },
     {
-      "modelCode": "WPU-IAC425P",
-      "name": "SK매직 PSG 원코크 플러스 얼음물 정수기 (얼음냉온정)",
-      "options": [
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 53900,
-          "commission": 412500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 45500,
-          "commission": 412500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 48400,
-          "commission": 620200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 40500,
-          "commission": 596500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 46900,
-          "commission": 662600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "셀프관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 39000,
-          "commission": 631000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 55900,
-          "commission": 412500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 47500,
-          "commission": 412500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 50400,
-          "commission": 626200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 42500,
-          "commission": 602500,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 48900,
-          "commission": 670600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 6,
-          "contractLabel": "6년",
-          "hasTasa": true,
-          "size": "",
-          "monthlyFee": 41000,
-          "commission": 639000,
-          "dataWarning": false
-        }
-      ]
-    },
-    {
       "modelCode": "WPU-IAC425S",
       "name": "SK매직 25년형 원코크 플러스 얼음물 정수기 (얼음냉온정)",
       "options": [
@@ -4410,66 +3822,6 @@
         },
         {
           "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 62910,
-          "commission": 347600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 58410,
-          "commission": 338600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 59410,
-          "commission": 289400,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 55160,
-          "commission": 280900,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 55920,
-          "commission": 252300,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 3,
-          "contractLabel": "3년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 51920,
-          "commission": 244300,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
           "contractYears": 5,
           "contractLabel": "5년",
           "hasTasa": false,
@@ -4485,47 +3837,7 @@
           "hasTasa": false,
           "size": "",
           "monthlyFee": 54900,
-          "commission": 596600,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 54900,
           "commission": 377000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 50310,
-          "commission": 492200,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 47510,
-          "commission": 438000,
-          "dataWarning": false
-        },
-        {
-          "managementType": "방문관리",
-          "contractYears": 5,
-          "contractLabel": "5년",
-          "hasTasa": false,
-          "size": "",
-          "monthlyFee": 44720,
-          "commission": 383900,
           "dataWarning": false
         }
       ]
@@ -4576,9 +3888,12 @@
     "WPUJCC104SWH|방문관리|6|0|1": 203800,
     "WPUJCC104SWH|방문관리|7|0|0": 198000,
     "WPUJCC104SWH|방문관리|7|0|1": 201800,
-    "WPUB600F|방문관리|3|0|0": 165600,
-    "WPUB600F|방문관리|4|0|0": 222300,
-    "WPUB600F|방문관리|5|0|0": 197500,
+    "WPUB600F|방문관리|3|0|0": 220000,
+    "WPUB600F|방문관리|3|0|1": 224300,
+    "WPUB600F|방문관리|4|0|0": 220000,
+    "WPUB600F|방문관리|4|0|1": 222300,
+    "WPUB600F|방문관리|5|0|0": 220000,
+    "WPUB600F|방문관리|5|0|1": 216300,
     "WPUB610F|방문관리|3|0|0": 208800,
     "WPUB610F|방문관리|3|0|1": 298300,
     "WPUB610F|방문관리|4|0|0": 300000,
@@ -4733,7 +4048,8 @@
     "WPUTDF114|방문관리|3|0|1": 162200,
     "WPUTDF114|방문관리|5|0|0": 144900,
     "WPUTDF114|방문관리|5|0|1": 154200,
-    "ACL300VA|방문관리|3|0|0": 566100,
+    "ACL300VA|방문관리|3|0|0": 524700,
+    "ACL300VA|방문관리|3|0|1": 566100,
     "ACL22P1C|셀프관리|3|0|0": 254500,
     "ACL22P1C|셀프관리|3|0|1": 322300,
     "ACL22P1C|셀프관리|5|0|0": 293900,
@@ -5228,9 +4544,9 @@
     "WPUIAC425S|방문관리|6|0|0": 670600,
     "WPUIAC425S|방문관리|6|1|0": 639000,
     "WPUIAC425S|방문관리|6|0|1": 666400,
-    "WPUIC110F|방문관리|3|0|0": 244300,
+    "WPUIC110F|방문관리|3|0|0": 291000,
     "WPUIC110F|방문관리|3|0|1": 341600,
-    "WPUIC110F|방문관리|5|0|0": 383900,
+    "WPUIC110F|방문관리|5|0|0": 377000,
     "WPUIC110F|방문관리|5|0|1": 386000
   },
   "visitCycleLookup": {
@@ -5325,5 +4641,258 @@
     "WPUIAC425P": "WPU-IAC425P",
     "WPUIAC425S": "WPU-IAC425S",
     "WPUIC110F": "WPU-IC110F"
-  }
+  },
+  "mergedVariants": [
+    {
+      "removed": "WPU-JAC104S(WW)",
+      "mergedInto": "WPU-JAC104S",
+      "reason": "위글위글(WW) 색상 변형 — 수수료 동일"
+    },
+    {
+      "removed": "WPU-JAC115P",
+      "mergedInto": "WPU-JAC115S",
+      "reason": "PSG 협업 변형 — 수수료 동일"
+    },
+    {
+      "removed": "WPU-IAC425P",
+      "mergedInto": "WPU-IAC425S",
+      "reason": "PSG 협업 변형 — 수수료 동일"
+    }
+  ],
+  "bizOptions": [
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 10,
+      "obligation": "60개월",
+      "monthlyFee": 29610,
+      "commission": 210200,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 10,
+      "obligation": "36개월",
+      "monthlyFee": 34110,
+      "commission": 219200,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 15,
+      "obligation": "60개월",
+      "monthlyFee": 27960,
+      "commission": 183900,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 15,
+      "obligation": "36개월",
+      "monthlyFee": 32210,
+      "commission": 192400,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 20,
+      "obligation": "60개월",
+      "monthlyFee": 26320,
+      "commission": 157600,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 20,
+      "obligation": "36개월",
+      "monthlyFee": 30320,
+      "commission": 165600,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 10,
+      "obligation": "60개월",
+      "monthlyFee": 26010,
+      "commission": 255000,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 15,
+      "obligation": "60개월",
+      "monthlyFee": 24560,
+      "commission": 226200,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-B600F",
+      "normCode": "WPUB600F",
+      "name": "SK매직 대용량 그랜드 정수기 (냉온)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 20,
+      "obligation": "60개월",
+      "monthlyFee": 23120,
+      "commission": 197500,
+      "visitCycle": "4개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 10,
+      "obligation": "36개월",
+      "monthlyFee": 62910,
+      "commission": 347600,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 10,
+      "obligation": "60개월",
+      "monthlyFee": 58410,
+      "commission": 338600,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 15,
+      "obligation": "36개월",
+      "monthlyFee": 59410,
+      "commission": 289400,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 15,
+      "obligation": "60개월",
+      "monthlyFee": 55160,
+      "commission": 280900,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 20,
+      "obligation": "36개월",
+      "monthlyFee": 55920,
+      "commission": 252300,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 3,
+      "contractLabel": "3년",
+      "discountPct": 20,
+      "obligation": "60개월",
+      "monthlyFee": 51920,
+      "commission": 244300,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 10,
+      "obligation": "60개월",
+      "monthlyFee": 50310,
+      "commission": 492200,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 15,
+      "obligation": "60개월",
+      "monthlyFee": 47510,
+      "commission": 438000,
+      "visitCycle": "2개월 관리"
+    },
+    {
+      "modelCode": "WPU-IC110F",
+      "normCode": "WPUIC110F",
+      "name": "SK매직 대용량 직수 얼음 정수기 (얼음냉온정)",
+      "managementType": "방문관리",
+      "contractYears": 5,
+      "contractLabel": "5년",
+      "discountPct": 20,
+      "obligation": "60개월",
+      "monthlyFee": 44720,
+      "commission": 383900,
+      "visitCycle": "2개월 관리"
+    }
+  ]
 }
