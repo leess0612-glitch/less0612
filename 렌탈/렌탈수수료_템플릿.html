@@ -352,14 +352,67 @@
   }
 
   /* ── 팝업 공통 ── */
-  #warn-popup, #code-mismatch-popup, #norm-issues-popup, #one-side-popup {
+  #warn-popup, #code-mismatch-popup, #norm-issues-popup, #one-side-popup, #parse-report-popup {
     display: none;
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,.45); z-index: 1000;
     align-items: center; justify-content: center;
   }
   #warn-popup.show, #code-mismatch-popup.show,
-  #norm-issues-popup.show, #one-side-popup.show { display: flex; }
+  #norm-issues-popup.show, #one-side-popup.show,
+  #parse-report-popup.show { display: flex; }
+
+  /* 파싱 리포트 팝업 */
+  #parse-report-popup .pr-box {
+    background: #fff; border-radius: 10px;
+    padding: 24px 28px; max-width: 520px; width: 94%;
+    box-shadow: 0 8px 32px rgba(0,0,0,.25);
+    text-align: left; max-height: 88vh; overflow-y: auto;
+  }
+  #parse-report-popup .pr-title {
+    font-size: 15px; font-weight: 700; color: var(--gray-800);
+    margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+  }
+  #parse-report-popup .pr-ts {
+    font-size: 11px; color: var(--gray-400); margin-bottom: 16px;
+  }
+  #parse-report-popup .pr-section {
+    margin-bottom: 14px;
+  }
+  #parse-report-popup .pr-section-title {
+    font-size: 11px; font-weight: 700; color: var(--gray-600);
+    text-transform: uppercase; letter-spacing: .5px;
+    border-bottom: 1px solid var(--gray-200); padding-bottom: 4px; margin-bottom: 8px;
+  }
+  #parse-report-popup .pr-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 12px; padding: 3px 0; border-bottom: 1px solid var(--gray-100);
+  }
+  #parse-report-popup .pr-row:last-child { border-bottom: none; }
+  #parse-report-popup .pr-label { color: var(--gray-600); }
+  #parse-report-popup .pr-val { font-weight: 700; color: var(--gray-800); }
+  #parse-report-popup .pr-val.warn { color: #b91c1c; }
+  #parse-report-popup .pr-val.ok { color: var(--green); }
+  #parse-report-popup .pr-footer {
+    display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px;
+  }
+  #parse-report-popup .pr-skip {
+    font-size: 12px; color: var(--gray-400); cursor: pointer;
+    background: none; border: none; text-decoration: underline; padding: 0; font-family: inherit;
+  }
+  #parse-report-popup .pr-skip:hover { color: var(--gray-600); }
+  #parse-report-popup .pr-ok {
+    padding: 7px 22px; background: var(--brand); color: #fff;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit;
+  }
+  /* 헤더 리포트 아이콘 버튼 */
+  .report-icon-btn {
+    background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+    color: #fff; border-radius: 16px; padding: 4px 10px;
+    cursor: pointer; font-size: 12px; display: flex; align-items: center; gap: 4px;
+    font-family: inherit; white-space: nowrap;
+  }
+  .report-icon-btn:hover { background: rgba(255,255,255,.28); }
 
   /* 정규화 이슈 팝업 */
   #norm-issues-popup .warn-box { max-width: 560px; text-align: left; }
