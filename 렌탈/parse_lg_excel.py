@@ -16,7 +16,7 @@ from datetime import datetime
 # 경로 / 상수
 # ─────────────────────────────────────────────
 
-AC_PATH   = r'C:\Users\a\Documents\렌탈정책\26.04\★LG 26년 04월 구독전문점 수수료안내_0408.xlsx'
+AC_PATH   = r'C:\Users\a\Documents\렌탈정책\26.04\★LG 26년 04월 구독전문점 수수료안내_0421.xlsx'
 TL_PATH   = r'C:\Users\a\Documents\렌탈정책\26.04\2026.04.21 수수료.xlsx'
 AC_SHEET  = '정수기 수수료'
 TL_SHEET  = 'LG정수기'
