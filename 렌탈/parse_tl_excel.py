@@ -295,7 +295,7 @@ def parse_tl(filepath):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        filepath = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.06 수수료.xlsx"
+        filepath = r"C:\Users\a\Documents\렌탈정책\26.04\2026.04.21 수수료.xlsx"
     else:
         filepath = sys.argv[1]
 
