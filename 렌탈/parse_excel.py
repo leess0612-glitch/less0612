@@ -1096,6 +1096,8 @@ if __name__ == "__main__":
         lg_air_js = "{}"
         lg_water_norm_js = "[]"
         lg_air_norm_js   = "[]"
+        lg_raw     = {"products": []}
+        lg_air_raw = {"products": []}
         if os.path.exists(lg_json_path):
             with open(lg_json_path, "r", encoding="utf-8") as f:
                 lg_raw = json.load(f)
