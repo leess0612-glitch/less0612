@@ -1113,6 +1113,47 @@ if __name__ == "__main__":
         else:
             print(f"[경고] LG 공청기 JSON 없음: {lg_air_json_path}")
 
+        # ── 파싱 리포트 생성 ──
+        cats = {}
+        for p in data["products"]:
+            cats[p["category"]] = cats.get(p["category"], 0) + 1
+        biz_count = sum(1 for p in data["products"] for o in p["options"] if o.get("isBizOnly"))
+        dw_count  = sum(1 for p in data["products"] for o in p["options"] if o.get("dataWarning"))
+        tl_products = tl_data.get("products", [])
+        tl_merged   = tl_data.get("mergedVariants", [])
+        tl_biz      = tl_data.get("bizOptions", [])
+        ni_total = len(normalization_issues)
+        parse_report = {
+            "generatedAt": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            "sk": {
+                "sourceFile": os.path.basename(filepath_sk),
+                "totalProducts": len(data["products"]),
+                "byCategory": dict(sorted(cats.items())),
+                "bizOptionsCount": biz_count,
+                "dataWarningCount": dw_count,
+            },
+            "tl": {
+                "sourceFile": os.path.basename(filepath_tl),
+                "parsedProducts": len(tl_products),
+                "mergedVariants": len(tl_merged),
+                "bizOptionsCount": len(tl_biz),
+            },
+            "normalizationIssues": {
+                "total": ni_total,
+                "akOnly": sum(1 for x in normalization_issues if x["type"] == "AK_ONLY"),
+                "tlOnly": sum(1 for x in normalization_issues if x["type"] == "TL_ONLY"),
+                "partial": sum(1 for x in normalization_issues if x["type"] == "PARTIAL"),
+            },
+            "codeMismatches": len(code_mismatches),
+            "lg": {
+                "waterSourceFile": os.path.basename(lg_json_path) if os.path.exists(lg_json_path) else None,
+                "waterProducts": len(lg_raw.get("products", [])) if os.path.exists(lg_json_path) else 0,
+                "airSourceFile": os.path.basename(lg_air_json_path) if os.path.exists(lg_air_json_path) else None,
+                "airProducts": len(lg_air_raw.get("products", [])) if os.path.exists(lg_air_json_path) else 0,
+            },
+        }
+        pr_js = json.dumps(parse_report, ensure_ascii=False)
+
         html_out_str = html.replace("__SK_DATA__", sk_js) \
                            .replace("__TL_WARNINGS__", tl_js) \
                            .replace("__CODE_MISMATCHES__", cm_js) \
@@ -1120,7 +1161,8 @@ if __name__ == "__main__":
                            .replace("__LG_DATA__", lg_js) \
                            .replace("__LG_AIR_DATA__", lg_air_js) \
                            .replace("__LG_WATER_NORM_ISSUES__", lg_water_norm_js) \
-                           .replace("__LG_AIR_NORM_ISSUES__", lg_air_norm_js)
+                           .replace("__LG_AIR_NORM_ISSUES__", lg_air_norm_js) \
+                           .replace("__PARSE_REPORT__", pr_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
         out_html = os.path.join(base_dir, f"렌탈수수료_{month_tag}.html")
