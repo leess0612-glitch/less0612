@@ -914,6 +914,17 @@ if __name__ == "__main__":
                 product["visitCycleInfo"] = tl_visit_cycle[mv]
                 break
 
+        # ── 2b. 여전히 빈 visitCycle(방문관리) → visitCycleInfo에서 '숫자개월' 추출 ──
+        vc_info = product.get("visitCycleInfo", "")
+        if vc_info:
+            m_vc = re.search(r'(\d+개월)', vc_info)
+            extracted_vc = m_vc.group(1) if m_vc else ""
+            if extracted_vc:
+                regular_opts_all = [o for o in product["options"] if not o.get("isPackage")]
+                for opt in regular_opts_all:
+                    if not opt.get("visitCycle") and "방문" in (opt.get("managementType") or ""):
+                        opt["visitCycle"] = extracted_vc
+
         # ── 한쪽에만 있음(oneSideOnly) 판정 ──
         # non-패키지, non-TL보완 옵션 중 TL 매칭된 게 하나도 없으면 AK만 있는 제품
         regular_non_src = [o for o in product["options"]
