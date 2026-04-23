@@ -1188,6 +1188,82 @@ function normIssuesSkipToday() {
   closeNormIssuesPopup();
 }
 
+// ── 파싱 리포트 팝업 ──
+function buildParseReportHtml(r) {
+  if (!r) return '<div style="color:var(--gray-400);font-size:12px;padding:16px 0">리포트 데이터 없음</div>';
+  const row = (label, val, cls) =>
+    `<div class="pr-row"><span class="pr-label">${label}</span><span class="pr-val ${cls||''}">${val}</span></div>`;
+
+  let html = '';
+
+  // SK매직
+  const sk = r.sk || {};
+  html += `<div class="pr-section">
+    <div class="pr-section-title">SK매직 (에이컴즈 파일)</div>
+    ${row('파일', sk.sourceFile || '-')}
+    ${row('총 제품 수', (sk.totalProducts || 0) + '개')}`;
+  if (sk.byCategory) {
+    Object.entries(sk.byCategory).forEach(([cat, cnt]) => {
+      html += row(`· ${cat}`, cnt + '개');
+    });
+  }
+  html += row('사업자전용 옵션', (sk.bizOptionsCount || 0) + '개');
+  const dw = sk.dataWarningCount || 0;
+  html += row('요금 경고 옵션', dw + '개', dw > 0 ? 'warn' : 'ok');
+  html += '</div>';
+
+  // 티엘
+  const tl = r.tl || {};
+  html += `<div class="pr-section">
+    <div class="pr-section-title">티엘 파일</div>
+    ${row('파일', tl.sourceFile || '-')}
+    ${row('파싱 제품 수', (tl.parsedProducts || 0) + '개')}
+    ${row('병합(WW/PSG)', (tl.mergedVariants || 0) + '개')}
+    ${row('사업자전용 옵션', (tl.bizOptionsCount || 0) + '개')}
+  </div>`;
+
+  // 정규화 이슈
+  const ni = r.normalizationIssues || {};
+  const niTotal = ni.total || 0;
+  html += `<div class="pr-section">
+    <div class="pr-section-title">에이컴즈 ↔ 티엘 매칭 결과</div>
+    ${row('코드 표기 상이', (r.codeMismatches || 0) + '개', r.codeMismatches > 0 ? 'warn' : 'ok')}
+    ${row('미매칭 제품 (합계)', niTotal + '개', niTotal > 0 ? 'warn' : 'ok')}
+    ${niTotal > 0 ? row('· 에이컴즈만 존재', (ni.akOnly || 0) + '개') : ''}
+    ${niTotal > 0 ? row('· 티엘만 존재', (ni.tlOnly || 0) + '개') : ''}
+    ${niTotal > 0 ? row('· 부분 미매칭', (ni.partial || 0) + '개') : ''}
+  </div>`;
+
+  // LG
+  const lg = r.lg || {};
+  if (lg.waterProducts !== undefined || lg.airProducts !== undefined) {
+    html += `<div class="pr-section">
+      <div class="pr-section-title">LG전자</div>
+      ${lg.waterSourceFile ? row('정수기 파일', lg.waterSourceFile) : ''}
+      ${row('정수기 제품 수', (lg.waterProducts || 0) + '개')}
+      ${lg.airSourceFile ? row('공청기 파일', lg.airSourceFile) : ''}
+      ${row('공청기·제습기 제품 수', (lg.airProducts || 0) + '개')}
+    </div>`;
+  }
+
+  return html;
+}
+
+function showParseReport() {
+  const r = PARSE_REPORT;
+  document.getElementById('pr-ts').textContent = r ? ('생성: ' + (r.generatedAt || '-')) : '';
+  document.getElementById('pr-body').innerHTML = buildParseReportHtml(r);
+  document.getElementById('parse-report-popup').classList.add('show');
+}
+function closeParseReport() {
+  document.getElementById('parse-report-popup').classList.remove('show');
+}
+function parseReportSkipToday() {
+  const todayStr = new Date().toISOString().slice(0,10);
+  localStorage.setItem('parseReportSkipDay', todayStr);
+  closeParseReport();
+}
+
 function showWarnPopup(skWarn, tlWarn) {
   let sources = [];
   if (skWarn) sources.push('에이컴즈 (F열 ≠ G열)');
