@@ -963,6 +963,15 @@ function init() {
   if (NORM_ISSUES && NORM_ISSUES.length > 0 && skipDay !== todayStr) {
     showNormIssuesPopup();
   }
+
+  // 파싱 리포트 팝업 (파싱 날짜가 오늘이고, 오늘 다시 보지 않기 누른 경우만 제외)
+  if (PARSE_REPORT) {
+    const reportDate = (PARSE_REPORT.generatedAt || '').slice(0, 10);
+    const skipReport = localStorage.getItem('parseReportSkipDay');
+    if (reportDate === todayStr && skipReport !== todayStr) {
+      showParseReport();
+    }
+  }
 }
 
 function showCodeMismatchPopup() {
