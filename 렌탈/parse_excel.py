@@ -920,6 +920,9 @@ if __name__ == "__main__":
         matched_any = any(o.get("recommendedOffice") is not None for o in regular_non_src)
         if regular_non_src and not matched_any:
             product["oneSideOnly"] = "AK"
+            # AK만 있는 제품 → 모든 일반 옵션 접수처 = 에이컴즈
+            for o in regular_non_src:
+                o["recommendedOffice"] = "에이컴즈"
             # 정규화 이슈 기록
             ak_summary = "; ".join(
                 f"{o.get('managementType','?')} {o.get('contractMonths',0)//12}년"
