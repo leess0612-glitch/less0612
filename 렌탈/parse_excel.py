@@ -789,15 +789,6 @@ if __name__ == "__main__":
                 if visit:
                     opt["visitCycle"] = visit
 
-        # ── 2b. 여전히 빈 visitCycle(방문관리) → visitCycleInfo에서 '숫자개월' 추출 ──
-        vc_info = product.get("visitCycleInfo", "")
-        if vc_info:
-            m_vc = re.search(r'(\d+개월)', vc_info)
-            extracted_vc = m_vc.group(1) if m_vc else ""
-            if extracted_vc:
-                for opt in regular_opts:
-                    if not opt.get("visitCycle") and "방문" in (opt.get("managementType") or ""):
-                        opt["visitCycle"] = extracted_vc
 
         # ── 3. 여전히 빈 managementType → 정규화 경고 ──
         missing_mgmt_opts = [o for o in regular_opts if not o.get("managementType") and not o.get("isPackage")]
