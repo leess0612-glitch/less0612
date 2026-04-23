@@ -1148,10 +1148,10 @@ if __name__ == "__main__":
             },
             "codeMismatches": len(code_mismatches),
             "lg": {
-                "waterSourceFile": os.path.basename(lg_json_path) if os.path.exists(lg_json_path) else None,
-                "waterProducts": len(lg_raw.get("products", [])) if os.path.exists(lg_json_path) else 0,
-                "airSourceFile": os.path.basename(lg_air_json_path) if os.path.exists(lg_air_json_path) else None,
-                "airProducts": len(lg_air_raw.get("products", [])) if os.path.exists(lg_air_json_path) else 0,
+                "waterSourceFile": "lg_data.json" if os.path.exists(lg_json_path) else None,
+                "waterProducts": len(lg_raw.get("products", [])),
+                "airSourceFile": "lg_air_data.json" if os.path.exists(lg_air_json_path) else None,
+                "airProducts": len(lg_air_raw.get("products", [])),
             },
         }
         pr_js = json.dumps(parse_report, ensure_ascii=False)
