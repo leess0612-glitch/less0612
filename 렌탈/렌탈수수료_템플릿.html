@@ -881,6 +881,19 @@
   </div>
 </div>
 
+<!-- 파싱 리포트 팝업 -->
+<div id="parse-report-popup">
+  <div class="pr-box">
+    <div class="pr-title">📋 파싱 결과 리포트</div>
+    <div class="pr-ts" id="pr-ts"></div>
+    <div id="pr-body"></div>
+    <div class="pr-footer">
+      <button class="pr-skip" onclick="parseReportSkipToday()">오늘 다시 보지 않기</button>
+      <button class="pr-ok" onclick="closeParseReport()">확인</button>
+    </div>
+  </div>
+</div>
+
 <!-- 요금 경고 팝업 -->
 <div id="warn-popup">
   <div class="warn-box">
