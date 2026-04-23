@@ -67,14 +67,16 @@ def parse_tl(filepath):
         col_l = row[11]
 
         if col_b:
-            current_model_code = col_b
-            norm = normalize_model_code(col_b)
+            # 셀에 줄바꿈+주석(예: *신제품*)이 붙어있는 경우 첫 줄만 모델코드로 사용
+            col_b_code = col_b.split('\n')[0].strip()
+            current_model_code = col_b_code
+            norm = normalize_model_code(col_b_code)
             # G열 관리주기 저장 (B열이 있는 행에만 G열 존재, 해당없음 제외)
-            if col_g and col_g != '해당없음' and '+' not in col_b:
+            if col_g and col_g != '해당없음' and '+' not in col_b_code:
                 visit_cycle_lookup[norm] = col_g
             # 모델코드 원본 표기 저장
-            if '+' not in col_b:
-                model_display_map[norm] = col_b
+            if '+' not in col_b_code:
+                model_display_map[norm] = col_b_code
         if col_c:
             current_product_name = col_c
 
