@@ -993,18 +993,25 @@ if __name__ == "__main__":
         if tl_norm in ak_referenced_tl:
             continue
         # TL 전용 제품 — products에 추가
+        tl_only_norm = _norm_model(tl_product["modelCode"])
+        tl_vc_raw = tl_visit_cycle.get(tl_only_norm, "")
+        # visitCycleLookup 값에서 '숫자개월' 추출 (예: '4개월필터발송,12개월관리' → '4개월')
+        _tl_vc_m = re.search(r'(\d+개월)', tl_vc_raw)
+        tl_vc_extracted = _tl_vc_m.group(1) if _tl_vc_m else ""
         tl_only_entry = {
             "modelCode": tl_product["modelCode"],
             "name": tl_product["name"],
             "category": detect_category(tl_product["modelCode"], tl_product["name"], -1),
             "oneSideOnly": "TL",
+            "visitCycleInfo": tl_vc_raw,
             "options": [],
         }
         for tl_opt in tl_product["options"]:
             tl_years = tl_opt["contractYears"]
+            mgmt = tl_opt["managementType"]
             tl_only_entry["options"].append({
                 "label": f"{tl_years}년",
-                "managementType": tl_opt["managementType"],
+                "managementType": mgmt,
                 "contractMonths": tl_years * 12,
                 "contractYears": tl_years,
                 "hasTasa": tl_opt.get("hasTasa", False),
@@ -1016,6 +1023,7 @@ if __name__ == "__main__":
                 "recommendedOffice": "티엘",
                 "source": "TL",
                 "dataWarning": False,
+                "visitCycle": tl_vc_extracted if "방문" in mgmt else "",
             })
         data["products"].append(tl_only_entry)
         normalization_issues.append({
