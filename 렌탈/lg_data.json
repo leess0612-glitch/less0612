@@ -3,10 +3,10 @@
     "brand": "LG전자",
     "category": "정수기",
     "sourceFiles": {
-      "ak": "★LG 26년 04월 구독전문점 수수료안내_0408.xlsx",
+      "ak": "★LG 26년 04월 구독전문점 수수료안내_0421.xlsx",
       "tl": "2026.04.21 수수료.xlsx"
     },
-    "parsedAt": "2026-04-22 17:19"
+    "parsedAt": "2026-04-23 10:09"
   },
   "normalizationIssues": [],
   "products": [
@@ -2321,7 +2321,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 38600,
           "commission": {
             "ak": 293100,
@@ -2340,7 +2340,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 33200,
           "commission": {
             "ak": 266100,
@@ -2359,7 +2359,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 34100,
           "commission": {
             "ak": 256300,
@@ -2378,7 +2378,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 28700,
           "commission": {
             "ak": 231600,
@@ -2397,7 +2397,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 31400,
           "commission": {
             "ak": 272700,
@@ -2416,7 +2416,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 2000,
+          "combineDiscount": 0,
           "monthlyFee": 26000,
           "commission": {
             "ak": 243000,
@@ -2443,7 +2443,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 50300,
           "commission": {
             "ak": 351600,
@@ -2462,7 +2462,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 44900,
           "commission": {
             "ak": 324600,
@@ -2481,7 +2481,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 45800,
           "commission": {
             "ak": 309900,
@@ -2500,7 +2500,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 40400,
           "commission": {
             "ak": 285200,
@@ -2519,7 +2519,7 @@
           "manageType": "방문관리",
           "manageCycle": "3개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 43100,
           "commission": {
             "ak": 337100,
@@ -2538,7 +2538,7 @@
           "manageType": "방문관리",
           "manageCycle": "6개월",
           "combineType": "단품",
-          "combineDiscount": 3000,
+          "combineDiscount": 0,
           "monthlyFee": 37700,
           "commission": {
             "ak": 307400,
