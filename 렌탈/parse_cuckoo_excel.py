@@ -9,7 +9,8 @@
   D: 제품명(모델코드) — 주 키. 비어있으면 B열에서 추출
   E: 의무약정 (36M / 48M / 60M / 72M / 84M / 39M / 12M)
   F: 소유권 (무시)
-  G: 프로모션 — 타사보상 or 반값 포함 행만 채택, 나머지 제외
+  G: 프로모션 — 타사보상 or 반값 포함 행만 채택.
+     단, 해당 모델에 타사보상/반값 행이 아예 없으면 빈칸 행도 포함.
   H: 구분 (일반 / 패키지 / 패키지10%)
   I: 방문주기 (4개월/6개월… → 방문관리, 12개월 → 셀프관리, 없음 → 관리없음)
   J: 렌탈료(월요금)
@@ -110,6 +111,17 @@ def is_model_code_pattern(s):
     return bool(re.match(r'^[A-Z0-9\-\(\)/ ]+$', s.upper()))
 
 
+def classify_g(g_s):
+    """G열 값 분류: 'tasa' / 'promo' / 'blank' / 'other'"""
+    if not g_s:
+        return 'blank'
+    if '타사보상' in g_s:
+        return 'tasa'
+    if '반값' in g_s:
+        return 'promo'
+    return 'other'
+
+
 # ─────────────────────────────────────────────
 # 파서
 # ─────────────────────────────────────────────
@@ -117,12 +129,12 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
     wb = openpyxl.load_workbook(filepath, data_only=True)
     ws = wb[sheet_name]
 
-    _last_b_first  = ''   # B열 첫 줄 carry-forward
-    _last_a_first  = ''   # A열 첫 줄 carry-forward (상품군/카테고리)
-    _last_b_name   = ''   # B열이 제품명(한글)일 때 carry-forward
+    # ─── 1차 패스: 전체 행 수집 (캐리포워드 + G 분류) ───────────────
+    _last_b_first = ''
+    _last_a_first = ''
+    _last_b_name  = ''
 
-    # 원시 옵션 수집
-    raw_options = []   # [dict]
+    all_rows = []  # raw row dicts (미필터)
 
     for r in range(DATA_ROW, ws.max_row + 1):
         a_raw = ws.cell(r, 1).value
@@ -144,55 +156,78 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
         b_first = clean(b_raw).split('\n')[0].strip()
         if b_first:
             _last_b_first = b_first
-            # B가 제품명(한글 포함)이면 이름으로 저장
             if not is_model_code_pattern(b_first):
-                # '●' 등 특수문자 제거
                 _last_b_name = re.sub(r'^[●○▶▷\*\s]+', '', b_first).strip()
             else:
                 _last_b_name = ''
 
-        # ── 렌탈료 없으면 스킵 ──
+        # 렌탈료 없으면 수집 자체를 스킵
         j = to_float(j_val)
         if not j:
             continue
 
-        # ── G열 필터: 타사보상 or 반값만 채택 ──
-        g_s = clean(g_val)
-        if not g_s:
-            continue
-        has_tasa = '타사보상' in g_s
-        is_promo = '반값' in g_s
-        if not has_tasa and not is_promo:
-            continue
-
-        # ── 모델코드 ──
+        # 모델코드
         model_code = normalize_model_code(_last_b_first, d_raw)
         if not model_code:
             continue
 
-        # ── 약정 ──
+        # 약정
         months = parse_months(e_val)
         if months == 0:
             continue
-        years = months // 12
 
-        # ── 관리방식 ──
-        mgmt_type, visit_cycle = parse_management(i_val)
+        all_rows.append({
+            'modelCode':  model_code,
+            'a_first':    _last_a_first,
+            'b_name':     _last_b_name,
+            'g_class':    classify_g(clean(g_val)),
+            'h_val':      clean(h_val),
+            'i_val':      i_val,
+            'j':          j,
+            'k_val':      k_val,
+            'l_val':      l_val,
+            'months':     months,
+        })
 
-        # ── 구분 (H열) ──
-        h_s = clean(h_val)
+    # ─── 프로모션 보유 모델 집합 ──────────────────────────────────────
+    # 타사보상 or 반값 행이 하나라도 있는 모델코드
+    models_with_promo = {
+        row['modelCode']
+        for row in all_rows
+        if row['g_class'] in ('tasa', 'promo')
+    }
+
+    # ─── 2차 패스: G열 필터 적용 후 옵션 생성 ────────────────────────
+    raw_options = []
+
+    for row in all_rows:
+        g_class = row['g_class']
+        mc      = row['modelCode']
+
+        # 채택 규칙:
+        #   tasa / promo → 항상 채택
+        #   blank → 해당 모델에 promo가 없을 때만 채택
+        #   other → 항상 제외
+        if g_class == 'other':
+            continue
+        if g_class == 'blank' and mc in models_with_promo:
+            continue
+
+        months   = row['months']
+        years    = months // 12
+        h_s      = row['h_val']
         is_package = h_s in ('패키지', '패키지10%')
+        has_tasa   = (g_class == 'tasa')
+        is_promo   = (g_class == 'promo')
 
-        # ── 수수료 ──
-        commission = parse_commission(k_val, l_val)
+        mgmt_type, visit_cycle = parse_management(row['i_val'])
+        commission = parse_commission(row['k_val'], row['l_val'])
 
-        # ── 제품명 ──
-        # B가 제품명이면 사용, 아니면 모델코드 그대로
-        name = _last_b_name if _last_b_name else model_code
-        category = _last_a_first
+        name     = row['b_name'] if row['b_name'] else mc
+        category = row['a_first']
 
         raw_options.append({
-            'modelCode':      model_code,
+            'modelCode':      mc,
             'name':           name,
             'category':       category,
             'contractMonths': months,
@@ -204,7 +239,7 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
             'packageType':    h_s,          # '일반' / '패키지' / '패키지10%'
             'hasTasa':        has_tasa,
             'isPromo':        is_promo,
-            'monthlyFee':     j,
+            'monthlyFee':     row['j'],
             'commission':     commission,
         })
 
@@ -263,10 +298,13 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
     tasa_opts  = sum(1 for p in products for o in p['options'] if o['hasTasa'])
     promo_opts = sum(1 for p in products for o in p['options'] if o['isPromo'])
     pkg_opts   = sum(1 for p in products for o in p['options'] if o['isPackage'])
+    blank_only = len([mc for mc in set(r['modelCode'] for r in all_rows)
+                      if mc not in models_with_promo])
 
     msg = f'[쿠쿠] 파싱 완료: {len(products)}개 제품, {total_opts}개 옵션'
     print(msg.encode('cp949', errors='replace').decode('cp949'))
-    msg2 = f'       타사보상: {tasa_opts}건, 반값: {promo_opts}건, 패키지: {pkg_opts}건'
+    msg2 = (f'       타사보상: {tasa_opts}건, 반값: {promo_opts}건, 패키지: {pkg_opts}건\n'
+            f'       프로모션 없는 제품(빈칸G 채택): {blank_only}개')
     print(msg2.encode('cp949', errors='replace').decode('cp949'))
 
     return {
@@ -299,13 +337,13 @@ if __name__ == '__main__':
     print(f'제품 수: {len(data["products"])}')
 
     # 샘플 출력
-    for p in data['products'][:3]:
+    for p in data['products'][:5]:
         name = p['name']
         mc = p['modelCode']
         print(f'  [{mc}] {name}'.encode('cp949', errors='replace').decode('cp949'))
         for o in p['options'][:4]:
             line = (f'    {o["contractLabel"]} {o["managementType"]} '
-                    f'{"패키지" if o["isPackage"] else "일반"} '
-                    f'{"타사보상" if o["hasTasa"] else "반값"} '
+                    f'{"패키지("+o["packageType"]+")" if o["isPackage"] else "일반"} '
+                    f'{"타사보상" if o["hasTasa"] else ("반값" if o["isPromo"] else "기본")} '
                     f'월{o["monthlyFee"]:,.0f} 수수료{o["commission"]:,.1f}')
             print(line.encode('cp949', errors='replace').decode('cp949'))
