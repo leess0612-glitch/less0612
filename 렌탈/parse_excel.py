@@ -116,16 +116,31 @@ def clean_option_name(col4_raw, model_code):
 # 복합 신뢰도 점수 유틸
 # ─────────────────────────────────────────────
 
+def _fp_mgmt_key(mgmt):
+    """요금 지문용 관리방식 정규화 키.
+    AK("방문할인", "방문할인+타사보상")와 TL("방문관리", "방문관리_패키지") 모두
+    동일 기반 키로 매핑하여 교집합 비교가 가능하도록 함.
+    """
+    if "방문" in mgmt:
+        return "방문"
+    if "셀프" in mgmt:
+        return "셀프"
+    if "관리없음" in mgmt or "무방문" in mgmt:
+        return "무방문"
+    return re.sub(r'[+_].*', '', mgmt).strip()
+
+
 def _fee_fingerprint(options):
     """옵션 리스트에서 (관리방식기반, 약정년수, 월요금) 집합 반환.
     패키지·promo·사업자전용 옵션 제외.
+    AK와 TL의 관리방식 표기 차이를 _fp_mgmt_key로 통일하여 비교.
     """
     result = set()
     for o in options:
         if o.get("isPackage") or o.get("isPromo") or o.get("isBizOnly"):
             continue
         mgmt = o.get("managementType", "") or ""
-        mgmt_base = re.sub(r'[+_].*', '', mgmt).strip()  # "방문관리" from "방문관리+타사보상"
+        mgmt_base = _fp_mgmt_key(mgmt)
         years = o.get("contractYears") or (o.get("contractMonths", 0) // 12)
         fee = o.get("monthlyFee", 0)
         if years > 0 and fee > 0:
