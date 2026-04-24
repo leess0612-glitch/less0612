@@ -999,6 +999,7 @@ if __name__ == "__main__":
         _tl_vc_m = re.search(r'(\d+개월)', tl_vc_raw)
         tl_vc_extracted = _tl_vc_m.group(1) if _tl_vc_m else ""
         tl_only_entry = {
+            "id": tl_only_norm,
             "modelCode": tl_product["modelCode"],
             "name": tl_product["name"],
             "category": detect_category(tl_product["modelCode"], tl_product["name"], -1),
