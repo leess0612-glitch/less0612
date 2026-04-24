@@ -1423,6 +1423,15 @@ function buildParseReportHtml(r) {
     const p = _prFindProduct(x.modelCode);
     return { code: x.modelCode, name: x.name || '', id: p ? p.id : null };
   });
+  const suspiciousItems = niIssues.filter(x => x.type === 'SUSPICIOUS_MATCH').map(x => {
+    const p = _prFindProduct(x.modelCode);
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null };
+  });
+  const suggestedItems = niIssues.filter(x => x.type === 'SUGGESTED_MATCH').map(x => {
+    const p = _prFindProduct(x.modelCode);
+    const label = x.modelCode + ' → ' + (x.suggestedTlCode || '?');
+    return { code: label, name: x.name || '', id: p ? p.id : null };
+  });
 
   const cmItems = (CODE_MISMATCHES || []).map(m => {
     const p = _prFindProduct(m.tlCode) || _prFindProduct(m.akCode);
@@ -1435,6 +1444,8 @@ function buildParseReportHtml(r) {
     ${rowWithModels('미매칭 (에이컴즈만 존재)', (ni.akOnly || 0) + '개', ni.akOnly > 0 ? 'warn' : 'ok', akOnlyItems)}
     ${rowWithModels('미매칭 (티엘만 존재)', (ni.tlOnly || 0) + '개', ni.tlOnly > 0 ? 'warn' : 'ok', tlOnlyItems)}
     ${rowWithModels('부분 미매칭', (ni.partial || 0) + '개', ni.partial > 0 ? 'warn' : 'ok', partialItems)}
+    ${suspiciousItems.length > 0 ? rowWithModels('의심 매칭 (요금 불일치)', (ni.suspicious || 0) + '개', 'warn', suspiciousItems) : ''}
+    ${suggestedItems.length > 0 ? rowWithModels('제안 매칭 (정규화 확인)', (ni.suggested || 0) + '개', 'warn', suggestedItems) : ''}
   </div>`;
 
   // ── LG ──
