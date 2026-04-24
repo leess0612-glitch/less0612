@@ -1525,29 +1525,30 @@ function buildParseReportHtml(r) {
   const ni = r.normalizationIssues || {};
   const niTotal = ni.total || 0;
   const niIssues = NORM_ISSUES || [];
-  const _dismissed = _getDismissedSet();
-  const _niVisible = (type) => niIssues.filter(x => x.type === type && !_dismissed.has(type + '|' + x.modelCode));
+  _buildNormIssueMapFP();
+  const _dismissedMap = _getDismissedMap();
+  const _niVisible = (type) => niIssues.filter(x => x.type === type && !_isIssueDismissed(x, _dismissedMap));
 
   const akOnlyItems = _niVisible('AK_ONLY').map(x => {
     const p = _prFindProduct(x.modelCode);
-    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, issueType: 'AK_ONLY', issueModelCode: x.modelCode };
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, dKey: 'AK_ONLY|' + x.modelCode };
   });
   const tlOnlyItems = _niVisible('TL_ONLY').map(x => {
     const p = _prFindProduct(x.modelCode);
-    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, issueType: 'TL_ONLY', issueModelCode: x.modelCode };
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, dKey: 'TL_ONLY|' + x.modelCode };
   });
   const partialItems = _niVisible('PARTIAL').map(x => {
     const p = _prFindProduct(x.modelCode);
-    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, issueType: 'PARTIAL', issueModelCode: x.modelCode };
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, dKey: 'PARTIAL|' + x.modelCode };
   });
   const suspiciousItems = _niVisible('SUSPICIOUS_MATCH').map(x => {
     const p = _prFindProduct(x.modelCode);
-    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, issueType: 'SUSPICIOUS_MATCH', issueModelCode: x.modelCode };
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null, dKey: 'SUSPICIOUS_MATCH|' + x.modelCode };
   });
   const suggestedItems = _niVisible('SUGGESTED_MATCH').map(x => {
     const p = _prFindProduct(x.modelCode);
     const label = x.modelCode + ' → ' + (x.suggestedTlCode || '?');
-    return { code: label, name: x.name || '', id: p ? p.id : null, issueType: 'SUGGESTED_MATCH', issueModelCode: x.modelCode };
+    return { code: label, name: x.name || '', id: p ? p.id : null, dKey: 'SUGGESTED_MATCH|' + x.modelCode };
   });
 
   const cmItems = (CODE_MISMATCHES || []).map(m => {
