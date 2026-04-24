@@ -1423,14 +1423,19 @@ function buildParseReportHtml(r) {
   const row = (label, val, cls) =>
     `<div class="pr-row"><span class="pr-label">${label}</span><span class="pr-val ${cls||''}">${val}</span></div>`;
 
-  // 모델 태그 목록: [{code, name, id?}]
+  // 모델 태그 목록: [{code, name, id?, issueType?, issueModelCode?}]
   const modelTagHtml = (items) => {
     if (!items || !items.length) return '';
-    const tags = items.map(({code, name, id}) => {
+    const tags = items.map(({code, name, id, issueType, issueModelCode}) => {
       const label = escHtml(code || name || '?');
       const tip = escHtml(name || '');
-      if (id) return `<span class="pr-model-tag link" onclick="goToProductFromReport('${id}')" title="${tip}">${label}</span>`;
-      return `<span class="pr-model-tag" title="${tip}">${label}</span>`;
+      const navSpan = id
+        ? `<span class="pr-tag-nav link" onclick="goToProductFromReport('${id}')" title="${tip}">${label}</span>`
+        : `<span class="pr-tag-nav" title="${tip}">${label}</span>`;
+      const dismissSpan = (issueType && issueModelCode)
+        ? `<span class="pr-tag-dismiss" onclick="dismissAndRefreshReport('${escHtml(issueType)}','${escHtml(issueModelCode)}')" title="검토완료로 제외">×</span>`
+        : '';
+      return `<span class="pr-model-tag">${navSpan}${dismissSpan}</span>`;
     });
     return `<div class="pr-model-list">${tags.join('')}</div>`;
   };
