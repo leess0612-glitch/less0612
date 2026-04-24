@@ -462,6 +462,29 @@
     padding: 7px 22px; background: var(--brand); color: #fff;
     border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit;
   }
+  .ni-dismiss-btn {
+    padding: 2px 7px; font-size: 10px; font-family: inherit;
+    background: none; border: 1px solid #d1d5db; border-radius: 4px;
+    color: #6b7280; cursor: pointer; white-space: nowrap;
+  }
+  .ni-dismiss-btn:hover { background: #fee2e2; border-color: #f87171; color: #b91c1c; }
+  .ni-dismissed-info { font-size: 11px; color: var(--gray-400); margin-right: auto; }
+  .ni-restore-btn {
+    font-size: 11px; color: #0369a1; background: none; border: none;
+    cursor: pointer; text-decoration: underline; padding: 0; font-family: inherit;
+  }
+  .pr-model-tag { display: inline-flex; align-items: center; gap: 1px; }
+  .pr-model-tag .pr-tag-nav { /* 기존 link 스타일 유지 */ }
+  .pr-tag-dismiss {
+    display: inline-block; width: 14px; height: 14px; line-height: 13px;
+    text-align: center; font-size: 11px; color: #9ca3af; cursor: pointer;
+    border-radius: 50%; flex-shrink: 0;
+  }
+  .pr-tag-dismiss:hover { background: #fee2e2; color: #b91c1c; }
+  .pr-dismissed-footer {
+    margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--gray-200);
+    font-size: 11px; color: var(--gray-400); display: flex; align-items: center; gap: 8px;
+  }
 
   /* 한쪽에만 있음 팝업 */
   #one-side-popup .warn-box { max-width: 380px; }
