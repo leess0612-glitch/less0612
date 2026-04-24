@@ -1287,9 +1287,6 @@ function showConfirmNeededPopup(type, productName) {
   document.getElementById('one-side-popup').classList.add('show');
 }
 
-  document.getElementById('one-side-popup').classList.remove('show');
-}
-
 function showNormIssuesPopup() {
   const tbody = document.getElementById('norm-issues-tbody');
   tbody.innerHTML = ACTIVE_NORM_ISSUES.map(issue => {
