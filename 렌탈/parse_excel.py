@@ -1026,6 +1026,89 @@ if __name__ == "__main__":
                 if o.get("recommendedOffice") == "에이컴즈":
                     o["akOnlyOption"] = True
 
+    # ── 복합 신뢰도 점수: 의심 매칭(SUSPICIOUS_MATCH) 감지 ──
+    # AK 옵션이 2개 이상인데 매칭된 TL 제품과 요금 지문이 전혀 겹치지 않으면 경고
+    _tl_products_all = tl_data.get("products", [])
+    _tl_fp_cache = {_norm_model(p["modelCode"]): _fee_fingerprint(p["options"]) for p in _tl_products_all}
+
+    for product in data["products"]:
+        if product.get("oneSideOnly"):
+            continue
+        regular_non_src = [o for o in product["options"]
+                           if not o.get("isPackage") and not o.get("source")]
+        if len(regular_non_src) < 2:
+            continue
+        ak_fp = _fee_fingerprint(regular_non_src)
+        if not ak_fp:
+            continue
+        # 이 제품에 매칭된 TL 모델 변형 찾기
+        mc = product.get("modelCode", "")
+        mvs = _tl_model_variants(mc)
+        extended = _extend_model_variants_with_prefix(mvs, tl_known_models)
+        tl_fp = set()
+        for v in extended:
+            tl_fp |= _tl_fp_cache.get(v, set())
+        if not tl_fp:
+            continue
+        overlap = ak_fp & tl_fp
+        if len(overlap) == 0:
+            # 요금 완전 불일치 → 의심 매칭
+            normalization_issues.append({
+                "type": "SUSPICIOUS_MATCH",
+                "modelCode": mc,
+                "name": product.get("name", ""),
+                "akDetail": "; ".join(f"{mgmt} {yr}년 {fee}원" for mgmt, yr, fee in sorted(ak_fp)[:3]),
+                "tlDetail": "; ".join(f"{mgmt} {yr}년 {fee}원" for mgmt, yr, fee in sorted(tl_fp)[:3]),
+                "reason": "모델코드 매칭되었으나 에이컴즈·티엘 요금이 전혀 일치하지 않음 — 정규화 오류 가능성"
+            })
+            msg = f"  [의심매칭] {mc}"
+            print(msg.encode('cp949', errors='replace').decode('cp949'))
+
+    # ── 복합 신뢰도 점수: 제안 매칭(SUGGESTED_MATCH) 감지 ──
+    # AK_ONLY 제품 중 코드 유사도·요금 지문이 높은 TL 제품 탐색
+    for product in data["products"]:
+        if product.get("oneSideOnly") != "AK":
+            continue
+        regular_non_src = [o for o in product["options"]
+                           if not o.get("isPackage") and not o.get("source")]
+        ak_fp = _fee_fingerprint(regular_non_src)
+        if not ak_fp:
+            continue
+        mc = product.get("modelCode", "")
+        best_score = 0.0
+        best_tl = None
+        for tl_p in _tl_products_all:
+            tl_norm = _norm_model(tl_p["modelCode"])
+            tl_fp = _tl_fp_cache.get(tl_norm, set())
+            if not tl_fp:
+                continue
+            overlap_cnt = len(ak_fp & tl_fp)
+            if overlap_cnt == 0:
+                continue
+            code_score = _code_lcp_score(mc, tl_p["modelCode"])
+            # 복합 점수: 요금 지문 겹침 비율 × 코드 유사도
+            fp_ratio = overlap_cnt / max(len(ak_fp), len(tl_fp))
+            compound = fp_ratio * 0.6 + code_score * 0.4
+            if compound > best_score:
+                best_score = compound
+                best_tl = tl_p
+        if best_tl and best_score >= 0.3:
+            tl_norm = _norm_model(best_tl["modelCode"])
+            tl_fp = _tl_fp_cache.get(tl_norm, set())
+            normalization_issues.append({
+                "type": "SUGGESTED_MATCH",
+                "modelCode": mc,
+                "name": product.get("name", ""),
+                "suggestedTlCode": best_tl["modelCode"],
+                "suggestedTlName": best_tl["name"],
+                "score": round(best_score, 2),
+                "akDetail": "; ".join(f"{mgmt} {yr}년 {fee}원" for mgmt, yr, fee in sorted(ak_fp)[:3]),
+                "tlDetail": f"[{best_tl['modelCode']}] " + "; ".join(f"{mgmt} {yr}년 {fee}원" for mgmt, yr, fee in sorted(tl_fp)[:3]),
+                "reason": f"에이컴즈만 존재하지만 티엘 [{best_tl['modelCode']}]와 요금·코드 유사 (점수 {round(best_score,2)}) — 정규화 확인 권장"
+            })
+            msg = f"  [제안매칭] {mc} → {best_tl['modelCode']} (score={round(best_score,2)})"
+            print(msg.encode('cp949', errors='replace').decode('cp949'))
+
     # ── TL 전용 제품 감지 ──
     # AK 제품이 참조한 TL 모델코드 수집
     ak_referenced_tl = set()
