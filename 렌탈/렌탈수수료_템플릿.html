@@ -1152,17 +1152,11 @@ function selectProduct(id) {
   renderMain();
   const product = DB.products.find(p => p.id === id);
   if (product) {
-    // LG 팝업 처리 (공청기 계열)
-    if (product.isAirProduct) {
-      const popupOpt = product.options.find(o => o.lgAirPopup);
-      if (popupOpt) showLgPopup(product.displayCode || product.modelCode, popupOpt.lgAirPopup);
-      return;
-    }
-    // LG 팝업 처리 (정수기)
-    if (currentBrand === 'lg') {
-      const popupOpt = product.options.find(o => o.lgPopup);
-      if (popupOpt) showLgPopup(product.modelCode, popupOpt.lgPopup);
-      return;
+    // 브랜드 전용 팝업 처리 (LG 공청기·정수기 등)
+    {
+      const bReg = BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk;
+      const popup = bReg.getProductPopup(product);
+      if (popup) { showLgPopup(popup.code, popup.text); return; }
     }
     // 한쪽에만 있음 경고 → 팝업 표시 후 수수료표는 정상 표시
     if (product.oneSideOnly === 'AK') {
