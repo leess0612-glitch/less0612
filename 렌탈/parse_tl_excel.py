@@ -169,29 +169,52 @@ def parse_tl(filepath):
             if fallback_key not in option_lookup:
                 option_lookup[fallback_key] = commission
 
-        # 제품 목록 (패키지 행은 products에 저장하지 않음 - lookup용으로만 사용)
-        if not is_package:
-            model_key = normalize_model_code(current_model_code)
-            existing = next((p for p in products
-                             if normalize_model_code(p["modelCode"]) == model_key), None)
-            if existing is None:
-                existing = {
-                    "modelCode": current_model_code,
-                    "name": current_product_name,
-                    "options": []
-                }
-                products.append(existing)
+        # 제품 목록 저장 (패키지 포함 / promo는 일반 행 없을 때만 fallback)
+        model_key = normalize_model_code(current_model_code)
+        existing = next((p for p in products
+                         if normalize_model_code(p["modelCode"]) == model_key), None)
+        if existing is None:
+            existing = {
+                "modelCode": current_model_code,
+                "name": current_product_name,
+                "options": []
+            }
+            products.append(existing)
 
-            existing["options"].append({
-                "managementType": mgmt,
-                "contractYears": contract_years,
-                "contractLabel": f"{contract_years}년",
-                "hasTasa": has_tasa,
-                "size": size,
-                "monthlyFee": monthly_fee,
-                "commission": commission,
-                "dataWarning": data_warning,
-            })
+        # 패키지 행은 managementType에 "_패키지" suffix 부여
+        stored_mgmt = mgmt + "_패키지" if is_package else mgmt
+        opt_entry = {
+            "managementType": stored_mgmt,
+            "contractYears": contract_years,
+            "contractLabel": f"{contract_years}년",
+            "hasTasa": has_tasa,
+            "size": size,
+            "monthlyFee": monthly_fee,
+            "commission": commission,
+            "dataWarning": data_warning,
+            "isPackage": is_package,
+            "isPromo": is_promo_row,
+        }
+
+        # 동일 조합 식별 키 (관리방식+약정+타사보상+패키지여부)
+        _combo = (stored_mgmt, contract_years, has_tasa)
+        if is_promo_row:
+            # 이미 일반 행이 있으면 promo 행 무시
+            has_normal = any(
+                not o.get("isPromo") and
+                (o["managementType"], o["contractYears"], o["hasTasa"]) == _combo
+                for o in existing["options"]
+            )
+            if not has_normal:
+                existing["options"].append(opt_entry)
+        else:
+            # 일반 행: 동일 조합의 promo fallback이 있으면 교체
+            existing["options"] = [
+                o for o in existing["options"]
+                if not (o.get("isPromo") and
+                        (o["managementType"], o["contractYears"], o["hasTasa"]) == _combo)
+            ]
+            existing["options"].append(opt_entry)
 
     # ── WW / PSG(P↔S) 변형 병합 ──
     # 동일 수수료·요금이면 색상/협업 변형으로 간주 → products 목록에서 제거
