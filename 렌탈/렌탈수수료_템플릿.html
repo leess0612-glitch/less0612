@@ -405,6 +405,25 @@
     padding: 7px 22px; background: var(--brand); color: #fff;
     border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 700; font-family: inherit;
   }
+  /* 파싱 리포트 모델 태그 */
+  #parse-report-popup .pr-model-list {
+    display: flex; flex-wrap: wrap; gap: 4px; padding: 5px 0 3px 0;
+  }
+  #parse-report-popup .pr-model-tag {
+    font-size: 10px; padding: 2px 8px; border-radius: 12px;
+    background: var(--gray-100); color: var(--gray-600);
+    border: 1px solid var(--gray-200); white-space: nowrap;
+  }
+  #parse-report-popup .pr-model-tag.link {
+    cursor: pointer; background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe;
+    text-decoration: none;
+  }
+  #parse-report-popup .pr-model-tag.link:hover { background: #dbeafe; }
+  #parse-report-popup .pr-row-block {
+    font-size: 12px; padding: 4px 0 2px; border-bottom: 1px solid var(--gray-100);
+  }
+  #parse-report-popup .pr-row-block .pr-label { color: var(--gray-600); }
+  #parse-report-popup .pr-row-block .pr-val { font-weight: 700; }
   /* 헤더 리포트 아이콘 버튼 */
   .report-icon-btn {
     background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
