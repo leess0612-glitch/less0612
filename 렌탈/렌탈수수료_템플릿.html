@@ -1902,6 +1902,8 @@ function renderMain() {
       </div>
       ${product.isAirProduct
         ? renderAirOptionArea(product)
+        : currentBrand === 'cuckoo'
+        ? `<div class="options-scroll-wrap">${renderCuckooOptionList(product)}</div>`
         : `<div class="options-scroll-wrap">${renderOptionList(product)}</div>`
       }
     </div>
