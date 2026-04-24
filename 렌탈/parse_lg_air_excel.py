@@ -480,6 +480,42 @@ def parse_lg_air(ac_filepath=AC_PATH, tl_filepath=TL_PATH):
                 'tlDetail': w,
             })
 
+    # 한쪽에만 수수료 있는 옵션 → AK_ONLY / TL_ONLY (팝업 예외 제외, 제품 단위 중복 제거)
+    _seen_ni = set()
+    for p in products:
+        for o in p['options']:
+            if o.get('popup'):
+                continue
+            ak = o['commission']['ak']
+            tl = o['commission']['tl']
+            if (ak and not tl) or (tl and not ak):
+                mc = p['modelCode']
+                months = o['contractMonths']
+                years = months // 12
+                svc = o.get('serviceType', '')
+                combine = o.get('combineType', '')
+                dedup = (mc, months, o.get('visitCycle', ''), svc, combine)
+                if dedup in _seen_ni:
+                    continue
+                _seen_ni.add(dedup)
+                detail = f'{years}년 {svc} {combine}'.strip()
+                if ak and not tl:
+                    norm_issues.append({
+                        'type':      'AK_ONLY',
+                        'name':      p.get('lineup') or mc,
+                        'modelCode': mc,
+                        'akDetail':  f'{detail} — 에이컴즈만 수수료 있음',
+                        'tlDetail':  '티엘 수수료 없음',
+                    })
+                else:
+                    norm_issues.append({
+                        'type':      'TL_ONLY',
+                        'name':      p.get('lineup') or mc,
+                        'modelCode': mc,
+                        'akDetail':  '에이컴즈 수수료 없음',
+                        'tlDetail':  f'{detail} — 티엘만 수수료 있음',
+                    })
+
     data = {
         'metadata': {
             'brand':    'LG전자',
