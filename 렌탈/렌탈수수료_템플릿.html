@@ -1313,6 +1313,34 @@ function showConfirmNeededPopup(type, productName) {
   document.getElementById('one-side-popup').classList.add('show');
 }
 
+// ── 이슈 제외(dismiss) 관리 ──
+const _DISMISS_KEY = 'rentalDismissedIssues';
+function _getDismissedSet() {
+  try { return new Set(JSON.parse(localStorage.getItem(_DISMISS_KEY) || '[]')); }
+  catch(e) { return new Set(); }
+}
+function _saveDismissedSet(s) {
+  localStorage.setItem(_DISMISS_KEY, JSON.stringify([...s]));
+}
+function dismissIssue(type, modelCode) {
+  const s = _getDismissedSet();
+  s.add(type + '|' + modelCode);
+  _saveDismissedSet(s);
+}
+function restoreAllDismissed() {
+  if (!confirm('검토완료로 제외한 항목을 모두 복원하겠습니까?')) return;
+  localStorage.removeItem(_DISMISS_KEY);
+  showNormIssuesPopup();
+}
+function dismissAndRefreshNorm(type, modelCode) {
+  dismissIssue(type, modelCode);
+  showNormIssuesPopup();
+}
+function dismissAndRefreshReport(type, modelCode) {
+  dismissIssue(type, modelCode);
+  showParseReport();
+}
+
 function showNormIssuesPopup() {
   const tbody = document.getElementById('norm-issues-tbody');
   tbody.innerHTML = ACTIVE_NORM_ISSUES.map(issue => {
