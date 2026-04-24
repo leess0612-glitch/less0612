@@ -1032,13 +1032,20 @@ function selectCategory(cat) {
 }
 
 // ── 제품 목록 ──
+function normSearch(s) { return s.replace(/[-\s]/g, '').toUpperCase(); }
+
 function getFilteredProducts() {
   return DB.products.filter(p => {
     const matchCat = state.category === '전체' || p.category === state.category;
-    const matchSearch = !state.searchText ||
-      p.name.includes(state.searchText) ||
-      getDisplayName(p).includes(state.searchText) ||
-      p.modelCode.toLowerCase().includes(state.searchText.toLowerCase());
+    if (!state.searchText) return matchCat;
+    const q = state.searchText;
+    const qNorm = normSearch(q);
+    const matchSearch =
+      p.name.includes(q) ||
+      getDisplayName(p).includes(q) ||
+      (p.modelCode || '').toLowerCase().includes(q.toLowerCase()) ||
+      normSearch(p.modelCode || '').includes(qNorm) ||
+      normSearch(getDisplayName(p)).includes(qNorm);
     return matchCat && matchSearch;
   });
 }
