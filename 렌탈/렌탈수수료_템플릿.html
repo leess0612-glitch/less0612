@@ -2469,18 +2469,12 @@ function switchBrand(brand) {
   if (brand === currentBrand) return;
   currentBrand = brand;
 
-  if (brand === 'lg') {
-    DB = getLgMergedDb();
-  } else {
-    DB = _SK_DB;
-  }
+  const bReg = BRAND_REGISTRY[brand] || BRAND_REGISTRY.sk;
+  DB = bReg.getDb();
 
   // 탭 active 클래스 갱신
   document.querySelectorAll('.brand-tab').forEach(el => {
-    const txt = el.textContent.trim();
-    const isActive = (brand === 'sk' && txt === 'SK매직') ||
-                     (brand === 'lg' && txt === 'LG전자');
-    el.classList.toggle('active', isActive);
+    el.classList.toggle('active', el.textContent.trim() === bReg.label);
   });
 
   // 메타 정보 갱신
@@ -2497,20 +2491,15 @@ function switchBrand(brand) {
   if (prodSearch) prodSearch.value = '';
 
   // ACTIVE_NORM_ISSUES 갱신 및 탭 표시
-  if (brand === 'lg') {
-    ACTIVE_NORM_ISSUES = [...(LG_WATER_NORM_ISSUES || []), ...(LG_AIR_NORM_ISSUES || [])];
-  } else {
-    ACTIVE_NORM_ISSUES = NORM_ISSUES || [];
-  }
+  ACTIVE_NORM_ISSUES = bReg.getNormIssues();
   const normTab = document.getElementById('norm-issues-tab');
   if (normTab) {
     normTab.style.display = ACTIVE_NORM_ISSUES.length > 0 ? '' : 'none';
   }
   // 이슈 있으면 팝업 자동 표시 (오늘 다시 보지 않기 무시)
   if (ACTIVE_NORM_ISSUES.length > 0) {
-    const skipKey = brand === 'lg' ? 'normIssuesSkipDay_lg' : 'normIssuesSkipDay_sk';
     const todayStr = new Date().toISOString().slice(0,10);
-    if (localStorage.getItem(skipKey) !== todayStr) {
+    if (localStorage.getItem(bReg.skipKey) !== todayStr) {
       showNormIssuesPopup();
     }
   }
