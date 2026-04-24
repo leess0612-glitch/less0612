@@ -1224,14 +1224,58 @@ function normIssuesSkipToday() {
 }
 
 // ── 파싱 리포트 팝업 ──
+function goToProductFromReport(id) {
+  closeParseReport();
+  state.category = '전체';
+  state.searchText = '';
+  document.getElementById('prod-search').value = '';
+  renderCategoryList();
+  renderProductList();
+  selectProduct(id);
+  setTimeout(() => {
+    const active = document.querySelector('.prod-item.active');
+    if (active) active.scrollIntoView({ block: 'nearest' });
+  }, 80);
+}
+
+function _prFindProduct(codeOrId) {
+  if (!codeOrId) return null;
+  const n = normSearch(codeOrId);
+  return DB.products.find(p =>
+    normSearch(p.modelCode || '') === n ||
+    normSearch(p.id || '') === n
+  );
+}
+
 function buildParseReportHtml(r) {
   if (!r) return '<div style="color:var(--gray-400);font-size:12px;padding:16px 0">리포트 데이터 없음</div>';
+
   const row = (label, val, cls) =>
     `<div class="pr-row"><span class="pr-label">${label}</span><span class="pr-val ${cls||''}">${val}</span></div>`;
 
+  // 모델 태그 목록: [{code, name, id?}]
+  const modelTagHtml = (items) => {
+    if (!items || !items.length) return '';
+    const tags = items.map(({code, name, id}) => {
+      const label = escHtml(code || name || '?');
+      const tip = escHtml(name || '');
+      if (id) return `<span class="pr-model-tag link" onclick="goToProductFromReport('${id}')" title="${tip}">${label}</span>`;
+      return `<span class="pr-model-tag" title="${tip}">${label}</span>`;
+    });
+    return `<div class="pr-model-list">${tags.join('')}</div>`;
+  };
+
+  const rowWithModels = (label, val, cls, items) =>
+    `<div class="pr-row-block">
+      <div class="pr-row" style="border-bottom:none;padding-bottom:0">
+        <span class="pr-label">${label}</span><span class="pr-val ${cls||''}">${val}</span>
+      </div>
+      ${modelTagHtml(items)}
+    </div>`;
+
   let html = '';
 
-  // SK매직
+  // ── SK매직 ──
   const sk = r.sk || {};
   html += `<div class="pr-section">
     <div class="pr-section-title">SK매직 (에이컴즈 파일)</div>
@@ -1243,11 +1287,19 @@ function buildParseReportHtml(r) {
     });
   }
   html += row('사업자전용 옵션', (sk.bizOptionsCount || 0) + '개');
+
+  // 요금 경고 옵션: DB에서 직접 수집
+  const dwProds = [];
+  (DB.products || []).forEach(p => {
+    if (p.options && p.options.some(o => o.dataWarning)) {
+      dwProds.push({ code: p.modelCode || p.id, name: p.name || '', id: p.id });
+    }
+  });
   const dw = sk.dataWarningCount || 0;
-  html += row('요금 경고 옵션', dw + '개', dw > 0 ? 'warn' : 'ok');
+  html += rowWithModels('요금 경고 옵션', dw + '개', dw > 0 ? 'warn' : 'ok', dwProds);
   html += '</div>';
 
-  // 티엘
+  // ── 티엘 ──
   const tl = r.tl || {};
   html += `<div class="pr-section">
     <div class="pr-section-title">티엘 파일</div>
@@ -1257,19 +1309,38 @@ function buildParseReportHtml(r) {
     ${row('사업자전용 옵션', (tl.bizOptionsCount || 0) + '개')}
   </div>`;
 
-  // 정규화 이슈
+  // ── 에이컴즈 ↔ 티엘 매칭 ──
   const ni = r.normalizationIssues || {};
   const niTotal = ni.total || 0;
+  const niIssues = NORM_ISSUES || [];
+
+  const akOnlyItems = niIssues.filter(x => x.type === 'AK_ONLY').map(x => {
+    const p = _prFindProduct(x.modelCode);
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null };
+  });
+  const tlOnlyItems = niIssues.filter(x => x.type === 'TL_ONLY').map(x => {
+    const p = _prFindProduct(x.modelCode);
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null };
+  });
+  const partialItems = niIssues.filter(x => x.type === 'PARTIAL').map(x => {
+    const p = _prFindProduct(x.modelCode);
+    return { code: x.modelCode, name: x.name || '', id: p ? p.id : null };
+  });
+
+  const cmItems = (CODE_MISMATCHES || []).map(m => {
+    const p = _prFindProduct(m.tlCode) || _prFindProduct(m.akCode);
+    return { code: m.tlCode || m.akCode, name: m.name || '', id: p ? p.id : null };
+  });
+
   html += `<div class="pr-section">
     <div class="pr-section-title">에이컴즈 ↔ 티엘 매칭 결과</div>
-    ${row('코드 표기 상이', (r.codeMismatches || 0) + '개', r.codeMismatches > 0 ? 'warn' : 'ok')}
-    ${row('미매칭 제품 (합계)', niTotal + '개', niTotal > 0 ? 'warn' : 'ok')}
-    ${niTotal > 0 ? row('· 에이컴즈만 존재', (ni.akOnly || 0) + '개') : ''}
-    ${niTotal > 0 ? row('· 티엘만 존재', (ni.tlOnly || 0) + '개') : ''}
-    ${niTotal > 0 ? row('· 부분 미매칭', (ni.partial || 0) + '개') : ''}
+    ${rowWithModels('코드 표기 상이', (r.codeMismatches || 0) + '개', r.codeMismatches > 0 ? 'warn' : 'ok', cmItems)}
+    ${rowWithModels('미매칭 (에이컴즈만 존재)', (ni.akOnly || 0) + '개', ni.akOnly > 0 ? 'warn' : 'ok', akOnlyItems)}
+    ${rowWithModels('미매칭 (티엘만 존재)', (ni.tlOnly || 0) + '개', ni.tlOnly > 0 ? 'warn' : 'ok', tlOnlyItems)}
+    ${rowWithModels('부분 미매칭', (ni.partial || 0) + '개', ni.partial > 0 ? 'warn' : 'ok', partialItems)}
   </div>`;
 
-  // LG
+  // ── LG ──
   const lg = r.lg || {};
   if (lg.waterProducts !== undefined || lg.airProducts !== undefined) {
     html += `<div class="pr-section">
