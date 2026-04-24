@@ -868,6 +868,9 @@ if __name__ == "__main__":
 
         for tl_prod in tl_prods_found:
             for tl_opt in tl_prod.get("options", []):
+                # 패키지·promo 행은 AK 보완용으로 사용하지 않음
+                if tl_opt.get("isPackage") or tl_opt.get("isPromo"):
+                    continue
                 tl_mgmt = tl_opt["managementType"]
                 tl_mgmt_base = _mgmt_base_key(tl_mgmt)
                 tl_years = tl_opt["contractYears"]
