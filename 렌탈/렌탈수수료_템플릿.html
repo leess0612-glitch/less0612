@@ -1233,6 +1233,59 @@ function showOneSidePopup(side, productName) {
   document.getElementById('one-side-popup').classList.add('show');
 }
 function closeOneSidePopup() {
+}
+
+// ── 확인필요 뱃지 클릭 팝업 ──
+const CONFIRM_NEEDED_MSG = {
+  TL_ONLY: {
+    title: '티엘 전용 제품',
+    msg: [
+      '이 제품은 <strong>티엘 파일에만 존재</strong>하며 에이컴즈 파일에는 없습니다.',
+      '',
+      '• 접수처: <strong>티엘</strong>만 가능',
+      '• 월요금·수수료: 티엘 수수료 파일 기준',
+      '• 에이컴즈 비교 데이터 없음',
+      '',
+      '티엘 담당자에게 최신 정책 및 접수 가능 여부를 직접 확인하세요.',
+    ],
+  },
+  TL_SUPP: {
+    title: '티엘 보완 옵션',
+    msg: [
+      '이 옵션은 <strong>에이컴즈 파일에 없고 티엘 파일에서 보완</strong>된 옵션입니다.',
+      '',
+      '• 월요금: 티엘 수수료 파일 기준 (에이컴즈 검증 불가)',
+      '• 수수료: 티엘 기준 단독 적용',
+      '• 접수: 티엘로만 가능',
+      '',
+      '월요금과 수수료를 티엘 파일에서 직접 확인 후 사용하세요.',
+    ],
+  },
+  AK_ONLY: {
+    title: '에이컴즈 전용 옵션',
+    msg: [
+      '이 옵션은 <strong>에이컴즈 파일에만 존재</strong>하며 티엘 파일에 해당 약정이 없습니다.',
+      '',
+      '• 접수처: <strong>에이컴즈</strong>만 가능',
+      '• 수수료: 에이컴즈 기준 (티엘 비교 없음)',
+      '',
+      '티엘 접수가 필요한 경우 티엘 담당자에게 문의하세요.',
+    ],
+  },
+};
+
+function showConfirmNeededPopup(type, productName) {
+  const info = CONFIRM_NEEDED_MSG[type];
+  if (!info) return;
+  const titleEl = document.getElementById('one-side-title');
+  const msgEl   = document.getElementById('one-side-msg');
+  if (!titleEl || !msgEl) return;
+  titleEl.textContent = info.title;
+  msgEl.innerHTML = `<strong>${escHtml(productName)}</strong><br><br>` +
+    info.msg.map(l => l === '' ? '<br>' : `<span>${l}</span>`).join('<br>');
+  document.getElementById('one-side-popup').classList.add('show');
+}
+
   document.getElementById('one-side-popup').classList.remove('show');
 }
 
