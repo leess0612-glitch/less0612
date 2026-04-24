@@ -931,6 +931,50 @@ const NORM_ISSUES = __NORM_ISSUES__;
 const LG_WATER_NORM_ISSUES = __LG_WATER_NORM_ISSUES__;
 const LG_AIR_NORM_ISSUES   = __LG_AIR_NORM_ISSUES__;
 const PARSE_REPORT = __PARSE_REPORT__;
+
+// ── 브랜드 레지스트리 ──
+// 새 브랜드 추가 시 여기에만 항목을 추가하면 됩니다.
+const BRAND_REGISTRY = {
+  sk: {
+    label:          'SK매직',
+    getDb:          () => _SK_DB,
+    getNormIssues:  () => NORM_ISSUES || [],
+    getCodeMismatches: () => CODE_MISMATCHES || [],
+    skipKey:        'normIssuesSkipDay_sk',
+    homepageUrl:    'https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&goodsFilterList=6&menuNo=100104',
+    homepageLabel:  '🔗 SK매직 공홈',
+    quickAccess:    () => renderQuickAccessSk(),
+    // 제품 클릭 시 브랜드 전용 팝업 (없으면 null)
+    getProductPopup: (product) => null,
+    // 클립보드 브랜드명
+    clipboardLabel: (product) => 'SK매직',
+    // 관리주기 포맷
+    visitCycleText: (product, option) =>
+      formatVisitCycle(product.visitCycleInfo || ''),
+    // 결합상품 레이블 suffix
+    combineLabel:   (option) => '',
+  },
+  lg: {
+    label:          'LG전자',
+    getDb:          () => getLgMergedDb(),
+    getNormIssues:  () => [...(LG_WATER_NORM_ISSUES || []), ...(LG_AIR_NORM_ISSUES || [])],
+    getCodeMismatches: () => [],
+    skipKey:        'normIssuesSkipDay_lg',
+    homepageUrl:    'https://www.lge.co.kr/category/care-solutions/water-purifiers',
+    homepageLabel:  '🔗 LG전자 공홈',
+    quickAccess:    () => renderQuickAccessLg(),
+    getProductPopup: (product) => {
+      const opt = product.options.find(o => o.lgPopup || o.lgAirPopup);
+      if (!opt) return null;
+      return { code: product.displayCode || product.modelCode, text: opt.lgPopup || opt.lgAirPopup };
+    },
+    clipboardLabel: (product) => product.isAirProduct ? 'LG전자' : 'LG전자',
+    visitCycleText: (product, option) =>
+      option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
+    combineLabel:   (option) => option.lgCombineType ? ` | ${option.lgCombineType}` : '',
+  },
+};
+
 // 브랜드 전환 시 갱신되는 활성 이슈 목록
 let ACTIVE_NORM_ISSUES = NORM_ISSUES;
 
