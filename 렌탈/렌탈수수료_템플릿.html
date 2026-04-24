@@ -2736,7 +2736,7 @@ function transformCuckooData(raw) {
       id:        p.id || p.modelCode,
       modelCode: p.modelCode,
       name:      p.name,
-      category:  p.category || '기타',
+      category:  _normCuckooCat(p.category),
       options,
     };
   });
