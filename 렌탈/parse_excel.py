@@ -1349,6 +1349,13 @@ if __name__ == "__main__":
                 "airSourceFile": "lg_air_data.json" if os.path.exists(lg_air_json_path) else None,
                 "airProducts": len(lg_air_raw.get("products", [])),
             },
+            "cuckoo": {
+                "sourceFile": "cuckoo_data.json" if os.path.exists(cuckoo_json_path) else None,
+                "products": len(cuckoo_raw.get("products", [])),
+                "options": sum(len(p.get("options", [])) for p in cuckoo_raw.get("products", [])),
+                "tasaOptions": sum(1 for p in cuckoo_raw.get("products", []) for o in p.get("options", []) if o.get("hasTasa")),
+                "promoOptions": sum(1 for p in cuckoo_raw.get("products", []) for o in p.get("options", []) if o.get("isPromo")),
+            },
         }
         pr_js = json.dumps(parse_report, ensure_ascii=False)
 
