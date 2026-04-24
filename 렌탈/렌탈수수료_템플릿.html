@@ -1262,7 +1262,7 @@ function closeNormIssuesPopup() {
 }
 function normIssuesSkipToday() {
   const todayStr = new Date().toISOString().slice(0,10);
-  const key = currentBrand === 'lg' ? 'normIssuesSkipDay_lg' : 'normIssuesSkipDay_sk';
+  const key = (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).skipKey;
   localStorage.setItem(key, todayStr);
   closeNormIssuesPopup();
 }
@@ -1500,8 +1500,7 @@ function getBrandTag() {
 
 // ── 빠른 바로가기 패널 ──
 function renderQuickAccess() {
-  if (currentBrand === 'lg') return renderQuickAccessLg();
-  return renderQuickAccessSk();
+  return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
 }
 
 function renderQuickAccessSk() {
