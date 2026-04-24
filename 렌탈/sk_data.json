@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-24 17:05"
+    "parsedAt": "2026-04-24 18:17"
   },
   "products": [
     {
@@ -12593,7 +12593,7 @@
           "contractYears": 5,
           "hasTasa": false,
           "isPackage": false,
-          "monthlyFee": 19950,
+          "monthlyFee": 39900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
@@ -12610,7 +12610,7 @@
           "contractYears": 5,
           "hasTasa": false,
           "isPackage": false,
-          "monthlyFee": 21450,
+          "monthlyFee": 42900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
@@ -12627,7 +12627,7 @@
           "contractYears": 6,
           "hasTasa": false,
           "isPackage": false,
-          "monthlyFee": 19450,
+          "monthlyFee": 38900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
@@ -12644,7 +12644,7 @@
           "contractYears": 6,
           "hasTasa": false,
           "isPackage": false,
-          "monthlyFee": 20950,
+          "monthlyFee": 41900,
           "baseCommission": 0,
           "bonusCommission1": 0,
           "bonusCommission2": 0,
