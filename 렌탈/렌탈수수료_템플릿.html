@@ -1002,6 +1002,21 @@ const BRAND_REGISTRY = {
       option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
     combineLabel:   (option) => option.lgCombineType ? ` | ${option.lgCombineType}` : '',
   },
+  cuckoo: {
+    label:          '쿠쿠',
+    getDb:          () => getCuckooDb(),
+    getNormIssues:  () => [],
+    getCodeMismatches: () => [],
+    skipKey:        'normIssuesSkipDay_cuckoo',
+    homepageUrl:    'https://www.cuchen.com/rental/main.do',
+    homepageLabel:  '🔗 쿠쿠 공홈',
+    quickAccess:    () => renderQuickAccessCuckoo(),
+    getProductPopup: (product) => null,
+    clipboardLabel: (product) => '쿠쿠',
+    visitCycleText: (product, option) =>
+      option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
+    combineLabel:   (option) => '',
+  },
 };
 
 // 브랜드 전환 시 갱신되는 활성 이슈 목록
