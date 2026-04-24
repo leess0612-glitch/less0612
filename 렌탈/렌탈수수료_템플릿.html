@@ -2692,6 +2692,22 @@ function getCuckooDb() {
   return _CUCKOO_DB_CACHE;
 }
 
+function _normCuckooCat(cat) {
+  const c = (cat || '').replace(/-$/, '').trim();
+  if (['데스크형','스탠드형','직수','얼음','정수','빌트인','언더싱크'].some(k => c === k || c.startsWith(k))) return '정수기';
+  if (c === '공기청정기' || c === '펫 공청기') return '공기청정기';
+  if (c === '비데' || c.includes('클렌저')) return '비데';
+  if (c === '매트리스' || c.includes('프레임')) return '매트리스';
+  if (c === '제습기') return '제습기';
+  if (c === '안마의자') return '안마의자';
+  if (c === '로봇청소기') return '청소기';
+  if (['해충방제','포충등'].includes(c)) return '해충방제';
+  if (c === '음식물처리기') return '음식물처리기';
+  if (c === '전기레인지') return '전기레인지';
+  if (c === '식기세척기') return '식기세척기';
+  return cat;
+}
+
 function transformCuckooData(raw) {
   if (!raw || !raw.products) return { metadata: { brand: '쿠쿠', parsedAt: '' }, products: [] };
 
