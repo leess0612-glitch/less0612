@@ -1297,6 +1297,18 @@ if __name__ == "__main__":
         else:
             print(f"[경고] LG 공청기 JSON 없음: {lg_air_json_path}")
 
+        # 쿠쿠 데이터 로드
+        cuckoo_json_path = os.path.join(base_dir, "cuckoo_data.json")
+        cuckoo_js  = "{}"
+        cuckoo_raw = {"products": [], "metadata": {}}
+        if os.path.exists(cuckoo_json_path):
+            with open(cuckoo_json_path, "r", encoding="utf-8") as f:
+                cuckoo_raw = json.load(f)
+            cuckoo_js = json.dumps(cuckoo_raw, ensure_ascii=False)
+            print(f"쿠쿠 데이터 로드: {len(cuckoo_raw.get('products', []))}개 제품")
+        else:
+            print(f"[경고] 쿠쿠 JSON 없음: {cuckoo_json_path}")
+
         # ── 파싱 리포트 생성 ──
         cats = {}
         for p in data["products"]:
