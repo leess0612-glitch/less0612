@@ -1379,9 +1379,10 @@ function dismissAndRefreshReport(key) {
 }
 
 function showNormIssuesPopup() {
-  const dismissed = _getDismissedSet();
+  _buildNormIssueMapFP();
+  const dismissedMap = _getDismissedMap();
   const allIssues = ACTIVE_NORM_ISSUES;
-  const visible = allIssues.filter(i => !dismissed.has(i.type + '|' + i.modelCode));
+  const visible = allIssues.filter(i => !_isIssueDismissed(i, dismissedMap));
   const dismissedCount = allIssues.length - visible.length;
 
   const tbody = document.getElementById('norm-issues-tbody');
@@ -1398,14 +1399,13 @@ function showNormIssuesPopup() {
         : issue.type === 'SUGGESTED_MATCH'
         ? '<span class="ni-type-suggested">제안매칭</span>'
         : '<span class="ni-type-partial">일부불일치</span>';
-      const mc = escHtml(issue.modelCode || '');
-      const tp = escHtml(issue.type);
+      const dKey = escHtml(issue.type + '|' + (issue.modelCode || ''));
       return `<tr>
         <td>${typeLabel} ${escHtml((issue.name||'').slice(0,16))}<br>
-          <span style="font-size:10px;color:var(--gray-400)">${mc}</span></td>
+          <span style="font-size:10px;color:var(--gray-400)">${escHtml(issue.modelCode||'')}</span></td>
         <td>${escHtml(issue.akDetail||'')}</td>
         <td>${escHtml(issue.tlDetail||'')}</td>
-        <td style="text-align:center"><button class="ni-dismiss-btn" onclick="dismissAndRefreshNorm('${tp}','${mc}')">제외</button></td>
+        <td style="text-align:center"><button class="ni-dismiss-btn" onclick="dismissAndRefreshNorm('${dKey}')">제외</button></td>
       </tr>`;
     }).join('');
   }
