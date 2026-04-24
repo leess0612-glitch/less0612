@@ -1314,30 +1314,67 @@ function showConfirmNeededPopup(type, productName) {
 }
 
 // ── 이슈 제외(dismiss) 관리 ──
+// 저장 형식: [{key:"type|modelCode", fp:"akDetail||tlDetail"}]
+// fp가 다르면(=이슈 내용이 바뀌면) 자동으로 다시 표시됨
 const _DISMISS_KEY = 'rentalDismissedIssues';
-function _getDismissedSet() {
-  try { return new Set(JSON.parse(localStorage.getItem(_DISMISS_KEY) || '[]')); }
-  catch(e) { return new Set(); }
+
+function _issueFP(issue) {
+  // akDetail + tlDetail 조합을 지문으로 사용
+  return (issue.akDetail || '') + '||' + (issue.tlDetail || '');
 }
-function _saveDismissedSet(s) {
-  localStorage.setItem(_DISMISS_KEY, JSON.stringify([...s]));
+function _getDismissedMap() {
+  // key → fp (Map)
+  try {
+    const stored = JSON.parse(localStorage.getItem(_DISMISS_KEY) || '[]');
+    const m = new Map();
+    for (const item of stored) {
+      if (typeof item === 'string') m.set(item, '');       // 구버전 호환
+      else if (item && item.key) m.set(item.key, item.fp || '');
+    }
+    return m;
+  } catch(e) { return new Map(); }
 }
-function dismissIssue(type, modelCode) {
-  const s = _getDismissedSet();
-  s.add(type + '|' + modelCode);
-  _saveDismissedSet(s);
+function _saveDismissedMap(m) {
+  localStorage.setItem(_DISMISS_KEY,
+    JSON.stringify([...m.entries()].map(([key, fp]) => ({ key, fp }))));
+}
+function _isIssueDismissed(issue, dismissedMap) {
+  const key = issue.type + '|' + issue.modelCode;
+  if (!dismissedMap.has(key)) return false;
+  const storedFp = dismissedMap.get(key);
+  if (!storedFp) return true;                              // 구버전 항목
+  return storedFp === _issueFP(issue);                    // 지문 일치해야 제외
+}
+function dismissIssue(issue) {
+  const m = _getDismissedMap();
+  m.set(issue.type + '|' + issue.modelCode, _issueFP(issue));
+  _saveDismissedMap(m);
 }
 function restoreAllDismissed() {
   if (!confirm('검토완료로 제외한 항목을 모두 복원하겠습니까?')) return;
   localStorage.removeItem(_DISMISS_KEY);
   showNormIssuesPopup();
 }
-function dismissAndRefreshNorm(type, modelCode) {
-  dismissIssue(type, modelCode);
+
+// 전역 이슈 맵 (onclick에서 issue 객체 참조용)
+let _normIssueMapFP = {};
+
+function _buildNormIssueMapFP() {
+  _normIssueMapFP = {};
+  (ACTIVE_NORM_ISSUES || []).forEach(i => { _normIssueMapFP[i.type + '|' + i.modelCode] = i; });
+  (NORM_ISSUES || []).forEach(i => { _normIssueMapFP[i.type + '|' + i.modelCode] = i; });
+}
+
+function dismissByKey(key) {
+  const issue = _normIssueMapFP[key];
+  if (issue) dismissIssue(issue);
+}
+function dismissAndRefreshNorm(key) {
+  dismissByKey(key);
   showNormIssuesPopup();
 }
-function dismissAndRefreshReport(type, modelCode) {
-  dismissIssue(type, modelCode);
+function dismissAndRefreshReport(key) {
+  dismissByKey(key);
   showParseReport();
 }
 
