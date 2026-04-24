@@ -1107,7 +1107,12 @@ function getCategories() {
 function renderCategoryList() {
   const el = document.getElementById('cat-list');
   const cats = getCategories();
-  const order = ['전체', '정수기', '공기청정기', '제습기', '가습기', '비데', '매트리스', '기타'];
+  const baseOrder = ['전체', '정수기', '공기청정기', '제습기', '가습기', '비데', '매트리스', '기타'];
+  // 쿠쿠: 정규화된 카테고리 중 baseOrder에 없는 것도 추가 표시
+  const extraCats = currentBrand === 'cuckoo'
+    ? Object.keys(cats).filter(c => c !== '전체' && !baseOrder.includes(c)).sort()
+    : [];
+  const order = [...baseOrder, ...extraCats];
   el.innerHTML = order.filter(c => cats[c]).map(c => `
     <button class="cat-btn ${state.category === c ? 'active' : ''}"
       onclick="selectCategory('${c}')">
