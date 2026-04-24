@@ -1243,7 +1243,7 @@ if __name__ == "__main__":
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"JSON 저장: {json_out}")
 
-    print(f"정규화 이슈: {len(normalization_issues)}건 (AK만: {sum(1 for x in normalization_issues if x['type']=='AK_ONLY')}건, TL만: {sum(1 for x in normalization_issues if x['type']=='TL_ONLY')}건, 부분: {sum(1 for x in normalization_issues if x['type']=='PARTIAL')}건)")
+    print(f"정규화 이슈: {len(normalization_issues)}건 (AK만: {sum(1 for x in normalization_issues if x['type']=='AK_ONLY')}건, TL만: {sum(1 for x in normalization_issues if x['type']=='TL_ONLY')}건, 부분: {sum(1 for x in normalization_issues if x['type']=='PARTIAL')}건, 의심: {sum(1 for x in normalization_issues if x['type']=='SUSPICIOUS_MATCH')}건, 제안: {sum(1 for x in normalization_issues if x['type']=='SUGGESTED_MATCH')}건)")
 
     # ── HTML 생성 ──
     tpl_path = os.path.join(base_dir, "렌탈수수료_템플릿.html")
