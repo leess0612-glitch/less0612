@@ -1312,6 +1312,8 @@ if __name__ == "__main__":
                 "akOnly": sum(1 for x in normalization_issues if x["type"] == "AK_ONLY"),
                 "tlOnly": sum(1 for x in normalization_issues if x["type"] == "TL_ONLY"),
                 "partial": sum(1 for x in normalization_issues if x["type"] == "PARTIAL"),
+                "suspicious": sum(1 for x in normalization_issues if x["type"] == "SUSPICIOUS_MATCH"),
+                "suggested": sum(1 for x in normalization_issues if x["type"] == "SUGGESTED_MATCH"),
             },
             "codeMismatches": len(code_mismatches),
             "lg": {
