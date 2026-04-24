@@ -1367,6 +1367,7 @@ if __name__ == "__main__":
                            .replace("__LG_AIR_DATA__", lg_air_js) \
                            .replace("__LG_WATER_NORM_ISSUES__", lg_water_norm_js) \
                            .replace("__LG_AIR_NORM_ISSUES__", lg_air_norm_js) \
+                           .replace("__CUCKOO_DATA__", cuckoo_js) \
                            .replace("__PARSE_REPORT__", pr_js)
 
         month_tag = data["metadata"].get("parsedAt", "")[:7].replace("-","")[2:]
