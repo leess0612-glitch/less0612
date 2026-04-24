@@ -1381,12 +1381,18 @@ function buildParseReportHtml(r) {
   // ── LG ──
   const lg = r.lg || {};
   if (lg.waterProducts !== undefined || lg.airProducts !== undefined) {
+    const lgNormIssues = BRAND_REGISTRY.lg.getNormIssues();
+    const lgNormItems = lgNormIssues.map(x => {
+      const p = _prFindProduct(x.modelCode);
+      return { code: x.modelCode, name: x.name || x.modelCode, id: p ? p.id : null };
+    });
     html += `<div class="pr-section">
       <div class="pr-section-title">LG전자</div>
       ${lg.waterSourceFile ? row('정수기 파일', lg.waterSourceFile) : ''}
       ${row('정수기 제품 수', (lg.waterProducts || 0) + '개')}
       ${lg.airSourceFile ? row('공청기 파일', lg.airSourceFile) : ''}
       ${row('공청기·제습기 제품 수', (lg.airProducts || 0) + '개')}
+      ${rowWithModels('미매칭 이슈', lgNormItems.length + '개', lgNormItems.length > 0 ? 'warn' : 'ok', lgNormItems)}
     </div>`;
   }
 
