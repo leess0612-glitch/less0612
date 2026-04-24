@@ -757,6 +757,8 @@ if __name__ == "__main__":
             if opt.get("managementType") == "" and not opt.get("isPackage") and not opt.get("source"):
                 for tl_prod in tl_prods_found:
                     for tl_opt in tl_prod.get("options", []):
+                        if tl_opt.get("isPackage"):  # 패키지 옵션은 managementType 보완에 사용 안 함
+                            continue
                         if tl_opt["contractYears"] * 12 == opt["contractMonths"]:
                             opt["managementType"] = tl_opt["managementType"]
                             break
