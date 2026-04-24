@@ -2235,10 +2235,11 @@ function buildCopyText() {
     mgmtLabel += (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).combineLabel(o);
 
     // 타사보상만 표기
-    const tasaStr = disc === '할인+타사' ? ' | 타사보상' : '';
+    const tasaStr = (disc === '할인+타사' || (currentBrand === 'cuckoo' && o.hasTasa)) ? ' | 타사보상' : '';
+    const promoStr = (currentBrand === 'cuckoo' && o.isPromo) ? ' | 반값할인' : '';
 
-    // 📍 관리방식 | 약정 | 타사보상
-    text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${tasaStr}\n`;
+    // 📍 관리방식 | 약정 | 타사보상/반값
+    text += `📍 ${mgmtLabel} | ${o.contractLabel} 약정${tasaStr}${promoStr}\n`;
 
     // 관리주기 (방문관리 시)
     const cycleFormatted = (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).visitCycleText(product, o);
