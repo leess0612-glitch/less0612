@@ -1342,24 +1342,45 @@ function dismissAndRefreshReport(type, modelCode) {
 }
 
 function showNormIssuesPopup() {
+  const dismissed = _getDismissedSet();
+  const allIssues = ACTIVE_NORM_ISSUES;
+  const visible = allIssues.filter(i => !dismissed.has(i.type + '|' + i.modelCode));
+  const dismissedCount = allIssues.length - visible.length;
+
   const tbody = document.getElementById('norm-issues-tbody');
-  tbody.innerHTML = ACTIVE_NORM_ISSUES.map(issue => {
-    const typeLabel = issue.type === 'AK_ONLY'
-      ? '<span class="ni-type-ak">AK만</span>'
-      : issue.type === 'MISSING_MGMT'
-      ? '<span class="ni-type-missing">관리방법없음</span>'
-      : issue.type === 'SUSPICIOUS_MATCH'
-      ? '<span class="ni-type-suspicious">의심매칭</span>'
-      : issue.type === 'SUGGESTED_MATCH'
-      ? '<span class="ni-type-suggested">제안매칭</span>'
-      : '<span class="ni-type-partial">일부불일치</span>';
-    return `<tr>
-      <td>${typeLabel} ${escHtml((issue.name||'').slice(0,16))}<br>
-        <span style="font-size:10px;color:var(--gray-400)">${escHtml(issue.modelCode||'')}</span></td>
-      <td>${escHtml(issue.akDetail||'')}</td>
-      <td>${escHtml(issue.tlDetail||'')}</td>
-    </tr>`;
-  }).join('');
+  if (visible.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;color:var(--gray-400);padding:20px 0;font-size:12px">검토 필요 항목 없음</td></tr>`;
+  } else {
+    tbody.innerHTML = visible.map(issue => {
+      const typeLabel = issue.type === 'AK_ONLY'
+        ? '<span class="ni-type-ak">AK만</span>'
+        : issue.type === 'MISSING_MGMT'
+        ? '<span class="ni-type-missing">관리방법없음</span>'
+        : issue.type === 'SUSPICIOUS_MATCH'
+        ? '<span class="ni-type-suspicious">의심매칭</span>'
+        : issue.type === 'SUGGESTED_MATCH'
+        ? '<span class="ni-type-suggested">제안매칭</span>'
+        : '<span class="ni-type-partial">일부불일치</span>';
+      const mc = escHtml(issue.modelCode || '');
+      const tp = escHtml(issue.type);
+      return `<tr>
+        <td>${typeLabel} ${escHtml((issue.name||'').slice(0,16))}<br>
+          <span style="font-size:10px;color:var(--gray-400)">${mc}</span></td>
+        <td>${escHtml(issue.akDetail||'')}</td>
+        <td>${escHtml(issue.tlDetail||'')}</td>
+        <td style="text-align:center"><button class="ni-dismiss-btn" onclick="dismissAndRefreshNorm('${tp}','${mc}')">제외</button></td>
+      </tr>`;
+    }).join('');
+  }
+
+  // 검토완료 카운트 표시
+  const infoEl = document.getElementById('ni-dismissed-info');
+  if (infoEl) {
+    infoEl.innerHTML = dismissedCount > 0
+      ? `검토완료 ${dismissedCount}건 · <button class="ni-restore-btn" onclick="restoreAllDismissed()">복원</button>`
+      : '';
+  }
+
   document.getElementById('norm-issues-popup').classList.add('show');
 }
 function closeNormIssuesPopup() {
