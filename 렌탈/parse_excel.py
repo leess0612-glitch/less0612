@@ -113,6 +113,44 @@ def clean_option_name(col4_raw, model_code):
     return s if s else ""
 
 # ─────────────────────────────────────────────
+# 복합 신뢰도 점수 유틸
+# ─────────────────────────────────────────────
+
+def _fee_fingerprint(options):
+    """옵션 리스트에서 (관리방식기반, 약정년수, 월요금) 집합 반환.
+    패키지·promo·사업자전용 옵션 제외.
+    """
+    result = set()
+    for o in options:
+        if o.get("isPackage") or o.get("isPromo") or o.get("isBizOnly"):
+            continue
+        mgmt = o.get("managementType", "") or ""
+        mgmt_base = re.sub(r'[+_].*', '', mgmt).strip()  # "방문관리" from "방문관리+타사보상"
+        years = o.get("contractYears") or (o.get("contractMonths", 0) // 12)
+        fee = o.get("monthlyFee", 0)
+        if years > 0 and fee > 0:
+            result.add((mgmt_base, years, fee))
+    return result
+
+
+def _code_lcp_score(code_a, code_b):
+    """두 모델코드의 공통 접두사(longest common prefix) 기반 유사도 (0.0~1.0).
+    정규화: 하이픈·공백 제거, 대문자 변환.
+    """
+    a = re.sub(r'[-\s]', '', str(code_a)).upper()
+    b = re.sub(r'[-\s]', '', str(code_b)).upper()
+    if not a or not b:
+        return 0.0
+    common = 0
+    for ca, cb in zip(a, b):
+        if ca == cb:
+            common += 1
+        else:
+            break
+    return common / max(len(a), len(b))
+
+
+# ─────────────────────────────────────────────
 # 단종 모델 목록
 # ─────────────────────────────────────────────
 DISCONTINUED_MODELS = set()  # 현재 단종 모델 없음 (KM720R/QM720R은 TL 미취급이나 단종 아님)
