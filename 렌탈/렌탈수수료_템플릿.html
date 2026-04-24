@@ -1306,10 +1306,13 @@ function headerSearchInput() {
   const allProducts = DB.products.map(p => ({ ...p, brandLabel: DB.metadata?.brand || 'SK매직' }));
 
   const lower = val.toLowerCase();
+  const valNorm = normSearch(val);
   const results = allProducts.filter(p =>
     p.name.includes(val) ||
     getDisplayName(p).includes(val) ||
-    (p.modelCode || '').toLowerCase().includes(lower)
+    (p.modelCode || '').toLowerCase().includes(lower) ||
+    normSearch(p.modelCode || '').includes(valNorm) ||
+    normSearch(getDisplayName(p)).includes(valNorm)
   ).slice(0, 14);
 
   if (!results.length) {
