@@ -1011,13 +1011,23 @@ if __name__ == "__main__":
         }
         for tl_opt in tl_product["options"]:
             tl_years = tl_opt["contractYears"]
-            mgmt = tl_opt["managementType"]
+            is_pkg = tl_opt.get("isPackage", False)
+            # managementType: TL에서 온 값 그대로 사용
+            # (패키지는 이미 "_패키지" suffix 포함, 타사보상은 hasTasa 플래그로 추가)
+            mgmt_base = tl_opt["managementType"]  # 예: "방문관리", "방문관리_패키지"
+            has_tasa = tl_opt.get("hasTasa", False)
+            # 타사보상이면 managementType에 "+타사보상" 추가 (HTML 판단 기준)
+            if has_tasa and "+타사보상" not in mgmt_base:
+                mgmt = mgmt_base.replace("_패키지", "") + "+타사보상" + ("_패키지" if is_pkg else "")
+            else:
+                mgmt = mgmt_base
             tl_only_entry["options"].append({
-                "label": f"{tl_years}년",
+                "contractLabel": f"{tl_years}년",   # Fix 1: label → contractLabel
                 "managementType": mgmt,
                 "contractMonths": tl_years * 12,
                 "contractYears": tl_years,
-                "hasTasa": tl_opt.get("hasTasa", False),
+                "hasTasa": has_tasa,
+                "isPackage": is_pkg,
                 "monthlyFee": tl_opt["monthlyFee"],
                 "baseCommission": 0,
                 "bonusCommission1": 0,
@@ -1026,7 +1036,7 @@ if __name__ == "__main__":
                 "recommendedOffice": "티엘",
                 "source": "TL",
                 "dataWarning": False,
-                "visitCycle": tl_vc_extracted if "방문" in mgmt else "",
+                "visitCycle": tl_vc_extracted if "방문" in mgmt and not is_pkg else "",
             })
         data["products"].append(tl_only_entry)
         normalization_issues.append({
