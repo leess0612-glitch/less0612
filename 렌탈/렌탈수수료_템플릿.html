@@ -1587,6 +1587,19 @@ function buildParseReportHtml(r) {
     ${_prDismissedFooter}
   </div>`;
 
+  // ── 쿠쿠 ──
+  const ck = r.cuckoo || {};
+  if (ck.products !== undefined) {
+    html += `<div class="pr-section">
+      <div class="pr-section-title">쿠쿠</div>
+      ${row('파일', ck.sourceFile || '-')}
+      ${row('제품 수', (ck.products || 0) + '개')}
+      ${row('옵션 수', (ck.options || 0) + '개')}
+      ${row('타사보상 옵션', (ck.tasaOptions || 0) + '건', ck.tasaOptions > 0 ? '' : 'ok')}
+      ${row('반값할인 옵션', (ck.promoOptions || 0) + '건', ck.promoOptions > 0 ? '' : 'ok')}
+    </div>`;
+  }
+
   // ── LG ──
   const lg = r.lg || {};
   if (lg.waterProducts !== undefined || lg.airProducts !== undefined) {
