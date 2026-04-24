@@ -2682,6 +2682,191 @@ function renderAirOptionArea(product) {
   </div>`;
 }
 
+// ══════════════════════════════════════════
+// ── 쿠쿠 데이터 변환 및 렌더 ──
+// ══════════════════════════════════════════
+
+let _CUCKOO_DB_CACHE = null;
+function getCuckooDb() {
+  if (!_CUCKOO_DB_CACHE) _CUCKOO_DB_CACHE = transformCuckooData(_CUCKOO_DB_RAW);
+  return _CUCKOO_DB_CACHE;
+}
+
+function transformCuckooData(raw) {
+  if (!raw || !raw.products) return { metadata: { brand: '쿠쿠', parsedAt: '' }, products: [] };
+
+  const promoOrder = o => o.hasTasa ? 0 : o.isPromo ? 1 : 2;
+
+  const products = raw.products.map(p => {
+    const options = [...p.options].sort((a, b) => {
+      const pa = promoOrder(a), pb = promoOrder(b);
+      if (pa !== pb) return pa - pb;
+      if ((a.isPackage ? 1 : 0) !== (b.isPackage ? 1 : 0)) return (a.isPackage ? 1 : 0) - (b.isPackage ? 1 : 0);
+      if (a.contractMonths !== b.contractMonths) return a.contractMonths - b.contractMonths;
+      return (a.managementType || '').localeCompare(b.managementType || '');
+    }).map(o => ({
+      contractMonths:  o.contractMonths,
+      contractLabel:   o.contractLabel,
+      managementType:  o.managementType,
+      visitCycle:      o.visitCycle || null,
+      isPackage:       !!o.isPackage,
+      packageType:     o.packageType || '',
+      hasTasa:         !!o.hasTasa,
+      isPromo:         !!o.isPromo,
+      monthlyFee:      o.monthlyFee || 0,
+      totalCommission: o.commission || 0,
+    }));
+    return {
+      id:        p.id || p.modelCode,
+      modelCode: p.modelCode,
+      name:      p.name,
+      category:  p.category || '기타',
+      options,
+    };
+  });
+
+  return {
+    metadata: {
+      brand:      '쿠쿠',
+      sheetTitle: (raw.metadata && raw.metadata.sheetName) || '쿠쿠',
+      parsedAt:   (raw.metadata && raw.metadata.parsedAt) || '',
+    },
+    products,
+  };
+}
+
+function renderQuickAccessCuckoo() {
+  const cats = {};
+  DB.products.forEach(p => {
+    if (!cats[p.category]) cats[p.category] = [];
+    cats[p.category].push(p);
+  });
+  const catOrder = ['정수기', '공기청정기', '비데', '청소기'];
+  const allCats = [...catOrder.filter(c => cats[c]),
+                   ...Object.keys(cats).filter(c => !catOrder.includes(c) && cats[c])];
+
+  const catHtml = allCats.map(cat => {
+    const prods = cats[cat] || [];
+    const btnHtml = prods.map(p => {
+      const normalOpts = p.options.filter(o => !o.isPackage && !o.isPromo);
+      const minFee = normalOpts.length
+        ? Math.min(...normalOpts.map(o => o.monthlyFee).filter(Boolean))
+        : null;
+      return `<button class="qa-prod-btn" onclick="selectProduct('${p.id}')">
+        <span class="qa-brand-tag">쿠쿠</span> ${escHtml(getDisplayName(p))}
+        ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
+        ${minFee ? `<div class="qa-min-price">최저 ${fmtNum(minFee)}원~</div>` : ''}
+      </button>`;
+    }).join('');
+    return `<div class="qa-brand-section">
+      <div class="qa-brand-title">${cat}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px">
+        ${btnHtml}
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="quick-access">
+    <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
+    ${catHtml}
+  </div>`;
+}
+
+// ── 쿠쿠 옵션 테이블 렌더 ──
+function renderCuckooOptionList(product) {
+  const opts = product.options;
+  if (!opts.length) return '<div class="empty-state" style="padding:24px"><p>옵션 없음</p></div>';
+
+  const hasVisit = opts.some(o => o.visitCycle);
+
+  // 약정 그룹 번호 매핑 (짝수=음영)
+  const contractGroupMap = {};
+  let contractGroupCounter = 0;
+  opts.forEach(o => {
+    const cm = o.contractMonths ?? '';
+    if (!(cm in contractGroupMap)) contractGroupMap[cm] = contractGroupCounter++;
+  });
+
+  let rowsHtml = '';
+  let prevPromoSection = null;
+  const pkgSepAddedFor = new Set();
+
+  opts.forEach(o => {
+    const key = getOptionKey(product.id, o);
+    const safeKey = key.replace(/[^a-zA-Z0-9]/g, '_');
+    const isSelected = state.selectedKeys.has(key);
+    const gift = getGift(o);
+    const realCost = Math.round(gift * 1.1);
+    const margin = o.totalCommission - realCost;
+    const marginClass = margin >= 0 ? 'margin-pos' : 'margin-neg';
+    const groupIdx = contractGroupMap[o.contractMonths ?? ''] ?? 0;
+    const shadeClass = (groupIdx % 2 === 0) ? 'mgmt-group-shade' : '';
+
+    const promoSection = o.hasTasa ? 'tasa' : o.isPromo ? 'promo' : 'basic';
+    const colCount = 2 + 1 + (hasVisit ? 1 : 0) + 1 + 1 + 1 + 1;
+
+    // 섹션 구분선 (타사보상 / 반값할인)
+    if (promoSection !== prevPromoSection) {
+      if (promoSection === 'tasa') {
+        rowsHtml += `<tr class="pkg-sep"><td colspan="${colCount}" class="sep-highlight">── 타사보상 ──</td></tr>`;
+      } else if (promoSection === 'promo') {
+        rowsHtml += `<tr class="pkg-sep"><td colspan="${colCount}" class="sep-highlight">── 반값할인 ──</td></tr>`;
+      }
+      prevPromoSection = promoSection;
+    }
+
+    // 패키지 구분선 (섹션 내 첫 번째 패키지 행)
+    if (o.isPackage && !pkgSepAddedFor.has(promoSection)) {
+      pkgSepAddedFor.add(promoSection);
+      rowsHtml += `<tr class="pkg-sep"><td colspan="${colCount}">── 패키지 (동일 브랜드 2개 이상) ──</td></tr>`;
+    }
+
+    // 관리방법 배지
+    const mgmt = o.managementType || '';
+    const mgmtBase = mgmt.includes('방문') ? '방문' : mgmt.includes('셀프') ? '자가' : mgmt.includes('관리없음') ? '관리없음' : '';
+    const mgmtBadgeClass = !mgmtBase ? 'mgmt-none' : `mgmt-${mgmtBase}`;
+    const mgmtDisplay = mgmt.replace('방문관리', '방문').replace('셀프관리', '셀프') || '-';
+
+    rowsHtml += `<tr id="row-${safeKey}" class="${isSelected ? 'row-selected' : ''} ${o.isPackage ? 'package-row' : ''} ${shadeClass}">
+      <td style="width:52px;padding-left:10px">
+        <button class="select-btn ${isSelected ? 'selected' : ''}"
+          onclick="event.stopPropagation(); toggleRow('${escHtml(key)}', '${safeKey}')"
+          id="selbtn-${safeKey}">${isSelected ? '해제' : '선택'}</button>
+      </td>
+      <td class="contract-cell">${o.contractLabel}</td>
+      <td><span class="mgmt-badge ${mgmtBadgeClass}">${mgmtDisplay}</span></td>
+      ${hasVisit ? `<td>${o.visitCycle || '-'}</td>` : ''}
+      <td class="fee-cell">${fmtNum(o.monthlyFee)}원</td>
+      <td onclick="event.stopPropagation()">
+        <input class="gift-input" type="text"
+          value="${fmtNum(gift)}"
+          data-key="${escHtml(key)}"
+          data-total="${o.totalCommission}"
+          data-safe="${safeKey}"
+          onchange="updateGift(this)"
+          onblur="this.value=fmtNum(getGiftByKey(this.dataset.key,parseInt(this.dataset.total)))">
+        <div class="cost-note-cell" id="cost-${safeKey}">×1.1 = ${fmtNum(realCost)}원</div>
+      </td>
+      <td class="margin-cell ${marginClass}" id="margin-${safeKey}">${fmtNum(margin)}원</td>
+      <td class="total-comm">${fmtNum(o.totalCommission)}원</td>
+    </tr>`;
+  });
+
+  return `<table class="options-table">
+    <thead><tr>
+      <th></th>
+      <th>약정</th>
+      <th>관리방법</th>
+      ${hasVisit ? '<th>방문주기</th>' : ''}
+      <th>월요금</th>
+      <th>현금사은품(수정가능)</th>
+      <th>실마진</th>
+      <th>수수료</th>
+    </tr></thead>
+    <tbody>${rowsHtml}</tbody>
+  </table>`;
+}
+
 function switchBrand(brand) {
   if (brand === currentBrand) return;
   currentBrand = brand;
