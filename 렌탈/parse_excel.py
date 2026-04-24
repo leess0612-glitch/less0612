@@ -1018,6 +1018,13 @@ if __name__ == "__main__":
                 "tlDetail": "티엘 파일에 해당 약정/관리방식 없음",
                 "reason": "일부 약정기간 또는 관리방식이 에이컴즈에만 존재"
             })
+        # 패키지 옵션 중 TL 매칭 없는 항목 → akOnlyOption 플래그
+        pkg_opts = [o for o in product["options"] if o.get("isPackage")]
+        has_tl_pkg = any(o.get("recommendedOffice") == "티엘" for o in pkg_opts)
+        if has_tl_pkg:
+            for o in pkg_opts:
+                if o.get("recommendedOffice") == "에이컴즈":
+                    o["akOnlyOption"] = True
 
     # ── TL 전용 제품 감지 ──
     # AK 제품이 참조한 TL 모델코드 수집
