@@ -3365,6 +3365,9 @@ function toggleTagMgr() {
   document.getElementById('tag-mgr-tab').classList.toggle('active', tagMgrOpen);
   if (tagMgrOpen) renderTagMgr();
 }
+function closeTagMgr() {
+  if (tagMgrOpen) toggleTagMgr();
+}
 
 // ── 태그 관리 테이블 렌더 ──
 function renderTagMgr() {
