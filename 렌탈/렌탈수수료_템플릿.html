@@ -810,6 +810,129 @@
   }
   .air-comm-ak { color: #1d4ed8; font-size: 11px; }
   .air-comm-tl { color: #166534; font-size: 11px; }
+
+  /* ── 설정 그룹 드롭다운 ── */
+  .settings-btn-group { position: relative; }
+  .settings-menu {
+    display: none;
+    position: absolute; top: calc(100% + 6px); right: 0;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.22);
+    min-width: 160px; z-index: 400; overflow: hidden;
+  }
+  .settings-menu.open { display: block; }
+  .settings-menu button {
+    display: block; width: 100%;
+    padding: 10px 16px; text-align: left;
+    border: none; background: none;
+    font-size: 13px; cursor: pointer;
+    font-family: inherit; color: var(--gray-800);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .settings-menu button:last-child { border-bottom: none; }
+  .settings-menu button:hover { background: var(--brand-light); color: var(--brand); }
+
+  /* ── 바로가기 설정 모달 ── */
+  #qa-settings-modal {
+    display: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,.45); z-index: 1000;
+    align-items: center; justify-content: center;
+  }
+  #qa-settings-modal.show { display: flex; }
+  .qa-settings-box {
+    background: #fff; border-radius: 10px;
+    padding: 22px 26px; width: 440px; max-width: 95vw;
+    max-height: 88vh; overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,.22);
+  }
+  .qa-settings-title {
+    font-size: 15px; font-weight: 700; color: var(--gray-800);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+  }
+  .qa-search-wrap {
+    position: relative; margin-bottom: 6px;
+  }
+  .qa-search-input {
+    width: 100%; padding: 7px 10px;
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    font-size: 13px; outline: none; font-family: inherit;
+  }
+  .qa-search-input:focus { border-color: var(--brand); }
+  .qa-search-results {
+    border: 1px solid var(--gray-200); border-radius: 6px;
+    max-height: 200px; overflow-y: auto;
+    margin-bottom: 14px; background: #fff;
+    display: none;
+  }
+  .qa-search-results.has-results { display: block; }
+  .qa-search-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px; border-bottom: 1px solid var(--gray-100);
+    font-size: 12px;
+  }
+  .qa-search-item:last-child { border-bottom: none; }
+  .qa-search-item .qa-si-name { flex: 1; color: var(--gray-800); font-weight: 600; }
+  .qa-search-item .qa-si-model { color: var(--gray-400); font-size: 10px; }
+  .qa-search-item button {
+    padding: 3px 10px; font-size: 11px; font-weight: 700;
+    border: 1px solid var(--brand); background: none; color: var(--brand);
+    border-radius: 4px; cursor: pointer; white-space: nowrap; font-family: inherit;
+    transition: background .12s;
+  }
+  .qa-search-item button:hover:not(:disabled) { background: var(--brand); color: #fff; }
+  .qa-search-item button:disabled { border-color: var(--gray-200); color: var(--gray-400); cursor: default; }
+  .qa-list-header {
+    font-size: 11px; font-weight: 700; color: var(--gray-600);
+    text-transform: uppercase; letter-spacing: .5px;
+    margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+  }
+  .qa-list-header .qa-list-count {
+    font-size: 10px; background: var(--gray-100); color: var(--gray-600);
+    padding: 1px 7px; border-radius: 10px; font-weight: 400;
+  }
+  .qa-settings-list {
+    min-height: 48px; margin-bottom: 14px;
+  }
+  .qa-settings-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px; border-radius: 6px;
+    background: var(--gray-50); margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .qa-settings-badge {
+    font-size: 11px; font-weight: 700; padding: 1px 5px;
+    border-radius: 3px; white-space: nowrap;
+    background: var(--brand); color: #fff; min-width: 22px; text-align: center;
+  }
+  .qa-settings-badge.secondary {
+    background: var(--gray-200); color: var(--gray-600);
+  }
+  .qa-si-info { flex: 1; min-width: 0; }
+  .qa-si-info .qa-si-name { font-weight: 600; color: var(--gray-800); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .qa-si-info .qa-si-model { font-size: 10px; color: var(--gray-400); }
+  .qa-remove-btn {
+    padding: 2px 8px; font-size: 11px;
+    border: 1px solid var(--gray-200); background: none; color: var(--gray-500);
+    border-radius: 4px; cursor: pointer; font-family: inherit;
+  }
+  .qa-remove-btn:hover { border-color: #f87171; color: #b91c1c; background: #fee2e2; }
+  .qa-empty-list { font-size: 12px; color: var(--gray-400); text-align: center; padding: 16px 0; }
+  .qa-hint { font-size: 11px; color: var(--gray-400); margin-bottom: 14px; }
+  .qa-settings-footer {
+    display: flex; gap: 8px; justify-content: flex-end; padding-top: 12px;
+    border-top: 1px solid var(--gray-200);
+  }
+  .qa-settings-footer button {
+    padding: 6px 16px; border-radius: 6px; cursor: pointer;
+    font-size: 12px; font-weight: 700; font-family: inherit;
+    border: 1px solid var(--gray-200); background: #fff; color: var(--gray-600);
+  }
+  .qa-settings-footer button:hover { background: var(--gray-100); }
+  .qa-settings-footer .qa-close-btn {
+    background: var(--brand); color: #fff; border-color: var(--brand);
+  }
+  .qa-settings-footer .qa-close-btn:hover { background: #0055b3; }
 </style>
 </head>
 <body>
