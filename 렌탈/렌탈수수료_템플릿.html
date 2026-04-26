@@ -2760,39 +2760,50 @@ function transformCuckooData(raw) {
 }
 
 function renderQuickAccessCuckoo() {
-  const cats = {};
-  DB.products.forEach(p => {
-    if (!cats[p.category]) cats[p.category] = [];
-    cats[p.category].push(p);
-  });
-  const catOrder = ['정수기', '공기청정기', '비데', '매트리스', '안마의자', '제습기'];
-  const allCats = [...catOrder.filter(c => cats[c]),
-                   ...Object.keys(cats).filter(c => !catOrder.includes(c) && cats[c]).sort()];
+  const PRIMARY_GROUPS = [
+    { type: '얼음정수기 ★',  filter: p => p.modelCode === 'CP-AHS100' },
+    { type: '직수형 미니 ★', filter: p => p.modelCode === 'CP-AMS100' },
+  ];
+  const SECONDARY_GROUPS = [
+    { type: '저수조형 탁상',  filter: p => p.modelCode === 'CP-FN603HW' },
+    { type: '저수조형 스탠드', filter: p => p.modelCode === 'CP-FN603SW' },
+  ];
 
-  const catHtml = allCats.map(cat => {
-    const prods = cats[cat] || [];
-    const btnHtml = prods.map(p => {
-      const normalOpts = p.options.filter(o => !o.isPackage && !o.isPromo);
-      const minFee = normalOpts.length
-        ? Math.min(...normalOpts.map(o => o.monthlyFee).filter(Boolean))
-        : null;
-      return `<button class="qa-prod-btn" onclick="selectProduct('${p.id}')">
-        <span class="qa-brand-tag">쿠쿠</span> ${escHtml(getDisplayName(p))}
-        ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
-        ${minFee ? `<div class="qa-min-price">최저 ${fmtNum(minFee)}원~</div>` : ''}
-      </button>`;
-    }).join('');
-    return `<div class="qa-brand-section">
-      <div class="qa-brand-title">${cat}</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px">
-        ${btnHtml}
-      </div>
-    </div>`;
-  }).join('');
+  function getMinFee(p) {
+    const opts = p.options.filter(o => o.hasTasa && !o.isPackage);
+    const base = opts.length ? opts : p.options.filter(o => !o.isPackage);
+    if (!base.length) return null;
+    return Math.min(...base.map(o => o.monthlyFee).filter(Boolean));
+  }
+
+  function makeColCuckoo(g, primary) {
+    const prods = DB.products.filter(g.filter);
+    const labelClass = primary ? 'qa-type-label primary' : 'qa-type-label';
+    const btnHtml = prods.length
+      ? prods.map(p => {
+          const minFee = getMinFee(p);
+          return `<button class="qa-prod-btn"
+            onclick="selectProduct('${p.id}')">
+            <span class="qa-brand-tag">쿠쿠</span> ${escHtml(getDisplayName(p))}
+            ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
+            ${minFee ? `<div class="qa-min-price">타사보상 최저 ${fmtNum(minFee)}원~</div>` : ''}
+          </button>`;
+        }).join('')
+      : `<div class="qa-empty">준비 중</div>`;
+    return `<div class="qa-type-col"><div class="${labelClass}">${g.type}</div>${btnHtml}</div>`;
+  }
+
+  const primaryHtml   = PRIMARY_GROUPS.map(g => makeColCuckoo(g, true)).join('');
+  const secondaryHtml = SECONDARY_GROUPS.map(g => makeColCuckoo(g, false)).join('');
 
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
-    ${catHtml}
+    <div class="qa-brand-section">
+      <div class="qa-section-header">주요 판매 제품</div>
+      <div class="qa-primary-grid">${primaryHtml}</div>
+      <div class="qa-section-header">기타 제품</div>
+      <div class="qa-secondary-grid">${secondaryHtml}</div>
+    </div>
   </div>`;
 }
 
