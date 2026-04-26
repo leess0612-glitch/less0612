@@ -1880,10 +1880,7 @@ function getBrandTag() {
   return BRAND_SHORT[full] || full;
 }
 
-// ── 빠른 바로가기 패널 ──
-function renderQuickAccess() {
-  return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
-}
+// ── 빠른 바로가기 패널 (renderQuickAccess는 바로가기 설정 섹션에 정의됨) ──
 
 function renderQuickAccessSk() {
   const PRIMARY_GROUPS = [
