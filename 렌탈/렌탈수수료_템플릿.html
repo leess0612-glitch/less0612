@@ -1015,6 +1015,29 @@
   </div>
 </div>
 
+<!-- 바로가기 설정 모달 -->
+<div id="qa-settings-modal">
+  <div class="qa-settings-box">
+    <div class="qa-settings-title">📌 바로가기 설정 — <span id="qa-brand-label"></span></div>
+    <div class="qa-search-wrap">
+      <input type="text" class="qa-search-input" id="qa-search-input"
+        placeholder="🔍 제품명 또는 모델코드 검색..."
+        oninput="qaSearchInput()" autocomplete="off">
+    </div>
+    <div class="qa-search-results" id="qa-search-results"></div>
+    <div class="qa-list-header">
+      현재 바로가기
+      <span class="qa-list-count" id="qa-list-count">0 / 6</span>
+    </div>
+    <div class="qa-hint">앞 2개 = 주요 제품(크게 표시), 나머지 = 기타 제품</div>
+    <div class="qa-settings-list" id="qa-settings-list"></div>
+    <div class="qa-settings-footer">
+      <button onclick="resetQuickAccess()">기본값으로 초기화</button>
+      <button class="qa-close-btn" onclick="closeQaSettings()">닫기</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <!-- 정규화 이슈 팝업 (오늘 다시 보지 않기 지원) -->
