@@ -3099,6 +3099,205 @@ function switchBrand(brand) {
 }
 
 // ══════════════════════════════════════════
+// ── 설정 드롭다운 ──
+// ══════════════════════════════════════════
+
+function toggleSettingsMenu() {
+  const menu = document.getElementById('settings-menu');
+  const isOpen = menu.classList.contains('open');
+  menu.classList.toggle('open', !isOpen);
+  document.getElementById('tag-mgr-tab').classList.toggle('active', !isOpen);
+}
+function closeSettingsMenu() {
+  document.getElementById('settings-menu').classList.remove('open');
+  // active 클래스는 태그관리 페이지가 열렸을 때만 유지
+  if (!tagMgrOpen) document.getElementById('tag-mgr-tab').classList.remove('active');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.settings-btn-group')) closeSettingsMenu();
+});
+
+function openTagMgr() {
+  if (!tagMgrOpen) toggleTagMgr();
+}
+
+// ══════════════════════════════════════════
+// ── 바로가기 설정 ──
+// ══════════════════════════════════════════
+
+function _qaKey(brand) { return `rentalQuickAccess_${brand}`; }
+
+function getQuickAccessIds(brand) {
+  try {
+    const s = localStorage.getItem(_qaKey(brand));
+    return s ? JSON.parse(s) : null;   // null = 기본값 사용
+  } catch { return null; }
+}
+
+function saveQuickAccessIds(brand, ids) {
+  if (!ids || !ids.length) {
+    localStorage.removeItem(_qaKey(brand));
+  } else {
+    localStorage.setItem(_qaKey(brand), JSON.stringify(ids));
+  }
+}
+
+function showQaSettings() {
+  const bReg = BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk;
+  document.getElementById('qa-brand-label').textContent = bReg.label;
+  document.getElementById('qa-search-input').value = '';
+  document.getElementById('qa-search-results').innerHTML = '';
+  document.getElementById('qa-search-results').classList.remove('has-results');
+  renderQaSettingsList();
+  document.getElementById('qa-settings-modal').classList.add('show');
+}
+
+function closeQaSettings() {
+  document.getElementById('qa-settings-modal').classList.remove('show');
+  if (!state.productId) renderMain();  // 홈 화면이면 바로가기 갱신
+}
+
+function renderQaSettingsList() {
+  const ids  = getQuickAccessIds(currentBrand) || [];
+  const list = document.getElementById('qa-settings-list');
+  const countEl = document.getElementById('qa-list-count');
+  if (countEl) countEl.textContent = `${ids.length} / 6`;
+
+  if (!ids.length) {
+    list.innerHTML = '<div class="qa-empty-list">등록된 바로가기 없음<br><small>기본값을 사용 중입니다</small></div>';
+    return;
+  }
+
+  list.innerHTML = ids.map((id, idx) => {
+    const p = DB.products.find(x => x.id === id);
+    const name = p ? escHtml(getDisplayName(p)) : escHtml(id);
+    const model = p ? escHtml(p.modelCode || '') : '';
+    const isPrimary = idx < 2;
+    const badge = isPrimary
+      ? '<span class="qa-settings-badge">주요</span>'
+      : '<span class="qa-settings-badge secondary">기타</span>';
+    return `<div class="qa-settings-item">
+      ${badge}
+      <div class="qa-si-info">
+        <div class="qa-si-name">${name}</div>
+        ${model ? `<div class="qa-si-model">${model}</div>` : ''}
+      </div>
+      <button class="qa-remove-btn" onclick="removeQaItem('${escHtml(id)}')">제거</button>
+    </div>`;
+  }).join('');
+}
+
+function addQaItem(id) {
+  const ids = getQuickAccessIds(currentBrand) || [];
+  if (ids.includes(id)) { showToast('이미 추가된 제품입니다'); return; }
+  if (ids.length >= 6)  { showToast('최대 6개까지 등록 가능합니다'); return; }
+  ids.push(id);
+  saveQuickAccessIds(currentBrand, ids);
+  renderQaSettingsList();
+  qaSearchInput();  // 결과 목록 상태(추가됨) 갱신
+}
+
+function removeQaItem(id) {
+  const ids = (getQuickAccessIds(currentBrand) || []).filter(x => x !== id);
+  saveQuickAccessIds(currentBrand, ids);
+  renderQaSettingsList();
+  qaSearchInput();
+}
+
+function resetQuickAccess() {
+  if (!confirm('바로가기를 기본값으로 초기화하겠습니까?')) return;
+  localStorage.removeItem(_qaKey(currentBrand));
+  renderQaSettingsList();
+  qaSearchInput();
+}
+
+function qaSearchInput() {
+  const val = document.getElementById('qa-search-input').value.trim();
+  const resultsEl = document.getElementById('qa-search-results');
+  if (!val) {
+    resultsEl.innerHTML = '';
+    resultsEl.classList.remove('has-results');
+    return;
+  }
+  const lower   = val.toLowerCase();
+  const valNorm = normSearch(val);
+  const results = DB.products.filter(p =>
+    p.name.toLowerCase().includes(lower) ||
+    getDisplayName(p).toLowerCase().includes(lower) ||
+    (p.modelCode || '').toLowerCase().includes(lower) ||
+    normSearch(p.modelCode || '').includes(valNorm)
+  ).slice(0, 8);
+
+  const ids = getQuickAccessIds(currentBrand) || [];
+  if (!results.length) {
+    resultsEl.innerHTML = '<div style="color:var(--gray-400);font-size:12px;padding:10px 12px">검색 결과 없음</div>';
+    resultsEl.classList.add('has-results');
+    return;
+  }
+  resultsEl.innerHTML = results.map(p => {
+    const already = ids.includes(p.id);
+    return `<div class="qa-search-item">
+      <div style="flex:1;min-width:0">
+        <div class="qa-si-name">${escHtml(getDisplayName(p))}</div>
+        <div class="qa-si-model">${escHtml(p.modelCode || '')}</div>
+      </div>
+      <button onclick="addQaItem('${escHtml(p.id)}')" ${already ? 'disabled' : ''}>
+        ${already ? '추가됨' : '+ 추가'}
+      </button>
+    </div>`;
+  }).join('');
+  resultsEl.classList.add('has-results');
+}
+
+// ── 바로가기 공통 렌더 (커스텀 우선, 없으면 브랜드 기본값) ──
+function renderQuickAccess() {
+  const ids = getQuickAccessIds(currentBrand);
+  if (ids && ids.length > 0) {
+    return renderCustomQuickAccess(ids);
+  }
+  return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
+}
+
+function renderCustomQuickAccess(ids) {
+  const prods = ids.map(id => DB.products.find(p => p.id === id)).filter(Boolean);
+  if (!prods.length) return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
+
+  function minFee(p) {
+    // 타사보상 있으면 타사보상 기준, 없으면 전체 비패키지 기준
+    const base = p.options.filter(o => !o.isPackage && (o.hasTasa || (!p.options.some(x => x.hasTasa) && !o.isPromo)));
+    const src  = base.length ? base : p.options.filter(o => !o.isPackage);
+    if (!src.length) return null;
+    return Math.min(...src.map(o => o.monthlyFee).filter(Boolean));
+  }
+
+  function makeBtn(p, primary) {
+    const fee = minFee(p);
+    return `<div class="qa-type-col">
+      <button class="qa-prod-btn" onclick="selectProduct('${p.id}')">
+        <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
+        ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
+        ${fee ? `<div class="qa-min-price">최저 ${fmtNum(fee)}원~</div>` : ''}
+      </button>
+    </div>`;
+  }
+
+  const primary   = prods.slice(0, 2);
+  const secondary = prods.slice(2, 6);
+
+  const primaryHtml   = primary.map(p => makeBtn(p, true)).join('');
+  const secondaryHtml = secondary.map(p => makeBtn(p, false)).join('');
+
+  return `<div class="quick-access">
+    <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
+    <div class="qa-brand-section">
+      <div class="qa-section-header">주요 판매 제품</div>
+      <div class="qa-primary-grid">${primaryHtml}</div>
+      ${secondary.length ? `<div class="qa-section-header">기타 제품</div><div class="qa-secondary-grid">${secondaryHtml}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════
 // ── 태그 관리 ──
 // ══════════════════════════════════════════
 
