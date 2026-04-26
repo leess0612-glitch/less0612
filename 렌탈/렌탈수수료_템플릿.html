@@ -957,7 +957,13 @@
     <div class="brand-tab" style="opacity:.5;cursor:default;" title="준비 중">청호</div>
   </div>
   <div class="tag-mgr-tab" id="norm-issues-tab" onclick="showNormIssuesPopup()" title="매칭 미완료 항목 보기" style="background:rgba(185,28,28,.25);border-color:rgba(255,150,150,.5)">⚠ 매칭확인</div>
-  <div class="tag-mgr-tab" id="tag-mgr-tab" onclick="toggleTagMgr()">⚙ 태그 관리</div>
+  <div class="settings-btn-group">
+    <div class="tag-mgr-tab" id="tag-mgr-tab" onclick="toggleSettingsMenu()">⚙ 설정</div>
+    <div class="settings-menu" id="settings-menu">
+      <button onclick="showQaSettings(); closeSettingsMenu()">📌 바로가기 설정</button>
+      <button onclick="openTagMgr(); closeSettingsMenu()">🏷 태그 관리</button>
+    </div>
+  </div>
   <button class="report-icon-btn" onclick="showParseReport()" title="파싱 결과 리포트">📋 파싱 리포트</button>
 </header>
 
