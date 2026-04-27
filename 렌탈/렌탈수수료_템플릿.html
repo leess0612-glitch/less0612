@@ -1158,17 +1158,11 @@ const BRAND_REGISTRY = {
     skipKey:        'normIssuesSkipDay_cuckoo',
     homepageUrl:    'https://www.cuchen.com/rental/main.do',
     homepageLabel:  '🔗 쿠쿠 공홈',
-    quickAccess:    () => renderQuickAccessCuckoo(),
     getProductPopup: (product) => null,
     clipboardLabel: (product) => '쿠쿠',
     visitCycleText: (product, option) =>
       option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
     combineLabel:   (option) => '',
-    defaultQaIds:   () => {
-      const db = getCuckooDb().products;
-      return ['CP-AHS100', 'CP-AMS100', 'CP-FN603HW', 'CP-FN603SW']
-        .filter(id => db.some(p => p.id === id));
-    },
   },
 };
 
