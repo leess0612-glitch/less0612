@@ -1127,21 +1127,10 @@ const BRAND_REGISTRY = {
     skipKey:        'normIssuesSkipDay_sk',
     homepageUrl:    'https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&goodsFilterList=6&menuNo=100104',
     homepageLabel:  '🔗 SK매직 공홈',
-    quickAccess:    () => renderQuickAccessSk(),
     getProductPopup: (product) => null,
     clipboardLabel: (product) => 'SK매직',
     visitCycleText: (product, option) => formatVisitCycle(product.visitCycleInfo || ''),
     combineLabel:   (option) => '',
-    defaultQaIds:   () => {
-      const db = _SK_DB.products;
-      const find = f => db.find(f);
-      return [
-        find(p => p.category==='정수기' && p.name.includes('원코크') && p.name.includes('플러스')),
-        find(p => p.category==='정수기' && p.name.includes('초소형') && p.name.includes('플러스')),
-        find(p => p.category==='정수기' && p.name.includes('에코미니')),
-        find(p => p.category==='정수기' && p.name.includes('스탠드')),
-      ].filter(Boolean).map(p => p.id);
-    },
   },
   lg: {
     label:          'LG전자',
