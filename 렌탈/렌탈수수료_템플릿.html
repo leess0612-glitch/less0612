@@ -2930,22 +2930,35 @@ function openTagMgr() {
 // ══════════════════════════════════════════
 // ── 바로가기 설정 ──
 // ══════════════════════════════════════════
+// 저장 형식: [{id, label}, ...] (label = 표시명, 예: "얼음정수기 ★")
+// 이전 형식 [id, ...] 은 자동 마이그레이션
 
 function _qaKey(brand) { return `rentalQuickAccess_${brand}`; }
 
-function getQuickAccessIds(brand) {
+function getQuickAccessEntries(brand) {
   try {
     const s = localStorage.getItem(_qaKey(brand));
-    return s ? JSON.parse(s) : null;   // null = 기본값 사용
+    if (!s) return null;
+    const parsed = JSON.parse(s);
+    if (!Array.isArray(parsed) || !parsed.length) return null;
+    // 이전 형식 [id, ...] 마이그레이션
+    if (typeof parsed[0] === 'string') return parsed.map(id => ({ id, label: '' }));
+    return parsed;
   } catch { return null; }
 }
 
-function saveQuickAccessIds(brand, ids) {
-  if (!ids || !ids.length) {
+function saveQuickAccessEntries(brand, entries) {
+  if (!entries || !entries.length) {
     localStorage.removeItem(_qaKey(brand));
   } else {
-    localStorage.setItem(_qaKey(brand), JSON.stringify(ids));
+    localStorage.setItem(_qaKey(brand), JSON.stringify(entries));
   }
+}
+
+// ids 배열만 필요한 곳에서 사용 (검색결과 "추가됨" 체크 등)
+function getQuickAccessIds(brand) {
+  const e = getQuickAccessEntries(brand);
+  return e ? e.map(x => x.id) : null;
 }
 
 function showQaSettings() {
@@ -2960,23 +2973,23 @@ function showQaSettings() {
 
 function closeQaSettings() {
   document.getElementById('qa-settings-modal').classList.remove('show');
-  if (!state.productId) renderMain();  // 홈 화면이면 바로가기 갱신
+  if (!state.productId) renderMain();
 }
 
 function renderQaSettingsList() {
-  const ids  = getQuickAccessIds(currentBrand) || [];
-  const list = document.getElementById('qa-settings-list');
+  const entries = getQuickAccessEntries(currentBrand) || [];
+  const list    = document.getElementById('qa-settings-list');
   const countEl = document.getElementById('qa-list-count');
-  if (countEl) countEl.textContent = `${ids.length} / 6`;
+  if (countEl) countEl.textContent = `${entries.length} / 6`;
 
-  if (!ids.length) {
-    list.innerHTML = '<div class="qa-empty-list">등록된 바로가기가 없습니다<br><small>아래 검색창에서 제품을 추가하세요</small></div>';
+  if (!entries.length) {
+    list.innerHTML = '<div class="qa-empty-list">등록된 바로가기가 없습니다<br><small>위 검색창에서 제품을 추가하세요</small></div>';
     return;
   }
 
-  list.innerHTML = ids.map((id, idx) => {
-    const p = DB.products.find(x => x.id === id);
-    const name = p ? escHtml(getDisplayName(p)) : escHtml(id);
+  list.innerHTML = entries.map(({ id, label }, idx) => {
+    const p     = DB.products.find(x => x.id === id);
+    const name  = p ? escHtml(getDisplayName(p)) : escHtml(id);
     const model = p ? escHtml(p.modelCode || '') : '';
     const isPrimary = idx < 2;
     const badge = isPrimary
@@ -2984,6 +2997,9 @@ function renderQaSettingsList() {
       : '<span class="qa-settings-badge secondary">기타</span>';
     return `<div class="qa-settings-item">
       ${badge}
+      <input class="qa-label-input" type="text" value="${escHtml(label)}"
+        placeholder="표시명..." title="바로가기 패널에 표시될 유형명 (예: 얼음정수기 ★)"
+        onchange="updateQaLabel('${escHtml(id)}', this.value)">
       <div class="qa-si-info">
         <div class="qa-si-name">${name}</div>
         ${model ? `<div class="qa-si-model">${model}</div>` : ''}
@@ -2994,20 +3010,28 @@ function renderQaSettingsList() {
 }
 
 function addQaItem(id) {
-  const ids = getQuickAccessIds(currentBrand) || [];
-  if (ids.includes(id)) { showToast('이미 추가된 제품입니다'); return; }
-  if (ids.length >= 6)  { showToast('최대 6개까지 등록 가능합니다'); return; }
-  ids.push(id);
-  saveQuickAccessIds(currentBrand, ids);
+  const entries = getQuickAccessEntries(currentBrand) || [];
+  if (entries.some(e => e.id === id)) { showToast('이미 추가된 제품입니다'); return; }
+  if (entries.length >= 6)            { showToast('최대 6개까지 등록 가능합니다'); return; }
+  entries.push({ id, label: '' });
+  saveQuickAccessEntries(currentBrand, entries);
   renderQaSettingsList();
-  qaSearchInput();  // 결과 목록 상태(추가됨) 갱신
+  qaSearchInput();
 }
 
 function removeQaItem(id) {
-  const ids = (getQuickAccessIds(currentBrand) || []).filter(x => x !== id);
-  saveQuickAccessIds(currentBrand, ids);
+  const entries = (getQuickAccessEntries(currentBrand) || []).filter(e => e.id !== id);
+  saveQuickAccessEntries(currentBrand, entries);
   renderQaSettingsList();
   qaSearchInput();
+}
+
+function updateQaLabel(id, newLabel) {
+  const entries = getQuickAccessEntries(currentBrand) || [];
+  const entry = entries.find(e => e.id === id);
+  if (entry) entry.label = newLabel.trim();
+  saveQuickAccessEntries(currentBrand, entries);
+  if (!state.productId) renderMain();
 }
 
 function resetQuickAccess() {
