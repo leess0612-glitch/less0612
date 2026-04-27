@@ -1140,7 +1140,6 @@ const BRAND_REGISTRY = {
     skipKey:        'normIssuesSkipDay_lg',
     homepageUrl:    'https://www.lge.co.kr/category/care-solutions/water-purifiers',
     homepageLabel:  '🔗 LG전자 공홈',
-    quickAccess:    () => renderQuickAccessLg(),
     getProductPopup: (product) => {
       const opt = product.options.find(o => o.lgPopup || o.lgAirPopup);
       if (!opt) return null;
@@ -1150,15 +1149,6 @@ const BRAND_REGISTRY = {
     visitCycleText: (product, option) =>
       option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
     combineLabel:   (option) => option.lgCombineType ? ` | ${option.lgCombineType}` : '',
-    defaultQaIds:   () => {
-      const db = getLgMergedDb().products;
-      return [
-        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD722R')),
-        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD523V')),
-        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD120M')),
-        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WS511SH')),
-      ].filter(Boolean).map(p => p.id);
-    },
   },
   cuckoo: {
     label:          '쿠쿠',
