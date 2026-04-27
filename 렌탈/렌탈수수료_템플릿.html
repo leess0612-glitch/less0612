@@ -3081,9 +3081,8 @@ function qaSearchInput() {
 
 // ── 바로가기 공통 렌더 ──
 function renderQuickAccess() {
-  const ids = getQuickAccessIds(currentBrand);
-  if (ids && ids.length > 0) return renderCustomQuickAccess(ids);
-  // 설정된 바로가기 없음 → 빈 안내 화면
+  const entries = getQuickAccessEntries(currentBrand);
+  if (entries && entries.length > 0) return renderCustomQuickAccess(entries);
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
     <div class="qa-brand-section">
@@ -3094,27 +3093,28 @@ function renderQuickAccess() {
   </div>`;
 }
 
-function renderCustomQuickAccess(ids) {
-  const prods = ids.map(id => DB.products.find(p => p.id === id)).filter(Boolean);
-  if (!prods.length) return renderQuickAccess();
+function renderCustomQuickAccess(entries) {
+  const pairs = entries
+    .map(({ id, label }) => ({ p: DB.products.find(x => x.id === id), label }))
+    .filter(({ p }) => p);
+  if (!pairs.length) return renderQuickAccess();
 
-  // 약정별 최저 월요금 (방문/셀프 구분, 5년 우선)
+  // 5년(60개월) 기준 방문/셀프 최저 월요금
   function getPrices(p) {
     const allOpts = p.options.filter(o => !o.isPackage && !o.isPromo);
-    // 5년(60개월) 또는 contractYears===5 기준 먼저, 없으면 최장 약정 기준
     const cm60 = allOpts.filter(o =>
-      (o.contractMonths === 60) || (o.contractYears === 5 && !o.contractMonths)
+      o.contractMonths === 60 || (o.contractYears === 5 && !o.contractMonths)
     );
     const src = cm60.length ? cm60 : allOpts;
     if (!src.length) return { 방문: null, 셀프: null };
-    const fmt = (arr) => arr.length
-      ? arr.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b).monthlyFee
-      : null;
-    const b = fmt(src.filter(o => (o.managementType || '').includes('방문')));
-    const s = fmt(src.filter(o =>
-      (o.managementType || '').includes('셀프') || (o.managementType || '').includes('자가')
-    ));
-    return { 방문: b, 셀프: s };
+    const minOf = arr => arr.length
+      ? arr.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b).monthlyFee : null;
+    return {
+      방문: minOf(src.filter(o => (o.managementType || '').includes('방문'))),
+      셀프: minOf(src.filter(o =>
+        (o.managementType || '').includes('셀프') || (o.managementType || '').includes('자가')
+      )),
+    };
   }
 
   function priceHtml(p) {
@@ -3127,8 +3127,12 @@ function renderCustomQuickAccess(ids) {
     return `<div class="qa-min-price">${parts.map(s => `5년 · ${s}`).join('<br>')}</div>`;
   }
 
-  function makeBtn(p, primary) {
+  function makeCol({ p, label }, primary) {
+    const labelHtml = label
+      ? `<div class="${primary ? 'qa-type-label primary' : 'qa-type-label'}">${escHtml(label)}</div>`
+      : '';
     return `<div class="qa-type-col">
+      ${labelHtml}
       <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}" onclick="selectProduct('${p.id}')">
         <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
         ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
@@ -3137,11 +3141,11 @@ function renderCustomQuickAccess(ids) {
     </div>`;
   }
 
-  const primary   = prods.slice(0, 2);
-  const secondary = prods.slice(2, 6);
+  const primary   = pairs.slice(0, 2);
+  const secondary = pairs.slice(2, 6);
 
-  const primaryHtml   = primary.map(p => makeBtn(p, true)).join('');
-  const secondaryHtml = secondary.map(p => makeBtn(p, false)).join('');
+  const primaryHtml   = primary.map(pair => makeCol(pair, true)).join('');
+  const secondaryHtml = secondary.map(pair => makeCol(pair, false)).join('');
 
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
