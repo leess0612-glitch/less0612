@@ -3107,7 +3107,7 @@ function renderQuickAccess() {
 
 function renderCustomQuickAccess(entries) {
   const pairs = entries
-    .map(({ id, label }) => ({ p: DB.products.find(x => x.id === id), label }))
+    .map(({ id, label, primary }) => ({ p: DB.products.find(x => x.id === id), label, primary: !!primary }))
     .filter(({ p }) => p);
   if (!pairs.length) return renderQuickAccess();
 
