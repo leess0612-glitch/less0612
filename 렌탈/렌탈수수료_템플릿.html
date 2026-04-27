@@ -3160,6 +3160,11 @@ function saveQuickAccessIds(brand, ids) {
 
 function showQaSettings() {
   const bReg = BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk;
+  // localStorage가 비어있으면 브랜드 기본값으로 자동 초기화
+  if (getQuickAccessIds(currentBrand) === null && bReg.defaultQaIds) {
+    const ids = bReg.defaultQaIds();
+    if (ids.length) saveQuickAccessIds(currentBrand, ids);
+  }
   document.getElementById('qa-brand-label').textContent = bReg.label;
   document.getElementById('qa-search-input').value = '';
   document.getElementById('qa-search-results').innerHTML = '';
