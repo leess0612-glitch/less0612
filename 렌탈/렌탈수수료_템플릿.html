@@ -3194,7 +3194,7 @@ function removeQaItem(id) {
 }
 
 function resetQuickAccess() {
-  if (!confirm('바로가기를 기본값으로 초기화하겠습니까?')) return;
+  if (!confirm('바로가기 목록을 모두 삭제하겠습니까?')) return;
   localStorage.removeItem(_qaKey(currentBrand));
   renderQaSettingsList();
   qaSearchInput();
