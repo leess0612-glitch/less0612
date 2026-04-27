@@ -3168,8 +3168,8 @@ function renderCustomQuickAccess(entries) {
     return `<div class="qa-type-col">${labelHtml}${btns}</div>`;
   }
 
-  const primary   = pairs.slice(0, 2);
-  const secondary = pairs.slice(2, 6);
+  const primary   = pairs.filter(pair => pair.primary);
+  const secondary = pairs.filter(pair => !pair.primary);
 
   const primaryHtml   = groupByLabel(primary).map(g => makeCol(g, true)).join('');
   const secondaryHtml = groupByLabel(secondary).map(g => makeCol(g, false)).join('');
