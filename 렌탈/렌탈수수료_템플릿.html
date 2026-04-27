@@ -2988,14 +2988,13 @@ function renderQaSettingsList() {
     return;
   }
 
-  list.innerHTML = entries.map(({ id, label }, idx) => {
+  list.innerHTML = entries.map(({ id, label, primary }) => {
     const p     = DB.products.find(x => x.id === id);
     const name  = p ? escHtml(getDisplayName(p)) : escHtml(id);
     const model = p ? escHtml(p.modelCode || '') : '';
-    const isPrimary = idx < 2;
-    const badge = isPrimary
-      ? '<span class="qa-settings-badge">주요</span>'
-      : '<span class="qa-settings-badge secondary">기타</span>';
+    const badge = primary
+      ? `<button class="qa-settings-badge" onclick="toggleQaPrimary('${escHtml(id)}')" title="클릭하면 기타로 변경">주요</button>`
+      : `<button class="qa-settings-badge secondary" onclick="toggleQaPrimary('${escHtml(id)}')" title="클릭하면 주요로 변경">기타</button>`;
     return `<div class="qa-settings-item">
       ${badge}
       <input class="qa-label-input" type="text" value="${escHtml(label)}"
