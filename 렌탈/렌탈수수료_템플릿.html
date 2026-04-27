@@ -3127,25 +3127,40 @@ function renderCustomQuickAccess(entries) {
     return `<div class="qa-min-price">${parts.map(s => `5년 · ${s}`).join('<br>')}</div>`;
   }
 
-  function makeCol({ p, label }, primary) {
-    const labelHtml = label
-      ? `<div class="${primary ? 'qa-type-label primary' : 'qa-type-label'}">${escHtml(label)}</div>`
+  function makeBtn(p, primary) {
+    return `<button class="qa-prod-btn ${primary ? 'primary-prod' : ''}" onclick="selectProduct('${p.id}')">
+      <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
+      ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
+      ${priceHtml(p)}
+    </button>`;
+  }
+
+  // 같은 라벨끼리 한 컬럼으로 묶기 (라벨 없는 것은 각각 별도 컬럼)
+  function groupByLabel(pairList) {
+    const groups = [];
+    pairList.forEach(pair => {
+      if (pair.label) {
+        const exist = groups.find(g => g.label === pair.label);
+        if (exist) { exist.items.push(pair); return; }
+      }
+      groups.push({ label: pair.label, items: [pair] });
+    });
+    return groups;
+  }
+
+  function makeCol(group, primary) {
+    const labelHtml = group.label
+      ? `<div class="${primary ? 'qa-type-label primary' : 'qa-type-label'}">${escHtml(group.label)}</div>`
       : '';
-    return `<div class="qa-type-col">
-      ${labelHtml}
-      <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}" onclick="selectProduct('${p.id}')">
-        <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
-        ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
-        ${priceHtml(p)}
-      </button>
-    </div>`;
+    const btns = group.items.map(({ p }) => makeBtn(p, primary)).join('');
+    return `<div class="qa-type-col">${labelHtml}${btns}</div>`;
   }
 
   const primary   = pairs.slice(0, 2);
   const secondary = pairs.slice(2, 6);
 
-  const primaryHtml   = primary.map(pair => makeCol(pair, true)).join('');
-  const secondaryHtml = secondary.map(pair => makeCol(pair, false)).join('');
+  const primaryHtml   = groupByLabel(primary).map(g => makeCol(g, true)).join('');
+  const secondaryHtml = groupByLabel(secondary).map(g => makeCol(g, false)).join('');
 
   return `<div class="quick-access">
     <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
