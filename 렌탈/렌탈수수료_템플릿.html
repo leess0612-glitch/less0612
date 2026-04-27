@@ -919,6 +919,13 @@
   .qa-remove-btn:hover { border-color: #f87171; color: #b91c1c; background: #fee2e2; }
   .qa-empty-list { font-size: 12px; color: var(--gray-400); text-align: center; padding: 16px 0; }
   .qa-hint { font-size: 11px; color: var(--gray-400); margin-bottom: 14px; }
+  .qa-label-input {
+    width: 80px; padding: 3px 6px; font-size: 11px; font-family: inherit;
+    border: 1px solid var(--gray-200); border-radius: 4px; outline: none;
+    background: #fff; color: var(--gray-800); flex-shrink: 0;
+  }
+  .qa-label-input:focus { border-color: var(--brand); }
+  .qa-label-input::placeholder { color: var(--gray-300); }
   .qa-settings-footer {
     display: flex; gap: 8px; justify-content: flex-end; padding-top: 12px;
     border-top: 1px solid var(--gray-200);
