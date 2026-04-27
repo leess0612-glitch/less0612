@@ -3013,7 +3013,7 @@ function addQaItem(id) {
   const entries = getQuickAccessEntries(currentBrand) || [];
   if (entries.some(e => e.id === id)) { showToast('이미 추가된 제품입니다'); return; }
   if (entries.length >= 6)            { showToast('최대 6개까지 등록 가능합니다'); return; }
-  entries.push({ id, label: '' });
+  entries.push({ id, label: '', primary: false });
   saveQuickAccessEntries(currentBrand, entries);
   renderQaSettingsList();
   qaSearchInput();
@@ -3031,6 +3031,15 @@ function updateQaLabel(id, newLabel) {
   const entry = entries.find(e => e.id === id);
   if (entry) entry.label = newLabel.trim();
   saveQuickAccessEntries(currentBrand, entries);
+  if (!state.productId) renderMain();
+}
+
+function toggleQaPrimary(id) {
+  const entries = getQuickAccessEntries(currentBrand) || [];
+  const entry = entries.find(e => e.id === id);
+  if (entry) entry.primary = !entry.primary;
+  saveQuickAccessEntries(currentBrand, entries);
+  renderQaSettingsList();
   if (!state.productId) renderMain();
 }
 
