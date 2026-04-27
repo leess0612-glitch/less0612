@@ -3238,34 +3238,60 @@ function qaSearchInput() {
   resultsEl.classList.add('has-results');
 }
 
-// ── 바로가기 공통 렌더 (커스텀 우선, 없으면 브랜드 기본값) ──
+// ── 바로가기 공통 렌더 ──
 function renderQuickAccess() {
   const ids = getQuickAccessIds(currentBrand);
-  if (ids && ids.length > 0) {
-    return renderCustomQuickAccess(ids);
-  }
-  return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
+  if (ids && ids.length > 0) return renderCustomQuickAccess(ids);
+  // 설정된 바로가기 없음 → 빈 안내 화면
+  return `<div class="quick-access">
+    <div class="qa-intro">자주 조회하는 제품을 바로 선택하거나, 위 검색창·좌측 목록에서 제품을 찾으세요.</div>
+    <div class="qa-brand-section">
+      <div class="qa-empty" style="padding:32px 0;color:var(--gray-400);font-size:13px;text-align:center">
+        ⚙ 설정 → 바로가기 설정에서 자주 조회할 제품을 추가하세요.
+      </div>
+    </div>
+  </div>`;
 }
 
 function renderCustomQuickAccess(ids) {
   const prods = ids.map(id => DB.products.find(p => p.id === id)).filter(Boolean);
-  if (!prods.length) return (BRAND_REGISTRY[currentBrand] || BRAND_REGISTRY.sk).quickAccess();
+  if (!prods.length) return renderQuickAccess();
 
-  function minFee(p) {
-    // 타사보상 있으면 타사보상 기준, 없으면 전체 비패키지 기준
-    const base = p.options.filter(o => !o.isPackage && (o.hasTasa || (!p.options.some(x => x.hasTasa) && !o.isPromo)));
-    const src  = base.length ? base : p.options.filter(o => !o.isPackage);
-    if (!src.length) return null;
-    return Math.min(...src.map(o => o.monthlyFee).filter(Boolean));
+  // 약정별 최저 월요금 (방문/셀프 구분, 5년 우선)
+  function getPrices(p) {
+    const allOpts = p.options.filter(o => !o.isPackage && !o.isPromo);
+    // 5년(60개월) 또는 contractYears===5 기준 먼저, 없으면 최장 약정 기준
+    const cm60 = allOpts.filter(o =>
+      (o.contractMonths === 60) || (o.contractYears === 5 && !o.contractMonths)
+    );
+    const src = cm60.length ? cm60 : allOpts;
+    if (!src.length) return { 방문: null, 셀프: null };
+    const fmt = (arr) => arr.length
+      ? arr.reduce((a, b) => a.monthlyFee < b.monthlyFee ? a : b).monthlyFee
+      : null;
+    const b = fmt(src.filter(o => (o.managementType || '').includes('방문')));
+    const s = fmt(src.filter(o =>
+      (o.managementType || '').includes('셀프') || (o.managementType || '').includes('자가')
+    ));
+    return { 방문: b, 셀프: s };
+  }
+
+  function priceHtml(p) {
+    const { 방문, 셀프 } = getPrices(p);
+    if (!방문 && !셀프) return '';
+    const fmt = v => v.toLocaleString('ko-KR') + '원';
+    const parts = [];
+    if (방문) parts.push(`방문 ${fmt(방문)}`);
+    if (셀프) parts.push(`셀프 ${fmt(셀프)}`);
+    return `<div class="qa-min-price">${parts.map(s => `5년 · ${s}`).join('<br>')}</div>`;
   }
 
   function makeBtn(p, primary) {
-    const fee = minFee(p);
     return `<div class="qa-type-col">
-      <button class="qa-prod-btn" onclick="selectProduct('${p.id}')">
+      <button class="qa-prod-btn ${primary ? 'primary-prod' : ''}" onclick="selectProduct('${p.id}')">
         <span class="qa-brand-tag">${getBrandTag()}</span> ${escHtml(getDisplayName(p))}
         ${p.modelCode ? `<div class="qa-model-code">${escHtml(p.modelCode)}</div>` : ''}
-        ${fee ? `<div class="qa-min-price">최저 ${fmtNum(fee)}원~</div>` : ''}
+        ${priceHtml(p)}
       </button>
     </div>`;
   }
