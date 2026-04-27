@@ -1128,15 +1128,20 @@ const BRAND_REGISTRY = {
     homepageUrl:    'https://www.skmagic.com/goods/indexGoodsList?dispClsfNo=100000005&mstDispClsfNo=100000003&dispLvl=2&goodsFilterList=6&menuNo=100104',
     homepageLabel:  '🔗 SK매직 공홈',
     quickAccess:    () => renderQuickAccessSk(),
-    // 제품 클릭 시 브랜드 전용 팝업 (없으면 null)
     getProductPopup: (product) => null,
-    // 클립보드 브랜드명
     clipboardLabel: (product) => 'SK매직',
-    // 관리주기 포맷
-    visitCycleText: (product, option) =>
-      formatVisitCycle(product.visitCycleInfo || ''),
-    // 결합상품 레이블 suffix
+    visitCycleText: (product, option) => formatVisitCycle(product.visitCycleInfo || ''),
     combineLabel:   (option) => '',
+    defaultQaIds:   () => {
+      const db = _SK_DB.products;
+      const find = f => db.find(f);
+      return [
+        find(p => p.category==='정수기' && p.name.includes('원코크') && p.name.includes('플러스')),
+        find(p => p.category==='정수기' && p.name.includes('초소형') && p.name.includes('플러스')),
+        find(p => p.category==='정수기' && p.name.includes('에코미니')),
+        find(p => p.category==='정수기' && p.name.includes('스탠드')),
+      ].filter(Boolean).map(p => p.id);
+    },
   },
   lg: {
     label:          'LG전자',
@@ -1152,10 +1157,19 @@ const BRAND_REGISTRY = {
       if (!opt) return null;
       return { code: product.displayCode || product.modelCode, text: opt.lgPopup || opt.lgAirPopup };
     },
-    clipboardLabel: (product) => product.isAirProduct ? 'LG전자' : 'LG전자',
+    clipboardLabel: (product) => 'LG전자',
     visitCycleText: (product, option) =>
       option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
     combineLabel:   (option) => option.lgCombineType ? ` | ${option.lgCombineType}` : '',
+    defaultQaIds:   () => {
+      const db = getLgMergedDb().products;
+      return [
+        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD722R')),
+        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD523V')),
+        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WD120M')),
+        db.find(p => !p.isAirProduct && (p.modelCode||'').includes('WS511SH')),
+      ].filter(Boolean).map(p => p.id);
+    },
   },
   cuckoo: {
     label:          '쿠쿠',
@@ -1171,6 +1185,11 @@ const BRAND_REGISTRY = {
     visitCycleText: (product, option) =>
       option.visitCycle ? `${option.visitCycle}마다 방문관리` : '',
     combineLabel:   (option) => '',
+    defaultQaIds:   () => {
+      const db = getCuckooDb().products;
+      return ['CP-AHS100', 'CP-AMS100', 'CP-FN603HW', 'CP-FN603SW']
+        .filter(id => db.some(p => p.id === id));
+    },
   },
 };
 
