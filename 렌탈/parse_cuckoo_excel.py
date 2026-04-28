@@ -94,16 +94,18 @@ def parse_management(i_val):
 
 
 def parse_commission(k_val, l_val):
-    """K/L 수수료 → 유효한 값 중 최댓값 (소수점 그대로, 반올림 없음)"""
+    """K/L 수수료 → (최댓값, 출처) 반환. 출처: 'a' / 'b' / 'a=b' / '-'"""
     k = to_float(k_val)
     l = to_float(l_val)
     if k is not None and l is not None:
-        return max(k, l)
+        if k == l:
+            return max(k, l), 'a=b'
+        return (k, 'a') if k > l else (l, 'b')
     if k is not None:
-        return k
+        return k, 'a'
     if l is not None:
-        return l
-    return 0.0
+        return l, 'b'
+    return 0.0, '-'
 
 
 def is_model_code_pattern(s):
