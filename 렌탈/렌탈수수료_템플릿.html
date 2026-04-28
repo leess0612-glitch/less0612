@@ -2754,6 +2754,7 @@ function transformCuckooData(raw) {
       isPromo:         !!o.isPromo,
       monthlyFee:      o.monthlyFee || 0,
       totalCommission: o.commission || 0,
+      commissionSrc:   o.commissionSrc || '',
     }));
     return {
       id:        p.id || p.modelCode,
