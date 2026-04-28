@@ -928,10 +928,24 @@ if __name__ == "__main__":
 
         # ── TL 전용 관리방식 보완 ──
         # AK에 없는 관리방식이 TL에 있으면 TL 데이터로 합성 옵션 추가
+        # 단, 타사보상 전용만 있는 (관리방식base, 약정년수)는 "기본형 없음"으로 간주 →
+        # TL이 해당 약정 기본형을 채울 수 있도록 ak_mgmt_years에서 제외
+        def _has_non_tasa_opt(mgmt_base, years):
+            """해당 (관리방식base, 약정년수)에 타사보상 아닌 AK 옵션이 하나라도 있는지"""
+            return any(
+                _mgmt_base_key(o["managementType"]) == mgmt_base
+                and o["contractMonths"] // 12 == years
+                and "+타사보상" not in o["managementType"]
+                and not o.get("isPackage")
+                and not o.get("source")
+                for o in product["options"]
+            )
+
         ak_mgmt_years = set(
             (_mgmt_base_key(o["managementType"]), o["contractMonths"] // 12)
             for o in product["options"]
             if not o.get("isPackage") and not o.get("source")
+            and "+타사보상" not in o["managementType"]   # 타사보상 전용은 기본형 있음으로 처리 안 함
         )
         # 이미 추가된 TL보완 옵션 중복 방지
         tl_added = set()
