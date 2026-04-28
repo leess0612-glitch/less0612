@@ -811,15 +811,28 @@ if __name__ == "__main__":
         tl_products_data = tl_data.get("products", [])
         base_mvs = _tl_model_variants(model_code)
         all_mvs = _extend_model_variants_with_prefix(base_mvs, tl_known_models) if tl_known_models else base_mvs
+
+        # Phase 1: 정확 일치 우선 (all_mvs = 원본 + prefix 확장 포함)
         tl_prods_found = []
         for mv in all_mvs:
             tl_prods = [p for p in tl_products_data
-                        if _norm_model(p["modelCode"]) == mv or
-                        _norm_model(p["modelCode"]).startswith(mv) or
-                        mv.startswith(_norm_model(p["modelCode"]))]
+                        if _norm_model(p["modelCode"]) == mv]
             if tl_prods:
                 tl_prods_found = tl_prods
                 break
+
+        # Phase 2: TL 코드가 AK 코드보다 더 긴 경우만 허용 (base_mvs에만 적용)
+        # 예: AK="WPUB600F", TL="WPUB600FWHI" → OK
+        # 주의: all_mvs에 짧은 코드(예: "WPUB600")가 있을 때 startsWith 쓰면
+        #        WPUB600F / WPUB600S / WPUB600G 등 전혀 다른 TL 제품이 모두 매칭됨 → 금지
+        if not tl_prods_found:
+            for mv in base_mvs:
+                tl_prods = [p for p in tl_products_data
+                            if _norm_model(p["modelCode"]).startswith(mv)
+                            and len(_norm_model(p["modelCode"])) > len(mv)]
+                if tl_prods:
+                    tl_prods_found = tl_prods
+                    break
 
         # ── 1. AK 빈 managementType → TL 교차참조로 보완 ──
         # 에이컴즈 D열에 관리방법이 없는 경우 TL 파일의 동일 약정 옵션에서 가져옴
