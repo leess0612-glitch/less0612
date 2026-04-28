@@ -221,11 +221,10 @@ def parse_excel(filepath):
                 if col4 and '할인' in str(col4):
                     mat_discount_for.add(scan_model)
             else:
-                # "방문할인" / "셀프할인" 순수 할인형만 체크
-                # "타사보상"은 별개 프로모션 — 기본형 차단 대상 아님
-                col3_s = str(col3) if col3 else ''
-                is_pure_discount = ('할인' in col3_s and '타사보상' not in col3_s)
-                if is_pure_discount and scan_months:
+                # normalize_management_type 결과가 PURE_DISCOUNT_TYPES에 속할 때만 차단 등록
+                # → 어떤 D열 값이 와도 정규화 함수 기준으로 판단, 새 조합형 추가 시 자동 대응
+                mgmt_scan = normalize_management_type(col3)
+                if mgmt_scan in PURE_DISCOUNT_TYPES and scan_months:
                     discount_for.add((scan_model, scan_months))
 
     mat_has_discount = {m: True for m in mat_discount_for}
