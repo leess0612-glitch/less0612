@@ -3,7 +3,7 @@
     "brand": "SK매직",
     "sheetTitle": "SK매직 4월 수수료",
     "sourceFile": "SK 수수료표_2604v1 (1).xlsx",
-    "parsedAt": "2026-04-28 10:51"
+    "parsedAt": "2026-04-28 11:54"
   },
   "products": [
     {
@@ -9954,7 +9954,7 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 214500,
+          "totalCommission": 225500,
           "recommendedOffice": "티엘",
           "source": "TL"
         },
@@ -10023,43 +10023,7 @@
           "additionalCount": 0,
           "additionalCommission": 0,
           "bonusCommission": 0,
-          "totalCommission": 199500,
-          "recommendedOffice": "티엘",
-          "source": "TL"
-        },
-        {
-          "label": "6년",
-          "managementType": "셀프관리",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 14900,
-          "dataWarning": false,
-          "visitCycle": "4개월",
-          "ownershipMonths": 0,
-          "registrationFee": 0,
-          "baseCommission": 0,
-          "additionalCount": 0,
-          "additionalCommission": 0,
-          "bonusCommission": 0,
-          "totalCommission": 174500,
-          "recommendedOffice": "티엘",
-          "source": "TL"
-        },
-        {
-          "label": "6년",
-          "managementType": "방문관리",
-          "contractMonths": 72,
-          "contractLabel": "6년",
-          "monthlyFee": 18900,
-          "dataWarning": false,
-          "visitCycle": "12개월",
-          "ownershipMonths": 0,
-          "registrationFee": 0,
-          "baseCommission": 0,
-          "additionalCount": 0,
-          "additionalCommission": 0,
-          "bonusCommission": 0,
-          "totalCommission": 194500,
+          "totalCommission": 210500,
           "recommendedOffice": "티엘",
           "source": "TL"
         },
