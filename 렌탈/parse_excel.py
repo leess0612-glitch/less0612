@@ -185,10 +185,11 @@ def parse_excel(filepath):
 
     DATA_START = 7
 
-    # ── 1차 스캔: 모든 모델별 할인 옵션 존재 여부 확인 ──
-    # 할인 옵션이 있는 모델 → 할인 옵션만 유효
-    # 할인 옵션이 없는 모델 → 기본 옵션("방문"/"셀프")도 유효 데이터
-    model_has_discount = {}  # model_code(upper) → bool
+    # ── 1차 스캔: 할인 옵션 존재 여부를 (모델코드, 약정개월) 단위로 추적 ──
+    # 이유: 일부 약정만 할인형이 있는 경우 해당 약정만 기본형 제외해야 함
+    #       (예: 3년·7년에만 할인형 → 5년·6년 기본형은 유효 데이터)
+    discount_for = set()   # {(model_code_upper, months), ...} 할인형이 있는 (모델, 약정) 쌍
+    mat_discount_for = set()  # MAT 전용
     scan_model = None
     scan_is_mat = False
 
@@ -196,28 +197,32 @@ def parse_excel(filepath):
         col2 = row[2]
         col3 = row[3]   # D열: 관리유형 (비MAT 할인 감지)
         col4 = row[4]   # E열: 옵션명   (MAT 할인 감지)
+        scan_months_raw = row[8]  # I열: 의무약정(개월)
 
         if col2 is not None and str(col2).strip():
             model_code, _ = parse_product_name_from_col2(col2)
             scan_model = model_code.upper() if model_code else None
-            # C열에 모델코드가 없으면 같은 행의 E열에서 추출
-            # * 또는 / 있으면 제외 — 복수 코드는 별도 분리 로직(_no_model_e_map)이 처리
             if not scan_model and col4 and '*' not in str(col4) and '/' not in str(col4):
                 _e_codes = extract_e_model_codes(clean(col4))
                 if _e_codes:
                     scan_model = _e_codes[0]
             scan_is_mat = bool(scan_model and scan_model.startswith('MAT'))
-            if scan_model and scan_model not in model_has_discount:
-                model_has_discount[scan_model] = False
 
         if scan_model:
-            if scan_is_mat and col4 and '할인' in str(col4):
-                model_has_discount[scan_model] = True
-            elif not scan_is_mat and col3 and '할인' in str(col3):
-                model_has_discount[scan_model] = True
+            try:
+                scan_months = int(scan_months_raw) if scan_months_raw else 0
+            except (ValueError, TypeError):
+                scan_months = 0
+            if scan_is_mat:
+                if col4 and '할인' in str(col4):
+                    mat_discount_for.add(scan_model)
+            else:
+                if col3 and '할인' in str(col3) and scan_months:
+                    discount_for.add((scan_model, scan_months))
 
-    mat_has_discount = {k: v for k, v in model_has_discount.items() if k.startswith('MAT')}
-    print(f"MAT 할인 스캔 결과: {sum(1 for v in mat_has_discount.values() if v)}개 모델에 할인 옵션 존재")
+    mat_has_discount = {m: True for m in mat_discount_for}
+    print(f"MAT 할인 스캔 결과: {len(mat_discount_for)}개 모델에 할인 옵션 존재")
+    print(f"비MAT 할인 (모델,약정) 쌍: {len(discount_for)}개")
 
     # ── 2차 처리: 메인 파싱 ──
     products = []
