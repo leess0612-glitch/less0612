@@ -223,7 +223,7 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
         is_promo   = (g_class == 'promo')
 
         mgmt_type, visit_cycle = parse_management(row['i_val'])
-        commission = parse_commission(row['k_val'], row['l_val'])
+        commission, commission_src = parse_commission(row['k_val'], row['l_val'])
 
         name     = row['b_name'] if row['b_name'] else mc
         category = row['a_first']
@@ -243,6 +243,7 @@ def parse_cuckoo(filepath=TL_PATH, sheet_name=SHEET):
             'isPromo':        is_promo,
             'monthlyFee':     row['j'],
             'commission':     commission,
+            'commissionSrc':  commission_src,
         })
 
     # ─────────────────────────────────────────────
