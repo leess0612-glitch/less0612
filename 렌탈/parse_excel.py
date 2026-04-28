@@ -335,9 +335,14 @@ def parse_excel(filepath):
                 mgmt_type = "방문관리"
 
         # ★ D열 "방문"/"셀프" 기본 행 제외
-        # 단, 해당 모델에 할인 옵션이 없으면 기본 행도 유효 데이터로 포함
+        # 단, 해당 (모델, 약정개월) 조합에 할인형이 없으면 기본 행도 유효 데이터로 포함
         if mgmt_type in BASIC_MGMT_EXCLUDE:
-            if model_has_discount.get(current_model_code.upper(), True):
+            _months_raw = row[8]
+            try:
+                _months = int(_months_raw) if _months_raw else 0
+            except (ValueError, TypeError):
+                _months = 0
+            if (current_model_code.upper(), _months) in discount_for:
                 continue
 
         # 수치 데이터
