@@ -542,21 +542,23 @@ function weekRange(wval) {
   return { start: weekStart, end: weekEnd };
 }
 
-// 중복제거: 번호 기준, accepted는 OR
-function deduplicate(rows) {
+// 중복제거: 전체 필터 시 (번호+카테고리) 기준, 특정 카테고리 필터 시 번호 기준
+function deduplicate(rows, groupByCategory = false) {
   const map = new Map();
   for (const r of rows) {
-    if (!map.has(r.phone)) {
-      map.set(r.phone, { ...r });
+    const key = groupByCategory ? r.phone + '|' + r.category : r.phone;
+    if (!map.has(key)) {
+      map.set(key, { ...r });
     } else if (r.accepted) {
-      map.get(r.phone).accepted = true;
+      map.get(key).accepted = true;
     }
   }
   return [...map.values()];
 }
 
 function calcStats(rows) {
-  const deduped = deduplicate(rows);
+  const catFilter = document.getElementById('category-sel').value;
+  const deduped = deduplicate(rows, catFilter === '');
   const total = deduped.length;
   const accepted = deduped.filter(r => r.accepted).length;
   const rate = total > 0 ? (accepted / total * 100).toFixed(1) : '0.0';
