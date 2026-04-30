@@ -435,7 +435,7 @@ function parseScriptData(data) {
     if (!lastDate) continue;
     const date = lastDate;
 
-    if (statusVal === '단순') continue;
+    if (statusVal === '단순' || categoryRaw === '단순') continue;
 
     let phone = phoneStr;
     if (phone.length === 9) phone = '0' + phone;
