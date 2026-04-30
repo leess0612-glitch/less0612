@@ -550,9 +550,7 @@ function deduplicate(rows) {
   const map = new Map();
   for (const r of rows) {
     if (!map.has(r.phone)) {
-      map.set(r.phone, { ...r });
-    } else if (r.accepted) {
-      map.get(r.phone).accepted = true;
+      map.set(r.phone, { ...r, accepted: acceptedPhones.has(r.phone) });
     }
   }
   return [...map.values()];
