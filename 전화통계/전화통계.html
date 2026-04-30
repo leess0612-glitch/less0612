@@ -451,8 +451,6 @@ function parseScriptData(data) {
     allRows.push({ date, phone, consultant, category, accepted });
   }
 
-  // 번호 기준 전체 접수 여부 (카테고리 무관)
-  acceptedPhones = new Set(allRows.filter(r => r.accepted).map(r => r.phone));
 }
 
 function isAccepted(v) {
@@ -549,7 +547,9 @@ function deduplicate(rows) {
   const map = new Map();
   for (const r of rows) {
     if (!map.has(r.phone)) {
-      map.set(r.phone, { ...r, accepted: acceptedPhones.has(r.phone) });
+      map.set(r.phone, { ...r });
+    } else if (r.accepted) {
+      map.get(r.phone).accepted = true;
     }
   }
   return [...map.values()];
