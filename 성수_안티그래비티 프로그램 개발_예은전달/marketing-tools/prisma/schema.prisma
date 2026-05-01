@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model SettlementRecord {
+  id              String   @id @default(cuid())
+  period          String   // e.g. "2026-03"
+  serviceName     String
+  serviceType     String   @default("general") // internet | rental | general
+  grossRevenue    Float
+  commissionRate  Float    // 0.0 ~ 1.0
+  commissionAmount Float
+  rentalCost      Float    @default(0)
+  internetCost    Float    @default(0)
+  otherExpenses   Float    @default(0)
+  netProfit       Float
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ScriptAnalysis {
+  id              String   @id @default(cuid())
+  sourceType      String   // blog | script
+  sourceContent   String
+  result          String
+  generatedScript String?
+  createdAt       DateTime @default(now())
+}
+
+model LandingPageProject {
+  id             String   @id @default(cuid())
+  sourceUrl      String?
+  analysisResult String?
+  generatedHtml  String?
+  screenshotUrl  String?
+  createdAt      DateTime @default(now())
+}
+
+model ReelsProject {
+  id          String   @id @default(cuid())
+  title       String
+  script      String
+  platform    String   // instagram | tiktok | youtube
+  videoUrl    String?
+  uploadId    String?
+  status      String   @default("draft")
+  metrics     String?  // JSON string
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
