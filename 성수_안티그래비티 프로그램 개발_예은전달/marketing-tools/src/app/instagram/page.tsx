@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Trash2, Instagram, Loader2 } from "lucide-react";
+import { Plus, Trash2, Camera, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 

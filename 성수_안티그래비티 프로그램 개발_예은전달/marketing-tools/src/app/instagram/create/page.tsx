@@ -319,7 +319,7 @@ export default function InstagramCreatePage() {
                         </>
                       ) : (
                         <>
-                          <Instagram className="h-4 w-4 mr-2" />
+                          <Camera className="h-4 w-4 mr-2" />
                           인스타그램에 업로드
                         </>
                       )}
