@@ -8,7 +8,7 @@ import {
   Globe,
   Calculator,
   LayoutDashboard,
-  Instagram,
+  Camera,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
