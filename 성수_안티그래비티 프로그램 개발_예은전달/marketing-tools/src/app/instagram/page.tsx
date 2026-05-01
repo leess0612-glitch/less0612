@@ -89,7 +89,7 @@ export default function InstagramPage() {
         </div>
       ) : ads.length === 0 ? (
         <div className="text-center py-16 text-muted-foreground">
-          <Instagram className="h-12 w-12 mx-auto mb-3 opacity-30" />
+          <Camera className="h-12 w-12 mx-auto mb-3 opacity-30" />
           <p>아직 생성된 광고가 없습니다</p>
           <Link href="/instagram/create">
             <Button variant="outline" className="mt-4">첫 광고 만들기</Button>
@@ -142,7 +142,7 @@ export default function InstagramPage() {
                     {ad.status === "generated" && (
                       <Link href={`/instagram/create`} className="flex-1">
                         <Button variant="outline" size="sm" className="w-full text-xs">
-                          <Instagram className="h-3 w-3 mr-1" />
+                          <Camera className="h-3 w-3 mr-1" />
                           업로드
                         </Button>
                       </Link>
