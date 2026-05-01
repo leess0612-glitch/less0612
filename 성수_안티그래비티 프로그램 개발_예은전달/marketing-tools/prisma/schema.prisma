@@ -55,6 +55,50 @@ model ReelsProject {
   updatedAt   DateTime @updatedAt
 }
 
+model AdAnalysis {
+  id             String   @id @default(cuid())
+  sourceUrl      String
+  platform       String   // youtube | instagram
+  title          String?
+  transcript     String?
+  adStructure    String?  // JSON: {hook, body, cta}
+  scriptStyle    String?  // JSON: {tone, pacing, keywords}
+  visualStyle    String?  // JSON: {style, colors, mood}
+  hooks          String?  // JSON array
+  targetAudience String?
+  rawAnalysis    String?
+  generatedAds   GeneratedAd[]
+  createdAt      DateTime @default(now())
+}
+
+model GeneratedAd {
+  id           String      @id @default(cuid())
+  analysisId   String
+  analysis     AdAnalysis  @relation(fields: [analysisId], references: [id])
+  adType       String      // B_slideshow | C_voiceover
+  productName  String
+  serviceType  String      // rental | internet
+  videoPath    String?     // /generated-videos/...
+  script       String?
+  caption      String?
+  hashtags     String?     // JSON array
+  status       String      @default("generated") // generated | approved | uploading | uploaded
+  uploads      AdUpload[]
+  createdAt    DateTime    @default(now())
+}
+
+model AdUpload {
+  id            String      @id @default(cuid())
+  generatedAdId String
+  generatedAd   GeneratedAd @relation(fields: [generatedAdId], references: [id])
+  platform      String      // instagram | youtube | tiktok
+  status        String      @default("pending") // pending | success | failed
+  platformId    String?
+  error         String?
+  uploadedAt    DateTime?
+  createdAt     DateTime    @default(now())
+}
+
 model InstagramAd {
   id           String    @id @default(cuid())
   serviceType  String    // rental | internet
