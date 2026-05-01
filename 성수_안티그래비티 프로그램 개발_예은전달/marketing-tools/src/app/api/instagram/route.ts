@@ -61,7 +61,7 @@ export async function POST(request: Request) {
       n: 1,
     });
 
-    const dalleUrl = imageResponse.data[0]?.url ?? "";
+    const dalleUrl = (imageResponse.data ?? [])[0]?.url ?? "";
     const localImageUrl = await saveImageLocally(dalleUrl);
 
     // 3. DB 저장
