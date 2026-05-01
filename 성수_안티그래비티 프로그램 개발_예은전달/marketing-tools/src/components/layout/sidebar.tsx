@@ -21,7 +21,7 @@ const navItems = [
   {
     title: "인스타 광고 자동화",
     href: "/instagram",
-    icon: Instagram,
+    icon: Camera,
   },
   {
     title: "릴스 광고 자동화",
