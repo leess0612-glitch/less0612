@@ -8,6 +8,7 @@ import {
   Globe,
   Calculator,
   LayoutDashboard,
+  Instagram,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,11 @@ const navItems = [
     title: "대시보드",
     href: "/",
     icon: LayoutDashboard,
+  },
+  {
+    title: "인스타 광고 자동화",
+    href: "/instagram",
+    icon: Instagram,
   },
   {
     title: "릴스 광고 자동화",
