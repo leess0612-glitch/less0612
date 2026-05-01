@@ -20,6 +20,11 @@ const navItems = [
     icon: LayoutDashboard,
   },
   {
+    title: "광고 분석기",
+    href: "/ad-analyzer",
+    icon: TrendingUp,
+  },
+  {
     title: "인스타 광고 자동화",
     href: "/instagram",
     icon: Camera,
