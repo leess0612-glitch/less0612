@@ -9,6 +9,7 @@ import {
   Calculator,
   LayoutDashboard,
   Camera,
+  TrendingUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
