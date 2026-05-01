@@ -54,3 +54,21 @@ model ReelsProject {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model InstagramAd {
+  id           String    @id @default(cuid())
+  serviceType  String    // rental | internet
+  productName  String
+  price        String?
+  features     String    // JSON array
+  adCopy       String?   // JSON { headline, subheadline }
+  imageUrl     String?   // local path /generated/...
+  imagePrompt  String?
+  caption      String?
+  hashtags     String?   // JSON array
+  status       String    @default("draft") // draft | generated | uploaded
+  instagramId  String?
+  postedAt     DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
