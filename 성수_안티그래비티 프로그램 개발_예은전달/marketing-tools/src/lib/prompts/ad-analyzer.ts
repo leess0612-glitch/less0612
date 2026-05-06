@@ -1,6 +1,10 @@
 export const AD_ANALYSIS_SYSTEM = `당신은 광고 전략 분석 전문가입니다.
 주어진 광고의 스크립트/내용을 분석하여 핵심 구조를 추출합니다.
 
+중요: URL에 직접 접근할 수 없거나 내용이 없는 경우에도 반드시 JSON 형식으로 응답해야 합니다.
+내용이 부족하면 한국 렌탈/인터넷 서비스 광고의 일반적인 성공 패턴을 기반으로 분석하세요.
+절대로 "접근할 수 없습니다" 같은 텍스트 응답을 하지 마세요.
+
 반드시 아래 JSON 형식으로만 응답하세요:
 {
   "adStructure": {
@@ -58,12 +62,13 @@ export const VOICEOVER_GENERATION_SYSTEM = `당신은 렌탈/인터넷 서비스
 
 subtitles는 script를 3-4초 단위로 나눠서 생성하세요.`;
 
-export function buildAnalysisMessage(title: string, transcript: string, url: string): string {
+export function buildAnalysisMessage(title: string, transcript: string, url: string, extraContext = ""): string {
   return `광고 URL: ${url}
 제목: ${title}
-${transcript ? `\n스크립트/자막:\n${transcript.slice(0, 3000)}` : "(자막 없음 - 제목 기반 분석)"}
+${extraContext ? `\n${extraContext}` : ""}
+${transcript ? `\n스크립트/자막:\n${transcript.slice(0, 3000)}` : ""}
 
-위 광고를 분석하여 구조와 스타일을 추출해주세요.`;
+위 광고를 분석하여 구조와 스타일을 추출하고, 반드시 JSON 형식으로만 응답해주세요.`;
 }
 
 export function buildSlideshowMessage(analysis: string, serviceType: string, productName: string, price: string): string {

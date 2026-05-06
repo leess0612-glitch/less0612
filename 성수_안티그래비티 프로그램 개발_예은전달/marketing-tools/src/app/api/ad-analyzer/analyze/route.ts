@@ -27,13 +27,16 @@ function detectPlatform(url: string): "youtube" | "instagram" | "unknown" {
   return "unknown";
 }
 
-async function getYouTubeMeta(videoId: string): Promise<{ title: string; description: string }> {
+async function getYouTubeMeta(videoId: string): Promise<{ title: string }> {
   try {
-    const res = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`);
+    const res = await fetch(
+      `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`,
+      { headers: { "User-Agent": "Mozilla/5.0" } }
+    );
     const data = await res.json();
-    return { title: data.title ?? "", description: "" };
+    return { title: data.title ?? "" };
   } catch {
-    return { title: "", description: "" };
+    return { title: "" };
   }
 }
 
@@ -51,6 +54,49 @@ async function getTranscript(videoId: string): Promise<string> {
   }
 }
 
+// Instagram 페이지에서 OG 메타태그 추출
+async function scrapeInstagramMeta(url: string): Promise<{ title: string; description: string }> {
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "Accept-Language": "ko-KR,ko;q=0.9",
+      },
+      signal: AbortSignal.timeout(8000),
+    });
+    const html = await res.text();
+
+    const titleMatch =
+      html.match(/<meta property="og:title" content="([^"]*)"/) ||
+      html.match(/<title>([^<]*)<\/title>/);
+    const descMatch =
+      html.match(/<meta property="og:description" content="([^"]*)"/) ||
+      html.match(/<meta name="description" content="([^"]*)"/);
+
+    return {
+      title: titleMatch?.[1]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#039;/g, "'") ?? "",
+      description: descMatch?.[1]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#039;/g, "'") ?? "",
+    };
+  } catch {
+    return { title: "", description: "" };
+  }
+}
+
+// GPT 응답에서 JSON 추출 (여러 방법 시도)
+function extractJson(raw: string): Record<string, unknown> | null {
+  // 1차: 코드블록 안 JSON
+  const codeBlock = raw.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (codeBlock) {
+    try { return JSON.parse(codeBlock[1].trim()); } catch {}
+  }
+  // 2차: 중괄호 블록
+  const braceMatch = raw.match(/\{[\s\S]*\}/);
+  if (braceMatch) {
+    try { return JSON.parse(braceMatch[0]); } catch {}
+  }
+  return null;
+}
+
 export async function POST(request: Request) {
   try {
     const { url } = await request.json();
@@ -61,27 +107,50 @@ export async function POST(request: Request) {
     const platform = detectPlatform(url);
     let title = "";
     let transcript = "";
+    let extraContext = "";
 
     if (platform === "youtube") {
       const videoId = extractYouTubeId(url);
-      if (!videoId) return NextResponse.json({ error: "유효하지 않은 YouTube URL입니다" }, { status: 400 });
-
+      if (!videoId) {
+        return NextResponse.json({ error: "유효하지 않은 YouTube URL입니다" }, { status: 400 });
+      }
       const [meta, trans] = await Promise.all([
         getYouTubeMeta(videoId),
         getTranscript(videoId),
       ]);
       title = meta.title;
       transcript = trans;
+
+    } else if (platform === "instagram") {
+      const meta = await scrapeInstagramMeta(url);
+      title = meta.title || "Instagram 광고";
+      extraContext = meta.description
+        ? `게시물 설명: ${meta.description}`
+        : "※ Instagram 페이지에 직접 접근할 수 없습니다. 한국 렌탈/인터넷 서비스 광고의 일반적인 패턴을 기반으로 분석해주세요.";
+
     } else {
       title = url;
+      extraContext = "※ URL에 직접 접근할 수 없습니다. 한국 렌탈/인터넷 서비스 광고의 일반적인 패턴을 기반으로 분석해주세요.";
     }
 
-    const userMessage = buildAnalysisMessage(title, transcript, url);
+    const userMessage = buildAnalysisMessage(title, transcript, url, extraContext);
     const rawResult = await chatCompletion(AD_ANALYSIS_SYSTEM, userMessage, { temperature: 0.3 });
 
-    const jsonMatch = rawResult.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) throw new Error("분석 결과 파싱 실패");
-    const analysis = JSON.parse(jsonMatch[0]);
+    const analysis = extractJson(rawResult);
+    if (!analysis) {
+      console.error("GPT raw response:", rawResult);
+      throw new Error("AI 분석 결과를 파싱할 수 없습니다. 다시 시도해주세요.");
+    }
+
+    // 필수 필드 기본값 보장
+    const safeAnalysis = {
+      adStructure: analysis.adStructure ?? { hook: "", body: "", cta: "" },
+      scriptStyle: analysis.scriptStyle ?? { tone: "", pacing: "", keywords: [] },
+      visualStyle: analysis.visualStyle ?? { style: "", mood: "", recommendation: "" },
+      hooks: analysis.hooks ?? [],
+      targetAudience: analysis.targetAudience ?? "",
+      summary: analysis.summary ?? "",
+    };
 
     const record = await prisma.adAnalysis.create({
       data: {
@@ -89,16 +158,16 @@ export async function POST(request: Request) {
         platform,
         title,
         transcript: transcript.slice(0, 5000),
-        adStructure: JSON.stringify(analysis.adStructure),
-        scriptStyle: JSON.stringify(analysis.scriptStyle),
-        visualStyle: JSON.stringify(analysis.visualStyle),
-        hooks: JSON.stringify(analysis.hooks),
-        targetAudience: analysis.targetAudience,
-        rawAnalysis: JSON.stringify(analysis),
+        adStructure: JSON.stringify(safeAnalysis.adStructure),
+        scriptStyle: JSON.stringify(safeAnalysis.scriptStyle),
+        visualStyle: JSON.stringify(safeAnalysis.visualStyle),
+        hooks: JSON.stringify(safeAnalysis.hooks),
+        targetAudience: String(safeAnalysis.targetAudience),
+        rawAnalysis: JSON.stringify(safeAnalysis),
       },
     });
 
-    return NextResponse.json({ ...record, analysis });
+    return NextResponse.json({ ...record, analysis: safeAnalysis });
   } catch (error) {
     console.error("Analysis error:", error);
     return NextResponse.json(
