@@ -384,7 +384,7 @@ with tab4:
                         "url":  new_url.strip(),
                         "name": new_name.strip() or ch_id,
                     })
-                    ch_changed = True
+                    save_json(CHANNELS_FILE, channels)
                     st.rerun()
 
         st.divider()
