@@ -1,0 +1,17 @@
+{
+  "cafe": [
+    {
+      "id":         "parisienlook",
+      "url":        "https://cafe.naver.com/parisienlook",
+      "name":       "파리지앵룩",
+      "categories": ["인터넷", "렌탈"]
+    },
+    {
+      "id":         "llchyll",
+      "url":        "https://cafe.naver.com/llchyll",
+      "name":       "llchyll",
+      "categories": ["인터넷", "렌탈"]
+    }
+  ],
+  "blog": []
+}
