@@ -78,7 +78,13 @@ with tab1:
     changed = False
 
     for category in list(keywords_data.keys()):
-        st.markdown(f"#### {category}")
+        hdr_col, deact_col = st.columns([5, 1])
+        hdr_col.markdown(f"#### {category}")
+        if deact_col.button("전체 해제", key=f"deactivate_all_{category}", use_container_width=True):
+            for i in range(len(keywords_data[category])):
+                keywords_data[category][i]["active"] = False
+            save_json(KEYWORDS_FILE, keywords_data)
+            st.rerun()
         kws = keywords_data[category]
 
         col_kw, col_active, col_del = st.columns([4, 1, 1])
