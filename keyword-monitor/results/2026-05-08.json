@@ -1,0 +1,65 @@
+[
+  {
+    "date": "2026-05-08",
+    "category": "인터넷",
+    "keyword": "인터넷가입성지",
+    "blocks": [
+      {
+        "block_name": "기타",
+        "block_position": 6,
+        "items": [
+          {
+            "rank": 1,
+            "type": "blog",
+            "id": "0_honeymilk",
+            "url": "https://blog.naver.com/0_honeymilk",
+            "title": "달콤 그 자체 쭈디의 하루 2026.04.07. Keep에 저장 Keep에 바로가기 대전 인터넷가입 싼 대전"
+          }
+        ]
+      },
+      {
+        "block_name": "기타",
+        "block_position": 11,
+        "items": [
+          {
+            "rank": 1,
+            "type": "blog",
+            "id": "cjakpsi",
+            "url": "https://blog.naver.com/cjakpsi/223898023373",
+            "title": "통신의민족 blog.naver.com › cjakpsi Keep에 저장 Keep에 바로가기 뽐뿌 인터넷 가입"
+          }
+        ]
+      },
+      {
+        "block_name": "기타",
+        "block_position": 14,
+        "items": [
+          {
+            "rank": 1,
+            "type": "blog",
+            "id": "powertheone",
+            "url": "https://blog.naver.com/powertheone/223447320077",
+            "title": "웅이아부지 blog.naver.com › powertheone Keep에 저장 Keep에 바로가기 KT 인터"
+          }
+        ]
+      },
+      {
+        "block_name": "기타",
+        "block_position": 18,
+        "items": [
+          {
+            "rank": 1,
+            "type": "cafe",
+            "id": "no1cheonan",
+            "url": "https://cafe.naver.com/no1cheonan",
+            "title": "천안아산줌마렐라 [천안.아산 대표지역카페, 정보.교육.부동산] 3주 전 Keep에 저장 Keep에 바로가기 "
+          }
+        ]
+      }
+    ],
+    "our_exposure": [],
+    "exposed": false,
+    "best_rank": null,
+    "best_block": null
+  }
+]
