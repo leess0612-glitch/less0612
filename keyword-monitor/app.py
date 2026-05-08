@@ -85,30 +85,6 @@ with tab1:
                 keywords_data[category][i]["active"] = False
             save_json(KEYWORDS_FILE, keywords_data)
             st.rerun()
-        kws = keywords_data[category]
-
-        col_kw, col_active, col_del = st.columns([4, 1, 1])
-        col_kw.markdown("**키워드**")
-        col_active.markdown("**활성**")
-        col_del.markdown("**삭제**")
-
-        to_delete = []
-        for i, kw in enumerate(kws):
-            c1, c2, c3 = st.columns([4, 1, 1])
-            c1.text(kw["keyword"])
-            new_active = c2.checkbox(
-                "", value=kw.get("active", True),
-                key=f"active_{category}_{i}"
-            )
-            if new_active != kw.get("active", True):
-                keywords_data[category][i]["active"] = new_active
-                changed = True
-            if c3.button("삭제", key=f"del_{category}_{i}"):
-                to_delete.append(i)
-
-        for idx in reversed(to_delete):
-            keywords_data[category].pop(idx)
-            changed = True
 
         # 단일 키워드 추가
         with st.form(key=f"add_{category}"):
@@ -151,6 +127,31 @@ with tab1:
             del keywords_data[category]
             save_json(KEYWORDS_FILE, keywords_data)
             st.rerun()
+
+        kws = keywords_data[category]
+
+        col_kw, col_active, col_del = st.columns([4, 1, 1])
+        col_kw.markdown("**키워드**")
+        col_active.markdown("**활성**")
+        col_del.markdown("**삭제**")
+
+        to_delete = []
+        for i, kw in enumerate(kws):
+            c1, c2, c3 = st.columns([4, 1, 1])
+            c1.text(kw["keyword"])
+            new_active = c2.checkbox(
+                "", value=kw.get("active", True),
+                key=f"active_{category}_{i}"
+            )
+            if new_active != kw.get("active", True):
+                keywords_data[category][i]["active"] = new_active
+                changed = True
+            if c3.button("삭제", key=f"del_{category}_{i}"):
+                to_delete.append(i)
+
+        for idx in reversed(to_delete):
+            keywords_data[category].pop(idx)
+            changed = True
 
         st.divider()
 
