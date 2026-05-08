@@ -137,5 +137,130 @@
       "active": false
     }
   ],
-  "인터넷": []
+  "인터넷": [
+    {
+      "keyword": "LGU+",
+      "active": true
+    },
+    {
+      "keyword": "인터넷TV가입",
+      "active": true
+    },
+    {
+      "keyword": "인터넷TV현금지원",
+      "active": true
+    },
+    {
+      "keyword": "KT요금제",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷",
+      "active": true
+    },
+    {
+      "keyword": "인터넷가입비교사이트",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷설치",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷가입",
+      "active": true
+    },
+    {
+      "keyword": "IPTV비교",
+      "active": true
+    },
+    {
+      "keyword": "인터넷티비",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷TV",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷요금제",
+      "active": true
+    },
+    {
+      "keyword": "인터넷가입현금지원",
+      "active": true
+    },
+    {
+      "keyword": "케이티인터넷",
+      "active": true
+    },
+    {
+      "keyword": "인터넷변경현금지급",
+      "active": true
+    },
+    {
+      "keyword": "인터넷설치현금",
+      "active": true
+    },
+    {
+      "keyword": "KTTV",
+      "active": true
+    },
+    {
+      "keyword": "인터넷100메가500메가",
+      "active": true
+    },
+    {
+      "keyword": "뽐뿌인터넷",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷현금",
+      "active": true
+    },
+    {
+      "keyword": "인터넷100메가",
+      "active": true
+    },
+    {
+      "keyword": "인터넷현금지원",
+      "active": true
+    },
+    {
+      "keyword": "인터넷가입사은품",
+      "active": true
+    },
+    {
+      "keyword": "케이티인터넷가입",
+      "active": true
+    },
+    {
+      "keyword": "인터넷가입혜택",
+      "active": true
+    },
+    {
+      "keyword": "KT인터넷사은품",
+      "active": true
+    },
+    {
+      "keyword": "인터넷결합",
+      "active": true
+    },
+    {
+      "keyword": "SK인터넷현금지원",
+      "active": true
+    },
+    {
+      "keyword": "인터넷티비결합",
+      "active": true
+    },
+    {
+      "keyword": "인터넷단독가입",
+      "active": true
+    },
+    {
+      "keyword": "엘지유플러스TV",
+      "active": true
+    }
+  ]
 }
