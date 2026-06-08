@@ -1,5 +1,17 @@
 [
   {
+    "id": "MGL73aqMfqs",
+    "title": "한글타자 애국가 4초컷 1906타",
+    "channel": "기본의정석",
+    "view_count": 4481233,
+    "like_count": 40664,
+    "duration": 24,
+    "url": "https://www.youtube.com/watch?v=MGL73aqMfqs",
+    "keyword": "갤럭시 아이폰 비교 쇼츠",
+    "transcript_collected": false,
+    "file": "0004481233_한글타자 애국가 4초컷 1906타.md"
+  },
+  {
     "id": "62MdPpFTyCI",
     "title": "Shot on iPhone meme Philippines #Shorts",
     "channel": "Spoyorman",
@@ -8,7 +20,7 @@
     "duration": 9,
     "url": "https://www.youtube.com/watch?v=62MdPpFTyCI",
     "keyword": "아이폰 밈 쇼츠",
-    "transcript_collected": false,
+    "transcript_collected": true,
     "file": "0002971800_Shot on iPhone meme Philippines #Shorts.md"
   },
   {
@@ -20,7 +32,7 @@
     "duration": 60,
     "url": "https://www.youtube.com/watch?v=Jpa0HfMYo18",
     "keyword": "휴대폰 IT 이슈 쇼츠",
-    "transcript_collected": false,
+    "transcript_collected": true,
     "file": "0001246407_이제부터 하지 맙시다.md"
   },
   {
@@ -36,18 +48,6 @@
     "file": "0000028805_Shot on iPhone meme #shorts #youtubeshorts.md"
   },
   {
-    "id": "cRs0Kb56khY",
-    "title": "'애플 금지령'도 뚫은 아이폰 15…\"흥행만큼 뜨겁다\" 애플 비상 / SBS / 스브스픽",
-    "channel": "SBS 뉴스",
-    "view_count": 27878,
-    "like_count": 116,
-    "duration": 75,
-    "url": "https://www.youtube.com/watch?v=cRs0Kb56khY",
-    "keyword": "휴대폰 IT 이슈 쇼츠",
-    "transcript_collected": false,
-    "file": "0000027878_'애플 금지령'도 뚫은 아이폰 15…_흥행만큼 뜨겁다_ 애플 비상 _ SBS _ 스브스픽.md"
-  },
-  {
     "id": "x-UemVozQOM",
     "title": "#shorts 갤럭시z플립4 블루 VS 아이폰13 프로 블루 색상대결?",
     "channel": "Amazing ddongchan",
@@ -56,7 +56,7 @@
     "duration": 60,
     "url": "https://www.youtube.com/watch?v=x-UemVozQOM",
     "keyword": "갤럭시 아이폰 비교 쇼츠",
-    "transcript_collected": false,
+    "transcript_collected": true,
     "file": "0000018080_#shorts 갤럭시z플립4 블루 VS 아이폰13 프로 블루 색상대결_.md"
   },
   {
@@ -68,7 +68,7 @@
     "duration": 77,
     "url": "https://www.youtube.com/watch?v=Of5QGc11dIU",
     "keyword": "휴대폰 IT 이슈 쇼츠",
-    "transcript_collected": false,
+    "transcript_collected": true,
     "file": "0000009406__오른손으로 휴대폰 만져_ 딱지 뗀 경찰…운전자는 오른손 장애｜지금 이 쇼츠.md"
   },
   {
@@ -82,6 +82,18 @@
     "keyword": "아이폰 밈 쇼츠",
     "transcript_collected": false,
     "file": "0000001535_Shot On iPhone Meme #shorts.md"
+  },
+  {
+    "id": "V8JHepspNr4",
+    "title": "\"시리야, 못 쓰겠다\"…애플 '제미나이' 탑재 검토｜지금 이 쇼츠",
+    "channel": "JTBC News",
+    "view_count": 1041,
+    "like_count": 7,
+    "duration": 40,
+    "url": "https://www.youtube.com/watch?v=V8JHepspNr4",
+    "keyword": "휴대폰 IT 이슈 쇼츠",
+    "transcript_collected": false,
+    "file": "0000001041__시리야, 못 쓰겠다_…애플 '제미나이' 탑재 검토｜지금 이 쇼츠.md"
   },
   {
     "id": "z87AfkLiAQE",
@@ -130,17 +142,5 @@
     "keyword": "아이폰 밈 쇼츠",
     "transcript_collected": false,
     "file": "0000000030_Shot on iPhone meme #Shorts.md"
-  },
-  {
-    "id": "0jDkkSL3168",
-    "title": "Shot on Iphone meme #shorts",
-    "channel": "DIGITAL G",
-    "view_count": 23,
-    "like_count": 2,
-    "duration": 12,
-    "url": "https://www.youtube.com/watch?v=0jDkkSL3168",
-    "keyword": "아이폰 밈 쇼츠",
-    "transcript_collected": false,
-    "file": "0000000023_Shot on Iphone meme #shorts.md"
   }
 ]
