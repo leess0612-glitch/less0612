@@ -5,7 +5,10 @@ Phase 0' - 레퍼런스 영상 자동 수집
 """
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import yt_dlp
 from youtube_transcript_api import YouTubeTranscriptApi
