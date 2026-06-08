@@ -47,10 +47,13 @@ def safe_filename(text: str) -> str:
     return re.sub(r'[\\/:*?"<>|]', "_", text)[:60]
 
 
+_transcript_api = YouTubeTranscriptApi()
+
+
 def fetch_transcript(video_id: str) -> str | None:
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=["ko", "en"])
-        return "\n".join(seg["text"] for seg in transcript)
+        fetched = _transcript_api.fetch(video_id, languages=["ko", "en"])
+        return "\n".join(snippet.text for snippet in fetched.snippets)
     except Exception:
         return None
 
