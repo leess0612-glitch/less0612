@@ -189,9 +189,9 @@ tr:hover td { background: #f8f9ff; }
       </div>
 
       <div class="field">
-        <span>테스트 날짜</span>
-        <input type="text" id="cfg-testdate" placeholder="예: 6/10" style="width:110px">
-        <div class="hint">비우면 오늘 자동</div>
+        <span>날짜지정</span>
+        <input type="text" id="cfg-targetdate" placeholder="예: 6/10" style="width:110px">
+        <div class="hint">비우면 오늘 자동 · 지금실행 후 자동 초기화</div>
       </div>
 
       <button class="btn btn-save" onclick="saveConfig()" style="padding:8px 20px">저장</button>
@@ -277,7 +277,7 @@ async function loadConfig() {
   document.getElementById('cfg-hour').value    = c.post_hour  ?? 20;
   document.getElementById('cfg-bmin').value    = c.backup_min ?? 15;
   document.getElementById('cfg-bmax').value    = c.backup_max ?? 30;
-  document.getElementById('cfg-testdate').value = c.test_date  ?? '';
+  document.getElementById('cfg-targetdate').value = c.target_date ?? '';
 }
 
 async function saveConfig() {
@@ -285,7 +285,7 @@ async function saveConfig() {
     post_hour:  parseInt(document.getElementById('cfg-hour').value),
     backup_min: parseInt(document.getElementById('cfg-bmin').value),
     backup_max: parseInt(document.getElementById('cfg-bmax').value),
-    test_date:  document.getElementById('cfg-testdate').value.trim(),
+    target_date: document.getElementById('cfg-targetdate').value.trim(),
   };
   const r = await fetch('/api/config', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
   if (r.ok) {

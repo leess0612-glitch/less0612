@@ -7,6 +7,6 @@
     "post_hour": 20,
     "backup_min": 15,
     "backup_max": 30,
-    "test_date": null,
+    "target_date": null,
     "holiday_api_key": "048368f81349e5812de06ada31237a47768afcb60f489888e247ef6f999358ce"
 }
