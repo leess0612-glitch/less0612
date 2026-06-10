@@ -42,11 +42,11 @@ EXCEL_OPEN_TIMEOUT = 30  # 초 - 다른 곳에서 파일이 열려있어 대화�
 
 # 날짜 필터 설정
 # None 이면 오늘 날짜 자동 사용, 테스트 시 "6/8" 처럼 직접 지정
-TEST_DATE = None
+TARGET_DATE = None
 
 def get_date_filter():
-    if TEST_DATE:
-        return TEST_DATE
+    if TARGET_DATE:
+        return TARGET_DATE
     today = date.today()
     return f"{today.month}/{today.day}"
 
@@ -407,8 +407,8 @@ def update_excel(wired_rows, rental_rows, source='all', capture_only=False):
 
             last_row = DATA_START_ROW + len(all_rows) - 1
             today = date.today()
-            if TEST_DATE:
-                m, d_val = TEST_DATE.split('/')
+            if TARGET_DATE:
+                m, d_val = TARGET_DATE.split('/')
                 cap_date = date(today.year, int(m), int(d_val))
             else:
                 cap_date = today
@@ -544,11 +544,11 @@ def parse_args():
 
 
 def main():
-    global TEST_DATE, BACKUP_MIN, BACKUP_MAX
+    global TARGET_DATE, BACKUP_MIN, BACKUP_MAX
     try:
         with open(BASE_DIR / 'config.json', 'r', encoding='utf-8') as f:
             _cfg = json.load(f)
-        TEST_DATE = _cfg.get('test_date') or None
+        TARGET_DATE = _cfg.get('test_date') or None
         BACKUP_MIN = int(_cfg.get('backup_min', BACKUP_MIN))
         BACKUP_MAX = int(_cfg.get('backup_max', BACKUP_MAX))
     except Exception:
@@ -571,7 +571,7 @@ def main():
         return
 
     # 주말/공휴일 체크 (all 모드일 때만)
-    if source == 'all' and not TEST_DATE:
+    if source == 'all' and not TARGET_DATE:
         print("\n[0] 오늘 날짜 확인 중...")
         if is_holiday():
             print("  오늘은 주말 또는 공휴일 - 실행 종료")
@@ -610,8 +610,8 @@ def main():
         if source == 'all' and image_path and not args.capture_only:
             print("\n[5] 네이버 카페 게시 중...")
             from datetime import date as _date
-            if TEST_DATE:
-                m, d_val = TEST_DATE.split('/')
+            if TARGET_DATE:
+                m, d_val = TARGET_DATE.split('/')
                 post_date = _date(date.today().year, int(m), int(d_val))
             else:
                 post_date = _date.today()
