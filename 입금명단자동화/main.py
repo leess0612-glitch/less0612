@@ -281,35 +281,38 @@ def process_rental(data, date_filter):
 
 def _open_workbook(app, path):
     """파일이 다른 곳에서 열려있어 '사용 중' 대화상자가 뜨면 무한 대기에 빠지는 것을 방지.
-    EXCEL_OPEN_TIMEOUT초 안에 안 열리면 invisible 엑셀을 강제 종료하고 알림을 띄운다."""
-    result = {}
+    EXCEL_OPEN_TIMEOUT초 안에 안 열리면 invisible 엑셀을 강제 종료해 대기를 풀고 알림을 띄운다.
+    (COM 객체는 생성한 스레드에서만 접근 가능하므로, app.books.open()은 항상 메인 스레드에서
+    그대로 호출하고 워치독 스레드는 PID 강제종료/알림만 담당한다.)"""
+    pid = app.pid
+    done = threading.Event()
+    timed_out = threading.Event()
 
-    def _open():
-        try:
-            result['wb'] = app.books.open(path)
-        except Exception as e:
-            result['error'] = e
+    def _watchdog():
+        if not done.wait(EXCEL_OPEN_TIMEOUT):
+            timed_out.set()
+            subprocess.run(['taskkill', '/F', '/T', '/PID', str(pid)], capture_output=True)
+            try:
+                from plyer import notification
+                notification.notify(
+                    title='입금명단 자동화 - 조치 필요',
+                    message=f'{EXCEL_PATH.name} 파일이 다른 곳에서 열려있어 자동화가 실패했습니다.\n파일을 닫고 대시보드에서 다시 실행해주세요.',
+                    timeout=20,
+                )
+            except Exception:
+                pass
 
-    t = threading.Thread(target=_open, daemon=True)
-    t.start()
-    t.join(EXCEL_OPEN_TIMEOUT)
-
-    if t.is_alive():
-        subprocess.run(['taskkill', '/F', '/T', '/PID', str(app.pid)], capture_output=True)
-        try:
-            from plyer import notification
-            notification.notify(
-                title='입금명단 자동화 - 조치 필요',
-                message=f'{EXCEL_PATH.name} 파일이 다른 곳에서 열려있어 자동화가 실패했습니다.\n파일을 닫고 대시보드에서 다시 실행해주세요.',
-                timeout=20,
-            )
-        except Exception:
-            pass
-        raise TimeoutError(f'엑셀 파일이 열려있어 자동화 실패 ({EXCEL_OPEN_TIMEOUT}초 타임아웃)')
-
-    if 'error' in result:
-        raise result['error']
-    return result['wb']
+    watchdog = threading.Thread(target=_watchdog, daemon=True)
+    watchdog.start()
+    try:
+        wb = app.books.open(path)
+    except Exception:
+        if timed_out.is_set():
+            raise TimeoutError(f'엑셀 파일이 열려있어 자동화 실패 ({EXCEL_OPEN_TIMEOUT}초 타임아웃)')
+        raise
+    finally:
+        done.set()
+    return wb
 
 
 # ─────────────────────────── 엑셀 업데이트 + 캡처 + 재정렬 ───────────────────────────
