@@ -279,6 +279,39 @@ def process_rental(data, date_filter):
     return rows
 
 
+def _open_workbook(app, path):
+    """파일이 다른 곳에서 열려있어 '사용 중' 대화상자가 뜨면 무한 대기에 빠지는 것을 방지.
+    EXCEL_OPEN_TIMEOUT초 안에 안 열리면 invisible 엑셀을 강제 종료하고 알림을 띄운다."""
+    result = {}
+
+    def _open():
+        try:
+            result['wb'] = app.books.open(path)
+        except Exception as e:
+            result['error'] = e
+
+    t = threading.Thread(target=_open, daemon=True)
+    t.start()
+    t.join(EXCEL_OPEN_TIMEOUT)
+
+    if t.is_alive():
+        subprocess.run(['taskkill', '/F', '/T', '/PID', str(app.pid)], capture_output=True)
+        try:
+            from plyer import notification
+            notification.notify(
+                title='입금명단 자동화 - 조치 필요',
+                message=f'{EXCEL_PATH.name} 파일이 다른 곳에서 열려있어 자동화가 실패했습니다.\n파일을 닫고 대시보드에서 다시 실행해주세요.',
+                timeout=20,
+            )
+        except Exception:
+            pass
+        raise TimeoutError(f'엑셀 파일이 열려있어 자동화 실패 ({EXCEL_OPEN_TIMEOUT}초 타임아웃)')
+
+    if 'error' in result:
+        raise result['error']
+    return result['wb']
+
+
 # ─────────────────────────── 엑셀 업데이트 + 캡처 + 재정렬 ───────────────────────────
 def update_excel(wired_rows, rental_rows, source='all', capture_only=False):
     """
