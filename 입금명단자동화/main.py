@@ -35,7 +35,6 @@ BACKUP_MIN      = 15
 BACKUP_MAX      = 30
 DATA_START_ROW  = 3   # 데이터 시작 행 (2행은 고정행)
 LOG_PATH        = BASE_DIR / 'run_log.json'
-STATUS_HTML_PATH = BASE_DIR / 'status.html'
 IMAGE_DIR       = BASE_DIR / '사은품지급명단'
 IMAGE_DIR.mkdir(exist_ok=True)
 EXCEL_OPEN_TIMEOUT = 30  # 초 - 다른 곳에서 파일이 열려있어 대화상자가 뜨는 경우 대비
@@ -58,7 +57,7 @@ TELECOM_MAP = {
 PRODUCT_MAP = {'인단': '인터넷', '번들': '인터넷+TV'}
 
 
-# ─────────────────────────── 실행 로그 + 상태 HTML ───────────────────────────
+# ─────────────────────────── 실행 로그 ───────────────────────────
 def log_run(entry: dict):
     logs = []
     if LOG_PATH.exists():
@@ -71,112 +70,6 @@ def log_run(entry: dict):
     logs = logs[-60:]
     with open(LOG_PATH, 'w', encoding='utf-8') as f:
         json.dump(logs, f, ensure_ascii=False, indent=2)
-    _generate_status_html(logs)
-    print(f"  상태 페이지 업데이트 → {STATUS_HTML_PATH}")
-
-
-def _generate_status_html(logs: list):
-    logs_json = json.dumps(logs, ensure_ascii=False)
-    html = f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="60">
-<title>입금명단 자동화 - 실행 현황</title>
-<style>
-  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f2f5; padding: 24px; color: #222; }}
-  h1 {{ font-size: 20px; margin-bottom: 20px; color: #1a1a2e; }}
-  .cards {{ display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }}
-  .card {{ background: white; border-radius: 10px; padding: 18px 24px; min-width: 160px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }}
-  .card .val {{ font-size: 26px; font-weight: 700; margin-bottom: 4px; }}
-  .card .lbl {{ font-size: 12px; color: #888; }}
-  .green {{ color: #1e8e3e; }}
-  .red {{ color: #d93025; }}
-  .orange {{ color: #e37400; }}
-  .blue {{ color: #1a73e8; }}
-  table {{ width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }}
-  th {{ background: #1a73e8; color: white; padding: 11px 14px; text-align: left; font-size: 13px; font-weight: 600; }}
-  td {{ padding: 9px 14px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }}
-  tr:last-child td {{ border-bottom: none; }}
-  tr:hover td {{ background: #f8f9ff; }}
-  .badge {{ display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }}
-  .badge-ok {{ background: #e6f4ea; color: #1e8e3e; }}
-  .badge-fail {{ background: #fce8e6; color: #d93025; }}
-  .badge-skip {{ background: #fff3e0; color: #e37400; }}
-  .empty {{ text-align: center; padding: 40px; color: #aaa; font-size: 14px; }}
-  .footer {{ margin-top: 12px; font-size: 11px; color: #aaa; text-align: right; }}
-</style>
-</head>
-<body>
-<h1>입금명단 자동화 — 실행 현황</h1>
-<div id="root"></div>
-<div class="footer">※ 이 페이지는 프로그램 실행 시 자동 갱신됩니다 (브라우저 1분 자동새로고침)</div>
-<script>
-const LOGS = {logs_json};
-
-function render() {{
-  const el = document.getElementById('root');
-  if (!LOGS.length) {{
-    el.innerHTML = '<div class="empty">아직 실행 기록이 없습니다.</div>';
-    return;
-  }}
-
-  const last = [...LOGS].reverse().find(e => !e.skipped) || LOGS[LOGS.length - 1];
-  const lastAny = LOGS[LOGS.length - 1];
-
-  const cards = `<div class="cards">
-    <div class="card">
-      <div class="val blue">${{lastAny.run_at}}</div>
-      <div class="lbl">마지막 실행 시각</div>
-    </div>
-    <div class="card">
-      <div class="val ${{lastAny.skipped ? 'orange' : (lastAny.cafe_posted ? 'green' : 'red')}}">${{lastAny.skipped || (lastAny.cafe_posted ? '게시 완료' : '게시 실패')}}</div>
-      <div class="lbl">마지막 결과</div>
-    </div>
-    <div class="card">
-      <div class="val blue">${{last ? (last.total_rows || 0) : 0}}</div>
-      <div class="lbl">최근 게시 건수</div>
-    </div>
-    <div class="card">
-      <div class="val blue">${{LOGS.length}}</div>
-      <div class="lbl">총 실행 횟수 (최근 60회)</div>
-    </div>
-  </div>`;
-
-  let rows = '';
-  for (const e of [...LOGS].reverse()) {{
-    let badge;
-    if (e.skipped) badge = `<span class="badge badge-skip">${{e.skipped}}</span>`;
-    else if (e.cafe_posted) badge = '<span class="badge badge-ok">완료</span>';
-    else badge = '<span class="badge badge-fail">실패</span>';
-
-    const rowStyle = (!e.skipped && !e.cafe_posted) ? ' style="background:#fef4f3"' : '';
-    rows += `<tr${{rowStyle}}>
-      <td>${{e.run_at}}</td>
-      <td>${{e.date_filter || '-'}}</td>
-      <td>${{e.wired_count ?? '-'}}</td>
-      <td>${{e.rental_count ?? '-'}}</td>
-      <td>${{e.backup_count ?? '-'}}</td>
-      <td><b>${{e.total_rows ?? '-'}}</b></td>
-      <td>${{badge}}</td>
-      <td style="color:#d93025;font-size:12px;font-weight:600">${{e.error || ''}}</td>
-    </tr>`;
-  }}
-
-  const table = `<table>
-    <tr><th>실행 시각</th><th>날짜</th><th>유선</th><th>렌탈</th><th>백업</th><th>합계</th><th>결과</th><th>오류</th></tr>
-    ${{rows}}
-  </table>`;
-
-  el.innerHTML = cards + table;
-}}
-render();
-</script>
-</body>
-</html>"""
-    with open(STATUS_HTML_PATH, 'w', encoding='utf-8') as f:
-        f.write(html)
 
 
 # ─────────────────────────── 이름 정제 및 마스킹 ───────────────────────────
