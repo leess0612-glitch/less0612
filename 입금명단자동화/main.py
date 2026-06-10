@@ -324,7 +324,7 @@ def update_excel(wired_rows, rental_rows, source='all', capture_only=False):
     app = xw.App(visible=False)
     try:
         short_path = win32api.GetShortPathName(str(EXCEL_PATH))
-        wb = app.books.open(short_path)
+        wb = _open_workbook(app, short_path)
         ws = wb.sheets.active
 
         max_row = ws.used_range.last_cell.row
@@ -465,7 +465,7 @@ def archive_only(args):
     app = xw.App(visible=False)
     try:
         short_path = win32api.GetShortPathName(str(EXCEL_PATH))
-        wb = app.books.open(short_path)
+        wb = _open_workbook(app, short_path)
         ws = wb.sheets.active
 
         max_row = ws.used_range.last_cell.row
