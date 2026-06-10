@@ -40,6 +40,7 @@ LOG_PATH        = BASE_DIR / 'run_log.json'
 STATUS_HTML_PATH = BASE_DIR / 'status.html'
 IMAGE_DIR       = BASE_DIR / '사은품지급명단'
 IMAGE_DIR.mkdir(exist_ok=True)
+EXCEL_OPEN_TIMEOUT = 30  # 초 - 다른 곳에서 파일이 열려있어 대화상자가 뜨는 경우 대비
 
 # 날짜 필터 설정
 # None 이면 오늘 날짜 자동 사용, 테스트 시 "6/8" 처럼 직접 지정
