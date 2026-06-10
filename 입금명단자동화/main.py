@@ -1,4 +1,3 @@
-import os
 import re
 import sys
 import json
@@ -15,7 +14,6 @@ from datetime import date, datetime as _dt
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 import win32api
