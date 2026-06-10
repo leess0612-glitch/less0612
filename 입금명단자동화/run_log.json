@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "run_at": "2026-06-10 20:00:02",
+    "date_filter": "6/10",
+    "wired_count": 4,
+    "rental_count": 4,
+    "backup_count": 30,
+    "total_rows": 38,
+    "image_file": "20260610_사은품명단.png",
+    "cafe_posted": false,
+    "skipped": null,
+    "error": "쿠키 만료 - 재로그인 필요"
+  }
+]
