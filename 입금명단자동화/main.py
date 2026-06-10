@@ -549,9 +549,14 @@ def main():
     try:
         with open(BASE_DIR / 'config.json', 'r', encoding='utf-8') as f:
             _cfg = json.load(f)
-        TARGET_DATE = _cfg.get('test_date') or None
+        TARGET_DATE = _cfg.get('target_date') or None
         BACKUP_MIN = int(_cfg.get('backup_min', BACKUP_MIN))
         BACKUP_MAX = int(_cfg.get('backup_max', BACKUP_MAX))
+
+        if TARGET_DATE:
+            _cfg['target_date'] = None
+            with open(BASE_DIR / 'config.json', 'w', encoding='utf-8') as f:
+                json.dump(_cfg, f, ensure_ascii=False, indent=4)
     except Exception:
         pass
 
