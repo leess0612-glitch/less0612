@@ -103,11 +103,11 @@ def api_config_save():
     data = request.json
     cfg = load_config()
     changed_hour = False
-    for key in ('post_hour', 'backup_min', 'backup_max', 'test_date'):
+    for key in ('post_hour', 'backup_min', 'backup_max', 'target_date'):
         if key not in data:
             continue
         val = data[key]
-        if key == 'test_date':
+        if key == 'target_date':
             val = (val or '').strip() or None
         else:
             try:
