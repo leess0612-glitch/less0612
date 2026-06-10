@@ -630,7 +630,7 @@ def main():
 
         if source == 'all' and not args.capture_only:
             if row_count == 0:
-                error_msg = '오늘 등록할 데이터 없음'
+                error_msg = f'{date_filter} 등록할 데이터 없음'
             elif not image_path:
                 error_msg = '이미지 캡처 실패'
             elif not cafe_posted:
