@@ -25,7 +25,7 @@ from naver_post import refresh_login, post_to_cafe
 
 # ─────────────────────────── 설정 ───────────────────────────
 SPREADSHEET_ID  = '1y5wfMhcM3_S7FnJWHAhTIkqyzFZZCcItGQpVL5nu5XY'
-EXCEL_PATH      = Path(r'C:\Users\a\Desktop\안티그라비티\입금명단자동화\신청현황_자동화테스트버전.xlsx')
+EXCEL_PATH      = Path(r'C:\Users\a\Documents\신청현황.xlsx')
 SCOPES          = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 BASE_DIR        = Path(__file__).parent
 SHARED_DIR      = BASE_DIR.parent  # 안티그라비티\ (공유 Google 인증 파일 위치)
@@ -36,6 +36,8 @@ BACKUP_MAX      = 30
 DATA_START_ROW  = 3   # 데이터 시작 행 (2행은 고정행)
 LOG_PATH        = BASE_DIR / 'run_log.json'
 STATUS_HTML_PATH = BASE_DIR / 'status.html'
+IMAGE_DIR       = BASE_DIR / '사은품지급명단'
+IMAGE_DIR.mkdir(exist_ok=True)
 
 # 날짜 필터 설정
 # None 이면 오늘 날짜 자동 사용, 테스트 시 "6/8" 처럼 직접 지정
@@ -373,7 +375,7 @@ def update_excel(wired_rows, rental_rows, source='all', capture_only=False):
                 cap_date = date(today.year, int(m), int(d_val))
             else:
                 cap_date = today
-            image_path = EXCEL_PATH.parent / f"{cap_date.strftime('%Y%m%d')}_사은품명단.png"
+            image_path = IMAGE_DIR / f"{cap_date.strftime('%Y%m%d')}_사은품명단.png"
 
             print("[3] 이미지 캡처 중...")
             app.visible = True
