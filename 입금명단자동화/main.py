@@ -73,6 +73,26 @@ def log_run(entry: dict):
         json.dump(logs, f, ensure_ascii=False, indent=2)
 
 
+# ─────────────────────────── 텔레그램 알림 ───────────────────────────
+TELEGRAM_CONFIG_PATH = BASE_DIR / 'telegram_config.json'
+
+def notify_telegram(message: str):
+    """실패 시 텔레그램으로 메시지 전송. telegram_config.json이 없으면 아무 동작 안 함."""
+    if not TELEGRAM_CONFIG_PATH.exists():
+        return
+    try:
+        with open(TELEGRAM_CONFIG_PATH, 'r', encoding='utf-8') as f:
+            tg = json.load(f)
+        import requests
+        requests.post(
+            f"https://api.telegram.org/bot{tg['bot_token']}/sendMessage",
+            data={'chat_id': tg['chat_id'], 'text': message},
+            timeout=10,
+        )
+    except Exception:
+        pass
+
+
 # ─────────────────────────── 이름 정제 및 마스킹 ───────────────────────────
 def clean_name(name: str) -> str:
     name = name.strip()
@@ -543,8 +563,11 @@ def main():
                 'skipped': None,
                 'error': error_msg,
             })
+            if error_msg:
+                notify_telegram(f'⚠️ 입금명단 자동화 - 확인 필요\n{error_msg}')
 
     except Exception as e:
+        tb_str = traceback.format_exc()
         log_run({
             'run_at': run_at,
             'date_filter': date_filter if 'date_filter' in dir() else None,
@@ -556,7 +579,9 @@ def main():
             'cafe_posted': False,
             'skipped': None,
             'error': str(e),
+            'traceback': tb_str,
         })
+        notify_telegram(f'🔴 입금명단 자동화 실패\n{type(e).__name__}: {e}')
         raise
 
     print("\n완료!")
