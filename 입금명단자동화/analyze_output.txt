@@ -1,0 +1,18 @@
+﻿시트명: 지급현황 (2)
+최대행: 22409
+
+1행: [None, None, None, None, None, '전체화면: 콘트롤 + 쉬프트 + F1', None, None]
+2행: [None, None, None, '고객명', '통신사', '상품명', '입금계좌', None]
+3행: [1, '=RAND()', '=RAND()', None, None, None, None, 1]
+4행: [2, '=RAND()', None, None, None, None, None, 2]
+5행: [3, '=RAND()', None, None, None, None, None, 3]
+6행: [4, '=RAND()', None, None, None, None, None, 4]
+7행: [5, '=RAND()', None, None, None, None, None, 5]
+...
+마지막 데이터 행: 22409
+22404행: [None, None, None, '남#서', 'LG', '인터넷', '신한', None]
+22405행: [None, None, None, '오#일', 'SK', '인터넷 + TV', '대구', None]
+22406행: [None, None, None, '신#열', None, '가전 렌탈', '국민', None]
+22407행: [None, None, None, '최#준', 'LG', '인터넷 + TV', '산업', None]
+22408행: [None, None, None, '엄#화2', None, '가전 렌탈', '토스뱅크', None]
+22409행: [None, None, None, '노#화', None, '가전 렌탈', '우리', None]

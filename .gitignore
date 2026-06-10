@@ -3,3 +3,6 @@ DangHH/
 __pycache__/
 *.pyc
 *.pyo
+credentials.json
+token.pickle
+naver_cookies.json

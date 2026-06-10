@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>입금명단 자동화 — 대시보드</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Malgun Gothic', -apple-system, sans-serif; background: #f0f2f5; color: #222; font-size: 14px; }
+
+.topbar {
+  background: #1a73e8; color: white;
+  padding: 0 28px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar h1 { font-size: 16px; font-weight: 600; letter-spacing: -.2px; }
+.topbar-right { display: flex; gap: 10px; align-items: center; }
+.run-status { font-size: 12px; opacity: .85; }
+
+.wrap { padding: 24px 28px; max-width: 1100px; margin: 0 auto; }
+
+/* ── 카드 그리드 ── */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+.card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 1px 5px rgba(0,0,0,.07); }
+.card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: #999; margin-bottom: 10px; }
+.card-value { font-size: 20px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 7px; }
+.card-sub { font-size: 12px; color: #777; margin-bottom: 16px; min-height: 18px; }
+.card-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+/* ── 설정 ── */
+.panel { background: white; border-radius: 12px; padding: 20px 24px; box-shadow: 0 1px 5px rgba(0,0,0,.07); margin-bottom: 20px; }
+.panel-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: #999; margin-bottom: 18px; }
+.fields { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field > span { font-size: 12px; color: #666; font-weight: 500; }
+.field input[type=number], .field input[type=text] {
+  border: 1px solid #ddd; border-radius: 7px; padding: 8px 11px;
+  font-size: 14px; font-family: inherit; outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus { border-color: #1a73e8; box-shadow: 0 0 0 3px rgba(26,115,232,.12); }
+.hint { font-size: 11px; color: #bbb; margin-top: 2px; }
+.field-group { display: flex; align-items: center; gap: 6px; }
+.field-group span { color: #aaa; font-size: 13px; }
+
+/* ── 이력 ── */
+.history { background: white; border-radius: 12px; box-shadow: 0 1px 5px rgba(0,0,0,.07); overflow: hidden; }
+.history-head { padding: 14px 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: #999; border-bottom: 1px solid #f0f0f0; }
+table { width: 100%; border-collapse: collapse; }
+th { padding: 9px 14px; background: #fafafa; text-align: left; font-size: 12px; color: #777; font-weight: 600; border-bottom: 1px solid #eee; }
+td { padding: 9px 14px; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f8f9ff; }
+.empty-row { text-align: center; padding: 40px 0; color: #bbb; font-size: 13px; }
+
+/* ── 버튼 ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 7px 14px; border-radius: 7px; border: none;
+  cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 500;
+  transition: background .12s, opacity .12s;
+  white-space: nowrap;
+}
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn-primary { background: #1a73e8; color: white; }
+.btn-primary:hover:not(:disabled) { background: #1660c9; }
+.btn-white { background: rgba(255,255,255,.15); color: white; border: 1px solid rgba(255,255,255,.3); }
+.btn-white:hover:not(:disabled) { background: rgba(255,255,255,.28); }
+.btn-outline { background: white; border: 1px solid #ddd; color: #444; }
+.btn-outline:hover:not(:disabled) { background: #f5f5f5; }
+.btn-save { background: #1e8e3e; color: white; }
+.btn-save:hover:not(:disabled) { background: #166d31; }
+.btn-warn { background: #fff3e0; color: #c17800; border: 1px solid #ffe0b2; }
+.btn-warn:hover:not(:disabled) { background: #ffe0b2; }
+
+/* ── 뱃지 ── */
+.badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.ok { color: #1e8e3e; } .fail { color: #d93025; } .warn { color: #c17800; }
+.badge-ok { background: #e6f4ea; color: #1e8e3e; }
+.badge-fail { background: #fce8e6; color: #d93025; }
+.badge-skip { background: #fff3e0; color: #c17800; }
+.badge-info { background: #e8f0fe; color: #1a73e8; }
+
+/* ── 상태 점 ── */
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dot-green { background: #34a853; box-shadow: 0 0 0 3px rgba(52,168,83,.15); }
+.dot-gray { background: #ccc; }
+.dot-red { background: #ea4335; }
+.dot-orange { background: #fbbc04; }
+
+/* ── 토글 ── */
+.toggle-wrap { display: flex; align-items: center; gap: 8px; }
+.toggle { position: relative; width: 38px; height: 21px; cursor: pointer; flex-shrink: 0; }
+.toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+.toggle-track { position: absolute; inset: 0; background: #ccc; border-radius: 21px; transition: background .2s; }
+.toggle-thumb { position: absolute; width: 15px; height: 15px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.toggle input:checked ~ .toggle-track { background: #1a73e8; }
+.toggle input:checked ~ .toggle-thumb { transform: translateX(17px); }
+.toggle-text { font-size: 13px; color: #555; user-select: none; }
+
+/* ── 스피너 ── */
+.spinner { display: inline-block; width: 13px; height: 13px; border: 2px solid rgba(255,255,255,.4); border-top-color: white; border-radius: 50%; animation: spin .65s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── 토스트 ── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  background: #323232; color: white;
+  padding: 10px 22px; border-radius: 8px; font-size: 13px;
+  opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 999;
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>입금명단 자동화 — 대시보드</h1>
+  <div class="topbar-right">
+    <span class="run-status" id="run-status"></span>
+    <button class="btn btn-white" id="btn-run" onclick="runNow()">▶ 지금 실행</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 상태 카드 3개 -->
+  <div class="cards">
+
+    <!-- 스케줄러 -->
+    <div class="card">
+      <div class="card-label">스케줄러</div>
+      <div class="card-value" id="sched-value"><span class="dot dot-gray"></span>—</div>
+      <div class="card-sub" id="sched-sub">—</div>
+      <div class="card-actions">
+        <label class="toggle" title="스케줄러 켜기/끄기">
+          <input type="checkbox" id="sched-toggle" onchange="toggleScheduler(this)">
+          <span class="toggle-track"></span>
+          <span class="toggle-thumb"></span>
+        </label>
+        <span class="toggle-text" id="sched-toggle-label">—</span>
+        <button class="btn btn-warn" onclick="skipToday()" style="font-size:12px;padding:5px 10px;margin-left:4px">오늘 스킵</button>
+      </div>
+    </div>
+
+    <!-- 네이버 로그인 -->
+    <div class="card">
+      <div class="card-label">네이버 로그인</div>
+      <div class="card-value" id="cookie-value">—</div>
+      <div class="card-sub" id="cookie-sub">—</div>
+      <div class="card-actions">
+        <button class="btn btn-outline" onclick="refreshLogin()">쿠키 갱신</button>
+      </div>
+    </div>
+
+    <!-- 마지막 실행 -->
+    <div class="card">
+      <div class="card-label">마지막 실행</div>
+      <div class="card-value" id="last-value" style="font-size:16px">—</div>
+      <div class="card-sub" id="last-sub">—</div>
+      <div id="last-detail" style="font-size:12px;color:#888"></div>
+    </div>
+
+  </div>
+
+  <!-- 설정 -->
+  <div class="panel">
+    <div class="panel-label">설정</div>
+    <div class="fields">
+
+      <div class="field">
+        <span>실행 시각</span>
+        <div class="field-group">
+          <input type="number" id="cfg-hour" min="0" max="23" style="width:70px">
+          <span>시</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <span>백업 범위</span>
+        <div class="field-group">
+          <input type="number" id="cfg-bmin" min="0" max="200" style="width:65px">
+          <span>~</span>
+          <input type="number" id="cfg-bmax" min="0" max="200" style="width:65px">
+          <span>건</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <span>테스트 날짜</span>
+        <input type="text" id="cfg-testdate" placeholder="예: 6/10" style="width:110px">
+        <div class="hint">비우면 오늘 자동</div>
+      </div>
+
+      <button class="btn btn-save" onclick="saveConfig()" style="padding:8px 20px">저장</button>
+
+    </div>
+  </div>
+
+  <!-- 실행 이력 -->
+  <div class="history">
+    <div class="history-head">실행 이력</div>
+    <div id="history-body"><div class="empty-row">불러오는 중...</div></div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let runPolling = null;
+
+// ── 초기화 ──────────────────────────────────────────────────
+async function init() {
+  await Promise.all([loadStatus(), loadConfig(), loadLogs()]);
+}
+
+// ── 상태 카드 ────────────────────────────────────────────────
+async function loadStatus() {
+  try {
+    const d = await apiFetch('/api/status');
+    renderScheduler(d.scheduler);
+    renderCookie(d.cookie);
+    renderLastRun(d.last_run);
+  } catch(e) { console.error('status error', e); }
+}
+
+function renderScheduler(s) {
+  const on = s.enabled;
+  document.getElementById('sched-toggle').checked = on;
+  document.getElementById('sched-toggle-label').textContent = on ? '활성' : '비활성';
+  document.getElementById('sched-value').innerHTML = on
+    ? '<span class="dot dot-green"></span><span class="ok">활성</span>'
+    : '<span class="dot dot-gray"></span><span style="color:#999">비활성</span>';
+  const next = s.next_run && s.next_run !== '-' ? '다음 실행: ' + s.next_run : '-';
+  document.getElementById('sched-sub').textContent = next;
+}
+
+function renderCookie(c) {
+  document.getElementById('cookie-value').innerHTML = c.valid
+    ? '<span class="dot dot-green"></span><span class="ok">유효</span>'
+    : '<span class="dot dot-red"></span><span class="fail">만료</span>';
+  document.getElementById('cookie-sub').textContent = c.label || '-';
+}
+
+function renderLastRun(r) {
+  if (!r) {
+    document.getElementById('last-value').textContent = '기록 없음';
+    document.getElementById('last-sub').innerHTML = '';
+    document.getElementById('last-detail').textContent = '';
+    return;
+  }
+  document.getElementById('last-value').textContent = r.run_at || '-';
+  let badge;
+  if (r.skipped)      badge = `<span class="badge badge-skip">${r.skipped}</span>`;
+  else if (r.cafe_posted) badge = '<span class="badge badge-ok">게시 완료</span>';
+  else                badge = '<span class="badge badge-fail">실패</span>';
+  document.getElementById('last-sub').innerHTML = badge;
+  const parts = [];
+  if (r.date_filter) parts.push(r.date_filter + '일자');
+  if (r.total_rows != null) parts.push(`합계 ${r.total_rows}건`);
+  if (r.wired_count != null) parts.push(`유선 ${r.wired_count}`);
+  if (r.rental_count != null) parts.push(`렌탈 ${r.rental_count}`);
+  const detailEl = document.getElementById('last-detail');
+  if (r.error) {
+    detailEl.innerHTML = `<span style="color:#d93025;font-weight:600">${r.error}</span>` + (parts.length ? ' · ' + parts.join(' · ') : '');
+  } else {
+    detailEl.textContent = parts.join(' · ');
+  }
+}
+
+// ── 설정 ────────────────────────────────────────────────────
+async function loadConfig() {
+  const c = await apiFetch('/api/config');
+  document.getElementById('cfg-hour').value    = c.post_hour  ?? 20;
+  document.getElementById('cfg-bmin').value    = c.backup_min ?? 15;
+  document.getElementById('cfg-bmax').value    = c.backup_max ?? 30;
+  document.getElementById('cfg-testdate').value = c.test_date  ?? '';
+}
+
+async function saveConfig() {
+  const payload = {
+    post_hour:  parseInt(document.getElementById('cfg-hour').value),
+    backup_min: parseInt(document.getElementById('cfg-bmin').value),
+    backup_max: parseInt(document.getElementById('cfg-bmax').value),
+    test_date:  document.getElementById('cfg-testdate').value.trim(),
+  };
+  const r = await fetch('/api/config', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+  if (r.ok) {
+    toast('설정 저장 완료');
+    await loadStatus();
+  } else {
+    toast('저장 실패');
+  }
+}
+
+// ── 이력 ────────────────────────────────────────────────────
+async function loadLogs() {
+  const logs = await apiFetch('/api/logs');
+  const el = document.getElementById('history-body');
+  if (!logs.length) {
+    el.innerHTML = '<div class="empty-row">실행 기록이 없습니다.</div>';
+    return;
+  }
+  let rows = '';
+  for (const e of [...logs].reverse()) {
+    let badge;
+    if (e.skipped)       badge = `<span class="badge badge-skip">${e.skipped}</span>`;
+    else if (e.cafe_posted) badge = '<span class="badge badge-ok">완료</span>';
+    else                 badge = '<span class="badge badge-fail">실패</span>';
+    const err = e.error ? `<span style="color:#d93025;font-size:12px;font-weight:600">${e.error}</span>` : '';
+    const rowStyle = (!e.skipped && !e.cafe_posted) ? ' style="background:#fef4f3"' : '';
+    rows += `<tr${rowStyle}>
+      <td>${e.run_at || '-'}</td>
+      <td>${e.date_filter || '-'}</td>
+      <td style="text-align:center">${e.wired_count  ?? '-'}</td>
+      <td style="text-align:center">${e.rental_count ?? '-'}</td>
+      <td style="text-align:center">${e.backup_count ?? '-'}</td>
+      <td style="text-align:center"><b>${e.total_rows ?? '-'}</b></td>
+      <td>${badge}</td>
+      <td>${err}</td>
+    </tr>`;
+  }
+  el.innerHTML = `<table>
+    <tr>
+      <th>실행 시각</th><th>날짜</th>
+      <th style="text-align:center">유선</th>
+      <th style="text-align:center">렌탈</th>
+      <th style="text-align:center">백업</th>
+      <th style="text-align:center">합계</th>
+      <th>결과</th><th>오류</th>
+    </tr>${rows}
+  </table>`;
+}
+
+// ── 액션 ────────────────────────────────────────────────────
+async function toggleScheduler(cb) {
+  cb.disabled = true;
+  try {
+    const d = await apiFetch('/api/scheduler/toggle', 'POST');
+    toast(d.enabled ? '스케줄러 활성화' : '스케줄러 비활성화');
+    await loadStatus();
+  } finally { cb.disabled = false; }
+}
+
+async function skipToday() {
+  if (!confirm('오늘 실행을 건너뛰고 내일부터 재개할까요?')) return;
+  await apiFetch('/api/scheduler/skip-today', 'POST');
+  toast('오늘 스킵 — 내일 자동 재개');
+  await loadStatus();
+}
+
+async function refreshLogin() {
+  await apiFetch('/api/refresh-login', 'POST');
+  toast('브라우저가 열립니다. 네이버에 로그인해주세요.');
+  setTimeout(loadStatus, 8000);
+}
+
+async function runNow() {
+  const btn = document.getElementById('btn-run');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 실행 중...';
+  document.getElementById('run-status').textContent = '';
+
+  const d = await apiFetch('/api/run', 'POST');
+  if (!d.ok) {
+    toast(d.msg || '실행 실패');
+    btn.disabled = false;
+    btn.innerHTML = '▶ 지금 실행';
+    return;
+  }
+  startRunPolling();
+}
+
+function startRunPolling() {
+  if (runPolling) clearInterval(runPolling);
+  runPolling = setInterval(async () => {
+    const d = await apiFetch('/api/run/status');
+    if (!d.running) {
+      clearInterval(runPolling); runPolling = null;
+      const btn = document.getElementById('btn-run');
+      btn.disabled = false;
+      btn.innerHTML = '▶ 지금 실행';
+      document.getElementById('run-status').textContent = '✓ 완료';
+      setTimeout(() => { document.getElementById('run-status').textContent = ''; }, 4000);
+      await init();
+    }
+  }, 3000);
+}
+
+// ── 유틸 ────────────────────────────────────────────────────
+async function apiFetch(url, method = 'GET', body = null) {
+  const opts = { method, headers: {} };
+  if (body) { opts.body = JSON.stringify(body); opts.headers['Content-Type'] = 'application/json'; }
+  const r = await fetch(url, opts);
+  return r.json();
+}
+
+function toast(msg, duration = 2500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), duration);
+}
+
+// ── 자동 갱신 (30초) ──────────────────────────────────────────
+init();
+setInterval(() => { if (!runPolling) { loadStatus(); loadLogs(); } }, 30000);
+</script>
+</body>
+</html>
