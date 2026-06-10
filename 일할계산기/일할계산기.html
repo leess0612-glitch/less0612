@@ -52,7 +52,7 @@
 
     .info-box strong { color: #4f6ef7; }
 
-    /* 지역 선택 버튼 */
+    /* 라벨 공통 */
     .region-label {
       font-size: 13px;
       font-weight: 600;
@@ -60,6 +60,24 @@
       margin-bottom: 10px;
     }
 
+    /* 입점일 선택 */
+    .date-input {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1.5px solid #dde1e7;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'Malgun Gothic', sans-serif;
+      color: #333;
+      margin-bottom: 24px;
+    }
+
+    .date-input:focus {
+      outline: none;
+      border-color: #4f6ef7;
+    }
+
+    /* 지역 선택 버튼 */
     .region-btns {
       display: flex;
       gap: 10px;
@@ -95,13 +113,6 @@
       display: none;
     }
 
-    .period-info {
-      font-size: 12px;
-      color: #999;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
     /* 카페 카드 */
     .cafe-card {
       background: #f6f8ff;
@@ -117,13 +128,13 @@
       font-size: 15px;
       font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
-    .cafe-base {
+    .cafe-detail {
       font-size: 12px;
       color: #999;
-      margin-bottom: 14px;
+      line-height: 1.6;
     }
 
     .result-row {
@@ -134,17 +145,12 @@
       border-bottom: 1px solid #e4e8f7;
     }
 
+    .result-row:first-of-type { margin-top: 10px; }
     .result-row:last-of-type { border-bottom: none; }
 
     .result-label {
       font-size: 13px;
       color: #666;
-    }
-
-    .result-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .result-value {
@@ -153,34 +159,24 @@
       color: #4f6ef7;
     }
 
-    .badge {
-      display: inline-block;
-      background: #eef0ff;
-      color: #4f6ef7;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 20px;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
-    .btn-copy {
-      padding: 4px 10px;
+    .btn-copy-all {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 10px;
       background: #eef0ff;
       color: #4f6ef7;
       border: 1.5px solid #d3dbff;
-      border-radius: 6px;
-      font-size: 12px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 700;
       font-family: 'Malgun Gothic', sans-serif;
       cursor: pointer;
       transition: background 0.15s;
-      white-space: nowrap;
     }
 
-    .btn-copy:hover { background: #d3dbff; }
-    .btn-copy.copied { background: #d4f7e0; color: #2a7a4f; border-color: #a8e6c3; }
+    .btn-copy-all:hover { background: #d3dbff; }
+    .btn-copy-all.copied { background: #d4f7e0; color: #2a7a4f; border-color: #a8e6c3; }
 
     .calc-note {
       font-size: 11px;
@@ -198,6 +194,9 @@
 
     <div class="info-box" id="infoBox"></div>
 
+    <div class="region-label">입점일 선택</div>
+    <input type="date" id="entryDate" class="date-input">
+
     <div class="region-label">지역 선택</div>
     <div class="region-btns">
       <button class="btn-region" onclick="selectRegion('seoul')">서울</button>
@@ -206,125 +205,97 @@
     </div>
 
     <div class="results-wrap" id="resultsWrap">
-      <div class="period-info" id="periodInfo"></div>
 
       <!-- 성지똑똑 -->
       <div class="cafe-card">
         <div class="cafe-name">성지똑똑</div>
-        <div class="cafe-base" id="base-sj"></div>
+        <div class="cafe-detail" id="base-sj">월 기준 금액: —</div>
+        <div class="cafe-detail">(계산서 발행시 부가세 별도)</div>
+        <div class="cafe-detail" id="period-sj">—</div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="sj-ex">—</span>
-            <button class="btn-copy" id="copy-sj-ex" onclick="copyVal('sj-ex', 'copy-sj-ex')">복사</button>
-          </span>
+          <span class="result-label">일할계산 금액:</span>
+          <span class="result-value" id="sj-ex">—</span>
         </div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="sj-inc">—</span>
-            <button class="btn-copy" id="copy-sj-inc" onclick="copyVal('sj-inc', 'copy-sj-inc')">복사</button>
-          </span>
+          <span class="result-label">계산서 발행시:</span>
+          <span class="result-value" id="sj-inc">—</span>
         </div>
+        <button class="btn-copy-all" id="copy-sj" onclick="copyAll('sj', '성지똑똑')">전체 복사</button>
       </div>
 
       <!-- 좌표동맹 -->
       <div class="cafe-card">
         <div class="cafe-name">좌표동맹</div>
-        <div class="cafe-base" id="base-jw"></div>
+        <div class="cafe-detail" id="base-jw">월 기준 금액: —</div>
+        <div class="cafe-detail">(계산서 발행시 부가세 별도)</div>
+        <div class="cafe-detail" id="period-jw">—</div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="jw-ex">—</span>
-            <button class="btn-copy" id="copy-jw-ex" onclick="copyVal('jw-ex', 'copy-jw-ex')">복사</button>
-          </span>
+          <span class="result-label">일할계산 금액:</span>
+          <span class="result-value" id="jw-ex">—</span>
         </div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="jw-inc">—</span>
-            <button class="btn-copy" id="copy-jw-inc" onclick="copyVal('jw-inc', 'copy-jw-inc')">복사</button>
-          </span>
+          <span class="result-label">계산서 발행시:</span>
+          <span class="result-value" id="jw-inc">—</span>
         </div>
+        <button class="btn-copy-all" id="copy-jw" onclick="copyAll('jw', '좌표동맹')">전체 복사</button>
       </div>
 
       <!-- 컴백폰 -->
       <div class="cafe-card">
         <div class="cafe-name">컴백폰</div>
-        <div class="cafe-base" id="base-cb"></div>
+        <div class="cafe-detail" id="base-cb">월 기준 금액: —</div>
+        <div class="cafe-detail">(계산서 발행시 부가세 별도)</div>
+        <div class="cafe-detail" id="period-cb">—</div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="cb-ex">—</span>
-            <button class="btn-copy" id="copy-cb-ex" onclick="copyVal('cb-ex', 'copy-cb-ex')">복사</button>
-          </span>
+          <span class="result-label">일할계산 금액:</span>
+          <span class="result-value" id="cb-ex">—</span>
         </div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="cb-inc">—</span>
-            <button class="btn-copy" id="copy-cb-inc" onclick="copyVal('cb-inc', 'copy-cb-inc')">복사</button>
-          </span>
+          <span class="result-label">계산서 발행시:</span>
+          <span class="result-value" id="cb-inc">—</span>
         </div>
+        <button class="btn-copy-all" id="copy-cb" onclick="copyAll('cb', '컴백폰')">전체 복사</button>
       </div>
 
       <!-- 올댓폰 -->
       <div class="cafe-card">
         <div class="cafe-name">올댓폰</div>
-        <div class="cafe-base" id="base-at"></div>
+        <div class="cafe-detail" id="base-at">월 기준 금액: —</div>
+        <div class="cafe-detail">(계산서 발행시 부가세 별도)</div>
+        <div class="cafe-detail" id="period-at">—</div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="at-ex">—</span>
-            <button class="btn-copy" id="copy-at-ex" onclick="copyVal('at-ex', 'copy-at-ex')">복사</button>
-          </span>
+          <span class="result-label">일할계산 금액:</span>
+          <span class="result-value" id="at-ex">—</span>
         </div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="at-inc">—</span>
-            <button class="btn-copy" id="copy-at-inc" onclick="copyVal('at-inc', 'copy-at-inc')">복사</button>
-          </span>
+          <span class="result-label">계산서 발행시:</span>
+          <span class="result-value" id="at-inc">—</span>
         </div>
+        <button class="btn-copy-all" id="copy-at" onclick="copyAll('at', '올댓폰')">전체 복사</button>
       </div>
 
       <!-- 극딜나라 -->
       <div class="cafe-card">
         <div class="cafe-name">극딜나라</div>
-        <div class="cafe-base" id="base-gd"></div>
+        <div class="cafe-detail" id="base-gd">월 기준 금액: —</div>
+        <div class="cafe-detail">(계산서 발행시 부가세 별도)</div>
+        <div class="cafe-detail" id="period-gd">—</div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 미포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="gd-ex">—</span>
-            <button class="btn-copy" id="copy-gd-ex" onclick="copyVal('gd-ex', 'copy-gd-ex')">복사</button>
-          </span>
+          <span class="result-label">일할계산 금액:</span>
+          <span class="result-value" id="gd-ex">—</span>
         </div>
         <div class="result-row">
-          <span class="result-label">일할 금액 <span class="badge">VAT 포함</span></span>
-          <span class="result-right">
-            <span class="result-value" id="gd-inc">—</span>
-            <button class="btn-copy" id="copy-gd-inc" onclick="copyVal('gd-inc', 'copy-gd-inc')">복사</button>
-          </span>
+          <span class="result-label">계산서 발행시:</span>
+          <span class="result-value" id="gd-inc">—</span>
         </div>
+        <button class="btn-copy-all" id="copy-gd" onclick="copyAll('gd', '극딜나라')">전체 복사</button>
       </div>
 
-      <div class="calc-note" id="calcNote"></div>
+      <div class="calc-note">VAT 미포함 기준 1,000원 단위 반올림 적용 (100의 자리에서 반올림)</div>
     </div>
   </div>
 
   <script>
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    const totalDays = new Date(year, month, 0).getDate();
-    const appliedDays = totalDays - day + 1;
-
-    document.getElementById('infoBox').innerHTML =
-      `오늘: <strong>${year}년 ${month}월 ${day}일</strong>&nbsp;&nbsp;|&nbsp;&nbsp;` +
-      `이번 달: <strong>${totalDays}일</strong><br>` +
-      `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${totalDays}일</strong> (${appliedDays}일)`;
-
     // 카페별 지역별 월 기준 금액 (만원)
     const FEES = {
       sj: { seoul: 30, gyeonggi: 25, other: 17 },  // 성지똑똑
@@ -334,7 +305,22 @@
       gd: { seoul: 35, gyeonggi: 30, other: 20 },  // 극딜나라
     };
 
-    const REGION_LABEL = { seoul: '서울', gyeonggi: '경기·광역시', other: '기타지방' };
+    let currentRegion = null;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function getTodayStr() {
+      const d = new Date();
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    }
+
+    function getDateInfo() {
+      const val = document.getElementById('entryDate').value;
+      const [year, month, day] = val.split('-').map(Number);
+      const totalDays = new Date(year, month, 0).getDate();
+      const appliedDays = totalDays - day + 1;
+      return { year, month, day, totalDays, appliedDays };
+    }
 
     function roundTo1000(n) {
       return Math.round(n / 1000) * 1000;
@@ -344,11 +330,19 @@
       return n.toLocaleString('ko-KR') + '원';
     }
 
-    function calcDaily(feeMan) {
+    function calcDaily(feeMan, totalDays, appliedDays) {
       const fee = feeMan * 10000;
       const exVat = roundTo1000((fee / totalDays) * appliedDays);
       const incVat = Math.round(exVat * 1.1);
       return { exVat, incVat, fee };
+    }
+
+    function updateInfoBox() {
+      const { year, month, day, totalDays, appliedDays } = getDateInfo();
+      document.getElementById('infoBox').innerHTML =
+        `입점일: <strong>${year}년 ${month}월 ${day}일</strong>&nbsp;&nbsp;|&nbsp;&nbsp;` +
+        `해당 월 일수: <strong>${totalDays}일</strong><br>` +
+        `계산 기간: <strong>${month}월 ${day}일 ~ ${month}월 ${totalDays}일</strong> (${appliedDays}일)`;
     }
 
     function selectRegion(region) {
@@ -356,43 +350,52 @@
       document.querySelectorAll('.btn-region').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
 
-      const label = REGION_LABEL[region];
+      currentRegion = region;
+      renderResults();
+    }
 
-      // 각 카페 계산 및 표시
-      const cafes = [
-        { key: 'sj', exId: 'sj-ex', incId: 'sj-inc', baseId: 'base-sj' },
-        { key: 'jw', exId: 'jw-ex', incId: 'jw-inc', baseId: 'base-jw' },
-        { key: 'cb', exId: 'cb-ex', incId: 'cb-inc', baseId: 'base-cb' },
-        { key: 'at', exId: 'at-ex', incId: 'at-inc', baseId: 'base-at' },
-        { key: 'gd', exId: 'gd-ex', incId: 'gd-inc', baseId: 'base-gd' },
-      ];
+    function renderResults() {
+      if (!currentRegion) return;
 
-      cafes.forEach(({ key, exId, incId, baseId }) => {
-        const feeMan = FEES[key][region];
-        const { exVat, incVat, fee } = calcDaily(feeMan);
-        document.getElementById(exId).textContent = fmt(exVat);
-        document.getElementById(incId).textContent = fmt(incVat);
-        document.getElementById(baseId).textContent = `월 기준 ${feeMan}만원 (${fmt(fee)}) · 부가세 미포함`;
+      const { month, day, totalDays, appliedDays } = getDateInfo();
+      const cafeKeys = ['sj', 'jw', 'cb', 'at', 'gd'];
+
+      cafeKeys.forEach(key => {
+        const feeMan = FEES[key][currentRegion];
+        const { exVat, incVat, fee } = calcDaily(feeMan, totalDays, appliedDays);
+        document.getElementById(`base-${key}`).textContent = `월 기준 금액: ${fmt(fee)}`;
+        document.getElementById(`period-${key}`).textContent = `${month}월 ${day}일 입점 시`;
+        document.getElementById(`${key}-ex`).textContent = fmt(exVat);
+        document.getElementById(`${key}-inc`).textContent = fmt(incVat);
       });
-
-      document.getElementById('periodInfo').textContent =
-        `${label} · ${month}월 ${day}일 ~ ${totalDays}일 (${appliedDays}일 / 총 ${totalDays}일)`;
-
-      document.getElementById('calcNote').innerHTML =
-        `VAT 미포함 기준 1,000원 단위 반올림 적용 (100의 자리에서 반올림)`;
 
       document.getElementById('resultsWrap').style.display = 'block';
     }
 
-    function copyVal(valId, btnId) {
-      const text = document.getElementById(valId).textContent.replace('원', '').trim();
+    function copyAll(key, name) {
+      const base = document.getElementById(`base-${key}`).textContent;
+      const period = document.getElementById(`period-${key}`).textContent;
+      const ex = document.getElementById(`${key}-ex`).textContent;
+      const inc = document.getElementById(`${key}-inc`).textContent;
+
+      const text = `${name}\n${base}\n(계산서 발행시 부가세 별도)\n${period}\n일할계산 금액: ${ex}\n계산서 발행시: ${inc}`;
+
       navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById(btnId);
+        const btn = document.getElementById(`copy-${key}`);
         btn.textContent = '복사됨';
         btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+        setTimeout(() => { btn.textContent = '전체 복사'; btn.classList.remove('copied'); }, 1500);
       });
     }
+
+    // 초기화: 입점일 기본값 = 오늘
+    document.getElementById('entryDate').value = getTodayStr();
+    updateInfoBox();
+
+    document.getElementById('entryDate').addEventListener('change', () => {
+      updateInfoBox();
+      renderResults();
+    });
   </script>
 </body>
 </html>
