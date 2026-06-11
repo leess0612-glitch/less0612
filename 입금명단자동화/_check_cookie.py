@@ -49,11 +49,14 @@ async def main():
         except Exception as e:
             print("GOTO ERROR:", e)
 
-        for i in range(6):
+        for i in range(15):
             await page.wait_for_timeout(1000)
             print(f"  +{i+1}s URL:", page.url)
 
         print("PAGES IN CONTEXT:", [pg.url for pg in context.pages])
+        await page.screenshot(path=str(BASE_DIR / '_check_screenshot.png'))
+        print("title:", await page.title())
+        print("content length:", len(await page.content()))
         if 'nidlogin' in page.url or 'login' in page.url:
             print("RESULT: 만료 (로그인 페이지로 리다이렉트됨)")
         else:
