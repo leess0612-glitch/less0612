@@ -141,7 +141,7 @@ async def _do_refresh_login():
         try:
             context = await _new_context(p, headless=False)
         except Exception as e:
-            print(f"  브라우저 실행 실패: {e}")
+            print(f"  브라우저 실행 실패: {_format_launch_error(e)}")
             print("  (다른 자동화가 실행 중이면 종료 후 다시 시도해주세요)")
             return
 
@@ -178,10 +178,10 @@ async def _do_post(image_path: str, title: str) -> tuple[bool, str]:
         try:
             context = await _new_context(p, headless=False)
         except Exception as e:
-            msg = str(e)
-            if 'profile' in msg.lower() or 'lock' in msg.lower() or 'already running' in msg.lower():
+            first_line = _format_launch_error(e)
+            if 'closed' in first_line.lower():
                 return False, '브라우저 실행 실패 - 다른 자동화가 이미 실행 중일 수 있음'
-            return False, f'브라우저 실행 실패: {msg}'
+            return False, f'브라우저 실행 실패: {first_line}'
 
         page = context.pages[0] if context.pages else await context.new_page()
 
