@@ -98,19 +98,22 @@ def clean_name(name: str) -> str:
     name = name.strip()
     if '/' in name:
         name = name[:name.index('/')]   # / 이후 삭제
-    name = re.sub(r'\d', '', name)      # 숫자 삭제
     return name.strip()
 
 def mask_name(name: str) -> str:
     name = clean_name(name)
-    if '#' in name:
-        return name
-    n = len(name)
+    # 끝자리 숫자(동일 명의 중복접수 구분용)는 마스킹 후에도 살려서 붙여줌
+    suffix_match = re.search(r'\d+$', name)
+    suffix = suffix_match.group() if suffix_match else ''
+    base = re.sub(r'\d', '', name).strip()
+    if '#' in base:
+        return base + suffix
+    n = len(base)
     if n <= 1:
-        return name
+        return base + suffix
     if n == 2:
-        return name[0] + '#'
-    return name[0] + '#' * (n - 2) + name[-1]
+        return base[0] + '#' + suffix
+    return base[0] + '#' * (n - 2) + base[-1] + suffix
 
 
 # ─────────────────────────── Google 인증 ───────────────────────────
