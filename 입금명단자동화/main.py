@@ -59,18 +59,69 @@ PRODUCT_MAP = {'인단': '인터넷', '번들': '인터넷+TV'}
 
 
 # ─────────────────────────── 실행 로그 ───────────────────────────
-def log_run(entry: dict):
-    logs = []
-    if LOG_PATH.exists():
-        try:
-            with open(LOG_PATH, 'r', encoding='utf-8') as f:
-                logs = json.load(f)
-        except Exception:
-            logs = []
-    logs.append(entry)
-    logs = logs[-60:]
+def load_logs() -> list:
+    if not LOG_PATH.exists():
+        return []
+    try:
+        with open(LOG_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+def save_logs(logs: list):
     with open(LOG_PATH, 'w', encoding='utf-8') as f:
         json.dump(logs, f, ensure_ascii=False, indent=2)
+
+
+def log_run(entry: dict):
+    logs = load_logs()
+    logs.append(entry)
+    logs = logs[-60:]
+    save_logs(logs)
+
+
+# ─────────────────────────── 카페 게시 (2단계) ───────────────────────────
+def post_pending():
+    """run_log.json에서 cafe_posted=false인 항목들을 순서대로 카페에 게시.
+    1단계(이미지 준비)와 분리되어 있어, 게시만 재시도해도 데이터 재처리/중복이 없다."""
+    logs = load_logs()
+    pending = [e for e in logs if e.get('image_file') and not e.get('cafe_posted')]
+    if not pending:
+        print("\n[게시] 미게시 항목 없음")
+        return
+
+    print(f"\n[게시] 미게시 {len(pending)}건 게시 시도...")
+    for entry in pending:
+        image_path = IMAGE_DIR / entry['image_file']
+        if not image_path.exists():
+            entry['error'] = '이미지 파일 없음'
+            continue
+
+        post_date = entry.get('post_date')
+        if not post_date:
+            stem = entry['image_file'][:8]  # YYYYMMDD
+            post_date = f"{stem[:4]}-{stem[4:6]}-{stem[6:]}"
+        title = f"{post_date} 사은품지급 명단"
+
+        print(f"  {entry['image_file']} 게시 중...")
+        try:
+            posted, err = post_to_cafe(str(image_path), title)
+        except Exception as e:
+            posted, err = False, str(e)
+
+        if posted:
+            entry['cafe_posted'] = True
+            entry['error'] = None
+            print("  게시 완료")
+        else:
+            entry['error'] = err
+            print(f"  게시 실패: {err}")
+            save_logs(logs)
+            notify_telegram(f'⚠️ 입금명단 카페 게시 실패\n{err}\n미게시 {len(pending)}건')
+            return
+
+    save_logs(logs)
 
 
 # ─────────────────────────── 텔레그램 알림 ───────────────────────────
