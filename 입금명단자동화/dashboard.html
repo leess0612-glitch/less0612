@@ -161,6 +161,9 @@ tr:hover td { background: #f8f9ff; }
       <div class="card-value" id="last-value" style="font-size:16px">—</div>
       <div class="card-sub" id="last-sub">—</div>
       <div id="last-detail" style="font-size:12px;color:#888"></div>
+      <div class="card-actions" id="pending-actions" style="display:none;margin-top:12px">
+        <button class="btn btn-warn" id="btn-post-pending" onclick="postPending()">미게시 게시</button>
+      </div>
     </div>
 
   </div>
@@ -224,6 +227,7 @@ async function loadStatus() {
     renderScheduler(d.scheduler);
     renderCookie(d.cookie);
     renderLastRun(d.last_run);
+    renderPending(d.pending_posts);
   } catch(e) { console.error('status error', e); }
 }
 
