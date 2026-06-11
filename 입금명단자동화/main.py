@@ -596,52 +596,37 @@ def main():
             wired_rows, rental_rows, source, capture_only=args.capture_only
         )
 
-        cafe_posted = False
-        cafe_error = None
-        if source == 'all' and image_path and not args.capture_only:
-            print("\n[5] 네이버 카페 게시 중...")
-            from datetime import date as _date
-            if TARGET_DATE:
-                m, d_val = TARGET_DATE.split('/')
-                post_date = _date(date.today().year, int(m), int(d_val))
-            else:
-                post_date = _date.today()
-            title = f"{post_date.strftime('%Y-%m-%d')} 사은품지급 명단"
-            cafe_posted, cafe_error = post_to_cafe(str(image_path), title)
-            if cafe_posted:
-                print("  카페 게시 완료")
-            else:
-                print(f"  카페 게시 실패: {cafe_error} (수동 게시 필요)")
-
         if source == 'all' and not args.capture_only:
             if row_count == 0:
                 error_msg = f'{date_filter} 등록할 데이터 없음'
             elif not image_path:
                 error_msg = '이미지 캡처 실패'
-            elif not cafe_posted:
-                error_msg = cafe_error or '카페 게시 실패'
             else:
                 error_msg = None
             log_run({
                 'run_at': run_at,
                 'date_filter': date_filter,
+                'post_date': post_date_str,
                 'wired_count': len(wired_rows),
                 'rental_count': len(rental_rows),
                 'backup_count': backup_count,
                 'total_rows': row_count,
                 'image_file': Path(image_path).name if image_path else None,
-                'cafe_posted': cafe_posted,
+                'cafe_posted': False,
                 'skipped': None,
                 'error': error_msg,
             })
             if error_msg:
                 notify_telegram(f'⚠️ 입금명단 자동화 - 확인 필요\n{error_msg}')
 
+            post_pending()
+
     except Exception as e:
         tb_str = traceback.format_exc()
         log_run({
             'run_at': run_at,
             'date_filter': date_filter if 'date_filter' in dir() else None,
+            'post_date': post_date_str if 'post_date_str' in dir() else None,
             'wired_count': len(wired_rows) if wired_rows is not None else None,
             'rental_count': len(rental_rows) if rental_rows is not None else None,
             'backup_count': None,
