@@ -32,7 +32,10 @@ async def main():
             cookies = json.load(f)
         await context.add_cookies(cookies)
         page = await context.new_page()
-        await page.goto(write_url, wait_until='load', timeout=30000)
+        try:
+            await page.goto(write_url, wait_until='load', timeout=30000)
+        except Exception as e:
+            print("GOTO ERROR:", e)
         await page.wait_for_timeout(2000)
         print("URL:", page.url)
         if 'nidlogin' in page.url or 'login' in page.url:
