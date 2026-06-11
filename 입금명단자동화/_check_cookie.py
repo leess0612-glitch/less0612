@@ -30,14 +30,21 @@ async def main():
         context = await browser.new_context(user_agent=_USER_AGENT)
         with open(COOKIE_PATH, encoding='utf-8') as f:
             cookies = json.load(f)
-        await context.add_cookies(cookies)
+        print(f"쿠키 {len(cookies)}개 로드, 만료시각 샘플:", [(c['name'], c.get('expires')) for c in cookies if c['name'] in ('NID_AUT', 'NID_SES')])
+        try:
+            await context.add_cookies(cookies)
+        except Exception as e:
+            print("ADD_COOKIES ERROR:", e)
         page = await context.new_page()
         try:
-            await page.goto(write_url, wait_until='load', timeout=30000)
+            resp = await page.goto(write_url, wait_until='load', timeout=30000)
+            print("GOTO STATUS:", resp.status if resp else None)
+            print("URL right after goto:", page.url)
         except Exception as e:
             print("GOTO ERROR:", e)
         await page.wait_for_timeout(2000)
         print("URL:", page.url)
+        print("PAGES IN CONTEXT:", [pg.url for pg in context.pages])
         if 'nidlogin' in page.url or 'login' in page.url:
             print("RESULT: 만료 (로그인 페이지로 리다이렉트됨)")
         else:
