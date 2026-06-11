@@ -103,6 +103,8 @@ def clean_name(name: str) -> str:
 
 def mask_name(name: str) -> str:
     name = clean_name(name)
+    if '#' in name:
+        return name
     n = len(name)
     if n <= 1:
         return name
