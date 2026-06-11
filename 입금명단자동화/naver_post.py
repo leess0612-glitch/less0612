@@ -165,11 +165,8 @@ async def _do_refresh_login():
 # ── 카페 게시 ────────────────────────────────────────────────────────────────
 async def _do_post(image_path: str, title: str) -> tuple[bool, str]:
     config = load_config()
-    club_id = config['cafe_clubid']
-    menu_id = config['cafe_menuid']
     board_name = config['cafe_board_name']
     cafe_url = config['cafe_url']
-    write_url = f'https://cafe.naver.com/ca-fe/cafes/{club_id}/articles/write?boardType=L&menuId={menu_id}'
 
     async with async_playwright() as p:
         try:
