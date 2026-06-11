@@ -37,14 +37,22 @@ async def main():
         except Exception as e:
             print("ADD_COOKIES ERROR:", e)
         page = await context.new_page()
+        page.on("framenavigated", lambda f: print("NAV:", f.url))
+        page.on("close", lambda: print("PAGE CLOSED"))
+        page.on("crash", lambda: print("PAGE CRASHED"))
+        context.on("page", lambda pg: print("NEW PAGE OPENED:", pg.url))
+
         try:
             resp = await page.goto(write_url, wait_until='load', timeout=30000)
             print("GOTO STATUS:", resp.status if resp else None)
             print("URL right after goto:", page.url)
         except Exception as e:
             print("GOTO ERROR:", e)
-        await page.wait_for_timeout(2000)
-        print("URL:", page.url)
+
+        for i in range(6):
+            await page.wait_for_timeout(1000)
+            print(f"  +{i+1}s URL:", page.url)
+
         print("PAGES IN CONTEXT:", [pg.url for pg in context.pages])
         if 'nidlogin' in page.url or 'login' in page.url:
             print("RESULT: 만료 (로그인 페이지로 리다이렉트됨)")
