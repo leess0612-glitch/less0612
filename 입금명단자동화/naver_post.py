@@ -62,6 +62,12 @@ def _fix_exit_type():
         pass
 
 
+def _format_launch_error(e: Exception) -> str:
+    """launch_persistent_context 실패 시, 거대한 명령줄/로그 덤프 대신 핵심 한 줄만 추출"""
+    text = str(e).strip()
+    return text.splitlines()[0] if text else type(e).__name__
+
+
 async def _new_context(p, headless=False):
     _fix_exit_type()
     context = await p.chromium.launch_persistent_context(
