@@ -34,6 +34,8 @@ TOKEN_PATH      = SHARED_DIR / 'token.pickle'
 CREDENTIALS_PATH = SHARED_DIR / 'credentials.json'
 BACKUP_MIN      = 15
 BACKUP_MAX      = 30
+POST_HOUR_MIN   = 20
+POST_HOUR_MAX   = 20
 DATA_START_ROW  = 3   # 데이터 시작 행 (2행은 고정행)
 LOG_PATH        = BASE_DIR / 'run_log.json'
 IMAGE_DIR       = BASE_DIR / '사은품지급명단'
@@ -515,6 +517,11 @@ def parse_args():
         '--post',
         action='store_true',
         help='미게시 항목을 카페에 게시 (2단계만 실행)'
+    )
+    parser.add_argument(
+        '--now',
+        action='store_true',
+        help='랜덤 대기 없이 즉시 실행 (대시보드 "지금 실행")'
     )
     return parser.parse_args()
 
