@@ -511,6 +511,11 @@ def parse_args():
         action='store_true',
         help='네이버 로그인 후 쿠키 저장 (쿠키 만료 시 실행)'
     )
+    parser.add_argument(
+        '--post',
+        action='store_true',
+        help='미게시 항목을 카페에 게시 (2단계만 실행)'
+    )
     return parser.parse_args()
 
 
