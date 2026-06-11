@@ -55,9 +55,14 @@ Write-Output "$($task.State)|$next|$last"
 
 
 def get_cookie_info():
-    if not COOKIE_PATH.exists():
-        return {'valid': False, 'label': '쿠키 없음 — 로그인 필요', 'modified': None}
-    mtime = datetime.fromtimestamp(COOKIE_PATH.stat().st_mtime)
+    candidates = [
+        PROFILE_DIR / 'Default' / 'Network' / 'Cookies',
+        PROFILE_DIR / 'Default' / 'Cookies',
+    ]
+    cookie_file = next((p for p in candidates if p.exists()), None)
+    if not cookie_file:
+        return {'valid': False, 'label': '로그인 정보 없음 — 로그인 필요', 'modified': None}
+    mtime = datetime.fromtimestamp(cookie_file.stat().st_mtime)
     age = (datetime.now() - mtime).days
     valid = age <= 25
     label = f'{age}일 전 갱신' + ('' if valid else ' — 만료 가능')
