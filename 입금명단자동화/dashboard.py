@@ -184,6 +184,19 @@ def api_refresh_login():
     return jsonify({'ok': True})
 
 
+@app.route('/api/post-pending', methods=['POST'])
+def api_post_pending():
+    global _running_proc
+    if _running_proc and _running_proc.poll() is None:
+        return jsonify({'ok': False, 'msg': '이미 실행 중입니다.'})
+    _running_proc = subprocess.Popen(
+        [PYTHON, str(BASE_DIR / 'main.py'), '--post'],
+        cwd=str(BASE_DIR),
+        creationflags=subprocess.CREATE_NEW_CONSOLE,
+    )
+    return jsonify({'ok': True, 'pid': _running_proc.pid})
+
+
 if __name__ == '__main__':
     def _open():
         import time
