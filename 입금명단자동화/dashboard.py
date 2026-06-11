@@ -82,6 +82,7 @@ def api_status():
         'cookie': get_cookie_info(),
         'last_run': logs[-1] if logs else None,
         'total_runs': len(logs),
+        'pending_posts': sum(1 for e in logs if e.get('image_file') and not e.get('cafe_posted')),
     })
 
 
