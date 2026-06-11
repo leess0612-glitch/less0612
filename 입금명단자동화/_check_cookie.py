@@ -26,8 +26,9 @@ async def main():
     write_url = f'https://cafe.naver.com/ca-fe/cafes/{club_id}/articles/write?boardType=L&menuId={menu_id}'
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=False, args=['--disable-blink-features=AutomationControlled'])
         context = await browser.new_context(user_agent=_USER_AGENT)
+        await context.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined})")
         with open(COOKIE_PATH, encoding='utf-8') as f:
             cookies = json.load(f)
         print(f"쿠키 {len(cookies)}개 로드, 만료시각 샘플:", [(c['name'], c.get('expires')) for c in cookies if c['name'] in ('NID_AUT', 'NID_SES')])
