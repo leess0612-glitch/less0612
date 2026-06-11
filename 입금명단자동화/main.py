@@ -98,7 +98,6 @@ def clean_name(name: str) -> str:
     name = name.strip()
     if '/' in name:
         name = name[:name.index('/')]   # / 이후 삭제
-    name = re.sub(r'\d', '', name)      # 숫자 삭제
     return name.strip()
 
 def mask_name(name: str) -> str:
