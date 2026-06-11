@@ -551,19 +551,29 @@ def main():
         archive_only(args)
         return
 
+    if args.post:
+        post_pending()
+        return
+
     # 주말/공휴일 체크 (all 모드일 때만)
     if source == 'all' and not TARGET_DATE:
         print("\n[0] 오늘 날짜 확인 중...")
         if is_holiday():
             print("  오늘은 주말 또는 공휴일 - 실행 종료")
-            log_run({'run_at': run_at, 'date_filter': get_date_filter(),
+            log_run({'run_at': run_at, 'date_filter': get_date_filter(), 'post_date': None,
                      'skipped': '휴일/주말', 'cafe_posted': False,
                      'wired_count': None, 'rental_count': None,
                      'backup_count': None, 'total_rows': None,
                      'image_file': None, 'error': None})
+            post_pending()
             return
 
     date_filter = get_date_filter()
+    if TARGET_DATE:
+        m, d_val = TARGET_DATE.split('/')
+        post_date_str = date(date.today().year, int(m), int(d_val)).strftime('%Y-%m-%d')
+    else:
+        post_date_str = date.today().strftime('%Y-%m-%d')
     wired_rows, rental_rows = [], []
 
     try:
