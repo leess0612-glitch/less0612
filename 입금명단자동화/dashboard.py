@@ -13,7 +13,7 @@ app = Flask(__name__)
 BASE_DIR = Path(__file__).parent
 CONFIG_PATH = BASE_DIR / 'config.json'
 LOG_PATH = BASE_DIR / 'run_log.json'
-COOKIE_PATH = BASE_DIR / 'naver_cookies.json'
+PROFILE_DIR = BASE_DIR / 'chrome_profile'
 PYTHON = sys.executable
 TASK_NAME = '입금명단자동화'
 
