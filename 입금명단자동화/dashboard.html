@@ -294,7 +294,8 @@ function renderLastRun(r) {
 // ── 설정 ────────────────────────────────────────────────────
 async function loadConfig() {
   const c = await apiFetch('/api/config');
-  document.getElementById('cfg-hour').value    = c.post_hour  ?? 20;
+  document.getElementById('cfg-hour-min').value = c.post_hour_min ?? 20;
+  document.getElementById('cfg-hour-max').value = c.post_hour_max ?? 20;
   document.getElementById('cfg-bmin').value    = c.backup_min ?? 15;
   document.getElementById('cfg-bmax').value    = c.backup_max ?? 30;
   document.getElementById('cfg-targetdate').value = c.target_date ?? '';
@@ -302,7 +303,8 @@ async function loadConfig() {
 
 async function saveConfig() {
   const payload = {
-    post_hour:  parseInt(document.getElementById('cfg-hour').value),
+    post_hour_min: parseInt(document.getElementById('cfg-hour-min').value),
+    post_hour_max: parseInt(document.getElementById('cfg-hour-max').value),
     backup_min: parseInt(document.getElementById('cfg-bmin').value),
     backup_max: parseInt(document.getElementById('cfg-bmax').value),
     target_date: document.getElementById('cfg-targetdate').value.trim(),
