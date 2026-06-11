@@ -6,5 +6,6 @@ xlwings
 pywin32
 Pillow
 playwright
+playwright-stealth
 plyer
 requests
