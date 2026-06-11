@@ -24,44 +24,41 @@ async def main():
     club_id = config['cafe_clubid']
     menu_id = config['cafe_menuid']
     write_url = f'https://cafe.naver.com/ca-fe/cafes/{club_id}/articles/write?boardType=L&menuId={menu_id}'
+    cafe_main_url = f'https://cafe.naver.com/realsportscafe'
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False, args=['--disable-blink-features=AutomationControlled'])
         context = await browser.new_context(user_agent=_USER_AGENT)
         await context.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined})")
+
         with open(COOKIE_PATH, encoding='utf-8') as f:
             cookies = json.load(f)
-        print(f"쿠키 {len(cookies)}개 로드, 만료시각 샘플:", [(c['name'], c.get('expires')) for c in cookies if c['name'] in ('NID_AUT', 'NID_SES')])
-        try:
-            await context.add_cookies(cookies)
-        except Exception as e:
-            print("ADD_COOKIES ERROR:", e)
+        await context.add_cookies(cookies)
         page = await context.new_page()
-        page.on("framenavigated", lambda f: print("NAV:", f.url))
-        page.on("close", lambda: print("PAGE CLOSED"))
-        page.on("crash", lambda: print("PAGE CRASHED"))
-        context.on("page", lambda pg: print("NEW PAGE OPENED:", pg.url))
 
-        try:
-            resp = await page.goto(write_url, wait_until='load', timeout=30000)
-            print("GOTO STATUS:", resp.status if resp else None)
-            print("URL right after goto:", page.url)
-        except Exception as e:
-            print("GOTO ERROR:", e)
+        # 1) 네이버 메인 - 로그인 여부 확인
+        await page.goto('https://www.naver.com', wait_until='load', timeout=30000)
+        await page.wait_for_timeout(2000)
+        print("=== 네이버 메인 ===")
+        print("URL:", page.url)
+        login_link = await page.query_selector('a.MyView-module__link_login___HpHMW, a[href*="nidlogin"]')
+        print("로그인 링크 존재(=로그아웃 상태):", login_link is not None)
+        await page.screenshot(path=str(BASE_DIR / '_check_1_naver.png'))
 
-        for i in range(15):
-            await page.wait_for_timeout(1000)
-            print(f"  +{i+1}s URL:", page.url)
+        # 2) 카페 메인
+        await page.goto(cafe_main_url, wait_until='load', timeout=30000)
+        await page.wait_for_timeout(2000)
+        print("=== 카페 메인 ===")
+        print("URL:", page.url)
+        await page.screenshot(path=str(BASE_DIR / '_check_2_cafe.png'))
 
-        print("PAGES IN CONTEXT:", [pg.url for pg in context.pages])
-        await page.screenshot(path=str(BASE_DIR / '_check_screenshot.png'))
-        print("title:", await page.title())
-        print("content length:", len(await page.content()))
-        if 'nidlogin' in page.url or 'login' in page.url:
-            print("RESULT: 만료 (로그인 페이지로 리다이렉트됨)")
-        else:
-            el = await page.query_selector('textarea.textarea_input, button.button')
-            print("RESULT:", "유효 (글쓰기 화면 정상 로드)" if el else "판단불가 (요소 없음)")
+        # 3) 글쓰기 페이지
+        await page.goto(write_url, wait_until='load', timeout=30000)
+        await page.wait_for_timeout(3000)
+        print("=== 글쓰기 페이지 ===")
+        print("URL:", page.url)
+        await page.screenshot(path=str(BASE_DIR / '_check_3_write.png'))
+
         await browser.close()
 
 
