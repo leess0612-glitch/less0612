@@ -511,7 +511,7 @@ def parse_args():
     parser.add_argument(
         '--refresh-login',
         action='store_true',
-        help='네이버 로그인 후 쿠키 저장 (쿠키 만료 시 실행)'
+        help='네이버 로그인 (영구 프로필에 세션 저장, 세션 만료 시 실행)'
     )
     parser.add_argument(
         '--post',
