@@ -174,11 +174,14 @@ tr:hover td { background: #f8f9ff; }
     <div class="fields">
 
       <div class="field">
-        <span>실행 시각</span>
+        <span>실행 시각 범위</span>
         <div class="field-group">
-          <input type="number" id="cfg-hour" min="0" max="23" style="width:70px">
+          <input type="number" id="cfg-hour-min" min="0" max="23" style="width:65px">
+          <span>~</span>
+          <input type="number" id="cfg-hour-max" min="0" max="23" style="width:65px">
           <span>시</span>
         </div>
+        <div class="hint">매일 이 범위 내 랜덤 시각에 게시</div>
       </div>
 
       <div class="field">
