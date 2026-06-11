@@ -527,13 +527,15 @@ def parse_args():
 
 
 def main():
-    global TARGET_DATE, BACKUP_MIN, BACKUP_MAX
+    global TARGET_DATE, BACKUP_MIN, BACKUP_MAX, POST_HOUR_MIN, POST_HOUR_MAX
     try:
         with open(BASE_DIR / 'config.json', 'r', encoding='utf-8') as f:
             _cfg = json.load(f)
         TARGET_DATE = _cfg.get('target_date') or None
         BACKUP_MIN = int(_cfg.get('backup_min', BACKUP_MIN))
         BACKUP_MAX = int(_cfg.get('backup_max', BACKUP_MAX))
+        POST_HOUR_MIN = int(_cfg.get('post_hour_min', POST_HOUR_MIN))
+        POST_HOUR_MAX = int(_cfg.get('post_hour_max', POST_HOUR_MAX))
 
         if TARGET_DATE:
             _cfg['target_date'] = None
@@ -575,6 +577,14 @@ def main():
             post_pending()
             return
 
+        if not args.now:
+            delay_range = max(0, (POST_HOUR_MAX - POST_HOUR_MIN) * 60)
+            if delay_range > 0:
+                delay_min = random.randint(0, delay_range)
+                print(f"  랜덤 대기: {delay_min}분")
+                time.sleep(delay_min * 60)
+
+    run_at = _dt.now().strftime('%Y-%m-%d %H:%M:%S')
     date_filter = get_date_filter()
     if TARGET_DATE:
         m, d_val = TARGET_DATE.split('/')
