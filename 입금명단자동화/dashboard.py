@@ -104,7 +104,7 @@ def api_config_save():
     data = request.json
     cfg = load_config()
     changed_hour = False
-    for key in ('post_hour', 'backup_min', 'backup_max', 'target_date'):
+    for key in ('post_hour_min', 'post_hour_max', 'backup_min', 'backup_max', 'target_date'):
         if key not in data:
             continue
         val = data[key]
@@ -115,12 +115,12 @@ def api_config_save():
                 val = int(val)
             except (TypeError, ValueError):
                 continue
-        if key == 'post_hour' and cfg.get(key) != val:
+        if key == 'post_hour_min' and cfg.get(key) != val:
             changed_hour = True
         cfg[key] = val
     save_config(cfg)
     if changed_hour:
-        h = int(cfg['post_hour'])
+        h = int(cfg['post_hour_min'])
         ps = (
             f'$t=New-ScheduledTaskTrigger -Daily -At "{h:02d}:00";'
             f'Set-ScheduledTask -TaskName "{TASK_NAME}" -Trigger $t'
@@ -140,7 +140,7 @@ def api_scheduler_toggle():
 @app.route('/api/scheduler/skip-today', methods=['POST'])
 def api_skip_today():
     cfg = load_config()
-    h = int(cfg.get('post_hour', 20))
+    h = int(cfg.get('post_hour_min', 20))
     tomorrow = (date.today() + timedelta(days=1)).strftime('%Y-%m-%d')
     ps = (
         f'$t=New-ScheduledTaskTrigger -Daily -At "{h:02d}:00";'
@@ -157,7 +157,7 @@ def api_run():
     if _running_proc and _running_proc.poll() is None:
         return jsonify({'ok': False, 'msg': '이미 실행 중입니다.'})
     _running_proc = subprocess.Popen(
-        [PYTHON, str(BASE_DIR / 'main.py')],
+        [PYTHON, str(BASE_DIR / 'main.py'), '--now'],
         cwd=str(BASE_DIR),
         creationflags=subprocess.CREATE_NEW_CONSOLE,
     )
