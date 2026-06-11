@@ -242,6 +242,18 @@ function renderScheduler(s) {
   document.getElementById('sched-sub').textContent = next;
 }
 
+function renderPending(n) {
+  const el = document.getElementById('pending-actions');
+  const btn = document.getElementById('btn-post-pending');
+  if (n > 0) {
+    el.style.display = 'flex';
+    btn.disabled = false;
+    btn.textContent = `미게시 ${n}건 게시`;
+  } else {
+    el.style.display = 'none';
+  }
+}
+
 function renderCookie(c) {
   document.getElementById('cookie-value').innerHTML = c.valid
     ? '<span class="dot dot-green"></span><span class="ok">유효</span>'
@@ -258,9 +270,10 @@ function renderLastRun(r) {
   }
   document.getElementById('last-value').textContent = r.run_at || '-';
   let badge;
-  if (r.skipped)      badge = `<span class="badge badge-skip">${r.skipped}</span>`;
-  else if (r.cafe_posted) badge = '<span class="badge badge-ok">게시 완료</span>';
-  else                badge = '<span class="badge badge-fail">실패</span>';
+  if (r.skipped)           badge = `<span class="badge badge-skip">${r.skipped}</span>`;
+  else if (r.error)        badge = '<span class="badge badge-fail">실패</span>';
+  else if (r.cafe_posted)  badge = '<span class="badge badge-ok">게시 완료</span>';
+  else                      badge = '<span class="badge badge-skip">게시 대기</span>';
   document.getElementById('last-sub').innerHTML = badge;
   const parts = [];
   if (r.date_filter) parts.push(r.date_filter + '일자');
@@ -311,11 +324,12 @@ async function loadLogs() {
   let rows = '';
   for (const e of [...logs].reverse()) {
     let badge;
-    if (e.skipped)       badge = `<span class="badge badge-skip">${e.skipped}</span>`;
-    else if (e.cafe_posted) badge = '<span class="badge badge-ok">완료</span>';
-    else                 badge = '<span class="badge badge-fail">실패</span>';
+    if (e.skipped)           badge = `<span class="badge badge-skip">${e.skipped}</span>`;
+    else if (e.error)        badge = '<span class="badge badge-fail">실패</span>';
+    else if (e.cafe_posted)  badge = '<span class="badge badge-ok">완료</span>';
+    else                      badge = '<span class="badge badge-skip">게시대기</span>';
     const err = e.error ? `<span style="color:#d93025;font-size:12px;font-weight:600">${e.error}</span>` : '';
-    const rowStyle = (!e.skipped && !e.cafe_posted) ? ' style="background:#fef4f3"' : '';
+    const rowStyle = (!e.skipped && e.error) ? ' style="background:#fef4f3"' : '';
     rows += `<tr${rowStyle}>
       <td>${e.run_at || '-'}</td>
       <td>${e.date_filter || '-'}</td>
@@ -373,6 +387,22 @@ async function runNow() {
     toast(d.msg || '실행 실패');
     btn.disabled = false;
     btn.innerHTML = '▶ 지금 실행';
+    return;
+  }
+  startRunPolling();
+}
+
+async function postPending() {
+  const btn = document.getElementById('btn-post-pending');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 게시 중...';
+  document.getElementById('run-status').textContent = '';
+
+  const d = await apiFetch('/api/post-pending', 'POST');
+  if (!d.ok) {
+    toast(d.msg || '실행 실패');
+    btn.disabled = false;
+    btn.textContent = '미게시 게시';
     return;
   }
   startRunPolling();
